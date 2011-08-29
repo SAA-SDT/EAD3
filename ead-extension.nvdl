@@ -5,7 +5,7 @@
         <!-- For any EAD "section" (i.e., elements with siblings and ancestors in same namespace",
             validate using ead rng schema-->
         <namespace ns="urn:isbn:1-931666-22-9">
-            <!-- validate against ead.rng schema (in current directory) -->
+            <!-- validate against ead.rng schema -->
             <validate schema="/home/thc4/Dropbox/ead/schema/ead.rng">
                 <!-- for any geogname element, however, use mode named "geogname" -->
                 <context path="geogname" useMode="geogname"/>
@@ -16,13 +16,13 @@
         <!-- For any EAD "section" (i.e., elements with siblings and ancestors in same namespace",
             validate using ead rng schema-->
         <namespace ns="urn:isbn:1-931666-22-9">
-            <!-- validate against ead.rng schema (in current directory) -->
+            <!-- validate against ead.rng schema -->
             <validate schema="/home/thc4/Dropbox/ead/schema/ead.rng"/>
         </namespace>
         <!-- For any ead-extension "section" (i.e., elements with siblings and ancestors in same namespace",
             validate using ead rng schema -->
         <namespace ns="http://example.org/ead-extension/">
-            <!-- validate against ead-extension.rng schema (in current directory) -->
+            <!-- validate against ead-extension.rng schema  -->
             <validate schema="/home/thc4/Dropbox/ead/schema/ead-extension.rng"/>
         </namespace>
     </mode>
