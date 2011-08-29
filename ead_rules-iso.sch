@@ -8,7 +8,4 @@
                     <sch:emph>otherlevel</sch:emph> attribute must be used. </sch:assert>
         </sch:rule>
     </sch:pattern>
-    <sch:pattern id="enumerated-values">
-        <sch:let name="values" value=""/>
-    </sch:pattern>
 </sch:schema>
