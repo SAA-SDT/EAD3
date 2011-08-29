@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules xmlns="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0" startMode="root">
+    <!-- start validation at root element-->
+    <mode name="root">
+        <!-- For any EAD "section" (i.e., elements with siblings and ancestors in same namespace",
+            validate using ead rng schema-->
+        <namespace ns="urn:isbn:1-931666-22-9">
+            <validate schema="/home/thc4/Dropbox/ead/schema/ead.rng">
+                <!-- for any geogname element, however, use mode named "geogname" -->
+                <context path="geogname" useMode="geogname"/>
+            </validate>
+        </namespace>
+    </mode>
+    <mode name="geogname">
+        <!-- For any EAD "section" (i.e., elements with siblings and ancestors in same namespace",
+            validate using ead rng schema-->
+        <namespace ns="urn:isbn:1-931666-22-9">
+            <validate schema="/home/thc4/Dropbox/ead/schema/ead.rng"/>
+        </namespace>
+        <!-- For any ead-extension "section" (i.e., elements with siblings and ancestors in same namespace",
+            validate using ead rng schema-->
+        <namespace ns="http://example.org/ead-extension/">
+            <!-- validate against ead-extension.rng schema -->
+            <validate schema="ead-extension.rng"/>
+        </namespace>
+    </mode>
+</rules>
