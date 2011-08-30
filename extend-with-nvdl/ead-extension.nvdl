@@ -6,7 +6,7 @@
             validate using ead rng schema-->
         <namespace ns="urn:isbn:1-931666-22-9">
             <!-- validate against ead.rng schema -->
-            <validate schema="../ead/schema/ead.rng">
+            <validate schema="../../ead/schema/ead.rng">
                 <!-- for any geogname element, however, use mode named "geogname" -->
                 <context path="geogname" useMode="geogname"/>
             </validate>
@@ -17,7 +17,7 @@
             validate using ead rng schema-->
         <namespace ns="urn:isbn:1-931666-22-9">
             <!-- validate against ead.rng schema -->
-            <validate schema="../ead/schema/ead.rng"/>
+            <validate schema="../../ead/schema/ead.rng"/>
         </namespace>
         <!-- For any ead-extension "section" (i.e., elements with siblings and ancestors in same namespace",
             validate using ead rng schema -->
