@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<grammar 
-  xmlns="http://relaxng.org/ns/structure/1.0"
-  xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-  datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" ns="http://example.org/ead-extension/">
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+    xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
+    ns="http://example.org/ead-extension/">
     <start>
         <element name="geocode">
-            <text/>
+            <attribute name="code">
+                <text/>
+            </attribute>
+            <zeroOrMore>
+                <interleave>
+                    <text/>
+                    <element name="lat">
+                        <text/>
+                    </element>
+                    <element name="long">
+                        <text/>
+                    </element>
+                </interleave>
+            </zeroOrMore>
         </element>
     </start>
 </grammar>
