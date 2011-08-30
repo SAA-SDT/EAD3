@@ -13,9 +13,6 @@
             <xd:p>Various templates to clean up EAD instances</xd:p>
         </xd:desc>
     </xd:doc>
-    <xsl:param name="empty-elements">
-        <xsl:text></xsl:text>
-    </xsl:param>
     <!-- Function definition from FunctX function library, version 1.0
          For more information on the FunctX XSLT library, contact contrib@functx.com.
          see http://www.xsltfunctions.com -->
@@ -37,19 +34,9 @@
             <xsl:apply-templates select="@*|node()"/>
         </xsl:copy>
     </xsl:template>
-    <!--
-    <xsl:template match="ead:lb">
-                 <xsl:message select="local-name()"/>
-         <xsl:message select="$empty-elements"></xsl:message>
-         <xsl:message select="functx:is-value-in-sequence(local-name(), ('lb','ptr','colspec','ptrloc','extptrloc','arc'))"></xsl:message>
-    </xsl:template>
-    -->
     <!-- strip elements not defined as empty which have no content       -->
-     <xsl:template match="*[string-length(normalize-space(.)) = 0][not(child::*)][not(functx:is-value-in-sequence(local-name(), ('lb','ptr','colspec','ptrloc','extptrloc','arc')))]">
-         <xsl:message select="local-name()"/>
-         <xsl:message select="$empty-elements"></xsl:message>
-         <xsl:message select="functx:is-value-in-sequence(local-name(), $empty-elements)"></xsl:message>
-     </xsl:template>
+     <xsl:template match="*[string-length(normalize-space(.)) = 0][not(child::*)][not(functx:is-value-in-sequence(local-name(), ('lb','ptr','colspec','ptrloc','extptrloc','arc')))]"/>
+     
 
     <!-- Strip any elements not in EAD namespace-->
     <xsl:template match="*[namespace-uri() != 'urn:isbn:1-931666-22-9']"/>
