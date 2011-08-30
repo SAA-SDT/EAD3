@@ -25,9 +25,7 @@
     </xsl:function>
    <!-- Identity Template -->
     <!-- Whenever you match any node or any attribute -->
-    <xsl:template match="node()|@*">
-        
-        
+    <xsl:template match="node()|@*">       
         <!-- Copy the current node -->
         <xsl:copy>            
             <!-- Including any attributes it has and any child nodes -->
