@@ -38,5 +38,11 @@
 
     <!-- Strip any elements not in EAD namespace-->
     <xsl:template match="*[namespace-uri() != 'urn:isbn:1-931666-22-9']"/>
+    <!-- replace numbered c's with unnumbered c's -->
+    <xsl:template match="ead:c01| ead:c02 | ead:c03 | ead:c04 | ead:c05 | ead:c06 | ead:c07 | ead:c08 | ead:c09 | ead:c10 | ead:c11 | ead:c12">
+        <xsl:element name="ead:c" >
+            <xsl:apply-templates/>
+        </xsl:element>
+    </xsl:template>
     
 </xsl:stylesheet>
