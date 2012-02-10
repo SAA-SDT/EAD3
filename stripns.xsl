@@ -7,7 +7,8 @@
         <xd:desc>
             <xd:p><xd:b>Created on:</xd:b> Nov 10, 2011</xd:p>
             <xd:p><xd:b>Author:</xd:b> Terry Catapano</xd:p>
-            <xd:p></xd:p>
+            <xd:p>Convert an EAD2002 RNG-valid or XSD-valid instance to HTML using the eadcbs8.xsl stylesheet</xd:p>
+            <xd:b>Requires eadcbs8.xsl stylesheet to be present in same directory as this file</xd:b>
         </xd:desc>
     </xd:doc>
     <xsl:include href="eadcbs8.xsl"/>
