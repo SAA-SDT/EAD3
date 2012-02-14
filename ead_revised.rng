@@ -1428,7 +1428,7 @@
 			<ref name="bioghist"/>
 			<ref name="controlaccess"/>
 			<ref name="custodhist"/>
-			<element name="descgrp">
+			<!--<element name="descgrp">
 				<ref name="a.common"/>
 				<optional>
 					<attribute name="type"/>
@@ -1446,6 +1446,7 @@
 					</choice>
 				</oneOrMore>
 			</element>
+			-->
 			<ref name="fileplan"/>
 			<ref name="index"/>
 			<ref name="odd"/>
