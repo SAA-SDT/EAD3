@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <grammar xmlns="http://relaxng.org/ns/structure/1.0"
     xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" ns="http://www.example.com/ead/minimal/">
-    <a:documentation>An experimental RelaxNG schema for a minimal version of optimized for EAD for data interchange</a:documentation>
+    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
     <start>
         <element name="ead">
             <ref name="component"/>
@@ -52,34 +51,37 @@
                         <ref name="didElement"/>
                     </element>
                     <element name="accessrestrict">
-                        <ref name="descBlocks"/>
+                        <text/>
                     </element>
                     <element name="accruals">
-                        <ref name="descBlocks"/>
+                        <text/>
                     </element>
                     <element name="acqinfo">
-                        <ref name="descBlocks"/>
+                        <text/>
                     </element>
                     <element name="altformavail">
-                        <ref name="descBlocks"/>
+                        <text/>
                     </element>
                     <element name="appraisal">
-                        <ref name="descBlocks"/>
+                        <text/>
                     </element>
                     <element name="arrangement">
-                        <ref name="descBlocks"/>
+                        <text/>
                     </element>
                     <element name="bibliography">
-                        <ref name="descBlocks"/>
+                        <text/>
                     </element>
                     <element name="bioghist">
-                        <ref name="descBlocks"/>
+                        <text/>
                     </element>
                     <element name="controlaccess">
                         <text/>
                     </element>
                     <element name="custodhist">
-                        <ref name="descBlocks"/>
+                        <text/>
+                    </element>
+                    <element name="descgrp">
+                        <text/>
                     </element>
                     <element name="fileplan">
                         <text/>
@@ -88,34 +90,34 @@
                         <text/>
                     </element>
                     <element name="odd">
-                        <ref name="descBlocks"/>
+                        <text/>
                     </element>
                     <element name="originalsloc">
-                        <ref name="descBlocks"/>
+                        <text/>
                     </element>
                     <element name="otherfindaid">
-                        <ref name="descBlocks"/>
+                        <text/>
                     </element>
                     <element name="phystech">
                         <text/>
                     </element>
                     <element name="prefercite">
-                        <ref name="descBlocks"/>
+                        <text/>
                     </element>
                     <element name="processinfo">
-                        <ref name="descBlocks"/>
+                        <text/>
                     </element>
                     <element name="relatedmaterial">
-                        <ref name="descBlocks"/>
+                        <text/>
                     </element>
                     <element name="scopecontent">
-                        <ref name="descBlocks"/>
+                        <text/>
                     </element>
                     <element name="separatedmaterial">
-                        <ref name="descBlocks"/>
+                        <text/>
                     </element>
                     <element name="userestrict">
-                        <ref name="descBlocks"/>
+                        <text/>
                     </element>
                     <ref name="component"/>
                 </choice>
@@ -134,31 +136,12 @@
                     </optional>
                     <text/>
                 </element>
-                <ref name="refs"/>
+                <element name="ref">
+                    <text/>
+                </element>
                 <text/>
             </choice>
         </zeroOrMore>
-    </define>
-    <define name="descBlocks">
-        <zeroOrMore>
-            <element name="p">
-                <zeroOrMore>
-                    <choice>
-                        <element name="span">
-                            <ref name="attrs-types"/>
-                            <optional>
-                                <attribute name="rend">
-                                    <text/>
-                                </attribute>
-                            </optional>
-                            <text/>
-                        </element>
-                        <ref name="refs"/>
-                        <text/>
-                    </choice>
-                </zeroOrMore>
-            </element>
-        </zeroOrMore>       
     </define>
     <define name="attrs-types">
         <optional>
@@ -172,12 +155,5 @@
             </attribute>
         </optional>
 
-    </define>
-    <define name="refElement">
-        <attribute name="href"></attribute>
-        <text/>
-    </define>
-    <define name="refs">
-        <element name="xref"><ref name="refElement"></ref></element>
     </define>
 </grammar>
