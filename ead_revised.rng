@@ -1,5 +1,42 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<!-- This file has been revised to test proposed changes to EAD for its upcoming release in 2013 -->
+<!-- This file has been revised to test proposed changes to EAD for its upcoming release in 2013 
+
+Implements the following revision requests accepted by TS-EAD subgroups:
+
+
+14. Allow logical links to related resources and entities (partially)
+
+* EAD should move to xlink (already implemented in EAD 2002 RNG on which this schema is based)
+
+32. <archdesc> should be a wrapper tag for components alone
+
+33. Review purpose of <dsc> (i.e., deprecate)
+
+37.3 Abolish <did>
+
+39 Deprecate <descgrp>
+
+40. Add ability to encode <controlaccess> and controlled terms in a more granular fashion
+
+* added <part> to <subject>, <function>, <occupation>, and <*name> elments
+
+41. Add a GEOCODE attribute for the <geogname> element
+
+* implemented via repeatable child <part> element
+
+42. Allow the source attribute of <*name> elements to have URLs as values
+
+* source is now of type string rather than NMTOKEN
+
+47. Date Encoding (partially)
+
+* Allow date ranges to be separately represented with beginning (from) and end
+(to)
+
+51. Remove <archref>, <bibref> and <title> from <container>, etc...
+
+
+-->
 
 <!-- 
 	EAD 2002 Relax NG Schema
