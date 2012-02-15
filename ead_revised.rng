@@ -4064,7 +4064,7 @@
 			<ref name="xlink.label"/>
 		</optional>
 	</define>
-
+<!-- MODELS FOR REVISION -->
 <define name="access.part">
 	<element name="part">
 		<ref name="attrs-types"/>
