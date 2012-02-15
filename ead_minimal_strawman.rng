@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <grammar xmlns="http://relaxng.org/ns/structure/1.0"
     xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" ns="http://www.example.com/ead/minimal/">
     <a:documentation>A RelaxNG schema for a minimal version of optimized for EAD for data interchange</a:documentation>
     <start>
         <element name="ead">
@@ -134,31 +134,31 @@
                     </optional>
                     <text/>
                 </element>
-                <element name="ref">
-                    <text/>
-                </element>
+                <ref name="refs"/>
                 <text/>
             </choice>
         </zeroOrMore>
     </define>
     <define name="descBlocks">
         <zeroOrMore>
-            <choice>
-                <element name="span">
-                    <ref name="attrs-types"/>
-                    <optional>
-                        <attribute name="rend">
+            <element name="p">
+                <zeroOrMore>
+                    <choice>
+                        <element name="span">
+                            <ref name="attrs-types"/>
+                            <optional>
+                                <attribute name="rend">
+                                    <text/>
+                                </attribute>
+                            </optional>
                             <text/>
-                        </attribute>
-                    </optional>
-                    <text/>
-                </element>
-                <element name="ref">
-                    <text/>
-                </element>
-                <text/>
-            </choice>
-        </zeroOrMore>
+                        </element>
+                        <ref name="refs"/>
+                        <text/>
+                    </choice>
+                </zeroOrMore>
+            </element>
+        </zeroOrMore>       
     </define>
     <define name="attrs-types">
         <optional>
@@ -172,5 +172,12 @@
             </attribute>
         </optional>
 
+    </define>
+    <define name="refElement">
+        <attribute name="href"></attribute>
+        <text/>
+    </define>
+    <define name="refs">
+        <element name="xref"><ref name="refElement"></ref></element>
     </define>
 </grammar>

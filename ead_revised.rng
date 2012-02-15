@@ -923,7 +923,8 @@
 			<ref name="famname"/>
 			<ref name="geogname"/>
 			<ref name="name"/>
-			<element name="occupation">
+			<!--
+				<element name="occupation">
 				<ref name="a.common"/>
 				<ref name="a.access"/>
 				<optional>
@@ -936,8 +937,11 @@
 					</choice>
 				</zeroOrMore>
 			</element>
+			-->
+			<element name="occupation"><ref name="access.revised"/></element>
 			<ref name="persname"/>
-			<element name="subject">
+			<element name="subject"><ref name="access.revised"/></element>
+			<!--<element name="subject">
 				<ref name="a.common"/>
 				<ref name="a.access"/>
 				<optional>
@@ -950,7 +954,9 @@
 					</choice>
 				</zeroOrMore>
 			</element>
-			<element name="genreform">
+			-->
+			<element name="genreform"><ref name="access.revised.types"/></element>
+			<!--<element name="genreform">
 				<ref name="a.common"/>
 				<optional>
 					<attribute name="type"/>
@@ -966,6 +972,9 @@
 					</choice>
 				</zeroOrMore>
 			</element>
+			-->
+			<element name="function"><ref name="access.revised"/></element>
+			<!--
 			<element name="function">
 				<ref name="a.common"/>
 				<ref name="a.access"/>
@@ -979,6 +988,7 @@
 					</choice>
 				</zeroOrMore>
 			</element>
+			-->
 		</choice>
 	</define>
 	<define name="m.access.title">
@@ -1226,12 +1236,15 @@
 					<attribute name="type"/>
 				</optional>
 				<ref name="am.langcode"/>
-				<zeroOrMore>
+				<!-- eliminating mixed content
+					<zeroOrMore>
 					<choice>
 						<text/>
 						<ref name="m.phrase.basic"/>
 					</choice>
 				</zeroOrMore>
+				-->
+				<data type="string"/>
 			</element>
 			<element name="container">
 				<ref name="a.common"/>
@@ -1251,12 +1264,15 @@
 						<data type="IDREFS"/>
 					</attribute>
 				</optional>
-				<zeroOrMore>
+				<!-- eliminating mixed content
+					<zeroOrMore>
 					<choice>
-						<text/>
-						<ref name="m.phrase.basic"/>
+					<text/>
+					<ref name="m.phrase.basic"/>
 					</choice>
-				</zeroOrMore>
+					</zeroOrMore>
+				-->
+				<data type="string"/>
 			</element>
 			<ref name="dao"/>
 			<ref name="daogrp"/>
@@ -1288,8 +1304,12 @@
 					<attribute name="encodinganalog"/>
 				</optional>
 				<optional>
-					<attribute name="source">
+					<!--<attribute name="source">
 						<data type="NMTOKEN"/>
+					</attribute>
+					-->
+					<attribute name="source">
+						<data type="string"/>
 					</attribute>
 				</optional>
 				<optional>
@@ -1314,8 +1334,12 @@
 								<attribute name="unit"/>
 							</optional>
 							<optional>
-								<attribute name="source">
+								<!--<attribute name="source">
 									<data type="NMTOKEN"/>
+								</attribute>
+								-->
+								<attribute name="source">
+									<data type="string"/>
 								</attribute>
 							</optional>
 							<optional>
@@ -1406,12 +1430,15 @@
 				<optional>
 					<attribute name="encodinganalog"/>
 				</optional>
-				<zeroOrMore>
+				<!-- eliminating mixed content
+					<zeroOrMore>
 					<choice>
-						<text/>
-						<ref name="m.phrase.basic"/>
+					<text/>
+					<ref name="m.phrase.basic"/>
 					</choice>
-				</zeroOrMore>
+					</zeroOrMore>
+				-->
+				<data type="string"/>
 			</element>
 			<ref name="unittitle"/>
 		</choice>
@@ -1563,8 +1590,13 @@
 	</define>
 	<define name="a.access">
 		<optional>
+			<!--
 			<attribute name="source">
 				<data type="NMTOKEN"/>
+			</attribute>
+			-->
+			<attribute name="source">
+			<data type="string"/>
 			</attribute>
 		</optional>
 		<optional>
@@ -2158,6 +2190,12 @@
 				<choice>
 					<text/>
 					<ref name="m.phrase.basic"/>
+					<element name="dateFrom">
+						<ref name="dateParts"></ref>
+					</element>
+					<element name="dateTo">
+						<ref name="dateParts"></ref>
+					</element>
 				</choice>
 			</zeroOrMore>
 		</element>
@@ -2588,7 +2626,7 @@
 			</optional>
 			<oneOrMore>
 				<choice>
-					<ref name="m.blocks"/>
+					<!--<ref name="m.blocks"/>-->
 					<ref name="m.access.title"/>
 					<ref name="controlaccess"/>
 				</choice>
@@ -3374,8 +3412,10 @@
 			</zeroOrMore>
 		</element>
 	</define>
-	<define name="corpname">
+	<define name="corpname"> 
 		<element name="corpname">
+			<ref name="names.revised"/>
+			<!--
 			<ref name="a.common"/>
 			<ref name="a.access"/>
 			<optional>
@@ -3391,10 +3431,13 @@
 					<ref name="subarea"/>
 				</choice>
 			</zeroOrMore>
+			-->
 		</element>
 	</define>
 	<define name="famname">
 		<element name="famname">
+			<ref name="names.revised"/>
+			<!--
 			<ref name="a.common"/>
 			<ref name="a.access"/>
 			<optional>
@@ -3409,10 +3452,13 @@
 					<ref name="m.phrase.bare"/>
 				</choice>
 			</zeroOrMore>
+			-->
 		</element>
 	</define>
 	<define name="geogname">
 		<element name="geogname">
+			<ref name="names.revised"/>
+			<!--
 			<ref name="a.common"/>
 			<ref name="a.access"/>
 			<optional>
@@ -3427,10 +3473,13 @@
 					<ref name="m.phrase.bare"/>
 				</choice>
 			</zeroOrMore>
+			-->
 		</element>
 	</define>
 	<define name="name">
 		<element name="name">
+			<ref name="names.revised"/>
+			<!--
 			<ref name="a.common"/>
 			<ref name="a.access"/>
 			<optional>
@@ -3445,10 +3494,13 @@
 					<ref name="m.phrase.bare"/>
 				</choice>
 			</zeroOrMore>
+			-->
 		</element>
 	</define>
 	<define name="persname">
 		<element name="persname">
+			<ref name="names.revised"/>
+			<!--
 			<ref name="a.common"/>
 			<ref name="a.access"/>
 			<optional>
@@ -3461,8 +3513,10 @@
 				<choice>
 					<text/>
 					<ref name="m.phrase.bare"/>
+					<ref name="access.part"/> 
 				</choice>
 			</zeroOrMore>
+			-->
 		</element>
 	</define>
 	<define name="date">
@@ -4011,8 +4065,81 @@
 		</optional>
 	</define>
 
+<define name="access.part">
+	<element name="part">
+		<ref name="attrs-types"/>
+		<text/>
+	</element>
+</define>
+	<define name="attrs-types">
+		<optional>
+			<attribute name="localType">
+				<data type="string"/>
+			</attribute>
+		</optional>
+		<optional>
+			<attribute name="localTypeUri">
+				<data type="anyURI"/>
+			</attribute>
+		</optional>
+		
+	</define>
+<define name="access.revised">
+		<ref name="a.common"/>
+		<ref name="a.access"/>
+		<optional>
+			<attribute name="encodinganalog"/>
+		</optional>
+	    <zeroOrMore>
+	    	<choice>
+	    		<text/>
+	    		<ref name="access.part"/>
+	    	</choice>
+	    </zeroOrMore>	
+</define>
+<define name="access.revised.types">
+	<ref name="access.revised"/>
+	<ref name="attrs-types"/>
+</define>
+<define name="names.revised">
+		<ref name="access.revised.types"/>
+	<optional><attribute name="role"><text/></attribute></optional>
+	<optional><attribute name="roleUri"><data type="anyURI"/></attribute></optional>
+</define>
 
-
+<define name="dateParts">
+		<ref name="a.common"/>
+		<optional>
+			<attribute name="label"/>
+		</optional>
+		<optional>
+			<attribute name="type">
+				<choice>
+					<value>bulk</value>
+					<value>inclusive</value>
+				</choice>
+			</attribute>
+		</optional>
+		<optional>
+			<attribute name="datechar"/>
+		</optional>
+		<ref name="am.dates.era"/>
+		<ref name="am.dates.calendar"/>
+		<ref name="am.date.normal"/>
+		<optional>
+			<attribute name="certainty"/>
+		</optional>
+		<optional>
+			<attribute name="encodinganalog"/>
+		</optional>
+		<zeroOrMore>
+			<choice>
+				<text/>
+				<ref name="m.phrase.basic"/>
+			</choice>
+		</zeroOrMore>
+	
+</define>
 
 
 </grammar>

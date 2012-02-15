@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="ead_revised.rng" type="xml"?>
+<ead xmlns="urn:isbn:1-931666-22-9">
+    <eadheader>
+        <eadid/>
+        <filedesc>
+            <titlestmt>
+                <titleproper/>
+            </titlestmt>
+        </filedesc>
+    </eadheader>
+    <c level="collection">
+        <unittitle>title</unittitle>
+        <unitdate><dateFrom>1972</dateFrom><dateTo>1982</dateTo></unitdate>
+        <scopecontent>
+            <p>Scope and content note</p>
+        </scopecontent>
+        <controlaccess>
+            <subject authfilenumber="http://id.loc.gov/authorities/subjects/sh2001005992"
+                source="http://id.loc.gov/authorities/subjects/">
+                <part localType="topic">Women critics</part>--<part localType="geogname">United
+                    States</part></subject>
+            <geogname>
+                <part localType="OrdnanceSurveyID"
+                    localTypeUri="http://data.ordnancesurvey.co.uk/"
+                    >http://data.ordnancesurvey.co.uk/id/7000000000041428</part>
+                <part
+                    localType="DecimalLatitude"
+                    localTypeUri="http://www.w3.org/2003/01/geo/wgs84_pos#lat">51.507222</part>
+                <part
+                    localType="DecimalLongitude"
+                    localTypeUri="http://www.w3.org/2003/01/geo/wgs84_pos#long"
+                    >-0.1275</part>
+                <part localType="string">London</part></geogname>
+            <persname authfilenumber="http://id.loc.gov/authorities/names/n78085430" source="http://id.loc.gov/authorities/names">
+                <part localType="surname" localTypeUri="http://xmlns.com/foaf/spec/#term_familyName">Churchill</part>
+                <part localType="forename" localTypeUri="http://xmlns.com/foaf/spec/#term_givenName">Winston</part>
+                <part localType="dates">1874-1965</part>
+            </persname>
+        </controlaccess>
+        <c level="series">
+            <unittitle>Series 1: Correspondence</unittitle>
+            <c level="file">
+                <container type="Box">1</container>
+                <container type="Folder">1</container>
+                <unittitle>Smith, John</unittitle>
+                <unitdate><dateFrom>1972</dateFrom><dateTo>1973</dateTo></unitdate>
+            </c>
+        </c>
+    </c>
+</ead>
