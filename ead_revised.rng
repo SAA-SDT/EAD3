@@ -14,7 +14,7 @@ Implements the following revision requests accepted by TS-EAD subgroups:
 
 37.3 Abolish <did>
 
-39 Deprecate <descgrp>
+39. Deprecate <descgrp>
 
 40. Add ability to encode <controlaccess> and controlled terms in a more granular fashion
 
@@ -56,7 +56,7 @@ Implements the following revision requests accepted by TS-EAD subgroups:
 	
 	Editors (SAA/EADWG/EAD Schema Working Group):
 	
-	Francoise Bourdon (Bibliothèque nationale de France)
+	Francoise Bourdon (Bibliothï¿½que nationale de France)
 	Terry Catapano (Columbia University)
 	Jerry McDonough (University of Illinois)
 	Lee Mandell (New York University)
