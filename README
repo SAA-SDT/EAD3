@@ -1,9 +1,10 @@
-
 * ead_revised.rng: Revised version of EAD 2002 RNG schema to test proposed changes to EAD for its upcoming release in 2013
 
 * ead_revised_test_instance.xml: sample EAD for use in testing ead_revised.rng
 
-* ead_minimal_strawman.rng: An experimental RelaxNG schema for a minimal version of EAD optimized for data interchange
+* strawman/ : An experimental RelaxNG schema for a minimal version of EAD optimized for data interchange
 
-* ead_revision_test_instance.xml: sample EAD for use in testing ead_minimal_strawman.rng
+* * ead_minimal_strawman.rng
+
+* * ead_revision_test_instance.xml: sample EAD for use in testing ead_minimal_strawman.rng
 
