@@ -1,6 +1,0 @@
-<rules xmlns="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-    <namespace ns="urn:isbn:1-931666-22-9">
-        <validate schema="ead.rng"/>
-        <validate schema="ead_cul.sch"/>
-    </namespace>
-</rules>
