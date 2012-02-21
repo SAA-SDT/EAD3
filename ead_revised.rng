@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!-- This file has been revised to test proposed changes to EAD for its upcoming release in 2013 
 
-Implements the following revision requests accepted by TS-EAD subgroups:
+Implements the following revision requests provisionally accepted by TS-EAD subgroups:
 
 
 14. Allow logical links to related resources and entities (partially)
@@ -28,10 +28,16 @@ Implements the following revision requests accepted by TS-EAD subgroups:
 
 * source is now of type string rather than NMTOKEN
 
+45. Add a digital object identifier
+
 47. Date Encoding (partially)
 
 * Allow date ranges to be separately represented with beginning (from) and end
 (to)
+
+48. Allow more granular assignment of languages and scripts
+
+* added xml:lang to common attributes (a.common)
 
 51. Remove <archref>, <bibref> and <title> from <container>, etc...
 
@@ -106,8 +112,8 @@ Implements the following revision requests accepted by TS-EAD subgroups:
 -->
 
 
-
-<grammar datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" ns="urn:isbn:1-931666-22-9"
+<!-- removed ns urn:isbn:1-931666-22-9 -->
+<grammar datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
 	xmlns="http://relaxng.org/ns/structure/1.0"
 	xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
 	xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -1622,6 +1628,205 @@ Implements the following revision requests accepted by TS-EAD subgroups:
 					<value>external</value>
 					<value>internal</value>
 				</choice>
+			</attribute>
+		</optional>
+<!-- 2012-02-21; TC: added xml:lang -->
+		<optional>
+			<attribute name="xml:lang">
+				
+					<choice>
+						<value>aa</value>
+						<value>ak</value>
+						<value>as</value>
+						<value>ba</value>
+						<value>bi</value>
+						<value>br</value>
+						<value>ch</value>
+						<value>cs</value>
+						<value>da</value>
+						<value>ee</value>
+						<value>es</value>
+						<value>ff</value>
+						<value>fr</value>
+						<value>gl</value>
+						<value>ha</value>
+						<value>hr</value>
+						<value>hz</value>
+						<value>ig</value>
+						<value>io</value>
+						<value>iu</value>
+						<value>jv</value>
+						<value>ki</value>
+						<value>km</value>
+						<value>ks</value>
+						<value>ky</value>
+						<value>li</value>
+						<value>lu</value>
+						<value>mi</value>
+						<value>mo</value>
+						<value>my</value>
+						<value>ne</value>
+						<value>no</value>
+						<value>oc</value>
+						<value>os</value>
+						<value>ps</value>
+						<value>rn</value>
+						<value>sa</value>
+						<value>sg</value>
+						<value>sl</value>
+						<value>sq</value>
+						<value>su</value>
+						<value>te</value>
+						<value>tk</value>
+						<value>tr</value>
+						<value>ty</value>
+						<value>uz</value>
+						<value>wa</value>
+						<value>yo</value>
+						<value>ab</value>
+						<value>am</value>
+						<value>av</value>
+						<value>be</value>
+						<value>bm</value>
+						<value>bs</value>
+						<value>co</value>
+						<value>cu</value>
+						<value>de</value>
+						<value>el</value>
+						<value>et</value>
+						<value>fi</value>
+						<value>fy</value>
+						<value>gn</value>
+						<value>he</value>
+						<value>ht</value>
+						<value>ia</value>
+						<value>ii</value>
+						<value>is</value>
+						<value>iw</value>
+						<value>jw</value>
+						<value>kj</value>
+						<value>kn</value>
+						<value>ku</value>
+						<value>la</value>
+						<value>ln</value>
+						<value>lv</value>
+						<value>mk</value>
+						<value>mr</value>
+						<value>na</value>
+						<value>ng</value>
+						<value>nr</value>
+						<value>oj</value>
+						<value>pa</value>
+						<value>pt</value>
+						<value>ro</value>
+						<value>sc</value>
+						<value>sh</value>
+						<value>sm</value>
+						<value>sr</value>
+						<value>sv</value>
+						<value>tg</value>
+						<value>tl</value>
+						<value>ts</value>
+						<value>ug</value>
+						<value>ve</value>
+						<value>wo</value>
+						<value>za</value>
+						<value>ae</value>
+						<value>an</value>
+						<value>ay</value>
+						<value>bg</value>
+						<value>bn</value>
+						<value>ca</value>
+						<value>cv</value>
+						<value>dv</value>
+						<value>en</value>
+						<value>eu</value>
+						<value>fj</value>
+						<value>ga</value>
+						<value>gu</value>
+						<value>hi</value>
+						<value>hu</value>
+						<value>id</value>
+						<value>ik</value>
+						<value>ja</value>
+						<value>ka</value>
+						<value>kk</value>
+						<value>ko</value>
+						<value>kv</value>
+						<value>lb</value>
+						<value>lo</value>
+						<value>mg</value>
+						<value>ml</value>
+						<value>ms</value>
+						<value>nb</value>
+						<value>nl</value>
+						<value>nv</value>
+						<value>om</value>
+						<value>pi</value>
+						<value>qu</value>
+						<value>ru</value>
+						<value>sd</value>
+						<value>si</value>
+						<value>sn</value>
+						<value>ss</value>
+						<value>sw</value>
+						<value>th</value>
+						<value>tn</value>
+						<value>tt</value>
+						<value>uk</value>
+						<value>vi</value>
+						<value>xh</value>
+						<value>zh</value>
+						<value>af</value>
+						<value>ar</value>
+						<value>az</value>
+						<value>bh</value>
+						<value>bo</value>
+						<value>ce</value>
+						<value>cr</value>
+						<value>cy</value>
+						<value>dz</value>
+						<value>eo</value>
+						<value>fa</value>
+						<value>fo</value>
+						<value>gd</value>
+						<value>gv</value>
+						<value>ho</value>
+						<value>hy</value>
+						<value>ie</value>
+						<value>in</value>
+						<value>it</value>
+						<value>ji</value>
+						<value>kg</value>
+						<value>kl</value>
+						<value>kr</value>
+						<value>kw</value>
+						<value>lg</value>
+						<value>lt</value>
+						<value>mh</value>
+						<value>mn</value>
+						<value>mt</value>
+						<value>nd</value>
+						<value>nn</value>
+						<value>ny</value>
+						<value>or</value>
+						<value>pl</value>
+						<value>rm</value>
+						<value>rw</value>
+						<value>se</value>
+						<value>sk</value>
+						<value>so</value>
+						<value>st</value>
+						<value>ta</value>
+						<value>ti</value>
+						<value>to</value>
+						<value>tw</value>
+						<value>ur</value>
+						<value>vo</value>
+						<value>yi</value>
+						<value>zu</value>
+					</choice>
+
 			</attribute>
 		</optional>
 	</define>
@@ -3246,7 +3451,13 @@ Implements the following revision requests accepted by TS-EAD subgroups:
 				<ref name="head"/>
 			</optional>
 			<oneOrMore>
-				<ref name="m.blocks"/>
+				<choice><ref name="m.blocks"/>
+<!-- 2012-02-21; TC added repeatable daoID element -->
+				<element name="daoID">
+					<attribute name="IdType"><data type="string"></data></attribute>
+					<text/>
+				</element>
+				</choice>
 			</oneOrMore>
 		</element>
 	</define>

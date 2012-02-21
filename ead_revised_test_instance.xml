@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?oxygen RNGSchema="ead_revised.rng" type="xml"?>
-<ead xmlns="urn:isbn:1-931666-22-9">
+<ead xmlns="urn:isbn:1-931666-22-9" xmlns:xlink="http://www.w3.org/1999/xlink">
     <eadheader>
         <eadid/>
         <filedesc>
             <titlestmt>
-                <titleproper/>
+                <titleproper>Sample finding aid for testing revisions to EAD 2002</titleproper>
             </titlestmt>
         </filedesc>
     </eadheader>
     <c level="collection">
-        <unittitle>title</unittitle>
-        <unitdate><dateFrom>1972</dateFrom><dateTo>1982</dateTo></unitdate>
+        <unittitle>[Title]</unittitle>
+        <unitdate type="inclusive"><dateFrom>1872</dateFrom><dateTo>1982</dateTo></unitdate>
         <scopecontent>
-            <p>Scope and content note</p>
+            <p xml:lang="en">Materials include postcards, letters, and shoes.</p>
+            <p xml:lang="de">Zu den Materialien gehören Postkarten, Briefe und Schuhe.</p>
         </scopecontent>
         <controlaccess>
             <subject authfilenumber="http://id.loc.gov/authorities/subjects/sh2001005992"
@@ -32,6 +33,7 @@
                     localTypeUri="http://www.w3.org/2003/01/geo/wgs84_pos#long"
                     >-0.1275</part>
                 <part localType="string">London</part></geogname>
+            <geogname>New York</geogname>
             <persname authfilenumber="http://id.loc.gov/authorities/names/n78085430" source="http://id.loc.gov/authorities/names">
                 <part localType="surname" localTypeUri="http://xmlns.com/foaf/spec/#term_familyName">Churchill</part>
                 <part localType="forename" localTypeUri="http://xmlns.com/foaf/spec/#term_givenName">Winston</part>
@@ -44,7 +46,27 @@
                 <container type="Box">1</container>
                 <container type="Folder">1</container>
                 <unittitle>Smith, John</unittitle>
-                <unitdate><dateFrom>1972</dateFrom><dateTo>1973</dateTo></unitdate>
+                <unitdate><dateFrom>1982</dateFrom><dateTo>1972</dateTo></unitdate>
+                <dao xlink:type="simple">
+                    <daodesc>
+                        <daoID IdType="handle">123456/10987654</daoID>
+                        <daoID IdType="local">xyzaabbcc.1234</daoID>
+                    </daodesc>
+                </dao>
+            </c>
+        </c>
+        <c level="series">
+            <unittitle>Series 2: Shoes</unittitle>
+            <c level="file">
+                <container type="Box">1</container>
+                <container type="Folder">1</container>
+                <unittitle>Smith, John</unittitle>
+                <unitdate><dateFrom>1872</dateFrom><dateTo>1949</dateTo></unitdate>
+                <dao xlink:type="simple">
+                    <daodesc>
+                        <daoID IdType="handle">123456/1234678</daoID>
+                    </daodesc>
+                </dao>
             </c>
         </c>
     </c>
