@@ -3172,10 +3172,10 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 				<ref name="m.did"/>
 			</oneOrMore>
 			<zeroOrMore>
-				<choice>
-					<ref name="m.desc.full"/>
-					<ref name="c"/>
-				</choice>
+				<ref name="m.desc.full"/>
+			</zeroOrMore>
+			<zeroOrMore>
+				<ref name="c"/>
 			</zeroOrMore>
 			<!--
 				<zeroOrMore>
