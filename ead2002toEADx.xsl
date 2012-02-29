@@ -2,7 +2,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs xsi xd"
     xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"    version="2.0">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0">
     <xd:doc scope="stylesheet">
         <xd:desc>
             <xd:p><xd:b>Created on:</xd:b> Feb 27, 2012</xd:p>
@@ -44,22 +44,22 @@
 
     <xsl:template match="did | dsc | abbr | expan | descgrp">
         <xsl:comment>
-            <xsl:text>ELEMENT </xsl:text>
-            <xsl:value-of select="local-name()"/>
-            <xsl:text> REMOVED</xsl:text>
+            <xsl:call-template name="removedElement"/>
         </xsl:comment>
+        <xsl:message>
+            <xsl:call-template name="removedElement"/>
+        </xsl:message>
         <xsl:apply-templates/>
     </xsl:template>
 
     <!-- orphan elements -->
     <xsl:template match="descgrp/head | dsc/head | archdesc/runner ">
         <xsl:comment>
-            <xsl:text>ELEMENT </xsl:text>
-            <xsl:value-of select="local-name()"/>
-            <xsl:text>&#160;</xsl:text>
-            <xsl:value-of select="."/>
-            <xsl:text> REMOVED</xsl:text>
+            <xsl:call-template name="removedElement"/>
         </xsl:comment>
+        <xsl:message>
+            <xsl:call-template name="removedElement"/>
+        </xsl:message>
     </xsl:template>
 
     <!-- ############################################### -->
@@ -70,26 +70,29 @@
     <xsl:template
         match="container/ref | container/extref | container/linkgrp | container/bibref | container/title | container/archref">
         <xsl:comment>
-            <xsl:text>ELEMENT </xsl:text>
-            <xsl:value-of select="local-name()"/>
-            <xsl:text> REMOVED</xsl:text>
+            <xsl:call-template name="removedElement"/>
         </xsl:comment>
-        <xsl:apply-templates/>
+        <xsl:message>
+            <xsl:call-template name="removedElement"/>
+        </xsl:message>
     </xsl:template>
-    
+
     <xsl:template match="archdesc">
         <xsl:element name="archdesc">
             <xsl:copy-of select="@*"/>
-       <xsl:comment>
-           <xsl:text>&lt;c&gt; ELEMENT created</xsl:text>
-       </xsl:comment>
-        <c level="{@level}">
-            <xsl:apply-templates/>
-        </c>
+            <xsl:comment>
+                <xsl:text>c ELEMENT created as child of archdesc</xsl:text>
+            </xsl:comment>
+            <xsl:message>
+                <xsl:text>c ELEMENT created as child of archdesc</xsl:text>
+            </xsl:message>
+            <c level="{@level}">
+                <xsl:apply-templates/>
+            </c>
         </xsl:element>
     </xsl:template>
-    
-    
+
+
     <!-- ############################################### -->
     <!-- RENAMED ELEMENTS                                -->
     <!-- ############################################### -->
@@ -101,8 +104,14 @@
             <xsl:text>&#160;</xsl:text>
             <xsl:text>RENAMED as 'c'</xsl:text>
         </xsl:comment>
+        <xsl:message>
+            <xsl:text>ELEMENT </xsl:text>
+            <xsl:value-of select="local-name()"/>
+            <xsl:text>&#160;</xsl:text>
+            <xsl:text>RENAMED as 'c'</xsl:text>
+        </xsl:message>
         <xsl:element name="c">
-         <xsl:copy-of select="@*"/>            
+            <xsl:copy-of select="@*"/>
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
@@ -122,5 +131,17 @@
     </xsl:template>
     <xsl:template match="@xsi:schemaLocation" mode="strip-ns"
         xpath-default-namespace="http://www.w3.org/2001/XMLSchema-instance"/>
+
+
+    <!-- ############################################### -->
+    <!-- OTHER TEMPLATES                                 -->
+    <!-- ############################################### -->
+
+    <xsl:template name="removedElement">
+        <xsl:text>ELEMENT </xsl:text>
+        <xsl:value-of select="local-name()"/>
+        <xsl:text>&#160;</xsl:text>
+        <xsl:text>REMOVED</xsl:text>
+    </xsl:template>
 
 </xsl:stylesheet>
