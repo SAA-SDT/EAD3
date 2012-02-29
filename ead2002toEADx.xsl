@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs"
-    xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl" version="2.0">
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs xsi xd"
+    xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"    version="2.0">
     <xd:doc scope="stylesheet">
         <xd:desc>
             <xd:p><xd:b>Created on:</xd:b> Feb 27, 2012</xd:p>
@@ -50,8 +51,8 @@
         <xsl:apply-templates/>
     </xsl:template>
 
-    <!-- orphan heads -->
-    <xsl:template match="descgrp/head | dsc/head ">
+    <!-- orphan elements -->
+    <xsl:template match="descgrp/head | dsc/head | archdesc/runner ">
         <xsl:comment>
             <xsl:text>ELEMENT </xsl:text>
             <xsl:value-of select="local-name()"/>
@@ -76,6 +77,17 @@
         <xsl:apply-templates/>
     </xsl:template>
     
+    <xsl:template match="archdesc">
+        <xsl:element name="archdesc">
+            <xsl:copy-of select="@*"/>
+       <xsl:comment>
+           <xsl:text>&lt;c&gt; ELEMENT created</xsl:text>
+       </xsl:comment>
+        <c level="{@level}">
+            <xsl:apply-templates/>
+        </c>
+        </xsl:element>
+    </xsl:template>
     
     
     <!-- ############################################### -->
@@ -108,7 +120,7 @@
             <xsl:apply-templates select="@*|node()" mode="strip-ns"/>
         </xsl:copy>
     </xsl:template>
-    <xsl:template match="@schemaLocation"
+    <xsl:template match="@xsi:schemaLocation" mode="strip-ns"
         xpath-default-namespace="http://www.w3.org/2001/XMLSchema-instance"/>
 
 </xsl:stylesheet>
