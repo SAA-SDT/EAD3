@@ -981,9 +981,13 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 				</zeroOrMore>
 			</element>
 			-->
-			<element name="occupation"><ref name="access.revised"/></element>
+			<element name="occupation">
+				<ref name="access.revised"/>
+			</element>
 			<ref name="persname"/>
-			<element name="subject"><ref name="access.revised"/></element>
+			<element name="subject">
+				<ref name="access.revised"/>
+			</element>
 			<!--<element name="subject">
 				<ref name="a.common"/>
 				<ref name="a.access"/>
@@ -998,7 +1002,9 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 				</zeroOrMore>
 			</element>
 			-->
-			<element name="genreform"><ref name="access.revised.types"/></element>
+			<element name="genreform">
+				<ref name="access.revised.types"/>
+			</element>
 			<!--<element name="genreform">
 				<ref name="a.common"/>
 				<optional>
@@ -1016,7 +1022,9 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 				</zeroOrMore>
 			</element>
 			-->
-			<element name="function"><ref name="access.revised"/></element>
+			<element name="function">
+				<ref name="access.revised"/>
+			</element>
 			<!--
 			<element name="function">
 				<ref name="a.common"/>
@@ -1630,202 +1638,202 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 				</choice>
 			</attribute>
 		</optional>
-<!-- 2012-02-21; TC: added xml:lang -->
+		<!-- 2012-02-21; TC: added xml:lang -->
 		<optional>
 			<attribute name="xml:lang">
-				
-					<choice>
-						<value>aa</value>
-						<value>ak</value>
-						<value>as</value>
-						<value>ba</value>
-						<value>bi</value>
-						<value>br</value>
-						<value>ch</value>
-						<value>cs</value>
-						<value>da</value>
-						<value>ee</value>
-						<value>es</value>
-						<value>ff</value>
-						<value>fr</value>
-						<value>gl</value>
-						<value>ha</value>
-						<value>hr</value>
-						<value>hz</value>
-						<value>ig</value>
-						<value>io</value>
-						<value>iu</value>
-						<value>jv</value>
-						<value>ki</value>
-						<value>km</value>
-						<value>ks</value>
-						<value>ky</value>
-						<value>li</value>
-						<value>lu</value>
-						<value>mi</value>
-						<value>mo</value>
-						<value>my</value>
-						<value>ne</value>
-						<value>no</value>
-						<value>oc</value>
-						<value>os</value>
-						<value>ps</value>
-						<value>rn</value>
-						<value>sa</value>
-						<value>sg</value>
-						<value>sl</value>
-						<value>sq</value>
-						<value>su</value>
-						<value>te</value>
-						<value>tk</value>
-						<value>tr</value>
-						<value>ty</value>
-						<value>uz</value>
-						<value>wa</value>
-						<value>yo</value>
-						<value>ab</value>
-						<value>am</value>
-						<value>av</value>
-						<value>be</value>
-						<value>bm</value>
-						<value>bs</value>
-						<value>co</value>
-						<value>cu</value>
-						<value>de</value>
-						<value>el</value>
-						<value>et</value>
-						<value>fi</value>
-						<value>fy</value>
-						<value>gn</value>
-						<value>he</value>
-						<value>ht</value>
-						<value>ia</value>
-						<value>ii</value>
-						<value>is</value>
-						<value>iw</value>
-						<value>jw</value>
-						<value>kj</value>
-						<value>kn</value>
-						<value>ku</value>
-						<value>la</value>
-						<value>ln</value>
-						<value>lv</value>
-						<value>mk</value>
-						<value>mr</value>
-						<value>na</value>
-						<value>ng</value>
-						<value>nr</value>
-						<value>oj</value>
-						<value>pa</value>
-						<value>pt</value>
-						<value>ro</value>
-						<value>sc</value>
-						<value>sh</value>
-						<value>sm</value>
-						<value>sr</value>
-						<value>sv</value>
-						<value>tg</value>
-						<value>tl</value>
-						<value>ts</value>
-						<value>ug</value>
-						<value>ve</value>
-						<value>wo</value>
-						<value>za</value>
-						<value>ae</value>
-						<value>an</value>
-						<value>ay</value>
-						<value>bg</value>
-						<value>bn</value>
-						<value>ca</value>
-						<value>cv</value>
-						<value>dv</value>
-						<value>en</value>
-						<value>eu</value>
-						<value>fj</value>
-						<value>ga</value>
-						<value>gu</value>
-						<value>hi</value>
-						<value>hu</value>
-						<value>id</value>
-						<value>ik</value>
-						<value>ja</value>
-						<value>ka</value>
-						<value>kk</value>
-						<value>ko</value>
-						<value>kv</value>
-						<value>lb</value>
-						<value>lo</value>
-						<value>mg</value>
-						<value>ml</value>
-						<value>ms</value>
-						<value>nb</value>
-						<value>nl</value>
-						<value>nv</value>
-						<value>om</value>
-						<value>pi</value>
-						<value>qu</value>
-						<value>ru</value>
-						<value>sd</value>
-						<value>si</value>
-						<value>sn</value>
-						<value>ss</value>
-						<value>sw</value>
-						<value>th</value>
-						<value>tn</value>
-						<value>tt</value>
-						<value>uk</value>
-						<value>vi</value>
-						<value>xh</value>
-						<value>zh</value>
-						<value>af</value>
-						<value>ar</value>
-						<value>az</value>
-						<value>bh</value>
-						<value>bo</value>
-						<value>ce</value>
-						<value>cr</value>
-						<value>cy</value>
-						<value>dz</value>
-						<value>eo</value>
-						<value>fa</value>
-						<value>fo</value>
-						<value>gd</value>
-						<value>gv</value>
-						<value>ho</value>
-						<value>hy</value>
-						<value>ie</value>
-						<value>in</value>
-						<value>it</value>
-						<value>ji</value>
-						<value>kg</value>
-						<value>kl</value>
-						<value>kr</value>
-						<value>kw</value>
-						<value>lg</value>
-						<value>lt</value>
-						<value>mh</value>
-						<value>mn</value>
-						<value>mt</value>
-						<value>nd</value>
-						<value>nn</value>
-						<value>ny</value>
-						<value>or</value>
-						<value>pl</value>
-						<value>rm</value>
-						<value>rw</value>
-						<value>se</value>
-						<value>sk</value>
-						<value>so</value>
-						<value>st</value>
-						<value>ta</value>
-						<value>ti</value>
-						<value>to</value>
-						<value>tw</value>
-						<value>ur</value>
-						<value>vo</value>
-						<value>yi</value>
-						<value>zu</value>
-					</choice>
+
+				<choice>
+					<value>aa</value>
+					<value>ak</value>
+					<value>as</value>
+					<value>ba</value>
+					<value>bi</value>
+					<value>br</value>
+					<value>ch</value>
+					<value>cs</value>
+					<value>da</value>
+					<value>ee</value>
+					<value>es</value>
+					<value>ff</value>
+					<value>fr</value>
+					<value>gl</value>
+					<value>ha</value>
+					<value>hr</value>
+					<value>hz</value>
+					<value>ig</value>
+					<value>io</value>
+					<value>iu</value>
+					<value>jv</value>
+					<value>ki</value>
+					<value>km</value>
+					<value>ks</value>
+					<value>ky</value>
+					<value>li</value>
+					<value>lu</value>
+					<value>mi</value>
+					<value>mo</value>
+					<value>my</value>
+					<value>ne</value>
+					<value>no</value>
+					<value>oc</value>
+					<value>os</value>
+					<value>ps</value>
+					<value>rn</value>
+					<value>sa</value>
+					<value>sg</value>
+					<value>sl</value>
+					<value>sq</value>
+					<value>su</value>
+					<value>te</value>
+					<value>tk</value>
+					<value>tr</value>
+					<value>ty</value>
+					<value>uz</value>
+					<value>wa</value>
+					<value>yo</value>
+					<value>ab</value>
+					<value>am</value>
+					<value>av</value>
+					<value>be</value>
+					<value>bm</value>
+					<value>bs</value>
+					<value>co</value>
+					<value>cu</value>
+					<value>de</value>
+					<value>el</value>
+					<value>et</value>
+					<value>fi</value>
+					<value>fy</value>
+					<value>gn</value>
+					<value>he</value>
+					<value>ht</value>
+					<value>ia</value>
+					<value>ii</value>
+					<value>is</value>
+					<value>iw</value>
+					<value>jw</value>
+					<value>kj</value>
+					<value>kn</value>
+					<value>ku</value>
+					<value>la</value>
+					<value>ln</value>
+					<value>lv</value>
+					<value>mk</value>
+					<value>mr</value>
+					<value>na</value>
+					<value>ng</value>
+					<value>nr</value>
+					<value>oj</value>
+					<value>pa</value>
+					<value>pt</value>
+					<value>ro</value>
+					<value>sc</value>
+					<value>sh</value>
+					<value>sm</value>
+					<value>sr</value>
+					<value>sv</value>
+					<value>tg</value>
+					<value>tl</value>
+					<value>ts</value>
+					<value>ug</value>
+					<value>ve</value>
+					<value>wo</value>
+					<value>za</value>
+					<value>ae</value>
+					<value>an</value>
+					<value>ay</value>
+					<value>bg</value>
+					<value>bn</value>
+					<value>ca</value>
+					<value>cv</value>
+					<value>dv</value>
+					<value>en</value>
+					<value>eu</value>
+					<value>fj</value>
+					<value>ga</value>
+					<value>gu</value>
+					<value>hi</value>
+					<value>hu</value>
+					<value>id</value>
+					<value>ik</value>
+					<value>ja</value>
+					<value>ka</value>
+					<value>kk</value>
+					<value>ko</value>
+					<value>kv</value>
+					<value>lb</value>
+					<value>lo</value>
+					<value>mg</value>
+					<value>ml</value>
+					<value>ms</value>
+					<value>nb</value>
+					<value>nl</value>
+					<value>nv</value>
+					<value>om</value>
+					<value>pi</value>
+					<value>qu</value>
+					<value>ru</value>
+					<value>sd</value>
+					<value>si</value>
+					<value>sn</value>
+					<value>ss</value>
+					<value>sw</value>
+					<value>th</value>
+					<value>tn</value>
+					<value>tt</value>
+					<value>uk</value>
+					<value>vi</value>
+					<value>xh</value>
+					<value>zh</value>
+					<value>af</value>
+					<value>ar</value>
+					<value>az</value>
+					<value>bh</value>
+					<value>bo</value>
+					<value>ce</value>
+					<value>cr</value>
+					<value>cy</value>
+					<value>dz</value>
+					<value>eo</value>
+					<value>fa</value>
+					<value>fo</value>
+					<value>gd</value>
+					<value>gv</value>
+					<value>ho</value>
+					<value>hy</value>
+					<value>ie</value>
+					<value>in</value>
+					<value>it</value>
+					<value>ji</value>
+					<value>kg</value>
+					<value>kl</value>
+					<value>kr</value>
+					<value>kw</value>
+					<value>lg</value>
+					<value>lt</value>
+					<value>mh</value>
+					<value>mn</value>
+					<value>mt</value>
+					<value>nd</value>
+					<value>nn</value>
+					<value>ny</value>
+					<value>or</value>
+					<value>pl</value>
+					<value>rm</value>
+					<value>rw</value>
+					<value>se</value>
+					<value>sk</value>
+					<value>so</value>
+					<value>st</value>
+					<value>ta</value>
+					<value>ti</value>
+					<value>to</value>
+					<value>tw</value>
+					<value>ur</value>
+					<value>vo</value>
+					<value>yi</value>
+					<value>zu</value>
+				</choice>
 
 			</attribute>
 		</optional>
@@ -1838,7 +1846,7 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 			</attribute>
 			-->
 			<attribute name="source">
-			<data type="string"/>
+				<data type="string"/>
 			</attribute>
 		</optional>
 		<optional>
@@ -2171,9 +2179,8 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 					</zeroOrMore>
 				</element>
 			</optional>
-			<ref name="c"/>
-	 <!--
-				<element name="archdesc">
+
+			<element name="archdesc">
 				<ref name="a.common"/>
 				<attribute name="level">
 					<choice>
@@ -2189,6 +2196,8 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 				<optional>
 					<attribute name="relatedencoding"/>
 				</optional>
+				<ref name="c"/>
+				<!--
 				<zeroOrMore>
 					<element name="runner">
 						<ref name="a.common"/>
@@ -2216,8 +2225,9 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 				<zeroOrMore>
 					<ref name="m.desc.full"/>
 				</zeroOrMore>
-				</element>
-			-->
+					-->
+			</element>
+
 		</element>
 	</define>
 	<define name="titleproper">
@@ -2433,10 +2443,10 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 					<text/>
 					<ref name="m.phrase.basic"/>
 					<element name="dateFrom">
-						<ref name="dateParts"></ref>
+						<ref name="dateParts"/>
 					</element>
 					<element name="dateTo">
-						<ref name="dateParts"></ref>
+						<ref name="dateParts"/>
 					</element>
 				</choice>
 			</zeroOrMore>
@@ -3158,7 +3168,9 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 			<!--
 			<ref name="did"/>
 			-->
-			<oneOrMore><ref name="m.did"/></oneOrMore>
+			<oneOrMore>
+				<ref name="m.did"/>
+			</oneOrMore>
 			<zeroOrMore>
 				<choice>
 					<ref name="m.desc.full"/>
@@ -3451,12 +3463,15 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 				<ref name="head"/>
 			</optional>
 			<oneOrMore>
-				<choice><ref name="m.blocks"/>
-<!-- 2012-02-21; TC added repeatable daoID element -->
-				<element name="daoID">
-					<attribute name="IdType"><data type="string"></data></attribute>
-					<text/>
-				</element>
+				<choice>
+					<ref name="m.blocks"/>
+					<!-- 2012-02-21; TC added repeatable daoID element -->
+					<element name="daoID">
+						<attribute name="IdType">
+							<data type="string"/>
+						</attribute>
+						<text/>
+					</element>
 				</choice>
 			</oneOrMore>
 		</element>
@@ -3660,9 +3675,12 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 			</zeroOrMore>
 		</element>
 	</define>
-	<define name="corpname"> 
+	<define name="corpname">
 		<element name="corpname">
-			<ref name="names.revised"/>
+			<interleave>
+				<ref name="names.revised"/>
+				<ref name="subarea"/>
+			</interleave>
 			<!--
 			<ref name="a.common"/>
 			<ref name="a.access"/>
@@ -4312,13 +4330,13 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 			<ref name="xlink.label"/>
 		</optional>
 	</define>
-<!-- MODELS FOR REVISION -->
-<define name="access.part">
-	<element name="part">
-		<ref name="attrs-types"/>
-		<text/>
-	</element>
-</define>
+	<!-- MODELS FOR REVISION -->
+	<define name="access.part">
+		<element name="part">
+			<ref name="attrs-types"/>
+			<text/>
+		</element>
+	</define>
 	<define name="attrs-types">
 		<optional>
 			<attribute name="localType">
@@ -4330,32 +4348,40 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 				<data type="anyURI"/>
 			</attribute>
 		</optional>
-		
+
 	</define>
-<define name="access.revised">
+	<define name="access.revised">
 		<ref name="a.common"/>
 		<ref name="a.access"/>
 		<optional>
 			<attribute name="encodinganalog"/>
 		</optional>
-	    <zeroOrMore>
-	    	<choice>
-	    		<text/>
-	    		<ref name="access.part"/>
-	    	</choice>
-	    </zeroOrMore>	
-</define>
-<define name="access.revised.types">
-	<ref name="access.revised"/>
-	<ref name="attrs-types"/>
-</define>
-<define name="names.revised">
+		<zeroOrMore>
+			<choice>
+				<text/>
+				<ref name="access.part"/>
+			</choice>
+		</zeroOrMore>
+	</define>
+	<define name="access.revised.types">
+		<ref name="access.revised"/>
+		<ref name="attrs-types"/>
+	</define>
+	<define name="names.revised">
 		<ref name="access.revised.types"/>
-	<optional><attribute name="role"><text/></attribute></optional>
-	<optional><attribute name="roleUri"><data type="anyURI"/></attribute></optional>
-</define>
+		<optional>
+			<attribute name="role">
+				<text/>
+			</attribute>
+		</optional>
+		<optional>
+			<attribute name="roleUri">
+				<data type="anyURI"/>
+			</attribute>
+		</optional>
+	</define>
 
-<define name="dateParts">
+	<define name="dateParts">
 		<ref name="a.common"/>
 		<optional>
 			<attribute name="label"/>
@@ -4386,8 +4412,8 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 				<ref name="m.phrase.basic"/>
 			</choice>
 		</zeroOrMore>
-	
-</define>
+
+	</define>
 
 
 </grammar>
