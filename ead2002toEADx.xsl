@@ -2,7 +2,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs xsi xd"
     xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"    version="2.0">
     <xd:doc scope="stylesheet">
         <xd:desc>
             <xd:p><xd:b>Created on:</xd:b> Feb 27, 2012</xd:p>
@@ -41,7 +41,7 @@
     <!-- DEPRECATED ELEMENTS                             -->
     <!-- ############################################### -->
 
-    <xsl:template match="did | dsc | abbr | expan | descgrp">
+    <xsl:template match="did | dsc | abbr | expan | descgrp | frontmatter">
         <xsl:comment>
             <xsl:call-template name="removedElement"/>
         </xsl:comment>
@@ -76,6 +76,46 @@
         </xsl:message>
     </xsl:template>
 
+<xsl:template match="eadheader">
+    <xsl:comment>
+        <xsl:text>eadheader now control: </xsl:text>
+        <xsl:text>Inserting minimal control element</xsl:text>
+    </xsl:comment>
+    <xsl:message>
+        <xsl:text>eadheader now control: </xsl:text>
+        <xsl:text>Inserting minimal control element</xsl:text>
+    </xsl:message>
+    <control>
+        <eadid>xxx</eadid>
+        <titleproper>xxx</titleproper>
+        <maintenanceAgency>
+            <agencyName>xxxx</agencyName>
+        </maintenanceAgency>
+        <maintenanceStatus>derived</maintenanceStatus>
+        <descriptionMaintenanceHistory>
+            <maintenanceEvent>
+                <eventType>xxx</eventType>
+                <eventDateTime>xxx</eventDateTime>
+                <agentType>xxx</agentType>
+                <agent>xxx</agent>
+            </maintenanceEvent>
+        </descriptionMaintenanceHistory>
+        <instanceMaintenanceHistory>
+            <maintenanceEvent>
+                <eventType>derived</eventType>
+                <eventDateTime><xsl:value-of select="current-dateTime()"/></eventDateTime>
+                <agentType>human</agentType>
+                <agent>Terry Catapano</agent>
+            </maintenanceEvent>
+        </instanceMaintenanceHistory>
+        <languageDeclaration>
+            <language languageCode="eng">xxx</language>
+            <script scriptCode="Latn">xxx</script>
+        </languageDeclaration>
+        <publicationStatus>xxx</publicationStatus>
+    </control>
+</xsl:template>
+
     <xsl:template match="archdesc">
         <xsl:element name="archdesc">
             <xsl:copy-of select="@*"/>
@@ -90,6 +130,7 @@
             </c>
         </xsl:element>
     </xsl:template>
+    
 
 
     <!-- ############################################### -->
