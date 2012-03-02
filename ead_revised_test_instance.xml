@@ -1,14 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?oxygen RNGSchema="ead_revised.rng" type="xml"?>
-<ead xmlns="urn:isbn:1-931666-22-9" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <eadheader>
-        <eadid/>
-        <filedesc>
-            <titlestmt>
-                <titleproper>Sample finding aid for testing revisions to EAD 2002</titleproper>
-            </titlestmt>
-        </filedesc>
-    </eadheader>
+<ead xmlns="http://plazi.org/ead/revised" xmlns:xlink="http://www.w3.org/1999/xlink">
+<control>
+    <eadid>test</eadid>
+    <otherRecordId localType="url">http://example.com/ead/1234</otherRecordId>
+    <titleproper>EAD Revised test instance</titleproper>
+    <maintenanceAgency>
+        <agencyName>SAA-SDT</agencyName>
+    </maintenanceAgency>
+    <maintenanceStatus>new</maintenanceStatus>
+    <descriptionMaintenanceHistory>
+        <maintenanceEvent>
+            <eventType>created</eventType>
+            <eventDateTime>2012-03-02</eventDateTime>
+            <agentType>human</agentType>
+            <agent>Terry Catapano</agent>
+        </maintenanceEvent>
+    </descriptionMaintenanceHistory>
+    <instanceMaintenanceHistory>
+        <maintenanceEvent>
+            <eventType>created</eventType>
+            <eventDateTime>2012-03-02</eventDateTime>
+            <agentType>human</agentType>
+            <agent>Terry Catapano</agent>
+        </maintenanceEvent>
+    </instanceMaintenanceHistory>
+    <languageDeclaration>
+        <language languageCode="eng">English</language>
+        <script scriptCode="Latn">Latin</script>
+    </languageDeclaration>
+    <publicationStatus>inProcess</publicationStatus>
+</control>
+    <archdesc level="collection">
     <c level="collection">
         <unittitle>[Title]</unittitle>
         <unitdate type="inclusive"><dateFrom>1872</dateFrom><dateTo>1982</dateTo></unitdate>
@@ -70,4 +93,5 @@
             </c>
         </c>
     </c>
+    </archdesc>
 </ead>
