@@ -31,7 +31,6 @@
 
         <!-- Copy the current node -->
         <xsl:copy>
-
             <!-- Including any attributes it has and any child nodes -->
             <xsl:apply-templates select="@*|node()"/>
         </xsl:copy>
