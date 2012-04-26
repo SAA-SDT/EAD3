@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
+
 <!-- This file has been revised to test proposed changes to EAD for its upcoming release in 2013 
 
 Implements the following revision requests provisionally accepted by TS-EAD subgroups:
 
-
-14. Allow logical links to related resources and entities (partially)
-
-* EAD should move to xlink (already implemented in EAD 2002 RNG on which this schema is based)
+9. eadgrp, archdescgrp, and dscgrp removed
 
 19. Change the model for <eadheader> in line with the control area in EAC-CPF
 
@@ -18,26 +16,26 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 <titleproper>
 <subtitle>
 <maintenanceAgency>
-        <agencyCode>
-        <agencyName>
-        <descriptiveNote>
-         <otherAgencyCode>
+<agencyCode>
+<agencyName>
+<descriptiveNote>
+<otherAgencyCode>
 <maintenanceStatus>
 <descriptionMaintenanceHistory>
-       <maintenanceEvent>
-           <agent>
-           <agentType>
-           <descriptionEventType>
-           <eventDateTime>
-           <eventDescription>
-           <eventPlace>?
+<maintenanceEvent>
+<agent>
+<agentType>
+<descriptionEventType>
+<eventDateTime>
+<eventDescription>
+<eventPlace>?
 <instanceMaintenanceHistory>
-       <maintenanceEvent>
-          <agent>
-          <agentType>
-          <instanceEventType>
-          <eventDateTime>
-          <eventDescription>
+<maintenanceEvent>
+<agent>
+<agentType>
+<instanceEventType>
+<eventDateTime>
+<eventDescription>
 <editionstmt>?
 <seriesstmt>?
 <notestmt>?
@@ -49,66 +47,54 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 <localControl>
 <localTypeDeclaration>
 
+30. Eliminate Frontmatter
 
+33. Review purpose of <dsc>
 
-20. Eliminate the <eadheader> (except for the <eadid>) and <frontmatter>
+* optional <dsc> replaced by optional choice of <dsc> or <c>/<c01> in <archdesc>
+* <dsc> removed from <dsc>, <c>, and <c01>
 
-* removed <frontmatter>
-
-21. <eadid> should not only be mandatory but have mandatory content
-
-26. Allow the recording of the file size of EAD instance
-
-* via <otherRecordId> and <localControl>
-
-27. Add a flag for the presence of <dao>s in the EAD instance
-
-* via <otherRecordId> and <localControl>
-
-30. Remove the element <frontmatter>
-
-31. Allow the recording of record identifiers applied to the EAD record in various systems
-
-* via <otherRecordId> and <localControl>
-
-
-32. <archdesc> should be a wrapper tag for components alone
-
-33. Review purpose of <dsc> (i.e., deprecate)
-
-37.3 Abolish <did>
+37.2 Abolish <abbr> [and <expan>]
 
 39. Deprecate <descgrp>
 
-40. Add ability to encode <controlaccess> and controlled terms in a more granular fashion
+14. Allow logical links to related resources and entities
 
-* added <part> to <subject>, <function>, <occupation>, and <*name> elments
+* use XLink model [xlink namespace elements already implemented in EAD 2002 RNG schema]
 
-41. Add a GEOCODE attribute for the <geogname> element
+* add EAC-CPF based <relations> element to <archdesc>, <c>, and <c01>
+** note: replaced xml:id with a.common, used EAD definition of <p> rather than EAC-CPF <p>
 
-* implemented via repeatable child <part> element
+15. Allow the insertion of valid data from other XML namespaces
 
-42. Allow the source attribute of <*name> elements to have URLs as values
+* implemented by <objectXMLData> element in <relations> per 14 above
+** Note <objectXMLData> currently allows any *foreign* namespace as a means to avoid id datatype complications
 
-* source is now of type string rather than NMTOKEN
-
-45. Add a digital object identifier
-
-47. Date Encoding (partially)
-
-* Allow date ranges to be separately represented with beginning (from) and end
-(to)
-
-48. Allow more granular assignment of languages and scripts
-
-* added xml:lang to common attributes (a.common)
-
-51. Remove <archref>, <bibref> and <title> from <container>, etc...
+52. Don't allow <acqinfo> element within <custodhist>
 
 
+
+Other changes:
+
+* Changed namespace to "http://saa-sdt.example.org/ead/revised"
+* Remove <arrangement> from <scopecontent>
+* Remove <unitdate> from <unittitle>
+* <blockquote> removed
+* Promote <legalstatus> from <accessrestrict> to sibling of other descriptive note elements
+** [Note: add <p> to content model?]
+* Remove <editionstmt>, <seriesstmt>, and <notestmt>
+* Add @normal to <unitdate>
+* <address> now only in <repository> and [<publicationstmt>]
+* @source now datatype token
+* @type added to <dao>
+* <dao> now only in <c>, <c#>, and <archdesc>
+* @continuation removed
+* deprecate/remove <runner>
+* deprecate <thead> in dsc and c
+* eliminate @tpattern
+* deprecate <fileplan>
 -->
-
-<!-- 
+<!--
 	EAD 2002 Relax NG Schema
 	Version: 200804 Release
 	Date: 20080421
@@ -126,7 +112,7 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 	
 	Editors (SAA/EADWG/EAD Schema Working Group):
 	
-	Francoise Bourdon (Bibliothï¿½que nationale de France)
+	Francoise Bourdon (Bibliothèque nationale de France)
 	Terry Catapano (Columbia University)
 	Jerry McDonough (University of Illinois)
 	Lee Mandell (New York University)
@@ -174,13 +160,11 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 	version of the schema conform to xlink.xsd instance used by MODS and METS (20080421)
 	
 -->
-
-
-<!-- removed ns urn:isbn:1-931666-22-9 -->
-<grammar datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
+<!-- changed ns from urn:isbn:1-931666-22-9 to provisional http://saa-sdt.example.org/ead/revised" -->
+<grammar datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" ns="http://saa-sdt.example.org/ead/revised"
 	xmlns="http://relaxng.org/ns/structure/1.0"
 	xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-	xmlns:xlink="http://www.w3.org/1999/xlink" ns="http://plazi.org/ead/revised">
+	xmlns:xlink="http://www.w3.org/1999/xlink">
 
 
 	<start>
@@ -1030,8 +1014,7 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 			<ref name="famname"/>
 			<ref name="geogname"/>
 			<ref name="name"/>
-			<!--
-				<element name="occupation">
+			<element name="occupation">
 				<ref name="a.common"/>
 				<ref name="a.access"/>
 				<optional>
@@ -1043,16 +1026,9 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 						<ref name="m.phrase.bare"/>
 					</choice>
 				</zeroOrMore>
-			</element>
-			-->
-			<element name="occupation">
-				<ref name="access.revised"/>
 			</element>
 			<ref name="persname"/>
 			<element name="subject">
-				<ref name="access.revised"/>
-			</element>
-			<!--<element name="subject">
 				<ref name="a.common"/>
 				<ref name="a.access"/>
 				<optional>
@@ -1065,11 +1041,7 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 					</choice>
 				</zeroOrMore>
 			</element>
-			-->
 			<element name="genreform">
-				<ref name="access.revised.types"/>
-			</element>
-			<!--<element name="genreform">
 				<ref name="a.common"/>
 				<optional>
 					<attribute name="type"/>
@@ -1085,11 +1057,6 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 					</choice>
 				</zeroOrMore>
 			</element>
-			-->
-			<element name="function">
-				<ref name="access.revised"/>
-			</element>
-			<!--
 			<element name="function">
 				<ref name="a.common"/>
 				<ref name="a.access"/>
@@ -1103,7 +1070,6 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 					</choice>
 				</zeroOrMore>
 			</element>
-			-->
 		</choice>
 	</define>
 	<define name="m.access.title">
@@ -1139,8 +1105,10 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 	<define name="m.phrase.basic.norefs">
 		<choice>
 			<ref name="m.phrase.bare"/>
-			<ref name="abbr"/>
+			<!-- TC: 2012-03-07: Removed <abbr> and <expan> -->
+			<!-- <ref name="abbr"/>
 			<ref name="expan"/>
+			-->
 		</choice>
 	</define>
 	<define name="m.phrase.basic">
@@ -1158,7 +1126,7 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 	</define>
 	<define name="m.inter.noquote">
 		<choice>
-			<ref name="address"/>
+			<!-- <ref name="address"/> -->
 			<element name="chronlist">
 				<ref name="a.common"/>
 				<optional>
@@ -1320,7 +1288,9 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 	<define name="m.inter">
 		<choice>
 			<ref name="m.inter.noquote"/>
-			<element name="blockquote">
+			<!-- TC; 2012-03-07: Removed <blockquote> -->
+			<!--
+				<element name="blockquote">
 				<ref name="a.common"/>
 				<oneOrMore>
 					<choice>
@@ -1329,6 +1299,7 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 					</choice>
 				</oneOrMore>
 			</element>
+			-->
 		</choice>
 	</define>
 	<define name="m.blocks">
@@ -1351,15 +1322,12 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 					<attribute name="type"/>
 				</optional>
 				<ref name="am.langcode"/>
-				<!-- eliminating mixed content
-					<zeroOrMore>
+				<zeroOrMore>
 					<choice>
 						<text/>
 						<ref name="m.phrase.basic"/>
 					</choice>
 				</zeroOrMore>
-				-->
-				<data type="string"/>
 			</element>
 			<element name="container">
 				<ref name="a.common"/>
@@ -1379,18 +1347,17 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 						<data type="IDREFS"/>
 					</attribute>
 				</optional>
-				<!-- eliminating mixed content
-					<zeroOrMore>
+				<zeroOrMore>
 					<choice>
-					<text/>
-					<ref name="m.phrase.basic"/>
+						<text/>
+						<ref name="m.phrase.basic"/>
 					</choice>
-					</zeroOrMore>
-				-->
-				<data type="string"/>
+				</zeroOrMore>
 			</element>
-			<ref name="dao"/>
+			<!-- TC; 2012-03-08: Removed <dao> and <daogrp> -->
+			<!-- <ref name="dao"/>
 			<ref name="daogrp"/>
+			-->
 			<element name="langmaterial">
 				<ref name="a.common"/>
 				<optional>
@@ -1419,12 +1386,8 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 					<attribute name="encodinganalog"/>
 				</optional>
 				<optional>
-					<!--<attribute name="source">
-						<data type="NMTOKEN"/>
-					</attribute>
-					-->
 					<attribute name="source">
-						<data type="string"/>
+						<data type="token"/>
 					</attribute>
 				</optional>
 				<optional>
@@ -1449,12 +1412,8 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 								<attribute name="unit"/>
 							</optional>
 							<optional>
-								<!--<attribute name="source">
-									<data type="NMTOKEN"/>
-								</attribute>
-								-->
 								<attribute name="source">
-									<data type="string"/>
+									<data type="token"/>
 								</attribute>
 							</optional>
 							<optional>
@@ -1545,15 +1504,12 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 				<optional>
 					<attribute name="encodinganalog"/>
 				</optional>
-				<!-- eliminating mixed content
-					<zeroOrMore>
+				<zeroOrMore>
 					<choice>
-					<text/>
-					<ref name="m.phrase.basic"/>
+						<text/>
+						<ref name="m.phrase.basic"/>
 					</choice>
-					</zeroOrMore>
-				-->
-				<data type="string"/>
+				</zeroOrMore>
 			</element>
 			<ref name="unittitle"/>
 		</choice>
@@ -1570,7 +1526,9 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 			<ref name="bioghist"/>
 			<ref name="controlaccess"/>
 			<ref name="custodhist"/>
-			<!--<element name="descgrp">
+			<!-- TC; 2012-03-07: Removed <descgrp> -->
+			<!--
+			<element name="descgrp">
 				<ref name="a.common"/>
 				<optional>
 					<attribute name="type"/>
@@ -1589,8 +1547,10 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 				</oneOrMore>
 			</element>
 			-->
-			<ref name="fileplan"/>
+			<!-- TC; 2012-03-08: Removed <fileplan> -->
+			<!--<ref name="fileplan"/>-->
 			<ref name="index"/>
+			<ref name="legalstatus"/>
 			<ref name="odd"/>
 			<ref name="originalsloc"/>
 			<ref name="otherfindaid"/>
@@ -1606,9 +1566,12 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 	<define name="m.desc.full">
 		<choice>
 			<ref name="m.desc.base"/>
-			<ref name="dsc"/>
-			<ref name="dao"/>
+			<!-- TC; 2012-03-07: Removed dsc -->
+			<!-- <ref name="dsc"/> -->
+			<!-- TC; 2012-03-08: Removed <dao>, <daogrp> -->
+			<!-- <ref name="dao"/>
 			<ref name="daogrp"/>
+			-->
 			<ref name="note"/>
 		</choice>
 	</define>
@@ -1702,215 +1665,11 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 				</choice>
 			</attribute>
 		</optional>
-		<!-- 2012-02-21; TC: added xml:lang -->
-		<optional>
-			<attribute name="xml:lang">
-
-				<choice>
-					<value>aa</value>
-					<value>ak</value>
-					<value>as</value>
-					<value>ba</value>
-					<value>bi</value>
-					<value>br</value>
-					<value>ch</value>
-					<value>cs</value>
-					<value>da</value>
-					<value>ee</value>
-					<value>es</value>
-					<value>ff</value>
-					<value>fr</value>
-					<value>gl</value>
-					<value>ha</value>
-					<value>hr</value>
-					<value>hz</value>
-					<value>ig</value>
-					<value>io</value>
-					<value>iu</value>
-					<value>jv</value>
-					<value>ki</value>
-					<value>km</value>
-					<value>ks</value>
-					<value>ky</value>
-					<value>li</value>
-					<value>lu</value>
-					<value>mi</value>
-					<value>mo</value>
-					<value>my</value>
-					<value>ne</value>
-					<value>no</value>
-					<value>oc</value>
-					<value>os</value>
-					<value>ps</value>
-					<value>rn</value>
-					<value>sa</value>
-					<value>sg</value>
-					<value>sl</value>
-					<value>sq</value>
-					<value>su</value>
-					<value>te</value>
-					<value>tk</value>
-					<value>tr</value>
-					<value>ty</value>
-					<value>uz</value>
-					<value>wa</value>
-					<value>yo</value>
-					<value>ab</value>
-					<value>am</value>
-					<value>av</value>
-					<value>be</value>
-					<value>bm</value>
-					<value>bs</value>
-					<value>co</value>
-					<value>cu</value>
-					<value>de</value>
-					<value>el</value>
-					<value>et</value>
-					<value>fi</value>
-					<value>fy</value>
-					<value>gn</value>
-					<value>he</value>
-					<value>ht</value>
-					<value>ia</value>
-					<value>ii</value>
-					<value>is</value>
-					<value>iw</value>
-					<value>jw</value>
-					<value>kj</value>
-					<value>kn</value>
-					<value>ku</value>
-					<value>la</value>
-					<value>ln</value>
-					<value>lv</value>
-					<value>mk</value>
-					<value>mr</value>
-					<value>na</value>
-					<value>ng</value>
-					<value>nr</value>
-					<value>oj</value>
-					<value>pa</value>
-					<value>pt</value>
-					<value>ro</value>
-					<value>sc</value>
-					<value>sh</value>
-					<value>sm</value>
-					<value>sr</value>
-					<value>sv</value>
-					<value>tg</value>
-					<value>tl</value>
-					<value>ts</value>
-					<value>ug</value>
-					<value>ve</value>
-					<value>wo</value>
-					<value>za</value>
-					<value>ae</value>
-					<value>an</value>
-					<value>ay</value>
-					<value>bg</value>
-					<value>bn</value>
-					<value>ca</value>
-					<value>cv</value>
-					<value>dv</value>
-					<value>en</value>
-					<value>eu</value>
-					<value>fj</value>
-					<value>ga</value>
-					<value>gu</value>
-					<value>hi</value>
-					<value>hu</value>
-					<value>id</value>
-					<value>ik</value>
-					<value>ja</value>
-					<value>ka</value>
-					<value>kk</value>
-					<value>ko</value>
-					<value>kv</value>
-					<value>lb</value>
-					<value>lo</value>
-					<value>mg</value>
-					<value>ml</value>
-					<value>ms</value>
-					<value>nb</value>
-					<value>nl</value>
-					<value>nv</value>
-					<value>om</value>
-					<value>pi</value>
-					<value>qu</value>
-					<value>ru</value>
-					<value>sd</value>
-					<value>si</value>
-					<value>sn</value>
-					<value>ss</value>
-					<value>sw</value>
-					<value>th</value>
-					<value>tn</value>
-					<value>tt</value>
-					<value>uk</value>
-					<value>vi</value>
-					<value>xh</value>
-					<value>zh</value>
-					<value>af</value>
-					<value>ar</value>
-					<value>az</value>
-					<value>bh</value>
-					<value>bo</value>
-					<value>ce</value>
-					<value>cr</value>
-					<value>cy</value>
-					<value>dz</value>
-					<value>eo</value>
-					<value>fa</value>
-					<value>fo</value>
-					<value>gd</value>
-					<value>gv</value>
-					<value>ho</value>
-					<value>hy</value>
-					<value>ie</value>
-					<value>in</value>
-					<value>it</value>
-					<value>ji</value>
-					<value>kg</value>
-					<value>kl</value>
-					<value>kr</value>
-					<value>kw</value>
-					<value>lg</value>
-					<value>lt</value>
-					<value>mh</value>
-					<value>mn</value>
-					<value>mt</value>
-					<value>nd</value>
-					<value>nn</value>
-					<value>ny</value>
-					<value>or</value>
-					<value>pl</value>
-					<value>rm</value>
-					<value>rw</value>
-					<value>se</value>
-					<value>sk</value>
-					<value>so</value>
-					<value>st</value>
-					<value>ta</value>
-					<value>ti</value>
-					<value>to</value>
-					<value>tw</value>
-					<value>ur</value>
-					<value>vo</value>
-					<value>yi</value>
-					<value>zu</value>
-				</choice>
-
-			</attribute>
-		</optional>
 	</define>
 	<define name="a.access">
 		<optional>
-			<!--
 			<attribute name="source">
-				<data type="NMTOKEN"/>
-			</attribute>
-			-->
-			<attribute name="source">
-				<data type="string"/>
+				<data type="token"/>
 			</attribute>
 		</optional>
 		<optional>
@@ -1997,8 +1756,10 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 			<optional>
 				<attribute name="relatedencoding"/>
 			</optional>
+			<!-- TC; 2012-03-07: added <control> removed other <eadheader> elements -->
 			<ref name="control"/>
-			<!--<element name="eadheader">
+			<!--
+			<element name="eadheader">
 				<ref name="a.common"/>
 				<optional>
 					<attribute a:defaultValue="iso639-2b" name="langencoding">
@@ -2036,7 +1797,7 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 				<optional>
 					<attribute name="encodinganalog"/>
 				</optional>
-				<element name="eadid">
+<element name="eadid">
 					<optional>
 						<attribute name="publicid"/>
 					</optional>
@@ -2216,8 +1977,11 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 						</choice>
 					</element>
 				</optional>
-			</element>-->
-			<!-- <optional>
+			</element>
+			-->
+			<!-- TC; 2012-03-08: Remove <frontmatter> -->
+			<!-- 
+				<optional>
 				<element name="frontmatter">
 					<ref name="a.common"/>
 					<optional>
@@ -2245,7 +2009,6 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 				</element>
 			</optional>
 			-->
-
 			<element name="archdesc">
 				<ref name="a.common"/>
 				<attribute name="level">
@@ -2262,9 +2025,9 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 				<optional>
 					<attribute name="relatedencoding"/>
 				</optional>
-				<ref name="c"/>
+				<!-- TC; 2012-03-07: Removed runner -->
 				<!--
-				<zeroOrMore>
+					<zeroOrMore>
 					<element name="runner">
 						<ref name="a.common"/>
 						<optional>
@@ -2287,13 +2050,31 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 						</zeroOrMore>
 					</element>
 				</zeroOrMore>
+				-->
 				<ref name="did"/>
 				<zeroOrMore>
 					<ref name="m.desc.full"/>
 				</zeroOrMore>
-					-->
-			</element>
+				<!-- TC; 2012-03-08: Added <dao> and <daogrp> -->
+				<zeroOrMore>
+					<choice>
+						<ref name="dao"/>
+						<ref name="daogrp"/>
+					</choice>
+				</zeroOrMore>
+				<!-- TC; 2012-03-07: Added EAC-CPF-based <relations> -->
+				<optional>
+					<ref name="e.relations"/>
+				</optional>
+				<choice>
+					<oneOrMore>
+						<ref name="dsc"/>
+					</oneOrMore>
 
+					<ref name="m.cOrC01"/>
+
+				</choice>
+			</element>
 		</element>
 	</define>
 	<define name="titleproper">
@@ -2316,9 +2097,10 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 				<choice>
 					<text/>
 					<ref name="m.phrase.bare"/>
-					<ref name="abbr"/>
+					<!-- TC; 2012-03-07: Removed <abbr> and <expan> -->
+					<!-- <ref name="abbr"/> -->
 					<ref name="date"/>
-					<ref name="expan"/>
+					<!-- <ref name="expan"/> -->
 					<ref name="num"/>
 				</choice>
 			</zeroOrMore>
@@ -2334,9 +2116,10 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 				<choice>
 					<text/>
 					<ref name="m.phrase.bare"/>
-					<ref name="abbr"/>
+					<!-- TC; 2012-03-07: Removed <abbr> and <expan> -->
+					<!-- <ref name="abbr"/> -->
 					<ref name="date"/>
-					<ref name="expan"/>
+					<!-- <ref name="expan"/> -->
 					<ref name="num"/>
 				</choice>
 			</zeroOrMore>
@@ -2508,12 +2291,6 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 				<choice>
 					<text/>
 					<ref name="m.phrase.basic"/>
-					<element name="dateFrom">
-						<ref name="dateParts"/>
-					</element>
-					<element name="dateTo">
-						<ref name="dateParts"/>
-					</element>
 				</choice>
 			</zeroOrMore>
 		</element>
@@ -2530,12 +2307,17 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 			<optional>
 				<attribute name="type"/>
 			</optional>
+			<!-- TC; 2012-03-08: Add @normal -->
+			<optional>
+				<attribute name="normal"/>
+			</optional>
 			<zeroOrMore>
 				<choice>
 					<text/>
 					<ref name="m.phrase.basic"/>
 					<ref name="m.access"/>
-					<ref name="unitdate"/>
+					<!-- TC; 2012-03-07: Remove <unitdate> -->
+					<!-- <ref name="unitdate"/> -->
 					<ref name="num"/>
 					<ref name="date"/>
 					<ref name="bibseries"/>
@@ -2725,7 +2507,8 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 			<oneOrMore>
 				<choice>
 					<ref name="m.blocks"/>
-					<element name="legalstatus">
+					<!-- TC; 2012-03-07: removed <legalstatus> -->
+					<!-- <element name="legalstatus">
 						<ref name="a.common"/>
 						<optional>
 							<attribute name="type">
@@ -2740,6 +2523,7 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 							</choice>
 						</zeroOrMore>
 					</element>
+					-->
 					<ref name="accessrestrict"/>
 				</choice>
 			</oneOrMore>
@@ -2852,7 +2636,8 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 				<choice>
 					<ref name="m.blocks"/>
 					<ref name="custodhist"/>
-					<ref name="acqinfo"/>
+					<!-- TC; 2012-03-07: Removed <acqinfo> -->
+					<!-- <ref name="acqinfo"/> -->
 				</choice>
 			</oneOrMore>
 		</element>
@@ -2927,8 +2712,11 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 				<choice>
 					<ref name="m.blocks"/>
 					<ref name="bioghist"/>
+					<!-- TC; 2012-03-08: Removed <dao>, <daogrp> -->
+					<!--
 					<ref name="dao"/>
 					<ref name="daogrp"/>
+					-->
 				</choice>
 			</oneOrMore>
 		</element>
@@ -2944,7 +2732,7 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 			</optional>
 			<oneOrMore>
 				<choice>
-					<!--<ref name="m.blocks"/>-->
+					<ref name="m.blocks"/>
 					<ref name="m.access.title"/>
 					<ref name="controlaccess"/>
 				</choice>
@@ -2966,8 +2754,11 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 			<oneOrMore>
 				<choice>
 					<ref name="m.blocks"/>
+					<!-- TC; 2012-03-08: Removed <dao>, <daogrp> -->			
+					<!--
 					<ref name="dao"/>
 					<ref name="daogrp"/>
+					-->
 					<ref name="odd"/>
 				</choice>
 			</oneOrMore>
@@ -2987,10 +2778,14 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 					<choice>
 						<ref name="m.blocks"/>
 					</choice>
-					<ref name="arrangement"/>
+					<!-- TC; 2012-03-07: Removed <arrangement> -->
+					<!-- <ref name="arrangement"/> -->
 					<ref name="scopecontent"/>
+					<!-- TC; 2012-03-08: Removed <dao>, <daogrp> -->
+					<!--
 					<ref name="dao"/>
 					<ref name="daogrp"/>
+					-->
 				</choice>
 			</oneOrMore>
 		</element>
@@ -3030,7 +2825,9 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 			</oneOrMore>
 		</element>
 	</define>
-	<define name="fileplan">
+	<!-- TC; 2012-03-08: Removed <fileplan> -->
+	<!--
+		<define name="fileplan">
 		<element name="fileplan">
 			<ref name="a.common"/>
 			<optional>
@@ -3047,6 +2844,7 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 			</oneOrMore>
 		</element>
 	</define>
+	-->
 	<define name="relatedmaterial">
 		<element name="relatedmaterial">
 			<ref name="a.common"/>
@@ -3204,7 +3002,8 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 					<optional>
 						<ref name="thead"/>
 					</optional>
-					<choice>
+					<!-- TC; 2012-03-07: Replaced by pattern m.cOrC01 -->
+					<!-- <choice>
 						<oneOrMore>
 							<ref name="c"/>
 							<optional>
@@ -3218,274 +3017,120 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 							</optional>
 						</oneOrMore>
 					</choice>
+					-->
+					<ref name="m.cOrC01"/>
 				</group>
-				<zeroOrMore>
+				<!-- TC; 2012-03-07: Removed dsc -->
+				<!-- <zeroOrMore>
 					<ref name="dsc"/>
 				</zeroOrMore>
+				-->
 			</choice>
 		</element>
 	</define>
 	<define name="c">
 		<element name="c">
-			<ref name="a.desc.c"/>
-			<optional>
-				<ref name="head"/>
-			</optional>
-			<!--
-			<ref name="did"/>
-			-->
-			<oneOrMore>
-				<ref name="m.did"/>
-			</oneOrMore>
-			<zeroOrMore>
-				<ref name="m.desc.full"/>
-			</zeroOrMore>
+			<ref name="m.c.base"/>
 			<zeroOrMore>
 				<ref name="c"/>
+
 			</zeroOrMore>
-			<!--
-				<zeroOrMore>
-				<optional>
-					<ref name="thead"/>
-				</optional>
-				
-				<oneOrMore>
-					<ref name="c"/>
-				</oneOrMore>
-			</zeroOrMore>
-				-->
 		</element>
 	</define>
 	<define name="c01">
 		<element name="c01">
-			<ref name="a.desc.c"/>
-			<optional>
-				<ref name="head"/>
-			</optional>
-			<ref name="did"/>
+			<ref name="m.c.base"/>
 			<zeroOrMore>
-				<ref name="m.desc.full"/>
-			</zeroOrMore>
-			<zeroOrMore>
-				<optional>
-					<ref name="thead"/>
-				</optional>
-				<oneOrMore>
-					<ref name="c02"/>
-				</oneOrMore>
+				<ref name="c02"/>
 			</zeroOrMore>
 		</element>
 	</define>
 	<define name="c02">
 		<element name="c02">
-			<ref name="a.desc.c"/>
-			<optional>
-				<ref name="head"/>
-			</optional>
-			<ref name="did"/>
+			<ref name="m.c.base"/>
 			<zeroOrMore>
-				<ref name="m.desc.full"/>
-			</zeroOrMore>
-			<zeroOrMore>
-				<optional>
-					<ref name="thead"/>
-				</optional>
-				<oneOrMore>
-					<ref name="c03"/>
-				</oneOrMore>
+				<ref name="c03"/>
 			</zeroOrMore>
 		</element>
 	</define>
 	<define name="c03">
 		<element name="c03">
-			<ref name="a.desc.c"/>
-			<optional>
-				<ref name="head"/>
-			</optional>
-			<ref name="did"/>
+			<ref name="m.c.base"/>
 			<zeroOrMore>
-				<ref name="m.desc.full"/>
-			</zeroOrMore>
-			<zeroOrMore>
-				<optional>
-					<ref name="thead"/>
-				</optional>
-				<oneOrMore>
-					<ref name="c04"/>
-				</oneOrMore>
+				<ref name="c04"/>
 			</zeroOrMore>
 		</element>
 	</define>
 	<define name="c04">
 		<element name="c04">
-			<ref name="a.desc.c"/>
-			<optional>
-				<ref name="head"/>
-			</optional>
-			<ref name="did"/>
+			<ref name="m.c.base"/>
 			<zeroOrMore>
-				<ref name="m.desc.full"/>
-			</zeroOrMore>
-			<zeroOrMore>
-				<optional>
-					<ref name="thead"/>
-				</optional>
-				<oneOrMore>
-					<ref name="c05"/>
-				</oneOrMore>
+				<ref name="c05"/>
 			</zeroOrMore>
 		</element>
 	</define>
 	<define name="c05">
 		<element name="c05">
-			<ref name="a.desc.c"/>
-			<optional>
-				<ref name="head"/>
-			</optional>
-			<ref name="did"/>
+			<ref name="m.c.base"/>
 			<zeroOrMore>
-				<ref name="m.desc.full"/>
-			</zeroOrMore>
-			<zeroOrMore>
-				<optional>
-					<ref name="thead"/>
-				</optional>
-				<oneOrMore>
-					<ref name="c06"/>
-				</oneOrMore>
+				<ref name="c06"/>
+
 			</zeroOrMore>
 		</element>
 	</define>
 	<define name="c06">
 		<element name="c06">
-			<ref name="a.desc.c"/>
-			<optional>
-				<ref name="head"/>
-			</optional>
-			<ref name="did"/>
+			<ref name="m.c.base"/>
 			<zeroOrMore>
-				<ref name="m.desc.full"/>
-			</zeroOrMore>
-			<zeroOrMore>
-				<optional>
-					<ref name="thead"/>
-				</optional>
-				<oneOrMore>
-					<ref name="c07"/>
-				</oneOrMore>
+				<ref name="c07"/>
+
 			</zeroOrMore>
 		</element>
 	</define>
 	<define name="c07">
 		<element name="c07">
-			<ref name="a.desc.c"/>
-			<optional>
-				<ref name="head"/>
-			</optional>
-			<ref name="did"/>
+			<ref name="m.c.base"/>
 			<zeroOrMore>
-				<ref name="m.desc.full"/>
-			</zeroOrMore>
-			<zeroOrMore>
-				<optional>
-					<ref name="thead"/>
-				</optional>
-				<oneOrMore>
-					<ref name="c08"/>
-				</oneOrMore>
+				<ref name="c08"/>
 			</zeroOrMore>
 		</element>
 	</define>
 	<define name="c08">
 		<element name="c08">
-			<ref name="a.desc.c"/>
-			<optional>
-				<ref name="head"/>
-			</optional>
-			<ref name="did"/>
+			<ref name="m.c.base"/>
 			<zeroOrMore>
-				<ref name="m.desc.full"/>
-			</zeroOrMore>
-			<zeroOrMore>
-				<optional>
-					<ref name="thead"/>
-				</optional>
-				<oneOrMore>
-					<ref name="c09"/>
-				</oneOrMore>
+				<ref name="c09"/>
 			</zeroOrMore>
 		</element>
 	</define>
 	<define name="c09">
 		<element name="c09">
-			<ref name="a.desc.c"/>
-			<optional>
-				<ref name="head"/>
-			</optional>
-			<ref name="did"/>
+			<ref name="m.c.base"/>
 			<zeroOrMore>
-				<ref name="m.desc.full"/>
+				<ref name="c10"/>
 			</zeroOrMore>
-			<zeroOrMore>
-				<optional>
-					<ref name="thead"/>
-				</optional>
-				<oneOrMore>
-					<ref name="c10"/>
-				</oneOrMore>
-			</zeroOrMore>
+
 		</element>
 	</define>
 	<define name="c10">
 		<element name="c10">
-			<ref name="a.desc.c"/>
-			<optional>
-				<ref name="head"/>
-			</optional>
-			<ref name="did"/>
+			<ref name="m.c.base"/>
 			<zeroOrMore>
-				<ref name="m.desc.full"/>
-			</zeroOrMore>
-			<zeroOrMore>
-				<optional>
-					<ref name="thead"/>
-				</optional>
-				<oneOrMore>
-					<ref name="c11"/>
-				</oneOrMore>
+				<ref name="c11"/>
 			</zeroOrMore>
 		</element>
 	</define>
 	<define name="c11">
 		<element name="c11">
-			<ref name="a.desc.c"/>
-			<optional>
-				<ref name="head"/>
-			</optional>
-			<ref name="did"/>
+			<ref name="m.c.base"/>
 			<zeroOrMore>
-				<ref name="m.desc.full"/>
-			</zeroOrMore>
-			<zeroOrMore>
-				<optional>
-					<ref name="thead"/>
-				</optional>
-				<oneOrMore>
-					<ref name="c12"/>
-				</oneOrMore>
+				<ref name="c12"/>
 			</zeroOrMore>
 		</element>
 	</define>
 	<define name="c12">
 		<element name="c12">
-			<ref name="a.desc.c"/>
-			<optional>
-				<ref name="head"/>
-			</optional>
-			<ref name="did"/>
-			<zeroOrMore>
-				<ref name="m.desc.full"/>
-			</zeroOrMore>
+			<ref name="m.c.base"/>
 		</element>
 	</define>
 	<define name="head">
@@ -3520,6 +3165,10 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 			<optional>
 				<ref name="daodesc"/>
 			</optional>
+			<!-- TC: 2012-03-08: added @type -->
+			<optional>
+				<attribute name="type"/>
+			</optional>
 		</element>
 	</define>
 	<define name="daodesc">
@@ -3529,16 +3178,7 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 				<ref name="head"/>
 			</optional>
 			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<!-- 2012-02-21; TC added repeatable daoID element -->
-					<element name="daoID">
-						<attribute name="IdType">
-							<data type="string"/>
-						</attribute>
-						<text/>
-					</element>
-				</choice>
+				<ref name="m.blocks"/>
 			</oneOrMore>
 		</element>
 	</define>
@@ -3743,11 +3383,6 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 	</define>
 	<define name="corpname">
 		<element name="corpname">
-			<interleave>
-				<ref name="names.revised"/>
-				<ref name="subarea"/>
-			</interleave>
-			<!--
 			<ref name="a.common"/>
 			<ref name="a.access"/>
 			<optional>
@@ -3763,13 +3398,10 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 					<ref name="subarea"/>
 				</choice>
 			</zeroOrMore>
-			-->
 		</element>
 	</define>
 	<define name="famname">
 		<element name="famname">
-			<ref name="names.revised"/>
-			<!--
 			<ref name="a.common"/>
 			<ref name="a.access"/>
 			<optional>
@@ -3784,13 +3416,10 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 					<ref name="m.phrase.bare"/>
 				</choice>
 			</zeroOrMore>
-			-->
 		</element>
 	</define>
 	<define name="geogname">
 		<element name="geogname">
-			<ref name="names.revised"/>
-			<!--
 			<ref name="a.common"/>
 			<ref name="a.access"/>
 			<optional>
@@ -3805,13 +3434,10 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 					<ref name="m.phrase.bare"/>
 				</choice>
 			</zeroOrMore>
-			-->
 		</element>
 	</define>
 	<define name="name">
 		<element name="name">
-			<ref name="names.revised"/>
-			<!--
 			<ref name="a.common"/>
 			<ref name="a.access"/>
 			<optional>
@@ -3826,13 +3452,10 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 					<ref name="m.phrase.bare"/>
 				</choice>
 			</zeroOrMore>
-			-->
 		</element>
 	</define>
 	<define name="persname">
 		<element name="persname">
-			<ref name="names.revised"/>
-			<!--
 			<ref name="a.common"/>
 			<ref name="a.access"/>
 			<optional>
@@ -3845,10 +3468,8 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 				<choice>
 					<text/>
 					<ref name="m.phrase.bare"/>
-					<ref name="access.part"/> 
 				</choice>
 			</zeroOrMore>
-			-->
 		</element>
 	</define>
 	<define name="date">
@@ -3891,6 +3512,8 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 			</zeroOrMore>
 		</element>
 	</define>
+	<!-- TC: 2012-03-07: Removed <abbr> and <expan> -->
+	<!--
 	<define name="abbr">
 		<element name="abbr">
 			<ref name="a.common"/>
@@ -3909,6 +3532,7 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 			<text/>
 		</element>
 	</define>
+	-->
 	<define name="address">
 		<element name="address">
 			<ref name="a.common"/>
@@ -3963,6 +3587,7 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 					</choice>
 				</attribute>
 			</optional>
+			<!-- TC: 2012-03-08: Remove continuation -->
 			<optional>
 				<attribute name="continuation">
 					<choice>
@@ -4172,7 +3797,7 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 							<text/>
 							<choice>
 								<ref name="m.phrase.plus"/>
-								<ref name="address"/>
+							<!--	<ref name="address"/> -->
 								<ref name="list"/>
 								<ref name="note"/>
 							</choice>
@@ -4396,91 +4021,509 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 			<ref name="xlink.label"/>
 		</optional>
 	</define>
-	<!-- MODELS FOR REVISION -->
-	<define name="access.part">
-		<element name="part">
-			<ref name="attrs-types"/>
+
+	<!-- TC: 2012-03-07: REVISION PATTERNS -->
+	<define name="m.cOrC01">
+		<choice>
+			<oneOrMore>
+				<ref name="c"/>
+				<optional>
+					<ref name="thead"/>
+				</optional>
+			</oneOrMore>
+			<oneOrMore>
+				<ref name="c01"/>
+				<optional>
+					<ref name="thead"/>
+				</optional>
+			</oneOrMore>
+		</choice>
+	</define>
+
+	<define name="m.c.base">
+		<ref name="a.desc.c"/>
+		<optional>
+			<ref name="head"/>
+		</optional>
+		<ref name="did"/>
+		<zeroOrMore>
+			<ref name="m.desc.full"/>
+		</zeroOrMore>
+		<optional>
+			<ref name="thead"/>
+		</optional>
+		<!-- TC; 2012-03-08: Added <dao> and <daogrp> -->
+		<zeroOrMore>
+			<choice>
+				<ref name="dao"/>
+				<ref name="daogrp"/>
+			</choice>
+		</zeroOrMore>
+		<optional>
+			<ref name="e.relations"/>
+		</optional>
+	</define>
+	
+	<define name="legalstatus">
+		<element name="legalstatus">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="type">
+					<data type="NMTOKEN"/>
+				</attribute>
+			</optional>
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<ref name="m.phrase.bare"/>
+					<ref name="date"/>
+				</choice>
+			</zeroOrMore>
+		</element>
+	</define>
+
+	<!-- EAC-CPF-based Patterns for Relations -->
+
+	<div a:documentation="Relations">
+
+		<define name="e.relations">
+			<element a:id="relations" name="relations">
+				<ref name="a.common"/>
+				<optional>
+					<ref name="lang"/>
+				</optional>
+				<optional>
+					<ref name="base"/>
+				</optional>
+				<zeroOrMore>
+					<ref name="e.cpfRelation"/>
+				</zeroOrMore>
+				<zeroOrMore>
+					<ref name="e.resourceRelation"/>
+				</zeroOrMore>
+				<zeroOrMore>
+					<ref name="e.functionRelation"/>
+				</zeroOrMore>
+			</element>
+		</define>
+
+		<define name="e.relationEntry">
+			<element a:id="relationEntry" name="relationEntry">
+				<ref name="a.common"/>
+				<optional>
+					<ref name="a.localType"/>
+				</optional>
+				<optional>
+					<ref name="m.entryLanguageAttributes"/>
+				</optional>
+				<text/>
+			</element>
+		</define>
+
+		<define name="e.objectXMLWrap">
+			<element a:id="objectXMLWrap" name="objectXMLWrap">
+				<ref name="a.common"/>
+				<ref name="e.anyName"/>
+			</element>
+		</define>
+		<define name="e.objectBinWrap">
+			<element a:id="objectBinWrap" name="objectBinWrap">
+				<ref name="a.common"/>
+				<data type="base64Binary"/>
+			</element>
+		</define>
+
+		<define name="m.relationBody">
+			<optional>
+				<ref name="a.lastDateTimeVerified"/>
+			</optional>
+			<optional>
+				<ref name="simpleLink"/>
+			</optional>
+			<zeroOrMore>
+				<ref name="e.relationEntry"/>
+			</zeroOrMore>
+			<optional>
+				<choice>
+					<ref name="e.objectXMLWrap"/>
+					<!--		<ref name="e.objectBinWrap"/> -->
+				</choice>
+			</optional>
+			<optional>
+				<ref name="m.dates"/>
+			</optional>
+			<optional>
+				<ref name="e.placeEntry"/>
+			</optional>
+			<optional>
+				<ref name="e.descriptiveNote"/>
+			</optional>
+		</define>
+
+		<define name="e.cpfRelation">
+			<element a:id="cpfRelation" name="cpfRelation">
+				<ref name="a.common"/>
+				<optional>
+					<ref name="lang"/>
+				</optional>
+				<optional>
+					<attribute a:id="cpfRelationType" name="cpfRelationType">
+						<choice>
+							<value>identity</value>
+							<value>hierarchical</value>
+							<value>hierarchical-parent</value>
+							<value>hierarchical-child</value>
+							<value>temporal</value>
+							<value>temporal-earlier</value>
+							<value>temporal-later</value>
+							<value>family</value>
+							<value>associative</value>
+						</choice>
+					</attribute>
+				</optional>
+				<ref name="m.relationBody"/>
+			</element>
+		</define>
+
+		<define name="e.resourceRelation">
+			<element a:id="resourceRelation" name="resourceRelation">
+				<ref name="a.common"/>
+				<optional>
+					<ref name="lang"/>
+				</optional>
+				<optional>
+					<attribute a:id="resourceRelationType" name="resourceRelationType">
+						<choice>
+							<value>creatorOf</value>
+							<value>subjectOf</value>
+							<value>other</value>
+						</choice>
+					</attribute>
+				</optional>
+				<ref name="m.relationBody"/>
+			</element>
+		</define>
+
+		<define name="e.functionRelation">
+			<element a:id="functionRelation" name="functionRelation">
+				<ref name="a.common"/>
+				<optional>
+					<ref name="lang"/>
+				</optional>
+				<optional>
+					<attribute a:id="functionRelationType" name="functionRelationType">
+						<choice>
+							<value>controls</value>
+							<value>owns</value>
+							<value>performs</value>
+						</choice>
+					</attribute>
+				</optional>
+				<ref name="m.relationBody"/>
+			</element>
+		</define>
+	</div>
+	<define name="a.localType">
+		<attribute a:id="localType" name="localType">
+			<data type="anyURI"/>
+		</attribute>
+	</define>
+	<define name="lang" ns="http://www.w3.org/XML/1998/namespace">
+		<attribute a:id="xmlLang" name="xml:lang">
+			<choice>
+				<data type="language"/>
+				<value/>
+			</choice>
+		</attribute>
+	</define>
+
+	<define name="base" ns="http://www.w3.org/XML/1998/namespace">
+		<attribute a:id="xmlBase" name="xml:base">
+			<data type="anyURI"/>
+		</attribute>
+	</define>
+	<define name="m.entryLanguageAttributes">
+		<optional>
+			<ref name="a.scriptCode"/>
+		</optional>
+		<optional>
+			<ref name="lang"/>
+		</optional>
+		<optional>
+			<ref name="a.transliteration"/>
+		</optional>
+	</define>
+	<define name="e.anyName">
+		<element a:id="e.anyName">
+			<anyName>
+				<except>
+					<nsName ns="http://saa-sdt.example.org/ead/revised"/>
+				</except>
+			</anyName>
+			<ref name="m.anything"/>
+		</element>
+	</define>
+
+	<define name="m.anything">
+		<zeroOrMore>
+			<attribute a:id="a.anyName">
+				<anyName/>
+			</attribute>
+		</zeroOrMore>
+		<zeroOrMore>
+			<choice>
+				<ref name="e.anyName"/>
+				<text/>
+			</choice>
+		</zeroOrMore>
+	</define>
+
+	<div a:documentation="Dates">
+
+		<define name="a.lastDateTimeVerified">
+			<attribute a:id="lastDateTimeVerified" name="lastDateTimeVerified">
+				<ref name="m.data.standardDateTime"/>
+			</attribute>
+		</define>
+
+		<define name="m.data.standardDateTime">
+			<choice>
+				<data type="date">
+					<param name="maxInclusive">2099-12-31</param>
+				</data>
+				<data type="gYear">
+					<param name="maxInclusive">2099</param>
+				</data>
+				<data type="gYearMonth">
+					<param name="maxInclusive">2099-12</param>
+				</data>
+				<data type="dateTime">
+					<param name="maxInclusive">2099-12-31T23:59:59</param>
+				</data>
+			</choice>
+		</define>
+
+		<define name="m.data.standardDate">
+			<choice>
+				<data type="date">
+					<param name="maxInclusive">2099-12-31</param>
+				</data>
+				<data type="gYear">
+					<param name="maxInclusive">2099</param>
+				</data>
+				<data type="gYearMonth">
+					<param name="maxInclusive">2099-12</param>
+				</data>
+			</choice>
+		</define>
+
+		<define name="e.dateSingle">
+			<element a:id="date" name="date">
+				<ref name="a.common"/>
+				<optional>
+					<ref name="lang"/>
+				</optional>
+				<optional>
+					<ref name="a.localType"/>
+				</optional>
+				<ref name="m.dateSingle"/>
+			</element>
+		</define>
+
+		<define name="m.dateSingle">
+			<optional>
+				<attribute a:id="standardDate" name="standardDate">
+					<ref name="m.data.standardDate"/>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute a:id="notBefore" name="notBefore">
+					<ref name="m.data.standardDate"/>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute a:id="notAfter" name="notAfter">
+					<ref name="m.data.standardDate"/>
+				</attribute>
+			</optional>
+			<text/>
+		</define>
+
+		<define name="e.dateRange">
+			<element a:id="dateRange" name="dateRange">
+				<ref name="a.common"/>
+				<optional>
+					<ref name="lang"/>
+				</optional>
+				<optional>
+					<ref name="a.localType"/>
+				</optional>
+				<optional>
+					<element a:id="fromDate" name="fromDate">
+						<ref name="a.common"/>
+						<optional>
+							<ref name="lang"/>
+						</optional>
+						<ref name="m.dateSingle"/>
+					</element>
+				</optional>
+				<optional>
+					<element a:id="toDate" name="toDate">
+						<ref name="a.common"/>
+						<optional>
+							<ref name="lang"/>
+						</optional>
+						<ref name="m.dateSingle"/>
+					</element>
+				</optional>
+			</element>
+		</define>
+
+		<define name="e.dateSet">
+			<element a:id="dateSet" name="dateSet">
+				<ref name="a.common"/>
+				<optional>
+					<ref name="lang"/>
+				</optional>
+				<optional>
+					<ref name="a.localType"/>
+				</optional>
+				<choice>
+					<ref name="e.dateSingle"/>
+					<ref name="e.dateRange"/>
+				</choice>
+				<oneOrMore>
+					<choice>
+						<ref name="e.dateSingle"/>
+						<ref name="e.dateRange"/>
+					</choice>
+				</oneOrMore>
+			</element>
+		</define>
+
+		<define name="m.dates">
+			<choice>
+				<ref name="e.dateSingle"/>
+				<ref name="e.dateRange"/>
+				<ref name="e.dateSet"/>
+			</choice>
+		</define>
+
+	</div>
+
+
+	<div a:documentation="Language">
+
+		<define name="e.language">
+			<element a:id="language" name="language">
+				<ref name="a.common"/>
+				<optional>
+					<ref name="lang"/>
+				</optional>
+				<attribute a:id="languageCode" name="languageCode">
+					<data type="string">
+						<param name="pattern">[a-z]{3}</param>
+					</data>
+				</attribute>
+				<text/>
+			</element>
+		</define>
+
+		<define name="e.script">
+			<element a:id="script" name="script">
+				<ref name="a.common"/>
+				<optional>
+					<ref name="lang"/>
+				</optional>
+				<ref name="a.scriptCode"/>
+				<text/>
+			</element>
+		</define>
+
+		<define name="a.scriptCode">
+			<attribute a:id="scriptCode" name="scriptCode">
+				<data type="string">
+					<param name="pattern">[A-Z][a-z]{3}</param>
+				</data>
+			</attribute>
+		</define>
+
+
+		<define name="a.transliteration">
+			<attribute a:id="transliteration" name="transliteration">
+				<data type="NMTOKEN"/>
+			</attribute>
+		</define>
+
+
+
+	</div>
+
+	<define name="e.placeEntry">
+		<element a:id="placeEntry" name="placeEntry">
+			<ref name="a.common"/>
+			<optional>
+				<ref name="m.entryLanguageAttributes"/>
+			</optional>
+			<optional>
+				<ref name="a.localType"/>
+			</optional>
+			<optional>
+				<attribute a:id="countryCode" name="countryCode">
+					<choice>
+						<data type="string">
+							<param name="pattern">[A-Z]{2}</param>
+						</data>
+						<data type="string">
+							<param name="pattern">[A-Z]{4}</param>
+						</data>
+					</choice>
+				</attribute>
+			</optional>
+			<optional>
+				<ref name="a.vocabularySource"/>
+			</optional>
+			<optional>
+				<attribute a:id="accuracy" name="accuarcy">
+					<text/>
+				</attribute>
+			</optional>
+			<optional>
+				<ref name="m.geographicalCoordinates"/>
+			</optional>
 			<text/>
 		</element>
 	</define>
-	<define name="attrs-types">
-		<optional>
-			<attribute name="localType">
-				<data type="string"/>
-			</attribute>
-		</optional>
-		<optional>
-			<attribute name="localTypeUri">
-				<data type="anyURI"/>
-			</attribute>
-		</optional>
-
+	<define name="e.descriptiveNote">
+		<element a:id="descriptiveNote" name="descriptiveNote">
+			<ref name="a.common"/>
+			<optional>
+				<ref name="lang"/>
+			</optional>
+			<oneOrMore>
+				<ref name="p"/>
+			</oneOrMore>
+		</element>
 	</define>
-	<define name="access.revised">
-		<ref name="a.common"/>
-		<ref name="a.access"/>
-		<optional>
-			<attribute name="encodinganalog"/>
-		</optional>
-		<zeroOrMore>
-			<choice>
-				<text/>
-				<ref name="access.part"/>
-			</choice>
-		</zeroOrMore>
+	<define name="a.vocabularySource">
+		<attribute a:id="vocabularySource" name="vocabularySource">
+			<data type="anyURI"/>
+		</attribute>
 	</define>
-	<define name="access.revised.types">
-		<ref name="access.revised"/>
-		<ref name="attrs-types"/>
-	</define>
-	<define name="names.revised">
-		<ref name="access.revised.types"/>
+	<define name="m.geographicalCoordinates">
+		<attribute a:id="longitude" name="longitude">
+			<data type="NMTOKEN"/>
+		</attribute>
+		<attribute a:id="latitude" name="latitude">
+			<data type="NMTOKEN"/>
+		</attribute>
 		<optional>
-			<attribute name="role">
-				<text/>
-			</attribute>
-		</optional>
-		<optional>
-			<attribute name="roleUri">
-				<data type="anyURI"/>
+			<attribute a:id="altitude" name="altitude">
+				<data type="NMTOKEN"/>
 			</attribute>
 		</optional>
 	</define>
-
-	<define name="dateParts">
-		<ref name="a.common"/>
-		<optional>
-			<attribute name="label"/>
-		</optional>
-		<optional>
-			<attribute name="type">
-				<choice>
-					<value>bulk</value>
-					<value>inclusive</value>
-				</choice>
-			</attribute>
-		</optional>
-		<optional>
-			<attribute name="datechar"/>
-		</optional>
-		<ref name="am.dates.era"/>
-		<ref name="am.dates.calendar"/>
-		<ref name="am.date.normal"/>
-		<optional>
-			<attribute name="certainty"/>
-		</optional>
-		<optional>
-			<attribute name="encodinganalog"/>
-		</optional>
-		<zeroOrMore>
-			<choice>
-				<text/>
-				<ref name="m.phrase.basic"/>
-			</choice>
-		</zeroOrMore>
-
-	</define>
-<!-- control replaces eadheader -->
+	<!-- control replaces eadheader -->
 	<define name="control">
 		<element name="control">
 			<ref name="a.common"/>
@@ -4548,7 +4591,7 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 			<zeroOrMore>
 				<element a:id="otherRecordId" name="otherRecordId">
 					<ref name="a.common"/>
-					<ref name="attrs-types"/>
+					<ref name="a.localType"/>
 					<text/>
 				</element>
 			</zeroOrMore>
@@ -4573,7 +4616,8 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 			<element name="instanceMaintenanceHistory">
 				<ref name="maintenanceHistory"/>
 			</element>
-			<optional>
+			<!-- TC; 2012-03-08: removed <editionstmt>, <seriestmt>, and <notestmt> -->
+			<!--<optional>
 				<element name="editionstmt">
 					<ref name="a.common"/>
 					<optional>
@@ -4613,6 +4657,7 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 					</oneOrMore>
 				</element>
 			</optional>
+			-->
 			<ref name="e.languageDeclaration"/>
 			<optional>
 				<ref name="e.sources"/>
@@ -4637,7 +4682,7 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 		</element>
 	</define>
 
-<!-- Patterns from EAC-CPF -->
+<!-- Patterns from EAC-CPF for <control> -->
 
 	<define name="maintenanceAgency">
 		<element name="maintenanceAgency">
@@ -4653,7 +4698,7 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 			<zeroOrMore>
 				<element name="otherAgencyCode">
 					<ref name="a.common"/>
-					<ref name="attrs-types"/>
+					<ref name="a.localType"/>
 					<data type="NMTOKEN"/>
 				</element>
 			</zeroOrMore>
@@ -4678,14 +4723,7 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 				>(([A-Z]{2})|([a-zA-Z]{1})|([a-zA-Z]{3,4}))(-[a-zA-Z0-9:/\-]{1,11})</param>
 		</data>
 	</define>
-	<define name="e.descriptiveNote">
-		<element a:id="descriptiveNote" name="descriptiveNote">
-			<ref name="a.common"/>
-			<oneOrMore>
-				<ref name="p"/>
-			</oneOrMore>
-		</element>
-	</define>
+	
 
 	<define name="maintenanceHistory">
 		<ref name="a.common"/>
@@ -4734,22 +4772,7 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 
 	</define>
 
-	<define name="m.data.standardDateTime">
-		<choice>
-			<data type="date">
-				<param name="maxInclusive">2099-12-31</param>
-			</data>
-			<data type="gYear">
-				<param name="maxInclusive">2099</param>
-			</data>
-			<data type="gYearMonth">
-				<param name="maxInclusive">2099-12</param>
-			</data>
-			<data type="dateTime">
-				<param name="maxInclusive">2099-12-31T23:59:59</param>
-			</data>
-		</choice>
-	</define>
+	
 
 	<define name="e.languageDeclaration">
 		<element a:id="languageDeclaration" name="languageDeclaration">
@@ -4762,33 +4785,11 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 		</element>
 	</define>
 
-	<define name="e.language">
-		<element a:id="language" name="language">
-			<ref name="a.common"/>
-			<attribute a:id="languageCode" name="languageCode">
-				<data type="string">
-					<param name="pattern">[a-z]{3}</param>
-				</data>
-			</attribute>
-			<text/>
-		</element>
-	</define>
+	
 
-	<define name="e.script">
-		<element a:id="script" name="script">
-			<ref name="a.common"/>
-			<ref name="a.scriptCode"/>
-			<text/>
-		</element>
-	</define>
+	
 
-	<define name="a.scriptCode">
-		<attribute a:id="scriptCode" name="scriptCode">
-			<data type="string">
-				<param name="pattern">[A-Z][a-z]{3}</param>
-			</data>
-		</attribute>
-	</define>
+	
 
 	<define name="e.sources">
 		<element name="sources">
@@ -4829,62 +4830,16 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 		</element>
 	</define>
 
-	<define name="a.lastDateTimeVerified">
-		<attribute a:id="lastDateTimeVerified" name="lastDateTimeVerified">
-			<ref name="m.data.standardDateTime"/>
-		</attribute>
-	</define>
-	<define name="m.entryLanguageAttributes">
-		<optional>
-			<ref name="a.scriptCode"/>
-		</optional>
-		<optional>
-			<ref name="a.transliteration"/>
-		</optional>
-	</define>
-	<define name="a.transliteration">
-		<attribute a:id="transliteration" name="transliteration">
-			<data type="NMTOKEN"/>
-		</attribute>
-	</define>
-	<define name="e.objectXMLWrap">
-		<element a:id="objectXMLWrap" name="objectXMLWrap">
-			<ref name="a.common"/>
-			<ref name="e.anyName"/>
-		</element>
-	</define>
+	
+	
+	
+	
 
-	<define name="e.objectBinWrap">
-		<element a:id="objectBinWrap" name="objectBinWrap">
-			<ref name="a.common"/>
-			<data type="base64Binary"/>
-		</element>
-	</define>
+	
 
-	<define name="e.anyName">
-		<element>
-			<anyName>
-				<except>
-					<nsName ns="http://plazi.org/ead/revised"/>
-				</except>
-			</anyName>
-			<ref name="m.anything"/>
-		</element>
-	</define>
+	
 
-	<define name="m.anything">
-		<zeroOrMore>
-			<attribute>
-				<anyName/>
-			</attribute>
-		</zeroOrMore>
-		<zeroOrMore>
-			<choice>
-				<ref name="e.anyName"/>
-				<text/>
-			</choice>
-		</zeroOrMore>
-	</define>
+	
 
 	<define name="e.conventionDeclaration">
 		<element a:id="conventionDeclaration" name="conventionDeclaration">
@@ -4930,7 +4885,7 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 		<optional>
 			<element a:id="span" name="span">
 				<ref name="a.common"/>
-				<ref name="attrs-types"/>
+				<ref name="a.localType"/>
 				<optional>
 					<attribute a:id="style" name="style">
 						<text/>
@@ -4943,7 +4898,7 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 	<define name="e.localControl">
 		<element a:id="localControl" name="localControl">
 			<ref name="a.common"/>
-			<ref name="attrs-types"/>
+			<ref name="a.localType"/>
 			<optional>
 				<ref name="e.term"/>
 			</optional>
@@ -4970,62 +4925,6 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 				</attribute>
 			</optional>
 			<text/>
-		</element>
-	</define>
-	<define name="e.dateSingle">
-		<element a:id="date" name="date">
-			<ref name="a.common"/>
-			<ref name="attrs-types"/>
-			<ref name="m.dateSingle"/>
-		</element>
-	</define>
-	<define name="m.dateSingle">
-		<optional>
-			<attribute a:id="standardDate" name="standardDate">
-				<ref name="m.data.standardDate"/>
-			</attribute>
-		</optional>
-		<optional>
-			<attribute a:id="notBefore" name="notBefore">
-				<ref name="m.data.standardDate"/>
-			</attribute>
-		</optional>
-		<optional>
-			<attribute a:id="notAfter" name="notAfter">
-				<ref name="m.data.standardDate"/>
-			</attribute>
-		</optional>
-		<text/>
-	</define>
-	<define name="m.data.standardDate">
-		<choice>
-			<data type="date">
-				<param name="maxInclusive">2099-12-31</param>
-			</data>
-			<data type="gYear">
-				<param name="maxInclusive">2099</param>
-			</data>
-			<data type="gYearMonth">
-				<param name="maxInclusive">2099-12</param>
-			</data>
-		</choice>
-	</define>
-	<define name="e.dateRange">
-		<element a:id="dateRange" name="dateRange">
-			<ref name="a.common"/>
-			<ref name="attrs-types"/>
-			<optional>
-				<element a:id="fromDate" name="fromDate">
-					<ref name="a.common"/>
-					<ref name="m.dateSingle"/>
-				</element>
-			</optional>
-			<optional>
-				<element a:id="toDate" name="toDate">
-					<ref name="a.common"/>
-					<ref name="m.dateSingle"/>
-				</element>
-			</optional>
 		</element>
 	</define>
 	<define name="e.localTypeDeclaration">
