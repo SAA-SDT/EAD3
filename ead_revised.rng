@@ -93,6 +93,10 @@ Other changes:
 * deprecate <thead> in dsc and c
 * eliminate @tpattern
 * deprecate <fileplan>
+
+* remove default value from @calendar and @era
+* deprecate thead
+* add containerid
 -->
 <!--
 	EAD 2002 Relax NG Schema
@@ -1262,9 +1266,11 @@ Other changes:
 								<empty/>
 							</element>
 						</zeroOrMore>
-						<optional>
+						<!-- TC; 2012-06-08: deprecate thead -->
+						<!--<optional>
 							<ref name="thead"/>
 						</optional>
+						-->
 						<element name="tbody">
 							<ref name="a.common"/>
 							<optional>
@@ -1345,6 +1351,12 @@ Other changes:
 				<optional>
 					<attribute name="parent">
 						<data type="IDREFS"/>
+					</attribute>
+				</optional>
+				<!-- TC: 2012-06-08: add containerid -->
+				<optional>
+					<attribute name="containerid">
+						<data type="NMTOKEN"/>
 					</attribute>
 				</optional>
 				<zeroOrMore>
@@ -1590,16 +1602,20 @@ Other changes:
 			<ref name="m.inter"/>
 		</choice>
 	</define>
+	<!-- TC 2012-06-08: remove default value -->
 	<define name="am.dates.calendar">
 		<optional>
-			<attribute a:defaultValue="gregorian" name="calendar">
+			<!-- <attribute a:defaultValue="gregorian" name="calendar"> -->
+			<attribute name="calendar">
 				<data type="NMTOKEN"/>
 			</attribute>
 		</optional>
 	</define>
+	<!-- TC 2012-06-08: remove default value -->
 	<define name="am.dates.era">
 		<optional>
-			<attribute a:defaultValue="ce" name="era">
+		<!--	<attribute a:defaultValue="ce" name="era"> -->
+			<attribute name="era">	
 				<data type="NMTOKEN"/>
 			</attribute>
 		</optional>
@@ -2998,12 +3014,13 @@ Other changes:
 				</zeroOrMore>
 			</group>
 			<choice>
-				<group>
-					<optional>
-						<ref name="thead"/>
-					</optional>
 					<!-- TC; 2012-03-07: Replaced by pattern m.cOrC01 -->
-					<!-- <choice>
+					<!-- 
+						<group>
+						<optional>
+						<ref name="thead"/>
+						</optional>
+						<choice>
 						<oneOrMore>
 							<ref name="c"/>
 							<optional>
@@ -3017,9 +3034,10 @@ Other changes:
 							</optional>
 						</oneOrMore>
 					</choice>
+					</group>
 					-->
 					<ref name="m.cOrC01"/>
-				</group>
+
 				<!-- TC; 2012-03-07: Removed dsc -->
 				<!-- <zeroOrMore>
 					<ref name="dsc"/>
@@ -3697,7 +3715,8 @@ Other changes:
 			</oneOrMore>
 		</element>
 	</define>
-	<define name="thead">
+	<!-- TC 2012-06-08: deprecate thead -->
+	<!-- <define name="thead">
 		<element name="thead">
 			<ref name="a.common"/>
 			<optional>
@@ -3714,6 +3733,7 @@ Other changes:
 			</oneOrMore>
 		</element>
 	</define>
+	-->
 	<define name="row">
 		<element name="row">
 			<ref name="a.common"/>
@@ -4027,15 +4047,19 @@ Other changes:
 		<choice>
 			<oneOrMore>
 				<ref name="c"/>
-				<optional>
+				<!-- TC; 2012-06-08: deprecate thead -->
+				<!--<optional>
 					<ref name="thead"/>
 				</optional>
+				-->
 			</oneOrMore>
 			<oneOrMore>
 				<ref name="c01"/>
-				<optional>
+				<!-- TC; 2012-06-08: deprecate thead -->
+				<!--<optional>
 					<ref name="thead"/>
-				</optional>
+					</optional>
+				-->
 			</oneOrMore>
 		</choice>
 	</define>
@@ -4049,9 +4073,11 @@ Other changes:
 		<zeroOrMore>
 			<ref name="m.desc.full"/>
 		</zeroOrMore>
-		<optional>
+		<!-- TC; 2012-06-08: deprecate thead -->
+		<!--<optional>
 			<ref name="thead"/>
-		</optional>
+			</optional>
+		-->
 		<!-- TC; 2012-03-08: Added <dao> and <daogrp> -->
 		<zeroOrMore>
 			<choice>
