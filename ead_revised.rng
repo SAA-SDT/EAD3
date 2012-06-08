@@ -97,6 +97,10 @@ Other changes:
 * remove default value from @calendar and @era
 * deprecate thead
 * removed table, list, and chronlist from m.para.content
+* remove did child elements from anywhere other than did
+* removed recursion in note elements (i.e, accessrestrict, accruals, acqinfo, altformavail, appraisal, arrangement, bibliography, 
+  bioghist, controlaccess, custodhist, descgrp, dsc, fileplan, index, note, odd, originalsloc, otherfindaid, phystech, prefercite, 
+  processinfo, relatedmaterial, scopecontent, separatedmaterial, userestrict)
 
 -->
 <!--
@@ -2506,7 +2510,8 @@ Other changes:
 			<oneOrMore>
 				<choice>
 					<ref name="m.blocks"/>
-					<ref name="accruals"/>
+					<!-- TC: 2012-06-08 remove recursion in note elements -->
+					<!-- <ref name="accruals"/> -->
 				</choice>
 			</oneOrMore>
 		</element>
@@ -2543,7 +2548,8 @@ Other changes:
 						</zeroOrMore>
 					</element>
 					-->
-					<ref name="accessrestrict"/>
+					<!-- TC: 2012-06-08 remove recursion in note elements -->
+					<!-- <ref name="accessrestrict"/> -->
 				</choice>
 			</oneOrMore>
 		</element>
@@ -2560,7 +2566,8 @@ Other changes:
 			<oneOrMore>
 				<choice>
 					<ref name="m.blocks"/>
-					<ref name="acqinfo"/>
+					<!-- TC: 2012-06-08 remove recursion in note elements -->
+					<!-- <ref name="acqinfo"/> -->
 				</choice>
 			</oneOrMore>
 		</element>
@@ -2580,7 +2587,8 @@ Other changes:
 			<oneOrMore>
 				<choice>
 					<ref name="m.blocks"/>
-					<ref name="altformavail"/>
+					<!-- TC: 2012-06-08 remove recursion in note elements -->
+					<!--<ref name="altformavail"/> -->
 				</choice>
 			</oneOrMore>
 		</element>
@@ -2600,7 +2608,8 @@ Other changes:
 			<oneOrMore>
 				<choice>
 					<ref name="m.blocks"/>
-					<ref name="originalsloc"/>
+					<!-- TC: 2012-06-08 remove recursion in note elements -->
+					<!-- <ref name="originalsloc"/>-->
 				</choice>
 			</oneOrMore>
 		</element>
@@ -2620,7 +2629,8 @@ Other changes:
 			<oneOrMore>
 				<choice>
 					<ref name="m.blocks"/>
-					<ref name="phystech"/>
+					<!-- TC: 2012-06-08 remove recursion in note elements -->
+					<!-- <ref name="phystech"/> -->
 				</choice>
 			</oneOrMore>
 		</element>
@@ -2637,7 +2647,8 @@ Other changes:
 			<oneOrMore>
 				<choice>
 					<ref name="m.blocks"/>
-					<ref name="appraisal"/>
+					<!-- TC: 2012-06-08 remove recursion in note elements -->
+					<!-- <ref name="appraisal"/> -->
 				</choice>
 			</oneOrMore>
 		</element>
@@ -2654,7 +2665,8 @@ Other changes:
 			<oneOrMore>
 				<choice>
 					<ref name="m.blocks"/>
-					<ref name="custodhist"/>
+					<!-- TC: 2012-06-08 remove recursion in note elements -->
+					<!-- <ref name="custodhist"/> -->
 					<!-- TC; 2012-03-07: Removed <acqinfo> -->
 					<!-- <ref name="acqinfo"/> -->
 				</choice>
@@ -2673,7 +2685,8 @@ Other changes:
 			<oneOrMore>
 				<choice>
 					<ref name="m.blocks"/>
-					<ref name="prefercite"/>
+					<!-- TC: 2012-06-08 remove recursion in note elements -->
+					<!-- <ref name="prefercite"/> -->
 				</choice>
 			</oneOrMore>
 		</element>
@@ -2693,7 +2706,8 @@ Other changes:
 			<oneOrMore>
 				<choice>
 					<ref name="m.blocks"/>
-					<ref name="processinfo"/>
+					<!-- TC: 2012-06-08 remove recursion in note elements -->
+					<!-- <ref name="processinfo"/> -->
 				</choice>
 			</oneOrMore>
 		</element>
@@ -2713,7 +2727,8 @@ Other changes:
 			<oneOrMore>
 				<choice>
 					<ref name="m.blocks"/>
-					<ref name="userestrict"/>
+					<!-- TC: 2012-06-08 remove recursion in note elements -->
+					<!-- <ref name="userestrict"/> -->
 				</choice>
 			</oneOrMore>
 		</element>
@@ -2730,7 +2745,8 @@ Other changes:
 			<oneOrMore>
 				<choice>
 					<ref name="m.blocks"/>
-					<ref name="bioghist"/>
+					<!-- TC: 2012-06-08 remove recursion in note elements -->
+					<!-- <ref name="bioghist"/> -->
 					<!-- TC; 2012-03-08: Removed <dao>, <daogrp> -->
 					<!--
 					<ref name="dao"/>
@@ -2753,7 +2769,8 @@ Other changes:
 				<choice>
 					<ref name="m.blocks"/>
 					<ref name="m.access.title"/>
-					<ref name="controlaccess"/>
+					<!-- TC: 2012-06-08 remove recursion in note elements -->
+					<!-- <ref name="controlaccess"/> -->
 				</choice>
 			</oneOrMore>
 		</element>
@@ -2778,7 +2795,8 @@ Other changes:
 					<ref name="dao"/>
 					<ref name="daogrp"/>
 					-->
-					<ref name="odd"/>
+					<!-- TC: 2012-06-08 remove recursion in note elements -->
+					<!-- <ref name="odd"/> -->
 				</choice>
 			</oneOrMore>
 		</element>
@@ -2799,7 +2817,8 @@ Other changes:
 					</choice>
 					<!-- TC; 2012-03-07: Removed <arrangement> -->
 					<!-- <ref name="arrangement"/> -->
-					<ref name="scopecontent"/>
+					<!-- TC: 2012-06-08 remove recursion in note elements -->
+					<!-- <ref name="scopecontent"/> -->
 					<!-- TC; 2012-03-08: Removed <dao>, <daogrp> -->
 					<!--
 					<ref name="dao"/>
@@ -2821,7 +2840,8 @@ Other changes:
 			<oneOrMore>
 				<choice>
 					<ref name="m.blocks"/>
-					<ref name="arrangement"/>
+					<!-- TC: 2012-06-08 remove recursion in note elements -->
+					<!-- <ref name="arrangement"/> -->
 				</choice>
 			</oneOrMore>
 		</element>
@@ -2839,7 +2859,8 @@ Other changes:
 				<choice>
 					<ref name="m.blocks"/>
 					<ref name="m.refs"/>
-					<ref name="bibliography"/>
+					<!-- TC: 2012-06-08 remove recursion in note elements -->
+					<!-- <ref name="bibliography"/> -->
 				</choice>
 			</oneOrMore>
 		</element>
@@ -2880,7 +2901,8 @@ Other changes:
 				<choice>
 					<ref name="m.blocks"/>
 					<ref name="m.refs"/>
-					<ref name="relatedmaterial"/>
+					<!-- TC: 2012-06-08 remove recursion in note elements -->
+					<!-- <ref name="relatedmaterial"/> -->
 				</choice>
 			</oneOrMore>
 		</element>
@@ -2901,7 +2923,8 @@ Other changes:
 				<choice>
 					<ref name="m.blocks"/>
 					<ref name="m.refs"/>
-					<ref name="separatedmaterial"/>
+					<!-- TC: 2012-06-08 remove recursion in note elements -->
+					<!-- <ref name="separatedmaterial"/> -->
 				</choice>
 			</oneOrMore>
 		</element>
@@ -2919,7 +2942,8 @@ Other changes:
 				<choice>
 					<ref name="m.blocks"/>
 					<ref name="m.refs"/>
-					<ref name="otherfindaid"/>
+					<!-- TC: 2012-06-08 remove recursion in note elements -->
+					<!-- <ref name="otherfindaid"/> -->
 				</choice>
 			</oneOrMore>
 		</element>
@@ -2945,9 +2969,11 @@ Other changes:
 						<ref name="indexentry"/>
 					</oneOrMore>
 				</group>
-				<oneOrMore>
+				<!-- TC: 2012-06-08 remove recursion in note elements -->
+				<!-- <oneOrMore>
 					<ref name="index"/>
 				</oneOrMore>
+				-->
 			</choice>
 		</element>
 	</define>
