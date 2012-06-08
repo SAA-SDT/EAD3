@@ -101,6 +101,7 @@ Other changes:
 * removed recursion in note elements (i.e, accessrestrict, accruals, acqinfo, altformavail, appraisal, arrangement, bibliography, 
   bioghist, controlaccess, custodhist, descgrp, dsc, fileplan, index, note, odd, originalsloc, otherfindaid, phystech, prefercite, 
   processinfo, relatedmaterial, scopecontent, separatedmaterial, userestrict)
+* remove ptr and extref
 
 -->
 <!--
