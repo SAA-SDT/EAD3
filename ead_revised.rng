@@ -1002,7 +1002,7 @@ Other changes:
 	<define name="m.refs">
 		<choice>
 			<ref name="ref"/>
-			<ref name="extref"/>
+		<!-- <ref name="extref"/> -->
 			<element name="linkgrp">
 				<ref name="a.common"/>
 				<ref name="extendedLink"/>
@@ -1103,6 +1103,7 @@ Other changes:
 	</define>
 	<define name="m.phrase.bare">
 		<choice>
+			<!--
 			<choice>
 				<ref name="ptr"/>
 				<element name="extptr">
@@ -1110,7 +1111,9 @@ Other changes:
 					<ref name="a.external.ptr"/>
 					<empty/>
 				</element>
+				
 			</choice>
+			-->
 			<ref name="m.render"/>
 		</choice>
 	</define>
@@ -2998,12 +3001,12 @@ Other changes:
 						<ref name="a.common"/>
 						<oneOrMore>
 							<choice>
-								<ref name="ptr"/>
+							<!--	<ref name="ptr"/> -->
 								<ref name="ref"/>
 							</choice>
 						</oneOrMore>
 					</element>
-					<ref name="ptr"/>
+					<!-- <ref name="ptr"/> -->
 					<ref name="ref"/>
 				</choice>
 			</optional>
@@ -3250,6 +3253,8 @@ Other changes:
 			</oneOrMore>
 		</element>
 	</define>
+	<!-- TC 2012-06-08: remove ptr -->
+	<!--
 	<define name="ptr">
 		<element name="ptr">
 			<ref name="a.common"/>
@@ -3257,6 +3262,7 @@ Other changes:
 			<empty/>
 		</element>
 	</define>
+	-->
 	<define name="ref">
 		<element name="ref">
 			<ref name="a.common"/>
@@ -3267,13 +3273,14 @@ Other changes:
 					<ref name="m.para.content.norefs"/>
 					<ref name="bibref"/>
 					<ref name="title"/>
-					<ref name="extref"/>
+					<!-- <ref name="extref"/> -->
 					<ref name="archref"/>
 				</choice>
 			</zeroOrMore>
 		</element>
 	</define>
-	<define name="extref">
+	<!-- TC 2012-06-08: remove extref -->
+	<!--<define name="extref">
 		<element name="extref">
 			<ref name="a.common"/>
 			<ref name="a.external.ptr"/>
@@ -3289,6 +3296,7 @@ Other changes:
 			</zeroOrMore>
 		</element>
 	</define>
+	-->
 	<define name="title">
 		<element name="title">
 			<ref name="a.common"/>
@@ -3332,7 +3340,7 @@ Other changes:
 					<ref name="bibref"/>
 					<ref name="ref"/>
 					<ref name="title"/>
-					<ref name="extref"/>
+					<!-- <ref name="extref"/> -->
 					<ref name="m.did"/>
 				</choice>
 			</zeroOrMore>
@@ -3361,7 +3369,7 @@ Other changes:
 					<ref name="famname"/>
 					<ref name="persname"/>
 					<ref name="corpname"/>
-					<ref name="extref"/>
+					<!-- <ref name="extref"/> -->
 					<ref name="archref"/>
 				</choice>
 			</zeroOrMore>
