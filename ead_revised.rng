@@ -96,7 +96,8 @@ Other changes:
 
 * remove default value from @calendar and @era
 * deprecate thead
-* add containerid
+* removed table, list, and chronlist from m.para.content
+
 -->
 <!--
 	EAD 2002 Relax NG Schema
@@ -1131,7 +1132,7 @@ Other changes:
 	<define name="m.inter.noquote">
 		<choice>
 			<!-- <ref name="address"/> -->
-			<element name="chronlist">
+					<element name="chronlist">
 				<ref name="a.common"/>
 				<optional>
 					<attribute name="encodinganalog"/>
@@ -1158,9 +1159,11 @@ Other changes:
 					</element>
 				</oneOrMore>
 			</element>
-			<ref name="list"/>
+
+            <ref name="list"/>
+			
 			<ref name="note"/>
-			<element name="table">
+				<element name="table">
 				<ref name="a.common"/>
 				<optional>
 					<attribute name="frame">
@@ -1265,9 +1268,10 @@ Other changes:
 								</optional>
 								<empty/>
 							</element>
+
 						</zeroOrMore>
-						<!-- TC; 2012-06-08: deprecate thead -->
-						<!--<optional>
+						<!--
+						<optional>
 							<ref name="thead"/>
 						</optional>
 						-->
@@ -1288,7 +1292,7 @@ Other changes:
 						</element>
 					</element>
 				</oneOrMore>
-			</element>
+				</element>
 		</choice>
 	</define>
 	<define name="m.inter">
@@ -1351,12 +1355,6 @@ Other changes:
 				<optional>
 					<attribute name="parent">
 						<data type="IDREFS"/>
-					</attribute>
-				</optional>
-				<!-- TC: 2012-06-08: add containerid -->
-				<optional>
-					<attribute name="containerid">
-						<data type="NMTOKEN"/>
 					</attribute>
 				</optional>
 				<zeroOrMore>
@@ -1590,7 +1588,9 @@ Other changes:
 	<define name="m.para.content">
 		<choice>
 			<ref name="m.phrase.plus"/>
-			<ref name="m.inter"/>
+			<!-- TC; 2012-06-08 remove m.inter, retaining note -->
+			<!--	<ref name="m.inter"/> -->
+			<ref name="note"/>		     
 		</choice>
 	</define>
 	<define name="m.para.content.norefs">

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?oxygen RNGSchema="file:/home/thc4/Dropbox/ead/schema/ead_revised_20120307.rng" type="xml"?>
+<?oxygen RNGSchema="ead_revised.rng" type="xml"?>
 <ead xmlns="http://saa-sdt.example.org/ead/revised">
     <control>
         <eadid/>
@@ -36,6 +36,7 @@
             <unittitle>Records of Stuff</unittitle>
             <unitdate>1896-1927</unitdate>
         </did>
+        <scopecontent><p>Blah blah blah</p></scopecontent>
         <legalstatus>Blah blah blah</legalstatus>
         <relations>
             <cpfRelation>
