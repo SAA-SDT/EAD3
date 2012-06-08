@@ -1088,10 +1088,13 @@ Other changes:
 			<ref name="m.access"/>
 			<ref name="date"/>
 			<ref name="num"/>
-			<ref name="origination"/>
+			<!-- TC: 2012-06-08 remove did child elements from anywhere beside did -->
+		    <!--
+		    <ref name="origination"/>
 			<ref name="repository"/>
 			<ref name="unitdate"/>
 			<ref name="unittitle"/>
+			-->
 		</choice>
 	</define>
 	<define name="m.phrase.bare">
