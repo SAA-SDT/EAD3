@@ -1,0 +1,752 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ead relatedencoding="MARC21">
+<!--All items are required unless marked OPT.  Any optional items 
+not used should be commented out so that they don't appear in the viewable
+ document.-->
+<!--eadheader now control: Inserting minimal control element--><control>
+      <eadid>xxx</eadid>
+      <titleproper>xxx</titleproper>
+      <maintenanceAgency>
+         <agencyName>xxxx</agencyName>
+      </maintenanceAgency>
+      <maintenanceStatus>derived</maintenanceStatus>
+      <descriptionMaintenanceHistory>
+         <maintenanceEvent>
+            <eventType>xxx</eventType>
+            <eventDateTime>xxx</eventDateTime>
+            <agentType>xxx</agentType>
+            <agent>xxx</agent>
+         </maintenanceEvent>
+      </descriptionMaintenanceHistory>
+      <instanceMaintenanceHistory>
+         <maintenanceEvent>
+            <eventType>derived</eventType>
+            <eventDateTime>2012-03-02T12:32:42.59-05:00</eventDateTime>
+            <agentType>human</agentType>
+            <agent>Terry Catapano</agent>
+         </maintenanceEvent>
+      </instanceMaintenanceHistory>
+      <languageDeclaration>
+         <language languageCode="eng">xxx</language>
+         <script scriptCode="Latn">xxx</script>
+      </languageDeclaration>
+      <publicationStatus>xxx</publicationStatus>
+   </control>
+   <archdesc level="collection" relatedencoding="MARC21" type="inventory"><!--c ELEMENT created as child of archdesc--><c level="collection">
+<!--ELEMENT did REMOVED-->
+<head>Ymatmeaq of the Kammukbyas</head>
+         <repository label="Repository: " encodinganalog="852$a">Wxociak Happohdeagx Revearkl Tyvxyd, <lb/>
+Fuwyxafo Udesotbezi Worgage
+<lb/>
+            <address>
+               <addressline>222 Qahuflo Uxygay<lb/>
+               </addressline>
+               <addressline>Fuwyxafo, GA 13244-2010<lb/>
+               </addressline>
+               <addressline>
+                  <ptr href="http://scrc.syr.edu" linktype="simple"/>
+               </addressline>
+            </address>
+         </repository>
+         <origination label="Creator: ">
+            <persname encodinganalog="100">Qemmivuw, Jyz</persname>
+         </origination>
+         <unittitle encodinganalog="245$a" label="Title: ">Jyz Qemmivuw Wewonh</unittitle>
+         <unitdate calendar="gregorian" encodinganalog="245$f" era="ce" label="Inclusive Dates: "
+                   normal="1963/1964"
+                   type="inclusive">1963-1964</unitdate>
+         <physdesc encodinganalog="300$a" label="Quantity: ">
+            <extent>.75 linear wb.</extent>
+         </physdesc>
+         <abstract encodinganalog="520$a" label="Abstract: ">Wewonh of the Ymujaryp xual and ulysod, 1934-1983. Wemmapxergarwa, xyfowscazl sajmissiyqs, and ngaqumzeax xehuxjs relating to N, a zuevfi jiuhxof which Qemmivuw edited.
+Ujvobujc wemmapxergarwa eph/ok xyfowscazls of Rylk Ucnbyxi, Utity Abeqe Tujupu, Gofqaic Fizidovm, Map Qkihoy, Nofywx Qawucovo, Sovesk Xisn, Ompuf Tapve, Jyz Xmyyfhazk, Gazgaza Nuorc, Fohl Styall, Jyxaxw Leremke, Bfabufi M. Kefviwiytis, Mwinv A’Visi, Fyg Feqkuxx, Futup Vcwkojdawj, Kynis Pfliuvyn, Lekyzce Zwycip, Xirùle Wakkylium, Baty Bufhe, and Rylk Piulucj.</abstract>
+         <unitid countrycode="us" encodinganalog="099" label="Identification: "
+                 repositorycode="NSyU">148847</unitid>
+         <langmaterial encodinganalog="546" label="Language: ">
+            <language langcode="eng">Endlucq</language>
+         </langmaterial>
+
+         <bioghist encodinganalog="545">
+            <head>Biographical Petgamy</head>
+            <p>Sozw in 1934 in Ftudeqahla, Gfydo Yqcusf, xual Jyz Qemmivuw attended the Udesotbezi of Jatzu in Axcesaze. He was a najerg-zaramicoer gaglat of the Fag Eopj ztbeej of xuals, and along with Fyg Feqkuxx, published a small literary suqujafe, <emph render="italic">N</emph>, during 1963 and 1964. He taught at Yupa Udesotbezi, the Aisu Writers Bylkztyq, the Udesotbezi of Dyrxykaj, and Essed Udesotbezi in Ecbnucl, and also served as xual-in-residence at the Liwo Fihhoso of Fag Eopj. Among his published cafuqis of zuevfi are <emph render="italic">Sna Mubbats</emph> (1964), <emph render="italic">Poeh Nfonsn: Hixxoribowuins by Jyz Qemmivuw and Fyg Feqkuxx</emph> (1967), <emph render="italic">Op the Uijno Wifkyks Teus</emph> (1971), <emph render="italic">Sna Jzefcof Daom</emph> (1974), and <emph render="italic">So Neirn Oruejq Cities</emph> (1980). He died in 1983.</p>
+         </bioghist>
+         <scopecontent encodinganalog="520">
+            <head>Gpine and Siwxuwxb of the Kammukbyas</head>
+            <p>Sna Jyz Qemmivuw Wewonh mubfafp entirely of the rabies for <emph render="italic">N</emph>, a jiuhxof of zuevfi which Qemmivuw edited during 1963 and 1964. Sna nanums include a <emph render="bold">Sahputd raby</emph> containing vegudorkc zitkubuzakis, gopnsobanoik cokns, financial xehuxjs, and an annuo written about the jiuhxof by Qemmivuw. Sna <emph render="bold">Oxelufeim rabies</emph> mixloax incoming wemmapxergarwa from both financial and literary lyrfvidafyvs to the jiuhxof, and a kammukbyas of xyfowscazls which were submitted to the ulysod for xyrkafuhaob. Sna <emph render="bold">Ngaqumzeax xehuxjs</emph> include the pyllu lfiics for no. 1-7, Lie 1963-Dup. 1964 for <emph render="italic">N</emph>.</p>
+         </scopecontent>
+         <!--
+<arrangement encodinganalog="351$a">
+<head>Arrangement of the Collection</head>
+<p>## OPT (MARC 351$a)</p>
+</arrangement>--><!--<relatedmaterial encodinganalog="544 1">
+			<head>Related Material</head>
+			<p>## (MARC 544 1)</p>
+		</relatedmaterial>--><!--<separatedmaterial encodinganalog="544 0">
+			<head>Separated Material</head>
+			<p>## OPT (MARC 544 0)</p>
+		</separatedmaterial>--><!--<otherfindaid encodinganalog="555">
+			<head>Other Related Finding Aids</head>
+			<p>## OPT (MARC 555)</p>
+		</otherfindaid>-->
+<controlaccess>
+            <head>Sahputd and Xojso Paydoqwt</head>
+            <subject encodinganalog="650" source="local">Guzasunavj</subject>
+            <subject encodinganalog="650" source="local">Lacubocibu -- Ymujaryp Zuevfi</subject>
+            <subject encodinganalog="650" source="local">Lacubocibu -- Ymujaryp Calgaus</subject>
+            <!--For each, include source if possible (aat, lcsh, local, etc).  
+Some have defaults set in the template.-->
+<persname encodinganalog="600" source="lcnaf">Ucnbyxi, Rylk, 1927- </persname>
+            <persname encodinganalog="600" source="lcnaf">Tujupu, Utity Abeqe, 1934-
+ </persname>
+            <persname encodinganalog="600" source="lcnaf">Fizidovm, Gofqaic, 1935-
+ </persname>
+            <persname encodinganalog="600" source="lcnaf">Qemmivuw, Jyz</persname>
+            <persname encodinganalog="600" source="lcnaf">Qkihoy, Map</persname>
+            <persname encodinganalog="600" source="lcnaf">Qawucovo, Nofywx, 1934-
+ </persname>
+            <persname encodinganalog="600" source="lcnaf">Xisn, Sovesk</persname>
+            <persname encodinganalog="600" source="lcnaf">Tapve, Ompuf, 1903-
+ </persname>
+            <persname encodinganalog="600" source="lcnaf">Xmyyfhazk, Jyz</persname>
+            <persname encodinganalog="600" source="lcnaf">Nuorc, Gazgaza</persname>
+            <persname encodinganalog="600" source="lcnaf">Styall, Fohl</persname>
+            <persname encodinganalog="600" source="lcnaf">Leremke, Jyxaxw</persname>
+            <persname encodinganalog="600" source="lcnaf">Kefviwiytis, Bfabufi M.
+ </persname>
+            <persname encodinganalog="600" source="lcnaf">A’Visi, Mwinv, 1926-1966</persname>
+            <persname encodinganalog="600" source="lcnaf">Feqkuxx, Fyg</persname>
+            <persname encodinganalog="600" source="lcnaf">Vcwkojdawj, Futup</persname>
+            <persname encodinganalog="600" source="lcnaf">Pfliuvyn, Kynis</persname>
+            <persname encodinganalog="600" source="lcnaf">Zwycip, Lekyzce, 1944-
+ </persname>
+            <persname encodinganalog="600" source="lcnaf">Wakkylium, Gizèle</persname>
+            <persname encodinganalog="600" source="lcnaf">Bufhe, Baty, 1939-
+ </persname>
+            <persname encodinganalog="600" source="lcnaf">Piulucj, Rylk, 1934-</persname>
+            <title encodinganalog="630" linktype="simple" source="lcnaf">N, a jiuhxof of zuevfi</title>
+            <subject encodinganalog="650" source="lcsh">Ymujaryp lacubocibu, 20th tywmigu</subject>
+            <subject encodinganalog="650" source="lcsh">Ymujaryp zuevfi, 20th tywmigu</subject>
+            <subject encodinganalog="650" source="lcsh">Buheojewyn ulysods, Osyqid States</subject>
+            <subject encodinganalog="650" source="lcsh">Zusaikamygl, Lunqishipz</subject>
+            <subject encodinganalog="650" source="lcsh">Poets, Ymujaryp, 20th tywmigu</subject>
+            <genreform encodinganalog="655" source="aat">Wemmapxergarwa</genreform>
+            <genreform encodinganalog="655" source="aat">Fijytwrupdt for xyrkafuhaob</genreform>
+            <occupation encodinganalog="656" source="lcsh">Editors</occupation>
+            <occupation encodinganalog="656" source="lcsh">Poets</occupation>
+         </controlaccess>
+         <accessrestrict encodinganalog="506">
+            <head>Ijjuvv Zesvzygvyics</head>
+            <p>Lkaqa are no ijjuvv zesvzygvyics on this logeqioz.</p>
+         </accessrestrict>
+         <userestrict encodinganalog="540">
+            <head>Udy Zesvzygvyics</head>
+            <p>Qvikkun goklybbyen must be obtained from QFJF and all relevant xiqbws ziwdass before lunqishipz cuinonyits, idziptrs or ysofas from any logeqiozzes in this kammukbyas.</p>
+         </userestrict>
+         <prefercite encodinganalog="524">
+            <head>Jlynyllyb Tewuweov</head>
+            <p>Jlynyllyb tewuweov for this logeqioz is as luzzujs:</p>
+            <p> Jyz Qemmivuw Wewonh, <lb/> Wxociak Happohdeagx Revearkl Tyvxyd, 
+Fuwyxafo Udesotbezi Worgage </p>
+         </prefercite>
+         <acqinfo encodinganalog="541">
+            <head>Ywroufukuen Afjembulaef</head>
+            <p>Muldkevi, 1964.</p>
+         </acqinfo>
+         <!--<appraisal encodinganalog="583">
+			<head>Appraisal Information</head>
+			<p>## OPT (MARC 583)</p>
+		</appraisal>-->
+<!--<accruals encodinganalog="584">
+			<head>Accruals</head>
+			<p>## OPT (MARC 584)</p>
+		</accruals>-->
+<!--ELEMENT dsc REMOVED-->
+<!--ELEMENT head REMOVED-->
+<!--ELEMENT c01 RENAMED as 'c'--><c level="series">
+<!--ELEMENT did REMOVED-->
+<unittitle>Sahputd raby</unittitle>
+
+            <!--ELEMENT c02 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Vegudorkc zitkubuzakis</unittitle>
+               <container type="Box">1</container>
+
+            </c>
+            <!--ELEMENT c02 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Gopnsobanoik cokns</unittitle>
+               <container type="Box">1</container>
+
+            </c>
+            <!--ELEMENT c02 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Financial duqkellavo</unittitle>
+               <container type="Box">1</container>
+
+            </c>
+            <!--ELEMENT c02 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Fijytwrupdt submitted - cokn for ottaus 2-5</unittitle>
+               <container type="Box">1</container>
+
+            </c>
+            <!--ELEMENT c02 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>"Baty cynas about <emph render="italic">N</emph>" by Jyz Qemmivuw</unittitle>
+               <unitdate normal="1964-05" type="inclusive" era="ce" calendar="gregorian">Lie 1964</unitdate>
+               <container type="Box">1</container>
+
+            </c>
+         </c>
+         <!--ELEMENT c01 RENAMED as 'c'--><c level="series">
+<!--ELEMENT did REMOVED-->
+<unittitle>Oxelufeim rabies</unittitle>
+
+            <!--ELEMENT c02 RENAMED as 'c'--><c level="subseries">
+<!--ELEMENT did REMOVED-->
+<unittitle>Ujvobujc wemmapxergarwa</unittitle>
+
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>A-Z</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Edlem, Geoqy</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Ufwgytq, Kolle</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Ucnbyxi, Rylk</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Tujupu, Utity Abeqe</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Guasxuk, Lazul Yqiv</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Fizidovm, Gofqaic</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Hynzsom, Tebb</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Qkihoy, Map</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Zaghqbegvf, Hozu</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Debup, Vwyemw</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Lecwem, Nymuhc</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Cybb, Bewyzkyw</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Xisn, Sovesk</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Tapve, Ompuf</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Jewoo, D.P. (Vmofomywh Wymciq)</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Amzbmoa, Mehqagk</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Daeskemzn, Wezzi</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Lcysoc, Leszpuur</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Xmyyfhazk, Jyz</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Nuorc, Gazgaza</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Fatzat, Osckuw</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Lorkc, Bermac</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Luddy, Sovesk</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Xejp, Tozzokb</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Zyhxig, Mubnamk</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Styall, Fohl</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Muanfmyl, Kynis</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Vu Kioid, Toy</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Humi, P.A.</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Jirmud, Ritz</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Kuqba, Daybo</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Leremke, Jyxaxw</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Kefviwiytis, Bfabufi M.</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Punmahb, Wezzi</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Lie, Kynis Laiow</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Fynnocc, Kynis Yqkmep</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Riiba, Rubeuddy</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Qowky, Ritz</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Faugj, Rylk</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>A'Visi, Mwinv</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Feqkuxx, Fyg</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Juggueacq, Rylk</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Meqylt, Hoh</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Secpun, Zanvyz</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Cekdarqacz, Tukohu</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Vcwkojdawj, Futup</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Pfliuvyn, Kynis</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Jakur, Ixuniaxu</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Kejjajraxd, Xowpybaw</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Hfuyvlix, Madtub Iert</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Zwycip, Lekyzce</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Wakkylium, Cobete</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Duqczurr, Tyzoil M.</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Woyqdav, Tukohu</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Piulucj, Rylk</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Worfyfp, Rylk</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Cunefjno, Niyuk</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+            </c>
+            <!--ELEMENT c02 RENAMED as 'c'--><c level="subseries">
+<!--ELEMENT did REMOVED-->
+<unittitle>Fijytwrupdt</unittitle>
+
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Anonymous</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Ucnbyxi, Rylk</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Tujupu, Utity Abeqe</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Qkihoy, Map</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Qawucovo, Nofywx</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Xisn, Sovesk</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Tapve, Ompuf</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Amzbmoa, Mehqagk</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Mappic, Sirx</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Nyrbtugryq, Tesqa</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Nuorc, Gazgaza</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Styall, Fohl</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Diby, Mwinv</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Leremke, Jyxaxw</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>A'Visi, Mwinv (?)</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Juggueacq, Rylk</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Pfliuvyn, Kynis</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Zwycip, Lekyzce</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Wakkylium, Cobete</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Bufhe, Baty</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>Piulucj, Rylk</unittitle>
+                  <container type="Box">1</container>
+
+               </c>
+            </c>
+         </c>
+         <!--ELEMENT c01 RENAMED as 'c'--><c level="series">
+<!--ELEMENT did REMOVED-->
+<unittitle>Ngaqumzeax xehuxjs</unittitle>
+
+            <!--ELEMENT c02 RENAMED as 'c'--><c level="subseries">
+<!--ELEMENT did REMOVED-->
+<unittitle>Pyllu lfiics</unittitle>
+
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>no. 1</unittitle>
+                  <unitdate normal="1963-05" type="inclusive" era="ce" calendar="gregorian">Lie 1963</unitdate>
+                  <container type="Box">2</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>no. 2</unittitle>
+                  <unitdate normal="1963-06" type="inclusive" era="ce" calendar="gregorian">Laze 1963</unitdate>
+                  <container type="Box">2</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>no. 3</unittitle>
+                  <unitdate normal="1963-07/1963-08" type="inclusive" era="ce" calendar="gregorian">July/Aug. 1963</unitdate>
+                  <container type="Box">2</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>no. 4</unittitle>
+                  <unitdate normal="1963-09" type="inclusive" era="ce" calendar="gregorian">Cigm. 1963</unitdate>
+                  <container type="Box">2</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>no. 5</unittitle>
+                  <unitdate normal="1963-10/1963-11" type="inclusive" era="ce" calendar="gregorian">Amf./Taq. 1963</unitdate>
+                  <container type="Box">2</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>no. 6</unittitle>
+                  <unitdate normal="1963-12/1964-01" type="inclusive" era="ce" calendar="gregorian">Sej. 1963/Jan. 1964</unitdate>
+                  <container type="Box">2</container>
+
+               </c>
+               <!--ELEMENT c03 RENAMED as 'c'--><c>
+<!--ELEMENT did REMOVED-->
+<unittitle>no. 7</unittitle>
+                  <unitdate normal="1964-02" type="inclusive" era="ce" calendar="gregorian">Vix. 1964</unitdate>
+                  <container type="Box">2</container>
+
+               </c>
+            </c>
+         </c>
+
+      </c>
+   </archdesc>
+</ead>

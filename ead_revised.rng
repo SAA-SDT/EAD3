@@ -102,6 +102,7 @@ Other changes:
   bioghist, controlaccess, custodhist, descgrp, dsc, fileplan, index, note, odd, originalsloc, otherfindaid, phystech, prefercite, 
   processinfo, relatedmaterial, scopecontent, separatedmaterial, userestrict)
 * remove ptr and extref
+* add @containerid to <container>
 
 -->
 <!--
@@ -1366,6 +1367,12 @@ Other changes:
 				<optional>
 					<attribute name="parent">
 						<data type="IDREFS"/>
+					</attribute>
+				</optional>
+				<!-- TC; 2012-06-11: add @containerid -->
+				<optional>
+					<attribute name="containerid">
+						<data type="NMTOKEN"/>
 					</attribute>
 				</optional>
 				<zeroOrMore>
