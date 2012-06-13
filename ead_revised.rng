@@ -105,6 +105,7 @@ Other changes:
 * add @containerid to <container>
 * create element <formsavailable> in <did>, with children <container> and <dao> (which are now only available in <formsavailable>)
 * eliminate linkgrp
+* remove linking attributes from <bibref>; restrict <bibref> to <bibliography> only
 
 -->
 <!--
@@ -1018,7 +1019,8 @@ Other changes:
 				</oneOrMore>
 			</element>
 			-->
-			<ref name="bibref"/>
+			<!-- TC; 2012-06-13: restrict bibref to bibliography only -->
+			<!-- <ref name="bibref"/> -->
 			<ref name="title"/>
 			<ref name="archref"/>
 		</choice>
@@ -2890,6 +2892,9 @@ Other changes:
 				<choice>
 					<ref name="m.blocks"/>
 					<ref name="m.refs"/>
+					<zeroOrMore>
+						<ref name="bibref"/>
+					</zeroOrMore>
 					<!-- TC: 2012-06-08 remove recursion in note elements -->
 					<!-- <ref name="bibliography"/> -->
 				</choice>
@@ -3299,7 +3304,8 @@ Other changes:
 				<choice>
 					<text/>
 					<ref name="m.para.content.norefs"/>
-					<ref name="bibref"/>
+					<!--TC; 2012-06-13: restrict bibref to bibliography only -->
+					<!-- <ref name="bibref"/> -->
 					<ref name="title"/>
 					<!-- <ref name="extref"/> -->
 					<ref name="archref"/>
@@ -3365,7 +3371,8 @@ Other changes:
 				<choice>
 					<text/>
 					<ref name="m.phrase.basic.norefs"/>
-					<ref name="bibref"/>
+					<!--TC; 2012-06-13: restrict bibref to bibliography only -->
+					<!-- <ref name="bibref"/>-->
 					<ref name="ref"/>
 					<ref name="title"/>
 					<!-- <ref name="extref"/> -->
@@ -3377,9 +3384,12 @@ Other changes:
 	<define name="bibref">
 		<element name="bibref">
 			<ref name="a.common"/>
-			<optional>
+			<!-- TC: 2012-06-13: remove linking attrs from bibref -->
+			<!--
+				<optional>
 				<ref name="a.external.ptr"/>
 			</optional>
+			-->
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
