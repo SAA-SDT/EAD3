@@ -107,6 +107,7 @@ Other changes:
 * eliminate linkgrp
 * remove linking attributes from <bibref>; restrict <bibref> to <bibliography> only
 * remove <lb/> from content model of <abstract>
+* allow only <emph> and <ref> in <container>
 
 -->
 <!--
@@ -2201,10 +2202,12 @@ Other changes:
 										<data type="NMTOKEN"/>
 									</attribute>
 								</optional>
+								<!-- TC: 2012-06-13: only allow emph and ref -->
 								<zeroOrMore>
 									<choice>
 										<text/>
-										<ref name="m.phrase.basic"/>
+										<ref name="emph"/>
+										<ref name="ref"/>
 									</choice>
 								</zeroOrMore>
 							</element>
