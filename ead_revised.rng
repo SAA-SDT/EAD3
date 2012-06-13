@@ -117,6 +117,7 @@ Other changes:
 * allow only <emph> and <ref> as element children of <dimensions>
 * allow only <emph> and <ref> as element children of <extent>
 * remove linking attributes from <title>
+* added choice of either two or more <div>'s or one or more <p>, <table>, <list>, or <note>'s in <scopecontent> (to be implemented on all "note" elements) 
 
 -->
 <!--
@@ -2868,22 +2869,30 @@ Other changes:
 			<optional>
 				<ref name="head"/>
 			</optional>
-			<oneOrMore>
-				<choice>
-					<choice>
-						<ref name="m.blocks"/>
-					</choice>
-					<!-- TC; 2012-03-07: Removed <arrangement> -->
-					<!-- <ref name="arrangement"/> -->
-					<!-- TC: 2012-06-08 remove recursion in note elements -->
-					<!-- <ref name="scopecontent"/> -->
-					<!-- TC; 2012-03-08: Removed <dao>, <daogrp> -->
-					<!--
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+					<oneOrMore>
+						<choice>
+							<choice>
+								<ref name="m.blocks"/>
+							</choice>
+							<!-- TC; 2012-03-07: Removed <arrangement> -->
+							<!-- <ref name="arrangement"/> -->
+							<!-- TC: 2012-06-08 remove recursion in note elements -->
+							<!-- <ref name="scopecontent"/> -->
+							<!-- TC; 2012-03-08: Removed <dao>, <daogrp> -->
+							<!--
 					<ref name="dao"/>
 					<ref name="daogrp"/>
 					-->
-				</choice>
-			</oneOrMore>
+						</choice>
+					</oneOrMore>
+			</choice>
 		</element>
 	</define>
 	<define name="arrangement">
