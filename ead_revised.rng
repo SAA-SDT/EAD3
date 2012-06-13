@@ -108,6 +108,7 @@ Other changes:
 * remove linking attributes from <bibref>; restrict <bibref> to <bibliography> only
 * remove <lb/> from content model of <abstract>
 * allow only <emph> and <ref> in <container>
+* allow only <emph>, <ref>, and <language> in <langmaterial>
 
 -->
 <!--
@@ -1352,10 +1353,12 @@ Other changes:
 				<optional>
 					<attribute name="encodinganalog"/>
 				</optional>
+				<!-- TC 2012-06-13: only allow <emph>, <ref>, and <language> -->
 				<zeroOrMore>
 					<choice>
 						<text/>
-						<ref name="m.phrase.basic"/>
+						<ref name="emph"/>
+						<ref name="ref"/>
 						<ref name="language"/>
 					</choice>
 				</zeroOrMore>
