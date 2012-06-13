@@ -104,6 +104,7 @@ Other changes:
 * remove ptr and extref
 * add @containerid to <container>
 * create element <formsavailable> in <did>, with children <container> and <dao> (which are now only available in <formsavailable>)
+* eliminate linkgrp
 
 -->
 <!--
@@ -1006,7 +1007,8 @@ Other changes:
 		<choice>
 			<ref name="ref"/>
 			<!-- <ref name="extref"/> -->
-			<element name="linkgrp">
+			<!--TC; 2012-06-13: eliminate linkgrp -->
+			<!--<element name="linkgrp">
 				<ref name="a.common"/>
 				<ref name="extendedLink"/>
 				<oneOrMore>
@@ -1015,6 +1017,7 @@ Other changes:
 					</choice>
 				</oneOrMore>
 			</element>
+			-->
 			<ref name="bibref"/>
 			<ref name="title"/>
 			<ref name="archref"/>

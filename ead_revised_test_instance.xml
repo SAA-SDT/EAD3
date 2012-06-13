@@ -33,11 +33,15 @@
 
     <archdesc level="collection">
         <did>
+            <abstract></abstract>
             <unittitle>Records of Stuff</unittitle>
             <unitdate>1896-1927</unitdate>
         </did>
         
-        <scopecontent><p>Blah blah blah</p></scopecontent>
+
+        <scopecontent>
+            <p>Blah blah blah</p>
+        </scopecontent>
         <legalstatus>Blah blah blah</legalstatus>
         <relations>
             <cpfRelation>
@@ -52,12 +56,12 @@
             <did>
                 <unittitle>Series 1: Old stuff</unittitle>
                 <formsavailable>
-                    <container></container>
-                    <dao xmlns:ns1="http://www.w3.org/1999/xlink" ns1:type="simple"></dao>
+                    <container containerid="xxxxxxxxx" type="Box">1</container>
+                    <container containerid="yyyyyyyyy" type="Folder">1</container>
+                    <dao xmlns:ns1="http://www.w3.org/1999/xlink" ns1:type="simple"/>
                 </formsavailable>
-                
             </did>
-            <relations/>
+            <relations></relations>
             <c>
                 <did>
                     <unittitle>Stuff</unittitle>
@@ -68,7 +72,7 @@
             <did>
                 <unittitle>Series 2: New stuff</unittitle>
             </did>
-            <dao xmlns:ns1="http://www.w3.org/1999/xlink" ns1:type="simple"></dao>
+            <dao xmlns:ns1="http://www.w3.org/1999/xlink" ns1:type="simple"/>
         </c>
     </archdesc>
 </ead>
