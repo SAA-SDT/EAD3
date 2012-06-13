@@ -2363,18 +2363,22 @@ Other changes:
 			<optional>
 				<attribute name="normal"/>
 			</optional>
+			<!-- TC; 2012-03-07: permit only text  -->
 			<zeroOrMore>
 				<choice>
 					<text/>
-					<ref name="m.phrase.basic"/>
+					<!-- <ref name="m.phrase.basic"/>
 					<ref name="m.access"/>
+					-->
 					<!-- TC; 2012-03-07: Remove <unitdate> -->
 					<!-- <ref name="unitdate"/> -->
-					<ref name="num"/>
+					<!--
+				    <ref name="num"/>
 					<ref name="date"/>
 					<ref name="bibseries"/>
 					<ref name="edition"/>
 					<ref name="imprint"/>
+					-->
 				</choice>
 			</zeroOrMore>
 		</element>
@@ -3313,15 +3317,16 @@ Other changes:
 		<element name="ref">
 			<ref name="a.common"/>
 			<ref name="a.internal.ptr"/>
+			<!-- TC; 2013-06-13: permit only text -->
 			<zeroOrMore>
 				<choice>
 					<text/>
-					<ref name="m.para.content.norefs"/>
+					<!-- <ref name="m.para.content.norefs"/> -->
 					<!--TC; 2012-06-13: restrict bibref to bibliography only -->
 					<!-- <ref name="bibref"/> -->
-					<ref name="title"/>
+					<!-- <ref name="title"/> -->
 					<!-- <ref name="extref"/> -->
-					<ref name="archref"/>
+					<!-- <ref name="archref"/> -->
 				</choice>
 			</zeroOrMore>
 		</element>
@@ -3364,12 +3369,15 @@ Other changes:
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
+			<!-- TC; 2013-06-13: permit only text -->
 			<zeroOrMore>
 				<choice>
 					<text/>
-					<ref name="m.phrase.bare"/>
+					<!--
+				    <ref name="m.phrase.bare"/>
 					<ref name="date"/>
 					<ref name="num"/>
+					-->
 				</choice>
 			</zeroOrMore>
 		</element>
@@ -3406,9 +3414,11 @@ Other changes:
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
+			<!-- TC; 2013-06-13: permit only text -->
 			<zeroOrMore>
 				<choice>
 					<text/>
+					<!--
 					<ref name="m.phrase.basic.norefs"/>
 					<ref name="edition"/>
 					<ref name="imprint"/>
@@ -3420,8 +3430,9 @@ Other changes:
 					<ref name="famname"/>
 					<ref name="persname"/>
 					<ref name="corpname"/>
+					-->
 					<!-- <ref name="extref"/> -->
-					<ref name="archref"/>
+					<!-- <ref name="archref"/> -->
 				</choice>
 			</zeroOrMore>
 		</element>
@@ -3497,11 +3508,13 @@ Other changes:
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
+			<!-- TC; 2013-06-13: permit only text -->
 			<zeroOrMore>
 				<choice>
 					<text/>
-					<ref name="m.phrase.bare"/>
+					<!-- <ref name="m.phrase.bare"/>
 					<ref name="subarea"/>
+					-->
 				</choice>
 			</zeroOrMore>
 		</element>
@@ -3516,10 +3529,11 @@ Other changes:
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
+			<!-- TC; 2013-06-13: permit only text -->
 			<zeroOrMore>
 				<choice>
 					<text/>
-					<ref name="m.phrase.bare"/>
+					<!-- <ref name="m.phrase.bare"/> -->
 				</choice>
 			</zeroOrMore>
 		</element>
@@ -3570,10 +3584,11 @@ Other changes:
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
+			<!-- TC; 2013-06-13: permit only text -->
 			<zeroOrMore>
 				<choice>
 					<text/>
-					<ref name="m.phrase.bare"/>
+					<!-- <ref name="m.phrase.bare"/> -->
 				</choice>
 			</zeroOrMore>
 		</element>
@@ -3593,10 +3608,11 @@ Other changes:
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
+			<!-- TC; 2013-06-13: permit only text -->
 			<zeroOrMore>
 				<choice>
 					<text/>
-					<ref name="m.phrase.bare"/>
+					<!-- <ref name="m.phrase.bare"/> -->
 				</choice>
 			</zeroOrMore>
 		</element>
@@ -5079,10 +5095,11 @@ Other changes:
 			<optional>
 				<attribute name="altrender"/>
 			</optional>
+			<!-- TC; 2013-06-13: permit only text -->
 			<zeroOrMore>
 				<choice>
 					<text/>
-					<ref name="m.phrase.basic"/>
+					<!-- <ref name="m.phrase.basic"/> -->
 				</choice>
 			</zeroOrMore>
 		</element>
