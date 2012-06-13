@@ -106,6 +106,7 @@ Other changes:
 * create element <formsavailable> in <did>, with children <container> and <dao> (which are now only available in <formsavailable>)
 * eliminate linkgrp
 * remove linking attributes from <bibref>; restrict <bibref> to <bibliography> only
+* remove <lb/> from content model of <abstract>
 
 -->
 <!--
@@ -975,29 +976,7 @@ Other changes:
 	</define>
 	<define name="m.render">
 		<choice>
-			<element name="emph">
-				<optional>
-					<attribute name="render">
-						<choice>
-							<ref name="av.render"/>
-						</choice>
-					</attribute>
-				</optional>
-				<optional>
-					<attribute name="id">
-						<data type="ID"/>
-					</attribute>
-				</optional>
-				<optional>
-					<attribute name="altrender"/>
-				</optional>
-				<zeroOrMore>
-					<choice>
-						<text/>
-						<ref name="m.phrase.basic"/>
-					</choice>
-				</zeroOrMore>
-			</element>
+			<ref name="emph"/>
 			<element name="lb">
 				<empty/>
 				<empty/>
@@ -1353,7 +1332,8 @@ Other changes:
 				<zeroOrMore>
 					<choice>
 						<text/>
-						<ref name="m.phrase.basic"/>
+							<ref name="emph"/>
+							<ref name="m.refs"/>						
 					</choice>
 				</zeroOrMore>
 			</element>
@@ -5046,6 +5026,32 @@ Other changes:
 			<optional>
 				<ref name="e.descriptiveNote"/>
 			</optional>
+		</element>
+	</define>
+	<!--TC; 2012-06-13: create pattern for <emph> so it can be referenced from multiple patterns -->
+	<define name="emph">
+		<element name="emph">
+			<optional>
+				<attribute name="render">
+					<choice>
+						<ref name="av.render"/>
+					</choice>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="id">
+					<data type="ID"/>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="altrender"/>
+			</optional>
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<ref name="m.phrase.basic"/>
+				</choice>
+			</zeroOrMore>
 		</element>
 	</define>
 </grammar>
