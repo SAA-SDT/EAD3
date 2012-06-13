@@ -110,7 +110,8 @@ Other changes:
 * allow only <emph> and <ref> in <container>
 * allow only <emph>, <ref>, and <language> in <langmaterial>
 * remove <materialspec> from <did> and move to <archdesc> and <c>/<c#>; adopt same content model as <phystech>
-* only permit emph and ref as element children of <physloc>
+* only permit <emph> and <ref> as element children of <physloc>
+* only permit <emph> and <ref> as element children of <unitid>
 
 -->
 <!--
@@ -1498,10 +1499,12 @@ Other changes:
 				<optional>
 					<attribute name="encodinganalog"/>
 				</optional>
+				<!-- TC; 2012-6-13: only permit <emph> and <ref> as element children -->
 				<zeroOrMore>
 					<choice>
 						<text/>
-						<ref name="m.phrase.basic"/>
+						<ref name="emph"/>
+						<ref name="ref"/>
 					</choice>
 				</zeroOrMore>
 			</element>
