@@ -1334,8 +1334,8 @@ Other changes:
 				<zeroOrMore>
 					<choice>
 						<text/>
-							<ref name="emph"/>
-							<ref name="m.refs"/>						
+						<ref name="emph"/>
+						<ref name="m.refs"/>
 					</choice>
 				</zeroOrMore>
 			</element>
