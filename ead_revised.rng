@@ -103,6 +103,7 @@ Other changes:
   processinfo, relatedmaterial, scopecontent, separatedmaterial, userestrict)
 * remove ptr and extref
 * add @containerid to <container>
+* create element <formsavailable> in <did>, with children <container> and <dao> (which are now only available in <formsavailable>)
 
 -->
 <!--
@@ -172,8 +173,8 @@ Other changes:
 	
 -->
 <!-- changed ns from urn:isbn:1-931666-22-9 to provisional http://saa-sdt.example.org/ead/revised" -->
-<grammar datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" ns="http://saa-sdt.example.org/ead/revised"
-	xmlns="http://relaxng.org/ns/structure/1.0"
+<grammar datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
+	ns="http://saa-sdt.example.org/ead/revised" xmlns="http://relaxng.org/ns/structure/1.0"
 	xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
 	xmlns:xlink="http://www.w3.org/1999/xlink">
 
@@ -1004,7 +1005,7 @@ Other changes:
 	<define name="m.refs">
 		<choice>
 			<ref name="ref"/>
-		<!-- <ref name="extref"/> -->
+			<!-- <ref name="extref"/> -->
 			<element name="linkgrp">
 				<ref name="a.common"/>
 				<ref name="extendedLink"/>
@@ -1095,7 +1096,7 @@ Other changes:
 			<ref name="date"/>
 			<ref name="num"/>
 			<!-- TC: 2012-06-08 remove did child elements from anywhere beside did -->
-		    <!--
+			<!--
 		    <ref name="origination"/>
 			<ref name="repository"/>
 			<ref name="unitdate"/>
@@ -1144,7 +1145,7 @@ Other changes:
 	<define name="m.inter.noquote">
 		<choice>
 			<!-- <ref name="address"/> -->
-					<element name="chronlist">
+			<element name="chronlist">
 				<ref name="a.common"/>
 				<optional>
 					<attribute name="encodinganalog"/>
@@ -1172,10 +1173,10 @@ Other changes:
 				</oneOrMore>
 			</element>
 
-            <ref name="list"/>
-			
+			<ref name="list"/>
+
 			<ref name="note"/>
-				<element name="table">
+			<element name="table">
 				<ref name="a.common"/>
 				<optional>
 					<attribute name="frame">
@@ -1304,7 +1305,7 @@ Other changes:
 						</element>
 					</element>
 				</oneOrMore>
-				</element>
+			</element>
 		</choice>
 	</define>
 	<define name="m.inter">
@@ -1351,37 +1352,8 @@ Other changes:
 					</choice>
 				</zeroOrMore>
 			</element>
-			<element name="container">
-				<ref name="a.common"/>
-				<optional>
-					<attribute name="label"/>
-				</optional>
-				<optional>
-					<attribute name="type">
-						<data type="NMTOKEN"/>
-					</attribute>
-				</optional>
-				<optional>
-					<attribute name="encodinganalog"/>
-				</optional>
-				<optional>
-					<attribute name="parent">
-						<data type="IDREFS"/>
-					</attribute>
-				</optional>
-				<!-- TC; 2012-06-11: add @containerid -->
-				<optional>
-					<attribute name="containerid">
-						<data type="NMTOKEN"/>
-					</attribute>
-				</optional>
-				<zeroOrMore>
-					<choice>
-						<text/>
-						<ref name="m.phrase.basic"/>
-					</choice>
-				</zeroOrMore>
-			</element>
+			<!-- TC: 2012-06-13: move container from did to formsavailable -->
+
 			<!-- TC; 2012-03-08: Removed <dao> and <daogrp> -->
 			<!-- <ref name="dao"/>
 			<ref name="daogrp"/>
@@ -1608,7 +1580,7 @@ Other changes:
 			<ref name="m.phrase.plus"/>
 			<!-- TC; 2012-06-08 remove m.inter, retaining note -->
 			<!--	<ref name="m.inter"/> -->
-			<ref name="note"/>		     
+			<ref name="note"/>
 		</choice>
 	</define>
 	<define name="m.para.content.norefs">
@@ -1632,8 +1604,8 @@ Other changes:
 	<!-- TC 2012-06-08: remove default value -->
 	<define name="am.dates.era">
 		<optional>
-		<!--	<attribute a:defaultValue="ce" name="era"> -->
-			<attribute name="era">	
+			<!--	<attribute a:defaultValue="ce" name="era"> -->
+			<attribute name="era">
 				<data type="NMTOKEN"/>
 			</attribute>
 		</optional>
@@ -2212,7 +2184,52 @@ Other changes:
 			</optional>
 			<oneOrMore>
 				<ref name="m.did"/>
+
+
 			</oneOrMore>
+			<!-- TC: 2012-06-13: add formsavailable element -->
+			<optional>
+				<element name="formsavailable">
+					<zeroOrMore>
+						<choice>
+							<element name="container">
+								<ref name="a.common"/>
+								<optional>
+									<attribute name="label"/>
+								</optional>
+								<optional>
+									<attribute name="type">
+										<data type="NMTOKEN"/>
+									</attribute>
+								</optional>
+								<optional>
+									<attribute name="encodinganalog"/>
+								</optional>
+								<optional>
+									<attribute name="parent">
+										<data type="IDREFS"/>
+									</attribute>
+								</optional>
+								<!-- TC; 2012-06-11: add @containerid -->
+								<optional>
+									<attribute name="containerid">
+										<data type="NMTOKEN"/>
+									</attribute>
+								</optional>
+								<zeroOrMore>
+									<choice>
+										<text/>
+										<ref name="m.phrase.basic"/>
+									</choice>
+								</zeroOrMore>
+							</element>
+							<ref name="dao"/>
+						</choice>
+					</zeroOrMore>
+
+				</element>
+			</optional>
+
 		</element>
 	</define>
 	<define name="dimensions">
@@ -2801,7 +2818,7 @@ Other changes:
 			<oneOrMore>
 				<choice>
 					<ref name="m.blocks"/>
-					<!-- TC; 2012-03-08: Removed <dao>, <daogrp> -->			
+					<!-- TC; 2012-03-08: Removed <dao>, <daogrp> -->
 					<!--
 					<ref name="dao"/>
 					<ref name="daogrp"/>
@@ -3009,7 +3026,7 @@ Other changes:
 						<ref name="a.common"/>
 						<oneOrMore>
 							<choice>
-							<!--	<ref name="ptr"/> -->
+								<!--	<ref name="ptr"/> -->
 								<ref name="ref"/>
 							</choice>
 						</oneOrMore>
@@ -3054,8 +3071,8 @@ Other changes:
 				</zeroOrMore>
 			</group>
 			<choice>
-					<!-- TC; 2012-03-07: Replaced by pattern m.cOrC01 -->
-					<!-- 
+				<!-- TC; 2012-03-07: Replaced by pattern m.cOrC01 -->
+				<!-- 
 						<group>
 						<optional>
 						<ref name="thead"/>
@@ -3076,7 +3093,7 @@ Other changes:
 					</choice>
 					</group>
 					-->
-					<ref name="m.cOrC01"/>
+				<ref name="m.cOrC01"/>
 
 				<!-- TC; 2012-03-07: Removed dsc -->
 				<!-- <zeroOrMore>
@@ -3862,7 +3879,7 @@ Other changes:
 							<text/>
 							<choice>
 								<ref name="m.phrase.plus"/>
-							<!--	<ref name="address"/> -->
+								<!--	<ref name="address"/> -->
 								<ref name="list"/>
 								<ref name="note"/>
 							</choice>
@@ -4134,7 +4151,7 @@ Other changes:
 			<ref name="e.relations"/>
 		</optional>
 	</define>
-	
+
 	<define name="legalstatus">
 		<element name="legalstatus">
 			<ref name="a.common"/>
@@ -4667,7 +4684,9 @@ Other changes:
 				</element>
 			</zeroOrMore>
 			<ref name="titleproper"/>
-			<optional><ref name="subtitle"/></optional>
+			<optional>
+				<ref name="subtitle"/>
+			</optional>
 			<ref name="maintenanceAgency"/>
 			<element name="maintenanceStatus">
 				<ref name="a.common"/>
@@ -4740,20 +4759,26 @@ Other changes:
 					<value>approved</value>
 				</choice>
 			</element>
-			<optional><ref name="e.conventionDeclaration"/></optional>
-		<!--	<optional><element name="otherRecordId">
+			<optional>
+				<ref name="e.conventionDeclaration"/>
+			</optional>
+			<!--	<optional><element name="otherRecordId">
 				<ref name="a.common"/>
 				<ref name="attrs-types"/>
 				<text/>
 			</element>
 				</optional>
 				-->
-			<optional><ref name="e.localControl"/></optional>
-			<optional><ref name="e.localTypeDeclaration"/></optional>
+			<optional>
+				<ref name="e.localControl"/>
+			</optional>
+			<optional>
+				<ref name="e.localTypeDeclaration"/>
+			</optional>
 		</element>
 	</define>
 
-<!-- Patterns from EAC-CPF for <control> -->
+	<!-- Patterns from EAC-CPF for <control> -->
 
 	<define name="maintenanceAgency">
 		<element name="maintenanceAgency">
@@ -4794,7 +4819,7 @@ Other changes:
 				>(([A-Z]{2})|([a-zA-Z]{1})|([a-zA-Z]{3,4}))(-[a-zA-Z0-9:/\-]{1,11})</param>
 		</data>
 	</define>
-	
+
 
 	<define name="maintenanceHistory">
 		<ref name="a.common"/>
@@ -4843,7 +4868,7 @@ Other changes:
 
 	</define>
 
-	
+
 
 	<define name="e.languageDeclaration">
 		<element a:id="languageDeclaration" name="languageDeclaration">
@@ -4856,11 +4881,11 @@ Other changes:
 		</element>
 	</define>
 
-	
 
-	
 
-	
+
+
+
 
 	<define name="e.sources">
 		<element name="sources">
@@ -4901,16 +4926,16 @@ Other changes:
 		</element>
 	</define>
 
-	
-	
-	
-	
 
-	
 
-	
 
-	
+
+
+
+
+
+
+
 
 	<define name="e.conventionDeclaration">
 		<element a:id="conventionDeclaration" name="conventionDeclaration">

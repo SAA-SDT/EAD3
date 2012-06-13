@@ -51,6 +51,11 @@
         <c>
             <did>
                 <unittitle>Series 1: Old stuff</unittitle>
+                <formsavailable>
+                    <container></container>
+                    <dao xmlns:ns1="http://www.w3.org/1999/xlink" ns1:type="simple"></dao>
+                </formsavailable>
+                
             </did>
             <relations/>
             <c>
