@@ -110,8 +110,12 @@ Other changes:
 * allow only <emph> and <ref> in <container>
 * allow only <emph>, <ref>, and <language> in <langmaterial>
 * remove <materialspec> from <did> and move to <archdesc> and <c>/<c#>; adopt same content model as <phystech>
-* only permit <emph> and <ref> as element children of <physloc>
-* only permit <emph> and <ref> as element children of <unitid>
+* allow only <emph> and <ref> as element children of <physloc>
+* allow only <emph> and <ref> as element children of <unitid>
+* allow only text in <bibref>, <corpname>, <date>, <emph>, <famname>, <persname>, <title>, <ref>, and <unittitle>
+* allow only <emph> and <ref> as element children of <physfacet>
+* allow only <emph> and <ref> as element children of <dimensions>
+* allow only <emph> and <ref> as element children of <extent>
 
 -->
 <!--
@@ -1417,12 +1421,12 @@ Other changes:
 							<optional>
 								<attribute name="encodinganalog"/>
 							</optional>
+							<!-- TC; 2012-06-13: allow only <emph> and <ref> as element children -->
 							<zeroOrMore>
 								<choice>
 									<text/>
-									<ref name="m.phrase.basic"/>
-									<ref name="m.access"/>
-									<ref name="date"/>
+									<ref name="emph"/>
+									<ref name="ref"/>
 								</choice>
 							</zeroOrMore>
 						</element>
@@ -1440,10 +1444,12 @@ Other changes:
 							<optional>
 								<attribute name="encodinganalog"/>
 							</optional>
+							<!-- TC; 2012-06-13: allow only <emph> and <ref> as element children -->
 							<zeroOrMore>
 								<choice>
 									<text/>
-									<ref name="m.phrase.basic"/>
+									<ref name="emph"/>
+									<ref name="ref"/>
 								</choice>
 							</zeroOrMore>
 						</element>
@@ -2248,11 +2254,12 @@ Other changes:
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
+			<!-- TC; 2012-06-13: allow only <emph> and <ref> as element children -->
 			<zeroOrMore>
 				<choice>
 					<text/>
-					<ref name="m.phrase.basic"/>
-					<ref name="dimensions"/>
+					<ref name="emph"/>
+					<ref name="ref"/>
 				</choice>
 			</zeroOrMore>
 		</element>
