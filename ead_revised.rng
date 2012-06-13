@@ -116,6 +116,7 @@ Other changes:
 * allow only <emph> and <ref> as element children of <physfacet>
 * allow only <emph> and <ref> as element children of <dimensions>
 * allow only <emph> and <ref> as element children of <extent>
+* remove linking attributes from <title>
 
 -->
 <!--
@@ -3370,9 +3371,12 @@ Other changes:
 				</attribute>
 			</optional>
 			<ref name="a.access"/>
-			<optional>
+			<!-- TC; 2012-06-13: remove linking attributes -->
+			<!--
+				<optional>
 				<ref name="a.external.ptr"/>
 			</optional>
+			-->
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
