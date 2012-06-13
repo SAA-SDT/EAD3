@@ -44,6 +44,7 @@
             <p>Blah blah blah</p>
         </scopecontent>
         <legalstatus>Blah blah blah</legalstatus>
+        <materialspec><p>blah blah blah</p></materialspec>
         <relations>
             <cpfRelation>
                 <objectXMLWrap>

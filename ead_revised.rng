@@ -109,6 +109,7 @@ Other changes:
 * remove <lb/> from content model of <abstract>
 * allow only <emph> and <ref> in <container>
 * allow only <emph>, <ref>, and <language> in <langmaterial>
+* remove <materialspec> from <did> and move to <archdesc> and <c>/<c#>; adopt same content model as <phystech>
 
 -->
 <!--
@@ -1363,7 +1364,8 @@ Other changes:
 					</choice>
 				</zeroOrMore>
 			</element>
-			<ref name="materialspec"/>
+			<!-- TC: 2012-06-13: removed materialspec -->
+			<!-- <ref name="materialspec"/> -->
 			<ref name="note"/>
 			<ref name="origination"/>
 			<element name="physdesc">
@@ -1540,6 +1542,8 @@ Other changes:
 			<!--<ref name="fileplan"/>-->
 			<ref name="index"/>
 			<ref name="legalstatus"/>
+			<!-- TC; 2012-03-08: add <materialspec> -->
+			<ref name="materialspec"/>
 			<ref name="odd"/>
 			<ref name="originalsloc"/>
 			<ref name="otherfindaid"/>
@@ -2497,7 +2501,8 @@ Other changes:
 	</define>
 	<define name="materialspec">
 		<element name="materialspec">
-			<ref name="a.common"/>
+			<!-- TC: 2012-06-13: adopt same content model as phystech -->
+			<!-- <ref name="a.common"/>
 			<optional>
 				<attribute name="label"/>
 			</optional>
@@ -2515,6 +2520,22 @@ Other changes:
 					<ref name="materialspec"/>
 				</choice>
 			</zeroOrMore>
+			-->
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodinganalog"/>
+			</optional>
+			<optional>
+				<attribute name="type"/>
+			</optional>
+			<optional>
+				<ref name="head"/>
+			</optional>
+			<oneOrMore>
+				<choice>
+					<ref name="m.blocks"/>
+				</choice>
+			</oneOrMore>
 		</element>
 	</define>
 	<define name="accruals">
