@@ -1771,8 +1771,8 @@ Other changes:
 				<attribute name="relatedencoding"/>
 			</optional>
 			<!-- TC; 2012-03-07: added <control> removed other <eadheader> elements -->
-			<ref name="control"/>
-			<!--
+			<!-- <ref name="control"/> -->
+
 			<element name="eadheader">
 				<ref name="a.common"/>
 				<optional>
@@ -1992,7 +1992,7 @@ Other changes:
 					</element>
 				</optional>
 			</element>
-			-->
+
 			<!-- TC; 2012-03-08: Remove <frontmatter> -->
 			<!-- 
 				<optional>
