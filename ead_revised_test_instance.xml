@@ -41,7 +41,9 @@
         
 
         <scopecontent>
-<p></p>
+            <head></head>
+            <div><head></head></div>
+            <div><head></head></div>
         </scopecontent>
         <legalstatus>Blah blah blah</legalstatus>
         <materialspec><p>blah blah blah</p></materialspec>
