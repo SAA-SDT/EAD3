@@ -120,6 +120,10 @@ Other changes:
 * added choice of either two or more <div>'s or one or more <p>, <table>, <list>, or <note>'s in <scopecontent> (to be implemented on all "note" elements)
 * remove extended link attributes and elements
 
+* restored eadheader for <control>
+
+* changed name of all type attributes without a list of values to "localtype"
+
 -->
 <!--
 	EAD 2002 Relax NG Schema
@@ -2032,7 +2036,7 @@ Other changes:
 				</attribute>
 				<ref name="a.desc.base"/>
 				<optional>
-					<attribute name="type">
+					<attribute name="localtype">
 						<data type="NMTOKEN"/>
 					</attribute>
 				</optional>
@@ -2206,7 +2210,7 @@ Other changes:
 									<attribute name="label"/>
 								</optional>
 								<optional>
-									<attribute name="type">
+									<attribute name="localtype">
 										<data type="NMTOKEN"/>
 									</attribute>
 								</optional>
@@ -2330,7 +2334,7 @@ Other changes:
 				<attribute name="label"/>
 			</optional>
 			<optional>
-				<attribute name="type">
+				<attribute name="localtype">
 					<choice>
 						<value>bulk</value>
 						<value>inclusive</value>
@@ -4225,7 +4229,7 @@ Other changes:
 		<element name="legalstatus">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="type">
+				<attribute name="localtype">
 					<data type="NMTOKEN"/>
 				</attribute>
 			</optional>
