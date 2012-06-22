@@ -41,7 +41,7 @@
     <!-- DEPRECATED ELEMENTS                             -->
     <!-- ############################################### -->
 
-    <xsl:template match="did | dsc | abbr | expan | descgrp | frontmatter">
+    <xsl:template match="dsc | abbr | expan | descgrp | frontmatter | runner">
         <xsl:comment>
             <xsl:call-template name="removedElement"/>
         </xsl:comment>
@@ -52,7 +52,7 @@
     </xsl:template>
 
     <!-- orphan elements -->
-    <xsl:template match="descgrp/head | dsc/head | archdesc/runner ">
+    <xsl:template match="descgrp/head | dsc/head">
         <xsl:comment>
             <xsl:call-template name="removedElement"/>
         </xsl:comment>
@@ -136,24 +136,74 @@
     <!-- ############################################### -->
     <!-- RENAMED ELEMENTS                                -->
     <!-- ############################################### -->
-    <!-- numbered c's -->
-    <xsl:template match="c01 | c02 | c03 | c04 | c05 | c06 | c07 | c08 | c09 | c10 | c11 | c12 ">
-        <xsl:comment>
-            <xsl:text>ELEMENT </xsl:text>
-            <xsl:value-of select="local-name()"/>
-            <xsl:text>&#160;</xsl:text>
-            <xsl:text>RENAMED as 'c'</xsl:text>
-        </xsl:comment>
-        <xsl:message>
-            <xsl:text>ELEMENT </xsl:text>
-            <xsl:value-of select="local-name()"/>
-            <xsl:text>&#160;</xsl:text>
-            <xsl:text>RENAMED as 'c'</xsl:text>
-        </xsl:message>
-        <xsl:element name="c">
-            <xsl:copy-of select="@*"/>
-            <xsl:apply-templates/>
-        </xsl:element>
+    <!-- fileplan -->
+    <xsl:template match="fileplan">
+        <xsl:choose>
+            <xsl:when test="ancestor::fileplan">
+                <xsl:comment>
+                    <xsl:text>ELEMENT </xsl:text>
+                    <xsl:value-of select="local-name()"/>
+                    <xsl:text>&#160;</xsl:text>
+                    <xsl:text>RENAMED as 'div'</xsl:text>
+                </xsl:comment>
+                <xsl:message>
+                    <xsl:text>ELEMENT </xsl:text>
+                    <xsl:value-of select="local-name()"/>
+                    <xsl:text>&#160;</xsl:text>
+                    <xsl:text>RENAMED as 'div'</xsl:text>
+                </xsl:message>
+                <xsl:element name="div">
+                    <xsl:copy-of select="@*"/>
+                    <xsl:apply-templates/>
+                </xsl:element>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:comment>
+                    <xsl:text>ELEMENT </xsl:text>
+                    <xsl:value-of select="local-name()"/>
+                    <xsl:text>&#160;</xsl:text>
+                    <xsl:text>RENAMED as 'odd'</xsl:text>
+                </xsl:comment>
+                <xsl:message>
+                    <xsl:text>ELEMENT </xsl:text>
+                    <xsl:value-of select="local-name()"/>
+                    <xsl:text>&#160;</xsl:text>
+                    <xsl:text>RENAMED as 'odd'</xsl:text>
+                </xsl:message>
+                <xsl:element name="odd">
+                    <xsl:copy-of select="@*"/>
+                    <xsl:apply-templates/>
+                </xsl:element>
+            </xsl:otherwise>
+        </xsl:choose>
+
+
+    </xsl:template>
+    <!-- blockquote -->
+    <xsl:template match="blockquote">
+        <xsl:choose>
+            <xsl:when test="parent::p">
+                <!-- need a template for block-level elements in p to split parent p -->
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:comment>
+                    <xsl:text>ELEMENT </xsl:text>
+                    <xsl:value-of select="local-name()"/>
+                    <xsl:text>&#160;</xsl:text>
+                    <xsl:text>RENAMED as 'div'</xsl:text>
+                </xsl:comment>
+                <xsl:message>
+                    <xsl:text>ELEMENT </xsl:text>
+                    <xsl:value-of select="local-name()"/>
+                    <xsl:text>&#160;</xsl:text>
+                    <xsl:text>RENAMED as 'div'</xsl:text>
+                </xsl:message>
+                <xsl:element name="div">
+                    <xsl:copy-of select="@*"/>
+                    <xsl:apply-templates/>
+                </xsl:element>
+            </xsl:otherwise>
+        </xsl:choose>        
     </xsl:template>
 
     <!-- ############################################### -->
@@ -171,6 +221,11 @@
     </xsl:template>
     <xsl:template match="@xsi:schemaLocation" mode="strip-ns"
         xpath-default-namespace="http://www.w3.org/2001/XMLSchema-instance"/>
+
+    <!-- ############################################### -->
+    <!-- RECURSIVE ELEMENTS REPLACED BY DIV              -->
+    <!-- ############################################### -->
+
 
 
     <!-- ############################################### -->
