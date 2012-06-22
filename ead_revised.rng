@@ -120,6 +120,7 @@ Other changes:
 * added choice of either two or more <div>'s or one or more <p>, <table>, <list>, or <note>'s in <scopecontent> (to be implemented on all "note" elements)
 * remove extended link attributes and elements
 * restored eadheader for <control>
+
 * changed name of all type attributes without a list of values to "localtype"
 
 -->
