@@ -20,6 +20,7 @@
         <xsl:for-each select="$instance-ns-stripped">
             <xsl:apply-templates/>
         </xsl:for-each>
+        
     </xsl:template>
 
     <!-- ############################################### -->
