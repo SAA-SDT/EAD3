@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <ead relatedencoding="MARC21">
 <!--All items are required unless marked OPT.  Any optional items 
 not used should be commented out so that they don't appear in the viewable
@@ -41,7 +41,7 @@ Fuwyxafo Udesotbezi Worgage
             <address>
                <addressline>222 Qahuflo Uxygay<lb/>
                </addressline>
-               <addressline>Fuwyxafo, GA 13244-2010<lb/>
+               <addressline>Fuwyxafo, KS 66044<lb/>
                </addressline>
                <addressline>
                   <ptr href="http://scrc.syr.edu" linktype="simple"/>
