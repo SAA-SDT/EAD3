@@ -16,7 +16,6 @@
     </xsl:variable>
 
     <xsl:template match="/" name="start">
-        <xsl:message select="$instance-ns-stripped"/>
         <xsl:for-each select="$instance-ns-stripped">
             <xsl:apply-templates/>
         </xsl:for-each>
