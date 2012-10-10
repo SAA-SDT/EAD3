@@ -3437,7 +3437,8 @@ Other changes:
 					<ref name="ref"/>
 					<ref name="title"/>
 					<!-- <ref name="extref"/> -->
-					<ref name="m.did"/>
+					<!-- TC; 2012-10-10: removed did elements  -->
+					<!--<ref name="m.did"/> -->
 				</choice>
 			</zeroOrMore>
 		</element>
