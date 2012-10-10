@@ -132,20 +132,7 @@
     </control>
 </xsl:template>
 
-    <xsl:template match="archdesc">
-        <xsl:element name="archdesc">
-            <xsl:copy-of select="@*"/>
-            <xsl:comment>
-                <xsl:text>c ELEMENT created as child of archdesc</xsl:text>
-            </xsl:comment>
-            <xsl:message>
-                <xsl:text>c ELEMENT created as child of archdesc</xsl:text>
-            </xsl:message>
-            <c level="{@level}">
-                <xsl:apply-templates/>
-            </c>
-        </xsl:element>
-    </xsl:template>
+    
     
 
 
