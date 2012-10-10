@@ -132,6 +132,32 @@
         <publicationStatus>xxx</publicationStatus>
     </control>
 </xsl:template>
+    
+    <!-- blockquote -->
+    <xsl:template match="blockquote">
+        <xsl:choose>
+            <xsl:when test="parent::event | parent::extref | parent::extrefloc | 
+                parent::item | parent::p | parent::ref | parent::refloc">
+                <xsl:element name="quote">
+                    <xsl:apply-templates select="p" mode="skipP"/>
+                    <xsl:for-each select="address | chronlist | list | note | table">
+                        <xsl:comment>
+                            <xsl:call-template name="blockquoteOrphanElements"/>
+                        </xsl:comment>
+                        <xsl:comment>
+                            <xsl:apply-templates/>
+                        </xsl:comment>
+                    </xsl:for-each>
+                </xsl:element>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:element name="blockquote">
+                    <xsl:copy-of select="@*"/>
+                    <xsl:apply-templates/>
+                </xsl:element>
+            </xsl:otherwise>
+        </xsl:choose>        
+    </xsl:template>
 
     
     
@@ -183,32 +209,7 @@
 
 
     </xsl:template>
-    <!-- blockquote -->
-    <xsl:template match="blockquote">
-        <xsl:choose>
-            <xsl:when test="parent::p">
-                <!-- need a template for block-level elements in p to split parent p -->
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:comment>
-                    <xsl:text>ELEMENT </xsl:text>
-                    <xsl:value-of select="local-name()"/>
-                    <xsl:text>&#160;</xsl:text>
-                    <xsl:text>RENAMED as 'div'</xsl:text>
-                </xsl:comment>
-                <xsl:message>
-                    <xsl:text>ELEMENT </xsl:text>
-                    <xsl:value-of select="local-name()"/>
-                    <xsl:text>&#160;</xsl:text>
-                    <xsl:text>RENAMED as 'div'</xsl:text>
-                </xsl:message>
-                <xsl:element name="div">
-                    <xsl:copy-of select="@*"/>
-                    <xsl:apply-templates/>
-                </xsl:element>
-            </xsl:otherwise>
-        </xsl:choose>        
-    </xsl:template>
+    
 
     <!-- ############################################### -->
     <!-- NAMESPACE STRIPPING ELEMENTS                    -->
@@ -248,5 +249,12 @@
         <xsl:value-of select="local-name()"/>
         <xsl:text>&#160;</xsl:text>
         <xsl:text>ORPHANED BY DEPRECATION OF DSC. MIGRATION PATH PENDING</xsl:text>
+    </xsl:template>
+    
+    <xsl:template name="blockquoteOrphanElements">
+        <xsl:text>INLINE BLOCKQUOTE CHILD ELEMENT </xsl:text>
+        <xsl:value-of select="local-name()"/>
+        <xsl:text>&#160;</xsl:text>
+        <xsl:text>ORPHANED BY CONVERSION OF INLINE BLOCKQUOTE TO QUOTE. MIGRATION PATH PENDING</xsl:text>
     </xsl:template>
 </xsl:stylesheet>
