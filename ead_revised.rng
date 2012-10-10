@@ -121,7 +121,15 @@ Other changes:
 * restored eadheader for <control>
 
 * changed name of all type attributes without a list of values to "localtype"
+<<<<<<< HEAD
+
+* changed relation and added to arcdesc and c*
+
+* added quote
+
+=======
 * replaced eadheader with control
+>>>>>>> 7d149cadcc338083909ce4df0ac207de05e6399e
 -->
 <!--
 	EAD 2002 Relax NG Schema
@@ -1125,6 +1133,9 @@ Other changes:
 			<!-- <ref name="abbr"/>
 			<ref name="expan"/>
 			-->
+			<element name="quote">
+				<ref name="m.phrase.basic"/>
+			</element>
 		</choice>
 	</define>
 	<define name="m.phrase.basic">
@@ -1813,7 +1824,7 @@ Other changes:
 				<optional>
 					<attribute name="encodinganalog"/>
 				</optional>
-<element name="eadid">
+				<element name="eadid">
 					<optional>
 						<attribute name="publicid"/>
 					</optional>
@@ -2080,7 +2091,11 @@ Other changes:
 				</zeroOrMore>
 				<!-- TC; 2012-03-07: Added EAC-CPF-based <relations> -->
 				<optional>
-					<ref name="e.relations"/>
+					<element name="relations">
+					 <oneOrMore>
+					 	<ref name="m.relation"/>
+					 </oneOrMore>
+					</element>
 				</optional>
 				<choice>
 					<oneOrMore>
@@ -2879,22 +2894,22 @@ Other changes:
 						<ref name="div"/>
 					</oneOrMore>
 				</group>
-					<oneOrMore>
+				<oneOrMore>
+					<choice>
 						<choice>
-							<choice>
-								<ref name="m.blocks"/>
-							</choice>
-							<!-- TC; 2012-03-07: Removed <arrangement> -->
-							<!-- <ref name="arrangement"/> -->
-							<!-- TC: 2012-06-08 remove recursion in note elements -->
-							<!-- <ref name="scopecontent"/> -->
-							<!-- TC; 2012-03-08: Removed <dao>, <daogrp> -->
-							<!--
+							<ref name="m.blocks"/>
+						</choice>
+						<!-- TC; 2012-03-07: Removed <arrangement> -->
+						<!-- <ref name="arrangement"/> -->
+						<!-- TC: 2012-06-08 remove recursion in note elements -->
+						<!-- <ref name="scopecontent"/> -->
+						<!-- TC; 2012-03-08: Removed <dao>, <daogrp> -->
+						<!--
 					<ref name="dao"/>
 					<ref name="daogrp"/>
 					-->
-						</choice>
-					</oneOrMore>
+					</choice>
+				</oneOrMore>
 			</choice>
 		</element>
 	</define>
@@ -4219,7 +4234,11 @@ Other changes:
 			</choice>
 		</zeroOrMore>
 		<optional>
-			<ref name="e.relations"/>
+			<element name="relations">
+				<oneOrMore>
+					<ref name="m.relation"/>
+				</oneOrMore>
+			</element>
 		</optional>
 	</define>
 
@@ -5133,4 +5152,126 @@ Other changes:
 			</zeroOrMore>
 		</element>
 	</define>
+
+	<!-- TC 2012-10-10: added relations -->
+	<define name="m.relation">
+		<element name="relation">
+			<zeroOrMore>
+				<choice>
+					<element name="relationDate">
+						<text/>
+					</element>
+					<element name="dateSet">
+						<ref name="a.common"/>
+						<optional>
+							<ref name="a.localType"/>
+						</optional>
+						<choice>
+							<element name="relationDate">
+								<text/>
+							</element>
+							<ref name="m.relationDateRange"/>
+						</choice>
+						<oneOrMore>
+							<choice>
+								<element name="relationDate">
+									<text/>
+								</element>
+								<ref name="m.relationDateRange"/>
+							</choice>
+						</oneOrMore>
+					</element>
+					<ref name="m.relationDateRange"/>
+				</choice>
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="m.relationDateRange">
+		<element name="relationDateRange">
+			<zeroOrMore>
+				<choice>
+					<element name="relationDate">
+						<ref name="a.common"/>
+						<optional>
+							<ref name="a.localType"/>
+						</optional>
+						<text/>
+					</element>
+					<optional>
+						<element name="fromDate">
+							<ref name="a.common"/>
+							<element name="relationDate">
+								<text/>
+							</element>
+						</element>
+					</optional>
+					<optional>
+						<element name="toDate">
+							<ref name="a.common"/>
+							<element name="relationDate">
+								<text/>
+							</element>
+						</element>
+					</optional>
+				</choice>
+			</zeroOrMore>
+			<oneOrMore>
+				<element  name="relationEntry">
+				<ref name="a.common"/>
+				<optional>
+					<ref name="a.localType"/>
+				</optional>
+				<optional>
+					<ref name="m.entryLanguageAttributes"/>
+				</optional>
+				<text/>
+				</element></oneOrMore>
+			<optional>
+				<element  name="descriptiveNote">
+					<ref name="a.common"/>
+					<oneOrMore>
+						<ref name="p"/>
+					</oneOrMore>
+				</element>
+				
+			</optional>
+			<optional>
+				<element a:id="placeEntry" name="placeEntry">
+					<ref name="a.common"/>
+					<optional>
+						<ref name="m.entryLanguageAttributes"/>
+					</optional>
+					<optional>
+						<ref name="a.localType"/>
+					</optional>
+					<optional>
+						<attribute a:id="countryCode" name="countryCode">
+							<choice>
+								<data type="string">
+									<param name="pattern">[A-Z]{2}</param>
+								</data>
+								<data type="string">
+									<param name="pattern">[A-Z]{4}</param>
+								</data>
+							</choice>
+						</attribute>
+					</optional>
+					<optional>
+						<ref name="a.vocabularySource"/>
+					</optional>
+					<optional>
+						<attribute a:id="accuracy" name="accuarcy">
+							<text/>
+						</attribute>
+					</optional>
+					<optional>
+						<ref name="m.geographicalCoordinates"/>
+					</optional>
+					<text/>
+				</element>
+			</optional>
+		</element>
+	</define>
+
+
 </grammar>
