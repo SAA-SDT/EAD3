@@ -42,6 +42,7 @@
     <!-- DEPRECATED ELEMENTS                             -->
     <!-- ############################################### -->
 
+<!-- Follow up re: list of deprecated elements MR 2012-10-10 -->
     <xsl:template match="dsc | abbr | expan | descgrp | frontmatter | runner">
         <xsl:comment>
             <xsl:call-template name="removedElement"/>
@@ -234,7 +235,7 @@
     <!-- ############################################### -->
 
     <xsl:template name="removedElement">
-        <xsl:text>ELEMENT </xsl:text>
+        <xsl:text>DEPRECATED ELEMENT </xsl:text>
         <xsl:value-of select="local-name()"/>
         <xsl:text>&#160;</xsl:text>
         <xsl:text>REMOVED</xsl:text>
