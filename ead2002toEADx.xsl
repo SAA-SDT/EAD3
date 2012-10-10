@@ -8,6 +8,7 @@
             <xd:p><xd:b>Created on:</xd:b> Feb 27, 2012</xd:p>
             <xd:p><xd:b>Author:</xd:b> Terry Catapano</xd:p>
             <xd:p>Convert EAD2002 instance to EAD X</xd:p>
+            <xd:p>To do: Add parameter to control inclusion of comments in output.</xd:p>
         </xd:desc>
     </xd:doc>
     <xsl:output encoding="UTF-8" indent="yes" method="xml"/>
