@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elementNames>
+    <elementName oldName="accessrestrict" newName="accessRestrict"/>
+    <elementName oldName="addressline" newName="addressLine"/>
+    <elementName oldName="altformavail" newName="altFormAvail"/>
+    <elementName oldName="archdesc" newName="archDesc"/>
+    <elementName oldName="archdescgrp" newName="archDescGrp"/>
+    <elementName oldName="archref" newName="archRef"/>
+    <elementName oldName="bibref" newName="bibRef"/>
+    <elementName oldName="bibseries" newName="bibSeries"/>
+    <elementName oldName="bioghist" newName="biogHist"/>
+    <elementName oldName="blockquote" newName="blockquote"/>
+    <elementName oldName="" newName=""/>
+    <elementName oldName="" newName=""/>
+</elementNames>
