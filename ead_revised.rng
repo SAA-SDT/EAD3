@@ -3456,25 +3456,16 @@ Other changes:
 			<optional>
 				<attribute name="encodingAnalog"/>
 			</optional>
-			<!-- TC; 2013-06-13: permit only text -->
+			<!-- TC; 2013-06-10: change content model to match archref -->
+			<optional>
+				<ref name="a.external.ptr"/>
+			</optional>
 			<zeroOrMore>
 				<choice>
 					<text/>
-					<!--
 					<ref name="m.phrase.basic.norefs"/>
-					<ref name="edition"/>
-					<ref name="imprint"/>
-					<ref name="name"/>
-					<ref name="num"/>
-					<ref name="bibSeries"/>
 					<ref name="ref"/>
 					<ref name="title"/>
-					<ref name="famName"/>
-					<ref name="persName"/>
-					<ref name="corpName"/>
-					-->
-					<!-- <ref name="extRef"/> -->
-					<!-- <ref name="archRef"/> -->
 				</choice>
 			</zeroOrMore>
 		</element>
