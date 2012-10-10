@@ -53,13 +53,27 @@
     </xsl:template>
 
     <!-- orphan elements -->
-    <xsl:template match="descgrp/head | dsc/head">
+    <xsl:template match="descgrp/head">
         <xsl:comment>
             <xsl:call-template name="removedElement"/>
         </xsl:comment>
         <xsl:message>
             <xsl:call-template name="removedElement"/>
         </xsl:message>
+    </xsl:template>
+    
+    <!-- dsc orphan elements -->
+    <xsl:template match="dsc/head | dsc/address | dsc/blockquote | dsc/chronlist
+        | dsc/list | dsc/note | dsc/p | dsc/table | dsc/thead">
+        <xsl:comment>
+            <xsl:call-template name="dscOrphanElements"/>
+        </xsl:comment>
+        <xsl:message>
+            <xsl:call-template name="dscOrphanElements"/>
+        </xsl:message>
+        <xsl:comment>
+            <xsl:apply-templates/>
+        </xsl:comment>
     </xsl:template>
 
     <!-- ############################################### -->
@@ -239,5 +253,11 @@
         <xsl:text>&#160;</xsl:text>
         <xsl:text>REMOVED</xsl:text>
     </xsl:template>
-
+    
+    <xsl:template name="dscOrphanElements">
+        <xsl:text>DSC CHILD ELEMENT </xsl:text>
+        <xsl:value-of select="local-name()"/>
+        <xsl:text>&#160;</xsl:text>
+        <xsl:text>ORPHANED BY DEPRECATION OF DSC. MIGRATION PATH PENDING</xsl:text>
+    </xsl:template>
 </xsl:stylesheet>
