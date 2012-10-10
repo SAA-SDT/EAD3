@@ -5156,7 +5156,7 @@ Other changes:
 	<!-- TC 2012-10-10: added relations -->
 	<define name="m.relation">
 		<element name="relation">
-			<zeroOrMore>
+			<optional>
 				<choice>
 					<element name="relationDate">
 						<text/>
@@ -5183,48 +5183,17 @@ Other changes:
 					</element>
 					<ref name="m.relationDateRange"/>
 				</choice>
-			</zeroOrMore>
-		</element>
-	</define>
-	<define name="m.relationDateRange">
-		<element name="relationDateRange">
-			<zeroOrMore>
-				<choice>
-					<element name="relationDate">
-						<ref name="a.common"/>
-						<optional>
-							<ref name="a.localType"/>
-						</optional>
-						<text/>
-					</element>
-					<optional>
-						<element name="fromDate">
-							<ref name="a.common"/>
-							<element name="relationDate">
-								<text/>
-							</element>
-						</element>
-					</optional>
-					<optional>
-						<element name="toDate">
-							<ref name="a.common"/>
-							<element name="relationDate">
-								<text/>
-							</element>
-						</element>
-					</optional>
-				</choice>
-			</zeroOrMore>
+			</optional>
 			<oneOrMore>
 				<element  name="relationEntry">
-				<ref name="a.common"/>
-				<optional>
-					<ref name="a.localType"/>
-				</optional>
-				<optional>
-					<ref name="m.entryLanguageAttributes"/>
-				</optional>
-				<text/>
+					<ref name="a.common"/>
+					<optional>
+						<ref name="a.localType"/>
+					</optional>
+					<optional>
+						<ref name="m.entryLanguageAttributes"/>
+					</optional>
+					<text/>
 				</element></oneOrMore>
 			<optional>
 				<element  name="descriptiveNote">
@@ -5270,6 +5239,38 @@ Other changes:
 					<text/>
 				</element>
 			</optional>
+		</element>
+	</define>
+	<define name="m.relationDateRange">
+		<element name="relationDateRange">
+			<zeroOrMore>
+				<choice>
+					<element name="relationDate">
+						<ref name="a.common"/>
+						<optional>
+							<ref name="a.localType"/>
+						</optional>
+						<text/>
+					</element>
+					<optional>
+						<element name="fromDate">
+							<ref name="a.common"/>
+							<element name="relationDate">
+								<text/>
+							</element>
+						</element>
+					</optional>
+					<optional>
+						<element name="toDate">
+							<ref name="a.common"/>
+							<element name="relationDate">
+								<text/>
+							</element>
+						</element>
+					</optional>
+				</choice>
+			</zeroOrMore>
+
 		</element>
 	</define>
 
