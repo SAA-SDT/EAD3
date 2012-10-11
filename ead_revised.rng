@@ -5263,9 +5263,6 @@ Other changes:
 					</optional>
 				</choice>
 			</zeroOrMore>
-
 		</element>
 	</define>
-
-
 </grammar>
