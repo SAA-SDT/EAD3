@@ -61,7 +61,7 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 
 * use XLink model [xlink namespace elements already implemented in EAD 2002 RNG schema]
 
-* add EAC-CPF based <relations> element to <archDesc>, <c>, and <c01>
+* add EAC-CPF based <relations> element to <archdesc>, <c>, and <c01>
 ** note: replaced xml:id with a.common, used EAD definition of <p> rather than EAC-CPF <p>
 
 15. Allow the insertion of valid data from other XML namespaces
@@ -1824,7 +1824,7 @@ Other changes:
 				<optional>
 					<attribute name="encodingAnalog"/>
 				</optional>
-<element name="eadid">
+				<element name="eadId">
 					<optional>
 						<attribute name="publicId"/>
 					</optional>
@@ -2899,18 +2899,18 @@ Other changes:
 					<choice>
 						<choice>
 							<ref name="m.blocks"/>
-							</choice>
-							<!-- TC; 2012-03-07: Removed <arrangement> -->
-							<!-- <ref name="arrangement"/> -->
-							<!-- TC: 2012-06-08 remove recursion in note elements -->
-							<!-- <ref name="scopeContent"/> -->
-							<!-- TC; 2012-03-08: Removed <dao>, <daoGrp> -->
-							<!--
+						</choice>
+						<!-- TC; 2012-03-07: Removed <arrangement> -->
+						<!-- <ref name="arrangement"/> -->
+						<!-- TC: 2012-06-08 remove recursion in note elements -->
+						<!-- <ref name="scopecontent"/> -->
+						<!-- TC; 2012-03-08: Removed <dao>, <daogrp> -->
+						<!--
 					<ref name="dao"/>
 					<ref name="daoGrp"/>
 					-->
-						</choice>
-					</oneOrMore>
+					</choice>
+				</oneOrMore>
 			</choice>
 		</element>
 	</define>
