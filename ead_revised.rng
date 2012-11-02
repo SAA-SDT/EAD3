@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
 
 <!-- This file has been revised to test proposed changes to EAD for its upcoming release in 2013 
 
@@ -13,8 +12,8 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 <control>
 <eadId>
 <url>
-<titleproper>
-<subtitle>
+<titleProper>
+<subTitle>
 <maintenanceAgency>
 <agencyCode>
 <agencyName>
@@ -36,9 +35,9 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 <instanceEventType>
 <eventDateTime>
 <eventDescription>
-<editionstmt>?
-<seriesstmt>?
-<notestmt>?
+<editionStmt>?
+<seriesStmt>?
+<noteStmt>?
 <languageDeclaration>
 <sources>?
 <publicationStatus>
@@ -56,7 +55,7 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 
 37.2 Abolish <abbr> [and <expan>]
 
-39. Deprecate <descgrp>
+39. Deprecate <descGrp>
 
 14. Allow logical links to related resources and entities
 
@@ -77,14 +76,14 @@ Implements the following revision requests provisionally accepted by TS-EAD subg
 Other changes:
 
 * Changed namespace to "http://saa-sdt.example.org/ead/revised"
-* Remove <arrangement> from <scopecontent>
-* Remove <unitdate> from <unittitle>
+* Remove <arrangement> from <scopeContent>
+* Remove <unitdate> from <unitTitle>
 * <blockquote> removed
-* Promote <legalstatus> from <accessrestrict> to sibling of other descriptive note elements
+* Promote <legalStatus> from <accessRestrict> to sibling of other descriptive note elements
 ** [Note: add <p> to content model?]
 * Remove <editionstmt>, <seriesstmt>, and <notestmt>
-* Add @normal to <unitdate>
-* <address> now only in <repository> and [<publicationstmt>]
+* Add @normal to <unitDate>
+* <address> now only in <repository> and [<publicationStmt>]
 * @source now datatype token
 * @type added to <dao>
 * <dao> now only in <c>, <c#>, and <archdesc>
@@ -122,7 +121,15 @@ Other changes:
 * restored eadheader for <control>
 
 * changed name of all type attributes without a list of values to "localtype"
+<<<<<<< HEAD
 
+* changed relation and added to arcdesc and c*
+
+* added quote
+
+=======
+* replaced eadheader with control
+>>>>>>> 7d149cadcc338083909ce4df0ac207de05e6399e
 -->
 <!--
 	EAD 2002 Relax NG Schema
@@ -142,7 +149,7 @@ Other changes:
 	
 	Editors (SAA/EADWG/EAD Schema Working Group):
 	
-	Francoise Bourdon (Bibliothèque nationale de France)
+	Francoise Bourdon (BibliothÃ¨que nationale de France)
 	Terry Catapano (Columbia University)
 	Jerry McDonough (University of Illinois)
 	Lee Mandell (New York University)
@@ -165,7 +172,7 @@ Other changes:
 	
 	arc archref
 	bibref
-	dao daogrp daoloc
+	dao daoGrp daoloc
 	extptr extptrloc extref extrefloc
 	linkgrp
 	ptr ptrloc
@@ -212,29 +219,29 @@ Other changes:
 			</attribute>
 		</optional>
 	</define>
-	<define name="data.repositorycode">
+	<define name="data.repositoryCode">
 		<data type="token">
 			<param name="pattern"
 				>((AF|AX|AL|DZ|AS|AD|AO|AI|AQ|AG|AR|AM|AW|AU|AT|AZ|BS|BH|BD|BB|BY|BE|BZ|BJ|BM|BT|BO|BA|BW|BV|BR|IO|BN|BG|BF|BI|KH|CM|CA|CV|KY|CF|TD|CL|CN|CX|CC|CO|KM|CG|CD|CK|CR|CI|HR|CU|CY|CZ|DK|DJ|DM|DO|EC|EG|SV|GQ|ER|EE|ET|FK|FO|FJ|FI|FR|GF|PF|TF|GA|GM|GE|DE|GH|GI|GR|GL|GD|GP|GU|GT|GN|GW|GY|HT|HM|VA|HN|HK|HU|IS|IN|ID|IR|IQ|IE|IL|IT|JM|JP|JO|KZ|KE|KI|KP|KR|KW|KG|LA|LV|LB|LS|LR|LY|LI|LT|LU|MO|MK|MG|MW|MY|MV|ML|MT|MH|MQ|MR|MU|YT|MX|FM|MD|MC|MN|MS|MA|MZ|MM|NA|NR|NP|NL|AN|NC|NZ|NI|NE|NG|NU|NF|MP|NO|OM|PK|PW|PS|PA|PG|PY|PE|PH|PN|PL|PT|PR|QA|RE|RO|RU|RW|SH|KN|LC|PM|VC|WS|SM|ST|SA|SN|CS|SC|SL|SG|SK|SI|SB|SO|ZA|GS|ES|LK|SD|SR|SJ|SZ|SE|CH|SY|TW|TJ|TZ|TH|TL|TG|TK|TO|TT|TN|TR|TM|TC|TV|UG|UA|AE|GB|US|UM|UY|UZ|VU|VE|VN|VG|VI|WF|EH|YE|ZM|ZW)|([a-zA-Z]{1})|([a-zA-Z]{3,4}))(-[a-zA-Z0-9:/\-]{1,11})</param>
 		</data>
 	</define>
-	<define name="am.mainagencycode">
+	<define name="am.mainAgencyCode">
 		<optional>
-			<attribute name="mainagencycode">
-				<ref name="data.repositorycode"/>
+			<attribute name="mainAgencyCode">
+				<ref name="data.repositoryCode"/>
 			</attribute>
 		</optional>
 	</define>
-	<define name="am.repositorycode">
+	<define name="am.repositoryCode">
 		<optional>
-			<attribute name="repositorycode">
-				<ref name="data.repositorycode"/>
+			<attribute name="repositoryCode">
+				<ref name="data.repositoryCode"/>
 			</attribute>
 		</optional>
 	</define>
-	<define name="am.langcode">
+	<define name="am.langCode">
 		<optional>
-			<attribute name="langcode">
+			<attribute name="langCode">
 				<choice>
 					<value>aar</value>
 					<value>abk</value>
@@ -741,9 +748,9 @@ Other changes:
 			</attribute>
 		</optional>
 	</define>
-	<define name="am.countrycode">
+	<define name="am.countryCode">
 		<optional>
-			<attribute name="countrycode">
+			<attribute name="countryCode">
 				<choice>
 					<value>AF</value>
 					<value>AX</value>
@@ -1001,9 +1008,9 @@ Other changes:
 	<define name="m.refs">
 		<choice>
 			<ref name="ref"/>
-			<!-- <ref name="extref"/> -->
-			<!--TC; 2012-06-13: eliminate linkgrp -->
-			<!--<element name="linkgrp">
+			<!-- <ref name="extRef"/> -->
+			<!--TC; 2012-06-13: eliminate linkGrp -->
+			<!--<element name="linkGrp">
 				<ref name="a.common"/>
 				<ref name="extendedLink"/>
 				<oneOrMore>
@@ -1013,37 +1020,37 @@ Other changes:
 				</oneOrMore>
 			</element>
 			-->
-			<!-- TC; 2012-06-13: restrict bibref to bibliography only -->
-			<!-- <ref name="bibref"/> -->
+			<!-- TC; 2012-06-13: restrict bibRef to bibliography only -->
+			<!-- <ref name="bibRef"/> -->
 			<ref name="title"/>
-			<ref name="archref"/>
+			<ref name="archRef"/>
 		</choice>
 	</define>
 	<define name="m.access">
 		<choice>
-			<ref name="corpname"/>
-			<ref name="famname"/>
-			<ref name="geogname"/>
+			<ref name="corpName"/>
+			<ref name="famName"/>
+			<ref name="geogName"/>
 			<ref name="name"/>
 			<element name="occupation">
 				<ref name="a.common"/>
 				<ref name="a.access"/>
 				<optional>
-					<attribute name="encodinganalog"/>
+					<attribute name="encodingAnalog"/>
 				</optional>
 				<zeroOrMore>
 					<choice>
-						<text/>
+						<text/>	
 						<ref name="m.phrase.bare"/>
 					</choice>
 				</zeroOrMore>
 			</element>
-			<ref name="persname"/>
+			<ref name="persName"/>
 			<element name="subject">
 				<ref name="a.common"/>
 				<ref name="a.access"/>
 				<optional>
-					<attribute name="encodinganalog"/>
+					<attribute name="encodingAnalog"/>
 				</optional>
 				<zeroOrMore>
 					<choice>
@@ -1052,14 +1059,14 @@ Other changes:
 					</choice>
 				</zeroOrMore>
 			</element>
-			<element name="genreform">
+			<element name="genreForm">
 				<ref name="a.common"/>
 				<optional>
 					<attribute name="type"/>
 				</optional>
 				<ref name="a.access"/>
 				<optional>
-					<attribute name="encodinganalog"/>
+					<attribute name="encodingAnalog"/>
 				</optional>
 				<zeroOrMore>
 					<choice>
@@ -1072,7 +1079,7 @@ Other changes:
 				<ref name="a.common"/>
 				<ref name="a.access"/>
 				<optional>
-					<attribute name="encodinganalog"/>
+					<attribute name="encodingAnalog"/>
 				</optional>
 				<zeroOrMore>
 					<choice>
@@ -1126,6 +1133,9 @@ Other changes:
 			<!-- <ref name="abbr"/>
 			<ref name="expan"/>
 			-->
+			<element name="quote">
+				<ref name="m.phrase.basic"/>
+			</element>
 		</choice>
 	</define>
 	<define name="m.phrase.basic">
@@ -1144,24 +1154,24 @@ Other changes:
 	<define name="m.inter.noquote">
 		<choice>
 			<!-- <ref name="address"/> -->
-			<element name="chronlist">
+			<element name="chronList">
 				<ref name="a.common"/>
 				<optional>
-					<attribute name="encodinganalog"/>
+					<attribute name="encodingAnalog"/>
 				</optional>
 				<optional>
 					<ref name="head"/>
 				</optional>
 				<optional>
-					<ref name="listhead"/>
+					<ref name="listHead"/>
 				</optional>
 				<oneOrMore>
-					<element name="chronitem">
+					<element name="chronItem">
 						<ref name="a.common"/>
 						<ref name="date"/>
 						<choice>
 							<ref name="event"/>
-							<element name="eventgrp">
+							<element name="eventGrp">
 								<ref name="a.common"/>
 								<oneOrMore>
 									<ref name="event"/>
@@ -1190,17 +1200,17 @@ Other changes:
 					</attribute>
 				</optional>
 				<optional>
-					<attribute name="colsep">
+					<attribute name="colSep">
 						<ref name="yesorno"/>
 					</attribute>
 				</optional>
 				<optional>
-					<attribute name="rowsep">
+					<attribute name="rowSep">
 						<ref name="yesorno"/>
 					</attribute>
 				</optional>
 				<optional>
-					<attribute name="pgwide">
+					<attribute name="pgWide">
 						<ref name="yesorno"/>
 					</attribute>
 				</optional>
@@ -1208,18 +1218,18 @@ Other changes:
 					<ref name="head"/>
 				</optional>
 				<oneOrMore>
-					<element name="tgroup">
+					<element name="tGroup">
 						<ref name="a.common"/>
 						<attribute name="cols">
 							<data type="NMTOKEN"/>
 						</attribute>
 						<optional>
-							<attribute name="colsep">
+							<attribute name="colSep">
 								<ref name="yesorno"/>
 							</attribute>
 						</optional>
 						<optional>
-							<attribute name="rowsep">
+							<attribute name="rowSep">
 								<ref name="yesorno"/>
 							</attribute>
 						</optional>
@@ -1235,27 +1245,27 @@ Other changes:
 							</attribute>
 						</optional>
 						<zeroOrMore>
-							<element name="colspec">
+							<element name="colSpec">
 								<optional>
-									<attribute name="colnum">
+									<attribute name="colNum">
 										<data type="NMTOKEN"/>
 									</attribute>
 								</optional>
 								<optional>
-									<attribute name="colname">
+									<attribute name="colName">
 										<data type="NMTOKEN"/>
 									</attribute>
 								</optional>
 								<optional>
-									<attribute name="colwidth"/>
+									<attribute name="colWidth"/>
 								</optional>
 								<optional>
-									<attribute name="colsep">
+									<attribute name="colSep">
 										<ref name="yesorno"/>
 									</attribute>
 								</optional>
 								<optional>
-									<attribute name="rowsep">
+									<attribute name="rowSep">
 										<ref name="yesorno"/>
 									</attribute>
 								</optional>
@@ -1274,7 +1284,7 @@ Other changes:
 									<attribute name="char"/>
 								</optional>
 								<optional>
-									<attribute name="charoff">
+									<attribute name="charOff">
 										<data type="NMTOKEN"/>
 									</attribute>
 								</optional>
@@ -1284,13 +1294,13 @@ Other changes:
 						</zeroOrMore>
 						<!--
 						<optional>
-							<ref name="thead"/>
+							<ref name="tHead"/>
 						</optional>
 						-->
-						<element name="tbody">
+						<element name="tBody">
 							<ref name="a.common"/>
 							<optional>
-								<attribute name="valign">
+								<attribute name="vAlign">
 									<choice>
 										<value>top</value>
 										<value>middle</value>
@@ -1312,7 +1322,7 @@ Other changes:
 			<ref name="m.inter.noquote"/>
 			<!-- TC; 2012-03-07: Removed <blockquote> -->
 			<!--
-				<element name="blockquote">
+				<element name="blockQuote">
 				<ref name="a.common"/>
 				<oneOrMore>
 					<choice>
@@ -1338,12 +1348,12 @@ Other changes:
 					<attribute name="label"/>
 				</optional>
 				<optional>
-					<attribute name="encodinganalog"/>
+					<attribute name="encodingAnalog"/>
 				</optional>
 				<optional>
 					<attribute name="type"/>
 				</optional>
-				<ref name="am.langcode"/>
+				<ref name="am.langCode"/>
 				<zeroOrMore>
 					<choice>
 						<text/>
@@ -1354,17 +1364,17 @@ Other changes:
 			</element>
 			<!-- TC: 2012-06-13: move container from did to formsavailable -->
 
-			<!-- TC; 2012-03-08: Removed <dao> and <daogrp> -->
+			<!-- TC; 2012-03-08: Removed <dao> and <daoGrp> -->
 			<!-- <ref name="dao"/>
-			<ref name="daogrp"/>
+			<ref name="daoGrp"/>
 			-->
-			<element name="langmaterial">
+			<element name="langMaterial">
 				<ref name="a.common"/>
 				<optional>
 					<attribute name="label"/>
 				</optional>
 				<optional>
-					<attribute name="encodinganalog"/>
+					<attribute name="encodingAnalog"/>
 				</optional>
 				<!-- TC 2012-06-13: only allow <emph>, <ref>, and <language> -->
 				<zeroOrMore>
@@ -1380,13 +1390,13 @@ Other changes:
 			<!-- <ref name="materialspec"/> -->
 			<ref name="note"/>
 			<ref name="origination"/>
-			<element name="physdesc">
+			<element name="physDesc">
 				<ref name="a.common"/>
 				<optional>
 					<attribute name="label"/>
 				</optional>
 				<optional>
-					<attribute name="encodinganalog"/>
+					<attribute name="encodingAnalog"/>
 				</optional>
 				<optional>
 					<attribute name="source">
@@ -1403,7 +1413,7 @@ Other changes:
 						<text/>
 						<ref name="m.phrase.basic"/>
 						<ref name="dimensions"/>
-						<element name="physfacet">
+						<element name="physFacet">
 							<ref name="a.common"/>
 							<optional>
 								<attribute name="label"/>
@@ -1425,7 +1435,7 @@ Other changes:
 								</attribute>
 							</optional>
 							<optional>
-								<attribute name="encodinganalog"/>
+								<attribute name="encodingAnalog"/>
 							</optional>
 							<!-- TC; 2012-06-13: allow only <emph> and <ref> as element children -->
 							<zeroOrMore>
@@ -1448,7 +1458,7 @@ Other changes:
 								<attribute name="unit"/>
 							</optional>
 							<optional>
-								<attribute name="encodinganalog"/>
+								<attribute name="encodingAnalog"/>
 							</optional>
 							<!-- TC; 2012-06-13: allow only <emph> and <ref> as element children -->
 							<zeroOrMore>
@@ -1464,7 +1474,7 @@ Other changes:
 					</choice>
 				</zeroOrMore>
 			</element>
-			<element name="physloc">
+			<element name="physLoc">
 				<ref name="a.common"/>
 				<optional>
 					<attribute name="label"/>
@@ -1473,7 +1483,7 @@ Other changes:
 					<attribute name="type"/>
 				</optional>
 				<optional>
-					<attribute name="encodinganalog"/>
+					<attribute name="encodingAnalog"/>
 				</optional>
 				<optional>
 					<attribute name="parent">
@@ -1490,8 +1500,8 @@ Other changes:
 				</zeroOrMore>
 			</element>
 			<ref name="repository"/>
-			<ref name="unitdate"/>
-			<element name="unitid">
+			<ref name="unitDate"/>
+			<element name="unitId">
 				<ref name="a.common"/>
 				<optional>
 					<attribute name="label"/>
@@ -1499,17 +1509,17 @@ Other changes:
 				<optional>
 					<attribute name="type"/>
 				</optional>
-				<ref name="am.countrycode"/>
+				<ref name="am.countryCode"/>
 				<optional>
-					<attribute name="repositorycode">
-						<ref name="data.repositorycode"/>
+					<attribute name="repositoryCode">
+						<ref name="data.repositoryCode"/>
 					</attribute>
 				</optional>
 				<optional>
 					<attribute name="identifier"/>
 				</optional>
 				<optional>
-					<attribute name="encodinganalog"/>
+					<attribute name="encodingAnalog"/>
 				</optional>
 				<!-- TC; 2012-6-13: only permit <emph> and <ref> as element children -->
 				<zeroOrMore>
@@ -1520,30 +1530,30 @@ Other changes:
 					</choice>
 				</zeroOrMore>
 			</element>
-			<ref name="unittitle"/>
+			<ref name="unitTitle"/>
 		</choice>
 	</define>
 	<define name="m.desc.base">
 		<choice>
-			<ref name="accessrestrict"/>
+			<ref name="accessRestrict"/>
 			<ref name="accruals"/>
-			<ref name="acqinfo"/>
-			<ref name="altformavail"/>
+			<ref name="acqInfo"/>
+			<ref name="altFormAvail"/>
 			<ref name="appraisal"/>
 			<ref name="arrangement"/>
 			<ref name="bibliography"/>
-			<ref name="bioghist"/>
-			<ref name="controlaccess"/>
-			<ref name="custodhist"/>
+			<ref name="biogHist"/>
+			<ref name="controlAccess"/>
+			<ref name="custodHist"/>
 			<!-- TC; 2012-03-07: Removed <descgrp> -->
 			<!--
-			<element name="descgrp">
+			<element name="descGrp">
 				<ref name="a.common"/>
 				<optional>
 					<attribute name="type"/>
 				</optional>
 				<optional>
-					<attribute name="encodinganalog"/>
+					<attribute name="encodingAnalog"/>
 				</optional>
 				<optional>
 					<ref name="head"/>
@@ -1556,22 +1566,22 @@ Other changes:
 				</oneOrMore>
 			</element>
 			-->
-			<!-- TC; 2012-03-08: Removed <fileplan> -->
-			<!--<ref name="fileplan"/>-->
+			<!-- TC; 2012-03-08: Removed <filePlan> -->
+			<!--<ref name="filePlan"/>-->
 			<ref name="index"/>
-			<ref name="legalstatus"/>
-			<!-- TC; 2012-03-08: add <materialspec> -->
-			<ref name="materialspec"/>
+			<ref name="legalStatus"/>
+			<!-- TC; 2012-03-08: add <materialSpec> -->
+			<ref name="materialSpec"/>
 			<ref name="odd"/>
-			<ref name="originalsloc"/>
-			<ref name="otherfindaid"/>
-			<ref name="phystech"/>
-			<ref name="prefercite"/>
-			<ref name="processinfo"/>
-			<ref name="relatedmaterial"/>
-			<ref name="scopecontent"/>
-			<ref name="separatedmaterial"/>
-			<ref name="userestrict"/>
+			<ref name="originalsLoc"/>
+			<ref name="otherFindAid"/>
+			<ref name="physTech"/>
+			<ref name="preferCite"/>
+			<ref name="processInfo"/>
+			<ref name="relatedMaterial"/>
+			<ref name="scopeContent"/>
+			<ref name="separatedMaterial"/>
+			<ref name="useRestrict"/>
 		</choice>
 	</define>
 	<define name="m.desc.full">
@@ -1579,9 +1589,9 @@ Other changes:
 			<ref name="m.desc.base"/>
 			<!-- TC; 2012-03-07: Removed dsc -->
 			<!-- <ref name="dsc"/> -->
-			<!-- TC; 2012-03-08: Removed <dao>, <daogrp> -->
+			<!-- TC; 2012-03-08: Removed <dao>, <daoGrp> -->
 			<!-- <ref name="dao"/>
-			<ref name="daogrp"/>
+			<ref name="daoGrp"/>
 			-->
 			<ref name="note"/>
 		</choice>
@@ -1621,9 +1631,9 @@ Other changes:
 			</attribute>
 		</optional>
 	</define>
-	<define name="am.dsctab.tpattern">
+	<define name="am.dsctab.tPattern">
 		<optional>
-			<attribute name="tpattern">
+			<attribute name="tPattern">
 				<data type="NMTOKEN"/>
 			</attribute>
 		</optional>
@@ -1638,28 +1648,28 @@ Other changes:
 			<value>file</value>
 			<value>fonds</value>
 			<value>item</value>
-			<value>otherlevel</value>
-			<value>recordgrp</value>
+			<value>otherLevel</value>
+			<value>recordGrp</value>
 			<value>series</value>
-			<value>subfonds</value>
-			<value>subgrp</value>
-			<value>subseries</value>
+			<value>subFonds</value>
+			<value>subGrp</value>
+			<value>subSeries</value>
 		</choice>
 	</define>
 	<define name="av.render">
 		<choice>
-			<value>altrender</value>
+			<value>altRender</value>
 			<value>bold</value>
-			<value>bolddoublequote</value>
-			<value>bolditalic</value>
-			<value>boldsinglequote</value>
-			<value>boldsmcaps</value>
-			<value>boldunderline</value>
-			<value>doublequote</value>
+			<value>boldDoubleQuote</value>
+			<value>boldItalic</value>
+			<value>boldSingleQuote</value>
+			<value>boldSmCaps</value>
+			<value>boldUnderline</value>
+			<value>doubleQuote</value>
 			<value>italic</value>
-			<value>nonproport</value>
-			<value>singlequote</value>
-			<value>smcaps</value>
+			<value>nonProPort</value>
+			<value>singleQuote</value>
+			<value>smCaps</value>
 			<value>sub</value>
 			<value>super</value>
 			<value>underline</value>
@@ -1672,7 +1682,7 @@ Other changes:
 			</attribute>
 		</optional>
 		<optional>
-			<attribute name="altrender"/>
+			<attribute name="altRender"/>
 		</optional>
 		<optional>
 			<attribute name="audience">
@@ -1695,7 +1705,7 @@ Other changes:
 			</attribute>
 		</optional>
 		<optional>
-			<attribute name="authfilenumber"/>
+			<attribute name="authFileNumber"/>
 		</optional>
 		<optional>
 			<attribute name="normal"/>
@@ -1703,12 +1713,12 @@ Other changes:
 	</define>
 	<define name="a.desc.base">
 		<optional>
-			<attribute name="otherlevel">
+			<attribute name="otherLevel">
 				<data type="NMTOKEN"/>
 			</attribute>
 		</optional>
 		<optional>
-			<attribute name="encodinganalog"/>
+			<attribute name="encodingAnalog"/>
 		</optional>
 	</define>
 	<define name="a.desc.c">
@@ -1721,7 +1731,7 @@ Other changes:
 			</attribute>
 		</optional>
 		<ref name="a.desc.base"/>
-		<ref name="am.dsctab.tpattern"/>
+		<ref name="am.dsctab.tPattern"/>
 	</define>
 	<define name="a.internal.ptr">
 		<optional>
@@ -1730,18 +1740,18 @@ Other changes:
 			</attribute>
 		</optional>
 		<optional>
-			<attribute name="xpointer"/>
+			<attribute name="xPointer"/>
 		</optional>
 		<ref name="simpleLink"/>
 	</define>
 	<define name="a.external.ptr">
 		<optional>
-			<attribute name="entityref">
+			<attribute name="entityRef">
 				<data type="ENTITY"/>
 			</attribute>
 		</optional>
 		<optional>
-			<attribute name="xpointer"/>
+			<attribute name="xPointer"/>
 		</optional>
 		<ref name="simpleLink"/>
 	</define>
@@ -1753,70 +1763,70 @@ Other changes:
 			</attribute>
 		</optional>
 		<optional>
-			<attribute name="xpointer"/>
+			<attribute name="xPointer"/>
 		</optional>
 	</define>
 	<define name="a.loc.external.ptr">
 		<ref name="locatorLink"/>
 		<optional>
-			<attribute name="entityref">
+			<attribute name="entityRef">
 				<data type="ENTITY"/>
 			</attribute>
 		</optional>
 		<optional>
-			<attribute name="xpointer"/>
+			<attribute name="xPointer"/>
 		</optional>
 	</define>
 	<define name="ead">
 		<element name="ead">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="relatedencoding"/>
+				<attribute name="relatedEncoding"/>
 			</optional>
 			<!-- TC; 2012-03-07: added <control> removed other <eadheader> elements -->
-			<!-- <ref name="control"/> -->
+			<ref name="control"/>
 
-			<element name="eadheader">
+			<!-- <element name="eadheader">
 				<ref name="a.common"/>
 				<optional>
-					<attribute a:defaultValue="iso639-2b" name="langencoding">
+					<attribute a:defaultValue="iso639-2b" name="langEncoding">
 						<data type="NMTOKEN"/>
 					</attribute>
 				</optional>
 				<optional>
-					<attribute a:defaultValue="iso15924" name="scriptencoding">
+					<attribute a:defaultValue="iso15924" name="scriptEncoding">
 						<data type="NMTOKEN"/>
 					</attribute>
 				</optional>
 				<optional>
-					<attribute a:defaultValue="iso8601" name="dateencoding">
+					<attribute a:defaultValue="iso8601" name="dateEncoding">
 						<data type="NMTOKEN"/>
 					</attribute>
 				</optional>
 				<optional>
-					<attribute a:defaultValue="iso3166-1" name="countryencoding">
+					<attribute a:defaultValue="iso3166-1" name="countryEncoding">
 						<data type="NMTOKEN"/>
 					</attribute>
 				</optional>
 				<optional>
-					<attribute a:defaultValue="iso15511" name="repositoryencoding">
+					<attribute a:defaultValue="iso15511" name="repositoryEncoding">
 						<data type="NMTOKEN"/>
 					</attribute>
 				</optional>
 				<optional>
-					<attribute name="relatedencoding"/>
+					<attribute name="relatedEncoding"/>
 				</optional>
 				<optional>
-					<attribute name="findaidstatus">
+					<attribute name="findAidStatus">
 						<data type="NMTOKEN"/>
 					</attribute>
 				</optional>
 				<optional>
-					<attribute name="encodinganalog"/>
+					<attribute name="encodingAnalog"/>
 				</optional>
-<element name="eadid">
+				<element name="eadId">
 					<optional>
-						<attribute name="publicid"/>
+						<attribute name="publicId"/>
 					</optional>
 					<optional>
 						<attribute name="urn"/>
@@ -1824,35 +1834,35 @@ Other changes:
 					<optional>
 						<attribute name="url"/>
 					</optional>
-					<ref name="am.countrycode"/>
+					<ref name="am.countryCode"/>
 					<optional>
-						<attribute name="mainagencycode">
-							<ref name="data.repositorycode"/>
+						<attribute name="mainAgencyCode">
+							<ref name="data.repositoryCode"/>
 						</attribute>
 					</optional>
 					<optional>
 						<attribute name="identifier"/>
 					</optional>
 					<optional>
-						<attribute name="encodinganalog"/>
+						<attribute name="encodingAnalog"/>
 					</optional>
 					<text/>
 				</element>
-				<element name="filedesc">
+				<element name="fileDesc">
 					<ref name="a.common"/>
 					<optional>
-						<attribute name="encodinganalog"/>
+						<attribute name="encodingAnalog"/>
 					</optional>
-					<element name="titlestmt">
+					<element name="titleStmt">
 						<ref name="a.common"/>
 						<optional>
-							<attribute name="encodinganalog"/>
+							<attribute name="encodingAnalog"/>
 						</optional>
 						<oneOrMore>
-							<ref name="titleproper"/>
+							<ref name="titleProper"/>
 						</oneOrMore>
 						<zeroOrMore>
-							<ref name="subtitle"/>
+							<ref name="subTitle"/>
 						</zeroOrMore>
 						<optional>
 							<ref name="author"/>
@@ -1862,10 +1872,10 @@ Other changes:
 						</optional>
 					</element>
 					<optional>
-						<element name="editionstmt">
+						<element name="editionStmt">
 							<ref name="a.common"/>
 							<optional>
-								<attribute name="encodinganalog"/>
+								<attribute name="encodingAnalog"/>
 							</optional>
 							<oneOrMore>
 								<choice>
@@ -1876,10 +1886,10 @@ Other changes:
 						</element>
 					</optional>
 					<optional>
-						<element name="publicationstmt">
+						<element name="publicationStmt">
 							<ref name="a.common"/>
 							<optional>
-								<attribute name="encodinganalog"/>
+								<attribute name="encodingAnalog"/>
 							</optional>
 							<oneOrMore>
 								<choice>
@@ -1893,14 +1903,14 @@ Other changes:
 						</element>
 					</optional>
 					<optional>
-						<element name="seriesstmt">
+						<element name="seriesStmt">
 							<ref name="a.common"/>
 							<optional>
-								<attribute name="encodinganalog"/>
+								<attribute name="encodingAnalog"/>
 							</optional>
 							<oneOrMore>
 								<choice>
-									<ref name="titleproper"/>
+									<ref name="titleProper"/>
 									<ref name="num"/>
 									<ref name="p"/>
 								</choice>
@@ -1908,10 +1918,10 @@ Other changes:
 						</element>
 					</optional>
 					<optional>
-						<element name="notestmt">
+						<element name="noteStmt">
 							<ref name="a.common"/>
 							<optional>
-								<attribute name="encodinganalog"/>
+								<attribute name="encodingAnalog"/>
 							</optional>
 							<oneOrMore>
 								<ref name="note"/>
@@ -1920,16 +1930,16 @@ Other changes:
 					</optional>
 				</element>
 				<optional>
-					<element name="profiledesc">
+					<element name="profileDesc">
 						<ref name="a.common"/>
 						<optional>
-							<attribute name="encodinganalog"/>
+							<attribute name="encodingAnalog"/>
 						</optional>
 						<optional>
 							<element name="creation">
 								<ref name="a.common"/>
 								<optional>
-									<attribute name="encodinganalog"/>
+									<attribute name="encodingAnalog"/>
 								</optional>
 								<zeroOrMore>
 									<choice>
@@ -1941,10 +1951,10 @@ Other changes:
 							</element>
 						</optional>
 						<optional>
-							<element name="langusage">
+							<element name="langUsage">
 								<ref name="a.common"/>
 								<optional>
-									<attribute name="encodinganalog"/>
+									<attribute name="encodingAnalog"/>
 								</optional>
 								<zeroOrMore>
 									<choice>
@@ -1956,10 +1966,10 @@ Other changes:
 							</element>
 						</optional>
 						<optional>
-							<element name="descrules">
+							<element name="descRules">
 								<ref name="a.common"/>
 								<optional>
-									<attribute name="encodinganalog"/>
+									<attribute name="encodingAnalog"/>
 								</optional>
 								<zeroOrMore>
 									<choice>
@@ -1972,10 +1982,10 @@ Other changes:
 					</element>
 				</optional>
 				<optional>
-					<element name="revisiondesc">
+					<element name="revisionDesc">
 						<ref name="a.common"/>
 						<optional>
-							<attribute name="encodinganalog"/>
+							<attribute name="encodingAnalog"/>
 						</optional>
 						<choice>
 							<ref name="list"/>
@@ -1983,7 +1993,7 @@ Other changes:
 								<element name="change">
 									<ref name="a.common"/>
 									<optional>
-										<attribute name="encodinganalog"/>
+										<attribute name="encodingAnalog"/>
 									</optional>
 									<ref name="date"/>
 									<oneOrMore>
@@ -1995,14 +2005,14 @@ Other changes:
 					</element>
 				</optional>
 			</element>
-
+-->
 			<!-- TC; 2012-03-08: Remove <frontmatter> -->
 			<!-- 
 				<optional>
-				<element name="frontmatter">
+				<element name="frontMatter">
 					<ref name="a.common"/>
 					<optional>
-						<element name="titlepage">
+						<element name="titlePage">
 							<ref name="a.common"/>
 							<oneOrMore>
 								<choice>
@@ -2012,10 +2022,10 @@ Other changes:
 									<ref name="edition"/>
 									<ref name="num"/>
 									<ref name="publisher"/>
-									<ref name="bibseries"/>
+									<ref name="bibSeries"/>
 									<ref name="sponsor"/>
-									<ref name="titleproper"/>
-									<ref name="subtitle"/>
+									<ref name="titleProper"/>
+									<ref name="subTitle"/>
 								</choice>
 							</oneOrMore>
 						</element>
@@ -2026,7 +2036,7 @@ Other changes:
 				</element>
 			</optional>
 			-->
-			<element name="archdesc">
+			<element name="archDesc">
 				<ref name="a.common"/>
 				<attribute name="level">
 					<choice>
@@ -2035,12 +2045,12 @@ Other changes:
 				</attribute>
 				<ref name="a.desc.base"/>
 				<optional>
-					<attribute name="localtype">
+					<attribute name="localType">
 						<data type="NMTOKEN"/>
 					</attribute>
 				</optional>
 				<optional>
-					<attribute name="relatedencoding"/>
+					<attribute name="relatedEncoding"/>
 				</optional>
 				<!-- TC; 2012-03-07: Removed runner -->
 				<!--
@@ -2072,16 +2082,20 @@ Other changes:
 				<zeroOrMore>
 					<ref name="m.desc.full"/>
 				</zeroOrMore>
-				<!-- TC; 2012-03-08: Added <dao> and <daogrp> -->
+				<!-- TC; 2012-03-08: Added <dao> and <daoGrp> -->
 				<zeroOrMore>
 					<choice>
 						<ref name="dao"/>
-						<ref name="daogrp"/>
+						<ref name="daoGrp"/>
 					</choice>
 				</zeroOrMore>
 				<!-- TC; 2012-03-07: Added EAC-CPF-based <relations> -->
 				<optional>
-					<ref name="e.relations"/>
+					<element name="relations">
+					 <oneOrMore>
+					 	<ref name="m.relation"/>
+					 </oneOrMore>
+					</element>
 				</optional>
 				<choice>
 					<oneOrMore>
@@ -2094,8 +2108,8 @@ Other changes:
 			</element>
 		</element>
 	</define>
-	<define name="titleproper">
-		<element name="titleproper">
+	<define name="titleProper">
+		<element name="titleProper">
 			<ref name="a.common"/>
 			<optional>
 				<attribute name="render">
@@ -2108,7 +2122,7 @@ Other changes:
 				<attribute name="type"/>
 			</optional>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<zeroOrMore>
 				<choice>
@@ -2123,11 +2137,11 @@ Other changes:
 			</zeroOrMore>
 		</element>
 	</define>
-	<define name="subtitle">
-		<element name="subtitle">
+	<define name="subTitle">
+		<element name="subTitle">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<zeroOrMore>
 				<choice>
@@ -2146,7 +2160,7 @@ Other changes:
 		<element name="author">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<zeroOrMore>
 				<choice>
@@ -2160,7 +2174,7 @@ Other changes:
 		<element name="sponsor">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<zeroOrMore>
 				<choice>
@@ -2188,7 +2202,7 @@ Other changes:
 		<element name="did">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<optional>
 				<ref name="head"/>
@@ -2200,7 +2214,7 @@ Other changes:
 			</oneOrMore>
 			<!-- TC: 2012-06-13: add formsavailable element -->
 			<optional>
-				<element name="formsavailable">
+				<element name="formsAvailable">
 					<zeroOrMore>
 						<choice>
 							<element name="container">
@@ -2209,12 +2223,12 @@ Other changes:
 									<attribute name="label"/>
 								</optional>
 								<optional>
-									<attribute name="localtype">
+									<attribute name="localType">
 										<data type="NMTOKEN"/>
 									</attribute>
 								</optional>
 								<optional>
-									<attribute name="encodinganalog"/>
+									<attribute name="encodingAnalog"/>
 								</optional>
 								<optional>
 									<attribute name="parent">
@@ -2223,7 +2237,7 @@ Other changes:
 								</optional>
 								<!-- TC; 2012-06-11: add @containerid -->
 								<optional>
-									<attribute name="containerid">
+									<attribute name="containerId">
 										<data type="NMTOKEN"/>
 									</attribute>
 								</optional>
@@ -2258,7 +2272,7 @@ Other changes:
 				<attribute name="unit"/>
 			</optional>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<!-- TC; 2012-06-13: allow only <emph> and <ref> as element children -->
 			<zeroOrMore>
@@ -2277,16 +2291,16 @@ Other changes:
 				<attribute name="label"/>
 			</optional>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<zeroOrMore>
 				<choice>
 					<text/>
 					<ref name="m.phrase.basic"/>
-					<ref name="corpname"/>
-					<ref name="famname"/>
+					<ref name="corpName"/>
+					<ref name="famName"/>
 					<ref name="name"/>
-					<ref name="persname"/>
+					<ref name="persName"/>
 				</choice>
 			</zeroOrMore>
 		</element>
@@ -2298,25 +2312,25 @@ Other changes:
 				<attribute name="label"/>
 			</optional>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<zeroOrMore>
 				<choice>
 					<text/>
 					<ref name="m.phrase.basic"/>
 					<ref name="address"/>
-					<ref name="corpname"/>
+					<ref name="corpName"/>
 					<ref name="name"/>
-					<ref name="subarea"/>
+					<ref name="subArea"/>
 				</choice>
 			</zeroOrMore>
 		</element>
 	</define>
-	<define name="subarea">
-		<element name="subarea">
+	<define name="subArea">
+		<element name="subArea">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<zeroOrMore>
 				<choice>
@@ -2326,14 +2340,15 @@ Other changes:
 			</zeroOrMore>
 		</element>
 	</define>
-	<define name="unitdate">
-		<element name="unitdate">
+	<define name="unitDate">
+		<element name="unitDate">
 			<ref name="a.common"/>
 			<optional>
 				<attribute name="label"/>
 			</optional>
+			<!-- Probably we have to change localType here -->
 			<optional>
-				<attribute name="localtype">
+				<attribute name="localType">
 					<choice>
 						<value>bulk</value>
 						<value>inclusive</value>
@@ -2341,7 +2356,7 @@ Other changes:
 				</attribute>
 			</optional>
 			<optional>
-				<attribute name="datechar"/>
+				<attribute name="dateChar"/>
 			</optional>
 			<ref name="am.dates.era"/>
 			<ref name="am.dates.calendar"/>
@@ -2350,7 +2365,7 @@ Other changes:
 				<attribute name="certainty"/>
 			</optional>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<zeroOrMore>
 				<choice>
@@ -2360,14 +2375,14 @@ Other changes:
 			</zeroOrMore>
 		</element>
 	</define>
-	<define name="unittitle">
-		<element name="unittitle">
+	<define name="unitTitle">
+		<element name="unitTitle">
 			<ref name="a.common"/>
 			<optional>
 				<attribute name="label"/>
 			</optional>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<optional>
 				<attribute name="type"/>
@@ -2399,9 +2414,9 @@ Other changes:
 	<define name="language">
 		<element name="language">
 			<ref name="a.common"/>
-			<ref name="am.langcode"/>
+			<ref name="am.langCode"/>
 			<optional>
-				<attribute name="scriptcode">
+				<attribute name="scriptCode">
 					<choice>
 						<value>Arab</value>
 						<value>Armn</value>
@@ -2512,7 +2527,7 @@ Other changes:
 				</attribute>
 			</optional>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<zeroOrMore>
 				<choice>
@@ -2522,8 +2537,8 @@ Other changes:
 			</zeroOrMore>
 		</element>
 	</define>
-	<define name="materialspec">
-		<element name="materialspec">
+	<define name="materialSpec">
+		<element name="materialSpec">
 			<!-- TC: 2012-06-13: adopt same content model as phystech -->
 			<!-- <ref name="a.common"/>
 			<optional>
@@ -2533,20 +2548,20 @@ Other changes:
 				<attribute name="type"/>
 			</optional>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<zeroOrMore>
 				<choice>
 					<text/>
 					<ref name="m.phrase.basic"/>
 					<ref name="num"/>
-					<ref name="materialspec"/>
+					<ref name="materialSpec"/>
 				</choice>
 			</zeroOrMore>
 			-->
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<optional>
 				<attribute name="type"/>
@@ -2565,7 +2580,7 @@ Other changes:
 		<element name="accruals">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<optional>
 				<ref name="head"/>
@@ -2579,11 +2594,11 @@ Other changes:
 			</oneOrMore>
 		</element>
 	</define>
-	<define name="accessrestrict">
-		<element name="accessrestrict">
+	<define name="accessRestrict">
+		<element name="accessRestrict">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<optional>
 				<attribute name="type"/>
@@ -2612,16 +2627,16 @@ Other changes:
 					</element>
 					-->
 					<!-- TC: 2012-06-08 remove recursion in note elements -->
-					<!-- <ref name="accessrestrict"/> -->
+					<!-- <ref name="accessRestrict"/> -->
 				</choice>
 			</oneOrMore>
 		</element>
 	</define>
-	<define name="acqinfo">
-		<element name="acqinfo">
+	<define name="acqInfo">
+		<element name="acqInfo">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<optional>
 				<ref name="head"/>
@@ -2635,11 +2650,11 @@ Other changes:
 			</oneOrMore>
 		</element>
 	</define>
-	<define name="altformavail">
-		<element name="altformavail">
+	<define name="altFormAvail">
+		<element name="altFormAvail">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<optional>
 				<attribute name="type"/>
@@ -2656,11 +2671,11 @@ Other changes:
 			</oneOrMore>
 		</element>
 	</define>
-	<define name="originalsloc">
-		<element name="originalsloc">
+	<define name="originalsLoc">
+		<element name="originalsLoc">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<optional>
 				<attribute name="type"/>
@@ -2677,11 +2692,11 @@ Other changes:
 			</oneOrMore>
 		</element>
 	</define>
-	<define name="phystech">
-		<element name="phystech">
+	<define name="physTech">
+		<element name="physTech">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<optional>
 				<attribute name="type"/>
@@ -2702,7 +2717,7 @@ Other changes:
 		<element name="appraisal">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<optional>
 				<ref name="head"/>
@@ -2716,11 +2731,11 @@ Other changes:
 			</oneOrMore>
 		</element>
 	</define>
-	<define name="custodhist">
-		<element name="custodhist">
+	<define name="custodHist">
+		<element name="custodHist">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<optional>
 				<ref name="head"/>
@@ -2736,11 +2751,11 @@ Other changes:
 			</oneOrMore>
 		</element>
 	</define>
-	<define name="prefercite">
-		<element name="prefercite">
+	<define name="preferCite">
+		<element name="preferCite">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<optional>
 				<ref name="head"/>
@@ -2754,14 +2769,14 @@ Other changes:
 			</oneOrMore>
 		</element>
 	</define>
-	<define name="processinfo">
-		<element name="processinfo">
+	<define name="processInfo">
+		<element name="processInfo">
 			<ref name="a.common"/>
 			<optional>
 				<attribute name="type"/>
 			</optional>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<optional>
 				<ref name="head"/>
@@ -2775,11 +2790,11 @@ Other changes:
 			</oneOrMore>
 		</element>
 	</define>
-	<define name="userestrict">
-		<element name="userestrict">
+	<define name="useRestrict">
+		<element name="useRestrict">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<optional>
 				<attribute name="type"/>
@@ -2796,11 +2811,11 @@ Other changes:
 			</oneOrMore>
 		</element>
 	</define>
-	<define name="bioghist">
-		<element name="bioghist">
+	<define name="biogHist">
+		<element name="biogHist">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<optional>
 				<ref name="head"/>
@@ -2810,20 +2825,20 @@ Other changes:
 					<ref name="m.blocks"/>
 					<!-- TC: 2012-06-08 remove recursion in note elements -->
 					<!-- <ref name="bioghist"/> -->
-					<!-- TC; 2012-03-08: Removed <dao>, <daogrp> -->
+					<!-- TC; 2012-03-08: Removed <dao>, <daoGrp> -->
 					<!--
 					<ref name="dao"/>
-					<ref name="daogrp"/>
+					<ref name="daoGrp"/>
 					-->
 				</choice>
 			</oneOrMore>
 		</element>
 	</define>
-	<define name="controlaccess">
-		<element name="controlaccess">
+	<define name="controlAccess">
+		<element name="controlAccess">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<optional>
 				<ref name="head"/>
@@ -2845,7 +2860,7 @@ Other changes:
 				<attribute name="type"/>
 			</optional>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<optional>
 				<ref name="head"/>
@@ -2853,10 +2868,10 @@ Other changes:
 			<oneOrMore>
 				<choice>
 					<ref name="m.blocks"/>
-					<!-- TC; 2012-03-08: Removed <dao>, <daogrp> -->
+					<!-- TC; 2012-03-08: Removed <dao>, <daoGrp> -->
 					<!--
 					<ref name="dao"/>
-					<ref name="daogrp"/>
+					<ref name="daoGrp"/>
 					-->
 					<!-- TC: 2012-06-08 remove recursion in note elements -->
 					<!-- <ref name="odd"/> -->
@@ -2864,11 +2879,11 @@ Other changes:
 			</oneOrMore>
 		</element>
 	</define>
-	<define name="scopecontent">
-		<element name="scopecontent">
+	<define name="scopeContent">
+		<element name="scopeContent">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<optional>
 				<ref name="head"/>
@@ -2880,22 +2895,22 @@ Other changes:
 						<ref name="div"/>
 					</oneOrMore>
 				</group>
-					<oneOrMore>
+				<oneOrMore>
+					<choice>
 						<choice>
-							<choice>
-								<ref name="m.blocks"/>
-							</choice>
-							<!-- TC; 2012-03-07: Removed <arrangement> -->
-							<!-- <ref name="arrangement"/> -->
-							<!-- TC: 2012-06-08 remove recursion in note elements -->
-							<!-- <ref name="scopecontent"/> -->
-							<!-- TC; 2012-03-08: Removed <dao>, <daogrp> -->
-							<!--
-					<ref name="dao"/>
-					<ref name="daogrp"/>
-					-->
+							<ref name="m.blocks"/>
 						</choice>
-					</oneOrMore>
+						<!-- TC; 2012-03-07: Removed <arrangement> -->
+						<!-- <ref name="arrangement"/> -->
+						<!-- TC: 2012-06-08 remove recursion in note elements -->
+						<!-- <ref name="scopecontent"/> -->
+						<!-- TC; 2012-03-08: Removed <dao>, <daogrp> -->
+						<!--
+					<ref name="dao"/>
+					<ref name="daoGrp"/>
+					-->
+					</choice>
+				</oneOrMore>
 			</choice>
 		</element>
 	</define>
@@ -2903,7 +2918,7 @@ Other changes:
 		<element name="arrangement">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<optional>
 				<ref name="head"/>
@@ -2921,7 +2936,7 @@ Other changes:
 		<element name="bibliography">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<optional>
 				<ref name="head"/>
@@ -2931,7 +2946,7 @@ Other changes:
 					<ref name="m.blocks"/>
 					<ref name="m.refs"/>
 					<zeroOrMore>
-						<ref name="bibref"/>
+						<ref name="bibRef"/>
 					</zeroOrMore>
 					<!-- TC: 2012-06-08 remove recursion in note elements -->
 					<!-- <ref name="bibliography"/> -->
@@ -2939,13 +2954,13 @@ Other changes:
 			</oneOrMore>
 		</element>
 	</define>
-	<!-- TC; 2012-03-08: Removed <fileplan> -->
+	<!-- TC; 2012-03-08: Removed <filePlan> -->
 	<!--
-		<define name="fileplan">
-		<element name="fileplan">
+		<define name="filePlan">
+		<element name="filePlan">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<optional>
 				<ref name="head"/>
@@ -2953,20 +2968,20 @@ Other changes:
 			<oneOrMore>
 				<choice>
 					<ref name="m.blocks"/>
-					<ref name="fileplan"/>
+					<ref name="filePlan"/>
 				</choice>
 			</oneOrMore>
 		</element>
 	</define>
 	-->
-	<define name="relatedmaterial">
-		<element name="relatedmaterial">
+	<define name="relatedMaterial">
+		<element name="relatedMaterial">
 			<ref name="a.common"/>
 			<optional>
 				<attribute name="type"/>
 			</optional>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<optional>
 				<ref name="head"/>
@@ -2981,14 +2996,14 @@ Other changes:
 			</oneOrMore>
 		</element>
 	</define>
-	<define name="separatedmaterial">
-		<element name="separatedmaterial">
+	<define name="separatedMaterial">
+		<element name="separatedMaterial">
 			<ref name="a.common"/>
 			<optional>
 				<attribute name="type"/>
 			</optional>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<optional>
 				<ref name="head"/>
@@ -3003,11 +3018,11 @@ Other changes:
 			</oneOrMore>
 		</element>
 	</define>
-	<define name="otherfindaid">
-		<element name="otherfindaid">
+	<define name="otherFindAid">
+		<element name="otherFindAid">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<optional>
 				<ref name="head"/>
@@ -3026,7 +3041,7 @@ Other changes:
 		<element name="index">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<optional>
 				<ref name="head"/>
@@ -3037,10 +3052,10 @@ Other changes:
 			<choice>
 				<group>
 					<optional>
-						<ref name="listhead"/>
+						<ref name="listHead"/>
 					</optional>
 					<oneOrMore>
-						<ref name="indexentry"/>
+						<ref name="indexEntry"/>
 					</oneOrMore>
 				</group>
 				<!-- TC: 2012-06-08 remove recursion in note elements -->
@@ -3051,11 +3066,11 @@ Other changes:
 			</choice>
 		</element>
 	</define>
-	<define name="indexentry">
-		<element name="indexentry">
+	<define name="indexEntry">
+		<element name="indexEntry">
 			<ref name="a.common"/>
 			<choice>
-				<element name="namegrp">
+				<element name="nameGrp">
 					<ref name="a.common"/>
 					<oneOrMore>
 						<choice>
@@ -3068,7 +3083,7 @@ Other changes:
 			</choice>
 			<optional>
 				<choice>
-					<element name="ptrgrp">
+					<element name="ptrGrp">
 						<ref name="a.common"/>
 						<oneOrMore>
 							<choice>
@@ -3082,7 +3097,7 @@ Other changes:
 				</choice>
 			</optional>
 			<zeroOrMore>
-				<ref name="indexentry"/>
+				<ref name="indexEntry"/>
 			</zeroOrMore>
 		</element>
 	</define>
@@ -3092,22 +3107,22 @@ Other changes:
 			<optional>
 				<attribute name="type">
 					<choice>
-						<value>analyticover</value>
+						<value>analytiCover</value>
 						<value>combined</value>
-						<value>in-depth</value>
-						<value>othertype</value>
+						<value>inDepth</value>
+						<value>otherType</value>
 					</choice>
 				</attribute>
 			</optional>
 			<optional>
-				<attribute name="othertype">
+				<attribute name="otherType">
 					<data type="NMTOKEN"/>
 				</attribute>
 			</optional>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
-			<ref name="am.dsctab.tpattern"/>
+			<ref name="am.dsctab.tPattern"/>
 			<group>
 				<optional>
 					<ref name="head"/>
@@ -3121,19 +3136,19 @@ Other changes:
 				<!-- 
 						<group>
 						<optional>
-						<ref name="thead"/>
+						<ref name="tHead"/>
 						</optional>
 						<choice>
 						<oneOrMore>
 							<ref name="c"/>
 							<optional>
-								<ref name="thead"/>
+								<ref name="tHead"/>
 							</optional>
 						</oneOrMore>
 						<oneOrMore>
 							<ref name="c01"/>
 							<optional>
-								<ref name="thead"/>
+								<ref name="tHead"/>
 							</optional>
 						</oneOrMore>
 					</choice>
@@ -3258,7 +3273,7 @@ Other changes:
 		<element name="head">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="althead"/>
+				<attribute name="altHead"/>
 			</optional>
 			<zeroOrMore>
 				<choice>
@@ -3284,7 +3299,7 @@ Other changes:
 			<ref name="a.common"/>
 			<ref name="a.external.ptr"/>
 			<optional>
-				<ref name="daodesc"/>
+				<ref name="daoDesc"/>
 			</optional>
 			<!-- TC: 2012-03-08: added @type -->
 			<optional>
@@ -3292,8 +3307,8 @@ Other changes:
 			</optional>
 		</element>
 	</define>
-	<define name="daodesc">
-		<element name="daodesc">
+	<define name="daoDesc">
+		<element name="daoDesc">
 			<ref name="a.common"/>
 			<optional>
 				<ref name="head"/>
@@ -3303,21 +3318,21 @@ Other changes:
 			</oneOrMore>
 		</element>
 	</define>
-	<define name="daogrp">
-		<element name="daogrp">
+	<define name="daoGrp">
+		<element name="daoGrp">
 			<ref name="a.common"/>
 			<!-- TC: 2012-06-13: allow only simple xlink attributes -->
 			<!-- <ref name="extendedLink"/> -->
 			<optional>
-				<ref name="daodesc"/>
+				<ref name="daoDesc"/>
 			</optional>
 			<oneOrMore>
 				<choice>
-					<element name="daoloc">
+					<element name="daoLoc">
 						<ref name="a.common"/>
 						<ref name="a.loc.external.ptr"/>
 						<optional>
-							<ref name="daodesc"/>
+							<ref name="daoDesc"/>
 						</optional>
 					</element>
 					<!-- 2012-06-13: remove extended links -->
@@ -3345,27 +3360,27 @@ Other changes:
 				<choice>
 					<text/>
 					<!-- <ref name="m.para.content.norefs"/> -->
-					<!--TC; 2012-06-13: restrict bibref to bibliography only -->
-					<!-- <ref name="bibref"/> -->
+					<!--TC; 2012-06-13: restrict bibRef to bibliography only -->
+					<!-- <ref name="bibRef"/> -->
 					<!-- <ref name="title"/> -->
-					<!-- <ref name="extref"/> -->
-					<!-- <ref name="archref"/> -->
+					<!-- <ref name="extRef"/> -->
+					<!-- <ref name="archRef"/> -->
 				</choice>
 			</zeroOrMore>
 		</element>
 	</define>
-	<!-- TC 2012-06-08: remove extref -->
-	<!--<define name="extref">
-		<element name="extref">
+	<!-- TC 2012-06-08: remove extRef -->
+	<!--<define name="extRef">
+		<element name="extRef">
 			<ref name="a.common"/>
 			<ref name="a.external.ptr"/>
 			<zeroOrMore>
 				<choice>
 					<text/>
 					<ref name="m.para.content.norefs"/>
-					<ref name="bibref"/>
+					<ref name="bibRef"/>
 					<ref name="title"/>
-					<ref name="archref"/>
+					<ref name="archRef"/>
 					<ref name="ref"/>
 				</choice>
 			</zeroOrMore>
@@ -3393,7 +3408,7 @@ Other changes:
 			</optional>
 			-->
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<!-- TC; 2013-06-13: permit only text -->
 			<zeroOrMore>
@@ -3408,8 +3423,8 @@ Other changes:
 			</zeroOrMore>
 		</element>
 	</define>
-	<define name="archref">
-		<element name="archref">
+	<define name="archRef">
+		<element name="archRef">
 			<ref name="a.common"/>
 			<optional>
 				<ref name="a.external.ptr"/>
@@ -3418,18 +3433,19 @@ Other changes:
 				<choice>
 					<text/>
 					<ref name="m.phrase.basic.norefs"/>
-					<!--TC; 2012-06-13: restrict bibref to bibliography only -->
-					<!-- <ref name="bibref"/>-->
+					<!--TC; 2012-06-13: restrict bibRef to bibliography only -->
+					<!-- <ref name="bibRef"/>-->
 					<ref name="ref"/>
 					<ref name="title"/>
 					<!-- <ref name="extref"/> -->
-					<ref name="m.did"/>
+					<!-- TC; 2012-10-10: removed did elements  -->
+					<!--<ref name="m.did"/> -->
 				</choice>
 			</zeroOrMore>
 		</element>
 	</define>
-	<define name="bibref">
-		<element name="bibref">
+	<define name="bibRef">
+		<element name="bibRef">
 			<ref name="a.common"/>
 			<!-- TC: 2012-06-13: remove linking attrs from bibref -->
 			<!--
@@ -3438,27 +3454,18 @@ Other changes:
 			</optional>
 			-->
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
-			<!-- TC; 2013-06-13: permit only text -->
+			<!-- TC; 2013-06-10: change content model to match archref -->
+			<optional>
+				<ref name="a.external.ptr"/>
+			</optional>
 			<zeroOrMore>
 				<choice>
 					<text/>
-					<!--
 					<ref name="m.phrase.basic.norefs"/>
-					<ref name="edition"/>
-					<ref name="imprint"/>
-					<ref name="name"/>
-					<ref name="num"/>
-					<ref name="bibseries"/>
 					<ref name="ref"/>
 					<ref name="title"/>
-					<ref name="famname"/>
-					<ref name="persname"/>
-					<ref name="corpname"/>
-					-->
-					<!-- <ref name="extref"/> -->
-					<!-- <ref name="archref"/> -->
 				</choice>
 			</zeroOrMore>
 		</element>
@@ -3467,7 +3474,7 @@ Other changes:
 		<element name="edition">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<zeroOrMore>
 				<choice>
@@ -3477,11 +3484,11 @@ Other changes:
 			</zeroOrMore>
 		</element>
 	</define>
-	<define name="bibseries">
-		<element name="bibseries">
+	<define name="bibSeries">
+		<element name="bibSeries">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<zeroOrMore>
 				<choice>
@@ -3497,14 +3504,14 @@ Other changes:
 		<element name="imprint">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<zeroOrMore>
 				<choice>
 					<text/>
 					<ref name="m.phrase.bare"/>
 					<ref name="publisher"/>
-					<ref name="geogname"/>
+					<ref name="geogName"/>
 					<ref name="date"/>
 				</choice>
 			</zeroOrMore>
@@ -3514,7 +3521,7 @@ Other changes:
 		<element name="publisher">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<zeroOrMore>
 				<choice>
@@ -3524,15 +3531,15 @@ Other changes:
 			</zeroOrMore>
 		</element>
 	</define>
-	<define name="corpname">
-		<element name="corpname">
+	<define name="corpName">
+		<element name="corpName">
 			<ref name="a.common"/>
 			<ref name="a.access"/>
 			<optional>
 				<attribute name="role"/>
 			</optional>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<!-- TC; 2013-06-13: permit only text -->
 			<zeroOrMore>
@@ -3545,15 +3552,15 @@ Other changes:
 			</zeroOrMore>
 		</element>
 	</define>
-	<define name="famname">
-		<element name="famname">
+	<define name="famName">
+		<element name="famName">
 			<ref name="a.common"/>
 			<ref name="a.access"/>
 			<optional>
 				<attribute name="role"/>
 			</optional>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<!-- TC; 2013-06-13: permit only text -->
 			<zeroOrMore>
@@ -3564,15 +3571,15 @@ Other changes:
 			</zeroOrMore>
 		</element>
 	</define>
-	<define name="geogname">
-		<element name="geogname">
+	<define name="geogName">
+		<element name="geogName">
 			<ref name="a.common"/>
 			<ref name="a.access"/>
 			<optional>
 				<attribute name="role"/>
 			</optional>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<zeroOrMore>
 				<choice>
@@ -3590,7 +3597,7 @@ Other changes:
 				<attribute name="role"/>
 			</optional>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<zeroOrMore>
 				<choice>
@@ -3600,15 +3607,15 @@ Other changes:
 			</zeroOrMore>
 		</element>
 	</define>
-	<define name="persname">
-		<element name="persname">
+	<define name="persName">
+		<element name="persName">
 			<ref name="a.common"/>
 			<ref name="a.access"/>
 			<optional>
 				<attribute name="role"/>
 			</optional>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<!-- TC; 2013-06-13: permit only text -->
 			<zeroOrMore>
@@ -3632,7 +3639,7 @@ Other changes:
 				<attribute name="certainty"/>
 			</optional>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<!-- TC; 2013-06-13: permit only text -->
 			<zeroOrMore>
@@ -3650,7 +3657,7 @@ Other changes:
 				<attribute name="type"/>
 			</optional>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<zeroOrMore>
 				<choice>
@@ -3685,7 +3692,7 @@ Other changes:
 		<element name="address">
 			<ref name="a.common"/>
 			<oneOrMore>
-				<element name="addressline">
+				<element name="addressLine">
 					<ref name="a.common"/>
 					<zeroOrMore>
 						<choice>
@@ -3715,7 +3722,7 @@ Other changes:
 				<attribute name="type">
 					<choice>
 						<value>simple</value>
-						<value>deflist</value>
+						<value>defList</value>
 						<value>marked</value>
 						<value>ordered</value>
 					</choice>
@@ -3728,10 +3735,10 @@ Other changes:
 				<attribute name="numeration">
 					<choice>
 						<value>arabic</value>
-						<value>upperalpha</value>
-						<value>loweralpha</value>
-						<value>upperroman</value>
-						<value>lowerroman</value>
+						<value>upperAlpha</value>
+						<value>lowerAlpha</value>
+						<value>upperRoman</value>
+						<value>lowerRoman</value>
 					</choice>
 				</attribute>
 			</optional>
@@ -3753,10 +3760,10 @@ Other changes:
 				</oneOrMore>
 				<group>
 					<optional>
-						<ref name="listhead"/>
+						<ref name="listHead"/>
 					</optional>
 					<oneOrMore>
-						<element name="defitem">
+						<element name="defItem">
 							<ref name="a.common"/>
 							<element name="label">
 								<ref name="a.common"/>
@@ -3774,8 +3781,8 @@ Other changes:
 			</choice>
 		</element>
 	</define>
-	<define name="listhead">
-		<element name="listhead">
+	<define name="listHead">
+		<element name="listHead">
 			<ref name="a.common"/>
 			<optional>
 				<element name="head01">
@@ -3838,19 +3845,19 @@ Other changes:
 				</attribute>
 			</optional>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<oneOrMore>
 				<ref name="m.blocks"/>
 			</oneOrMore>
 		</element>
 	</define>
-	<!-- TC 2012-06-08: deprecate thead -->
-	<!-- <define name="thead">
-		<element name="thead">
+	<!-- TC 2012-06-08: deprecate tHead -->
+	<!-- <define name="tHead">
+		<element name="tHead">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="valign">
+				<attribute name="vAlign">
 					<choice>
 						<value>top</value>
 						<value>middle</value>
@@ -3868,12 +3875,12 @@ Other changes:
 		<element name="row">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="rowsep">
+				<attribute name="rowSep">
 					<ref name="yesorno"/>
 				</attribute>
 			</optional>
 			<optional>
-				<attribute name="valign">
+				<attribute name="vAlign">
 					<choice>
 						<value>top</value>
 						<value>middle</value>
@@ -3885,32 +3892,32 @@ Other changes:
 				<element name="entry">
 					<ref name="a.common"/>
 					<optional>
-						<attribute name="colname">
+						<attribute name="colName">
 							<data type="NMTOKEN"/>
 						</attribute>
 					</optional>
 					<optional>
-						<attribute name="namest">
+						<attribute name="namEst">
 							<data type="NMTOKEN"/>
 						</attribute>
 					</optional>
 					<optional>
-						<attribute name="nameend">
+						<attribute name="nameEnd">
 							<data type="NMTOKEN"/>
 						</attribute>
 					</optional>
 					<optional>
-						<attribute name="morerows">
+						<attribute name="moreRows">
 							<data type="NMTOKEN"/>
 						</attribute>
 					</optional>
 					<optional>
-						<attribute name="colsep">
+						<attribute name="colSep">
 							<ref name="yesorno"/>
 						</attribute>
 					</optional>
 					<optional>
-						<attribute name="rowsep">
+						<attribute name="rowSep">
 							<ref name="yesorno"/>
 						</attribute>
 					</optional>
@@ -3929,12 +3936,12 @@ Other changes:
 						<attribute name="char"/>
 					</optional>
 					<optional>
-						<attribute name="charoff">
+						<attribute name="charOff">
 							<data type="NMTOKEN"/>
 						</attribute>
 					</optional>
 					<optional>
-						<attribute name="valign">
+						<attribute name="vAlign">
 							<choice>
 								<value>top</value>
 								<value>middle</value>
@@ -3966,17 +3973,17 @@ Other changes:
 		<choice>
 			<ref name="resource"/>
 			<ref name="arc"/>
-			<element name="ptrloc">
+			<element name="ptrLoc">
 				<ref name="a.common"/>
 				<ref name="a.loc.internal.ptr"/>
 				<empty/>
 			</element>
-			<element name="extptrloc">
+			<element name="extPtrLoc">
 				<ref name="a.common"/>
 				<ref name="a.loc.external.ptr"/>
 				<empty/>
 			</element>
-			<element name="refloc">
+			<element name="refLoc">
 				<ref name="a.common"/>
 				<ref name="a.loc.internal.ptr"/>
 				<zeroOrMore>
@@ -3986,7 +3993,7 @@ Other changes:
 					</choice>
 				</zeroOrMore>
 			</element>
-			<element name="extrefloc">
+			<element name="extRefLoc">
 				<ref name="a.common"/>
 				<ref name="a.loc.external.ptr"/>
 				<zeroOrMore>
@@ -4207,28 +4214,32 @@ Other changes:
 		<zeroOrMore>
 			<ref name="m.desc.full"/>
 		</zeroOrMore>
-		<!-- TC; 2012-06-08: deprecate thead -->
+		<!-- TC; 2012-06-08: deprecate tHead -->
 		<!--<optional>
-			<ref name="thead"/>
+			<ref name="tHead"/>
 			</optional>
 		-->
-		<!-- TC; 2012-03-08: Added <dao> and <daogrp> -->
+		<!-- TC; 2012-03-08: Added <dao> and <daoGrp> -->
 		<zeroOrMore>
 			<choice>
 				<ref name="dao"/>
-				<ref name="daogrp"/>
+				<ref name="daoGrp"/>
 			</choice>
 		</zeroOrMore>
 		<optional>
-			<ref name="e.relations"/>
+			<element name="relations">
+				<oneOrMore>
+					<ref name="m.relation"/>
+				</oneOrMore>
+			</element>
 		</optional>
 	</define>
 
-	<define name="legalstatus">
-		<element name="legalstatus">
+	<define name="legalStatus">
+		<element name="legalStatus">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="localtype">
+				<attribute name="localType">
 					<data type="NMTOKEN"/>
 				</attribute>
 			</optional>
@@ -4688,44 +4699,44 @@ Other changes:
 		<element name="control">
 			<ref name="a.common"/>
 			<optional>
-				<attribute a:defaultValue="iso639-2b" name="langencoding">
+				<attribute a:defaultValue="iso639-2b" name="langEncoding">
 					<data type="NMTOKEN"/>
 				</attribute>
 			</optional>
 			<optional>
-				<attribute a:defaultValue="iso15924" name="scriptencoding">
+				<attribute a:defaultValue="iso15924" name="scriptEncoding">
 					<data type="NMTOKEN"/>
 				</attribute>
 			</optional>
 			<optional>
-				<attribute a:defaultValue="iso8601" name="dateencoding">
+				<attribute a:defaultValue="iso8601" name="dateEncoding">
 					<data type="NMTOKEN"/>
 				</attribute>
 			</optional>
 			<optional>
-				<attribute a:defaultValue="iso3166-1" name="countryencoding">
+				<attribute a:defaultValue="iso3166-1" name="countryEncoding">
 					<data type="NMTOKEN"/>
 				</attribute>
 			</optional>
 			<optional>
-				<attribute a:defaultValue="iso15511" name="repositoryencoding">
+				<attribute a:defaultValue="iso15511" name="repositoryEncoding">
 					<data type="NMTOKEN"/>
 				</attribute>
 			</optional>
 			<optional>
-				<attribute name="relatedencoding"/>
+				<attribute name="relatedEncoding"/>
 			</optional>
 			<optional>
-				<attribute name="findaidstatus">
+				<attribute name="findAidStatus">
 					<data type="NMTOKEN"/>
 				</attribute>
 			</optional>
 			<optional>
-				<attribute name="encodinganalog"/>
+				<attribute name="encodingAnalog"/>
 			</optional>
-			<element name="eadid">
+			<element name="eadId">
 				<!--	<optional>
-					<attribute name="publicid"/>
+					<attribute name="publicId"/>
 				</optional>
 				<optional>
 					<attribute name="urn"/>
@@ -4734,17 +4745,17 @@ Other changes:
 					<attribute name="url"/>
 				</optional>
 				-->
-				<ref name="am.countrycode"/>
+				<ref name="am.countryCode"/>
 				<optional>
-					<attribute name="mainagencycode">
-						<ref name="data.repositorycode"/>
+						<attribute name="mainAgencyCode">
+						<ref name="data.repositoryCode"/>
 					</attribute>
 				</optional>
 				<optional>
 					<attribute name="identifier"/>
 				</optional>
 				<optional>
-					<attribute name="encodinganalog"/>
+					<attribute name="encodingAnalog"/>
 				</optional>
 				<data type="token"/>
 			</element>
@@ -4755,9 +4766,9 @@ Other changes:
 					<text/>
 				</element>
 			</zeroOrMore>
-			<ref name="titleproper"/>
+			<ref name="titleProper"/>
 			<optional>
-				<ref name="subtitle"/>
+				<ref name="subTitle"/>
 			</optional>
 			<ref name="maintenanceAgency"/>
 			<element name="maintenanceStatus">
@@ -4778,12 +4789,12 @@ Other changes:
 			<element name="instanceMaintenanceHistory">
 				<ref name="maintenanceHistory"/>
 			</element>
-			<!-- TC; 2012-03-08: removed <editionstmt>, <seriestmt>, and <notestmt> -->
+			<!-- TC; 2012-03-08: removed <editionStmt>, <seriesStmt>, and <noteStmt> -->
 			<!--<optional>
-				<element name="editionstmt">
+				<element name="editionStmt">
 					<ref name="a.common"/>
 					<optional>
-						<attribute name="encodinganalog"/>
+						<attribute name="encodingAnalog"/>
 					</optional>
 					<oneOrMore>
 						<choice>
@@ -4794,14 +4805,14 @@ Other changes:
 				</element>
 			</optional>
 			<optional>
-				<element name="seriesstmt">
+				<element name="seriesStmt">
 					<ref name="a.common"/>
 					<optional>
-						<attribute name="encodinganalog"/>
+						<attribute name="encodingAnalog"/>
 					</optional>
 					<oneOrMore>
 						<choice>
-							<ref name="titleproper"/>
+							<ref name="titleProper"/>
 							<ref name="num"/>
 							<ref name="p"/>
 						</choice>
@@ -4809,10 +4820,10 @@ Other changes:
 				</element>
 			</optional>
 			<optional>
-				<element name="notestmt">
+				<element name="noteStmt">
 					<ref name="a.common"/>
 					<optional>
-						<attribute name="encodinganalog"/>
+						<attribute name="encodingAnalog"/>
 					</optional>
 					<oneOrMore>
 						<ref name="note"/>
@@ -5123,13 +5134,133 @@ Other changes:
 				</attribute>
 			</optional>
 			<optional>
-				<attribute name="altrender"/>
+				<attribute name="altRender"/>
 			</optional>
 			<!-- TC; 2013-06-13: permit only text -->
 			<zeroOrMore>
 				<choice>
 					<text/>
 					<!-- <ref name="m.phrase.basic"/> -->
+				</choice>
+			</zeroOrMore>
+		</element>
+	</define>
+
+	<!-- TC 2012-10-10: added relations -->
+	<define name="m.relation">
+		<element name="relation">
+			<optional>
+				<choice>
+					<element name="relationDate">
+						<text/>
+					</element>
+					<element name="dateSet">
+						<ref name="a.common"/>
+						<optional>
+							<ref name="a.localType"/>
+						</optional>
+						<choice>
+							<element name="relationDate">
+								<text/>
+							</element>
+							<ref name="m.relationDateRange"/>
+						</choice>
+						<oneOrMore>
+							<choice>
+								<element name="relationDate">
+									<text/>
+								</element>
+								<ref name="m.relationDateRange"/>
+							</choice>
+						</oneOrMore>
+					</element>
+					<ref name="m.relationDateRange"/>
+				</choice>
+			</optional>
+			<oneOrMore>
+				<element  name="relationEntry">
+					<ref name="a.common"/>
+					<optional>
+						<ref name="a.localType"/>
+					</optional>
+					<optional>
+						<ref name="m.entryLanguageAttributes"/>
+					</optional>
+					<text/>
+				</element></oneOrMore>
+			<optional>
+				<element  name="descriptiveNote">
+					<ref name="a.common"/>
+					<oneOrMore>
+						<ref name="p"/>
+					</oneOrMore>
+				</element>
+				
+			</optional>
+			<optional>
+				<element a:id="placeEntry" name="placeEntry">
+					<ref name="a.common"/>
+					<optional>
+						<ref name="m.entryLanguageAttributes"/>
+					</optional>
+					<optional>
+						<ref name="a.localType"/>
+					</optional>
+					<optional>
+						<attribute a:id="countryCode" name="countryCode">
+							<choice>
+								<data type="string">
+									<param name="pattern">[A-Z]{2}</param>
+								</data>
+								<data type="string">
+									<param name="pattern">[A-Z]{4}</param>
+								</data>
+							</choice>
+						</attribute>
+					</optional>
+					<optional>
+						<ref name="a.vocabularySource"/>
+					</optional>
+					<optional>
+						<attribute a:id="accuracy" name="accuarcy">
+							<text/>
+						</attribute>
+					</optional>
+					<optional>
+						<ref name="m.geographicalCoordinates"/>
+					</optional>
+					<text/>
+				</element>
+			</optional>
+		</element>
+	</define>
+	<define name="m.relationDateRange">
+		<element name="relationDateRange">
+			<zeroOrMore>
+				<choice>
+					<element name="relationDate">
+						<ref name="a.common"/>
+						<optional>
+							<ref name="a.localType"/>
+						</optional>
+						<text/>
+					</element>
+					<optional>
+						<element name="fromDate">
+							<ref name="a.common"/>
+							<element name="relationDate">
+								<text/>
+							</element>
+						</element>
+					</optional>
+					<optional>
+						<element name="toDate">
+							<ref name="a.common"/>
+							<element name="relationDate">
+								<text/>
+							</element>
+						</element>
+					</optional>
 				</choice>
 			</zeroOrMore>
 		</element>
