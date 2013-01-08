@@ -1040,7 +1040,7 @@ Other changes:
 				</optional>
 				<zeroOrMore>
 					<choice>
-						<text/>	
+						<text/>
 						<ref name="m.phrase.bare"/>
 					</choice>
 				</zeroOrMore>
@@ -2092,9 +2092,9 @@ Other changes:
 				<!-- TC; 2012-03-07: Added EAC-CPF-based <relations> -->
 				<optional>
 					<element name="relations">
-					 <oneOrMore>
-					 	<ref name="m.relation"/>
-					 </oneOrMore>
+						<oneOrMore>
+							<ref name="m.relation"/>
+						</oneOrMore>
 					</element>
 				</optional>
 				<choice>
@@ -4747,7 +4747,7 @@ Other changes:
 				-->
 				<ref name="am.countryCode"/>
 				<optional>
-						<attribute name="mainAgencyCode">
+					<attribute name="mainAgencyCode">
 						<ref name="data.repositoryCode"/>
 					</attribute>
 				</optional>
@@ -5150,6 +5150,43 @@ Other changes:
 	<define name="m.relation">
 		<element name="relation">
 			<optional>
+				<attribute name="lang">
+					<data type="string"/>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="scriptcode">
+					<data type="string"/>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="id">
+					<data type="ID"/>
+				</attribute>
+			</optional>
+			<attribute name="relationType">
+				<choice>
+					<value>cpfRelation</value>
+					<value>resourceRelation</value>
+					<value>functionRelation</value>
+					<value>otherRelation</value>
+				</choice>
+			</attribute>
+			<optional>
+				<attribute name="otherRelationType">
+					<data type="string"/>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="lastDateTimeVerified">
+					<data type="dateTime"/>
+				</attribute>
+			</optional>
+			<optional>
+				<ref name="a.links"/>
+			</optional>
+
+			<optional>
 				<choice>
 					<element name="relationDate">
 						<text/>
@@ -5178,7 +5215,7 @@ Other changes:
 				</choice>
 			</optional>
 			<oneOrMore>
-				<element  name="relationEntry">
+				<element name="relationEntry">
 					<ref name="a.common"/>
 					<optional>
 						<ref name="a.localType"/>
@@ -5187,15 +5224,16 @@ Other changes:
 						<ref name="m.entryLanguageAttributes"/>
 					</optional>
 					<text/>
-				</element></oneOrMore>
+				</element>
+			</oneOrMore>
 			<optional>
-				<element  name="descriptiveNote">
+				<element name="descriptiveNote">
 					<ref name="a.common"/>
 					<oneOrMore>
 						<ref name="p"/>
 					</oneOrMore>
 				</element>
-				
+
 			</optional>
 			<optional>
 				<element a:id="placeEntry" name="placeEntry">
@@ -5264,5 +5302,37 @@ Other changes:
 				</choice>
 			</zeroOrMore>
 		</element>
+	</define>
+	<define name="a.links">
+		<attribute name="href">
+			<data type="anyURI"/>
+		</attribute>
+		<attribute name="role">
+			<data type="string"/>
+		</attribute>
+		<attribute name="arcrole">
+			<data type="string"/>
+		</attribute>
+		<attribute name="title">
+			<data type="string"/>
+		</attribute>
+		<attribute name="show">
+			<choice>
+				<value>new</value>
+				<value>replace</value>
+				<value>embed</value>
+				<value>other</value>
+				<value>none</value>
+			</choice>
+		</attribute>
+		<attribute name="actuate">
+			<choice>
+				<value>onLoad</value>
+				<value>onRequest</value>
+				<value>other</value>
+				<value>none</value>
+			</choice>
+		</attribute>
+
 	</define>
 </grammar>
