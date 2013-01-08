@@ -127,6 +127,8 @@ Other changes:
 
 * added quote
 
+* added attributes to relation as per issue 46
+
 =======
 * replaced eadheader with control
 >>>>>>> 7d149cadcc338083909ce4df0ac207de05e6399e
