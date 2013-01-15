@@ -31,52 +31,53 @@
         <publicationStatus>inProcess</publicationStatus>
     </control>
 
-    <archdesc level="collection">
+    <archDesc level="collection">
         <did>
             <abstract></abstract>
-            <unittitle>Records of Stuff</unittitle>
-            <unitdate>1896-1927</unitdate>
-            <langmaterial><language></language></langmaterial>
+            <unitTitle>Records of Stuff</unitTitle>
+            <unitDate>1896-1927</unitDate>
+            <langMaterial><language></language></langMaterial>
         </did>
         
 
-        <scopecontent>
+        <scopeContent>
             <head></head>
             <div><head></head></div>
             <div><head></head></div>
-        </scopecontent>
-        <legalstatus>Blah blah blah</legalstatus>
-        <materialspec><p>blah blah blah</p></materialspec>
+        </scopeContent>
+        <legalStatus>Blah blah blah</legalStatus>
+        <materialSpec><p>blah blah blah</p></materialSpec>
         <relations>
-            <cpfRelation>
-                <objectXMLWrap>
-                    <foo xmlns="http://example.com/foo"/>
-                </objectXMLWrap>
-            </cpfRelation>
-            <cpfRelation xmlns:xlink="http://www.w3.org/1999/xlink"
-                xlink:href="http://example.com/linkedResource" xlink:type="simple"/>
+            <relation relationType="cpfRelation">
+                <relationEntry>xxx</relationEntry>
+            </relation>
         </relations>
         <c>
             <did>
-                <unittitle>Series 1: Old stuff</unittitle>
-                <formsavailable>
-                    <container containerid="xxxxxxxxx" type="Box">1</container>
-                    <container containerid="yyyyyyyyy" type="Folder">1</container>
+                <unitTitle>Series 1: Old stuff</unitTitle>
+                <didNote></didNote>
+                <formsAvailable>
+                    <container containerId="xxxxxxxxx" localType="Box">1</container>
+                    <container containerId="yyyyyyyyy" localType="Folder">1</container>
+                    
                     <dao xmlns:ns1="http://www.w3.org/1999/xlink" ns1:type="simple"/>
-                </formsavailable>
+                </formsAvailable>
             </did>
-            <relations></relations>
+            <relations><relation relationType="cpfRelation">
+                <relationEntry>xxxx</relationEntry>
+            </relation>
+            </relations>
             <c>
                 <did>
-                    <unittitle>Stuff</unittitle>
+                    <unitTitle>Stuff</unitTitle>
                 </did>
             </c>
         </c>
         <c>
             <did>
-                <unittitle>Series 2: New stuff</unittitle>
+                <unitTitle>Series 2: New stuff</unitTitle>
             </did>
             <dao xmlns:ns1="http://www.w3.org/1999/xlink" ns1:type="simple"/>
         </c>
-    </archdesc>
+    </archDesc>
 </ead>
