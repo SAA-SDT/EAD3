@@ -1402,7 +1402,10 @@ Other changes:
 					<attribute name="encodingAnalog"/>
 				</optional>
 				<optional>
-					<attribute name="type"/>
+					<attribute name="localType"/>
+				</optional>
+				<optional>
+					<attribute name="localTypeSource"/>
 				</optional>
 				<ref name="am.langCode"/>
 				<zeroOrMore>
