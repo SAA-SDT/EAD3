@@ -202,7 +202,7 @@ Other changes:
 -->
 <!-- changed ns from urn:isbn:1-931666-22-9 to provisional http://saa-sdt.example.org/ead/revised" -->
 <grammar datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
-	ns="http://saa-sdt.example.org/ead/revised" xmlns="http://relaxng.org/ns/structure/1.0"
+	ns="urn:isbn:1-931666-22-9" xmlns="http://relaxng.org/ns/structure/1.0"
 	xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
 	xmlns:xlink="http://www.w3.org/1999/xlink">
 
@@ -4457,7 +4457,7 @@ Other changes:
 		<element a:id="e.anyName">
 			<anyName>
 				<except>
-					<nsName ns="http://saa-sdt.example.org/ead/revised"/>
+					<nsName ns="urn:isbn:1-931666-22-9"/>
 				</except>
 			</anyName>
 			<ref name="m.anything"/>
