@@ -2376,8 +2376,9 @@ Other changes:
 				<attribute name="label"/>
 			</optional>
 			<!-- Probably we have to change localType here -->
+			<!-- 2013-01-15: changed back to type -->
 			<optional>
-				<attribute name="localType">
+				<attribute name="type">
 					<choice>
 						<value>bulk</value>
 						<value>inclusive</value>
