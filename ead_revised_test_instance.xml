@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?oxygen RNGSchema="ead_revised.rng" type="xml"?>
-<ead xmlns="http://saa-sdt.example.org/ead/revised">
+<ead xmlns="urn:isbn:1-931666-22-9">
     <control>
         <eadid/>
         <titleproper/>
