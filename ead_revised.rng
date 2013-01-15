@@ -82,7 +82,7 @@ Other changes:
 * Promote <legalStatus> from <accessRestrict> to sibling of other descriptive note elements
 ** [Note: add <p> to content model?]
 * Remove <editionstmt>, <seriesstmt>, and <notestmt>
-* Add @normal to <unitDate>
+* Add @normal to <unitTitle>
 * <address> now only in <repository> and [<publicationStmt>]
 * @source now datatype token
 * @type added to <dao>
