@@ -129,6 +129,7 @@ Other changes:
 
 * added attributes to relation as per issue 46
 
+* removed note and added didNote to did per issue 40
 =======
 * replaced eadheader with control
 >>>>>>> 7d149cadcc338083909ce4df0ac207de05e6399e
@@ -1390,7 +1391,29 @@ Other changes:
 			</element>
 			<!-- TC: 2012-06-13: removed materialspec -->
 			<!-- <ref name="materialspec"/> -->
-			<ref name="note"/>
+			<!-- TC: 2013-01-15: changed note to didNote -->
+			<!-- <ref name="note"/> -->
+			<element name="didNote">
+				<ref name="a.common"/>
+				<optional>
+					<attribute name="label"/>
+				</optional>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<optional>
+					<attribute name="type"/>
+				</optional>
+				<ref name="am.langCode"/>
+				<zeroOrMore>
+					<choice>
+						<text/>
+						<ref name="emph"/>
+						<ref name="m.refs"/>
+					</choice>
+				</zeroOrMore>
+			</element>
+			
 			<ref name="origination"/>
 			<element name="physDesc">
 				<ref name="a.common"/>
@@ -1595,6 +1618,7 @@ Other changes:
 			<!-- <ref name="dao"/>
 			<ref name="daoGrp"/>
 			-->
+			
 			<ref name="note"/>
 		</choice>
 	</define>
