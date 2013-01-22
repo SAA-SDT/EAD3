@@ -150,6 +150,10 @@ Other changes:
 * added lb to any element with content model text, emph, ref (should really define a pattern for this) per issue #35
 
 * changed reference to m.desc.full to m.desc.base in archdesc and m.c.base model in order to remove note from model; per issue #41
+
+* restored blockquote
+
+* created footnote with model m.blocks per issue #43
 =======
 * replaced eadheader with control
 >>>>>>> 7d149cadcc338083909ce4df0ac207de05e6399e
@@ -1225,8 +1229,8 @@ Other changes:
 			</element>
 
 			<ref name="list"/>
-
-			<ref name="note"/>
+            <!-- 2013-01-22; TC: remove note -->
+			<!-- <ref name="note"/> -->
 			<element name="table">
 				<ref name="a.common"/>
 				<optional>
@@ -1362,8 +1366,10 @@ Other changes:
 	<define name="m.inter">
 		<choice>
 			<ref name="m.inter.noquote"/>
+			
 			<!-- TC; 2012-03-07: Removed <blockquote> -->
-			<!--
+			<!-- TC; 2013-01-22: Restored <blockquote> -->
+			
 				<element name="blockQuote">
 				<ref name="a.common"/>
 				<oneOrMore>
@@ -1373,7 +1379,7 @@ Other changes:
 					</choice>
 				</oneOrMore>
 			</element>
-			-->
+			
 		</choice>
 	</define>
 	<define name="m.blocks">
@@ -1682,7 +1688,12 @@ Other changes:
 			<ref name="m.phrase.plus"/>
 			<!-- TC; 2012-06-08 remove m.inter, retaining note -->
 			<!--	<ref name="m.inter"/> -->
-			<ref name="note"/>
+			<!-- TC; 2012-01-22 created footnote for inline note -->
+			<element name="footnote">
+				<oneOrMore>
+					<ref name="m.blocks"/>
+				</oneOrMore>
+			</element>
 		</choice>
 	</define>
 	<define name="m.para.content.norefs">
