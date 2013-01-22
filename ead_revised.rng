@@ -132,6 +132,8 @@ Other changes:
 * removed note and added didNote to did per issue 40
 
 * changed unitDate, dsc, and list element @type to unitdateType, dscType, and listType per issue #6
+
+* changed any @type without closed list of values to @localType per issue #7
 =======
 * replaced eadheader with control
 >>>>>>> 7d149cadcc338083909ce4df0ac207de05e6399e
@@ -1067,7 +1069,7 @@ Other changes:
 			<element name="genreForm">
 				<ref name="a.common"/>
 				<optional>
-					<attribute name="type"/>
+					<attribute name="localType"/>
 				</optional>
 				<ref name="a.access"/>
 				<optional>
@@ -1356,7 +1358,7 @@ Other changes:
 					<attribute name="encodingAnalog"/>
 				</optional>
 				<optional>
-					<attribute name="type"/>
+					<attribute name="localType"/>
 				</optional>
 				<ref name="am.langCode"/>
 				<zeroOrMore>
@@ -1449,7 +1451,7 @@ Other changes:
 								<attribute name="label"/>
 							</optional>
 							<optional>
-								<attribute name="type"/>
+								<attribute name="localType"/>
 							</optional>
 							<optional>
 								<attribute name="unit"/>
@@ -1482,7 +1484,7 @@ Other changes:
 								<attribute name="label"/>
 							</optional>
 							<optional>
-								<attribute name="type"/>
+								<attribute name="localType"/>
 							</optional>
 							<optional>
 								<attribute name="unit"/>
@@ -1510,7 +1512,7 @@ Other changes:
 					<attribute name="label"/>
 				</optional>
 				<optional>
-					<attribute name="type"/>
+					<attribute name="localType"/>
 				</optional>
 				<optional>
 					<attribute name="encodingAnalog"/>
@@ -1537,7 +1539,7 @@ Other changes:
 					<attribute name="label"/>
 				</optional>
 				<optional>
-					<attribute name="type"/>
+					<attribute name="localType"/>
 				</optional>
 				<ref name="am.countryCode"/>
 				<optional>
@@ -1580,7 +1582,7 @@ Other changes:
 			<element name="descGrp">
 				<ref name="a.common"/>
 				<optional>
-					<attribute name="type"/>
+					<attribute name="localType"/>
 				</optional>
 				<optional>
 					<attribute name="encodingAnalog"/>
@@ -2150,7 +2152,7 @@ Other changes:
 				</attribute>
 			</optional>
 			<optional>
-				<attribute name="type"/>
+				<attribute name="localType"/>
 			</optional>
 			<optional>
 				<attribute name="encodingAnalog"/>
@@ -2297,7 +2299,7 @@ Other changes:
 				<attribute name="label"/>
 			</optional>
 			<optional>
-				<attribute name="type"/>
+				<attribute name="localType"/>
 			</optional>
 			<optional>
 				<attribute name="unit"/>
@@ -2417,7 +2419,7 @@ Other changes:
 				<attribute name="encodingAnalog"/>
 			</optional>
 			<optional>
-				<attribute name="type"/>
+				<attribute name="localType"/>
 			</optional>
 			<!-- TC; 2012-03-08: Add @normal -->
 			<optional>
@@ -2596,7 +2598,7 @@ Other changes:
 				<attribute name="encodingAnalog"/>
 			</optional>
 			<optional>
-				<attribute name="type"/>
+				<attribute name="localType"/>
 			</optional>
 			<optional>
 				<ref name="head"/>
@@ -2633,7 +2635,7 @@ Other changes:
 				<attribute name="encodingAnalog"/>
 			</optional>
 			<optional>
-				<attribute name="type"/>
+				<attribute name="localType"/>
 			</optional>
 			<optional>
 				<ref name="head"/>
@@ -2689,7 +2691,7 @@ Other changes:
 				<attribute name="encodingAnalog"/>
 			</optional>
 			<optional>
-				<attribute name="type"/>
+				<attribute name="localType"/>
 			</optional>
 			<optional>
 				<ref name="head"/>
@@ -2710,7 +2712,7 @@ Other changes:
 				<attribute name="encodingAnalog"/>
 			</optional>
 			<optional>
-				<attribute name="type"/>
+				<attribute name="localType"/>
 			</optional>
 			<optional>
 				<ref name="head"/>
@@ -2731,7 +2733,7 @@ Other changes:
 				<attribute name="encodingAnalog"/>
 			</optional>
 			<optional>
-				<attribute name="type"/>
+				<attribute name="localType"/>
 			</optional>
 			<optional>
 				<ref name="head"/>
@@ -2805,7 +2807,7 @@ Other changes:
 		<element name="processInfo">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="type"/>
+				<attribute name="localType"/>
 			</optional>
 			<optional>
 				<attribute name="encodingAnalog"/>
@@ -2829,7 +2831,7 @@ Other changes:
 				<attribute name="encodingAnalog"/>
 			</optional>
 			<optional>
-				<attribute name="type"/>
+				<attribute name="localType"/>
 			</optional>
 			<optional>
 				<ref name="head"/>
@@ -2889,7 +2891,7 @@ Other changes:
 		<element name="odd">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="type"/>
+				<attribute name="localType"/>
 			</optional>
 			<optional>
 				<attribute name="encodingAnalog"/>
@@ -3010,7 +3012,7 @@ Other changes:
 		<element name="relatedMaterial">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="type"/>
+				<attribute name="localType"/>
 			</optional>
 			<optional>
 				<attribute name="encodingAnalog"/>
@@ -3032,7 +3034,7 @@ Other changes:
 		<element name="separatedMaterial">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="type"/>
+				<attribute name="localType"/>
 			</optional>
 			<optional>
 				<attribute name="encodingAnalog"/>
@@ -3335,7 +3337,7 @@ Other changes:
 			</optional>
 			<!-- TC: 2012-03-08: added @type -->
 			<optional>
-				<attribute name="type"/>
+				<attribute name="localType"/>
 			</optional>
 		</element>
 	</define>
@@ -3423,7 +3425,7 @@ Other changes:
 		<element name="title">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="type"/>
+				<attribute name="localType"/>
 			</optional>
 			<optional>
 				<attribute name="render">
@@ -3662,7 +3664,7 @@ Other changes:
 		<element name="date">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="type"/>
+				<attribute name="localType"/>
 			</optional>
 			<ref name="am.dates.era"/>
 			<ref name="am.dates.calendar"/>
@@ -3686,7 +3688,7 @@ Other changes:
 		<element name="num">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="type"/>
+				<attribute name="localType"/>
 			</optional>
 			<optional>
 				<attribute name="encodingAnalog"/>
@@ -3855,7 +3857,7 @@ Other changes:
 		<element name="note">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="type"/>
+				<attribute name="localType"/>
 			</optional>
 			<optional>
 				<attribute name="label"/>
