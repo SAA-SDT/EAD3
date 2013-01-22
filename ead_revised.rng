@@ -146,6 +146,8 @@ Other changes:
 * Added ref to addressLine per issue #15
 
 * added @localType to addressline per issue #17
+
+* added lb to any element with content model text, emph, ref (should really define a pattern for this) per issue #35
 =======
 * replaced eadheader with control
 >>>>>>> 7d149cadcc338083909ce4df0ac207de05e6399e
@@ -217,8 +219,8 @@ Other changes:
 	
 -->
 <!-- changed ns from urn:isbn:1-931666-22-9 to provisional http://saa-sdt.example.org/ead/revised" -->
-<grammar datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
-	ns="urn:isbn:1-931666-22-9" xmlns="http://relaxng.org/ns/structure/1.0"
+<grammar datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" ns="urn:isbn:1-931666-22-9"
+	xmlns="http://relaxng.org/ns/structure/1.0"
 	xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
 	xmlns:xlink="http://www.w3.org/1999/xlink">
 
@@ -1020,7 +1022,6 @@ Other changes:
 			<ref name="emph"/>
 			<element name="lb">
 				<empty/>
-				<empty/>
 			</element>
 		</choice>
 	</define>
@@ -1058,14 +1059,16 @@ Other changes:
 					<attribute name="encodingAnalog"/>
 				</optional>
 				<!-- 2013-01-22; TC: allow only part -->
-			<!--	<zeroOrMore>
+				<!--	<zeroOrMore>
 					<choice>
 						<text/>
 						<ref name="m.phrase.bare"/>
 					</choice>
 				</zeroOrMore>
 			-->
-				<oneOrMore><ref name="e.part"></ref></oneOrMore>
+				<oneOrMore>
+					<ref name="e.part"/>
+				</oneOrMore>
 			</element>
 			<ref name="persName"/>
 			<element name="subject">
@@ -1082,7 +1085,9 @@ Other changes:
 					</choice>
 					</zeroOrMore>
 				-->
-				<oneOrMore><ref name="e.part"></ref></oneOrMore>
+				<oneOrMore>
+					<ref name="e.part"/>
+				</oneOrMore>
 			</element>
 			<element name="genreForm">
 				<ref name="a.common"/>
@@ -1101,7 +1106,9 @@ Other changes:
 					</choice>
 					</zeroOrMore>
 				-->
-				<oneOrMore><ref name="e.part"></ref></oneOrMore>
+				<oneOrMore>
+					<ref name="e.part"/>
+				</oneOrMore>
 			</element>
 			<element name="function">
 				<ref name="a.common"/>
@@ -1117,7 +1124,9 @@ Other changes:
 					</choice>
 					</zeroOrMore>
 				-->
-				<oneOrMore><ref name="e.part"></ref></oneOrMore>
+				<oneOrMore>
+					<ref name="e.part"/>
+				</oneOrMore>
 			</element>
 		</choice>
 	</define>
@@ -1389,6 +1398,7 @@ Other changes:
 					<choice>
 						<text/>
 						<ref name="emph"/>
+						<ref name="e.lb"/>
 						<ref name="m.refs"/>
 					</choice>
 				</zeroOrMore>
@@ -1412,6 +1422,7 @@ Other changes:
 					<choice>
 						<text/>
 						<ref name="emph"/>
+						<ref name="e.lb"/>
 						<ref name="ref"/>
 						<ref name="language"/>
 					</choice>
@@ -1440,11 +1451,12 @@ Other changes:
 					<choice>
 						<text/>
 						<ref name="emph"/>
+						<ref name="e.lb"/>
 						<ref name="m.refs"/>
 					</choice>
 				</zeroOrMore>
 			</element>
-			
+
 			<ref name="origination"/>
 			<element name="physDesc">
 				<ref name="a.common"/>
@@ -1504,6 +1516,7 @@ Other changes:
 								<choice>
 									<text/>
 									<ref name="emph"/>
+									<ref name="e.lb"/>
 									<ref name="ref"/>
 								</choice>
 							</zeroOrMore>
@@ -1527,6 +1540,7 @@ Other changes:
 								<choice>
 									<text/>
 									<ref name="emph"/>
+									<ref name="e.lb"/>
 									<ref name="ref"/>
 								</choice>
 							</zeroOrMore>
@@ -1557,6 +1571,7 @@ Other changes:
 					<choice>
 						<text/>
 						<ref name="emph"/>
+						<ref name="e.lb"/>
 						<ref name="ref"/>
 					</choice>
 				</zeroOrMore>
@@ -1588,6 +1603,7 @@ Other changes:
 					<choice>
 						<text/>
 						<ref name="emph"/>
+						<ref name="e.lb"/>
 						<ref name="ref"/>
 					</choice>
 				</zeroOrMore>
@@ -1655,7 +1671,7 @@ Other changes:
 			<!-- <ref name="dao"/>
 			<ref name="daoGrp"/>
 			-->
-			
+
 			<ref name="note"/>
 		</choice>
 	</define>
@@ -2309,6 +2325,7 @@ Other changes:
 									<choice>
 										<text/>
 										<ref name="emph"/>
+										<ref name="e.lb"/>
 										<ref name="ref"/>
 									</choice>
 								</zeroOrMore>
@@ -2342,6 +2359,7 @@ Other changes:
 				<choice>
 					<text/>
 					<ref name="emph"/>
+					<ref name="e.lb"/>
 					<ref name="ref"/>
 				</choice>
 			</zeroOrMore>
@@ -3367,13 +3385,13 @@ Other changes:
 			</optional>
 			<!-- TC: 2012-03-08: added @type -->
 			<!-- TC: 2013-01-22: added @daoType with list of values and @otherDaoType-->
-				<attribute name="daoType">
-					<choice>
-						<value>bornDigital</value>
-						<value>derived</value>
-						<value>other</value>
-					</choice>
-				</attribute>
+			<attribute name="daoType">
+				<choice>
+					<value>bornDigital</value>
+					<value>derived</value>
+					<value>other</value>
+				</choice>
+			</attribute>
 			<optional>
 				<attribute name="otherDaoType"/>
 			</optional>
@@ -3617,14 +3635,16 @@ Other changes:
 			<!--<zeroOrMore>
 				<choice>
 					<text/> -->
-					<!-- <ref name="m.phrase.bare"/>
+			<!-- <ref name="m.phrase.bare"/>
 					<ref name="subarea"/>
 					-->
 			<!--	</choice>
 				</zeroOrMore>
 			
 			-->
-			<oneOrMore><ref name="e.part"/></oneOrMore>
+			<oneOrMore>
+				<ref name="e.part"/>
+			</oneOrMore>
 		</element>
 	</define>
 	<define name="famName">
@@ -3648,7 +3668,9 @@ Other changes:
 				</zeroOrMore>
 				
 			-->
-			<oneOrMore><ref name="e.part"/></oneOrMore>
+			<oneOrMore>
+				<ref name="e.part"/>
+			</oneOrMore>
 		</element>
 	</define>
 	<define name="geogName">
@@ -3672,7 +3694,9 @@ Other changes:
 				</zeroOrMore>
 				
 			-->
-			<oneOrMore><ref name="e.part"/></oneOrMore>
+			<oneOrMore>
+				<ref name="e.part"/>
+			</oneOrMore>
 		</element>
 	</define>
 	<define name="name">
@@ -3696,7 +3720,9 @@ Other changes:
 				</zeroOrMore>
 				
 			-->
-			<oneOrMore><ref name="e.part"/></oneOrMore>
+			<oneOrMore>
+				<ref name="e.part"/>
+			</oneOrMore>
 		</element>
 	</define>
 	<define name="persName">
@@ -3713,10 +3739,12 @@ Other changes:
 			<!--<zeroOrMore>
 				<choice>
 					<text/> -->
-					<!-- <ref name="m.phrase.bare"/> -->
-		<!--		</choice>
+			<!-- <ref name="m.phrase.bare"/> -->
+			<!--		</choice>
 			</zeroOrMore> -->
-			<oneOrMore><ref name="e.part"/></oneOrMore>
+			<oneOrMore>
+				<ref name="e.part"/>
+			</oneOrMore>
 		</element>
 	</define>
 	<define name="date">
@@ -5198,7 +5226,9 @@ Other changes:
 					<data type="string"/>
 				</attribute>
 			</optional>
-			<optional><attribute name="identifier"/></optional>
+			<optional>
+				<attribute name="identifier"/>
+			</optional>
 			<text/>
 		</element>
 	</define>
@@ -5433,7 +5463,12 @@ Other changes:
 	</define>
 	<define name="e.part">
 		<element name="part">
-			<text></text>
+			<text/>
+		</element>
+	</define>
+	<define name="e.lb">
+		<element name="lb">
+			<empty/>
 		</element>
 	</define>
 </grammar>
