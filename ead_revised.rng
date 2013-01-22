@@ -144,6 +144,8 @@ Other changes:
 * Added @daoType with values 'bornDigital', 'derived', 'other'. Added @otherDaoType; per issue #13
 
 * Added ref to addressLine per issue #15
+
+* added @localType to addressline per issue #17
 =======
 * replaced eadheader with control
 >>>>>>> 7d149cadcc338083909ce4df0ac207de05e6399e
@@ -3785,6 +3787,7 @@ Other changes:
 			<oneOrMore>
 				<element name="addressLine">
 					<ref name="a.common"/>
+					<attribute name="localType"/>
 					<zeroOrMore>
 						<choice>
 							<text/>
