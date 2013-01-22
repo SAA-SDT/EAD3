@@ -134,6 +134,8 @@ Other changes:
 * changed unitDate, dsc, and list element @type to unitdateType, dscType, and listType per issue #6
 
 * changed any @type without closed list of values to @localType per issue #7
+
+* added required, repeatable part element to all controlAccess children (i.e., those elements defined in m.access + controlaccess) per issue #10
 =======
 * replaced eadheader with control
 >>>>>>> 7d149cadcc338083909ce4df0ac207de05e6399e
@@ -1045,12 +1047,15 @@ Other changes:
 				<optional>
 					<attribute name="encodingAnalog"/>
 				</optional>
-				<zeroOrMore>
+				<!-- 2013-01-22; TC: allow only part -->
+			<!--	<zeroOrMore>
 					<choice>
 						<text/>
 						<ref name="m.phrase.bare"/>
 					</choice>
 				</zeroOrMore>
+			-->
+				<oneOrMore><ref name="e.part"></ref></oneOrMore>
 			</element>
 			<ref name="persName"/>
 			<element name="subject">
@@ -1059,12 +1064,15 @@ Other changes:
 				<optional>
 					<attribute name="encodingAnalog"/>
 				</optional>
-				<zeroOrMore>
+				<!-- 2013-01-22; TC: allow only part -->
+				<!--	<zeroOrMore>
 					<choice>
-						<text/>
-						<ref name="m.phrase.bare"/>
+					<text/>
+					<ref name="m.phrase.bare"/>
 					</choice>
-				</zeroOrMore>
+					</zeroOrMore>
+				-->
+				<oneOrMore><ref name="e.part"></ref></oneOrMore>
 			</element>
 			<element name="genreForm">
 				<ref name="a.common"/>
@@ -1075,12 +1083,15 @@ Other changes:
 				<optional>
 					<attribute name="encodingAnalog"/>
 				</optional>
-				<zeroOrMore>
+				<!-- 2013-01-22; TC: allow only part -->
+				<!--	<zeroOrMore>
 					<choice>
-						<text/>
-						<ref name="m.phrase.bare"/>
+					<text/>
+					<ref name="m.phrase.bare"/>
 					</choice>
-				</zeroOrMore>
+					</zeroOrMore>
+				-->
+				<oneOrMore><ref name="e.part"></ref></oneOrMore>
 			</element>
 			<element name="function">
 				<ref name="a.common"/>
@@ -1088,12 +1099,15 @@ Other changes:
 				<optional>
 					<attribute name="encodingAnalog"/>
 				</optional>
-				<zeroOrMore>
+				<!-- 2013-01-22; TC: allow only part -->
+				<!--	<zeroOrMore>
 					<choice>
-						<text/>
-						<ref name="m.phrase.bare"/>
+					<text/>
+					<ref name="m.phrase.bare"/>
 					</choice>
-				</zeroOrMore>
+					</zeroOrMore>
+				-->
+				<oneOrMore><ref name="e.part"></ref></oneOrMore>
 			</element>
 		</choice>
 	</define>
@@ -3575,15 +3589,18 @@ Other changes:
 			<optional>
 				<attribute name="encodingAnalog"/>
 			</optional>
-			<!-- TC; 2013-06-13: permit only text -->
-			<zeroOrMore>
+			<!-- TC; 2013-01-22: permit only text -->
+			<!--<zeroOrMore>
 				<choice>
-					<text/>
+					<text/> -->
 					<!-- <ref name="m.phrase.bare"/>
 					<ref name="subarea"/>
 					-->
-				</choice>
-			</zeroOrMore>
+			<!--	</choice>
+				</zeroOrMore>
+			
+			-->
+			<oneOrMore><ref name="e.part"/></oneOrMore>
 		</element>
 	</define>
 	<define name="famName">
@@ -3596,13 +3613,18 @@ Other changes:
 			<optional>
 				<attribute name="encodingAnalog"/>
 			</optional>
-			<!-- TC; 2013-06-13: permit only text -->
-			<zeroOrMore>
+			<!-- TC; 2013-01-22: permit only part -->
+			<!--<zeroOrMore>
 				<choice>
-					<text/>
-					<!-- <ref name="m.phrase.bare"/> -->
-				</choice>
-			</zeroOrMore>
+				<text/> -->
+			<!-- <ref name="m.phrase.bare"/>
+				<ref name="subarea"/>
+			-->
+			<!--	</choice>
+				</zeroOrMore>
+				
+			-->
+			<oneOrMore><ref name="e.part"/></oneOrMore>
 		</element>
 	</define>
 	<define name="geogName">
@@ -3615,12 +3637,18 @@ Other changes:
 			<optional>
 				<attribute name="encodingAnalog"/>
 			</optional>
-			<zeroOrMore>
+			<!-- TC; 2013-06-22: permit only part -->
+			<!--<zeroOrMore>
 				<choice>
-					<text/>
-					<ref name="m.phrase.bare"/>
-				</choice>
-			</zeroOrMore>
+				<text/> -->
+			<!-- <ref name="m.phrase.bare"/>
+				<ref name="subarea"/>
+			-->
+			<!--	</choice>
+				</zeroOrMore>
+				
+			-->
+			<oneOrMore><ref name="e.part"/></oneOrMore>
 		</element>
 	</define>
 	<define name="name">
@@ -3633,12 +3661,18 @@ Other changes:
 			<optional>
 				<attribute name="encodingAnalog"/>
 			</optional>
-			<zeroOrMore>
+			<!-- TC; 2013-01-22: permit only text -->
+			<!--<zeroOrMore>
 				<choice>
-					<text/>
-					<ref name="m.phrase.bare"/>
-				</choice>
-			</zeroOrMore>
+				<text/> -->
+			<!-- <ref name="m.phrase.bare"/>
+				<ref name="subarea"/>
+			-->
+			<!--	</choice>
+				</zeroOrMore>
+				
+			-->
+			<oneOrMore><ref name="e.part"/></oneOrMore>
 		</element>
 	</define>
 	<define name="persName">
@@ -3651,13 +3685,14 @@ Other changes:
 			<optional>
 				<attribute name="encodingAnalog"/>
 			</optional>
-			<!-- TC; 2013-06-13: permit only text -->
-			<zeroOrMore>
+			<!-- TC; 2013-01-22: permit only part -->
+			<!--<zeroOrMore>
 				<choice>
-					<text/>
+					<text/> -->
 					<!-- <ref name="m.phrase.bare"/> -->
-				</choice>
-			</zeroOrMore>
+		<!--		</choice>
+			</zeroOrMore> -->
+			<oneOrMore><ref name="e.part"/></oneOrMore>
 		</element>
 	</define>
 	<define name="date">
@@ -5368,5 +5403,10 @@ Other changes:
 			</choice>
 		</attribute>
 
+	</define>
+	<define name="e.part">
+		<element name="part">
+			<text></text>
+		</element>
 	</define>
 </grammar>
