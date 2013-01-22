@@ -138,6 +138,8 @@ Other changes:
 * added required, repeatable part element to all controlAccess children (i.e., those elements defined in m.access + controlaccess) per issue #10
 
 * changed @authFileNumber to @identifier per issue #11
+
+* added @identifier to any element with @source per issue #12
 =======
 * replaced eadheader with control
 >>>>>>> 7d149cadcc338083909ce4df0ac207de05e6399e
@@ -1452,6 +1454,9 @@ Other changes:
 					</attribute>
 				</optional>
 				<optional>
+					<attribute name="identifier"/>
+				</optional>
+				<optional>
 					<attribute name="rules">
 						<data type="NMTOKEN"/>
 					</attribute>
@@ -1476,6 +1481,9 @@ Other changes:
 								<attribute name="source">
 									<data type="token"/>
 								</attribute>
+							</optional>
+							<optional>
+								<attribute name="identifier"/>
 							</optional>
 							<optional>
 								<attribute name="rules">
@@ -5174,6 +5182,7 @@ Other changes:
 					<data type="string"/>
 				</attribute>
 			</optional>
+			<optional><attribute name="identifier"/></optional>
 			<text/>
 		</element>
 	</define>
