@@ -1690,6 +1690,30 @@ Other changes:
 			<!--	<ref name="m.inter"/> -->
 			<!-- TC; 2012-01-22 created footnote for inline note -->
 			<element name="footnote">
+				<ref name="a.common"/>
+				<optional>
+					<attribute name="localType"/>
+				</optional>
+				<optional>
+					<attribute name="localTypeSource"/>
+				</optional>
+				<optional>
+					<attribute name="show">
+						<choice>
+							<value>embed</value>
+							<value>new</value>
+						</choice>
+					</attribute>
+				</optional>
+				<optional>
+					<attribute name="actuate">
+						<choice>
+							<value>onload</value>
+							<value>onrequest</value>
+						</choice>
+					</attribute>
+				</optional>
+				
 				<oneOrMore>
 					<ref name="m.blocks"/>
 				</oneOrMore>
