@@ -154,6 +154,9 @@ Other changes:
 * restored blockquote
 
 * created footnote with model m.blocks per issue #43
+
+
+* added bibRef and archRef to separatedMaterial and relatedMaterial (albeit in a very simple way: as part of oneOrMore); per issue #48
 =======
 * replaced eadheader with control
 >>>>>>> 7d149cadcc338083909ce4df0ac207de05e6399e
@@ -3110,6 +3113,8 @@ Other changes:
 				<choice>
 					<ref name="m.blocks"/>
 					<ref name="m.refs"/>
+					<ref name="archRef"/>
+					<ref name="bibRef"/>
 					<!-- TC: 2012-06-08 remove recursion in note elements -->
 					<!-- <ref name="relatedmaterial"/> -->
 				</choice>
@@ -3132,6 +3137,8 @@ Other changes:
 				<choice>
 					<ref name="m.blocks"/>
 					<ref name="m.refs"/>
+					<ref name="archRef"/>
+					<ref name="bibRef"/>
 					<!-- TC: 2012-06-08 remove recursion in note elements -->
 					<!-- <ref name="separatedmaterial"/> -->
 				</choice>
