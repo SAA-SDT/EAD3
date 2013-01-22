@@ -148,6 +148,8 @@ Other changes:
 * added @localType to addressline per issue #17
 
 * added lb to any element with content model text, emph, ref (should really define a pattern for this) per issue #35
+
+* changed reference to m.desc.full to m.desc.base in archdesc and m.c.base model in order to remove note from model; per issue #41
 =======
 * replaced eadheader with control
 >>>>>>> 7d149cadcc338083909ce4df0ac207de05e6399e
@@ -2159,7 +2161,8 @@ Other changes:
 				-->
 				<ref name="did"/>
 				<zeroOrMore>
-					<ref name="m.desc.full"/>
+					<!-- 2013-01-22; TC: changed m.desc.full to m.desc.base (i.e., no note) -->
+					<ref name="m.desc.base"/>
 				</zeroOrMore>
 				<!-- TC; 2012-03-08: Added <dao> and <daoGrp> -->
 				<zeroOrMore>
@@ -4334,8 +4337,9 @@ Other changes:
 			<ref name="head"/>
 		</optional>
 		<ref name="did"/>
+		<!-- 2013-01-22; TC change m.desc.full to m.desc.base -->
 		<zeroOrMore>
-			<ref name="m.desc.full"/>
+			<ref name="m.desc.base"/>
 		</zeroOrMore>
 		<!-- TC; 2012-06-08: deprecate tHead -->
 		<!--<optional>
