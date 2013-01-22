@@ -136,6 +136,8 @@ Other changes:
 * changed any @type without closed list of values to @localType per issue #7
 
 * added required, repeatable part element to all controlAccess children (i.e., those elements defined in m.access + controlaccess) per issue #10
+
+* changed @authFileNumber to @identifier per issue #11
 =======
 * replaced eadheader with control
 >>>>>>> 7d149cadcc338083909ce4df0ac207de05e6399e
@@ -1752,7 +1754,7 @@ Other changes:
 			</attribute>
 		</optional>
 		<optional>
-			<attribute name="authFileNumber"/>
+			<attribute name="identifier"/>
 		</optional>
 		<optional>
 			<attribute name="normal"/>
