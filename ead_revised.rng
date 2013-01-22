@@ -141,7 +141,9 @@ Other changes:
 
 * added @identifier to any element with @source per issue #12
 
-* Added @daoType with values 'bornDigital', 'derived', 'other'. Added @otherDaoType; per issue #13 
+* Added @daoType with values 'bornDigital', 'derived', 'other'. Added @otherDaoType; per issue #13
+
+* Added ref to addressLine per issue #15
 =======
 * replaced eadheader with control
 >>>>>>> 7d149cadcc338083909ce4df0ac207de05e6399e
@@ -3787,6 +3789,7 @@ Other changes:
 						<choice>
 							<text/>
 							<ref name="m.phrase.bare"/>
+							<ref name="ref"/>
 						</choice>
 					</zeroOrMore>
 				</element>
