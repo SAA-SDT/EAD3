@@ -130,6 +130,8 @@ Other changes:
 * added attributes to relation as per issue 46
 
 * removed note and added didNote to did per issue 40
+
+* changed unitDate, dsc, and list element @type to unitdateType, dscType, and listType per issue #6
 =======
 * replaced eadheader with control
 >>>>>>> 7d149cadcc338083909ce4df0ac207de05e6399e
@@ -2378,7 +2380,7 @@ Other changes:
 			<!-- Probably we have to change localType here -->
 			<!-- 2013-01-15: changed back to type -->
 			<optional>
-				<attribute name="type">
+				<attribute name="unitDateType">
 					<choice>
 						<value>bulk</value>
 						<value>inclusive</value>
@@ -3135,7 +3137,7 @@ Other changes:
 		<element name="dsc">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="type">
+				<attribute name="dscType">
 					<choice>
 						<value>analytiCover</value>
 						<value>combined</value>
@@ -3749,7 +3751,7 @@ Other changes:
 		<element name="list">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="type">
+				<attribute name="listType">
 					<choice>
 						<value>simple</value>
 						<value>defList</value>
