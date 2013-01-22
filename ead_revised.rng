@@ -140,6 +140,8 @@ Other changes:
 * changed @authFileNumber to @identifier per issue #11
 
 * added @identifier to any element with @source per issue #12
+
+* Added @daoType with values 'bornDigital', 'derived', 'other'. Added @otherDaoType; per issue #13 
 =======
 * replaced eadheader with control
 >>>>>>> 7d149cadcc338083909ce4df0ac207de05e6399e
@@ -3360,8 +3362,16 @@ Other changes:
 				<ref name="daoDesc"/>
 			</optional>
 			<!-- TC: 2012-03-08: added @type -->
+			<!-- TC: 2013-01-22: added @daoType with list of values and @otherDaoType-->
+				<attribute name="daoType">
+					<choice>
+						<value>bornDigital</value>
+						<value>derived</value>
+						<value>other</value>
+					</choice>
+				</attribute>
 			<optional>
-				<attribute name="localType"/>
+				<attribute name="otherDaoType"/>
 			</optional>
 		</element>
 	</define>
