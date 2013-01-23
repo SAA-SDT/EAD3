@@ -5547,6 +5547,7 @@ Other changes:
 				<choice>
 					<ref name="e.dateSingle"/>
 					<ref name="e.dateRange"/>
+					<ref name="e.dateSet"/>
 				</choice>
 			</zeroOrMore>
 		</element>
