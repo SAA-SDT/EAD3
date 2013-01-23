@@ -157,6 +157,8 @@ Other changes:
 
 
 * added bibRef and archRef to separatedMaterial and relatedMaterial (albeit in a very simple way: as part of oneOrMore); per issue #48
+
+* removed @normal from unitDate and limited content model to text and unitDate per issue #47 
 =======
 * replaced eadheader with control
 >>>>>>> 7d149cadcc338083909ce4df0ac207de05e6399e
@@ -2494,7 +2496,7 @@ Other changes:
 			<zeroOrMore>
 				<choice>
 					<text/>
-					<ref name="m.phrase.basic"/>
+					<ref name="unitDate"/>
 				</choice>
 			</zeroOrMore>
 		</element>
