@@ -35,7 +35,10 @@
         <did>
             <abstract></abstract>
             <unitTitle>Records of Stuff</unitTitle>
-            <unitDate>1896-1927</unitDate>
+            <unitDate unitDateType="inclusive">1970-1987?</unitDate>
+            <unitDateStructured unitDateStructuredType="inclusive">
+                <dateRange><fromDate>1970</fromDate><toDate  notBefore="1985" notAfter="1990">1987</toDate></dateRange>
+            </unitDateStructured>
             <langMaterial><language></language></langMaterial>
         </did>
        

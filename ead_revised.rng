@@ -159,6 +159,8 @@ Other changes:
 * added bibRef and archRef to separatedMaterial and relatedMaterial (albeit in a very simple way: as part of oneOrMore); per issue #48
 
 * removed @normal from unitDate and limited content model to text and unitDate per issue #47 
+
+* added element unitDateStructured to did per issue #47 
 =======
 * replaced eadheader with control
 >>>>>>> 7d149cadcc338083909ce4df0ac207de05e6399e
@@ -1234,7 +1236,7 @@ Other changes:
 			</element>
 
 			<ref name="list"/>
-            <!-- 2013-01-22; TC: remove note -->
+			<!-- 2013-01-22; TC: remove note -->
 			<!-- <ref name="note"/> -->
 			<element name="table">
 				<ref name="a.common"/>
@@ -1371,11 +1373,11 @@ Other changes:
 	<define name="m.inter">
 		<choice>
 			<ref name="m.inter.noquote"/>
-			
+
 			<!-- TC; 2012-03-07: Removed <blockquote> -->
 			<!-- TC; 2013-01-22: Restored <blockquote> -->
-			
-				<element name="blockQuote">
+
+			<element name="blockQuote">
 				<ref name="a.common"/>
 				<oneOrMore>
 					<choice>
@@ -1384,7 +1386,7 @@ Other changes:
 					</choice>
 				</oneOrMore>
 			</element>
-			
+
 		</choice>
 	</define>
 	<define name="m.blocks">
@@ -1591,6 +1593,8 @@ Other changes:
 			</element>
 			<ref name="repository"/>
 			<ref name="unitDate"/>
+			<!-- 2013-01-23; TC: added unitDateStructured -->
+			<ref name="e.unitDateStructured"/>
 			<element name="unitId">
 				<ref name="a.common"/>
 				<optional>
@@ -1718,7 +1722,7 @@ Other changes:
 						</choice>
 					</attribute>
 				</optional>
-				
+
 				<oneOrMore>
 					<ref name="m.blocks"/>
 				</oneOrMore>
@@ -5518,6 +5522,33 @@ Other changes:
 	<define name="e.lb">
 		<element name="lb">
 			<empty/>
+		</element>
+	</define>
+	<define name="e.unitDateStructured">
+		<element name="unitDateStructured">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="label"/>
+			</optional>
+			<optional>
+				<attribute name="unitDateStructuredType">
+					<choice>
+						<value>bulk</value>
+						<value>inclusive</value>
+					</choice>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="dateChar"/>
+			</optional>
+			<ref name="am.dates.era"/>
+			<ref name="am.dates.calendar"/>
+			<zeroOrMore>
+				<choice>
+					<ref name="e.dateSingle"/>
+					<ref name="e.dateRange"/>
+				</choice>
+			</zeroOrMore>
 		</element>
 	</define>
 </grammar>
