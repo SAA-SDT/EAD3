@@ -160,7 +160,9 @@ Other changes:
 
 * removed @normal from unitDate and limited content model to text and unitDate per issue #47 
 
-* added element unitDateStructured to did per issue #47 
+* added element unitDateStructured to did per issue #47
+
+* added @localType to <fromDate> and <toDate> per issue #50
 =======
 * replaced eadheader with control
 >>>>>>> 7d149cadcc338083909ce4df0ac207de05e6399e
@@ -4711,6 +4713,9 @@ Other changes:
 						<optional>
 							<ref name="lang"/>
 						</optional>
+						<optional>
+							<ref name="a.localType"/>
+						</optional>
 						<ref name="m.dateSingle"/>
 					</element>
 				</optional>
@@ -4719,6 +4724,9 @@ Other changes:
 						<ref name="a.common"/>
 						<optional>
 							<ref name="lang"/>
+						</optional>
+						<optional>
+							<ref name="a.localType"/>
 						</optional>
 						<ref name="m.dateSingle"/>
 					</element>
