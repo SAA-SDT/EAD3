@@ -2483,7 +2483,8 @@ Other changes:
 			</optional>
 			<ref name="am.dates.era"/>
 			<ref name="am.dates.calendar"/>
-			<ref name="am.date.normal"/>
+			<!-- 2013-01-23; TC: removed @normal -->
+			<!-- <ref name="am.date.normal"/> -->
 			<optional>
 				<attribute name="certainty"/>
 			</optional>
