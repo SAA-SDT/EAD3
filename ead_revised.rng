@@ -4927,12 +4927,12 @@ Other changes:
 					<zeroOrMore>
 						<ref name="subTitle"/>
 					</zeroOrMore>
-					<optional>
+					<zeroOrMore>
 						<ref name="author"/>
-					</optional>
-					<optional>
+					</zeroOrMore>
+					<zeroOrMore>
 						<ref name="sponsor"/>
-					</optional>
+					</zeroOrMore>
 				</element>
 				<optional>
 					<element name="editionStmt">
