@@ -1728,7 +1728,6 @@ Other changes:
 						</choice>
 					</attribute>
 				</optional>
-
 				<oneOrMore>
 					<ref name="m.blocks"/>
 				</oneOrMore>
@@ -3215,7 +3214,7 @@ Other changes:
 					<oneOrMore>
 						<choice>
 							<ref name="m.access.title"/>
-							<ref name="note"/>
+							<ref name="e.nameGrpNote"/>
 						</choice>
 					</oneOrMore>
 				</element>
@@ -5608,6 +5607,17 @@ Other changes:
 			</optional>
 			<oneOrMore>
 				<ref name="m.blocks"/>
+			</oneOrMore>
+		</element>
+	</define>
+	
+	<define name="e.nameGrpNote">
+		<element name="nameGrpNote">
+			<ref name="a.common"/>
+			<oneOrMore>
+				<oneOrMore>
+					<ref name="m.phrase.basic"/>
+				</oneOrMore>
 			</oneOrMore>
 		</element>
 	</define>
