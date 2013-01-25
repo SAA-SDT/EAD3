@@ -5603,11 +5603,11 @@ Other changes:
 	</define>
 	<define name="e.part">
 		<element name="part">
-			<attribute name="id"/>
-			<attribute name="lang"/>
-			<attribute name="script"/>
-			<attribute name="localType"/>
-			<attribute name="localTypeSource"/>
+			<optional><attribute name="id"/></optional>
+			<optional><attribute name="lang"/></optional>
+			<optional><attribute name="script"/></optional>
+			<optional><attribute name="localType"/></optional>
+			<optional><attribute name="localTypeSource"/></optional>
 			<text/>
 		</element>
 	</define>
