@@ -5027,6 +5027,7 @@ Other changes:
 					<ref name="e.languageDeclaration"/>
 					<element name="languageDeclarations">
 						<ref name="a.common"/>
+						<ref name="e.languageDeclaration"/>
 						<oneOrMore><ref name="e.languageDeclaration"/></oneOrMore>
 					</element>
 				</choice>
