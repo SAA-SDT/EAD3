@@ -2375,7 +2375,7 @@ Other changes:
 			</oneOrMore>
 			<!-- TC: 2012-06-13: add formsavailable element -->
 			<optional>
-				<element name="formsAvailable">
+				<element name="availableForms">
 					<zeroOrMore>
 						<choice>
 							<element name="container">
