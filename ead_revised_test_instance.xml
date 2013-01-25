@@ -2,54 +2,65 @@
 <?oxygen RNGSchema="ead_revised.rng" type="xml"?>
 <ead xmlns="urn:isbn:1-931666-22-9">
     <control>
-        <eadid/>
-        <titleproper/>
+        <recordId>xxxx</recordId>
+        <fileDesc>
+            <titleStmt>
+                <titleProper>xxxx</titleProper>
+            </titleStmt>
+        </fileDesc>
+        <maintenanceStatus>new </maintenanceStatus>
         <maintenanceAgency>
-            <agencyName/>
+            <agencyName>xxx</agencyName>
         </maintenanceAgency>
-        <maintenanceStatus>new</maintenanceStatus>
-        <descriptionMaintenanceHistory>
-            <maintenanceEvent>
-                <eventType>created</eventType>
-                <eventDateTime/>
-                <agentType>human</agentType>
-                <agent>TC</agent>
-            </maintenanceEvent>
-        </descriptionMaintenanceHistory>
-        <instanceMaintenanceHistory>
-            <maintenanceEvent>
-                <eventType>created</eventType>
-                <eventDateTime>xxx</eventDateTime>
-                <agentType>human</agentType>
-                <agent>xxx</agent>
-            </maintenanceEvent>
-        </instanceMaintenanceHistory>
-        <languageDeclaration>
-            <language languageCode="eng"/>
-            <script scriptCode="Latn"/>
-        </languageDeclaration>
-        <publicationStatus>inProcess</publicationStatus>
+        <languageDeclarations>
+            <languageDeclaration>
+                <language languageCode="eng"/>
+                <script scriptCode="Latn"/>
+            </languageDeclaration>
+            <languageDeclaration>
+                <language languageCode="ger"/>
+                <script scriptCode="Latn"/>
+            </languageDeclaration>
+        </languageDeclarations>
+        <localTypeDeclaration>
+            <citation/>
+        </localTypeDeclaration>
+        <maintenanceEvent>
+            <eventType>unknown</eventType>
+            <eventDateTime>unknown</eventDateTime>
+            <agentType>unknown</agentType>
+            <agent>unknown</agent>
+        </maintenanceEvent>
     </control>
 
     <archDesc level="collection">
         <did>
-            <abstract></abstract>
+            <abstract/>
             <unitTitle>Records of Stuff</unitTitle>
             <unitDate unitDateType="inclusive">1970-1987?</unitDate>
             <unitDateStructured unitDateStructuredType="inclusive">
-                <dateRange><fromDate>1970</fromDate><toDate  notBefore="1985" notAfter="1990">1987</toDate></dateRange>
+                <dateRange>
+                    <fromDate>1970</fromDate>
+                    <toDate notBefore="1985" notAfter="1990">1987</toDate>
+                </dateRange>
             </unitDateStructured>
-            <langMaterial><language></language></langMaterial>
+            <langMaterial><language/></langMaterial>
         </did>
-       
+
 
         <scopeContent>
-            <head></head>
-            <div><head></head></div>
-            <div><head></head></div>
+            <head/>
+            <div>
+                <head/>
+            </div>
+            <div>
+                <head/>
+            </div>
         </scopeContent>
         <legalStatus>Blah blah blah</legalStatus>
-        <materialSpec><p>blah blah blah</p></materialSpec>
+        <materialSpec>
+            <p>blah blah blah</p>
+        </materialSpec>
         <relations>
             <relation relationType="cpfRelation">
                 <relationEntry>xxx</relationEntry>
@@ -58,17 +69,18 @@
         <c>
             <did>
                 <unitTitle>Series 1: Old stuff</unitTitle>
-                <didNote></didNote>
+                <didNote/>
                 <formsAvailable>
                     <container containerId="xxxxxxxxx" localType="Box">1</container>
                     <container containerId="yyyyyyyyy" localType="Folder">1</container>
-                    
+
                     <dao xmlns:ns1="http://www.w3.org/1999/xlink" ns1:type="simple"/>
                 </formsAvailable>
             </did>
-            <relations><relation relationType="cpfRelation">
-                <relationEntry>xxxx</relationEntry>
-            </relation>
+            <relations>
+                <relation relationType="cpfRelation">
+                    <relationEntry>xxxx</relationEntry>
+                </relation>
             </relations>
             <c>
                 <did>
