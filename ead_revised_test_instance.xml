@@ -8,9 +8,11 @@
                 <titleProper>xxxx</titleProper>
             </titleStmt>
             <noteStmt>
-                <controlNote><p>xxx</p></controlNote>
+                <controlNote>
+                    <p>xxx</p>
+                </controlNote>
             </noteStmt>
-            
+
         </fileDesc>
         <maintenanceStatus>new </maintenanceStatus>
         <maintenanceAgency>
@@ -51,7 +53,27 @@
             <langMaterial><language/></langMaterial>
         </did>
 
+        <biogHist>
+            <chronList>
+                <chronItem>
+                    <dateSingle>1987</dateSingle>
+                    <chronologicalSet>
+                        <event/>
+                        <event/>
+                        <placeEntry/>
+                        <placeEntry/>
+                    </chronologicalSet>
+                    <chronologicalSet>
+                        <event/>
+                    </chronologicalSet>
+                </chronItem>
+                <chronItem>
+                    <dateSingle>1988</dateSingle>
+                    <event>xxx</event>
+                </chronItem>
+            </chronList>
 
+        </biogHist>
         <scopeContent>
             <head/>
             <div>
@@ -78,7 +100,8 @@
                     <container containerId="xxxxxxxxx" localType="Box">1</container>
                     <container containerId="yyyyyyyyy" localType="Folder">1</container>
 
-                    <dao daoType="derived" xmlns:ns1="http://www.w3.org/1999/xlink" ns1:type="simple"/>
+                    <dao daoType="derived" xmlns:ns1="http://www.w3.org/1999/xlink"
+                        ns1:type="simple"/>
                 </formsAvailable>
             </did>
             <relations>
