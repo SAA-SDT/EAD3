@@ -1242,8 +1242,8 @@ Other changes:
 					</element>
 				</oneOrMore>
 				-->
-			<!-- 2013-01-25; TC added new model for chronlist -->	
-	           <oneOrMore>
+				<!-- 2013-01-25; TC added new model for chronlist -->
+				<oneOrMore>
 					<element name="chronItem">
 						<choice>
 							<ref name="e.dateSingle"/>
@@ -3932,15 +3932,36 @@ Other changes:
 			<optional>
 				<attribute name="listType">
 					<choice>
-						<value>simple</value>
+						<!-- 2013-01-25; TC: removed simple, changed marked to unordered -->
+						<!-- <value>simple</value> -->
 						<value>defList</value>
-						<value>marked</value>
+						<value>unordered</value>
 						<value>ordered</value>
 					</choice>
 				</attribute>
 			</optional>
 			<optional>
-				<attribute name="mark"/>
+				<attribute name="mark">
+					<!-- 2013-01-25; TC: added values from CSS "list-style-type" property list -->
+					<choice>
+						<value>disc</value>
+						<value>circle</value>
+						<value>square</value>
+						<value>decimal</value>
+						<value>decimal-leading-zero</value>
+						<value>lower-roman</value>
+						<value>upper-roman</value>
+						<value>lower-greek</value>
+						<value>lower-latin</value>
+						<value>upper-latin</value>
+						<value>armenian</value>
+						<value>georgian</value>
+						<value>lower-alpha</value>
+						<value>upper-alpha</value>
+						<value>none</value>
+						<value>inherit</value>
+					</choice>
+				</attribute>
 			</optional>
 			<optional>
 				<attribute name="numeration">
@@ -3954,7 +3975,7 @@ Other changes:
 				</attribute>
 			</optional>
 			<!-- TC: 2012-03-08: Remove continuation -->
-			<optional>
+			<!-- <optional>
 				<attribute name="continuation">
 					<choice>
 						<value>continues</value>
@@ -3962,6 +3983,7 @@ Other changes:
 					</choice>
 				</attribute>
 			</optional>
+		    -->
 			<optional>
 				<ref name="head"/>
 			</optional>
@@ -4915,7 +4937,7 @@ Other changes:
 	<!-- control replaces eadheader -->
 	<define name="e.control">
 		<element name="control">
-	<!--		<optional>
+			<!--		<optional>
 				<attribute name="id">
 					<data type="ID"/>
 				</attribute>
@@ -5062,7 +5084,9 @@ Other changes:
 					<element name="languageDeclarations">
 						<ref name="a.common"/>
 						<ref name="e.languageDeclaration"/>
-						<oneOrMore><ref name="e.languageDeclaration"/></oneOrMore>
+						<oneOrMore>
+							<ref name="e.languageDeclaration"/>
+						</oneOrMore>
 					</element>
 				</choice>
 			</optional>
@@ -5350,7 +5374,7 @@ Other changes:
 		</optional>
 		<text/>
 	</define>
-	
+
 	<!--TC; 2012-06-13: create pattern for <emph> so it can be referenced from multiple patterns -->
 	<define name="emph">
 		<element name="emph">
@@ -5624,7 +5648,7 @@ Other changes:
 			</oneOrMore>
 		</element>
 	</define>
-	
+
 	<define name="e.nameGrpNote">
 		<element name="nameGrpNote">
 			<ref name="a.common"/>
