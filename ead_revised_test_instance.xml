@@ -7,6 +7,10 @@
             <titleStmt>
                 <titleProper>xxxx</titleProper>
             </titleStmt>
+            <noteStmt>
+                <controlNote><p>xxx</p></controlNote>
+            </noteStmt>
+            
         </fileDesc>
         <maintenanceStatus>new </maintenanceStatus>
         <maintenanceAgency>
@@ -74,7 +78,7 @@
                     <container containerId="xxxxxxxxx" localType="Box">1</container>
                     <container containerId="yyyyyyyyy" localType="Folder">1</container>
 
-                    <dao xmlns:ns1="http://www.w3.org/1999/xlink" ns1:type="simple"/>
+                    <dao daoType="derived" xmlns:ns1="http://www.w3.org/1999/xlink" ns1:type="simple"/>
                 </formsAvailable>
             </did>
             <relations>
