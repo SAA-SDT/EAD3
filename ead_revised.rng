@@ -1226,7 +1226,7 @@ Other changes:
 				<optional>
 					<ref name="listHead"/>
 				</optional>
-				<oneOrMore>
+				<!--<oneOrMore>
 					<element name="chronItem">
 						<ref name="a.common"/>
 						<ref name="date"/>
@@ -1238,6 +1238,34 @@ Other changes:
 									<ref name="event"/>
 								</oneOrMore>
 							</element>
+						</choice>
+					</element>
+				</oneOrMore>
+				-->
+			<!-- 2013-01-25; TC added new model for chronlist -->	
+	           <oneOrMore>
+					<element name="chronologicalItem">
+						<choice>
+							<ref name="e.dateSingle"/>
+							<ref name="e.dateRange"/>
+						</choice>
+						<choice>
+							<oneOrMore>
+								<element name="chronologicalSet">
+									<oneOrMore>
+										<ref name="event"/>
+									</oneOrMore>
+									<zeroOrMore>
+										<ref name="e.placeEntry"/>
+									</zeroOrMore>
+								</element>
+							</oneOrMore>
+							<group>
+								<ref name="event"/>
+								<optional>
+									<ref name="e.placeEntry"/>
+								</optional>
+							</group>
 						</choice>
 					</element>
 				</oneOrMore>
