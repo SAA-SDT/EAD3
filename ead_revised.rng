@@ -1911,7 +1911,7 @@ Other changes:
 				<attribute name="relatedEncoding"/>
 			</optional>
 			<!-- TC; 2012-03-07: added <control> removed other <eadheader> elements -->
-			<ref name="control"/>
+			<ref name="e.control"/>
 
 			<!-- <element name="eadheader">
 				<ref name="a.common"/>
@@ -4879,84 +4879,125 @@ Other changes:
 		</optional>
 	</define>
 	<!-- control replaces eadheader -->
-	<define name="control">
+	<define name="e.control">
 		<element name="control">
-			<ref name="a.common"/>
-			<optional>
-				<attribute a:defaultValue="iso639-2b" name="langEncoding">
-					<data type="NMTOKEN"/>
+	<!--		<optional>
+				<attribute name="id">
+					<data type="ID"/>
 				</attribute>
 			</optional>
+			-->
 			<optional>
-				<attribute a:defaultValue="iso15924" name="scriptEncoding">
-					<data type="NMTOKEN"/>
-				</attribute>
+				<ref name="lang"/>
 			</optional>
 			<optional>
-				<attribute a:defaultValue="iso8601" name="dateEncoding">
-					<data type="NMTOKEN"/>
-				</attribute>
+				<ref name="base"/>
 			</optional>
-			<optional>
-				<attribute a:defaultValue="iso3166-1" name="countryEncoding">
-					<data type="NMTOKEN"/>
-				</attribute>
-			</optional>
-			<optional>
-				<attribute a:defaultValue="iso15511" name="repositoryEncoding">
-					<data type="NMTOKEN"/>
-				</attribute>
-			</optional>
-			<optional>
-				<attribute name="relatedEncoding"/>
-			</optional>
-			<optional>
-				<attribute name="findAidStatus">
-					<data type="NMTOKEN"/>
-				</attribute>
-			</optional>
-			<optional>
-				<attribute name="encodingAnalog"/>
-			</optional>
-			<element name="eadId">
-				<!--	<optional>
-					<attribute name="publicId"/>
-				</optional>
+			<element a:id="recordId" name="recordId">
 				<optional>
-					<attribute name="urn"/>
-				</optional>
-				<optional>
-					<attribute name="url"/>
-				</optional>
-				-->
-				<ref name="am.countryCode"/>
-				<optional>
-					<attribute name="mainAgencyCode">
-						<ref name="data.repositoryCode"/>
+					<attribute name="id">
+						<data type="ID"/>
 					</attribute>
 				</optional>
-				<optional>
-					<attribute name="identifier"/>
-				</optional>
-				<optional>
-					<attribute name="encodingAnalog"/>
-				</optional>
-				<data type="token"/>
+				<data type="NMTOKEN"/>
 			</element>
 			<zeroOrMore>
 				<element a:id="otherRecordId" name="otherRecordId">
-					<ref name="a.common"/>
-					<ref name="a.localType"/>
-					<text/>
+					<optional>
+						<attribute name="id">
+							<data type="ID"/>
+						</attribute>
+					</optional>
+					<ref name="m.id"/>
 				</element>
 			</zeroOrMore>
-			<ref name="titleProper"/>
-			<optional>
-				<ref name="subTitle"/>
-			</optional>
-			<ref name="maintenanceAgency"/>
-			<element name="maintenanceStatus">
+			<element name="fileDesc">
 				<ref name="a.common"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<element name="titleStmt">
+					<ref name="a.common"/>
+					<optional>
+						<attribute name="encodingAnalog"/>
+					</optional>
+					<oneOrMore>
+						<ref name="titleProper"/>
+					</oneOrMore>
+					<zeroOrMore>
+						<ref name="subTitle"/>
+					</zeroOrMore>
+					<optional>
+						<ref name="author"/>
+					</optional>
+					<optional>
+						<ref name="sponsor"/>
+					</optional>
+				</element>
+				<optional>
+					<element name="editionStmt">
+						<ref name="a.common"/>
+						<optional>
+							<attribute name="encodingAnalog"/>
+						</optional>
+						<oneOrMore>
+							<choice>
+								<ref name="edition"/>
+								<ref name="p"/>
+							</choice>
+						</oneOrMore>
+					</element>
+				</optional>
+				<optional>
+					<element name="publicationStmt">
+						<ref name="a.common"/>
+						<optional>
+							<attribute name="encodingAnalog"/>
+						</optional>
+						<oneOrMore>
+							<choice>
+								<ref name="publisher"/>
+								<ref name="date"/>
+								<ref name="address"/>
+								<ref name="num"/>
+								<ref name="p"/>
+							</choice>
+						</oneOrMore>
+					</element>
+				</optional>
+				<optional>
+					<element name="seriesStmt">
+						<ref name="a.common"/>
+						<optional>
+							<attribute name="encodingAnalog"/>
+						</optional>
+						<oneOrMore>
+							<choice>
+								<ref name="titleProper"/>
+								<ref name="num"/>
+								<ref name="p"/>
+							</choice>
+						</oneOrMore>
+					</element>
+				</optional>
+				<optional>
+					<element name="noteStmt">
+						<ref name="a.common"/>
+						<optional>
+							<attribute name="encodingAnalog"/>
+						</optional>
+						<oneOrMore>
+							<ref name="note"/>
+						</oneOrMore>
+					</element>
+				</optional>
+			</element>
+			<element a:id="maintenanceStatus" name="maintenanceStatus">
+				<optional>
+					<attribute name="id">
+						<data type="ID"/>
+					</attribute>
+				</optional>
 				<choice>
 					<value>revised</value>
 					<value>deleted</value>
@@ -4967,87 +5008,42 @@ Other changes:
 					<value>derived</value>
 				</choice>
 			</element>
-			<element name="descriptionMaintenanceHistory">
-				<ref name="maintenanceHistory"/>
-			</element>
-			<element name="instanceMaintenanceHistory">
-				<ref name="maintenanceHistory"/>
-			</element>
-			<!-- TC; 2012-03-08: removed <editionStmt>, <seriesStmt>, and <noteStmt> -->
-			<!--<optional>
-				<element name="editionStmt">
-					<ref name="a.common"/>
-					<optional>
-						<attribute name="encodingAnalog"/>
-					</optional>
-					<oneOrMore>
-						<choice>
-							<ref name="edition"/>
-							<ref name="p"/>
-						</choice>
-					</oneOrMore>
-				</element>
-			</optional>
 			<optional>
-				<element name="seriesStmt">
-					<ref name="a.common"/>
+				<element a:id="publicationStatus" name="publicationStatus">
 					<optional>
-						<attribute name="encodingAnalog"/>
+						<attribute name="id">
+							<data type="ID"/>
+						</attribute>
 					</optional>
-					<oneOrMore>
-						<choice>
-							<ref name="titleProper"/>
-							<ref name="num"/>
-							<ref name="p"/>
-						</choice>
-					</oneOrMore>
+					<choice>
+						<value>inProcess</value>
+						<value>approved</value>
+					</choice>
 				</element>
 			</optional>
+			<ref name="e.maintenanceAgency"/>
 			<optional>
-				<element name="noteStmt">
-					<ref name="a.common"/>
-					<optional>
-						<attribute name="encodingAnalog"/>
-					</optional>
-					<oneOrMore>
-						<ref name="note"/>
-					</oneOrMore>
-				</element>
+				<ref name="e.languageDeclaration"/>
 			</optional>
-			-->
-			<ref name="e.languageDeclaration"/>
+			<zeroOrMore>
+				<ref name="e.conventionDeclaration"/>
+			</zeroOrMore>
+			<zeroOrMore>
+				<ref name="e.localTypeDeclaration"/>
+			</zeroOrMore>
+			<zeroOrMore>
+				<ref name="e.localControl"/>
+			</zeroOrMore>
+			<ref name="e.maintenanceHistory"/>
 			<optional>
 				<ref name="e.sources"/>
-			</optional>
-			<element a:id="publicationStatus" name="publicationStatus">
-				<ref name="a.common"/>
-				<choice>
-					<value>inProcess</value>
-					<value>approved</value>
-				</choice>
-			</element>
-			<optional>
-				<ref name="e.conventionDeclaration"/>
-			</optional>
-			<!--	<optional><element name="otherRecordId">
-				<ref name="a.common"/>
-				<ref name="attrs-types"/>
-				<text/>
-			</element>
-				</optional>
-				-->
-			<optional>
-				<ref name="e.localControl"/>
-			</optional>
-			<optional>
-				<ref name="e.localTypeDeclaration"/>
 			</optional>
 		</element>
 	</define>
 
 	<!-- Patterns from EAC-CPF for <control> -->
 
-	<define name="maintenanceAgency">
+	<define name="e.maintenanceAgency">
 		<element name="maintenanceAgency">
 			<ref name="a.common"/>
 			<optional>
@@ -5088,7 +5084,7 @@ Other changes:
 	</define>
 
 
-	<define name="maintenanceHistory">
+	<define name="e.maintenanceHistory">
 		<ref name="a.common"/>
 		<oneOrMore>
 			<element a:id="maintenanceEvent" name="maintenanceEvent">
@@ -5305,6 +5301,13 @@ Other changes:
 			</optional>
 		</element>
 	</define>
+	<define name="m.id">
+		<optional>
+			<ref name="a.localType"/>
+		</optional>
+		<text/>
+	</define>
+	
 	<!--TC; 2012-06-13: create pattern for <emph> so it can be referenced from multiple patterns -->
 	<define name="emph">
 		<element name="emph">
