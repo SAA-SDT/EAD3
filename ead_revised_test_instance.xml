@@ -87,6 +87,11 @@
                 <head/>
             </div>
         </scopeContent>
+        <controlAccess>
+            <subject >
+                <part></part>
+            </subject>
+        </controlAccess>
         <legalStatus>Blah blah blah</legalStatus>
         <materialSpec>
             <p>blah blah blah</p>
@@ -100,13 +105,13 @@
             <did>
                 <unitTitle>Series 1: Old stuff</unitTitle>
                 <didNote/>
-                <formsAvailable>
+                <availableForms>
                     <container containerId="xxxxxxxxx" localType="Box">1</container>
                     <container containerId="yyyyyyyyy" localType="Folder">1</container>
 
                     <dao daoType="derived" xmlns:ns1="http://www.w3.org/1999/xlink"
                         ns1:type="simple"/>
-                </formsAvailable>
+                </availableForms>
             </did>
             <relations>
                 <relation relationType="cpfRelation">
