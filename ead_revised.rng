@@ -4701,7 +4701,7 @@ Other changes:
 		</define>
 
 		<define name="e.dateSingle">
-			<element a:id="date" name="date">
+			<element a:id="date" name="dateSingle">
 				<ref name="a.common"/>
 				<optional>
 					<ref name="lang"/>
