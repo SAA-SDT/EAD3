@@ -74,6 +74,10 @@
             </chronList>
 
         </biogHist>
+        <accessRestrict>
+        <list listType="ordered" numeration="arabic">
+            <item>xxx</item>
+        </list></accessRestrict>
         <scopeContent>
             <head/>
             <div>
