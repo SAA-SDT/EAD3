@@ -169,6 +169,10 @@ Other changes:
 * added "unknown" to list of values for dao/@daoType per issue #51
 
 * added nameGrpNote per issue #44
+
+* changed formsAvailable to availableForms
+
+* removed linking attributes from bibRef and archref per issue #58
 =======
 * replaced eadheader with control
 >>>>>>> 7d149cadcc338083909ce4df0ac207de05e6399e
@@ -3604,9 +3608,10 @@ Other changes:
 	<define name="archRef">
 		<element name="archRef">
 			<ref name="a.common"/>
-			<optional>
+		<!--	<optional>
 				<ref name="a.external.ptr"/>
 			</optional>
+	    -->
 			<zeroOrMore>
 				<choice>
 					<text/>
@@ -3635,9 +3640,10 @@ Other changes:
 				<attribute name="encodingAnalog"/>
 			</optional>
 			<!-- TC; 2013-06-10: change content model to match archref -->
-			<optional>
+		<!--	<optional>
 				<ref name="a.external.ptr"/>
 			</optional>
+	    -->
 			<zeroOrMore>
 				<choice>
 					<text/>
