@@ -4987,7 +4987,7 @@ Other changes:
 							<attribute name="encodingAnalog"/>
 						</optional>
 						<oneOrMore>
-							<ref name="controlNote"/>
+							<ref name="e.controlNote"/>
 						</oneOrMore>
 					</element>
 				</optional>
@@ -5573,8 +5573,8 @@ Other changes:
 		</element>
 	</define>
 	<!-- 2013-01-25: TC: shares pattern definition of block note -->
-	<define name="controlNote">
-		<element name="note">
+	<define name="e.controlNote">
+		<element name="controlNote">
 			<ref name="a.common"/>
 			<optional>
 				<attribute name="localType"/>
