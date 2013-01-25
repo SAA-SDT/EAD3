@@ -5104,6 +5104,7 @@ Other changes:
 						<value>cancelled</value>
 						<value>derived</value>
 						<value>updated</value>
+						<value>unknown</value>
 					</choice>
 				</element>
 				<element a:id="eventDateTime" name="eventDateTime">
@@ -5120,6 +5121,7 @@ Other changes:
 					<choice>
 						<value>human</value>
 						<value>machine</value>
+						<value>unknown</value>
 					</choice>
 				</element>
 				<element a:id="agent" name="agent">
