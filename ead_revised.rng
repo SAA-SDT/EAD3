@@ -167,6 +167,8 @@ Other changes:
 * added control per issue #45
 
 * added "unknown" to list of values for dao/@daoType per issue #51
+
+* added nameGrpNote per issue #44
 =======
 * replaced eadheader with control
 >>>>>>> 7d149cadcc338083909ce4df0ac207de05e6399e
