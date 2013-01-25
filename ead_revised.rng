@@ -5025,14 +5025,11 @@ Other changes:
 			<optional>
 				<choice>
 					<ref name="e.languageDeclaration"/>
-					<ref name="a.common"/>
 					<element name="languageDeclarations">
+						<ref name="a.common"/>
 						<oneOrMore><ref name="e.languageDeclaration"/></oneOrMore>
 					</element>
 				</choice>
-			</optional>
-			<optional>
-				<ref name="e.languageDeclaration"/>
 			</optional>
 			<zeroOrMore>
 				<ref name="e.conventionDeclaration"/>
