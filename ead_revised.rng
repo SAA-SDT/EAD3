@@ -1244,7 +1244,7 @@ Other changes:
 				-->
 			<!-- 2013-01-25; TC added new model for chronlist -->	
 	           <oneOrMore>
-					<element name="chronologicalItem">
+					<element name="chronItem">
 						<choice>
 							<ref name="e.dateSingle"/>
 							<ref name="e.dateRange"/>
