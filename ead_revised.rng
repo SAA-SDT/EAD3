@@ -163,6 +163,10 @@ Other changes:
 * added element unitDateStructured to did per issue #47
 
 * added @localType to <fromDate> and <toDate> per issue #50
+
+* added control per issue #45
+
+* added "unknown" to list of values for dao/@daoType per issue #51
 =======
 * replaced eadheader with control
 >>>>>>> 7d149cadcc338083909ce4df0ac207de05e6399e
@@ -3443,6 +3447,7 @@ Other changes:
 				<choice>
 					<value>bornDigital</value>
 					<value>derived</value>
+					<value>unknown</value>
 					<value>other</value>
 				</choice>
 			</attribute>
