@@ -4987,7 +4987,7 @@ Other changes:
 							<attribute name="encodingAnalog"/>
 						</optional>
 						<oneOrMore>
-							<ref name="note"/>
+							<ref name="controlNote"/>
 						</oneOrMore>
 					</element>
 				</optional>
@@ -5022,6 +5022,15 @@ Other changes:
 				</element>
 			</optional>
 			<ref name="e.maintenanceAgency"/>
+			<optional>
+				<choice>
+					<ref name="e.languageDeclaration"/>
+					<ref name="a.common"/>
+					<element name="languageDeclarations">
+						<oneOrMore><ref name="e.languageDeclaration"/></oneOrMore>
+					</element>
+				</choice>
+			</optional>
 			<optional>
 				<ref name="e.languageDeclaration"/>
 			</optional>
@@ -5561,6 +5570,40 @@ Other changes:
 					<ref name="e.dateSet"/>
 				</choice>
 			</zeroOrMore>
+		</element>
+	</define>
+	<!-- 2013-01-25: TC: shares pattern definition of block note -->
+	<define name="controlNote">
+		<element name="note">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="localType"/>
+			</optional>
+			<optional>
+				<attribute name="label"/>
+			</optional>
+			<optional>
+				<attribute name="show">
+					<choice>
+						<value>embed</value>
+						<value>new</value>
+					</choice>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="actuate">
+					<choice>
+						<value>onload</value>
+						<value>onrequest</value>
+					</choice>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<oneOrMore>
+				<ref name="m.blocks"/>
+			</oneOrMore>
 		</element>
 	</define>
 </grammar>
