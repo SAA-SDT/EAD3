@@ -3611,7 +3611,10 @@ Other changes:
 		<!--	<optional>
 				<ref name="a.external.ptr"/>
 			</optional>
-	    -->
+		-->
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
 			<zeroOrMore>
 				<choice>
 					<text/>
