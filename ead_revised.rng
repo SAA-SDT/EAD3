@@ -5584,23 +5584,7 @@ Other changes:
 				<attribute name="localType"/>
 			</optional>
 			<optional>
-				<attribute name="label"/>
-			</optional>
-			<optional>
-				<attribute name="show">
-					<choice>
-						<value>embed</value>
-						<value>new</value>
-					</choice>
-				</attribute>
-			</optional>
-			<optional>
-				<attribute name="actuate">
-					<choice>
-						<value>onload</value>
-						<value>onrequest</value>
-					</choice>
-				</attribute>
+				<attribute name="localTypeSource"/>
 			</optional>
 			<optional>
 				<attribute name="encodingAnalog"/>
