@@ -3608,7 +3608,7 @@ Other changes:
 	<define name="archRef">
 		<element name="archRef">
 			<ref name="a.common"/>
-		<!--	<optional>
+			<!--	<optional>
 				<ref name="a.external.ptr"/>
 			</optional>
 		-->
@@ -3643,7 +3643,7 @@ Other changes:
 				<attribute name="encodingAnalog"/>
 			</optional>
 			<!-- TC; 2013-06-10: change content model to match archref -->
-		<!--	<optional>
+			<!--	<optional>
 				<ref name="a.external.ptr"/>
 			</optional>
 	    -->
@@ -5603,11 +5603,21 @@ Other changes:
 	</define>
 	<define name="e.part">
 		<element name="part">
-			<optional><attribute name="id"/></optional>
-			<optional><attribute name="lang"/></optional>
-			<optional><attribute name="script"/></optional>
-			<optional><attribute name="localType"/></optional>
-			<optional><attribute name="localTypeSource"/></optional>
+			<optional>
+				<attribute name="id"/>
+			</optional>
+			<optional>
+				<attribute name="lang"/>
+			</optional>
+			<optional>
+				<attribute name="script"/>
+			</optional>
+			<optional>
+				<attribute name="localType"/>
+			</optional>
+			<optional>
+				<attribute name="localTypeSource"/>
+			</optional>
 			<text/>
 		</element>
 	</define>
