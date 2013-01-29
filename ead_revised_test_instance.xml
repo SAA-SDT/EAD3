@@ -72,7 +72,6 @@
                     <event>xxx</event>
                 </chronItem>
             </chronList>
-
         </biogHist>
         <accessRestrict>
         <list listType="ordered" numeration="arabic">
@@ -88,9 +87,9 @@
             </div>
         </scopeContent>
         <controlAccess>
-            <subject >
+            <subjectEntry>
                 <part></part> 
-            </subject>
+            </subjectEntry>
         </controlAccess>
         <legalStatus>Blah blah blah</legalStatus>
         <materialSpec>
