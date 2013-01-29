@@ -175,6 +175,12 @@ Other changes:
 * removed linking attributes from bibRef and archref per issue #58
 
 * removed lists of attribute values from external lists (langCode, countryCode, scriptCode)
+
+* added head03 to listHead for chronlist
+
+* created m.access.entry to define *entry element children of controlAccess per issue # 55; restored old definitions of *name and other former controlAccess children in m.access
+
+
 =======
 * replaced eadheader with control
 >>>>>>> 7d149cadcc338083909ce4df0ac207de05e6399e
