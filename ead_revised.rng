@@ -271,7 +271,7 @@ Other changes:
 		<data type="token">
 			<param name="pattern"
 				>((AF|AX|AL|DZ|AS|AD|AO|AI|AQ|AG|AR|AM|AW|AU|AT|AZ|BS|BH|BD|BB|BY|BE|BZ|BJ|BM|BT|BO|BA|BW|BV|BR|IO|BN|BG|BF|BI|KH|CM|CA|CV|KY|CF|TD|CL|CN|CX|CC|CO|KM|CG|CD|CK|CR|CI|HR|CU|CY|CZ|DK|DJ|DM|DO|EC|EG|SV|GQ|ER|EE|ET|FK|FO|FJ|FI|FR|GF|PF|TF|GA|GM|GE|DE|GH|GI|GR|GL|GD|GP|GU|GT|GN|GW|GY|HT|HM|VA|HN|HK|HU|IS|IN|ID|IR|IQ|IE|IL|IT|JM|JP|JO|KZ|KE|KI|KP|KR|KW|KG|LA|LV|LB|LS|LR|LY|LI|LT|LU|MO|MK|MG|MW|MY|MV|ML|MT|MH|MQ|MR|MU|YT|MX|FM|MD|MC|MN|MS|MA|MZ|MM|NA|NR|NP|NL|AN|NC|NZ|NI|NE|NG|NU|NF|MP|NO|OM|PK|PW|PS|PA|PG|PY|PE|PH|PN|PL|PT|PR|QA|RE|RO|RU|RW|SH|KN|LC|PM|VC|WS|SM|ST|SA|SN|CS|SC|SL|SG|SK|SI|SB|SO|ZA|GS|ES|LK|SD|SR|SJ|SZ|SE|CH|SY|TW|TJ|TZ|TH|TL|TG|TK|TO|TT|TN|TR|TM|TC|TV|UG|UA|AE|GB|US|UM|UY|UZ|VU|VE|VN|VG|VI|WF|EH|YE|ZM|ZW)|([a-zA-Z]{1})|([a-zA-Z]{3,4}))(-[a-zA-Z0-9:/\-]{1,11})</param>
-		 </data>
+		</data>
 	</define>
 	<define name="am.mainAgencyCode">
 		<optional>
@@ -800,7 +800,7 @@ Other changes:
 	<define name="am.countryCode">
 		<optional>
 			<attribute name="countryCode">
-			<!--	<choice>
+				<!--	<choice>
 					<value>AF</value>
 					<value>AX</value>
 					<value>AL</value>
@@ -1087,17 +1087,12 @@ Other changes:
 				<optional>
 					<attribute name="encodingAnalog"/>
 				</optional>
-				<!-- 2013-01-22; TC: allow only part -->
-				<!--	<zeroOrMore>
+				<zeroOrMore>
 					<choice>
 						<text/>
 						<ref name="m.phrase.bare"/>
 					</choice>
 				</zeroOrMore>
-			-->
-				<oneOrMore>
-					<ref name="e.part"/>
-				</oneOrMore>
 			</element>
 			<ref name="persName"/>
 			<element name="subject">
@@ -1106,17 +1101,12 @@ Other changes:
 				<optional>
 					<attribute name="encodingAnalog"/>
 				</optional>
-				<!-- 2013-01-22; TC: allow only part -->
-				<!--	<zeroOrMore>
+				<zeroOrMore>
 					<choice>
-					<text/>
-					<ref name="m.phrase.bare"/>
+						<text/>
+						<ref name="m.phrase.bare"/>
 					</choice>
-					</zeroOrMore>
-				-->
-				<oneOrMore>
-					<ref name="e.part"/>
-				</oneOrMore>
+				</zeroOrMore>
 			</element>
 			<element name="genreForm">
 				<ref name="a.common"/>
@@ -1127,17 +1117,12 @@ Other changes:
 				<optional>
 					<attribute name="encodingAnalog"/>
 				</optional>
-				<!-- 2013-01-22; TC: allow only part -->
-				<!--	<zeroOrMore>
+				<zeroOrMore>
 					<choice>
-					<text/>
-					<ref name="m.phrase.bare"/>
+						<text/>
+						<ref name="m.phrase.bare"/>
 					</choice>
-					</zeroOrMore>
-				-->
-				<oneOrMore>
-					<ref name="e.part"/>
-				</oneOrMore>
+				</zeroOrMore>
 			</element>
 			<element name="function">
 				<ref name="a.common"/>
@@ -1145,17 +1130,12 @@ Other changes:
 				<optional>
 					<attribute name="encodingAnalog"/>
 				</optional>
-				<!-- 2013-01-22; TC: allow only part -->
-				<!--	<zeroOrMore>
+				<zeroOrMore>
 					<choice>
-					<text/>
-					<ref name="m.phrase.bare"/>
+						<text/>
+						<ref name="m.phrase.bare"/>
 					</choice>
-					</zeroOrMore>
-				-->
-				<oneOrMore>
-					<ref name="e.part"/>
-				</oneOrMore>
+				</zeroOrMore>
 			</element>
 		</choice>
 	</define>
@@ -3020,7 +3000,8 @@ Other changes:
 			<oneOrMore>
 				<choice>
 					<ref name="m.blocks"/>
-					<ref name="m.access.title"/>
+					<ref name="m.access.entry"/>
+					<ref name="title"/>
 					<!-- TC: 2012-06-08 remove recursion in note elements -->
 					<!-- <ref name="controlaccess"/> -->
 				</choice>
@@ -3733,20 +3714,14 @@ Other changes:
 			<optional>
 				<attribute name="encodingAnalog"/>
 			</optional>
-			<!-- TC; 2013-01-22: permit only text -->
-			<!--<zeroOrMore>
+			<zeroOrMore>
 				<choice>
-					<text/> -->
-			<!-- <ref name="m.phrase.bare"/>
-					<ref name="subarea"/>
-					-->
-			<!--	</choice>
-				</zeroOrMore>
-			
-			-->
-			<oneOrMore>
-				<ref name="e.part"/>
-			</oneOrMore>
+					<text/>
+					<ref name="m.phrase.bare"/>
+					<!--<ref name="subarea"/> -->
+				</choice>
+			</zeroOrMore>
+
 		</element>
 	</define>
 	<define name="famName">
@@ -3759,20 +3734,16 @@ Other changes:
 			<optional>
 				<attribute name="encodingAnalog"/>
 			</optional>
-			<!-- TC; 2013-01-22: permit only part -->
-			<!--<zeroOrMore>
+			<zeroOrMore>
 				<choice>
-				<text/> -->
-			<!-- <ref name="m.phrase.bare"/>
-				<ref name="subarea"/>
-			-->
-			<!--	</choice>
-				</zeroOrMore>
-				
-			-->
-			<oneOrMore>
-				<ref name="e.part"/>
-			</oneOrMore>
+					<text/>
+					<ref name="m.phrase.bare"/>
+					<!-- <ref name="subarea"/> -->
+				</choice>
+			</zeroOrMore>
+
+
+
 		</element>
 	</define>
 	<define name="geogName">
@@ -3785,20 +3756,17 @@ Other changes:
 			<optional>
 				<attribute name="encodingAnalog"/>
 			</optional>
-			<!-- TC; 2013-06-22: permit only part -->
-			<!--<zeroOrMore>
+			<zeroOrMore>
 				<choice>
-				<text/> -->
-			<!-- <ref name="m.phrase.bare"/>
-				<ref name="subarea"/>
+					<text/>
+					<ref name="m.phrase.bare"/>
+					<!--	<ref name="subarea"/>
 			-->
-			<!--	</choice>
-				</zeroOrMore>
-				
-			-->
-			<oneOrMore>
-				<ref name="e.part"/>
-			</oneOrMore>
+				</choice>
+			</zeroOrMore>
+
+
+
 		</element>
 	</define>
 	<define name="name">
@@ -3811,20 +3779,17 @@ Other changes:
 			<optional>
 				<attribute name="encodingAnalog"/>
 			</optional>
-			<!-- TC; 2013-01-22: permit only text -->
-			<!--<zeroOrMore>
+			<zeroOrMore>
 				<choice>
-				<text/> -->
-			<!-- <ref name="m.phrase.bare"/>
-				<ref name="subarea"/>
-			-->
-			<!--	</choice>
-				</zeroOrMore>
-				
-			-->
-			<oneOrMore>
-				<ref name="e.part"/>
-			</oneOrMore>
+					<text/>
+					<ref name="m.phrase.bare"/>
+					<!-- 	<ref name="subarea"/>-->
+
+				</choice>
+			</zeroOrMore>
+
+
+
 		</element>
 	</define>
 	<define name="persName">
@@ -3837,16 +3802,12 @@ Other changes:
 			<optional>
 				<attribute name="encodingAnalog"/>
 			</optional>
-			<!-- TC; 2013-01-22: permit only part -->
-			<!--<zeroOrMore>
+			<zeroOrMore>
 				<choice>
-					<text/> -->
-			<!-- <ref name="m.phrase.bare"/> -->
-			<!--		</choice>
-			</zeroOrMore> -->
-			<oneOrMore>
-				<ref name="e.part"/>
-			</oneOrMore>
+					<text/>
+					<!-- <ref name="m.phrase.bare"/> -->
+				</choice>
+			</zeroOrMore>
 		</element>
 	</define>
 	<define name="date">
@@ -5698,5 +5659,104 @@ Other changes:
 				</oneOrMore>
 			</oneOrMore>
 		</element>
+	</define>
+
+	<define name="m.access.entry">
+		<choice>
+			<element name="corpNameEntry">
+				<ref name="a.common"/>
+				<ref name="a.access"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<oneOrMore>
+					<ref name="e.part"/>
+				</oneOrMore>
+			</element>
+			<element name="famNameEntry">
+				<ref name="a.common"/>
+				<ref name="a.access"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<oneOrMore>
+					<ref name="e.part"/>
+				</oneOrMore>
+			</element>
+			<element name="geogNameEntry">
+				<ref name="a.common"/>
+				<ref name="a.access"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<oneOrMore>
+					<ref name="e.part"/>
+				</oneOrMore>
+			</element>
+			<element name="genericNameEntry">
+				<ref name="a.common"/>
+				<ref name="a.access"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<oneOrMore>
+					<ref name="e.part"/>
+				</oneOrMore>
+			</element>
+			<element name="occupationEntry">
+				<ref name="a.common"/>
+				<ref name="a.access"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+
+				<oneOrMore>
+					<ref name="e.part"/>
+				</oneOrMore>
+			</element>
+			<element name="persNameEntry">
+				<ref name="a.common"/>
+				<ref name="a.access"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<oneOrMore>
+					<ref name="e.part"/>
+				</oneOrMore>
+			</element>
+			<element name="subjectEntry">
+				<ref name="a.common"/>
+				<ref name="a.access"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<oneOrMore>
+					<ref name="e.part"/>
+				</oneOrMore>
+			</element>
+			<element name="genreFormEntry">
+				<ref name="a.common"/>
+				<optional>
+					<attribute name="localType"/>
+				</optional>
+				<ref name="a.access"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<oneOrMore>
+					<ref name="e.part"/>
+				</oneOrMore>
+			</element>
+			<element name="functionEntry">
+				<ref name="a.common"/>
+				<ref name="a.access"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<oneOrMore>
+					<ref name="e.part"/>
+				</oneOrMore>
+			</element>
+		</choice>
 	</define>
 </grammar>
