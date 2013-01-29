@@ -4053,6 +4053,17 @@ Other changes:
 					</zeroOrMore>
 				</element>
 			</optional>
+			<optional>
+				<element name="head03">
+					<ref name="a.common"/>
+					<zeroOrMore>
+						<choice>
+							<text/>
+							<ref name="m.phrase.bare"/>
+						</choice>
+					</zeroOrMore>
+				</element>
+			</optional>
 		</element>
 	</define>
 	<define name="item">
