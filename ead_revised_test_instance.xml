@@ -51,6 +51,12 @@
                 </dateRange>
             </unitDateStructured>
             <langMaterial><language/></langMaterial>
+            <physDesc></physDesc>
+            <physDescStructured type="carrier">
+                <dimensions></dimensions>
+                <num></num>
+                <extent></extent>
+            </physDescStructured>
         </did>
 
         <biogHist>

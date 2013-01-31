@@ -1620,6 +1620,46 @@ Other changes:
 				</optional>
 				<zeroOrMore>
 					<choice>
+						<text/>
+						<ref name="emph"/>
+						<ref name="e.lb"/>
+						<ref name="ref"/>
+					</choice>
+				</zeroOrMore>
+			</element>
+
+			<element name="physDescStructured">
+				<ref name="a.common"/>
+				<optional>
+					<attribute name="label"/>
+				</optional>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<optional>
+					<attribute name="source">
+						<data type="token"/>
+					</attribute>
+				</optional>
+				<optional>
+					<attribute name="identifier"/>
+				</optional>
+				<optional>
+					<attribute name="rules">
+						<data type="NMTOKEN"/>
+					</attribute>
+				</optional>
+				<optional>
+					<attribute name="type">
+						<choice>
+							<value>carrier</value>
+							<value>materialType</value>
+							<value>spaceOccupied</value>
+						</choice>
+					</attribute>
+				</optional>
+				<zeroOrMore>
+					<choice>
 						<element name="specifiedMaterials">
 							<zeroOrMore>
 								<choice>
@@ -1673,58 +1713,6 @@ Other changes:
 									<ref name="ref"/>
 								</choice>
 							</zeroOrMore>
-						</element>
-						<ref name="num"/>
-					</choice>
-				</zeroOrMore>
-			</element>
-
-			<element name="physDescStructured">
-				<ref name="a.common"/>
-				<optional>
-					<attribute name="label"/>
-				</optional>
-				<optional>
-					<attribute name="encodingAnalog"/>
-				</optional>
-				<optional>
-					<attribute name="source">
-						<data type="token"/>
-					</attribute>
-				</optional>
-				<optional>
-					<attribute name="identifier"/>
-				</optional>
-				<optional>
-					<attribute name="rules">
-						<data type="NMTOKEN"/>
-					</attribute>
-				</optional>
-				<optional>
-					<attribute name="type">
-						<choice>
-							<value>carrier</value>
-							<value>materialType</value>
-							<value>spaceOccupied</value>
-						</choice>
-					</attribute>
-				</optional>
-				<zeroOrMore>
-					<choice>
-						<element name="specifiedMaterials">
-							<text/>
-						</element>
-						<element name="space">
-							<text/>
-						</element>
-						<element name="phystype">
-							<text/>
-						</element>
-						<element name="dimensions">
-							<text/>
-						</element>
-						<element name="extent">
-							<text/>
 						</element>
 						<ref name="num"/>
 					</choice>
