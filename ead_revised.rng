@@ -1661,6 +1661,19 @@ Other changes:
 				<zeroOrMore>
 					<choice>
 						<element name="specifiedMaterials">
+							<ref name="a.common"/>
+							<optional>
+								<attribute name="label"/>
+							</optional>
+							<optional>
+								<attribute name="localType"/>
+							</optional>
+							<optional>
+								<attribute name="localTypeSource"/>
+							</optional>
+							<optional>
+								<attribute name="encodinganalog"/>
+							</optional>
 							<zeroOrMore>
 								<choice>
 									<text/>
@@ -1670,7 +1683,20 @@ Other changes:
 								</choice>
 							</zeroOrMore>
 						</element>
-						<element name="space">
+						<element name="physDetails">
+							<ref name="a.common"/>
+							<optional>
+								<attribute name="label"/>
+							</optional>
+							<optional>
+								<attribute name="localType"/>
+							</optional>
+							<optional>
+								<attribute name="localTypeSource"/>
+							</optional>
+							<optional>
+								<attribute name="encodinganalog"/>
+							</optional>
 							<zeroOrMore>
 								<choice>
 									<text/>
@@ -1681,6 +1707,19 @@ Other changes:
 							</zeroOrMore>
 						</element>
 						<element name="physType">
+							<ref name="a.common"/>
+							<optional>
+								<attribute name="label"/>
+							</optional>
+							<optional>
+								<attribute name="localType"/>
+							</optional>
+							<optional>
+								<attribute name="localTypeSource"/>
+							</optional>
+							<optional>
+								<attribute name="encodinganalog"/>
+							</optional>
 							<zeroOrMore>
 								<choice>
 									<text/>
@@ -1698,6 +1737,9 @@ Other changes:
 							</optional>
 							<optional>
 								<attribute name="localType"/>
+							</optional>
+							<optional>
+								<attribute name="localTypeSource"/>
 							</optional>
 							<optional>
 								<attribute name="unit"/>
