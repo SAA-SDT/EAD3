@@ -1503,7 +1503,7 @@ Other changes:
 			</element>
 
 			<ref name="origination"/>
-			<element name="physDesc">
+			<!--<element name="physDesc">
 				<ref name="a.common"/>
 				<optional>
 					<attribute name="label"/>
@@ -1556,7 +1556,7 @@ Other changes:
 							<optional>
 								<attribute name="encodingAnalog"/>
 							</optional>
-							<!-- TC; 2012-06-13: allow only <emph> and <ref> as element children -->
+							
 							<zeroOrMore>
 								<choice>
 									<text/>
@@ -1580,7 +1580,7 @@ Other changes:
 							<optional>
 								<attribute name="encodingAnalog"/>
 							</optional>
-							<!-- TC; 2012-06-13: allow only <emph> and <ref> as element children -->
+							
 							<zeroOrMore>
 								<choice>
 									<text/>
@@ -1592,6 +1592,141 @@ Other changes:
 						</element>
 						<ref name="date"/>
 						<ref name="m.access"/>
+					</choice>
+				</zeroOrMore>
+			</element>
+			-->
+
+			<element name="physDesc">
+				<ref name="a.common"/>
+				<optional>
+					<attribute name="label"/>
+				</optional>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<optional>
+					<attribute name="source">
+						<data type="token"/>
+					</attribute>
+				</optional>
+				<optional>
+					<attribute name="identifier"/>
+				</optional>
+				<optional>
+					<attribute name="rules">
+						<data type="NMTOKEN"/>
+					</attribute>
+				</optional>
+				<zeroOrMore>
+					<choice>
+						<element name="specifiedMaterials">
+							<zeroOrMore>
+								<choice>
+									<text/>
+									<ref name="emph"/>
+									<ref name="e.lb"/>
+									<ref name="ref"/>
+								</choice>
+							</zeroOrMore>
+						</element>
+						<element name="space">
+							<zeroOrMore>
+								<choice>
+									<text/>
+									<ref name="emph"/>
+									<ref name="e.lb"/>
+									<ref name="ref"/>
+								</choice>
+							</zeroOrMore>
+						</element>
+						<element name="phystype">
+							<zeroOrMore>
+								<choice>
+									<text/>
+									<ref name="emph"/>
+									<ref name="e.lb"/>
+									<ref name="ref"/>
+								</choice>
+							</zeroOrMore>
+						</element>
+						<ref name="dimensions"/>
+						<element name="extent">
+							<ref name="a.common"/>
+							<optional>
+								<attribute name="label"/>
+							</optional>
+							<optional>
+								<attribute name="type"/>
+							</optional>
+							<optional>
+								<attribute name="unit"/>
+							</optional>
+							<optional>
+								<attribute name="encodinganalog"/>
+							</optional>
+							<zeroOrMore>
+								<choice>
+									<text/>
+									<ref name="emph"/>
+									<ref name="e.lb"/>
+									<ref name="ref"/>
+								</choice>
+							</zeroOrMore>
+						</element>
+						<ref name="num"/>
+					</choice>
+				</zeroOrMore>
+			</element>
+
+			<element name="physDescStructured">
+				<ref name="a.common"/>
+				<optional>
+					<attribute name="label"/>
+				</optional>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<optional>
+					<attribute name="source">
+						<data type="token"/>
+					</attribute>
+				</optional>
+				<optional>
+					<attribute name="identifier"/>
+				</optional>
+				<optional>
+					<attribute name="rules">
+						<data type="NMTOKEN"/>
+					</attribute>
+				</optional>
+				<optional>
+					<attribute name="type">
+						<choice>
+							<value>carrier</value>
+							<value>materialType</value>
+							<value>spaceOccupied</value>
+						</choice>
+					</attribute>
+				</optional>
+				<zeroOrMore>
+					<choice>
+						<element name="specifiedMaterials">
+							<text/>
+						</element>
+						<element name="space">
+							<text/>
+						</element>
+						<element name="phystype">
+							<text/>
+						</element>
+						<element name="dimensions">
+							<text/>
+						</element>
+						<element name="extent">
+							<text/>
+						</element>
+						<ref name="num"/>
 					</choice>
 				</zeroOrMore>
 			</element>
