@@ -1680,7 +1680,7 @@ Other changes:
 								</choice>
 							</zeroOrMore>
 						</element>
-						<element name="phystype">
+						<element name="physType">
 							<zeroOrMore>
 								<choice>
 									<text/>
@@ -1697,7 +1697,7 @@ Other changes:
 								<attribute name="label"/>
 							</optional>
 							<optional>
-								<attribute name="type"/>
+								<attribute name="localType"/>
 							</optional>
 							<optional>
 								<attribute name="unit"/>
@@ -3976,6 +3976,7 @@ Other changes:
 				<choice>
 					<text/>
 					<ref name="m.phrase.bare"/>
+					<ref name="ref"/>
 				</choice>
 			</zeroOrMore>
 		</element>
