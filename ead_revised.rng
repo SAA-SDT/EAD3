@@ -82,7 +82,7 @@ Other changes:
 * Promote <legalStatus> from <accessRestrict> to sibling of other descriptive note elements
 ** [Note: add <p> to content model?]
 * Remove <editionstmt>, <seriesstmt>, and <notestmt>
-* Add @normal to <unitDate>
+* Add @normal to <unitTitle>
 * <address> now only in <repository> and [<publicationStmt>]
 * @source now datatype token
 * @type added to <dao>
@@ -121,7 +121,6 @@ Other changes:
 * restored eadheader for <control>
 
 * changed name of all type attributes without a list of values to "localtype"
-<<<<<<< HEAD
 
 * changed relation and added to arcdesc and c*
 
@@ -129,9 +128,58 @@ Other changes:
 
 * added attributes to relation as per issue 46
 
-=======
-* replaced eadheader with control
->>>>>>> 7d149cadcc338083909ce4df0ac207de05e6399e
+* removed note and added didNote to did per issue 40
+
+* changed unitDate, dsc, and list element @type to unitdateType, dscType, and listType per issue #6
+
+* changed any @type without closed list of values to @localType per issue #7
+
+* added required, repeatable part element to all controlAccess children (i.e., those elements defined in m.access + controlaccess) per issue #10
+
+* changed @authFileNumber to @identifier per issue #11
+
+* added @identifier to any element with @source per issue #12
+
+* Added @daoType with values 'bornDigital', 'derived', 'other'. Added @otherDaoType; per issue #13
+
+* Added ref to addressLine per issue #15
+
+* added @localType to addressline per issue #17
+
+* added lb to any element with content model text, emph, ref (should really define a pattern for this) per issue #35
+
+* changed reference to m.desc.full to m.desc.base in archdesc and m.c.base model in order to remove note from model; per issue #41
+
+* restored blockquote
+
+* created footnote with model m.blocks per issue #43
+
+
+* added bibRef and archRef to separatedMaterial and relatedMaterial (albeit in a very simple way: as part of oneOrMore); per issue #48
+
+* removed @normal from unitDate and limited content model to text and unitDate per issue #47 
+
+* added element unitDateStructured to did per issue #47
+
+* added @localType to <fromDate> and <toDate> per issue #50
+
+* added control per issue #45
+
+* added "unknown" to list of values for dao/@daoType per issue #51
+
+* added nameGrpNote per issue #44
+
+* changed formsAvailable to availableForms
+
+* removed linking attributes from bibRef and archref per issue #58
+
+* removed lists of attribute values from external lists (langCode, countryCode, scriptCode)
+
+* added head03 to listHead for chronlist
+
+* created m.access.entry to define *entry element children of controlAccess per issue # 55; restored old definitions of *name and other former controlAccess children in m.access
+
+
 -->
 <!--
 	EAD 2002 Relax NG Schema
@@ -200,8 +248,8 @@ Other changes:
 	
 -->
 <!-- changed ns from urn:isbn:1-931666-22-9 to provisional http://saa-sdt.example.org/ead/revised" -->
-<grammar datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
-	ns="http://saa-sdt.example.org/ead/revised" xmlns="http://relaxng.org/ns/structure/1.0"
+<grammar datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" ns="urn:isbn:1-931666-22-9"
+	xmlns="http://relaxng.org/ns/structure/1.0"
 	xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
 	xmlns:xlink="http://www.w3.org/1999/xlink">
 
@@ -244,7 +292,7 @@ Other changes:
 	<define name="am.langCode">
 		<optional>
 			<attribute name="langCode">
-				<choice>
+				<!-- <choice>
 					<value>aar</value>
 					<value>abk</value>
 					<value>ace</value>
@@ -747,13 +795,14 @@ Other changes:
 					<value>zul</value>
 					<value>zun</value>
 				</choice>
+				-->
 			</attribute>
 		</optional>
 	</define>
 	<define name="am.countryCode">
 		<optional>
 			<attribute name="countryCode">
-				<choice>
+				<!--	<choice>
 					<value>AF</value>
 					<value>AX</value>
 					<value>AL</value>
@@ -995,6 +1044,7 @@ Other changes:
 					<value>ZM</value>
 					<value>ZW</value>
 				</choice>
+				-->
 			</attribute>
 		</optional>
 	</define>
@@ -1002,7 +1052,6 @@ Other changes:
 		<choice>
 			<ref name="emph"/>
 			<element name="lb">
-				<empty/>
 				<empty/>
 			</element>
 		</choice>
@@ -1064,7 +1113,7 @@ Other changes:
 			<element name="genreForm">
 				<ref name="a.common"/>
 				<optional>
-					<attribute name="type"/>
+					<attribute name="localType"/>
 				</optional>
 				<ref name="a.access"/>
 				<optional>
@@ -1167,7 +1216,7 @@ Other changes:
 				<optional>
 					<ref name="listHead"/>
 				</optional>
-				<oneOrMore>
+				<!--<oneOrMore>
 					<element name="chronItem">
 						<ref name="a.common"/>
 						<ref name="date"/>
@@ -1182,11 +1231,39 @@ Other changes:
 						</choice>
 					</element>
 				</oneOrMore>
+				-->
+				<!-- 2013-01-25; TC added new model for chronlist -->
+				<oneOrMore>
+					<element name="chronItem">
+						<choice>
+							<ref name="e.dateSingle"/>
+							<ref name="e.dateRange"/>
+						</choice>
+						<choice>
+							<oneOrMore>
+								<element name="chronologicalSet">
+									<oneOrMore>
+										<ref name="event"/>
+									</oneOrMore>
+									<zeroOrMore>
+										<ref name="e.placeEntry"/>
+									</zeroOrMore>
+								</element>
+							</oneOrMore>
+							<group>
+								<ref name="event"/>
+								<optional>
+									<ref name="e.placeEntry"/>
+								</optional>
+							</group>
+						</choice>
+					</element>
+				</oneOrMore>
 			</element>
 
 			<ref name="list"/>
-
-			<ref name="note"/>
+			<!-- 2013-01-22; TC: remove note -->
+			<!-- <ref name="note"/> -->
 			<element name="table">
 				<ref name="a.common"/>
 				<optional>
@@ -1322,9 +1399,11 @@ Other changes:
 	<define name="m.inter">
 		<choice>
 			<ref name="m.inter.noquote"/>
+
 			<!-- TC; 2012-03-07: Removed <blockquote> -->
-			<!--
-				<element name="blockQuote">
+			<!-- TC; 2013-01-22: Restored <blockquote> -->
+
+			<element name="blockQuote">
 				<ref name="a.common"/>
 				<oneOrMore>
 					<choice>
@@ -1333,7 +1412,7 @@ Other changes:
 					</choice>
 				</oneOrMore>
 			</element>
-			-->
+
 		</choice>
 	</define>
 	<define name="m.blocks">
@@ -1353,13 +1432,14 @@ Other changes:
 					<attribute name="encodingAnalog"/>
 				</optional>
 				<optional>
-					<attribute name="type"/>
+					<attribute name="localType"/>
 				</optional>
 				<ref name="am.langCode"/>
 				<zeroOrMore>
 					<choice>
 						<text/>
 						<ref name="emph"/>
+						<ref name="e.lb"/>
 						<ref name="m.refs"/>
 					</choice>
 				</zeroOrMore>
@@ -1383,6 +1463,7 @@ Other changes:
 					<choice>
 						<text/>
 						<ref name="emph"/>
+						<ref name="e.lb"/>
 						<ref name="ref"/>
 						<ref name="language"/>
 					</choice>
@@ -1390,9 +1471,35 @@ Other changes:
 			</element>
 			<!-- TC: 2012-06-13: removed materialspec -->
 			<!-- <ref name="materialspec"/> -->
-			<ref name="note"/>
+			<!-- TC: 2013-01-15: changed note to didNote -->
+			<!-- <ref name="note"/> -->
+			<element name="didNote">
+				<ref name="a.common"/>
+				<optional>
+					<attribute name="label"/>
+				</optional>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<optional>
+					<attribute name="localType"/>
+				</optional>
+				<optional>
+					<attribute name="localTypeSource"/>
+				</optional>
+				<ref name="am.langCode"/>
+				<zeroOrMore>
+					<choice>
+						<text/>
+						<ref name="emph"/>
+						<ref name="e.lb"/>
+						<ref name="m.refs"/>
+					</choice>
+				</zeroOrMore>
+			</element>
+
 			<ref name="origination"/>
-			<element name="physDesc">
+			<!--<element name="physDesc">
 				<ref name="a.common"/>
 				<optional>
 					<attribute name="label"/>
@@ -1404,6 +1511,9 @@ Other changes:
 					<attribute name="source">
 						<data type="token"/>
 					</attribute>
+				</optional>
+				<optional>
+					<attribute name="identifier"/>
 				</optional>
 				<optional>
 					<attribute name="rules">
@@ -1421,7 +1531,7 @@ Other changes:
 								<attribute name="label"/>
 							</optional>
 							<optional>
-								<attribute name="type"/>
+								<attribute name="localType"/>
 							</optional>
 							<optional>
 								<attribute name="unit"/>
@@ -1432,6 +1542,9 @@ Other changes:
 								</attribute>
 							</optional>
 							<optional>
+								<attribute name="identifier"/>
+							</optional>
+							<optional>
 								<attribute name="rules">
 									<data type="NMTOKEN"/>
 								</attribute>
@@ -1439,11 +1552,12 @@ Other changes:
 							<optional>
 								<attribute name="encodingAnalog"/>
 							</optional>
-							<!-- TC; 2012-06-13: allow only <emph> and <ref> as element children -->
+							
 							<zeroOrMore>
 								<choice>
 									<text/>
 									<ref name="emph"/>
+									<ref name="e.lb"/>
 									<ref name="ref"/>
 								</choice>
 							</zeroOrMore>
@@ -1454,7 +1568,7 @@ Other changes:
 								<attribute name="label"/>
 							</optional>
 							<optional>
-								<attribute name="type"/>
+								<attribute name="localType"/>
 							</optional>
 							<optional>
 								<attribute name="unit"/>
@@ -1462,11 +1576,12 @@ Other changes:
 							<optional>
 								<attribute name="encodingAnalog"/>
 							</optional>
-							<!-- TC; 2012-06-13: allow only <emph> and <ref> as element children -->
+							
 							<zeroOrMore>
 								<choice>
 									<text/>
 									<ref name="emph"/>
+									<ref name="e.lb"/>
 									<ref name="ref"/>
 								</choice>
 							</zeroOrMore>
@@ -1476,13 +1591,178 @@ Other changes:
 					</choice>
 				</zeroOrMore>
 			</element>
+			-->
+
+			<element name="physDesc">
+				<ref name="a.common"/>
+				<optional>
+					<attribute name="label"/>
+				</optional>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<optional>
+					<attribute name="source">
+						<data type="token"/>
+					</attribute>
+				</optional>
+				<optional>
+					<attribute name="identifier"/>
+				</optional>
+				<optional>
+					<attribute name="rules">
+						<data type="NMTOKEN"/>
+					</attribute>
+				</optional>
+				<zeroOrMore>
+					<choice>
+						<text/>
+						<ref name="emph"/>
+						<ref name="e.lb"/>
+						<ref name="ref"/>
+					</choice>
+				</zeroOrMore>
+			</element>
+
+			<element name="physDescStructured">
+				<ref name="a.common"/>
+				<optional>
+					<attribute name="label"/>
+				</optional>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<optional>
+					<attribute name="source">
+						<data type="token"/>
+					</attribute>
+				</optional>
+				<optional>
+					<attribute name="identifier"/>
+				</optional>
+				<optional>
+					<attribute name="rules">
+						<data type="NMTOKEN"/>
+					</attribute>
+				</optional>
+				<optional>
+					<attribute name="type">
+						<choice>
+							<value>carrier</value>
+							<value>materialType</value>
+							<value>spaceOccupied</value>
+						</choice>
+					</attribute>
+				</optional>
+				<zeroOrMore>
+					<choice>
+						<element name="specifiedMaterials">
+							<ref name="a.common"/>
+							<optional>
+								<attribute name="label"/>
+							</optional>
+							<optional>
+								<attribute name="localType"/>
+							</optional>
+							<optional>
+								<attribute name="localTypeSource"/>
+							</optional>
+							<optional>
+								<attribute name="encodinganalog"/>
+							</optional>
+							<zeroOrMore>
+								<choice>
+									<text/>
+									<ref name="emph"/>
+									<ref name="e.lb"/>
+									<ref name="ref"/>
+								</choice>
+							</zeroOrMore>
+						</element>
+						<element name="physDetails">
+							<ref name="a.common"/>
+							<optional>
+								<attribute name="label"/>
+							</optional>
+							<optional>
+								<attribute name="localType"/>
+							</optional>
+							<optional>
+								<attribute name="localTypeSource"/>
+							</optional>
+							<optional>
+								<attribute name="encodinganalog"/>
+							</optional>
+							<zeroOrMore>
+								<choice>
+									<text/>
+									<ref name="emph"/>
+									<ref name="e.lb"/>
+									<ref name="ref"/>
+								</choice>
+							</zeroOrMore>
+						</element>
+						<element name="physType">
+							<ref name="a.common"/>
+							<optional>
+								<attribute name="label"/>
+							</optional>
+							<optional>
+								<attribute name="localType"/>
+							</optional>
+							<optional>
+								<attribute name="localTypeSource"/>
+							</optional>
+							<optional>
+								<attribute name="encodinganalog"/>
+							</optional>
+							<zeroOrMore>
+								<choice>
+									<text/>
+									<ref name="emph"/>
+									<ref name="e.lb"/>
+									<ref name="ref"/>
+								</choice>
+							</zeroOrMore>
+						</element>
+						<ref name="dimensions"/>
+						<element name="extent">
+							<ref name="a.common"/>
+							<optional>
+								<attribute name="label"/>
+							</optional>
+							<optional>
+								<attribute name="localType"/>
+							</optional>
+							<optional>
+								<attribute name="localTypeSource"/>
+							</optional>
+							<optional>
+								<attribute name="unit"/>
+							</optional>
+							<optional>
+								<attribute name="encodinganalog"/>
+							</optional>
+							<zeroOrMore>
+								<choice>
+									<text/>
+									<ref name="emph"/>
+									<ref name="e.lb"/>
+									<ref name="ref"/>
+								</choice>
+							</zeroOrMore>
+						</element>
+						<ref name="num"/>
+					</choice>
+				</zeroOrMore>
+			</element>
 			<element name="physLoc">
 				<ref name="a.common"/>
 				<optional>
 					<attribute name="label"/>
 				</optional>
 				<optional>
-					<attribute name="type"/>
+					<attribute name="localType"/>
 				</optional>
 				<optional>
 					<attribute name="encodingAnalog"/>
@@ -1497,19 +1777,22 @@ Other changes:
 					<choice>
 						<text/>
 						<ref name="emph"/>
+						<ref name="e.lb"/>
 						<ref name="ref"/>
 					</choice>
 				</zeroOrMore>
 			</element>
 			<ref name="repository"/>
 			<ref name="unitDate"/>
+			<!-- 2013-01-23; TC: added unitDateStructured -->
+			<ref name="e.unitDateStructured"/>
 			<element name="unitId">
 				<ref name="a.common"/>
 				<optional>
 					<attribute name="label"/>
 				</optional>
 				<optional>
-					<attribute name="type"/>
+					<attribute name="localType"/>
 				</optional>
 				<ref name="am.countryCode"/>
 				<optional>
@@ -1528,6 +1811,7 @@ Other changes:
 					<choice>
 						<text/>
 						<ref name="emph"/>
+						<ref name="e.lb"/>
 						<ref name="ref"/>
 					</choice>
 				</zeroOrMore>
@@ -1552,7 +1836,7 @@ Other changes:
 			<element name="descGrp">
 				<ref name="a.common"/>
 				<optional>
-					<attribute name="type"/>
+					<attribute name="localType"/>
 				</optional>
 				<optional>
 					<attribute name="encodingAnalog"/>
@@ -1595,6 +1879,7 @@ Other changes:
 			<!-- <ref name="dao"/>
 			<ref name="daoGrp"/>
 			-->
+
 			<ref name="note"/>
 		</choice>
 	</define>
@@ -1603,7 +1888,35 @@ Other changes:
 			<ref name="m.phrase.plus"/>
 			<!-- TC; 2012-06-08 remove m.inter, retaining note -->
 			<!--	<ref name="m.inter"/> -->
-			<ref name="note"/>
+			<!-- TC; 2012-01-22 created footnote for inline note -->
+			<element name="footnote">
+				<ref name="a.common"/>
+				<optional>
+					<attribute name="localType"/>
+				</optional>
+				<optional>
+					<attribute name="localTypeSource"/>
+				</optional>
+				<optional>
+					<attribute name="show">
+						<choice>
+							<value>embed</value>
+							<value>new</value>
+						</choice>
+					</attribute>
+				</optional>
+				<optional>
+					<attribute name="actuate">
+						<choice>
+							<value>onload</value>
+							<value>onrequest</value>
+						</choice>
+					</attribute>
+				</optional>
+				<oneOrMore>
+					<ref name="m.blocks"/>
+				</oneOrMore>
+			</element>
 		</choice>
 	</define>
 	<define name="m.para.content.norefs">
@@ -1707,7 +2020,7 @@ Other changes:
 			</attribute>
 		</optional>
 		<optional>
-			<attribute name="authFileNumber"/>
+			<attribute name="identifier"/>
 		</optional>
 		<optional>
 			<attribute name="normal"/>
@@ -1786,7 +2099,7 @@ Other changes:
 				<attribute name="relatedEncoding"/>
 			</optional>
 			<!-- TC; 2012-03-07: added <control> removed other <eadheader> elements -->
-			<ref name="control"/>
+			<ref name="e.control"/>
 
 			<!-- <element name="eadheader">
 				<ref name="a.common"/>
@@ -2082,7 +2395,8 @@ Other changes:
 				-->
 				<ref name="did"/>
 				<zeroOrMore>
-					<ref name="m.desc.full"/>
+					<!-- 2013-01-22; TC: changed m.desc.full to m.desc.base (i.e., no note) -->
+					<ref name="m.desc.base"/>
 				</zeroOrMore>
 				<!-- TC; 2012-03-08: Added <dao> and <daoGrp> -->
 				<zeroOrMore>
@@ -2121,7 +2435,7 @@ Other changes:
 				</attribute>
 			</optional>
 			<optional>
-				<attribute name="type"/>
+				<attribute name="localType"/>
 			</optional>
 			<optional>
 				<attribute name="encodingAnalog"/>
@@ -2216,7 +2530,7 @@ Other changes:
 			</oneOrMore>
 			<!-- TC: 2012-06-13: add formsavailable element -->
 			<optional>
-				<element name="formsAvailable">
+				<element name="availableForms">
 					<zeroOrMore>
 						<choice>
 							<element name="container">
@@ -2248,6 +2562,7 @@ Other changes:
 									<choice>
 										<text/>
 										<ref name="emph"/>
+										<ref name="e.lb"/>
 										<ref name="ref"/>
 									</choice>
 								</zeroOrMore>
@@ -2268,7 +2583,7 @@ Other changes:
 				<attribute name="label"/>
 			</optional>
 			<optional>
-				<attribute name="type"/>
+				<attribute name="localType"/>
 			</optional>
 			<optional>
 				<attribute name="unit"/>
@@ -2281,6 +2596,7 @@ Other changes:
 				<choice>
 					<text/>
 					<ref name="emph"/>
+					<ref name="e.lb"/>
 					<ref name="ref"/>
 				</choice>
 			</zeroOrMore>
@@ -2349,8 +2665,9 @@ Other changes:
 				<attribute name="label"/>
 			</optional>
 			<!-- Probably we have to change localType here -->
+			<!-- 2013-01-15: changed back to type -->
 			<optional>
-				<attribute name="localType">
+				<attribute name="unitDateType">
 					<choice>
 						<value>bulk</value>
 						<value>inclusive</value>
@@ -2362,7 +2679,8 @@ Other changes:
 			</optional>
 			<ref name="am.dates.era"/>
 			<ref name="am.dates.calendar"/>
-			<ref name="am.date.normal"/>
+			<!-- 2013-01-23; TC: removed @normal -->
+			<!-- <ref name="am.date.normal"/> -->
 			<optional>
 				<attribute name="certainty"/>
 			</optional>
@@ -2372,7 +2690,7 @@ Other changes:
 			<zeroOrMore>
 				<choice>
 					<text/>
-					<ref name="m.phrase.basic"/>
+					<ref name="unitDate"/>
 				</choice>
 			</zeroOrMore>
 		</element>
@@ -2387,7 +2705,7 @@ Other changes:
 				<attribute name="encodingAnalog"/>
 			</optional>
 			<optional>
-				<attribute name="type"/>
+				<attribute name="localType"/>
 			</optional>
 			<!-- TC; 2012-03-08: Add @normal -->
 			<optional>
@@ -2419,7 +2737,7 @@ Other changes:
 			<ref name="am.langCode"/>
 			<optional>
 				<attribute name="scriptCode">
-					<choice>
+					<!-- <choice>
 						<value>Arab</value>
 						<value>Armn</value>
 						<value>Bali</value>
@@ -2526,6 +2844,7 @@ Other changes:
 						<value>Zyyy</value>
 						<value>Zzzz</value>
 					</choice>
+					-->
 				</attribute>
 			</optional>
 			<optional>
@@ -2566,7 +2885,7 @@ Other changes:
 				<attribute name="encodingAnalog"/>
 			</optional>
 			<optional>
-				<attribute name="type"/>
+				<attribute name="localType"/>
 			</optional>
 			<optional>
 				<ref name="head"/>
@@ -2603,7 +2922,7 @@ Other changes:
 				<attribute name="encodingAnalog"/>
 			</optional>
 			<optional>
-				<attribute name="type"/>
+				<attribute name="localType"/>
 			</optional>
 			<optional>
 				<ref name="head"/>
@@ -2659,7 +2978,7 @@ Other changes:
 				<attribute name="encodingAnalog"/>
 			</optional>
 			<optional>
-				<attribute name="type"/>
+				<attribute name="localType"/>
 			</optional>
 			<optional>
 				<ref name="head"/>
@@ -2680,7 +2999,7 @@ Other changes:
 				<attribute name="encodingAnalog"/>
 			</optional>
 			<optional>
-				<attribute name="type"/>
+				<attribute name="localType"/>
 			</optional>
 			<optional>
 				<ref name="head"/>
@@ -2701,7 +3020,7 @@ Other changes:
 				<attribute name="encodingAnalog"/>
 			</optional>
 			<optional>
-				<attribute name="type"/>
+				<attribute name="localType"/>
 			</optional>
 			<optional>
 				<ref name="head"/>
@@ -2775,7 +3094,7 @@ Other changes:
 		<element name="processInfo">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="type"/>
+				<attribute name="localType"/>
 			</optional>
 			<optional>
 				<attribute name="encodingAnalog"/>
@@ -2799,7 +3118,7 @@ Other changes:
 				<attribute name="encodingAnalog"/>
 			</optional>
 			<optional>
-				<attribute name="type"/>
+				<attribute name="localType"/>
 			</optional>
 			<optional>
 				<ref name="head"/>
@@ -2848,7 +3167,8 @@ Other changes:
 			<oneOrMore>
 				<choice>
 					<ref name="m.blocks"/>
-					<ref name="m.access.title"/>
+					<ref name="m.access.entry"/>
+					
 					<!-- TC: 2012-06-08 remove recursion in note elements -->
 					<!-- <ref name="controlaccess"/> -->
 				</choice>
@@ -2859,7 +3179,7 @@ Other changes:
 		<element name="odd">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="type"/>
+				<attribute name="localType"/>
 			</optional>
 			<optional>
 				<attribute name="encodingAnalog"/>
@@ -2980,7 +3300,7 @@ Other changes:
 		<element name="relatedMaterial">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="type"/>
+				<attribute name="localType"/>
 			</optional>
 			<optional>
 				<attribute name="encodingAnalog"/>
@@ -2992,6 +3312,8 @@ Other changes:
 				<choice>
 					<ref name="m.blocks"/>
 					<ref name="m.refs"/>
+					<ref name="archRef"/>
+					<ref name="bibRef"/>
 					<!-- TC: 2012-06-08 remove recursion in note elements -->
 					<!-- <ref name="relatedmaterial"/> -->
 				</choice>
@@ -3002,7 +3324,7 @@ Other changes:
 		<element name="separatedMaterial">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="type"/>
+				<attribute name="localType"/>
 			</optional>
 			<optional>
 				<attribute name="encodingAnalog"/>
@@ -3014,6 +3336,8 @@ Other changes:
 				<choice>
 					<ref name="m.blocks"/>
 					<ref name="m.refs"/>
+					<ref name="archRef"/>
+					<ref name="bibRef"/>
 					<!-- TC: 2012-06-08 remove recursion in note elements -->
 					<!-- <ref name="separatedmaterial"/> -->
 				</choice>
@@ -3077,7 +3401,7 @@ Other changes:
 					<oneOrMore>
 						<choice>
 							<ref name="m.access.title"/>
-							<ref name="note"/>
+							<ref name="e.nameGrpNote"/>
 						</choice>
 					</oneOrMore>
 				</element>
@@ -3107,7 +3431,7 @@ Other changes:
 		<element name="dsc">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="type">
+				<attribute name="dscType">
 					<choice>
 						<value>analytiCover</value>
 						<value>combined</value>
@@ -3304,8 +3628,17 @@ Other changes:
 				<ref name="daoDesc"/>
 			</optional>
 			<!-- TC: 2012-03-08: added @type -->
+			<!-- TC: 2013-01-22: added @daoType with list of values and @otherDaoType-->
+			<attribute name="daoType">
+				<choice>
+					<value>bornDigital</value>
+					<value>derived</value>
+					<value>unknown</value>
+					<value>other</value>
+				</choice>
+			</attribute>
 			<optional>
-				<attribute name="type"/>
+				<attribute name="otherDaoType"/>
 			</optional>
 		</element>
 	</define>
@@ -3393,7 +3726,7 @@ Other changes:
 		<element name="title">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="type"/>
+				<attribute name="localType"/>
 			</optional>
 			<optional>
 				<attribute name="render">
@@ -3428,8 +3761,12 @@ Other changes:
 	<define name="archRef">
 		<element name="archRef">
 			<ref name="a.common"/>
-			<optional>
+			<!--	<optional>
 				<ref name="a.external.ptr"/>
+			</optional>
+		-->
+			<optional>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<zeroOrMore>
 				<choice>
@@ -3459,9 +3796,10 @@ Other changes:
 				<attribute name="encodingAnalog"/>
 			</optional>
 			<!-- TC; 2013-06-10: change content model to match archref -->
-			<optional>
+			<!--	<optional>
 				<ref name="a.external.ptr"/>
 			</optional>
+	    -->
 			<zeroOrMore>
 				<choice>
 					<text/>
@@ -3543,15 +3881,14 @@ Other changes:
 			<optional>
 				<attribute name="encodingAnalog"/>
 			</optional>
-			<!-- TC; 2013-06-13: permit only text -->
 			<zeroOrMore>
 				<choice>
 					<text/>
-					<!-- <ref name="m.phrase.bare"/>
-					<ref name="subarea"/>
-					-->
+					<ref name="m.phrase.bare"/>
+					<!--<ref name="subarea"/> -->
 				</choice>
 			</zeroOrMore>
+
 		</element>
 	</define>
 	<define name="famName">
@@ -3564,13 +3901,16 @@ Other changes:
 			<optional>
 				<attribute name="encodingAnalog"/>
 			</optional>
-			<!-- TC; 2013-06-13: permit only text -->
 			<zeroOrMore>
 				<choice>
 					<text/>
-					<!-- <ref name="m.phrase.bare"/> -->
+					<ref name="m.phrase.bare"/>
+					<!-- <ref name="subarea"/> -->
 				</choice>
 			</zeroOrMore>
+
+
+
 		</element>
 	</define>
 	<define name="geogName">
@@ -3587,8 +3927,13 @@ Other changes:
 				<choice>
 					<text/>
 					<ref name="m.phrase.bare"/>
+					<!--	<ref name="subarea"/>
+			-->
 				</choice>
 			</zeroOrMore>
+
+
+
 		</element>
 	</define>
 	<define name="name">
@@ -3605,8 +3950,13 @@ Other changes:
 				<choice>
 					<text/>
 					<ref name="m.phrase.bare"/>
+					<!-- 	<ref name="subarea"/>-->
+
 				</choice>
 			</zeroOrMore>
+
+
+
 		</element>
 	</define>
 	<define name="persName">
@@ -3619,7 +3969,6 @@ Other changes:
 			<optional>
 				<attribute name="encodingAnalog"/>
 			</optional>
-			<!-- TC; 2013-06-13: permit only text -->
 			<zeroOrMore>
 				<choice>
 					<text/>
@@ -3632,7 +3981,7 @@ Other changes:
 		<element name="date">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="type"/>
+				<attribute name="localType"/>
 			</optional>
 			<ref name="am.dates.era"/>
 			<ref name="am.dates.calendar"/>
@@ -3656,7 +4005,7 @@ Other changes:
 		<element name="num">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="type"/>
+				<attribute name="localType"/>
 			</optional>
 			<optional>
 				<attribute name="encodingAnalog"/>
@@ -3665,6 +4014,7 @@ Other changes:
 				<choice>
 					<text/>
 					<ref name="m.phrase.bare"/>
+					<ref name="ref"/>
 				</choice>
 			</zeroOrMore>
 		</element>
@@ -3696,10 +4046,12 @@ Other changes:
 			<oneOrMore>
 				<element name="addressLine">
 					<ref name="a.common"/>
+					<attribute name="localType"/>
 					<zeroOrMore>
 						<choice>
 							<text/>
 							<ref name="m.phrase.bare"/>
+							<ref name="ref"/>
 						</choice>
 					</zeroOrMore>
 				</element>
@@ -3721,17 +4073,38 @@ Other changes:
 		<element name="list">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="type">
+				<attribute name="listType">
 					<choice>
-						<value>simple</value>
+						<!-- 2013-01-25; TC: removed simple, changed marked to unordered -->
+						<!-- <value>simple</value> -->
 						<value>defList</value>
-						<value>marked</value>
+						<value>unordered</value>
 						<value>ordered</value>
 					</choice>
 				</attribute>
 			</optional>
 			<optional>
-				<attribute name="mark"/>
+				<attribute name="mark">
+					<!-- 2013-01-25; TC: added values from CSS "list-style-type" property list -->
+					<choice>
+						<value>disc</value>
+						<value>circle</value>
+						<value>square</value>
+						<value>decimal</value>
+						<value>decimal-leading-zero</value>
+						<value>lower-roman</value>
+						<value>upper-roman</value>
+						<value>lower-greek</value>
+						<value>lower-latin</value>
+						<value>upper-latin</value>
+						<value>armenian</value>
+						<value>georgian</value>
+						<value>lower-alpha</value>
+						<value>upper-alpha</value>
+						<value>none</value>
+						<value>inherit</value>
+					</choice>
+				</attribute>
 			</optional>
 			<optional>
 				<attribute name="numeration">
@@ -3745,7 +4118,7 @@ Other changes:
 				</attribute>
 			</optional>
 			<!-- TC: 2012-03-08: Remove continuation -->
-			<optional>
+			<!-- <optional>
 				<attribute name="continuation">
 					<choice>
 						<value>continues</value>
@@ -3753,6 +4126,7 @@ Other changes:
 					</choice>
 				</attribute>
 			</optional>
+		    -->
 			<optional>
 				<ref name="head"/>
 			</optional>
@@ -3808,6 +4182,17 @@ Other changes:
 					</zeroOrMore>
 				</element>
 			</optional>
+			<optional>
+				<element name="head03">
+					<ref name="a.common"/>
+					<zeroOrMore>
+						<choice>
+							<text/>
+							<ref name="m.phrase.bare"/>
+						</choice>
+					</zeroOrMore>
+				</element>
+			</optional>
 		</element>
 	</define>
 	<define name="item">
@@ -3825,7 +4210,7 @@ Other changes:
 		<element name="note">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="type"/>
+				<attribute name="localType"/>
 			</optional>
 			<optional>
 				<attribute name="label"/>
@@ -4213,8 +4598,9 @@ Other changes:
 			<ref name="head"/>
 		</optional>
 		<ref name="did"/>
+		<!-- 2013-01-22; TC change m.desc.full to m.desc.base -->
 		<zeroOrMore>
-			<ref name="m.desc.full"/>
+			<ref name="m.desc.base"/>
 		</zeroOrMore>
 		<!-- TC; 2012-06-08: deprecate tHead -->
 		<!--<optional>
@@ -4430,7 +4816,7 @@ Other changes:
 		<element a:id="e.anyName">
 			<anyName>
 				<except>
-					<nsName ns="http://saa-sdt.example.org/ead/revised"/>
+					<nsName ns="urn:isbn:1-931666-22-9"/>
 				</except>
 			</anyName>
 			<ref name="m.anything"/>
@@ -4491,7 +4877,7 @@ Other changes:
 		</define>
 
 		<define name="e.dateSingle">
-			<element a:id="date" name="date">
+			<element a:id="date" name="dateSingle">
 				<ref name="a.common"/>
 				<optional>
 					<ref name="lang"/>
@@ -4537,6 +4923,9 @@ Other changes:
 						<optional>
 							<ref name="lang"/>
 						</optional>
+						<optional>
+							<ref name="a.localType"/>
+						</optional>
 						<ref name="m.dateSingle"/>
 					</element>
 				</optional>
@@ -4545,6 +4934,9 @@ Other changes:
 						<ref name="a.common"/>
 						<optional>
 							<ref name="lang"/>
+						</optional>
+						<optional>
+							<ref name="a.localType"/>
 						</optional>
 						<ref name="m.dateSingle"/>
 					</element>
@@ -4697,84 +5089,125 @@ Other changes:
 		</optional>
 	</define>
 	<!-- control replaces eadheader -->
-	<define name="control">
+	<define name="e.control">
 		<element name="control">
-			<ref name="a.common"/>
-			<optional>
-				<attribute a:defaultValue="iso639-2b" name="langEncoding">
-					<data type="NMTOKEN"/>
+			<!--		<optional>
+				<attribute name="id">
+					<data type="ID"/>
 				</attribute>
 			</optional>
+			-->
 			<optional>
-				<attribute a:defaultValue="iso15924" name="scriptEncoding">
-					<data type="NMTOKEN"/>
-				</attribute>
+				<ref name="lang"/>
 			</optional>
 			<optional>
-				<attribute a:defaultValue="iso8601" name="dateEncoding">
-					<data type="NMTOKEN"/>
-				</attribute>
+				<ref name="base"/>
 			</optional>
-			<optional>
-				<attribute a:defaultValue="iso3166-1" name="countryEncoding">
-					<data type="NMTOKEN"/>
-				</attribute>
-			</optional>
-			<optional>
-				<attribute a:defaultValue="iso15511" name="repositoryEncoding">
-					<data type="NMTOKEN"/>
-				</attribute>
-			</optional>
-			<optional>
-				<attribute name="relatedEncoding"/>
-			</optional>
-			<optional>
-				<attribute name="findAidStatus">
-					<data type="NMTOKEN"/>
-				</attribute>
-			</optional>
-			<optional>
-				<attribute name="encodingAnalog"/>
-			</optional>
-			<element name="eadId">
-				<!--	<optional>
-					<attribute name="publicId"/>
-				</optional>
+			<element a:id="recordId" name="recordId">
 				<optional>
-					<attribute name="urn"/>
-				</optional>
-				<optional>
-					<attribute name="url"/>
-				</optional>
-				-->
-				<ref name="am.countryCode"/>
-				<optional>
-					<attribute name="mainAgencyCode">
-						<ref name="data.repositoryCode"/>
+					<attribute name="id">
+						<data type="ID"/>
 					</attribute>
 				</optional>
-				<optional>
-					<attribute name="identifier"/>
-				</optional>
-				<optional>
-					<attribute name="encodingAnalog"/>
-				</optional>
-				<data type="token"/>
+				<data type="NMTOKEN"/>
 			</element>
 			<zeroOrMore>
 				<element a:id="otherRecordId" name="otherRecordId">
-					<ref name="a.common"/>
-					<ref name="a.localType"/>
-					<text/>
+					<optional>
+						<attribute name="id">
+							<data type="ID"/>
+						</attribute>
+					</optional>
+					<ref name="m.id"/>
 				</element>
 			</zeroOrMore>
-			<ref name="titleProper"/>
-			<optional>
-				<ref name="subTitle"/>
-			</optional>
-			<ref name="maintenanceAgency"/>
-			<element name="maintenanceStatus">
+			<element name="fileDesc">
 				<ref name="a.common"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<element name="titleStmt">
+					<ref name="a.common"/>
+					<optional>
+						<attribute name="encodingAnalog"/>
+					</optional>
+					<oneOrMore>
+						<ref name="titleProper"/>
+					</oneOrMore>
+					<zeroOrMore>
+						<ref name="subTitle"/>
+					</zeroOrMore>
+					<zeroOrMore>
+						<ref name="author"/>
+					</zeroOrMore>
+					<zeroOrMore>
+						<ref name="sponsor"/>
+					</zeroOrMore>
+				</element>
+				<optional>
+					<element name="editionStmt">
+						<ref name="a.common"/>
+						<optional>
+							<attribute name="encodingAnalog"/>
+						</optional>
+						<oneOrMore>
+							<choice>
+								<ref name="edition"/>
+								<ref name="p"/>
+							</choice>
+						</oneOrMore>
+					</element>
+				</optional>
+				<optional>
+					<element name="publicationStmt">
+						<ref name="a.common"/>
+						<optional>
+							<attribute name="encodingAnalog"/>
+						</optional>
+						<oneOrMore>
+							<choice>
+								<ref name="publisher"/>
+								<ref name="date"/>
+								<ref name="address"/>
+								<ref name="num"/>
+								<ref name="p"/>
+							</choice>
+						</oneOrMore>
+					</element>
+				</optional>
+				<optional>
+					<element name="seriesStmt">
+						<ref name="a.common"/>
+						<optional>
+							<attribute name="encodingAnalog"/>
+						</optional>
+						<oneOrMore>
+							<choice>
+								<ref name="titleProper"/>
+								<ref name="num"/>
+								<ref name="p"/>
+							</choice>
+						</oneOrMore>
+					</element>
+				</optional>
+				<optional>
+					<element name="noteStmt">
+						<ref name="a.common"/>
+						<optional>
+							<attribute name="encodingAnalog"/>
+						</optional>
+						<oneOrMore>
+							<ref name="e.controlNote"/>
+						</oneOrMore>
+					</element>
+				</optional>
+			</element>
+			<element a:id="maintenanceStatus" name="maintenanceStatus">
+				<optional>
+					<attribute name="id">
+						<data type="ID"/>
+					</attribute>
+				</optional>
 				<choice>
 					<value>revised</value>
 					<value>deleted</value>
@@ -4785,87 +5218,51 @@ Other changes:
 					<value>derived</value>
 				</choice>
 			</element>
-			<element name="descriptionMaintenanceHistory">
-				<ref name="maintenanceHistory"/>
-			</element>
-			<element name="instanceMaintenanceHistory">
-				<ref name="maintenanceHistory"/>
-			</element>
-			<!-- TC; 2012-03-08: removed <editionStmt>, <seriesStmt>, and <noteStmt> -->
-			<!--<optional>
-				<element name="editionStmt">
-					<ref name="a.common"/>
-					<optional>
-						<attribute name="encodingAnalog"/>
-					</optional>
-					<oneOrMore>
-						<choice>
-							<ref name="edition"/>
-							<ref name="p"/>
-						</choice>
-					</oneOrMore>
-				</element>
-			</optional>
 			<optional>
-				<element name="seriesStmt">
-					<ref name="a.common"/>
+				<element a:id="publicationStatus" name="publicationStatus">
 					<optional>
-						<attribute name="encodingAnalog"/>
+						<attribute name="id">
+							<data type="ID"/>
+						</attribute>
 					</optional>
-					<oneOrMore>
-						<choice>
-							<ref name="titleProper"/>
-							<ref name="num"/>
-							<ref name="p"/>
-						</choice>
-					</oneOrMore>
+					<choice>
+						<value>inProcess</value>
+						<value>approved</value>
+					</choice>
 				</element>
 			</optional>
+			<ref name="e.maintenanceAgency"/>
 			<optional>
-				<element name="noteStmt">
-					<ref name="a.common"/>
-					<optional>
-						<attribute name="encodingAnalog"/>
-					</optional>
-					<oneOrMore>
-						<ref name="note"/>
-					</oneOrMore>
-				</element>
+				<choice>
+					<ref name="e.languageDeclaration"/>
+					<element name="languageDeclarations">
+						<ref name="a.common"/>
+						<ref name="e.languageDeclaration"/>
+						<oneOrMore>
+							<ref name="e.languageDeclaration"/>
+						</oneOrMore>
+					</element>
+				</choice>
 			</optional>
-			-->
-			<ref name="e.languageDeclaration"/>
+			<zeroOrMore>
+				<ref name="e.conventionDeclaration"/>
+			</zeroOrMore>
+			<zeroOrMore>
+				<ref name="e.localTypeDeclaration"/>
+			</zeroOrMore>
+			<zeroOrMore>
+				<ref name="e.localControl"/>
+			</zeroOrMore>
+			<ref name="e.maintenanceHistory"/>
 			<optional>
 				<ref name="e.sources"/>
-			</optional>
-			<element a:id="publicationStatus" name="publicationStatus">
-				<ref name="a.common"/>
-				<choice>
-					<value>inProcess</value>
-					<value>approved</value>
-				</choice>
-			</element>
-			<optional>
-				<ref name="e.conventionDeclaration"/>
-			</optional>
-			<!--	<optional><element name="otherRecordId">
-				<ref name="a.common"/>
-				<ref name="attrs-types"/>
-				<text/>
-			</element>
-				</optional>
-				-->
-			<optional>
-				<ref name="e.localControl"/>
-			</optional>
-			<optional>
-				<ref name="e.localTypeDeclaration"/>
 			</optional>
 		</element>
 	</define>
 
 	<!-- Patterns from EAC-CPF for <control> -->
 
-	<define name="maintenanceAgency">
+	<define name="e.maintenanceAgency">
 		<element name="maintenanceAgency">
 			<ref name="a.common"/>
 			<optional>
@@ -4906,7 +5303,7 @@ Other changes:
 	</define>
 
 
-	<define name="maintenanceHistory">
+	<define name="e.maintenanceHistory">
 		<ref name="a.common"/>
 		<oneOrMore>
 			<element a:id="maintenanceEvent" name="maintenanceEvent">
@@ -4920,6 +5317,7 @@ Other changes:
 						<value>cancelled</value>
 						<value>derived</value>
 						<value>updated</value>
+						<value>unknown</value>
 					</choice>
 				</element>
 				<element a:id="eventDateTime" name="eventDateTime">
@@ -4936,6 +5334,7 @@ Other changes:
 					<choice>
 						<value>human</value>
 						<value>machine</value>
+						<value>unknown</value>
 					</choice>
 				</element>
 				<element a:id="agent" name="agent">
@@ -5105,6 +5504,9 @@ Other changes:
 					<data type="string"/>
 				</attribute>
 			</optional>
+			<optional>
+				<attribute name="identifier"/>
+			</optional>
 			<text/>
 		</element>
 	</define>
@@ -5120,6 +5522,13 @@ Other changes:
 			</optional>
 		</element>
 	</define>
+	<define name="m.id">
+		<optional>
+			<ref name="a.localType"/>
+		</optional>
+		<text/>
+	</define>
+
 	<!--TC; 2012-06-13: create pattern for <emph> so it can be referenced from multiple patterns -->
 	<define name="emph">
 		<element name="emph">
@@ -5190,7 +5599,7 @@ Other changes:
 
 			<optional>
 				<choice>
-					<element name="relationDate">
+					<element name="dateSingle">
 						<text/>
 					</element>
 					<element name="dateSet">
@@ -5199,21 +5608,21 @@ Other changes:
 							<ref name="a.localType"/>
 						</optional>
 						<choice>
-							<element name="relationDate">
+							<element name="dateSingle">
 								<text/>
 							</element>
-							<ref name="m.relationDateRange"/>
+							<ref name="m.dateRange"/>
 						</choice>
 						<oneOrMore>
 							<choice>
-								<element name="relationDate">
+								<element name="dateSingle">
 									<text/>
 								</element>
-								<ref name="m.relationDateRange"/>
+								<ref name="m.dateRange"/>
 							</choice>
 						</oneOrMore>
 					</element>
-					<ref name="m.relationDateRange"/>
+					<ref name="m.dateRange"/>
 				</choice>
 			</optional>
 			<oneOrMore>
@@ -5274,11 +5683,11 @@ Other changes:
 			</optional>
 		</element>
 	</define>
-	<define name="m.relationDateRange">
-		<element name="relationDateRange">
+	<define name="m.dateRange">
+		<element name="dateRange">
 			<zeroOrMore>
 				<choice>
-					<element name="relationDate">
+					<element name="dateSingle">
 						<ref name="a.common"/>
 						<optional>
 							<ref name="a.localType"/>
@@ -5288,7 +5697,7 @@ Other changes:
 					<optional>
 						<element name="fromDate">
 							<ref name="a.common"/>
-							<element name="relationDate">
+							<element name="dateSingle">
 								<text/>
 							</element>
 						</element>
@@ -5296,7 +5705,7 @@ Other changes:
 					<optional>
 						<element name="toDate">
 							<ref name="a.common"/>
-							<element name="relationDate">
+							<element name="dateSingle">
 								<text/>
 							</element>
 						</element>
@@ -5336,5 +5745,196 @@ Other changes:
 			</choice>
 		</attribute>
 
+	</define>
+	<define name="e.part">
+		<element name="part">
+			<optional>
+				<attribute name="id"/>
+			</optional>
+			<optional>
+				<attribute name="lang"/>
+			</optional>
+			<optional>
+				<attribute name="script"/>
+			</optional>
+			<optional>
+				<attribute name="localType"/>
+			</optional>
+			<optional>
+				<attribute name="localTypeSource"/>
+			</optional>
+			<text/>
+		</element>
+	</define>
+	<define name="e.lb">
+		<element name="lb">
+			<empty/>
+		</element>
+	</define>
+	<define name="e.unitDateStructured">
+		<element name="unitDateStructured">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="label"/>
+			</optional>
+			<optional>
+				<attribute name="unitDateStructuredType">
+					<choice>
+						<value>bulk</value>
+						<value>inclusive</value>
+					</choice>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="dateChar"/>
+			</optional>
+			<ref name="am.dates.era"/>
+			<ref name="am.dates.calendar"/>
+			<zeroOrMore>
+				<choice>
+					<ref name="e.dateSingle"/>
+					<ref name="e.dateRange"/>
+					<ref name="e.dateSet"/>
+				</choice>
+			</zeroOrMore>
+		</element>
+	</define>
+	<!-- 2013-01-25: TC: shares pattern definition of block note -->
+	<define name="e.controlNote">
+		<element name="controlNote">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="localType"/>
+			</optional>
+			<optional>
+				<attribute name="localTypeSource"/>
+			</optional>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<oneOrMore>
+				<ref name="m.blocks"/>
+			</oneOrMore>
+		</element>
+	</define>
+
+	<define name="e.nameGrpNote">
+		<element name="nameGrpNote">
+			<ref name="a.common"/>
+			<oneOrMore>
+				<oneOrMore>
+					<ref name="m.phrase.basic"/>
+				</oneOrMore>
+			</oneOrMore>
+		</element>
+	</define>
+
+	<define name="m.access.entry">
+		<choice>
+			<element name="corpNameEntry">
+				<ref name="a.common"/>
+				<ref name="a.access"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<oneOrMore>
+					<ref name="e.part"/>
+				</oneOrMore>
+			</element>
+			<element name="famNameEntry">
+				<ref name="a.common"/>
+				<ref name="a.access"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<oneOrMore>
+					<ref name="e.part"/>
+				</oneOrMore>
+			</element>
+			<element name="geogNameEntry">
+				<ref name="a.common"/>
+				<ref name="a.access"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<oneOrMore>
+					<ref name="e.part"/>
+				</oneOrMore>
+			</element>
+			<element name="genericNameEntry">
+				<ref name="a.common"/>
+				<ref name="a.access"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<oneOrMore>
+					<ref name="e.part"/>
+				</oneOrMore>
+			</element>
+			<element name="occupationEntry">
+				<ref name="a.common"/>
+				<ref name="a.access"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+
+				<oneOrMore>
+					<ref name="e.part"/>
+				</oneOrMore>
+			</element>
+			<element name="persNameEntry">
+				<ref name="a.common"/>
+				<ref name="a.access"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<oneOrMore>
+					<ref name="e.part"/>
+				</oneOrMore>
+			</element>
+			<element name="subjectEntry">
+				<ref name="a.common"/>
+				<ref name="a.access"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<oneOrMore>
+					<ref name="e.part"/>
+				</oneOrMore>
+			</element>
+			<element name="genreFormEntry">
+				<ref name="a.common"/>
+				<optional>
+					<attribute name="localType"/>
+				</optional>
+				<ref name="a.access"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<oneOrMore>
+					<ref name="e.part"/>
+				</oneOrMore>
+			</element>
+			<element name="functionEntry">
+				<ref name="a.common"/>
+				<ref name="a.access"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<oneOrMore>
+					<ref name="e.part"/>
+				</oneOrMore>
+			</element>
+			<element name="titleEntry">
+				<ref name="a.common"/>
+				<ref name="a.access"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<oneOrMore>
+					<ref name="e.part"/>
+				</oneOrMore>
+			</element>
+		</choice>
 	</define>
 </grammar>

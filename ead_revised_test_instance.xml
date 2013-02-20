@@ -1,82 +1,141 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?oxygen RNGSchema="ead_revised.rng" type="xml"?>
-<ead xmlns="http://saa-sdt.example.org/ead/revised">
+<ead xmlns="urn:isbn:1-931666-22-9">
     <control>
-        <eadid/>
-        <titleproper/>
+        <recordId>xxxx</recordId>
+        <fileDesc>
+            <titleStmt>
+                <titleProper>xxxx</titleProper>
+            </titleStmt>
+            <noteStmt>
+                <controlNote>
+                    <p>xxx</p>
+                </controlNote>
+            </noteStmt>
+
+        </fileDesc>
+        <maintenanceStatus>new </maintenanceStatus>
         <maintenanceAgency>
-            <agencyName/>
+            <agencyName>xxx</agencyName>
         </maintenanceAgency>
-        <maintenanceStatus>new</maintenanceStatus>
-        <descriptionMaintenanceHistory>
-            <maintenanceEvent>
-                <eventType>created</eventType>
-                <eventDateTime/>
-                <agentType>human</agentType>
-                <agent>TC</agent>
-            </maintenanceEvent>
-        </descriptionMaintenanceHistory>
-        <instanceMaintenanceHistory>
-            <maintenanceEvent>
-                <eventType>created</eventType>
-                <eventDateTime>xxx</eventDateTime>
-                <agentType>human</agentType>
-                <agent>xxx</agent>
-            </maintenanceEvent>
-        </instanceMaintenanceHistory>
-        <languageDeclaration>
-            <language languageCode="eng"/>
-            <script scriptCode="Latn"/>
-        </languageDeclaration>
-        <publicationStatus>inProcess</publicationStatus>
+        <languageDeclarations>
+            <languageDeclaration>
+                <language languageCode="eng"/>
+                <script scriptCode="Latn"/>
+            </languageDeclaration>
+            <languageDeclaration>
+                <language languageCode="ger"/>
+                <script scriptCode="Latn"/>
+            </languageDeclaration>
+        </languageDeclarations>
+        <localTypeDeclaration>
+            <citation/>
+        </localTypeDeclaration>
+        <maintenanceEvent>
+            <eventType>unknown</eventType>
+            <eventDateTime>unknown</eventDateTime>
+            <agentType>unknown</agentType>
+            <agent>unknown</agent>
+        </maintenanceEvent>
     </control>
 
-    <archdesc level="collection">
+    <archDesc level="collection">
         <did>
-            <abstract></abstract>
-            <unittitle>Records of Stuff</unittitle>
-            <unitdate>1896-1927</unitdate>
-            <langmaterial><language></language></langmaterial>
+            <abstract/>
+            <unitTitle>Records of Stuff</unitTitle>
+            <unitDate unitDateType="inclusive">1970-1987?</unitDate>
+            <unitDateStructured unitDateStructuredType="inclusive">
+                <dateRange>
+                    <fromDate>1970</fromDate>
+                    <toDate notBefore="1985" notAfter="1990">1987</toDate>
+                </dateRange>
+            </unitDateStructured>
+            <langMaterial><language/></langMaterial>
+            <physDesc/>
+            <physDescStructured type="carrier">
+                <dimensions/>
+                <num/>
+                <extent/>
+                <physType/>
+            </physDescStructured>
         </did>
-        
 
-        <scopecontent>
-            <head></head>
-            <div><head></head></div>
-            <div><head></head></div>
-        </scopecontent>
-        <legalstatus>Blah blah blah</legalstatus>
-        <materialspec><p>blah blah blah</p></materialspec>
+        <biogHist>
+            <chronList>
+                <chronItem>
+                    <dateSingle>1987</dateSingle>
+                    <chronologicalSet>
+                        <event/>
+                        <event/>
+                        <placeEntry/>
+                        <placeEntry/>
+                    </chronologicalSet>
+                    <chronologicalSet>
+                        <event/>
+                    </chronologicalSet>
+                </chronItem>
+                <chronItem>
+                    <dateSingle>1988</dateSingle>
+                    <event>xxx</event>
+                </chronItem>
+            </chronList>
+        </biogHist>
+        <accessRestrict>
+            <list listType="ordered" numeration="arabic">
+                <item>xxx</item>
+            </list>
+        </accessRestrict>
+        <scopeContent>
+            <head/>
+            <div>
+                <head/>
+            </div>
+            <div>
+                <head/>
+            </div>
+        </scopeContent>
+        <controlAccess>
+            <subjectEntry>
+                <part/>
+            </subjectEntry>
+        </controlAccess>
+        <legalStatus>Blah blah blah</legalStatus>
+        <materialSpec>
+            <p>blah blah blah</p>
+        </materialSpec>
         <relations>
-            <cpfRelation>
-                <objectXMLWrap>
-                    <foo xmlns="http://example.com/foo"/>
-                </objectXMLWrap>
-            </cpfRelation>
-            <cpfRelation xmlns:xlink="http://www.w3.org/1999/xlink"
-                xlink:href="http://example.com/linkedResource" xlink:type="simple"/>
+            <relation relationType="cpfRelation">
+                <relationEntry>xxx</relationEntry>
+            </relation>
         </relations>
         <c>
             <did>
-                <unittitle>Series 1: Old stuff</unittitle>
-                <formsavailable>
-                    <container containerid="xxxxxxxxx" type="Box">1</container>
-                    <container containerid="yyyyyyyyy" type="Folder">1</container>
-                    <dao xmlns:ns1="http://www.w3.org/1999/xlink" ns1:type="simple"/>
-                </formsavailable>
+                <unitTitle>Series 1: Old stuff</unitTitle>
+                <didNote/>
+                <availableForms>
+                    <container containerId="xxxxxxxxx" localType="Box">1</container>
+                    <container containerId="yyyyyyyyy" localType="Folder">1</container>
+
+                    <dao daoType="derived" xmlns:ns1="http://www.w3.org/1999/xlink"
+                        ns1:type="simple"/>
+                </availableForms>
             </did>
-            <relations></relations>
+            <relations>
+                <relation relationType="cpfRelation">
+                    <relationEntry>xxxx</relationEntry>
+                </relation>
+            </relations>
             <c>
                 <did>
-                    <unittitle>Stuff</unittitle>
+                    <unitTitle>Stuff</unitTitle>
                 </did>
             </c>
         </c>
         <c>
             <did>
-                <unittitle>Series 2: New stuff</unittitle>
+                <unitTitle>Series 2: New stuff</unitTitle>
             </did>
-            <dao xmlns:ns1="http://www.w3.org/1999/xlink" ns1:type="simple"/>
+            <dao daoType="unknown" xmlns:ns1="http://www.w3.org/1999/xlink" ns1:type="simple"/>
         </c>
-    </archdesc>
+    </archDesc>
 </ead>
