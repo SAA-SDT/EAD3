@@ -3172,7 +3172,7 @@ Other changes:
 				<choice>
 					<ref name="m.blocks"/>
 					<ref name="m.access.entry"/>
-					<ref name="title"/>
+					
 					<!-- TC: 2012-06-08 remove recursion in note elements -->
 					<!-- <ref name="controlaccess"/> -->
 				</choice>
@@ -5920,6 +5920,16 @@ Other changes:
 				</oneOrMore>
 			</element>
 			<element name="functionEntry">
+				<ref name="a.common"/>
+				<ref name="a.access"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<oneOrMore>
+					<ref name="e.part"/>
+				</oneOrMore>
+			</element>
+			<element name="titleEntry">
 				<ref name="a.common"/>
 				<ref name="a.access"/>
 				<optional>
