@@ -51,12 +51,12 @@
                 </dateRange>
             </unitDateStructured>
             <langMaterial><language/></langMaterial>
-            <physDesc></physDesc>
+            <physDesc/>
             <physDescStructured type="carrier">
-                <dimensions></dimensions>
-                <num></num>
-                <extent></extent>
-                <physType></physType>
+                <dimensions/>
+                <num/>
+                <extent/>
+                <physType/>
             </physDescStructured>
         </did>
 
@@ -81,9 +81,10 @@
             </chronList>
         </biogHist>
         <accessRestrict>
-        <list listType="ordered" numeration="arabic">
-            <item>xxx</item>
-        </list></accessRestrict>
+            <list listType="ordered" numeration="arabic">
+                <item>xxx</item>
+            </list>
+        </accessRestrict>
         <scopeContent>
             <head/>
             <div>
@@ -95,7 +96,7 @@
         </scopeContent>
         <controlAccess>
             <subjectEntry>
-                <part></part> 
+                <part/>
             </subjectEntry>
         </controlAccess>
         <legalStatus>Blah blah blah</legalStatus>
