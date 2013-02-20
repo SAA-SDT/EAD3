@@ -5603,7 +5603,7 @@ Other changes:
 
 			<optional>
 				<choice>
-					<element name="relationDate">
+					<element name="dateSingle">
 						<text/>
 					</element>
 					<element name="dateSet">
@@ -5612,21 +5612,21 @@ Other changes:
 							<ref name="a.localType"/>
 						</optional>
 						<choice>
-							<element name="relationDate">
+							<element name="dateSingle">
 								<text/>
 							</element>
-							<ref name="m.relationDateRange"/>
+							<ref name="m.dateRange"/>
 						</choice>
 						<oneOrMore>
 							<choice>
-								<element name="relationDate">
+								<element name="dateSingle">
 									<text/>
 								</element>
-								<ref name="m.relationDateRange"/>
+								<ref name="m.dateRange"/>
 							</choice>
 						</oneOrMore>
 					</element>
-					<ref name="m.relationDateRange"/>
+					<ref name="m.dateRange"/>
 				</choice>
 			</optional>
 			<oneOrMore>
@@ -5687,11 +5687,11 @@ Other changes:
 			</optional>
 		</element>
 	</define>
-	<define name="m.relationDateRange">
-		<element name="relationDateRange">
+	<define name="m.dateRange">
+		<element name="dateRange">
 			<zeroOrMore>
 				<choice>
-					<element name="relationDate">
+					<element name="dateSingle">
 						<ref name="a.common"/>
 						<optional>
 							<ref name="a.localType"/>
@@ -5701,7 +5701,7 @@ Other changes:
 					<optional>
 						<element name="fromDate">
 							<ref name="a.common"/>
-							<element name="relationDate">
+							<element name="dateSingle">
 								<text/>
 							</element>
 						</element>
@@ -5709,7 +5709,7 @@ Other changes:
 					<optional>
 						<element name="toDate">
 							<ref name="a.common"/>
-							<element name="relationDate">
+							<element name="dateSingle">
 								<text/>
 							</element>
 						</element>
