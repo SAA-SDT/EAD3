@@ -12,6 +12,11 @@
         </xd:desc>
     </xd:doc>
     <xsl:output encoding="UTF-8" indent="yes" method="xml"/>
+
+    <!-- user paratmter for contorl/eventType -->
+    <!-- eventType enumeration '[created, revised, deleted, cancelled, derived, updated]'.  -->
+    <xsl:param name="eventType" select="'derived'"/>
+
     <xsl:variable name="instance-ns-stripped">
         <xsl:apply-templates select="/" mode="strip-ns"/>
     </xsl:variable>
@@ -118,7 +123,7 @@
         <maintenanceStatus>derived</maintenanceStatus>
         <descriptionMaintenanceHistory>
             <maintenanceEvent>
-                <eventType>xxx</eventType>
+                <eventType><xsl:value-of select="$eventType"/></eventType>
                 <eventDateTime>xxx</eventDateTime>
                 <agentType>xxx</agentType>
                 <agent>xxx</agent>
