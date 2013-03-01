@@ -13,9 +13,17 @@
     </xd:doc>
     <xsl:output encoding="UTF-8" indent="yes" method="xml"/>
 
-    <!-- user paratmter for contorl/eventType -->
+    <!-- user parameter for control/eventType -->
     <!-- eventType enumeration '[created, revised, deleted, cancelled, derived, updated]'.  -->
     <xsl:param name="eventType" select="'derived'"/>
+
+    <!-- user parameter for control/agentType -->
+    <!-- enumeration '[human, machine]' -->
+    <xsl:param name="agentType" select="'machine'"/>
+
+    <!-- user parameter for control/publicationStatus -->
+    <!-- enumeration '[inProcess, approved]' -->
+    <xsl:param name="publicationStatus" select="'inProcess'"/>
 
     <xsl:variable name="instance-ns-stripped">
         <xsl:apply-templates select="/" mode="strip-ns"/>
@@ -125,7 +133,7 @@
             <maintenanceEvent>
                 <eventType><xsl:value-of select="$eventType"/></eventType>
                 <eventDateTime>xxx</eventDateTime>
-                <agentType>xxx</agentType>
+                <agentType><xsl:value-of select="$agentType"/></agentType>
                 <agent>xxx</agent>
             </maintenanceEvent>
         </descriptionMaintenanceHistory>
@@ -141,7 +149,7 @@
             <language languageCode="eng">xxx</language>
             <script scriptCode="Latn">xxx</script>
         </languageDeclaration>
-        <publicationStatus>xxx</publicationStatus>
+        <publicationStatus><xsl:value-of select="$publicationStatus"/></publicationStatus>
     </control>
 </xsl:template>
     
