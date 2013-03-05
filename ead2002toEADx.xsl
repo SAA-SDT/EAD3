@@ -27,16 +27,25 @@
     <!-- IDENTITY TEMPLATE                               -->
     <!-- ############################################### -->
 
-    <!-- Whenever you match any node or any attribute -->
-    <xsl:template match="node()|@*">
 
-        <!-- Copy the current node -->
-        <xsl:copy>
-            <!-- Including any attributes it has and any child nodes -->
-            <xsl:apply-templates select="@*|node()"/>
-        </xsl:copy>
+    <!-- add namespace to all elements -->
+    <xsl:template match="element()">
+        <xsl:element name="{local-name()}" namespace="http://saa-sdt.example.org/ead/revised">
+             <xsl:apply-templates select="@*|node()"/>
+        </xsl:element>
+    </xsl:template>
+    
+    <!-- copy the attributes -->
+    <xsl:template match="attribute()|text()|comment()|processing-instruction()">
+        <xsl:copy/>
     </xsl:template>
 
+    <!-- need to add in the new xmlns, starting with the root ead element -->
+    <xsl:template match="ead">
+        <ead xmlns="http://saa-sdt.example.org/ead/revised">
+            <xsl:apply-templates select="@*|node()"/> 
+        </ead>
+    </xsl:template>
 
     <!-- ############################################### -->
     <!-- DEPRECATED ELEMENTS                             -->
@@ -101,7 +110,7 @@
         <xsl:text>eadheader now control: </xsl:text>
         <xsl:text>Inserting minimal control element</xsl:text>
     </xsl:message>
-    <control>
+    <control xmlns="http://saa-sdt.example.org/ead/revised">
         <eadid>xxx</eadid>
         <titleproper>xxx</titleproper>
         <maintenanceAgency>
