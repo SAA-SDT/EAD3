@@ -13,7 +13,7 @@
     <attributeName oldName="countryencoding" newName="countryEncoding"/>
     <attributeName oldName="dataencoding" newName="dataEncoding"/>
     <attributeName oldName="datechar" newName="dateChar"/>
-    <attributeName oldName="encodinganalog" newName="engodingAnalog"/>
+    <attributeName oldName="encodinganalog" newName="encodingAnalog"/>
     <attributeName oldName="entityref" newName="entityRef"/>
     <attributeName oldName="findaidstatus" newName="findAidStatus"/>
     <attributeName oldName="langcode" newName="langCode"/>

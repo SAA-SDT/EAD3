@@ -13,6 +13,8 @@
     </xd:doc>
     <xsl:output encoding="UTF-8" indent="yes" method="xml"/>
 
+    <xsl:include href="./reCaSe.xsl"/>
+
     <!-- user parameter for control/eventType -->
     <!-- eventType enumeration '[created, revised, deleted, cancelled, derived, updated]'.  -->
     <xsl:param name="eventType" select="'derived'"/>
@@ -32,10 +34,12 @@
     </xsl:variable>
 
     <xsl:template match="/" name="start">
+      <xsl:variable name="step1"><xsl:copy>
         <xsl:for-each select="$instance-ns-stripped">
             <xsl:apply-templates/>
-        </xsl:for-each>
-        
+        </xsl:for-each></xsl:copy>
+      </xsl:variable>
+      <xsl:apply-templates select="$step1" mode="reCaSe"/>
     </xsl:template>
 
     <!-- ############################################### -->
@@ -55,7 +59,7 @@
         <xsl:copy/>
     </xsl:template>
 
-    <!-- need to add in the new xmlns, starting with the root ead element -->
+    <!--  need to add in the new xmlns, starting with the root ead element -->
     <!-- xsl:template match="ead">
         <ead namespace="{$eadxmlns}">
             <xsl:apply-templates select="@*|node()"/> 
