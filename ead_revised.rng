@@ -3316,7 +3316,7 @@ Other changes:
 				<choice>
 					<ref name="m.blocks"/>
 					<ref name="m.refs"/>
-					<ref name="archRef"/>
+					<!-- <ref name="archRef"/> -->
 					<ref name="bibRef"/>
 					<!-- TC: 2012-06-08 remove recursion in note elements -->
 					<!-- <ref name="relatedmaterial"/> -->
@@ -3340,7 +3340,7 @@ Other changes:
 				<choice>
 					<ref name="m.blocks"/>
 					<ref name="m.refs"/>
-					<ref name="archRef"/>
+				<!--	<ref name="archRef"/> -->
 					<ref name="bibRef"/>
 					<!-- TC: 2012-06-08 remove recursion in note elements -->
 					<!-- <ref name="separatedmaterial"/> -->
