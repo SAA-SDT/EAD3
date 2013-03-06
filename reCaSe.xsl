@@ -1,171 +1,174 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns="urn:isbn:1-931666-22-9"
-                version="2.0">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
    <xsl:output method="xml"/>
    <xsl:template match="@althead" mode="reCaSe">
       <xsl:attribute name="altHead">
-         <xsl:value-of select="."/>
+         <xsl:apply-templates select="."/>
       </xsl:attribute>
    </xsl:template>
    <xsl:template match="@altrender" mode="reCaSe">
       <xsl:attribute name="altRender">
-         <xsl:value-of select="."/>
+         <xsl:apply-templates select="."/>
       </xsl:attribute>
    </xsl:template>
    <xsl:template match="@authfilenumber" mode="reCaSe">
       <xsl:attribute name="authFileNumber">
-         <xsl:value-of select="."/>
+         <xsl:apply-templates select="."/>
       </xsl:attribute>
    </xsl:template>
    <xsl:template match="@charoff" mode="reCaSe">
       <xsl:attribute name="charOff">
-         <xsl:value-of select="."/>
+         <xsl:apply-templates select="."/>
       </xsl:attribute>
    </xsl:template>
    <xsl:template match="@colname" mode="reCaSe">
       <xsl:attribute name="colName">
-         <xsl:value-of select="."/>
+         <xsl:apply-templates select="."/>
       </xsl:attribute>
    </xsl:template>
    <xsl:template match="@colnum" mode="reCaSe">
       <xsl:attribute name="colNum">
-         <xsl:value-of select="."/>
+         <xsl:apply-templates select="."/>
       </xsl:attribute>
    </xsl:template>
    <xsl:template match="@colsep" mode="reCaSe">
       <xsl:attribute name="colSep">
-         <xsl:value-of select="."/>
+         <xsl:apply-templates select="."/>
       </xsl:attribute>
    </xsl:template>
    <xsl:template match="@colspec" mode="reCaSe">
       <xsl:attribute name="colSpec">
-         <xsl:value-of select="."/>
+         <xsl:apply-templates select="."/>
       </xsl:attribute>
    </xsl:template>
    <xsl:template match="@colwidth" mode="reCaSe">
       <xsl:attribute name="colWidth">
-         <xsl:value-of select="."/>
+         <xsl:apply-templates select="."/>
       </xsl:attribute>
    </xsl:template>
    <xsl:template match="@containerid" mode="reCaSe">
       <xsl:attribute name="containerId">
-         <xsl:value-of select="."/>
+         <xsl:apply-templates select="."/>
       </xsl:attribute>
    </xsl:template>
    <xsl:template match="@countryencoding" mode="reCaSe">
       <xsl:attribute name="countryEncoding">
-         <xsl:value-of select="."/>
+         <xsl:apply-templates select="."/>
+      </xsl:attribute>
+   </xsl:template>
+   <xsl:template match="@countrycode" mode="reCaSe">
+      <xsl:attribute name="countryCode">
+         <xsl:apply-templates select="."/>
       </xsl:attribute>
    </xsl:template>
    <xsl:template match="@dataencoding" mode="reCaSe">
       <xsl:attribute name="dataEncoding">
-         <xsl:value-of select="."/>
+         <xsl:apply-templates select="."/>
       </xsl:attribute>
    </xsl:template>
    <xsl:template match="@datechar" mode="reCaSe">
       <xsl:attribute name="dateChar">
-         <xsl:value-of select="."/>
+         <xsl:apply-templates select="."/>
       </xsl:attribute>
    </xsl:template>
    <xsl:template match="@encodinganalog" mode="reCaSe">
       <xsl:attribute name="encodingAnalog">
-         <xsl:value-of select="."/>
+         <xsl:apply-templates select="."/>
       </xsl:attribute>
    </xsl:template>
    <xsl:template match="@entityref" mode="reCaSe">
       <xsl:attribute name="entityRef">
-         <xsl:value-of select="."/>
+         <xsl:apply-templates select="."/>
       </xsl:attribute>
    </xsl:template>
    <xsl:template match="@findaidstatus" mode="reCaSe">
       <xsl:attribute name="findAidStatus">
-         <xsl:value-of select="."/>
+         <xsl:apply-templates select="."/>
       </xsl:attribute>
    </xsl:template>
    <xsl:template match="@langcode" mode="reCaSe">
       <xsl:attribute name="langCode">
-         <xsl:value-of select="."/>
+         <xsl:apply-templates select="."/>
       </xsl:attribute>
    </xsl:template>
    <xsl:template match="@langencoding" mode="reCaSe">
       <xsl:attribute name="langEncoding">
-         <xsl:value-of select="."/>
+         <xsl:apply-templates select="."/>
       </xsl:attribute>
    </xsl:template>
    <xsl:template match="@localtype" mode="reCaSe">
       <xsl:attribute name="localType">
-         <xsl:value-of select="."/>
+         <xsl:apply-templates select="."/>
       </xsl:attribute>
    </xsl:template>
    <xsl:template match="@mainagencycode" mode="reCaSe">
       <xsl:attribute name="mainAgencyCode">
-         <xsl:value-of select="."/>
+         <xsl:apply-templates select="."/>
       </xsl:attribute>
    </xsl:template>
    <xsl:template match="@morerows" mode="reCaSe">
       <xsl:attribute name="moreRows">
-         <xsl:value-of select="."/>
+         <xsl:apply-templates select="."/>
       </xsl:attribute>
    </xsl:template>
    <xsl:template match="@nameend" mode="reCaSe">
       <xsl:attribute name="nameEnd">
-         <xsl:value-of select="."/>
+         <xsl:apply-templates select="."/>
       </xsl:attribute>
    </xsl:template>
    <xsl:template match="@namest" mode="reCaSe">
       <xsl:attribute name="namEst">
-         <xsl:value-of select="."/>
+         <xsl:apply-templates select="."/>
       </xsl:attribute>
    </xsl:template>
    <xsl:template match="@otherlevel" mode="reCaSe">
       <xsl:attribute name="otherLevel">
-         <xsl:value-of select="."/>
+         <xsl:apply-templates select="."/>
       </xsl:attribute>
    </xsl:template>
    <xsl:template match="@pgwide" mode="reCaSe">
       <xsl:attribute name="pgWide">
-         <xsl:value-of select="."/>
+         <xsl:apply-templates select="."/>
       </xsl:attribute>
    </xsl:template>
    <xsl:template match="@relatedencoding" mode="reCaSe">
       <xsl:attribute name="relatedEncoding">
-         <xsl:value-of select="."/>
+         <xsl:apply-templates select="."/>
       </xsl:attribute>
    </xsl:template>
    <xsl:template match="@repositorycode" mode="reCaSe">
       <xsl:attribute name="repositoryCode">
-         <xsl:value-of select="."/>
+         <xsl:apply-templates select="."/>
       </xsl:attribute>
    </xsl:template>
    <xsl:template match="@repositoryencoding" mode="reCaSe">
       <xsl:attribute name="repositoryEncoding">
-         <xsl:value-of select="."/>
+         <xsl:apply-templates select="."/>
       </xsl:attribute>
    </xsl:template>
    <xsl:template match="@rowsep" mode="reCaSe">
       <xsl:attribute name="rowSep">
-         <xsl:value-of select="."/>
+         <xsl:apply-templates select="."/>
       </xsl:attribute>
    </xsl:template>
    <xsl:template match="@scriptencoding" mode="reCaSe">
       <xsl:attribute name="scriptEncoding">
-         <xsl:value-of select="."/>
+         <xsl:apply-templates select="."/>
       </xsl:attribute>
    </xsl:template>
    <xsl:template match="@tpattern" mode="reCaSe">
       <xsl:attribute name="tPattern">
-         <xsl:value-of select="."/>
+         <xsl:apply-templates select="."/>
       </xsl:attribute>
    </xsl:template>
    <xsl:template match="@valign" mode="reCaSe">
       <xsl:attribute name="vAlign">
-         <xsl:value-of select="."/>
+         <xsl:apply-templates select="."/>
       </xsl:attribute>
    </xsl:template>
    <xsl:template match="@xpointer" mode="reCaSe">
       <xsl:attribute name="xPointer">
-         <xsl:value-of select="."/>
+         <xsl:apply-templates select="."/>
       </xsl:attribute>
    </xsl:template>
    <xsl:template match="*:accessrestrict" mode="reCaSe">

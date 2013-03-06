@@ -2,7 +2,6 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs xsi xd"
     xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl"
-    xmlns="urn:isbn:1-931666-22-9"
     xmlns:gen="dummy"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"    version="2.0">
 
@@ -38,7 +37,7 @@
   <xsl:template match="attributeName">
     <gen:template match="@{@oldName}" mode="reCaSe">
       <gen:attribute name="{@newName}">
-          <gen:value-of select="."/>
+          <gen:apply-templates select="."/>
       </gen:attribute>
     </gen:template>
   </xsl:template>
