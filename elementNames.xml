@@ -11,6 +11,7 @@
     <attributeName oldName="colwidth" newName="colWidth"/>
     <attributeName oldName="containerid" newName="containerId"/>
     <attributeName oldName="countryencoding" newName="countryEncoding"/>
+    <attributeName oldName="countrycode" newName="countryCode"/>
     <attributeName oldName="dataencoding" newName="dataEncoding"/>
     <attributeName oldName="datechar" newName="dateChar"/>
     <attributeName oldName="encodinganalog" newName="encodingAnalog"/>
