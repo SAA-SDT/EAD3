@@ -13,6 +13,8 @@
     </xd:doc>
     <xsl:output encoding="UTF-8" indent="yes" method="xml"/>
 
+    <xsl:include href="./reCaSe.xsl"/>
+
     <!-- user parameter for control/eventType -->
     <!-- eventType enumeration '[created, revised, deleted, cancelled, derived, updated]'.  -->
     <xsl:param name="eventType" select="'derived'"/>
@@ -25,15 +27,19 @@
     <!-- enumeration '[inProcess, approved]' -->
     <xsl:param name="publicationStatus" select="'inProcess'"/>
 
+    <xsl:param name="eadxmlns" select="'urn:isbn:1-931666-22-9'"/>
+
     <xsl:variable name="instance-ns-stripped">
         <xsl:apply-templates select="/" mode="strip-ns"/>
     </xsl:variable>
 
     <xsl:template match="/" name="start">
+      <xsl:variable name="step1"><xsl:copy>
         <xsl:for-each select="$instance-ns-stripped">
             <xsl:apply-templates/>
-        </xsl:for-each>
-        
+        </xsl:for-each></xsl:copy>
+      </xsl:variable>
+      <xsl:apply-templates select="$step1" mode="reCaSe"/>
     </xsl:template>
 
     <!-- ############################################### -->
@@ -43,7 +49,7 @@
 
     <!-- add namespace to all elements -->
     <xsl:template match="element()">
-        <xsl:element name="{local-name()}" namespace="http://saa-sdt.example.org/ead/revised">
+        <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
              <xsl:apply-templates select="@*|node()"/>
         </xsl:element>
     </xsl:template>
@@ -53,12 +59,12 @@
         <xsl:copy/>
     </xsl:template>
 
-    <!-- need to add in the new xmlns, starting with the root ead element -->
-    <xsl:template match="ead">
-        <ead xmlns="http://saa-sdt.example.org/ead/revised">
+    <!--  need to add in the new xmlns, starting with the root ead element -->
+    <!-- xsl:template match="ead">
+        <ead namespace="{$eadxmlns}">
             <xsl:apply-templates select="@*|node()"/> 
         </ead>
-    </xsl:template>
+    </xsl:template -->
 
     <!-- ############################################### -->
     <!-- DEPRECATED ELEMENTS                             -->
@@ -123,7 +129,7 @@
         <xsl:text>eadheader now control: </xsl:text>
         <xsl:text>Inserting minimal control element</xsl:text>
     </xsl:message>
-    <control xmlns="http://saa-sdt.example.org/ead/revised">
+    <xsl:element name="control" namespace="{$eadxmlns}" xmlns="urn:isbn:1-931666-22-9">
         <eadid>xxx</eadid>
         <titleproper>xxx</titleproper>
         <maintenanceAgency>
@@ -151,7 +157,7 @@
             <script scriptCode="Latn">xxx</script>
         </languageDeclaration>
         <publicationStatus><xsl:value-of select="$publicationStatus"/></publicationStatus>
-    </control>
+    </xsl:element>
 </xsl:template>
     
     <!-- blockquote -->
