@@ -2930,11 +2930,19 @@ Other changes:
 			<optional>
 				<ref name="head"/>
 			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-				</choice>
-			</oneOrMore>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
 		</element>
 	</define>
 	<define name="accruals">
@@ -2946,13 +2954,19 @@ Other changes:
 			<optional>
 				<ref name="head"/>
 			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<!-- TC: 2012-06-08 remove recursion in note elements -->
-					<!-- <ref name="accruals"/> -->
-				</choice>
-			</oneOrMore>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
 		</element>
 	</define>
 	<define name="accessRestrict">
@@ -2967,30 +2981,19 @@ Other changes:
 			<optional>
 				<ref name="head"/>
 			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<!-- TC; 2012-03-07: removed <legalstatus> -->
-					<!-- <element name="legalstatus">
-						<ref name="a.common"/>
-						<optional>
-							<attribute name="type">
-								<data type="NMTOKEN"/>
-							</attribute>
-						</optional>
-						<zeroOrMore>
-							<choice>
-								<text/>
-								<ref name="m.phrase.bare"/>
-								<ref name="date"/>
-							</choice>
-						</zeroOrMore>
-					</element>
-					-->
-					<!-- TC: 2012-06-08 remove recursion in note elements -->
-					<!-- <ref name="accessRestrict"/> -->
-				</choice>
-			</oneOrMore>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
 		</element>
 	</define>
 	<define name="acqInfo">
@@ -3002,13 +3005,19 @@ Other changes:
 			<optional>
 				<ref name="head"/>
 			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<!-- TC: 2012-06-08 remove recursion in note elements -->
-					<!-- <ref name="acqinfo"/> -->
-				</choice>
-			</oneOrMore>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
 		</element>
 	</define>
 	<define name="altFormAvail">
@@ -3023,13 +3032,19 @@ Other changes:
 			<optional>
 				<ref name="head"/>
 			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<!-- TC: 2012-06-08 remove recursion in note elements -->
-					<!--<ref name="altformavail"/> -->
-				</choice>
-			</oneOrMore>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
 		</element>
 	</define>
 	<define name="originalsLoc">
@@ -3044,13 +3059,19 @@ Other changes:
 			<optional>
 				<ref name="head"/>
 			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<!-- TC: 2012-06-08 remove recursion in note elements -->
-					<!-- <ref name="originalsloc"/>-->
-				</choice>
-			</oneOrMore>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
 		</element>
 	</define>
 	<define name="physTech">
@@ -3065,13 +3086,19 @@ Other changes:
 			<optional>
 				<ref name="head"/>
 			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<!-- TC: 2012-06-08 remove recursion in note elements -->
-					<!-- <ref name="phystech"/> -->
-				</choice>
-			</oneOrMore>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
 		</element>
 	</define>
 	<define name="appraisal">
@@ -3083,13 +3110,19 @@ Other changes:
 			<optional>
 				<ref name="head"/>
 			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<!-- TC: 2012-06-08 remove recursion in note elements -->
-					<!-- <ref name="appraisal"/> -->
-				</choice>
-			</oneOrMore>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
 		</element>
 	</define>
 	<define name="custodHist">
@@ -3101,15 +3134,19 @@ Other changes:
 			<optional>
 				<ref name="head"/>
 			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<!-- TC: 2012-06-08 remove recursion in note elements -->
-					<!-- <ref name="custodhist"/> -->
-					<!-- TC; 2012-03-07: Removed <acqinfo> -->
-					<!-- <ref name="acqinfo"/> -->
-				</choice>
-			</oneOrMore>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
 		</element>
 	</define>
 	<define name="preferCite">
@@ -3121,13 +3158,19 @@ Other changes:
 			<optional>
 				<ref name="head"/>
 			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<!-- TC: 2012-06-08 remove recursion in note elements -->
-					<!-- <ref name="prefercite"/> -->
-				</choice>
-			</oneOrMore>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
 		</element>
 	</define>
 	<define name="processInfo">
@@ -3142,13 +3185,19 @@ Other changes:
 			<optional>
 				<ref name="head"/>
 			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<!-- TC: 2012-06-08 remove recursion in note elements -->
-					<!-- <ref name="processinfo"/> -->
-				</choice>
-			</oneOrMore>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
 		</element>
 	</define>
 	<define name="useRestrict">
@@ -3163,13 +3212,19 @@ Other changes:
 			<optional>
 				<ref name="head"/>
 			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<!-- TC: 2012-06-08 remove recursion in note elements -->
-					<!-- <ref name="userestrict"/> -->
-				</choice>
-			</oneOrMore>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
 		</element>
 	</define>
 	<define name="biogHist">
@@ -3181,18 +3236,19 @@ Other changes:
 			<optional>
 				<ref name="head"/>
 			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<!-- TC: 2012-06-08 remove recursion in note elements -->
-					<!-- <ref name="bioghist"/> -->
-					<!-- TC; 2012-03-08: Removed <dao>, <daoGrp> -->
-					<!--
-					<ref name="dao"/>
-					<ref name="daoGrp"/>
-					-->
-				</choice>
-			</oneOrMore>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
 		</element>
 	</define>
 	<define name="controlAccess">
@@ -3204,15 +3260,20 @@ Other changes:
 			<optional>
 				<ref name="head"/>
 			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<ref name="m.access.entry"/>
-
-					<!-- TC: 2012-06-08 remove recursion in note elements -->
-					<!-- <ref name="controlaccess"/> -->
-				</choice>
-			</oneOrMore>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+						<ref name="m.access.entry"/>
+					</choice>
+				</oneOrMore>
+			</choice>
 		</element>
 	</define>
 	<define name="odd">
@@ -3227,18 +3288,19 @@ Other changes:
 			<optional>
 				<ref name="head"/>
 			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<!-- TC; 2012-03-08: Removed <dao>, <daoGrp> -->
-					<!--
-					<ref name="dao"/>
-					<ref name="daoGrp"/>
-					-->
-					<!-- TC: 2012-06-08 remove recursion in note elements -->
-					<!-- <ref name="odd"/> -->
-				</choice>
-			</oneOrMore>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
 		</element>
 	</define>
 	<define name="scopeContent">
@@ -3259,9 +3321,9 @@ Other changes:
 				</group>
 				<oneOrMore>
 					<choice>
-						<choice>
-							<ref name="m.blocks"/>
-						</choice>
+
+						<ref name="m.blocks"/>
+
 						<!-- TC; 2012-03-07: Removed <arrangement> -->
 						<!-- <ref name="arrangement"/> -->
 						<!-- TC: 2012-06-08 remove recursion in note elements -->
@@ -3285,13 +3347,19 @@ Other changes:
 			<optional>
 				<ref name="head"/>
 			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<!-- TC: 2012-06-08 remove recursion in note elements -->
-					<!-- <ref name="arrangement"/> -->
-				</choice>
-			</oneOrMore>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
 		</element>
 	</define>
 	<define name="bibliography">
@@ -3303,20 +3371,29 @@ Other changes:
 			<optional>
 				<ref name="head"/>
 			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<ref name="m.refs"/>
-					<zeroOrMore>
-						<ref name="bibRef"/>
-					</zeroOrMore>
-					<zeroOrMore>
-						<ref name="archRef"/>
-					</zeroOrMore>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+						<ref name="m.refs"/>
+						<zeroOrMore>
+							<ref name="bibRef"/>
+						</zeroOrMore>
+						<zeroOrMore>
+							<ref name="archRef"/>
+						</zeroOrMore>
+					</choice>
 					<!-- TC: 2012-06-08 remove recursion in note elements -->
 					<!-- <ref name="bibliography"/> -->
-				</choice>
-			</oneOrMore>
+
+				</oneOrMore>
+			</choice>
 		</element>
 	</define>
 	<!-- TC; 2012-03-08: Removed <filePlan> -->
@@ -3351,16 +3428,29 @@ Other changes:
 			<optional>
 				<ref name="head"/>
 			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<ref name="m.refs"/>
-					<!-- <ref name="archRef"/> -->
-					<ref name="bibRef"/>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+						<ref name="m.refs"/>
+						<zeroOrMore>
+							<ref name="bibRef"/>
+						</zeroOrMore>
+						<zeroOrMore>
+							<ref name="archRef"/>
+						</zeroOrMore>
+					</choice>
 					<!-- TC: 2012-06-08 remove recursion in note elements -->
-					<!-- <ref name="relatedmaterial"/> -->
-				</choice>
-			</oneOrMore>
+					<!-- <ref name="bibliography"/> -->
+
+				</oneOrMore>
+			</choice>
 		</element>
 	</define>
 	<define name="separatedMaterial">
@@ -3375,16 +3465,29 @@ Other changes:
 			<optional>
 				<ref name="head"/>
 			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<ref name="m.refs"/>
-					<!--	<ref name="archRef"/> -->
-					<ref name="bibRef"/>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+						<ref name="m.refs"/>
+						<zeroOrMore>
+							<ref name="bibRef"/>
+						</zeroOrMore>
+						<zeroOrMore>
+							<ref name="archRef"/>
+						</zeroOrMore>
+					</choice>
 					<!-- TC: 2012-06-08 remove recursion in note elements -->
-					<!-- <ref name="separatedmaterial"/> -->
-				</choice>
-			</oneOrMore>
+					<!-- <ref name="bibliography"/> -->
+
+				</oneOrMore>
+			</choice>
 		</element>
 	</define>
 	<define name="otherFindAid">
@@ -3396,14 +3499,23 @@ Other changes:
 			<optional>
 				<ref name="head"/>
 			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<ref name="m.refs"/>
-					<!-- TC: 2012-06-08 remove recursion in note elements -->
-					<!-- <ref name="otherfindaid"/> -->
-				</choice>
-			</oneOrMore>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+						<ref name="m.refs"/>
+						<!-- TC: 2012-06-08 remove recursion in note elements -->
+						<!-- <ref name="otherfindaid"/> -->
+
+					</choice>
+				</oneOrMore>
+			</choice>
 		</element>
 	</define>
 	<define name="index">

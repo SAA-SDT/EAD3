@@ -48,7 +48,7 @@
             <abstract/>
             <unitTitle>Records of Stuff</unitTitle>
             <unitDate unitDateType="inclusive">1970-1987?</unitDate>
-            <unitDateStructured unitDateStructuredType="inclusive">
+            <unitDateStructured unitDateType="inclusive">
                 <dateRange>
                     <fromDate>1970</fromDate>
                     <toDate notBefore="1985" notAfter="1990">1987</toDate>
@@ -56,7 +56,7 @@
             </unitDateStructured>
             <langMaterial><language/></langMaterial>
             <physDesc/>
-            <physDescStructured type="carrier">
+            <physDescStructured physDescStructuredType="carrier">
                 <dimensions/>
                 <num/>
                 <extent></extent>
@@ -112,6 +112,7 @@
             </subjectEntry>
         </controlAccess>
         <legalStatus>Blah blah blah</legalStatus>
+       
         <materialSpec>
             <p></p>
         </materialSpec>
