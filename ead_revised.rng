@@ -1653,7 +1653,7 @@ Other changes:
 					</attribute>
 				</optional>
 				<optional>
-					<attribute name="type">
+					<attribute name="physDescStructuredtype">
 						<choice>
 							<value>carrier</value>
 							<value>materialType</value>
