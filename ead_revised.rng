@@ -2418,11 +2418,13 @@ Other changes:
 					</element>
 				</optional>
 				<choice>
-					<oneOrMore>
+					<zeroOrMore>
 						<ref name="dsc"/>
-					</oneOrMore>
+					</zeroOrMore>
 
-					<ref name="m.cOrC01"/>
+					<optional>
+						<ref name="m.cOrC01"/>
+					</optional>
 
 				</choice>
 			</element>
@@ -3172,7 +3174,7 @@ Other changes:
 				<choice>
 					<ref name="m.blocks"/>
 					<ref name="m.access.entry"/>
-					
+
 					<!-- TC: 2012-06-08 remove recursion in note elements -->
 					<!-- <ref name="controlaccess"/> -->
 				</choice>
@@ -3340,7 +3342,7 @@ Other changes:
 				<choice>
 					<ref name="m.blocks"/>
 					<ref name="m.refs"/>
-				<!--	<ref name="archRef"/> -->
+					<!--	<ref name="archRef"/> -->
 					<ref name="bibRef"/>
 					<!-- TC: 2012-06-08 remove recursion in note elements -->
 					<!-- <ref name="separatedmaterial"/> -->
