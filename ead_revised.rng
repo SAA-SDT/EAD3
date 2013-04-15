@@ -3310,6 +3310,9 @@ Other changes:
 					<zeroOrMore>
 						<ref name="bibRef"/>
 					</zeroOrMore>
+					<zeroOrMore>
+						<ref name="archRef"/>
+					</zeroOrMore>
 					<!-- TC: 2012-06-08 remove recursion in note elements -->
 					<!-- <ref name="bibliography"/> -->
 				</choice>
