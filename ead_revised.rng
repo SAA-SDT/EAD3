@@ -5363,6 +5363,7 @@ Other changes:
 
 
 	<define name="e.maintenanceHistory">
+		<element a:id="maintenanceHistory" name="maintenanceHistory">
 		<ref name="a.common"/>
 		<oneOrMore>
 			<element a:id="maintenanceEvent" name="maintenanceEvent">
@@ -5408,7 +5409,7 @@ Other changes:
 				</optional>
 			</element>
 		</oneOrMore>
-
+</element>
 	</define>
 
 

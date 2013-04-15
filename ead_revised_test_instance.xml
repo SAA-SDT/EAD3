@@ -31,12 +31,15 @@
         <localTypeDeclaration>
             <citation/>
         </localTypeDeclaration>
-        <maintenanceEvent>
-            <eventType>unknown</eventType>
-            <eventDateTime>unknown</eventDateTime>
-            <agentType>unknown</agentType>
-            <agent>unknown</agent>
-        </maintenanceEvent>
+        <maintenanceHistory>
+            <maintenanceEvent>
+                <eventType>created</eventType>
+                <eventDateTime></eventDateTime>
+                <agentType>human</agentType>
+                <agent></agent>
+            </maintenanceEvent>
+        </maintenanceHistory>
+        
     </control>
 
     <archDesc level="collection">
@@ -99,6 +102,9 @@
             <genericNameEntry>
                 <part></part>
             </genericNameEntry>
+            <functionEntry>
+                <part></part>
+            </functionEntry>
             
             <subjectEntry >
                 <part/>
