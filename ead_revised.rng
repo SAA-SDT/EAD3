@@ -5834,13 +5834,13 @@ Other changes:
 			</optional>
 			<ref name="am.dates.era"/>
 			<ref name="am.dates.calendar"/>
-			<zeroOrMore>
+			<oneOrMore>
 				<choice>
 					<ref name="e.dateSingle"/>
 					<ref name="e.dateRange"/>
 					<ref name="e.dateSet"/>
 				</choice>
-			</zeroOrMore>
+			</oneOrMore>
 		</element>
 	</define>
 	<!-- 2013-01-25: TC: shares pattern definition of block note -->
