@@ -2456,12 +2456,15 @@ Other changes:
 					<ref name="m.desc.base"/>
 				</zeroOrMore>
 				<!-- TC; 2012-03-08: Added <dao> and <daoGrp> -->
-				<zeroOrMore>
+				<!-- TC; 2012-04-15: removed <dao> and <daoGrp>; see issue #128 -->
+				<!--
+					<zeroOrMore>
 					<choice>
 						<ref name="dao"/>
 						<ref name="daoGrp"/>
 					</choice>
 				</zeroOrMore>
+				-->
 				<!-- TC; 2012-03-07: Added EAC-CPF-based <relations> -->
 				<optional>
 					<element name="relations">
