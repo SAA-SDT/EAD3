@@ -112,7 +112,7 @@
         </controlAccess>
         <legalStatus>Blah blah blah</legalStatus>
         <materialSpec>
-            <p>blah blah blah</p>
+            <p></p>
         </materialSpec>
         <relations>
             <relation relationType="cpfRelation">

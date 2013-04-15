@@ -2920,25 +2920,6 @@ Other changes:
 	<define name="materialSpec">
 		<element name="materialSpec">
 			<!-- TC: 2012-06-13: adopt same content model as phystech -->
-			<!-- <ref name="a.common"/>
-			<optional>
-				<attribute name="label"/>
-			</optional>
-			<optional>
-				<attribute name="type"/>
-			</optional>
-			<optional>
-				<attribute name="encodingAnalog"/>
-			</optional>
-			<zeroOrMore>
-				<choice>
-					<text/>
-					<ref name="m.phrase.basic"/>
-					<ref name="num"/>
-					<ref name="materialSpec"/>
-				</choice>
-			</zeroOrMore>
-			-->
 			<ref name="a.common"/>
 			<optional>
 				<attribute name="encodingAnalog"/>
