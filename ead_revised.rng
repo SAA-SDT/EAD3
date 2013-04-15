@@ -2749,7 +2749,15 @@ Other changes:
 			<optional>
 				<attribute name="encodingAnalog"/>
 			</optional>
-			<text/>
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<ref name="emph"/>
+					<ref name="e.lb"/>
+					<ref name="m.refs"/>
+				</choice>
+			</zeroOrMore>
+
 		</element>
 	</define>
 	<define name="unitTitle">
@@ -2769,23 +2777,17 @@ Other changes:
 				<attribute name="normal"/>
 			</optional>
 			<!-- TC; 2012-03-07: permit only text  -->
+			<!-- TC; 2013-04-15: now text, emph, lb, and refs  -->
+
 			<zeroOrMore>
 				<choice>
 					<text/>
-					<!-- <ref name="m.phrase.basic"/>
-					<ref name="m.access"/>
-					-->
-					<!-- TC; 2012-03-07: Remove <unitdate> -->
-					<!-- <ref name="unitdate"/> -->
-					<!--
-				    <ref name="num"/>
-					<ref name="date"/>
-					<ref name="bibseries"/>
-					<ref name="edition"/>
-					<ref name="imprint"/>
-					-->
+					<ref name="emph"/>
+					<ref name="e.lb"/>
+					<ref name="m.refs"/>
 				</choice>
 			</zeroOrMore>
+
 		</element>
 	</define>
 	<define name="language">
