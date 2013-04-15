@@ -55,7 +55,7 @@
             <physDescStructured type="carrier">
                 <dimensions/>
                 <num/>
-                <extent/>
+                <extent></extent>
                 <physType/>
             </physDescStructured>
         </did>
@@ -137,5 +137,6 @@
             </did>
             <dao daoType="unknown" xmlns:ns1="http://www.w3.org/1999/xlink" ns1:type="simple"/>
         </c>
+        
     </archDesc>
 </ead>
