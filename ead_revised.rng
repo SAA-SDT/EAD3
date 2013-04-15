@@ -1078,7 +1078,7 @@ Other changes:
 			<!-- TC; 2012-06-13: restrict bibRef to bibliography only -->
 			<!-- <ref name="bibRef"/> -->
 			<ref name="title"/>
-		<!--	<ref name="archRef"/> -->
+			<!--	<ref name="archRef"/> -->
 		</choice>
 	</define>
 	<define name="m.access">
@@ -1448,9 +1448,9 @@ Other changes:
 					</choice>
 				</zeroOrMore>
 			</element>
-			
-			
-			
+
+
+
 			<!-- TC: 2012-06-13: move container from did to formsavailable -->
 
 			<!-- TC; 2012-03-08: Removed <dao> and <daoGrp> -->
@@ -2749,12 +2749,7 @@ Other changes:
 			<optional>
 				<attribute name="encodingAnalog"/>
 			</optional>
-			<zeroOrMore>
-				<choice>
-					<text/>
-					<ref name="unitDate"/>
-				</choice>
-			</zeroOrMore>
+			<text/>
 		</element>
 	</define>
 	<define name="unitTitle">
@@ -5352,52 +5347,52 @@ Other changes:
 
 	<define name="e.maintenanceHistory">
 		<element a:id="maintenanceHistory" name="maintenanceHistory">
-		<ref name="a.common"/>
-		<oneOrMore>
-			<element a:id="maintenanceEvent" name="maintenanceEvent">
-				<ref name="a.common"/>
-				<element a:id="eventType" name="eventType">
+			<ref name="a.common"/>
+			<oneOrMore>
+				<element a:id="maintenanceEvent" name="maintenanceEvent">
 					<ref name="a.common"/>
-					<choice>
-						<value>created</value>
-						<value>revised</value>
-						<value>deleted</value>
-						<value>cancelled</value>
-						<value>derived</value>
-						<value>updated</value>
-						<value>unknown</value>
-					</choice>
-				</element>
-				<element a:id="eventDateTime" name="eventDateTime">
-					<ref name="a.common"/>
-					<optional>
-						<attribute a:id="standardDateTime" name="standardDateTime">
-							<ref name="m.data.standardDateTime"/>
-						</attribute>
-					</optional>
-					<text/>
-				</element>
-				<element a:id="agentType" name="agentType">
-					<ref name="a.common"/>
-					<choice>
-						<value>human</value>
-						<value>machine</value>
-						<value>unknown</value>
-					</choice>
-				</element>
-				<element a:id="agent" name="agent">
-					<ref name="a.common"/>
-					<text/>
-				</element>
-				<optional>
-					<element a:id="eventDesccription" name="eventDescription">
+					<element a:id="eventType" name="eventType">
+						<ref name="a.common"/>
+						<choice>
+							<value>created</value>
+							<value>revised</value>
+							<value>deleted</value>
+							<value>cancelled</value>
+							<value>derived</value>
+							<value>updated</value>
+							<value>unknown</value>
+						</choice>
+					</element>
+					<element a:id="eventDateTime" name="eventDateTime">
+						<ref name="a.common"/>
+						<optional>
+							<attribute a:id="standardDateTime" name="standardDateTime">
+								<ref name="m.data.standardDateTime"/>
+							</attribute>
+						</optional>
+						<text/>
+					</element>
+					<element a:id="agentType" name="agentType">
+						<ref name="a.common"/>
+						<choice>
+							<value>human</value>
+							<value>machine</value>
+							<value>unknown</value>
+						</choice>
+					</element>
+					<element a:id="agent" name="agent">
 						<ref name="a.common"/>
 						<text/>
 					</element>
-				</optional>
-			</element>
-		</oneOrMore>
-</element>
+					<optional>
+						<element a:id="eventDesccription" name="eventDescription">
+							<ref name="a.common"/>
+							<text/>
+						</element>
+					</optional>
+				</element>
+			</oneOrMore>
+		</element>
 	</define>
 
 
