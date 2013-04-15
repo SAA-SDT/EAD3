@@ -5310,7 +5310,8 @@ Other changes:
 					<optional>
 						<ref name="a.common"/>
 					</optional>
-					<ref name="m.data.standardRepository"/>
+					<text/>
+					<!-- <ref name="m.data.standardRepository"/> -->
 				</element>
 			</optional>
 			<zeroOrMore>
