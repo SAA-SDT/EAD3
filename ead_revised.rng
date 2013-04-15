@@ -1448,6 +1448,9 @@ Other changes:
 					</choice>
 				</zeroOrMore>
 			</element>
+			
+			
+			
 			<!-- TC: 2012-06-13: move container from did to formsavailable -->
 
 			<!-- TC; 2012-03-08: Removed <dao> and <daoGrp> -->
@@ -1821,6 +1824,41 @@ Other changes:
 				</zeroOrMore>
 			</element>
 			<ref name="unitTitle"/>
+			<element name="container">
+				<ref name="a.common"/>
+				<optional>
+					<attribute name="label"/>
+				</optional>
+				<optional>
+					<attribute name="localType">
+						<data type="NMTOKEN"/>
+					</attribute>
+				</optional>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<optional>
+					<attribute name="parent">
+						<data type="IDREFS"/>
+					</attribute>
+				</optional>
+				<!-- TC; 2012-06-11: add @containerid -->
+				<optional>
+					<attribute name="containerId">
+						<data type="NMTOKEN"/>
+					</attribute>
+				</optional>
+				<!-- TC: 2012-06-13: only allow emph and ref -->
+				<zeroOrMore>
+					<choice>
+						<text/>
+						<ref name="emph"/>
+						<ref name="e.lb"/>
+						<ref name="ref"/>
+					</choice>
+				</zeroOrMore>
+			</element>
+			<ref name="dao"/>
 		</choice>
 	</define>
 	<define name="m.desc.base">
@@ -2534,8 +2572,8 @@ Other changes:
 
 
 			</oneOrMore>
-			<!-- TC: 2012-06-13: add formsavailable element -->
-			<optional>
+			<!-- TC: 2012-06-13: add formsavailable element; removed 2013-04-15 -->
+			<!--<optional>
 				<element name="availableForms">
 					<zeroOrMore>
 						<choice>
@@ -2557,13 +2595,13 @@ Other changes:
 										<data type="IDREFS"/>
 									</attribute>
 								</optional>
-								<!-- TC; 2012-06-11: add @containerid -->
+								
 								<optional>
 									<attribute name="containerId">
 										<data type="NMTOKEN"/>
 									</attribute>
 								</optional>
-								<!-- TC: 2012-06-13: only allow emph and ref -->
+								
 								<zeroOrMore>
 									<choice>
 										<text/>
@@ -2578,7 +2616,7 @@ Other changes:
 					</zeroOrMore>
 
 				</element>
-			</optional>
+			</optional>-->
 
 		</element>
 	</define>
