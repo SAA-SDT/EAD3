@@ -1078,7 +1078,7 @@ Other changes:
 			<!-- TC; 2012-06-13: restrict bibRef to bibliography only -->
 			<!-- <ref name="bibRef"/> -->
 			<ref name="title"/>
-			<ref name="archRef"/>
+		<!--	<ref name="archRef"/> -->
 		</choice>
 	</define>
 	<define name="m.access">
