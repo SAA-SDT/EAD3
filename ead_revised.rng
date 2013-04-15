@@ -2068,6 +2068,21 @@ Other changes:
 			<attribute name="normal"/>
 		</optional>
 	</define>
+	<define name="a.access.no.normal">
+		<optional>
+			<attribute name="source">
+				<data type="token"/>
+			</attribute>
+		</optional>
+		<optional>
+			<attribute name="rules">
+				<data type="NMTOKEN"/>
+			</attribute>
+		</optional>
+		<optional>
+			<attribute name="identifier"/>
+		</optional>
+	</define>
 	<define name="a.desc.base">
 		<optional>
 			<attribute name="otherLevel">
@@ -5880,7 +5895,7 @@ Other changes:
 		<choice>
 			<element name="corpNameEntry">
 				<ref name="a.common"/>
-				<ref name="a.access"/>
+				<ref name="a.access.no.normal"/>
 				<optional>
 					<attribute name="encodingAnalog"/>
 				</optional>
@@ -5893,7 +5908,7 @@ Other changes:
 			</element>
 			<element name="famNameEntry">
 				<ref name="a.common"/>
-				<ref name="a.access"/>
+				<ref name="a.access.no.normal"/>
 				<optional>
 					<attribute name="encodingAnalog"/>
 				</optional>
@@ -5906,7 +5921,7 @@ Other changes:
 			</element>
 			<element name="geogNameEntry">
 				<ref name="a.common"/>
-				<ref name="a.access"/>
+				<ref name="a.access.no.normal"/>
 				<optional>
 					<attribute name="encodingAnalog"/>
 				</optional>
@@ -5919,7 +5934,7 @@ Other changes:
 			</element>
 			<element name="genericNameEntry">
 				<ref name="a.common"/>
-				<ref name="a.access"/>
+				<ref name="a.access.no.normal"/>
 				<optional>
 					<attribute name="encodingAnalog"/>
 				</optional>
@@ -5932,7 +5947,7 @@ Other changes:
 			</element>
 			<element name="occupationEntry">
 				<ref name="a.common"/>
-				<ref name="a.access"/>
+				<ref name="a.access.no.normal"/>
 				<optional>
 					<attribute name="encodingAnalog"/>
 				</optional>
@@ -5943,7 +5958,7 @@ Other changes:
 			</element>
 			<element name="persNameEntry">
 				<ref name="a.common"/>
-				<ref name="a.access"/>
+				<ref name="a.access.no.normal"/>
 				<optional>
 					<attribute name="encodingAnalog"/>
 				</optional>
@@ -5956,7 +5971,7 @@ Other changes:
 			</element>
 			<element name="subjectEntry">
 				<ref name="a.common"/>
-				<ref name="a.access"/>
+				<ref name="a.access.no.normal"/>
 				<optional>
 					<attribute name="encodingAnalog"/>
 				</optional>
@@ -5969,7 +5984,7 @@ Other changes:
 				<optional>
 					<attribute name="localType"/>
 				</optional>
-				<ref name="a.access"/>
+				<ref name="a.access.no.normal"/>
 				<optional>
 					<attribute name="encodingAnalog"/>
 				</optional>
@@ -5979,7 +5994,7 @@ Other changes:
 			</element>
 			<element name="functionEntry">
 				<ref name="a.common"/>
-				<ref name="a.access"/>
+				<ref name="a.access.no.normal"/>
 				<optional>
 					<attribute name="encodingAnalog"/>
 				</optional>
@@ -5989,7 +6004,7 @@ Other changes:
 			</element>
 			<element name="titleEntry">
 				<ref name="a.common"/>
-				<ref name="a.access"/>
+				<ref name="a.access.no.normal"/>
 				<optional>
 					<attribute name="encodingAnalog"/>
 				</optional>

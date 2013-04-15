@@ -96,7 +96,11 @@
             </div>
         </scopeContent>
         <controlAccess>
-            <subjectEntry>
+            <genericNameEntry>
+                <part></part>
+            </genericNameEntry>
+            
+            <subjectEntry >
                 <part/>
             </subjectEntry>
         </controlAccess>
@@ -113,13 +117,13 @@
             <did>
                 <unitTitle>Series 1: Old stuff</unitTitle>
                 <didNote/>
-                <availableForms>
+
                     <container containerId="xxxxxxxxx" localType="Box">1</container>
                     <container containerId="yyyyyyyyy" localType="Folder">1</container>
 
                     <dao daoType="derived" xmlns:ns1="http://www.w3.org/1999/xlink"
                         ns1:type="simple"/>
-                </availableForms>
+
             </did>
             <relations>
                 <relation relationType="cpfRelation">
