@@ -3437,7 +3437,7 @@ Other changes:
 			<optional>
 				<attribute name="dscType">
 					<choice>
-						<value>analytiCover</value>
+						<value>analyticOver</value>
 						<value>combined</value>
 						<value>inDepth</value>
 						<value>otherType</value>
