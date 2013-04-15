@@ -5819,7 +5819,7 @@ Other changes:
 				<attribute name="label"/>
 			</optional>
 			<optional>
-				<attribute name="unitDateStructuredType">
+				<attribute name="unitDateType">
 					<choice>
 						<value>bulk</value>
 						<value>inclusive</value>
