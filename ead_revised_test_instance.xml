@@ -84,6 +84,7 @@
                 </chronItem>
             </chronList>
         </biogHist>
+        <biogHist><div></div><div></div></biogHist>
         <accessRestrict>
             <list listType="ordered" numeration="arabic">
                 <item>xxx</item>
@@ -98,7 +99,7 @@
                 <head/>
             </div>
         </scopeContent>
-        <bibliography><archRef></archRef></bibliography>
+        <bibliography><head></head><list><item></item></list></bibliography>
         <controlAccess>
             <genericNameEntry>
                 <part></part>
