@@ -2515,8 +2515,8 @@ Other changes:
 			</zeroOrMore>
 		</element>
 	</define>
-	<define name="subTitle">
-		<element name="subTitle">
+	<define name="subtitle">
+		<element name="subtitle">
 			<ref name="a.common"/>
 			<optional>
 				<attribute name="encodingAnalog"/>
@@ -5290,7 +5290,7 @@ Other changes:
 						<ref name="titleProper"/>
 					</oneOrMore>
 					<zeroOrMore>
-						<ref name="subTitle"/>
+						<ref name="subtitle"/>
 					</zeroOrMore>
 					<zeroOrMore>
 						<ref name="author"/>
