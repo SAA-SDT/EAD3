@@ -31,19 +31,23 @@
         <localTypeDeclaration>
             <citation/>
         </localTypeDeclaration>
-        <maintenanceEvent>
-            <eventType>unknown</eventType>
-            <eventDateTime>unknown</eventDateTime>
-            <agentType>unknown</agentType>
-            <agent>unknown</agent>
-        </maintenanceEvent>
+        <maintenanceHistory>
+            <maintenanceEvent>
+                <eventType>created</eventType>
+                <eventDateTime></eventDateTime>
+                <agentType>human</agentType>
+                <agent></agent>
+            </maintenanceEvent>
+        </maintenanceHistory>
+        
     </control>
     <archDesc level="collection">
         <did>
+            <container>xxx</container>
             <abstract/>
             <unitTitle>Records of Stuff</unitTitle>
             <unitDate unitDateType="inclusive">1970-1987?</unitDate>
-            <unitDateStructured unitDateStructuredType="inclusive">
+            <unitDateStructured unitDateType="inclusive">
                 <dateRange>
                     <fromDate>1970</fromDate>
                     <toDate notBefore="1985" notAfter="1990">1987</toDate>
@@ -51,10 +55,10 @@
             </unitDateStructured>
             <langMaterial><language/></langMaterial>
             <physDesc/>
-            <physDescStructured type="carrier">
+            <physDescStructured physDescStructuredType="carrier">
                 <dimensions/>
                 <num/>
-                <extent/>
+                <extent></extent>
                 <physType/>
             </physDescStructured>
         </did>
@@ -93,14 +97,23 @@
                 <head/>
             </div>
         </scopeContent>
+        <bibliography><archRef></archRef></bibliography>
         <controlAccess>
-            <subjectEntry>
+            <genericNameEntry>
+                <part></part>
+            </genericNameEntry>
+            <functionEntry>
+                <part></part>
+            </functionEntry>
+            
+            <subjectEntry >
                 <part/>
             </subjectEntry>
         </controlAccess>
         <legalStatus>Blah blah blah</legalStatus>
+       
         <materialSpec>
-            <p>blah blah blah</p>
+            <p></p>
         </materialSpec>
         <relations>
             <relation relationType="cpfRelation">
@@ -111,13 +124,13 @@
             <did>
                 <unitTitle>Series 1: Old stuff</unitTitle>
                 <didNote/>
-                <availableForms>
+
                     <container containerId="xxxxxxxxx" localType="Box">1</container>
                     <container containerId="yyyyyyyyy" localType="Folder">1</container>
 
                     <dao daoType="derived" xmlns:ns1="http://www.w3.org/1999/xlink"
                         ns1:type="simple"/>
-                </availableForms>
+
             </did>
             <relations>
                 <relation relationType="cpfRelation">
@@ -136,5 +149,6 @@
             </did>
             <dao daoType="unknown" xmlns:ns1="http://www.w3.org/1999/xlink" ns1:type="simple"/>
         </c>
+        
     </archDesc>
 </ead>

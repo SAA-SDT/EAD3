@@ -1074,7 +1074,7 @@ Other changes:
 			<!-- TC; 2012-06-13: restrict bibRef to bibliography only -->
 			<!-- <ref name="bibRef"/> -->
 			<ref name="title"/>
-			<ref name="archRef"/>
+			<!--	<ref name="archRef"/> -->
 		</choice>
 	</define>
 	<define name="m.access">
@@ -1444,6 +1444,9 @@ Other changes:
 					</choice>
 				</zeroOrMore>
 			</element>
+
+
+
 			<!-- TC: 2012-06-13: move container from did to formsavailable -->
 
 			<!-- TC; 2012-03-08: Removed <dao> and <daoGrp> -->
@@ -1646,7 +1649,7 @@ Other changes:
 					</attribute>
 				</optional>
 				<optional>
-					<attribute name="type">
+					<attribute name="physDescStructuredType">
 						<choice>
 							<value>carrier</value>
 							<value>materialType</value>
@@ -1741,7 +1744,7 @@ Other changes:
 								<attribute name="unit"/>
 							</optional>
 							<optional>
-								<attribute name="encodinganalog"/>
+								<attribute name="encodingAnalog"/>
 							</optional>
 							<zeroOrMore>
 								<choice>
@@ -1817,6 +1820,41 @@ Other changes:
 				</zeroOrMore>
 			</element>
 			<ref name="unitTitle"/>
+			<element name="container">
+				<ref name="a.common"/>
+				<optional>
+					<attribute name="label"/>
+				</optional>
+				<optional>
+					<attribute name="localType">
+						<data type="NMTOKEN"/>
+					</attribute>
+				</optional>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<optional>
+					<attribute name="parent">
+						<data type="IDREFS"/>
+					</attribute>
+				</optional>
+				<!-- TC; 2012-06-11: add @containerid -->
+				<optional>
+					<attribute name="containerId">
+						<data type="NMTOKEN"/>
+					</attribute>
+				</optional>
+				<!-- TC: 2012-06-13: only allow emph and ref -->
+				<zeroOrMore>
+					<choice>
+						<text/>
+						<ref name="emph"/>
+						<ref name="e.lb"/>
+						<ref name="ref"/>
+					</choice>
+				</zeroOrMore>
+			</element>
+			<ref name="dao"/>
 		</choice>
 	</define>
 	<define name="m.desc.base">
@@ -2024,6 +2062,21 @@ Other changes:
 		</optional>
 		<optional>
 			<attribute name="normal"/>
+		</optional>
+	</define>
+	<define name="a.access.no.normal">
+		<optional>
+			<attribute name="source">
+				<data type="token"/>
+			</attribute>
+		</optional>
+		<optional>
+			<attribute name="rules">
+				<data type="NMTOKEN"/>
+			</attribute>
+		</optional>
+		<optional>
+			<attribute name="identifier"/>
 		</optional>
 	</define>
 	<define name="a.desc.base">
@@ -2399,12 +2452,15 @@ Other changes:
 					<ref name="m.desc.base"/>
 				</zeroOrMore>
 				<!-- TC; 2012-03-08: Added <dao> and <daoGrp> -->
-				<zeroOrMore>
+				<!-- TC; 2012-04-15: removed <dao> and <daoGrp>; see issue #128 -->
+				<!--
+					<zeroOrMore>
 					<choice>
 						<ref name="dao"/>
 						<ref name="daoGrp"/>
 					</choice>
 				</zeroOrMore>
+				-->
 				<!-- TC; 2012-03-07: Added EAC-CPF-based <relations> -->
 				<optional>
 					<element name="relations">
@@ -2414,11 +2470,13 @@ Other changes:
 					</element>
 				</optional>
 				<choice>
-					<oneOrMore>
+					<zeroOrMore>
 						<ref name="dsc"/>
-					</oneOrMore>
+					</zeroOrMore>
 
-					<ref name="m.cOrC01"/>
+					<optional>
+						<ref name="m.cOrC01"/>
+					</optional>
 
 				</choice>
 			</element>
@@ -2528,8 +2586,8 @@ Other changes:
 
 
 			</oneOrMore>
-			<!-- TC: 2012-06-13: add formsavailable element -->
-			<optional>
+			<!-- TC: 2012-06-13: add formsavailable element; removed 2013-04-15 -->
+			<!--<optional>
 				<element name="availableForms">
 					<zeroOrMore>
 						<choice>
@@ -2551,13 +2609,13 @@ Other changes:
 										<data type="IDREFS"/>
 									</attribute>
 								</optional>
-								<!-- TC; 2012-06-11: add @containerid -->
+								
 								<optional>
 									<attribute name="containerId">
 										<data type="NMTOKEN"/>
 									</attribute>
 								</optional>
-								<!-- TC: 2012-06-13: only allow emph and ref -->
+								
 								<zeroOrMore>
 									<choice>
 										<text/>
@@ -2572,7 +2630,7 @@ Other changes:
 					</zeroOrMore>
 
 				</element>
-			</optional>
+			</optional>-->
 
 		</element>
 	</define>
@@ -2690,9 +2748,12 @@ Other changes:
 			<zeroOrMore>
 				<choice>
 					<text/>
-					<ref name="unitDate"/>
+					<ref name="emph"/>
+					<ref name="e.lb"/>
+					<ref name="m.refs"/>
 				</choice>
 			</zeroOrMore>
+
 		</element>
 	</define>
 	<define name="unitTitle">
@@ -2712,23 +2773,17 @@ Other changes:
 				<attribute name="normal"/>
 			</optional>
 			<!-- TC; 2012-03-07: permit only text  -->
+			<!-- TC; 2013-04-15: now text, emph, lb, and refs  -->
+
 			<zeroOrMore>
 				<choice>
 					<text/>
-					<!-- <ref name="m.phrase.basic"/>
-					<ref name="m.access"/>
-					-->
-					<!-- TC; 2012-03-07: Remove <unitdate> -->
-					<!-- <ref name="unitdate"/> -->
-					<!--
-				    <ref name="num"/>
-					<ref name="date"/>
-					<ref name="bibseries"/>
-					<ref name="edition"/>
-					<ref name="imprint"/>
-					-->
+					<ref name="emph"/>
+					<ref name="e.lb"/>
+					<ref name="m.refs"/>
 				</choice>
 			</zeroOrMore>
+
 		</element>
 	</define>
 	<define name="language">
@@ -2861,25 +2916,6 @@ Other changes:
 	<define name="materialSpec">
 		<element name="materialSpec">
 			<!-- TC: 2012-06-13: adopt same content model as phystech -->
-			<!-- <ref name="a.common"/>
-			<optional>
-				<attribute name="label"/>
-			</optional>
-			<optional>
-				<attribute name="type"/>
-			</optional>
-			<optional>
-				<attribute name="encodingAnalog"/>
-			</optional>
-			<zeroOrMore>
-				<choice>
-					<text/>
-					<ref name="m.phrase.basic"/>
-					<ref name="num"/>
-					<ref name="materialSpec"/>
-				</choice>
-			</zeroOrMore>
-			-->
 			<ref name="a.common"/>
 			<optional>
 				<attribute name="encodingAnalog"/>
@@ -2890,11 +2926,19 @@ Other changes:
 			<optional>
 				<ref name="head"/>
 			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-				</choice>
-			</oneOrMore>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
 		</element>
 	</define>
 	<define name="accruals">
@@ -2906,13 +2950,19 @@ Other changes:
 			<optional>
 				<ref name="head"/>
 			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<!-- TC: 2012-06-08 remove recursion in note elements -->
-					<!-- <ref name="accruals"/> -->
-				</choice>
-			</oneOrMore>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
 		</element>
 	</define>
 	<define name="accessRestrict">
@@ -2927,30 +2977,19 @@ Other changes:
 			<optional>
 				<ref name="head"/>
 			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<!-- TC; 2012-03-07: removed <legalstatus> -->
-					<!-- <element name="legalstatus">
-						<ref name="a.common"/>
-						<optional>
-							<attribute name="type">
-								<data type="NMTOKEN"/>
-							</attribute>
-						</optional>
-						<zeroOrMore>
-							<choice>
-								<text/>
-								<ref name="m.phrase.bare"/>
-								<ref name="date"/>
-							</choice>
-						</zeroOrMore>
-					</element>
-					-->
-					<!-- TC: 2012-06-08 remove recursion in note elements -->
-					<!-- <ref name="accessRestrict"/> -->
-				</choice>
-			</oneOrMore>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
 		</element>
 	</define>
 	<define name="acqInfo">
@@ -2962,13 +3001,19 @@ Other changes:
 			<optional>
 				<ref name="head"/>
 			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<!-- TC: 2012-06-08 remove recursion in note elements -->
-					<!-- <ref name="acqinfo"/> -->
-				</choice>
-			</oneOrMore>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
 		</element>
 	</define>
 	<define name="altFormAvail">
@@ -2983,13 +3028,19 @@ Other changes:
 			<optional>
 				<ref name="head"/>
 			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<!-- TC: 2012-06-08 remove recursion in note elements -->
-					<!--<ref name="altformavail"/> -->
-				</choice>
-			</oneOrMore>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
 		</element>
 	</define>
 	<define name="originalsLoc">
@@ -3004,13 +3055,19 @@ Other changes:
 			<optional>
 				<ref name="head"/>
 			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<!-- TC: 2012-06-08 remove recursion in note elements -->
-					<!-- <ref name="originalsloc"/>-->
-				</choice>
-			</oneOrMore>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
 		</element>
 	</define>
 	<define name="physTech">
@@ -3025,13 +3082,19 @@ Other changes:
 			<optional>
 				<ref name="head"/>
 			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<!-- TC: 2012-06-08 remove recursion in note elements -->
-					<!-- <ref name="phystech"/> -->
-				</choice>
-			</oneOrMore>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
 		</element>
 	</define>
 	<define name="appraisal">
@@ -3043,13 +3106,19 @@ Other changes:
 			<optional>
 				<ref name="head"/>
 			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<!-- TC: 2012-06-08 remove recursion in note elements -->
-					<!-- <ref name="appraisal"/> -->
-				</choice>
-			</oneOrMore>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
 		</element>
 	</define>
 	<define name="custodHist">
@@ -3061,15 +3130,19 @@ Other changes:
 			<optional>
 				<ref name="head"/>
 			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<!-- TC: 2012-06-08 remove recursion in note elements -->
-					<!-- <ref name="custodhist"/> -->
-					<!-- TC; 2012-03-07: Removed <acqinfo> -->
-					<!-- <ref name="acqinfo"/> -->
-				</choice>
-			</oneOrMore>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
 		</element>
 	</define>
 	<define name="preferCite">
@@ -3081,13 +3154,19 @@ Other changes:
 			<optional>
 				<ref name="head"/>
 			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<!-- TC: 2012-06-08 remove recursion in note elements -->
-					<!-- <ref name="prefercite"/> -->
-				</choice>
-			</oneOrMore>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
 		</element>
 	</define>
 	<define name="processInfo">
@@ -3102,13 +3181,19 @@ Other changes:
 			<optional>
 				<ref name="head"/>
 			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<!-- TC: 2012-06-08 remove recursion in note elements -->
-					<!-- <ref name="processinfo"/> -->
-				</choice>
-			</oneOrMore>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
 		</element>
 	</define>
 	<define name="useRestrict">
@@ -3123,13 +3208,19 @@ Other changes:
 			<optional>
 				<ref name="head"/>
 			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<!-- TC: 2012-06-08 remove recursion in note elements -->
-					<!-- <ref name="userestrict"/> -->
-				</choice>
-			</oneOrMore>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
 		</element>
 	</define>
 	<define name="biogHist">
@@ -3141,18 +3232,19 @@ Other changes:
 			<optional>
 				<ref name="head"/>
 			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<!-- TC: 2012-06-08 remove recursion in note elements -->
-					<!-- <ref name="bioghist"/> -->
-					<!-- TC; 2012-03-08: Removed <dao>, <daoGrp> -->
-					<!--
-					<ref name="dao"/>
-					<ref name="daoGrp"/>
-					-->
-				</choice>
-			</oneOrMore>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
 		</element>
 	</define>
 	<define name="controlAccess">
@@ -3164,15 +3256,20 @@ Other changes:
 			<optional>
 				<ref name="head"/>
 			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<ref name="m.access.entry"/>
-					
-					<!-- TC: 2012-06-08 remove recursion in note elements -->
-					<!-- <ref name="controlaccess"/> -->
-				</choice>
-			</oneOrMore>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+						<ref name="m.access.entry"/>
+					</choice>
+				</oneOrMore>
+			</choice>
 		</element>
 	</define>
 	<define name="odd">
@@ -3187,18 +3284,19 @@ Other changes:
 			<optional>
 				<ref name="head"/>
 			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<!-- TC; 2012-03-08: Removed <dao>, <daoGrp> -->
-					<!--
-					<ref name="dao"/>
-					<ref name="daoGrp"/>
-					-->
-					<!-- TC: 2012-06-08 remove recursion in note elements -->
-					<!-- <ref name="odd"/> -->
-				</choice>
-			</oneOrMore>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
 		</element>
 	</define>
 	<define name="scopeContent">
@@ -3219,9 +3317,9 @@ Other changes:
 				</group>
 				<oneOrMore>
 					<choice>
-						<choice>
-							<ref name="m.blocks"/>
-						</choice>
+
+						<ref name="m.blocks"/>
+
 						<!-- TC; 2012-03-07: Removed <arrangement> -->
 						<!-- <ref name="arrangement"/> -->
 						<!-- TC: 2012-06-08 remove recursion in note elements -->
@@ -3245,13 +3343,19 @@ Other changes:
 			<optional>
 				<ref name="head"/>
 			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<!-- TC: 2012-06-08 remove recursion in note elements -->
-					<!-- <ref name="arrangement"/> -->
-				</choice>
-			</oneOrMore>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
 		</element>
 	</define>
 	<define name="bibliography">
@@ -3263,17 +3367,29 @@ Other changes:
 			<optional>
 				<ref name="head"/>
 			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<ref name="m.refs"/>
-					<zeroOrMore>
-						<ref name="bibRef"/>
-					</zeroOrMore>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+						<ref name="m.refs"/>
+						<zeroOrMore>
+							<ref name="bibRef"/>
+						</zeroOrMore>
+						<zeroOrMore>
+							<ref name="archRef"/>
+						</zeroOrMore>
+					</choice>
 					<!-- TC: 2012-06-08 remove recursion in note elements -->
 					<!-- <ref name="bibliography"/> -->
-				</choice>
-			</oneOrMore>
+
+				</oneOrMore>
+			</choice>
 		</element>
 	</define>
 	<!-- TC; 2012-03-08: Removed <filePlan> -->
@@ -3308,16 +3424,29 @@ Other changes:
 			<optional>
 				<ref name="head"/>
 			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<ref name="m.refs"/>
-					<ref name="archRef"/>
-					<ref name="bibRef"/>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+						<ref name="m.refs"/>
+						<zeroOrMore>
+							<ref name="bibRef"/>
+						</zeroOrMore>
+						<zeroOrMore>
+							<ref name="archRef"/>
+						</zeroOrMore>
+					</choice>
 					<!-- TC: 2012-06-08 remove recursion in note elements -->
-					<!-- <ref name="relatedmaterial"/> -->
-				</choice>
-			</oneOrMore>
+					<!-- <ref name="bibliography"/> -->
+
+				</oneOrMore>
+			</choice>
 		</element>
 	</define>
 	<define name="separatedMaterial">
@@ -3332,16 +3461,29 @@ Other changes:
 			<optional>
 				<ref name="head"/>
 			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<ref name="m.refs"/>
-					<ref name="archRef"/>
-					<ref name="bibRef"/>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+						<ref name="m.refs"/>
+						<zeroOrMore>
+							<ref name="bibRef"/>
+						</zeroOrMore>
+						<zeroOrMore>
+							<ref name="archRef"/>
+						</zeroOrMore>
+					</choice>
 					<!-- TC: 2012-06-08 remove recursion in note elements -->
-					<!-- <ref name="separatedmaterial"/> -->
-				</choice>
-			</oneOrMore>
+					<!-- <ref name="bibliography"/> -->
+
+				</oneOrMore>
+			</choice>
 		</element>
 	</define>
 	<define name="otherFindAid">
@@ -3353,14 +3495,23 @@ Other changes:
 			<optional>
 				<ref name="head"/>
 			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<ref name="m.refs"/>
-					<!-- TC: 2012-06-08 remove recursion in note elements -->
-					<!-- <ref name="otherfindaid"/> -->
-				</choice>
-			</oneOrMore>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+						<ref name="m.refs"/>
+						<!-- TC: 2012-06-08 remove recursion in note elements -->
+						<!-- <ref name="otherfindaid"/> -->
+
+					</choice>
+				</oneOrMore>
+			</choice>
 		</element>
 	</define>
 	<define name="index">
@@ -3433,7 +3584,7 @@ Other changes:
 			<optional>
 				<attribute name="dscType">
 					<choice>
-						<value>analytiCover</value>
+						<value>analyticOver</value>
 						<value>combined</value>
 						<value>inDepth</value>
 						<value>otherType</value>
@@ -4046,7 +4197,10 @@ Other changes:
 			<oneOrMore>
 				<element name="addressLine">
 					<ref name="a.common"/>
+					<!-- FC 17-04-2013 @localType set to optional -->
+					<optional>
 					<attribute name="localType"/>
+					</optional>
 					<zeroOrMore>
 						<choice>
 							<text/>
@@ -5270,7 +5424,8 @@ Other changes:
 					<optional>
 						<ref name="a.common"/>
 					</optional>
-					<ref name="m.data.standardRepository"/>
+					<text/>
+					<!-- <ref name="m.data.standardRepository"/> -->
 				</element>
 			</optional>
 			<zeroOrMore>
@@ -5304,52 +5459,53 @@ Other changes:
 
 
 	<define name="e.maintenanceHistory">
-		<ref name="a.common"/>
-		<oneOrMore>
-			<element a:id="maintenanceEvent" name="maintenanceEvent">
-				<ref name="a.common"/>
-				<element a:id="eventType" name="eventType">
+		<element a:id="maintenanceHistory" name="maintenanceHistory">
+			<ref name="a.common"/>
+			<oneOrMore>
+				<element a:id="maintenanceEvent" name="maintenanceEvent">
 					<ref name="a.common"/>
-					<choice>
-						<value>created</value>
-						<value>revised</value>
-						<value>deleted</value>
-						<value>cancelled</value>
-						<value>derived</value>
-						<value>updated</value>
-						<value>unknown</value>
-					</choice>
-				</element>
-				<element a:id="eventDateTime" name="eventDateTime">
-					<ref name="a.common"/>
-					<optional>
-						<attribute a:id="standardDateTime" name="standardDateTime">
-							<ref name="m.data.standardDateTime"/>
-						</attribute>
-					</optional>
-					<text/>
-				</element>
-				<element a:id="agentType" name="agentType">
-					<ref name="a.common"/>
-					<choice>
-						<value>human</value>
-						<value>machine</value>
-						<value>unknown</value>
-					</choice>
-				</element>
-				<element a:id="agent" name="agent">
-					<ref name="a.common"/>
-					<text/>
-				</element>
-				<optional>
-					<element a:id="eventDesccription" name="eventDescription">
+					<element a:id="eventType" name="eventType">
+						<ref name="a.common"/>
+						<choice>
+							<value>created</value>
+							<value>revised</value>
+							<value>deleted</value>
+							<value>cancelled</value>
+							<value>derived</value>
+							<value>updated</value>
+							<value>unknown</value>
+						</choice>
+					</element>
+					<element a:id="eventDateTime" name="eventDateTime">
+						<ref name="a.common"/>
+						<optional>
+							<attribute a:id="standardDateTime" name="standardDateTime">
+								<ref name="m.data.standardDateTime"/>
+							</attribute>
+						</optional>
+						<text/>
+					</element>
+					<element a:id="agentType" name="agentType">
+						<ref name="a.common"/>
+						<choice>
+							<value>human</value>
+							<value>machine</value>
+							<value>unknown</value>
+						</choice>
+					</element>
+					<element a:id="agent" name="agent">
 						<ref name="a.common"/>
 						<text/>
 					</element>
-				</optional>
-			</element>
-		</oneOrMore>
-
+					<optional>
+						<element a:id="eventDesccription" name="eventDescription">
+							<ref name="a.common"/>
+							<text/>
+						</element>
+					</optional>
+				</element>
+			</oneOrMore>
+		</element>
 	</define>
 
 
@@ -5778,7 +5934,7 @@ Other changes:
 				<attribute name="label"/>
 			</optional>
 			<optional>
-				<attribute name="unitDateStructuredType">
+				<attribute name="unitDateType">
 					<choice>
 						<value>bulk</value>
 						<value>inclusive</value>
@@ -5786,17 +5942,20 @@ Other changes:
 				</attribute>
 			</optional>
 			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<optional>
 				<attribute name="dateChar"/>
 			</optional>
 			<ref name="am.dates.era"/>
 			<ref name="am.dates.calendar"/>
-			<zeroOrMore>
+			<oneOrMore>
 				<choice>
 					<ref name="e.dateSingle"/>
 					<ref name="e.dateRange"/>
 					<ref name="e.dateSet"/>
 				</choice>
-			</zeroOrMore>
+			</oneOrMore>
 		</element>
 	</define>
 	<!-- 2013-01-25: TC: shares pattern definition of block note -->
@@ -5833,9 +5992,12 @@ Other changes:
 		<choice>
 			<element name="corpNameEntry">
 				<ref name="a.common"/>
-				<ref name="a.access"/>
+				<ref name="a.access.no.normal"/>
 				<optional>
 					<attribute name="encodingAnalog"/>
+				</optional>
+				<optional>
+					<attribute name="role"/>
 				</optional>
 				<oneOrMore>
 					<ref name="e.part"/>
@@ -5843,9 +6005,12 @@ Other changes:
 			</element>
 			<element name="famNameEntry">
 				<ref name="a.common"/>
-				<ref name="a.access"/>
+				<ref name="a.access.no.normal"/>
 				<optional>
 					<attribute name="encodingAnalog"/>
+				</optional>
+				<optional>
+					<attribute name="role"/>
 				</optional>
 				<oneOrMore>
 					<ref name="e.part"/>
@@ -5853,9 +6018,12 @@ Other changes:
 			</element>
 			<element name="geogNameEntry">
 				<ref name="a.common"/>
-				<ref name="a.access"/>
+				<ref name="a.access.no.normal"/>
 				<optional>
 					<attribute name="encodingAnalog"/>
+				</optional>
+				<optional>
+					<attribute name="role"/>
 				</optional>
 				<oneOrMore>
 					<ref name="e.part"/>
@@ -5863,9 +6031,12 @@ Other changes:
 			</element>
 			<element name="genericNameEntry">
 				<ref name="a.common"/>
-				<ref name="a.access"/>
+				<ref name="a.access.no.normal"/>
 				<optional>
 					<attribute name="encodingAnalog"/>
+				</optional>
+				<optional>
+					<attribute name="role"/>
 				</optional>
 				<oneOrMore>
 					<ref name="e.part"/>
@@ -5873,7 +6044,7 @@ Other changes:
 			</element>
 			<element name="occupationEntry">
 				<ref name="a.common"/>
-				<ref name="a.access"/>
+				<ref name="a.access.no.normal"/>
 				<optional>
 					<attribute name="encodingAnalog"/>
 				</optional>
@@ -5884,9 +6055,12 @@ Other changes:
 			</element>
 			<element name="persNameEntry">
 				<ref name="a.common"/>
-				<ref name="a.access"/>
+				<ref name="a.access.no.normal"/>
 				<optional>
 					<attribute name="encodingAnalog"/>
+				</optional>
+				<optional>
+					<attribute name="role"/>
 				</optional>
 				<oneOrMore>
 					<ref name="e.part"/>
@@ -5894,7 +6068,7 @@ Other changes:
 			</element>
 			<element name="subjectEntry">
 				<ref name="a.common"/>
-				<ref name="a.access"/>
+				<ref name="a.access.no.normal"/>
 				<optional>
 					<attribute name="encodingAnalog"/>
 				</optional>
@@ -5907,7 +6081,7 @@ Other changes:
 				<optional>
 					<attribute name="localType"/>
 				</optional>
-				<ref name="a.access"/>
+				<ref name="a.access.no.normal"/>
 				<optional>
 					<attribute name="encodingAnalog"/>
 				</optional>
@@ -5917,7 +6091,7 @@ Other changes:
 			</element>
 			<element name="functionEntry">
 				<ref name="a.common"/>
-				<ref name="a.access"/>
+				<ref name="a.access.no.normal"/>
 				<optional>
 					<attribute name="encodingAnalog"/>
 				</optional>
@@ -5927,7 +6101,7 @@ Other changes:
 			</element>
 			<element name="titleEntry">
 				<ref name="a.common"/>
-				<ref name="a.access"/>
+				<ref name="a.access.no.normal"/>
 				<optional>
 					<attribute name="encodingAnalog"/>
 				</optional>
