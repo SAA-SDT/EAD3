@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar 
+  xmlns="http://relaxng.org/ns/structure/1.0"
+  xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+  datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <start>
+            <ref name="e.ead"/>
+    </start>
+    <define name="e.ead">
+		<element name="ead">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="relatedEncoding"/>
+			</optional>
+			<ref name="e.control"/>
+			<element name="archDesc">
+				<ref name="a.common"/>
+				<attribute name="level">
+					<choice>
+						<ref name="av.level"/>
+					</choice>
+				</attribute>
+				<ref name="a.desc.base"/>
+				<optional>
+					<attribute name="localType">
+						<data type="NMTOKEN"/>
+					</attribute>
+				</optional>
+				<optional>
+					<attribute name="relatedEncoding"/>
+				</optional>
+				<ref name="did"/>
+				<zeroOrMore>
+					<!-- 2013-01-22; TC: changed m.desc.full to m.desc.base (i.e., no note) -->
+					<ref name="m.desc.base"/>
+				</zeroOrMore>
+				<optional>
+					<element name="relations">
+						<oneOrMore>
+							<ref name="m.relation"/>
+						</oneOrMore>
+					</element>
+				</optional>
+				<choice>
+					<zeroOrMore>
+						<ref name="dsc"/>
+					</zeroOrMore>
+					<optional>
+						<ref name="m.cOrC01"/>
+					</optional>
+				</choice>
+			</element>
+		</element>
+	</define>
+</grammar>
