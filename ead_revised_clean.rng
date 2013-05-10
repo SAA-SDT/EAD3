@@ -29,9 +29,8 @@
 				<optional>
 					<attribute name="relatedEncoding"/>
 				</optional>
-				<ref name="did"/>
+				<ref name="e.did"/>
 				<zeroOrMore>
-					<!-- 2013-01-22; TC: changed m.desc.full to m.desc.base (i.e., no note) -->
 					<ref name="m.desc.base"/>
 				</zeroOrMore>
 				<optional>
@@ -43,7 +42,7 @@
 				</optional>
 				<choice>
 					<zeroOrMore>
-						<ref name="dsc"/>
+						<ref name="e.dsc"/>
 					</zeroOrMore>
 					<optional>
 						<ref name="m.cOrC01"/>
@@ -51,5 +50,10 @@
 				</choice>
 			</element>
 		</element>
-	</define>
+    </define>
+    <!-- ELEMENTS -->
+    
+    <!-- ATTRIBUTES -->
+    
+    <!-- MODELS -->
 </grammar>
