@@ -71,14 +71,38 @@
 	</define>
 	
 	
-	<define name="e.accessRestrict">
-		<element name="accessRestrict">
+	<define name="e.accessrestrict">
+		<element name="accessrestrict">
 			<ref name="a.common"/>
 			<optional>
 				<attribute name="encodingAnalog"/>
 			</optional>
 			<optional>
 				<attribute name="localType"/>
+			</optional>
+			<optional>
+				<ref name="e.head"/>
+			</optional>
+			<choice>
+				<group>
+					<ref name="e.div"/>
+					<oneOrMore>
+						<ref name="e.div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
+		</element>
+	</define>
+	<define name="accruals">
+		<element name="accruals">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
 			</optional>
 			<optional>
 				<ref name="e.head"/>
@@ -122,8 +146,8 @@
 			</choice>
 		</element>
 	</define>
-	<define name="e.altFormAvail">
-		<element name="altFormAvail">
+	<define name="e.altformavail">
+		<element name="altformavail">
 			<ref name="a.common"/>
 			<optional>
 				<attribute name="encodingAnalog"/>
@@ -251,8 +275,56 @@
 			</choice>
 		</element>
 	</define>
-	<define name="e.preferCite">
-		<element name="preferCite">
+	<define name="e.index">
+		<element name="index">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<optional>
+				<ref name="e.head"/>
+			</optional>
+			<zeroOrMore>
+				<ref name="m.blocks"/>
+			</zeroOrMore>
+			<choice>
+				<group>
+					<optional>
+						<ref name="e.listHead"/>
+					</optional>
+					<oneOrMore>
+						<ref name="e.indexentry"/>
+					</oneOrMore>
+				</group>
+			</choice>
+		</element>
+	</define>
+	<define name="e.legalstatus">
+		<element name="legalstatus">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<optional>
+				<ref name="e.head"/>
+			</optional>
+			<choice>
+				<group>
+					<ref name="e.div"/>
+					<oneOrMore>
+						<ref name="e.div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
+		</element>
+	</define>
+	<define name="e.prefercite">
+		<element name="prefercite">
 			<ref name="a.common"/>
 			<optional>
 				<attribute name="encodingAnalog"/>
@@ -302,8 +374,8 @@
 			</choice>
 		</element>
 	</define>
-	<define name="e.useRestrict">
-		<element name="useRestrict">
+	<define name="e.userestrict">
+		<element name="userestrict">
 			<ref name="a.common"/>
 			<optional>
 				<attribute name="encodingAnalog"/>
@@ -329,8 +401,8 @@
 			</choice>
 		</element>
 	</define>
-	<define name="e.biogHist">
-		<element name="biogHist">
+	<define name="e.bioghist">
+		<element name="bioghist">
 			<ref name="a.common"/>
 			<optional>
 				<attribute name="encodingAnalog"/>
@@ -353,8 +425,8 @@
 			</choice>
 		</element>
 	</define>
-	<define name="e.controlAccess">
-		<element name="controlAccess">
+	<define name="e.controlaccess">
+		<element name="controlaccess">
 			<ref name="a.common"/>
 			<optional>
 				<attribute name="encodingAnalog"/>
@@ -405,8 +477,8 @@
 			</choice>
 		</element>
 	</define>
-	<define name="e.scopeContent">
-		<element name="scopeContent">
+	<define name="e.scopecontent">
+		<element name="scopecontent">
 			<ref name="a.common"/>
 			<optional>
 				<attribute name="encodingAnalog"/>
@@ -585,8 +657,8 @@
 		</element>
 	</define>
 	
-	<define name="e.bibRef">
-		<element name="bibRef">
+	<define name="e.bibref">
+		<element name="bibref">
 			<ref name="a.common"/>
 			<optional>
 				<attribute name="encodingAnalog"/>
@@ -600,8 +672,8 @@
 		</element>
 	</define>
 	
-	<define name="e.archRef">
-		<element name="archRef">
+	<define name="e.archref">
+		<element name="archref">
 			<ref name="a.common"/>
 			<optional>
 				<attribute name="encodingAnalog"/>
@@ -749,29 +821,29 @@
 	
 	<define name="m.desc.base">
 		<choice>
-			<ref name="e.accessRestrict"/>
+			<ref name="e.accessrestrict"/>
 			<ref name="e.accruals"/>
-			<ref name="e.acqInfo"/>
-			<ref name="e.altFormAvail"/>
+			<ref name="e.acqinfo"/>
+			<ref name="e.altformavail"/>
 			<ref name="e.appraisal"/>
 			<ref name="e.arrangement"/>
 			<ref name="e.bibliography"/>
-			<ref name="e.biogHist"/>
-			<ref name="e.controlAccess"/>
+			<ref name="e.bioghist"/>
+			<ref name="e.controlaccess"/>
 			<ref name="e.custodHist"/>
 			<ref name="e.index"/>
-			<ref name="e.legalStatus"/>
-			<ref name="e.materialSpec"/>
+			<ref name="e.legalstatus"/>
+			<ref name="e.materialspec"/>
 			<ref name="e.odd"/>
 			<ref name="e.originalsLoc"/>
-			<ref name="e.otherFindAid"/>
+			<ref name="e.otherfindaid"/>
 			<ref name="e.physTech"/>
-			<ref name="e.preferCite"/>
+			<ref name="e.prefercite"/>
 			<ref name="e.processInfo"/>
-			<ref name="e.relatedMaterial"/>
-			<ref name="e.scopeContent"/>
-			<ref name="e.separatedMaterial"/>
-			<ref name="e.useRestrict"/>
+			<ref name="e.relatedmaterial"/>
+			<ref name="e.scopecontent"/>
+			<ref name="e.separatedmaterial"/>
+			<ref name="e.userestrict"/>
 		</choice>
 	</define>
 	<define name="m.did">
