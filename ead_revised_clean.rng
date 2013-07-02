@@ -290,7 +290,7 @@
 			<choice>
 				<group>
 					<optional>
-						<ref name="e.listHead"/>
+						<ref name="e.listhead"/>
 					</optional>
 					<oneOrMore>
 						<ref name="e.indexentry"/>
@@ -549,10 +549,10 @@
 						<ref name="m.blocks"/>
 						<ref name="m.refs"/>
 						<zeroOrMore>
-							<ref name="e.bibRef"/>
+							<ref name="e.bibref"/>
 						</zeroOrMore>
 						<zeroOrMore>
-							<ref name="e.archRef"/>
+							<ref name="e.archref"/>
 						</zeroOrMore>
 					</choice>
 					<!-- TC: 2012-06-08 remove recursion in note elements -->
@@ -859,7 +859,7 @@
 				<optional>
 					<attribute name="localType"/>
 				</optional>
-				<ref name="am.langCode"/>
+				<ref name="am.langcode"/>
 				<ref name="m.mixed.basic"/>
 			</element>
 			<element name="langMaterial">
@@ -886,7 +886,7 @@
 				<optional>
 					<attribute name="localTypeSource"/>
 				</optional>
-				<ref name="am.langCode"/>
+				<ref name="am.langcode"/>
 				<ref name="m.mixed.basic"/>
 			</element>
 
@@ -1052,7 +1052,7 @@
 				<optional>
 					<attribute name="localType"/>
 				</optional>
-				<ref name="am.countryCode"/>
+				<ref name="am.countrycode"/>
 				<optional>
 					<attribute name="repositoryCode">
 						<ref name="data.repositoryCode"/>
@@ -1067,7 +1067,7 @@
 				<!-- TC; 2012-6-13: only permit <emph> and <ref> as element children -->
                  <ref name="m.mixed.basic"/>
 			</element>
-			<ref name="e.unitTitle"/>
+			<ref name="e.unittitle"/>
 			<element name="container">
 				<ref name="a.common"/>
 				<optional>
