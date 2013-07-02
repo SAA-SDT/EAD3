@@ -518,8 +518,9 @@
 		</element>
 	</define>
 	
-	<define name="e.lb">
+	<define name="e.lb">	
 		<element name="lb">
+			<ref name="a.common.empty"/>
 			<empty/>
 		</element>
 	</define>
@@ -552,7 +553,7 @@
 			<optional>
 				<attribute name="encodingAnalog"/>
 			</optional>
-			<ref name="am.dsctab.tPattern"/>
+			<ref name="a.dsctab.tPattern"/>
 			<group>
 				<optional>
 					<ref name="e.head"/>
@@ -584,6 +585,60 @@
 		</element>
 	</define>
 	
+	<define name="e.bibRef">
+		<element name="bibRef">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<zeroOrMore>
+				<choice>
+					<ref name="m.mixed.basic"/>
+					<ref name="e.title"/>
+				</choice>
+			</zeroOrMore>
+		</element>
+	</define>
+	
+	<define name="e.archRef">
+		<element name="archRef">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<ref name="m.mixed.basic"/>
+					<ref name="e.title"/>
+				</choice>
+			</zeroOrMore>
+		</element>
+	</define>
+	
+	<define name="e.title">
+		<element name="title">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="localType"/>
+			</optional>
+			<optional>
+				<attribute name="render">
+					<choice>
+						<ref name="av.render"/>
+					</choice>
+				</attribute>
+			</optional>
+			<ref name="a.access"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<zeroOrMore>
+             <ref name="m.mixed.basic"/>
+			</zeroOrMore>
+		</element>
+	</define>
+	
     <!-- ATTRIBUTE VALUE LISTS -->
     
 	<define name="av.level">
@@ -601,8 +656,35 @@
 			<value>subSeries</value>
 		</choice>
 	</define>
+	
+	<define name="av.render">
+		<choice>
+			<value>altRender</value>
+			<value>bold</value>
+			<value>boldDoubleQuote</value>
+			<value>boldItalic</value>
+			<value>boldSingleQuote</value>
+			<value>boldSmCaps</value>
+			<value>boldUnderline</value>
+			<value>doubleQuote</value>
+			<value>italic</value>
+			<value>nonProPort</value>
+			<value>singleQuote</value>
+			<value>smCaps</value>
+			<value>sub</value>
+			<value>super</value>
+			<value>underline</value>
+		</choice>
+	</define>
     
     <!-- MODELS -->
+	<define name="a.dsctab.tPattern">
+		<optional>
+			<attribute name="tPattern">
+				<data type="NMTOKEN"/>
+			</attribute>
+		</optional>
+	</define>
 	<define name="a.common.empty">
 		<optional>
 			<attribute name="id">
@@ -640,6 +722,28 @@
 		</optional>
 		<optional>
 			<attribute name="encodingAnalog"/>
+		</optional>
+	</define>	
+	<define name="a.access.no.normal">
+		<optional>
+			<attribute name="source">
+				<data type="token"/>
+			</attribute>
+		</optional>
+		<optional>
+			<attribute name="rules">
+				<data type="NMTOKEN"/>
+			</attribute>
+		</optional>
+		<optional>
+			<attribute name="identifier"/>
+		</optional>
+	</define>
+	
+	<define name="a.access">
+		<ref name="a.access.no.normal"/>
+		<optional>
+			<attribute name="normal"/>
 		</optional>
 	</define>
 	
@@ -958,5 +1062,128 @@
 		</choice>
 	</define>
 
+	<define name="m.access.entry">
+		<choice>
+			<element name="corpNameEntry">
+				<ref name="a.common"/>
+				<ref name="a.access.no.normal"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<optional>
+					<attribute name="role"/>
+				</optional>
+				<oneOrMore>
+					<ref name="e.part"/>
+				</oneOrMore>
+			</element>
+			<element name="famNameEntry">
+				<ref name="a.common"/>
+				<ref name="a.access.no.normal"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<optional>
+					<attribute name="role"/>
+				</optional>
+				<oneOrMore>
+					<ref name="e.part"/>
+				</oneOrMore>
+			</element>
+			<element name="geogNameEntry">
+				<ref name="a.common"/>
+				<ref name="a.access.no.normal"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<optional>
+					<attribute name="role"/>
+				</optional>
+				<oneOrMore>
+					<ref name="e.part"/>
+				</oneOrMore>
+			</element>
+			<element name="genericNameEntry">
+				<ref name="a.common"/>
+				<ref name="a.access.no.normal"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<optional>
+					<attribute name="role"/>
+				</optional>
+				<oneOrMore>
+					<ref name="e.part"/>
+				</oneOrMore>
+			</element>
+			<element name="occupationEntry">
+				<ref name="a.common"/>
+				<ref name="a.access.no.normal"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				
+				<oneOrMore>
+					<ref name="e.part"/>
+				</oneOrMore>
+			</element>
+			<element name="persNameEntry">
+				<ref name="a.common"/>
+				<ref name="a.access.no.normal"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<optional>
+					<attribute name="role"/>
+				</optional>
+				<oneOrMore>
+					<ref name="e.part"/>
+				</oneOrMore>
+			</element>
+			<element name="subjectEntry">
+				<ref name="a.common"/>
+				<ref name="a.access.no.normal"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<oneOrMore>
+					<ref name="e.part"/>
+				</oneOrMore>
+			</element>
+			<element name="genreFormEntry">
+				<ref name="a.common"/>
+				<optional>
+					<attribute name="localType"/>
+				</optional>
+				<ref name="a.access.no.normal"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<oneOrMore>
+					<ref name="e.part"/>
+				</oneOrMore>
+			</element>
+			<element name="functionEntry">
+				<ref name="a.common"/>
+				<ref name="a.access.no.normal"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<oneOrMore>
+					<ref name="e.part"/>
+				</oneOrMore>
+			</element>
+			<element name="titleEntry">
+				<ref name="a.common"/>
+				<ref name="a.access.no.normal"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<oneOrMore>
+					<ref name="e.part"/>
+				</oneOrMore>
+			</element>
+		</choice>
+	</define>
 
 </grammar>
