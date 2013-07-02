@@ -136,9 +136,9 @@
 			</optional>
 			<choice>
 				<group>
-					<ref name="e.div"/>
+					<ref name="div"/>
 					<oneOrMore>
-						<ref name="e.div"/>
+						<ref name="div"/>
 					</oneOrMore>
 				</group>
 				<oneOrMore>
@@ -163,9 +163,9 @@
 			</optional>
 			<choice>
 				<group>
-					<ref name="e.div"/>
+					<ref name="div"/>
 					<oneOrMore>
-						<ref name="e.div"/>
+						<ref name="div"/>
 					</oneOrMore>
 				</group>
 				<oneOrMore>
@@ -190,9 +190,9 @@
 			</optional>
 			<choice>
 				<group>
-					<ref name="e.div"/>
+					<ref name="div"/>
 					<oneOrMore>
-						<ref name="e.div"/>
+						<ref name="div"/>
 					</oneOrMore>
 				</group>
 				<oneOrMore>
@@ -214,9 +214,9 @@
 			</optional>
 			<choice>
 				<group>
-					<ref name="e.div"/>
+					<ref name="div"/>
 					<oneOrMore>
-						<ref name="e.div"/>
+						<ref name="div"/>
 					</oneOrMore>
 				</group>
 				<oneOrMore>
@@ -238,9 +238,9 @@
 			</optional>
 			<choice>
 				<group>
-					<ref name="e.div"/>
+					<ref name="div"/>
 					<oneOrMore>
-						<ref name="e.div"/>
+						<ref name="div"/>
 					</oneOrMore>
 				</group>
 				<oneOrMore>
@@ -262,9 +262,9 @@
 			</optional>
 			<choice>
 				<group>
-					<ref name="e.div"/>
+					<ref name="div"/>
 					<oneOrMore>
-						<ref name="e.div"/>
+						<ref name="div"/>
 					</oneOrMore>
 				</group>
 				<oneOrMore>
@@ -289,9 +289,9 @@
 			</optional>
 			<choice>
 				<group>
-					<ref name="e.div"/>
+					<ref name="div"/>
 					<oneOrMore>
-						<ref name="e.div"/>
+						<ref name="div"/>
 					</oneOrMore>
 				</group>
 				<oneOrMore>
@@ -316,9 +316,9 @@
 			</optional>
 			<choice>
 				<group>
-					<ref name="e.div"/>
+					<ref name="div"/>
 					<oneOrMore>
-						<ref name="e.div"/>
+						<ref name="div"/>
 					</oneOrMore>
 				</group>
 				<oneOrMore>
@@ -340,9 +340,9 @@
 			</optional>
 			<choice>
 				<group>
-					<ref name="e.div"/>
+					<ref name="div"/>
 					<oneOrMore>
-						<ref name="e.div"/>
+						<ref name="div"/>
 					</oneOrMore>
 				</group>
 				<oneOrMore>
@@ -364,9 +364,9 @@
 			</optional>
 			<choice>
 				<group>
-					<ref name="e.div"/>
+					<ref name="div"/>
 					<oneOrMore>
-						<ref name="e.div"/>
+						<ref name="div"/>
 					</oneOrMore>
 				</group>
 				<oneOrMore>
@@ -392,9 +392,9 @@
 			</optional>
 			<choice>
 				<group>
-					<ref name="e.div"/>
+					<ref name="div"/>
 					<oneOrMore>
-						<ref name="e.div"/>
+						<ref name="div"/>
 					</oneOrMore>
 				</group>
 				<oneOrMore>
@@ -416,9 +416,9 @@
 			</optional>
 			<choice>
 				<group>
-					<ref name="e.div"/>
+					<ref name="div"/>
 					<oneOrMore>
-						<ref name="e.div"/>
+						<ref name="div"/>
 					</oneOrMore>
 				</group>
 				<oneOrMore>
@@ -443,9 +443,9 @@
 			</optional>
 			<choice>
 				<group>
-					<ref name="e.div"/>
+					<ref name="div"/>
 					<oneOrMore>
-						<ref name="e.div"/>
+						<ref name="div"/>
 					</oneOrMore>
 				</group>
 				<oneOrMore>
@@ -467,9 +467,9 @@
 			</optional>
 			<choice>
 				<group>
-					<ref name="e.div"/>
+					<ref name="div"/>
 					<oneOrMore>
-						<ref name="e.div"/>
+						<ref name="div"/>
 					</oneOrMore>
 				</group>
 				<oneOrMore>
@@ -579,7 +579,7 @@
 				<ref name="m.blocks"/>
 			</zeroOrMore>
 			<zeroOrMore>
-				<ref name="e.div"/>
+				<ref name="div"/>
 			</zeroOrMore>
 		</element>
 	</define>
@@ -645,29 +645,29 @@
 	
 	<define name="m.desc.base">
 		<choice>
-			<ref name="e.accessRestrict"/>
-			<ref name="e.accruals"/>
-			<ref name="e.acqInfo"/>
-			<ref name="e.altFormAvail"/>
-			<ref name="e.appraisal"/>
-			<ref name="e.arrangement"/>
-			<ref name="e.bibliography"/>
-			<ref name="e.biogHist"/>
-			<ref name="e.controlAccess"/>
-			<ref name="e.custodHist"/>
-			<ref name="e.index"/>
-			<ref name="e.legalStatus"/>
-			<ref name="e.materialSpec"/>
-			<ref name="e.odd"/>
-			<ref name="e.originalsLoc"/>
-			<ref name="e.otherFindAid"/>
-			<ref name="e.physTech"/>
-			<ref name="e.preferCite"/>
-			<ref name="e.processInfo"/>
-			<ref name="e.relatedMaterial"/>
-			<ref name="e.scopeContent"/>
-			<ref name="e.separatedMaterial"/>
-			<ref name="e.useRestrict"/>
+			<ref name="accessRestrict"/>
+			<ref name="accruals"/>
+			<ref name="acqInfo"/>
+			<ref name="altFormAvail"/>
+			<ref name="appraisal"/>
+			<ref name="arrangement"/>
+			<ref name="bibliography"/>
+			<ref name="biogHist"/>
+			<ref name="controlAccess"/>
+			<ref name="custodHist"/>
+			<ref name="index"/>
+			<ref name="legalStatus"/>
+			<ref name="materialSpec"/>
+			<ref name="odd"/>
+			<ref name="originalsLoc"/>
+			<ref name="otherFindAid"/>
+			<ref name="physTech"/>
+			<ref name="preferCite"/>
+			<ref name="processInfo"/>
+			<ref name="relatedMaterial"/>
+			<ref name="scopeContent"/>
+			<ref name="separatedMaterial"/>
+			<ref name="useRestrict"/>
 		</choice>
 	</define>
 	<define name="m.did">

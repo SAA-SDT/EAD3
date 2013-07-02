@@ -1,0 +1,6115 @@
+
+<!-- This file has been revised to test proposed changes to EAD for its upcoming release in 2013 
+
+Implements the following revision requests provisionally accepted by TS-EAD subgroups:
+
+9. eadgrp, archdescgrp, and dscgrp removed
+
+19. Change the model for <eadheader> in line with the control area in EAC-CPF
+
+* Followed draft outline for new EAD control element:
+
+<control>
+<eadId>
+<url>
+<titleProper>
+<subTitle>
+<maintenanceAgency>
+<agencyCode>
+<agencyName>
+<descriptiveNote>
+<otherAgencyCode>
+<maintenanceStatus>
+<descriptionMaintenanceHistory>
+<maintenanceEvent>
+<agent>
+<agentType>
+<descriptionEventType>
+<eventDateTime>
+<eventDescription>
+<eventPlace>?
+<instanceMaintenanceHistory>
+<maintenanceEvent>
+<agent>
+<agentType>
+<instanceEventType>
+<eventDateTime>
+<eventDescription>
+<editionStmt>?
+<seriesStmt>?
+<noteStmt>?
+<languageDeclaration>
+<sources>?
+<publicationStatus>
+<conventionDeclaration>
+<otherRecordId>
+<localControl>
+<localTypeDeclaration>
+
+30. Eliminate Frontmatter
+
+33. Review purpose of <dsc>
+
+* optional <dsc> replaced by optional choice of <dsc> or <c>/<c01> in <archdesc>
+* <dsc> removed from <dsc>, <c>, and <c01>
+
+37.2 Abolish <abbr> [and <expan>]
+
+39. Deprecate <descGrp>
+
+14. Allow logical links to related resources and entities
+
+* use XLink model [xlink namespace elements already implemented in EAD 2002 RNG schema]
+
+* add EAC-CPF based <relations> element to <archdesc>, <c>, and <c01>
+** note: replaced xml:id with a.common, used EAD definition of <p> rather than EAC-CPF <p>
+
+15. Allow the insertion of valid data from other XML namespaces
+
+* implemented by <objectXMLData> element in <relations> per 14 above
+** Note <objectXMLData> currently allows any *foreign* namespace as a means to avoid id datatype complications
+
+52. Don't allow <acqinfo> element within <custodhist>
+
+
+
+Other changes:
+
+* Changed namespace to "http://saa-sdt.example.org/ead/revised"
+* Remove <arrangement> from <scopeContent>
+* Remove <unitdate> from <unitTitle>
+* <blockquote> removed
+* Promote <legalStatus> from <accessRestrict> to sibling of other descriptive note elements
+** [Note: add <p> to content model?]
+* Remove <editionstmt>, <seriesstmt>, and <notestmt>
+* Add @normal to <unitTitle>
+* <address> now only in <repository> and [<publicationStmt>]
+* @source now datatype token
+* @type added to <dao>
+* <dao> now only in <c>, <c#>, and <archdesc>
+* @continuation removed
+* deprecate/remove <runner>
+* deprecate <thead> in dsc and c
+* eliminate @tpattern
+* deprecate <fileplan>
+
+* remove default value from @calendar and @era
+* deprecate thead
+* removed table, list, and chronlist from m.para.content
+* remove did child elements from anywhere other than did
+* removed recursion in note elements (i.e, accessrestrict, accruals, acqinfo, altformavail, appraisal, arrangement, bibliography, 
+  bioghist, controlaccess, custodhist, descgrp, dsc, fileplan, index, note, odd, originalsloc, otherfindaid, phystech, prefercite, 
+  processinfo, relatedmaterial, scopecontent, separatedmaterial, userestrict)
+* remove ptr and extref
+* add @containerid to <container>
+* create element <formsavailable> in <did>, with children <container> and <dao> (which are now only available in <formsavailable>)
+* eliminate linkgrp
+* remove linking attributes from <bibref>; restrict <bibref> to <bibliography> only
+* remove <lb/> from content model of <abstract>
+* allow only <emph> and <ref> in <container>
+* allow only <emph>, <ref>, and <language> in <langmaterial>
+* remove <materialspec> from <did> and move to <archdesc> and <c>/<c#>; adopt same content model as <phystech>
+* allow only <emph> and <ref> as element children of <physloc>
+* allow only <emph> and <ref> as element children of <unitid>
+* allow only text in <bibref>, <corpname>, <date>, <emph>, <famname>, <persname>, <title>, <ref>, and <unittitle>
+* allow only <emph> and <ref> as element children of <physfacet>
+* allow only <emph> and <ref> as element children of <dimensions>
+* allow only <emph> and <ref> as element children of <extent>
+* remove linking attributes from <title>
+* added choice of either two or more <div>'s or one or more <p>, <table>, <list>, or <note>'s in <scopecontent> (to be implemented on all "note" elements)
+* remove extended link attributes and elements
+* restored eadheader for <control>
+
+* changed name of all type attributes without a list of values to "localtype"
+<<<<<<< HEAD
+
+* changed relation and added to arcdesc and c*
+
+* added quote
+
+* added attributes to relation as per issue 46
+
+* removed note and added didNote to did per issue 40
+
+* changed unitDate, dsc, and list element @type to unitdateType, dscType, and listType per issue #6
+
+* changed any @type without closed list of values to @localType per issue #7
+
+* added required, repeatable part element to all controlAccess children (i.e., those elements defined in m.access + controlaccess) per issue #10
+
+* changed @authFileNumber to @identifier per issue #11
+
+* added @identifier to any element with @source per issue #12
+
+* Added @daoType with values 'bornDigital', 'derived', 'other'. Added @otherDaoType; per issue #13
+
+* Added ref to addressLine per issue #15
+
+* added @localType to addressline per issue #17
+
+* added lb to any element with content model text, emph, ref (should really define a pattern for this) per issue #35
+
+* changed reference to m.desc.full to m.desc.base in archdesc and m.c.base model in order to remove note from model; per issue #41
+
+* restored blockquote
+
+* created footnote with model m.blocks per issue #43
+
+
+* added bibRef and archRef to separatedMaterial and relatedMaterial (albeit in a very simple way: as part of oneOrMore); per issue #48
+
+* removed @normal from unitDate and limited content model to text and unitDate per issue #47 
+
+* added element unitDateStructured to did per issue #47
+
+* added @localType to <fromDate> and <toDate> per issue #50
+
+* added control per issue #45
+
+* added "unknown" to list of values for dao/@daoType per issue #51
+
+* added nameGrpNote per issue #44
+
+* changed formsAvailable to availableForms
+
+* removed linking attributes from bibRef and archref per issue #58
+
+* removed lists of attribute values from external lists (langCode, countryCode, scriptCode)
+
+* added head03 to listHead for chronlist
+
+* created m.access.entry to define *entry element children of controlAccess per issue # 55; restored old definitions of *name and other former controlAccess children in m.access
+
+
+=======
+* replaced eadheader with control
+>>>>>>> 7d149cadcc338083909ce4df0ac207de05e6399e
+-->
+<!--
+	EAD 2002 Relax NG Schema
+	Version: 200804 Release
+	Date: 20080421
+	
+	Previous Version: 200612 Release
+		
+	Publisher: Society of American Archivists and the Library of Congress
+	
+	Funding: National Historical Publications and Records Commission 
+	
+	*** Comments, questions, and error reports should be sent to the EAD listserv
+	with subject line: Schema Comment ***
+	
+	Listserv address: EAD@LOC.GOV
+	
+	Editors (SAA/EADWG/EAD Schema Working Group):
+	
+	Francoise Bourdon (Bibliothèque nationale de France)
+	Terry Catapano (Columbia University)
+	Jerry McDonough (University of Illinois)
+	Lee Mandell (New York University)
+	Chris Prom (University of Illinois)
+	Stephen Yearl (Yale University)
+	Daniel Pitti (University of Virginia), Chair
+	
+	EAD DTD / Schema Relationship
+	
+	With one exception (XLink elements and attributes), the EAD Schema is a subset of the 
+	EAD 2002 DTD. 
+	
+	The Xlink compatible elements and attributes in the DTD have been made compliant
+	by implementing XML Namespace. As a result, DTD compliant instances containing 
+	ANY of the XLink tags and attributes will not validate against the Schema. These instances
+	must be converted into XLink compliant tags and attributes. The EAD Schema WG will
+	provide XSLT for this conversion with the release of the official version of the Schema. 
+	
+	The following elements and their XLink-specific attributes are impacted by this change:
+	
+	arc archref
+	bibref
+	dao daoGrp daoloc
+	extptr extptrloc extref extrefloc
+	linkgrp
+	ptr ptrloc
+	ref refloc resource
+	title
+	
+	With the exception of the XLink tags and attributes, a Schema valid instance will be a DTD
+	valid instance. However, because of the imposition of datatype contrainst on specific 
+	attribute values, a DTD valid instance may not be Schema valid. 
+	
+	The following attributes are impacted by the imposition of datatype constraints:
+	
+	@normal on <unitdate> and <date>: constrained to date and date range subset of ISO 8601
+	@repositorycode: constrained to ISO 15511 (ISIL) 
+	@mainagencycode: same as @repositorycode
+	@langcode: constrained to ISO 639-2 alpha-3 codel list
+	@scriptcode: constrained to ISO 15924 code list
+	@countrycode: constrained to ISO 3166-1 alpha-2 code list
+	
+	Revision history: 
+	1.  Revised definitions of XLink elements and attributes in order to make the derived XSD
+	version of the schema conform to xlink.xsd instance used by MODS and METS (20080421)
+	
+-->
+<!-- changed ns from urn:isbn:1-931666-22-9 to provisional http://saa-sdt.example.org/ead/revised" -->
+<grammar datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" ns="urn:isbn:1-931666-22-9"
+	xmlns="http://relaxng.org/ns/structure/1.0"
+	xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+	xmlns:xlink="http://www.w3.org/1999/xlink">
+
+
+	<start>
+		<choice>
+			<ref name="ead"/>
+		</choice>
+	</start>
+	<define name="am.date.normal">
+		<optional>
+			<attribute name="normal">
+				<data type="token">
+					<param name="pattern"
+						>(\-?(0|1|2)([0-9]{3})(((01|02|03|04|05|06|07|08|09|10|11|12)((0[1-9])|((1|2)[0-9])|(3[0-1])))|\-((01|02|03|04|05|06|07|08|09|10|11|12)(\-((0[1-9])|((1|2)[0-9])|(3[0-1])))?))?)(/\-?(0|1|2)([0-9]{3})(((01|02|03|04|05|06|07|08|09|10|11|12)((0[1-9])|((1|2)[0-9])|(3[0-1])))|\-((01|02|03|04|05|06|07|08|09|10|11|12)(\-((0[1-9])|((1|2)[0-9])|(3[0-1])))?))?)?</param>
+				</data>
+			</attribute>
+		</optional>
+	</define>
+	<define name="data.repositoryCode">
+		<data type="token">
+			<param name="pattern"
+				>((AF|AX|AL|DZ|AS|AD|AO|AI|AQ|AG|AR|AM|AW|AU|AT|AZ|BS|BH|BD|BB|BY|BE|BZ|BJ|BM|BT|BO|BA|BW|BV|BR|IO|BN|BG|BF|BI|KH|CM|CA|CV|KY|CF|TD|CL|CN|CX|CC|CO|KM|CG|CD|CK|CR|CI|HR|CU|CY|CZ|DK|DJ|DM|DO|EC|EG|SV|GQ|ER|EE|ET|FK|FO|FJ|FI|FR|GF|PF|TF|GA|GM|GE|DE|GH|GI|GR|GL|GD|GP|GU|GT|GN|GW|GY|HT|HM|VA|HN|HK|HU|IS|IN|ID|IR|IQ|IE|IL|IT|JM|JP|JO|KZ|KE|KI|KP|KR|KW|KG|LA|LV|LB|LS|LR|LY|LI|LT|LU|MO|MK|MG|MW|MY|MV|ML|MT|MH|MQ|MR|MU|YT|MX|FM|MD|MC|MN|MS|MA|MZ|MM|NA|NR|NP|NL|AN|NC|NZ|NI|NE|NG|NU|NF|MP|NO|OM|PK|PW|PS|PA|PG|PY|PE|PH|PN|PL|PT|PR|QA|RE|RO|RU|RW|SH|KN|LC|PM|VC|WS|SM|ST|SA|SN|CS|SC|SL|SG|SK|SI|SB|SO|ZA|GS|ES|LK|SD|SR|SJ|SZ|SE|CH|SY|TW|TJ|TZ|TH|TL|TG|TK|TO|TT|TN|TR|TM|TC|TV|UG|UA|AE|GB|US|UM|UY|UZ|VU|VE|VN|VG|VI|WF|EH|YE|ZM|ZW)|([a-zA-Z]{1})|([a-zA-Z]{3,4}))(-[a-zA-Z0-9:/\-]{1,11})</param>
+		</data>
+	</define>
+	<define name="am.mainAgencyCode">
+		<optional>
+			<attribute name="mainAgencyCode">
+				<ref name="data.repositoryCode"/>
+			</attribute>
+		</optional>
+	</define>
+	<define name="am.repositoryCode">
+		<optional>
+			<attribute name="repositoryCode">
+				<ref name="data.repositoryCode"/>
+			</attribute>
+		</optional>
+	</define>
+	<define name="am.langCode">
+		<optional>
+			<attribute name="langCode">
+				<!-- <choice>
+					<value>aar</value>
+					<value>abk</value>
+					<value>ace</value>
+					<value>ach</value>
+					<value>ada</value>
+					<value>ady</value>
+					<value>afa</value>
+					<value>afh</value>
+					<value>afr</value>
+					<value>aka</value>
+					<value>akk</value>
+					<value>alb</value>
+					<value>ale</value>
+					<value>alg</value>
+					<value>amh</value>
+					<value>ang</value>
+					<value>apa</value>
+					<value>ara</value>
+					<value>arc</value>
+					<value>arg</value>
+					<value>arm</value>
+					<value>arn</value>
+					<value>arp</value>
+					<value>art</value>
+					<value>arw</value>
+					<value>asm</value>
+					<value>ast</value>
+					<value>ath</value>
+					<value>aus</value>
+					<value>ava</value>
+					<value>ave</value>
+					<value>awa</value>
+					<value>aym</value>
+					<value>aze</value>
+					<value>bad</value>
+					<value>bai</value>
+					<value>bak</value>
+					<value>bal</value>
+					<value>bam</value>
+					<value>ban</value>
+					<value>baq</value>
+					<value>bas</value>
+					<value>bat</value>
+					<value>bej</value>
+					<value>bel</value>
+					<value>bem</value>
+					<value>ben</value>
+					<value>ber</value>
+					<value>bho</value>
+					<value>bih</value>
+					<value>bik</value>
+					<value>bin</value>
+					<value>bis</value>
+					<value>bla</value>
+					<value>bnt</value>
+					<value>bod</value>
+					<value>bos</value>
+					<value>bra</value>
+					<value>bre</value>
+					<value>btk</value>
+					<value>bua</value>
+					<value>bug</value>
+					<value>bul</value>
+					<value>bur</value>
+					<value>bur</value>
+					<value>byn</value>
+					<value>cad</value>
+					<value>cai</value>
+					<value>car</value>
+					<value>cat</value>
+					<value>cau</value>
+					<value>ceb</value>
+					<value>cel</value>
+					<value>ces</value>
+					<value>cha</value>
+					<value>chb</value>
+					<value>che</value>
+					<value>chg</value>
+					<value>chi</value>
+					<value>chk</value>
+					<value>chm</value>
+					<value>chn</value>
+					<value>cho</value>
+					<value>chp</value>
+					<value>chr</value>
+					<value>chu</value>
+					<value>chv</value>
+					<value>chy</value>
+					<value>cmc</value>
+					<value>cop</value>
+					<value>cor</value>
+					<value>cos</value>
+					<value>cpe</value>
+					<value>cpf</value>
+					<value>cpp</value>
+					<value>cre</value>
+					<value>crh</value>
+					<value>crp</value>
+					<value>csb</value>
+					<value>cus</value>
+					<value>cym</value>
+					<value>cze</value>
+					<value>cze</value>
+					<value>dak</value>
+					<value>dan</value>
+					<value>dar</value>
+					<value>day</value>
+					<value>del</value>
+					<value>den</value>
+					<value>deu</value>
+					<value>dgr</value>
+					<value>din</value>
+					<value>div</value>
+					<value>doi</value>
+					<value>dra</value>
+					<value>dsb</value>
+					<value>dua</value>
+					<value>dum</value>
+					<value>dut</value>
+					<value>dut</value>
+					<value>dyu</value>
+					<value>dzo</value>
+					<value>efi</value>
+					<value>egy</value>
+					<value>eka</value>
+					<value>ell</value>
+					<value>elx</value>
+					<value>eng</value>
+					<value>enm</value>
+					<value>epo</value>
+					<value>est</value>
+					<value>eus</value>
+					<value>eus</value>
+					<value>ewe</value>
+					<value>ewo</value>
+					<value>fan</value>
+					<value>fao</value>
+					<value>fas</value>
+					<value>fat</value>
+					<value>fij</value>
+					<value>fil</value>
+					<value>fin</value>
+					<value>fiu</value>
+					<value>fon</value>
+					<value>fra</value>
+					<value>fre</value>
+					<value>frm</value>
+					<value>fro</value>
+					<value>fry</value>
+					<value>ful</value>
+					<value>fur</value>
+					<value>gaa</value>
+					<value>gay</value>
+					<value>gba</value>
+					<value>gem</value>
+					<value>geo</value>
+					<value>ger</value>
+					<value>gez</value>
+					<value>gil</value>
+					<value>gla</value>
+					<value>gle</value>
+					<value>glg</value>
+					<value>glv</value>
+					<value>gmh</value>
+					<value>goh</value>
+					<value>gon</value>
+					<value>gor</value>
+					<value>got</value>
+					<value>grb</value>
+					<value>grc</value>
+					<value>gre</value>
+					<value>gre</value>
+					<value>grn</value>
+					<value>guj</value>
+					<value>gwi</value>
+					<value>hai</value>
+					<value>hat</value>
+					<value>hau</value>
+					<value>haw</value>
+					<value>heb</value>
+					<value>her</value>
+					<value>hil</value>
+					<value>him</value>
+					<value>hin</value>
+					<value>hit</value>
+					<value>hmn</value>
+					<value>hmo</value>
+					<value>hrv</value>
+					<value>hsb</value>
+					<value>hun</value>
+					<value>hup</value>
+					<value>hye</value>
+					<value>iba</value>
+					<value>ibo</value>
+					<value>ice</value>
+					<value>ice</value>
+					<value>ido</value>
+					<value>iii</value>
+					<value>ijo</value>
+					<value>iku</value>
+					<value>ile</value>
+					<value>ilo</value>
+					<value>ina</value>
+					<value>inc</value>
+					<value>ind</value>
+					<value>ine</value>
+					<value>inh</value>
+					<value>ipk</value>
+					<value>ira</value>
+					<value>iro</value>
+					<value>isl</value>
+					<value>ita</value>
+					<value>jav</value>
+					<value>jbo</value>
+					<value>jpn</value>
+					<value>jpr</value>
+					<value>jrb</value>
+					<value>kaa</value>
+					<value>kab</value>
+					<value>kac</value>
+					<value>kal</value>
+					<value>kam</value>
+					<value>kan</value>
+					<value>kar</value>
+					<value>kas</value>
+					<value>kat</value>
+					<value>kau</value>
+					<value>kaw</value>
+					<value>kaz</value>
+					<value>kbd</value>
+					<value>kha</value>
+					<value>khi</value>
+					<value>khm</value>
+					<value>kho</value>
+					<value>kik</value>
+					<value>kin</value>
+					<value>kir</value>
+					<value>kmb</value>
+					<value>kok</value>
+					<value>kom</value>
+					<value>kon</value>
+					<value>kor</value>
+					<value>kos</value>
+					<value>kpe</value>
+					<value>krc</value>
+					<value>kro</value>
+					<value>kru</value>
+					<value>kua</value>
+					<value>kum</value>
+					<value>kur</value>
+					<value>kut</value>
+					<value>lad</value>
+					<value>lah</value>
+					<value>lam</value>
+					<value>lao</value>
+					<value>lat</value>
+					<value>lav</value>
+					<value>lez</value>
+					<value>lim</value>
+					<value>lin</value>
+					<value>lit</value>
+					<value>lol</value>
+					<value>loz</value>
+					<value>ltz</value>
+					<value>lua</value>
+					<value>lub</value>
+					<value>lug</value>
+					<value>lui</value>
+					<value>lun</value>
+					<value>luo</value>
+					<value>lus</value>
+					<value>mac</value>
+					<value>mad</value>
+					<value>mag</value>
+					<value>mah</value>
+					<value>mai</value>
+					<value>mak</value>
+					<value>mal</value>
+					<value>man</value>
+					<value>mao</value>
+					<value>mao</value>
+					<value>map</value>
+					<value>mar</value>
+					<value>mas</value>
+					<value>may</value>
+					<value>mdf</value>
+					<value>mdr</value>
+					<value>men</value>
+					<value>mga</value>
+					<value>mic</value>
+					<value>min</value>
+					<value>mis</value>
+					<value>mkd</value>
+					<value>mkh</value>
+					<value>mlg</value>
+					<value>mlt</value>
+					<value>mnc</value>
+					<value>mni</value>
+					<value>mno</value>
+					<value>moh</value>
+					<value>mol</value>
+					<value>mon</value>
+					<value>mos</value>
+					<value>mri</value>
+					<value>msa</value>
+					<value>mul</value>
+					<value>mun</value>
+					<value>mus</value>
+					<value>mwl</value>
+					<value>mwr</value>
+					<value>mya</value>
+					<value>myn</value>
+					<value>myv</value>
+					<value>nah</value>
+					<value>nai</value>
+					<value>nap</value>
+					<value>nau</value>
+					<value>nav</value>
+					<value>nbl</value>
+					<value>nde</value>
+					<value>ndo</value>
+					<value>nds</value>
+					<value>nep</value>
+					<value>new</value>
+					<value>nia</value>
+					<value>nic</value>
+					<value>niu</value>
+					<value>nld</value>
+					<value>nno</value>
+					<value>nob</value>
+					<value>nog</value>
+					<value>non</value>
+					<value>nor</value>
+					<value>nso</value>
+					<value>nub</value>
+					<value>nwc</value>
+					<value>nya</value>
+					<value>nym</value>
+					<value>nyn</value>
+					<value>nyo</value>
+					<value>nzi</value>
+					<value>oci</value>
+					<value>oji</value>
+					<value>ori</value>
+					<value>orm</value>
+					<value>osa</value>
+					<value>oss</value>
+					<value>ota</value>
+					<value>oto</value>
+					<value>paa</value>
+					<value>pag</value>
+					<value>pal</value>
+					<value>pam</value>
+					<value>pan</value>
+					<value>pap</value>
+					<value>pau</value>
+					<value>peo</value>
+					<value>per</value>
+					<value>phi</value>
+					<value>phn</value>
+					<value>pli</value>
+					<value>pol</value>
+					<value>pon</value>
+					<value>por</value>
+					<value>pra</value>
+					<value>pro</value>
+					<value>pus</value>
+					<value>que</value>
+					<value>raj</value>
+					<value>rap</value>
+					<value>rar</value>
+					<value>roa</value>
+					<value>roh</value>
+					<value>rom</value>
+					<value>ron</value>
+					<value>rum</value>
+					<value>run</value>
+					<value>rus</value>
+					<value>sad</value>
+					<value>sag</value>
+					<value>sah</value>
+					<value>sai</value>
+					<value>sal</value>
+					<value>sam</value>
+					<value>san</value>
+					<value>sas</value>
+					<value>sat</value>
+					<value>scc</value>
+					<value>scn</value>
+					<value>sco</value>
+					<value>scr</value>
+					<value>sel</value>
+					<value>sem</value>
+					<value>sga</value>
+					<value>sgn</value>
+					<value>shn</value>
+					<value>sid</value>
+					<value>sin</value>
+					<value>sio</value>
+					<value>sit</value>
+					<value>sla</value>
+					<value>slk</value>
+					<value>slo</value>
+					<value>slv</value>
+					<value>sma</value>
+					<value>sme</value>
+					<value>smi</value>
+					<value>smj</value>
+					<value>smn</value>
+					<value>smo</value>
+					<value>sms</value>
+					<value>sna</value>
+					<value>snd</value>
+					<value>snk</value>
+					<value>sog</value>
+					<value>som</value>
+					<value>son</value>
+					<value>sot</value>
+					<value>spa</value>
+					<value>sqi</value>
+					<value>srd</value>
+					<value>srp</value>
+					<value>srr</value>
+					<value>ssa</value>
+					<value>ssw</value>
+					<value>suk</value>
+					<value>sun</value>
+					<value>sus</value>
+					<value>sux</value>
+					<value>swa</value>
+					<value>swe</value>
+					<value>syr</value>
+					<value>tah</value>
+					<value>tai</value>
+					<value>tam</value>
+					<value>tat</value>
+					<value>tel</value>
+					<value>tem</value>
+					<value>ter</value>
+					<value>tet</value>
+					<value>tgk</value>
+					<value>tgl</value>
+					<value>tha</value>
+					<value>tib</value>
+					<value>tib</value>
+					<value>tig</value>
+					<value>tir</value>
+					<value>tiv</value>
+					<value>tkl</value>
+					<value>tlh</value>
+					<value>tli</value>
+					<value>tmh</value>
+					<value>tog</value>
+					<value>ton</value>
+					<value>tpi</value>
+					<value>tsi</value>
+					<value>tsn</value>
+					<value>tso</value>
+					<value>tuk</value>
+					<value>tum</value>
+					<value>tup</value>
+					<value>tur</value>
+					<value>tut</value>
+					<value>tvl</value>
+					<value>twi</value>
+					<value>tyv</value>
+					<value>udm</value>
+					<value>uga</value>
+					<value>uig</value>
+					<value>ukr</value>
+					<value>umb</value>
+					<value>und</value>
+					<value>urd</value>
+					<value>uzb</value>
+					<value>vai</value>
+					<value>ven</value>
+					<value>vie</value>
+					<value>vol</value>
+					<value>vot</value>
+					<value>wak</value>
+					<value>wal</value>
+					<value>war</value>
+					<value>was</value>
+					<value>wel</value>
+					<value>wen</value>
+					<value>wln</value>
+					<value>wol</value>
+					<value>xal</value>
+					<value>xho</value>
+					<value>yao</value>
+					<value>yap</value>
+					<value>yid</value>
+					<value>yor</value>
+					<value>ypk</value>
+					<value>zap</value>
+					<value>zen</value>
+					<value>zha</value>
+					<value>zho</value>
+					<value>znd</value>
+					<value>zul</value>
+					<value>zun</value>
+				</choice>
+				-->
+			</attribute>
+		</optional>
+	</define>
+	<define name="am.countryCode">
+		<optional>
+			<attribute name="countryCode">
+				<!--	<choice>
+					<value>AF</value>
+					<value>AX</value>
+					<value>AL</value>
+					<value>DZ</value>
+					<value>AS</value>
+					<value>AD</value>
+					<value>AO</value>
+					<value>AI</value>
+					<value>AQ</value>
+					<value>AG</value>
+					<value>AR</value>
+					<value>AM</value>
+					<value>AW</value>
+					<value>AU</value>
+					<value>AT</value>
+					<value>AZ</value>
+					<value>BS</value>
+					<value>BH</value>
+					<value>BD</value>
+					<value>BB</value>
+					<value>BY</value>
+					<value>BE</value>
+					<value>BZ</value>
+					<value>BJ</value>
+					<value>BM</value>
+					<value>BT</value>
+					<value>BO</value>
+					<value>BA</value>
+					<value>BW</value>
+					<value>BV</value>
+					<value>BR</value>
+					<value>IO</value>
+					<value>BN</value>
+					<value>BG</value>
+					<value>BF</value>
+					<value>BI</value>
+					<value>KH</value>
+					<value>CM</value>
+					<value>CA</value>
+					<value>CV</value>
+					<value>KY</value>
+					<value>CF</value>
+					<value>TD</value>
+					<value>CL</value>
+					<value>CN</value>
+					<value>CX</value>
+					<value>CC</value>
+					<value>CO</value>
+					<value>KM</value>
+					<value>CG</value>
+					<value>CD</value>
+					<value>CK</value>
+					<value>CR</value>
+					<value>CI</value>
+					<value>HR</value>
+					<value>CU</value>
+					<value>CY</value>
+					<value>CZ</value>
+					<value>DK</value>
+					<value>DJ</value>
+					<value>DM</value>
+					<value>DO</value>
+					<value>EC</value>
+					<value>EG</value>
+					<value>SV</value>
+					<value>GQ</value>
+					<value>ER</value>
+					<value>EE</value>
+					<value>ET</value>
+					<value>FK</value>
+					<value>FO</value>
+					<value>FJ</value>
+					<value>FI</value>
+					<value>FR</value>
+					<value>GF</value>
+					<value>PF</value>
+					<value>TF</value>
+					<value>GA</value>
+					<value>GM</value>
+					<value>GE</value>
+					<value>DE</value>
+					<value>GH</value>
+					<value>GI</value>
+					<value>GR</value>
+					<value>GL</value>
+					<value>GD</value>
+					<value>GP</value>
+					<value>GU</value>
+					<value>GT</value>
+					<value>GN</value>
+					<value>GW</value>
+					<value>GY</value>
+					<value>HT</value>
+					<value>HM</value>
+					<value>VA</value>
+					<value>HN</value>
+					<value>HK</value>
+					<value>HU</value>
+					<value>IS</value>
+					<value>IN</value>
+					<value>ID</value>
+					<value>IR</value>
+					<value>IQ</value>
+					<value>IE</value>
+					<value>IL</value>
+					<value>IT</value>
+					<value>JM</value>
+					<value>JP</value>
+					<value>JO</value>
+					<value>KZ</value>
+					<value>KE</value>
+					<value>KI</value>
+					<value>KP</value>
+					<value>KR</value>
+					<value>KW</value>
+					<value>KG</value>
+					<value>LA</value>
+					<value>LV</value>
+					<value>LB</value>
+					<value>LS</value>
+					<value>LR</value>
+					<value>LY</value>
+					<value>LI</value>
+					<value>LT</value>
+					<value>LU</value>
+					<value>MO</value>
+					<value>MK</value>
+					<value>MG</value>
+					<value>MW</value>
+					<value>MY</value>
+					<value>MV</value>
+					<value>ML</value>
+					<value>MT</value>
+					<value>MH</value>
+					<value>MQ</value>
+					<value>MR</value>
+					<value>MU</value>
+					<value>YT</value>
+					<value>MX</value>
+					<value>FM</value>
+					<value>MD</value>
+					<value>MC</value>
+					<value>MN</value>
+					<value>MS</value>
+					<value>MA</value>
+					<value>MZ</value>
+					<value>MM</value>
+					<value>NA</value>
+					<value>NR</value>
+					<value>NP</value>
+					<value>NL</value>
+					<value>AN</value>
+					<value>NC</value>
+					<value>NZ</value>
+					<value>NI</value>
+					<value>NE</value>
+					<value>NG</value>
+					<value>NU</value>
+					<value>NF</value>
+					<value>MP</value>
+					<value>NO</value>
+					<value>OM</value>
+					<value>PK</value>
+					<value>PW</value>
+					<value>PS</value>
+					<value>PA</value>
+					<value>PG</value>
+					<value>PY</value>
+					<value>PE</value>
+					<value>PH</value>
+					<value>PN</value>
+					<value>PL</value>
+					<value>PT</value>
+					<value>PR</value>
+					<value>QA</value>
+					<value>RE</value>
+					<value>RO</value>
+					<value>RU</value>
+					<value>RW</value>
+					<value>SH</value>
+					<value>KN</value>
+					<value>LC</value>
+					<value>PM</value>
+					<value>VC</value>
+					<value>WS</value>
+					<value>SM</value>
+					<value>ST</value>
+					<value>SA</value>
+					<value>SN</value>
+					<value>CS</value>
+					<value>SC</value>
+					<value>SL</value>
+					<value>SG</value>
+					<value>SK</value>
+					<value>SI</value>
+					<value>SB</value>
+					<value>SO</value>
+					<value>ZA</value>
+					<value>GS</value>
+					<value>ES</value>
+					<value>LK</value>
+					<value>SD</value>
+					<value>SR</value>
+					<value>SJ</value>
+					<value>SZ</value>
+					<value>SE</value>
+					<value>CH</value>
+					<value>SY</value>
+					<value>TW</value>
+					<value>TJ</value>
+					<value>TZ</value>
+					<value>TH</value>
+					<value>TL</value>
+					<value>TG</value>
+					<value>TK</value>
+					<value>TO</value>
+					<value>TT</value>
+					<value>TN</value>
+					<value>TR</value>
+					<value>TM</value>
+					<value>TC</value>
+					<value>TV</value>
+					<value>UG</value>
+					<value>UA</value>
+					<value>AE</value>
+					<value>GB</value>
+					<value>US</value>
+					<value>UM</value>
+					<value>UY</value>
+					<value>UZ</value>
+					<value>VU</value>
+					<value>VE</value>
+					<value>VN</value>
+					<value>VG</value>
+					<value>VI</value>
+					<value>WF</value>
+					<value>EH</value>
+					<value>YE</value>
+					<value>ZM</value>
+					<value>ZW</value>
+				</choice>
+				-->
+			</attribute>
+		</optional>
+	</define>
+	<define name="m.render">
+		<choice>
+			<ref name="emph"/>
+			<element name="lb">
+				<empty/>
+			</element>
+		</choice>
+	</define>
+	<define name="m.refs">
+		<choice>
+			<ref name="ref"/>
+			<!-- <ref name="extRef"/> -->
+			<!--TC; 2012-06-13: eliminate linkGrp -->
+			<!--<element name="linkGrp">
+				<ref name="a.common"/>
+				<ref name="extendedLink"/>
+				<oneOrMore>
+					<choice>
+						<ref name="extended.els"/>
+					</choice>
+				</oneOrMore>
+			</element>
+			-->
+			<!-- TC; 2012-06-13: restrict bibRef to bibliography only -->
+			<!-- <ref name="bibRef"/> -->
+			<ref name="title"/>
+			<!--	<ref name="archRef"/> -->
+		</choice>
+	</define>
+	<define name="m.access">
+		<choice>
+			<ref name="corpName"/>
+			<ref name="famName"/>
+			<ref name="geogName"/>
+			<ref name="name"/>
+			<element name="occupation">
+				<ref name="a.common"/>
+				<ref name="a.access"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<zeroOrMore>
+					<choice>
+						<text/>
+						<ref name="m.phrase.bare"/>
+					</choice>
+				</zeroOrMore>
+			</element>
+			<ref name="persName"/>
+			<element name="subject">
+				<ref name="a.common"/>
+				<ref name="a.access"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<zeroOrMore>
+					<choice>
+						<text/>
+						<ref name="m.phrase.bare"/>
+					</choice>
+				</zeroOrMore>
+			</element>
+			<element name="genreForm">
+				<ref name="a.common"/>
+				<optional>
+					<attribute name="localType"/>
+				</optional>
+				<ref name="a.access"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<zeroOrMore>
+					<choice>
+						<text/>
+						<ref name="m.phrase.bare"/>
+					</choice>
+				</zeroOrMore>
+			</element>
+			<element name="function">
+				<ref name="a.common"/>
+				<ref name="a.access"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<zeroOrMore>
+					<choice>
+						<text/>
+						<ref name="m.phrase.bare"/>
+					</choice>
+				</zeroOrMore>
+			</element>
+		</choice>
+	</define>
+	<define name="m.access.title">
+		<choice>
+			<ref name="m.access"/>
+			<ref name="title"/>
+		</choice>
+	</define>
+	<define name="m.data">
+		<choice>
+			<ref name="m.access"/>
+			<ref name="date"/>
+			<ref name="num"/>
+			<!-- TC: 2012-06-08 remove did child elements from anywhere beside did -->
+			<!--
+		    <ref name="origination"/>
+			<ref name="repository"/>
+			<ref name="unitdate"/>
+			<ref name="unittitle"/>
+			-->
+		</choice>
+	</define>
+	<define name="m.phrase.bare">
+		<choice>
+			<!--
+			<choice>
+				<ref name="ptr"/>
+				<element name="extptr">
+					<ref name="a.common"/>
+					<ref name="a.external.ptr"/>
+					<empty/>
+				</element>
+				
+			</choice>
+			-->
+			<ref name="m.render"/>
+		</choice>
+	</define>
+	<define name="m.phrase.basic.norefs">
+		<choice>
+			<ref name="m.phrase.bare"/>
+			<!-- TC: 2012-03-07: Removed <abbr> and <expan> -->
+			<!-- <ref name="abbr"/>
+			<ref name="expan"/>
+			-->
+			<element name="quote">
+				<ref name="m.phrase.basic"/>
+			</element>
+		</choice>
+	</define>
+	<define name="m.phrase.basic">
+		<choice>
+			<ref name="m.phrase.basic.norefs"/>
+			<ref name="m.refs"/>
+		</choice>
+	</define>
+	<define name="m.phrase.plus">
+		<choice>
+			<ref name="m.phrase.basic.norefs"/>
+			<ref name="m.data"/>
+			<ref name="m.refs"/>
+		</choice>
+	</define>
+	<define name="m.inter.noquote">
+		<choice>
+			<!-- <ref name="address"/> -->
+			<element name="chronList">
+				<ref name="a.common"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<optional>
+					<ref name="head"/>
+				</optional>
+				<optional>
+					<ref name="listHead"/>
+				</optional>
+				<!--<oneOrMore>
+					<element name="chronItem">
+						<ref name="a.common"/>
+						<ref name="date"/>
+						<choice>
+							<ref name="event"/>
+							<element name="eventGrp">
+								<ref name="a.common"/>
+								<oneOrMore>
+									<ref name="event"/>
+								</oneOrMore>
+							</element>
+						</choice>
+					</element>
+				</oneOrMore>
+				-->
+				<!-- 2013-01-25; TC added new model for chronlist -->
+				<oneOrMore>
+					<element name="chronItem">
+						<choice>
+							<ref name="e.dateSingle"/>
+							<ref name="e.dateRange"/>
+						</choice>
+						<choice>
+							<oneOrMore>
+								<element name="chronologicalSet">
+									<oneOrMore>
+										<ref name="event"/>
+									</oneOrMore>
+									<zeroOrMore>
+										<ref name="e.placeEntry"/>
+									</zeroOrMore>
+								</element>
+							</oneOrMore>
+							<group>
+								<ref name="event"/>
+								<optional>
+									<ref name="e.placeEntry"/>
+								</optional>
+							</group>
+						</choice>
+					</element>
+				</oneOrMore>
+			</element>
+
+			<ref name="list"/>
+			<!-- 2013-01-22; TC: remove note -->
+			<!-- <ref name="note"/> -->
+			<element name="table">
+				<ref name="a.common"/>
+				<optional>
+					<attribute name="frame">
+						<choice>
+							<value>top</value>
+							<value>bottom</value>
+							<value>topbot</value>
+							<value>all</value>
+							<value>sides</value>
+							<value>none</value>
+						</choice>
+					</attribute>
+				</optional>
+				<optional>
+					<attribute name="colSep">
+						<ref name="yesorno"/>
+					</attribute>
+				</optional>
+				<optional>
+					<attribute name="rowSep">
+						<ref name="yesorno"/>
+					</attribute>
+				</optional>
+				<optional>
+					<attribute name="pgWide">
+						<ref name="yesorno"/>
+					</attribute>
+				</optional>
+				<optional>
+					<ref name="head"/>
+				</optional>
+				<oneOrMore>
+					<element name="tGroup">
+						<ref name="a.common"/>
+						<attribute name="cols">
+							<data type="NMTOKEN"/>
+						</attribute>
+						<optional>
+							<attribute name="colSep">
+								<ref name="yesorno"/>
+							</attribute>
+						</optional>
+						<optional>
+							<attribute name="rowSep">
+								<ref name="yesorno"/>
+							</attribute>
+						</optional>
+						<optional>
+							<attribute name="align">
+								<choice>
+									<value>left</value>
+									<value>right</value>
+									<value>center</value>
+									<value>justify</value>
+									<value>char</value>
+								</choice>
+							</attribute>
+						</optional>
+						<zeroOrMore>
+							<element name="colSpec">
+								<optional>
+									<attribute name="colNum">
+										<data type="NMTOKEN"/>
+									</attribute>
+								</optional>
+								<optional>
+									<attribute name="colName">
+										<data type="NMTOKEN"/>
+									</attribute>
+								</optional>
+								<optional>
+									<attribute name="colWidth"/>
+								</optional>
+								<optional>
+									<attribute name="colSep">
+										<ref name="yesorno"/>
+									</attribute>
+								</optional>
+								<optional>
+									<attribute name="rowSep">
+										<ref name="yesorno"/>
+									</attribute>
+								</optional>
+								<optional>
+									<attribute name="align">
+										<choice>
+											<value>left</value>
+											<value>right</value>
+											<value>center</value>
+											<value>justify</value>
+											<value>char</value>
+										</choice>
+									</attribute>
+								</optional>
+								<optional>
+									<attribute name="char"/>
+								</optional>
+								<optional>
+									<attribute name="charOff">
+										<data type="NMTOKEN"/>
+									</attribute>
+								</optional>
+								<empty/>
+							</element>
+
+						</zeroOrMore>
+						<!--
+						<optional>
+							<ref name="tHead"/>
+						</optional>
+						-->
+						<element name="tBody">
+							<ref name="a.common"/>
+							<optional>
+								<attribute name="vAlign">
+									<choice>
+										<value>top</value>
+										<value>middle</value>
+										<value>bottom</value>
+									</choice>
+								</attribute>
+							</optional>
+							<oneOrMore>
+								<ref name="row"/>
+							</oneOrMore>
+						</element>
+					</element>
+				</oneOrMore>
+			</element>
+		</choice>
+	</define>
+	<define name="m.inter">
+		<choice>
+			<ref name="m.inter.noquote"/>
+
+			<!-- TC; 2012-03-07: Removed <blockquote> -->
+			<!-- TC; 2013-01-22: Restored <blockquote> -->
+
+			<element name="blockQuote">
+				<ref name="a.common"/>
+				<oneOrMore>
+					<choice>
+						<ref name="m.inter.noquote"/>
+						<ref name="p"/>
+					</choice>
+				</oneOrMore>
+			</element>
+
+		</choice>
+	</define>
+	<define name="m.blocks">
+		<choice>
+			<ref name="m.inter"/>
+			<ref name="p"/>
+		</choice>
+	</define>
+	<define name="m.did">
+		<choice>
+			<element name="abstract">
+				<ref name="a.common"/>
+				<optional>
+					<attribute name="label"/>
+				</optional>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<optional>
+					<attribute name="localType"/>
+				</optional>
+				<ref name="am.langCode"/>
+				<zeroOrMore>
+					<choice>
+						<text/>
+						<ref name="emph"/>
+						<ref name="e.lb"/>
+						<ref name="m.refs"/>
+					</choice>
+				</zeroOrMore>
+			</element>
+
+
+
+			<!-- TC: 2012-06-13: move container from did to formsavailable -->
+
+			<!-- TC; 2012-03-08: Removed <dao> and <daoGrp> -->
+			<!-- <ref name="dao"/>
+			<ref name="daoGrp"/>
+			-->
+			<element name="langMaterial">
+				<ref name="a.common"/>
+				<optional>
+					<attribute name="label"/>
+				</optional>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<!-- TC 2012-06-13: only allow <emph>, <ref>, and <language> -->
+				<zeroOrMore>
+					<choice>
+						<text/>
+						<ref name="emph"/>
+						<ref name="e.lb"/>
+						<ref name="ref"/>
+						<ref name="language"/>
+					</choice>
+				</zeroOrMore>
+			</element>
+			<!-- TC: 2012-06-13: removed materialspec -->
+			<!-- <ref name="materialspec"/> -->
+			<!-- TC: 2013-01-15: changed note to didNote -->
+			<!-- <ref name="note"/> -->
+			<element name="didNote">
+				<ref name="a.common"/>
+				<optional>
+					<attribute name="label"/>
+				</optional>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<optional>
+					<attribute name="localType"/>
+				</optional>
+				<optional>
+					<attribute name="localTypeSource"/>
+				</optional>
+				<ref name="am.langCode"/>
+				<zeroOrMore>
+					<choice>
+						<text/>
+						<ref name="emph"/>
+						<ref name="e.lb"/>
+						<ref name="m.refs"/>
+					</choice>
+				</zeroOrMore>
+			</element>
+
+			<ref name="origination"/>
+			<!--<element name="physDesc">
+				<ref name="a.common"/>
+				<optional>
+					<attribute name="label"/>
+				</optional>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<optional>
+					<attribute name="source">
+						<data type="token"/>
+					</attribute>
+				</optional>
+				<optional>
+					<attribute name="identifier"/>
+				</optional>
+				<optional>
+					<attribute name="rules">
+						<data type="NMTOKEN"/>
+					</attribute>
+				</optional>
+				<zeroOrMore>
+					<choice>
+						<text/>
+						<ref name="m.phrase.basic"/>
+						<ref name="dimensions"/>
+						<element name="physFacet">
+							<ref name="a.common"/>
+							<optional>
+								<attribute name="label"/>
+							</optional>
+							<optional>
+								<attribute name="localType"/>
+							</optional>
+							<optional>
+								<attribute name="unit"/>
+							</optional>
+							<optional>
+								<attribute name="source">
+									<data type="token"/>
+								</attribute>
+							</optional>
+							<optional>
+								<attribute name="identifier"/>
+							</optional>
+							<optional>
+								<attribute name="rules">
+									<data type="NMTOKEN"/>
+								</attribute>
+							</optional>
+							<optional>
+								<attribute name="encodingAnalog"/>
+							</optional>
+							
+							<zeroOrMore>
+								<choice>
+									<text/>
+									<ref name="emph"/>
+									<ref name="e.lb"/>
+									<ref name="ref"/>
+								</choice>
+							</zeroOrMore>
+						</element>
+						<element name="extent">
+							<ref name="a.common"/>
+							<optional>
+								<attribute name="label"/>
+							</optional>
+							<optional>
+								<attribute name="localType"/>
+							</optional>
+							<optional>
+								<attribute name="unit"/>
+							</optional>
+							<optional>
+								<attribute name="encodingAnalog"/>
+							</optional>
+							
+							<zeroOrMore>
+								<choice>
+									<text/>
+									<ref name="emph"/>
+									<ref name="e.lb"/>
+									<ref name="ref"/>
+								</choice>
+							</zeroOrMore>
+						</element>
+						<ref name="date"/>
+						<ref name="m.access"/>
+					</choice>
+				</zeroOrMore>
+			</element>
+			-->
+
+			<element name="physDesc">
+				<ref name="a.common"/>
+				<optional>
+					<attribute name="label"/>
+				</optional>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<optional>
+					<attribute name="source">
+						<data type="token"/>
+					</attribute>
+				</optional>
+				<optional>
+					<attribute name="identifier"/>
+				</optional>
+				<optional>
+					<attribute name="rules">
+						<data type="NMTOKEN"/>
+					</attribute>
+				</optional>
+				<zeroOrMore>
+					<choice>
+						<text/>
+						<ref name="emph"/>
+						<ref name="e.lb"/>
+						<ref name="ref"/>
+					</choice>
+				</zeroOrMore>
+			</element>
+
+			<element name="physDescStructured">
+				<ref name="a.common"/>
+				<optional>
+					<attribute name="label"/>
+				</optional>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<optional>
+					<attribute name="source">
+						<data type="token"/>
+					</attribute>
+				</optional>
+				<optional>
+					<attribute name="identifier"/>
+				</optional>
+				<optional>
+					<attribute name="rules">
+						<data type="NMTOKEN"/>
+					</attribute>
+				</optional>
+				<optional>
+					<attribute name="physDescStructuredType">
+						<choice>
+							<value>carrier</value>
+							<value>materialType</value>
+							<value>spaceOccupied</value>
+						</choice>
+					</attribute>
+				</optional>
+				<zeroOrMore>
+					<choice>
+						<element name="specifiedMaterials">
+							<ref name="a.common"/>
+							<optional>
+								<attribute name="label"/>
+							</optional>
+							<optional>
+								<attribute name="localType"/>
+							</optional>
+							<optional>
+								<attribute name="localTypeSource"/>
+							</optional>
+							<optional>
+								<attribute name="encodinganalog"/>
+							</optional>
+							<zeroOrMore>
+								<choice>
+									<text/>
+									<ref name="emph"/>
+									<ref name="e.lb"/>
+									<ref name="ref"/>
+								</choice>
+							</zeroOrMore>
+						</element>
+						<element name="physDetails">
+							<ref name="a.common"/>
+							<optional>
+								<attribute name="label"/>
+							</optional>
+							<optional>
+								<attribute name="localType"/>
+							</optional>
+							<optional>
+								<attribute name="localTypeSource"/>
+							</optional>
+							<optional>
+								<attribute name="encodinganalog"/>
+							</optional>
+							<zeroOrMore>
+								<choice>
+									<text/>
+									<ref name="emph"/>
+									<ref name="e.lb"/>
+									<ref name="ref"/>
+								</choice>
+							</zeroOrMore>
+						</element>
+						<element name="physType">
+							<ref name="a.common"/>
+							<optional>
+								<attribute name="label"/>
+							</optional>
+							<optional>
+								<attribute name="localType"/>
+							</optional>
+							<optional>
+								<attribute name="localTypeSource"/>
+							</optional>
+							<optional>
+								<attribute name="encodinganalog"/>
+							</optional>
+							<zeroOrMore>
+								<choice>
+									<text/>
+									<ref name="emph"/>
+									<ref name="e.lb"/>
+									<ref name="ref"/>
+								</choice>
+							</zeroOrMore>
+						</element>
+						<ref name="dimensions"/>
+						<element name="extent">
+							<ref name="a.common"/>
+							<optional>
+								<attribute name="label"/>
+							</optional>
+							<optional>
+								<attribute name="localType"/>
+							</optional>
+							<optional>
+								<attribute name="localTypeSource"/>
+							</optional>
+							<optional>
+								<attribute name="unit"/>
+							</optional>
+							<optional>
+								<attribute name="encodingAnalog"/>
+							</optional>
+							<zeroOrMore>
+								<choice>
+									<text/>
+									<ref name="emph"/>
+									<ref name="e.lb"/>
+									<ref name="ref"/>
+								</choice>
+							</zeroOrMore>
+						</element>
+						<ref name="num"/>
+					</choice>
+				</zeroOrMore>
+			</element>
+			<element name="physLoc">
+				<ref name="a.common"/>
+				<optional>
+					<attribute name="label"/>
+				</optional>
+				<optional>
+					<attribute name="localType"/>
+				</optional>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<optional>
+					<attribute name="parent">
+						<data type="IDREFS"/>
+					</attribute>
+				</optional>
+				<!-- TC: 2012-06-13: only permit emph and ref as element children -->
+				<zeroOrMore>
+					<choice>
+						<text/>
+						<ref name="emph"/>
+						<ref name="e.lb"/>
+						<ref name="ref"/>
+					</choice>
+				</zeroOrMore>
+			</element>
+			<ref name="repository"/>
+			<ref name="unitDate"/>
+			<!-- 2013-01-23; TC: added unitDateStructured -->
+			<ref name="e.unitDateStructured"/>
+			<element name="unitId">
+				<ref name="a.common"/>
+				<optional>
+					<attribute name="label"/>
+				</optional>
+				<optional>
+					<attribute name="localType"/>
+				</optional>
+				<ref name="am.countryCode"/>
+				<optional>
+					<attribute name="repositoryCode">
+						<ref name="data.repositoryCode"/>
+					</attribute>
+				</optional>
+				<optional>
+					<attribute name="identifier"/>
+				</optional>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<!-- TC; 2012-6-13: only permit <emph> and <ref> as element children -->
+				<zeroOrMore>
+					<choice>
+						<text/>
+						<ref name="emph"/>
+						<ref name="e.lb"/>
+						<ref name="ref"/>
+					</choice>
+				</zeroOrMore>
+			</element>
+			<ref name="unitTitle"/>
+			<element name="container">
+				<ref name="a.common"/>
+				<optional>
+					<attribute name="label"/>
+				</optional>
+				<optional>
+					<attribute name="localType">
+						<data type="NMTOKEN"/>
+					</attribute>
+				</optional>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<optional>
+					<attribute name="parent">
+						<data type="IDREFS"/>
+					</attribute>
+				</optional>
+				<!-- TC; 2012-06-11: add @containerid -->
+				<optional>
+					<attribute name="containerId">
+						<data type="NMTOKEN"/>
+					</attribute>
+				</optional>
+				<!-- TC: 2012-06-13: only allow emph and ref -->
+				<zeroOrMore>
+					<choice>
+						<text/>
+						<ref name="emph"/>
+						<ref name="e.lb"/>
+						<ref name="ref"/>
+					</choice>
+				</zeroOrMore>
+			</element>
+			<ref name="dao"/>
+		</choice>
+	</define>
+	<define name="m.desc.base">
+		<choice>
+			<ref name="accessRestrict"/>
+			<ref name="accruals"/>
+			<ref name="acqInfo"/>
+			<ref name="altFormAvail"/>
+			<ref name="appraisal"/>
+			<ref name="arrangement"/>
+			<ref name="bibliography"/>
+			<ref name="biogHist"/>
+			<ref name="controlAccess"/>
+			<ref name="custodHist"/>
+			<!-- TC; 2012-03-07: Removed <descgrp> -->
+			<!--
+			<element name="descGrp">
+				<ref name="a.common"/>
+				<optional>
+					<attribute name="localType"/>
+				</optional>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<optional>
+					<ref name="head"/>
+				</optional>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+						<ref name="m.desc.base"/>
+					</choice>
+				</oneOrMore>
+			</element>
+			-->
+			<!-- TC; 2012-03-08: Removed <filePlan> -->
+			<!--<ref name="filePlan"/>-->
+			<ref name="index"/>
+			<ref name="legalStatus"/>
+			<!-- TC; 2012-03-08: add <materialSpec> -->
+			<ref name="materialSpec"/>
+			<ref name="odd"/>
+			<ref name="originalsLoc"/>
+			<ref name="otherFindAid"/>
+			<ref name="physTech"/>
+			<ref name="preferCite"/>
+			<ref name="processInfo"/>
+			<ref name="relatedMaterial"/>
+			<ref name="scopeContent"/>
+			<ref name="separatedMaterial"/>
+			<ref name="useRestrict"/>
+		</choice>
+	</define>
+	<define name="m.desc.full">
+		<choice>
+			<ref name="m.desc.base"/>
+			<!-- TC; 2012-03-07: Removed dsc -->
+			<!-- <ref name="dsc"/> -->
+			<!-- TC; 2012-03-08: Removed <dao>, <daoGrp> -->
+			<!-- <ref name="dao"/>
+			<ref name="daoGrp"/>
+			-->
+
+			<ref name="note"/>
+		</choice>
+	</define>
+	<define name="m.para.content">
+		<choice>
+			<ref name="m.phrase.plus"/>
+			<!-- TC; 2012-06-08 remove m.inter, retaining note -->
+			<!--	<ref name="m.inter"/> -->
+			<!-- TC; 2012-01-22 created footnote for inline note -->
+			<element name="footnote">
+				<ref name="a.common"/>
+				<optional>
+					<attribute name="localType"/>
+				</optional>
+				<optional>
+					<attribute name="localTypeSource"/>
+				</optional>
+				<optional>
+					<attribute name="show">
+						<choice>
+							<value>embed</value>
+							<value>new</value>
+						</choice>
+					</attribute>
+				</optional>
+				<optional>
+					<attribute name="actuate">
+						<choice>
+							<value>onload</value>
+							<value>onrequest</value>
+						</choice>
+					</attribute>
+				</optional>
+				<oneOrMore>
+					<ref name="m.blocks"/>
+				</oneOrMore>
+			</element>
+		</choice>
+	</define>
+	<define name="m.para.content.norefs">
+		<choice>
+			<choice>
+				<ref name="m.phrase.basic.norefs"/>
+				<ref name="m.data"/>
+			</choice>
+			<ref name="m.inter"/>
+		</choice>
+	</define>
+	<!-- TC 2012-06-08: remove default value -->
+	<define name="am.dates.calendar">
+		<optional>
+			<!-- <attribute a:defaultValue="gregorian" name="calendar"> -->
+			<attribute name="calendar">
+				<data type="NMTOKEN"/>
+			</attribute>
+		</optional>
+	</define>
+	<!-- TC 2012-06-08: remove default value -->
+	<define name="am.dates.era">
+		<optional>
+			<!--	<attribute a:defaultValue="ce" name="era"> -->
+			<attribute name="era">
+				<data type="NMTOKEN"/>
+			</attribute>
+		</optional>
+	</define>
+	<define name="am.dsctab.tPattern">
+		<optional>
+			<attribute name="tPattern">
+				<data type="NMTOKEN"/>
+			</attribute>
+		</optional>
+	</define>
+	<define name="yesorno">
+		<data type="NMTOKEN"/>
+	</define>
+	<define name="av.level">
+		<choice>
+			<value>class</value>
+			<value>collection</value>
+			<value>file</value>
+			<value>fonds</value>
+			<value>item</value>
+			<value>otherLevel</value>
+			<value>recordGrp</value>
+			<value>series</value>
+			<value>subFonds</value>
+			<value>subGrp</value>
+			<value>subSeries</value>
+		</choice>
+	</define>
+	<define name="av.render">
+		<choice>
+			<value>altRender</value>
+			<value>bold</value>
+			<value>boldDoubleQuote</value>
+			<value>boldItalic</value>
+			<value>boldSingleQuote</value>
+			<value>boldSmCaps</value>
+			<value>boldUnderline</value>
+			<value>doubleQuote</value>
+			<value>italic</value>
+			<value>nonProPort</value>
+			<value>singleQuote</value>
+			<value>smCaps</value>
+			<value>sub</value>
+			<value>super</value>
+			<value>underline</value>
+		</choice>
+	</define>
+	<define name="a.common">
+		<optional>
+			<attribute name="id">
+				<data type="ID"/>
+			</attribute>
+		</optional>
+		<optional>
+			<attribute name="altRender"/>
+		</optional>
+		<optional>
+			<attribute name="audience">
+				<choice>
+					<value>external</value>
+					<value>internal</value>
+				</choice>
+			</attribute>
+		</optional>
+	</define>
+	<define name="a.access">
+		<optional>
+			<attribute name="source">
+				<data type="token"/>
+			</attribute>
+		</optional>
+		<optional>
+			<attribute name="rules">
+				<data type="NMTOKEN"/>
+			</attribute>
+		</optional>
+		<optional>
+			<attribute name="identifier"/>
+		</optional>
+		<optional>
+			<attribute name="normal"/>
+		</optional>
+	</define>
+	<define name="a.access.no.normal">
+		<optional>
+			<attribute name="source">
+				<data type="token"/>
+			</attribute>
+		</optional>
+		<optional>
+			<attribute name="rules">
+				<data type="NMTOKEN"/>
+			</attribute>
+		</optional>
+		<optional>
+			<attribute name="identifier"/>
+		</optional>
+	</define>
+	<define name="a.desc.base">
+		<optional>
+			<attribute name="otherLevel">
+				<data type="NMTOKEN"/>
+			</attribute>
+		</optional>
+		<optional>
+			<attribute name="encodingAnalog"/>
+		</optional>
+	</define>
+	<define name="a.desc.c">
+		<ref name="a.common"/>
+		<optional>
+			<attribute name="level">
+				<choice>
+					<ref name="av.level"/>
+				</choice>
+			</attribute>
+		</optional>
+		<ref name="a.desc.base"/>
+		<ref name="am.dsctab.tPattern"/>
+	</define>
+	<define name="a.internal.ptr">
+		<optional>
+			<attribute name="target">
+				<data type="IDREF"/>
+			</attribute>
+		</optional>
+		<optional>
+			<attribute name="xPointer"/>
+		</optional>
+		<ref name="simpleLink"/>
+	</define>
+	<define name="a.external.ptr">
+		<optional>
+			<attribute name="entityRef">
+				<data type="ENTITY"/>
+			</attribute>
+		</optional>
+		<optional>
+			<attribute name="xPointer"/>
+		</optional>
+		<ref name="simpleLink"/>
+	</define>
+	<define name="a.loc.internal.ptr">
+		<ref name="locatorLink"/>
+		<optional>
+			<attribute name="target">
+				<data type="IDREF"/>
+			</attribute>
+		</optional>
+		<optional>
+			<attribute name="xPointer"/>
+		</optional>
+	</define>
+	<define name="a.loc.external.ptr">
+		<ref name="locatorLink"/>
+		<optional>
+			<attribute name="entityRef">
+				<data type="ENTITY"/>
+			</attribute>
+		</optional>
+		<optional>
+			<attribute name="xPointer"/>
+		</optional>
+	</define>
+	<define name="ead">
+		<element name="ead">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="relatedEncoding"/>
+			</optional>
+			<!-- TC; 2012-03-07: added <control> removed other <eadheader> elements -->
+			<ref name="e.control"/>
+
+			<!-- <element name="eadheader">
+				<ref name="a.common"/>
+				<optional>
+					<attribute a:defaultValue="iso639-2b" name="langEncoding">
+						<data type="NMTOKEN"/>
+					</attribute>
+				</optional>
+				<optional>
+					<attribute a:defaultValue="iso15924" name="scriptEncoding">
+						<data type="NMTOKEN"/>
+					</attribute>
+				</optional>
+				<optional>
+					<attribute a:defaultValue="iso8601" name="dateEncoding">
+						<data type="NMTOKEN"/>
+					</attribute>
+				</optional>
+				<optional>
+					<attribute a:defaultValue="iso3166-1" name="countryEncoding">
+						<data type="NMTOKEN"/>
+					</attribute>
+				</optional>
+				<optional>
+					<attribute a:defaultValue="iso15511" name="repositoryEncoding">
+						<data type="NMTOKEN"/>
+					</attribute>
+				</optional>
+				<optional>
+					<attribute name="relatedEncoding"/>
+				</optional>
+				<optional>
+					<attribute name="findAidStatus">
+						<data type="NMTOKEN"/>
+					</attribute>
+				</optional>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<element name="eadId">
+					<optional>
+						<attribute name="publicId"/>
+					</optional>
+					<optional>
+						<attribute name="urn"/>
+					</optional>
+					<optional>
+						<attribute name="url"/>
+					</optional>
+					<ref name="am.countryCode"/>
+					<optional>
+						<attribute name="mainAgencyCode">
+							<ref name="data.repositoryCode"/>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="identifier"/>
+					</optional>
+					<optional>
+						<attribute name="encodingAnalog"/>
+					</optional>
+					<text/>
+				</element>
+				<element name="fileDesc">
+					<ref name="a.common"/>
+					<optional>
+						<attribute name="encodingAnalog"/>
+					</optional>
+					<element name="titleStmt">
+						<ref name="a.common"/>
+						<optional>
+							<attribute name="encodingAnalog"/>
+						</optional>
+						<oneOrMore>
+							<ref name="titleProper"/>
+						</oneOrMore>
+						<zeroOrMore>
+							<ref name="subTitle"/>
+						</zeroOrMore>
+						<optional>
+							<ref name="author"/>
+						</optional>
+						<optional>
+							<ref name="sponsor"/>
+						</optional>
+					</element>
+					<optional>
+						<element name="editionStmt">
+							<ref name="a.common"/>
+							<optional>
+								<attribute name="encodingAnalog"/>
+							</optional>
+							<oneOrMore>
+								<choice>
+									<ref name="edition"/>
+									<ref name="p"/>
+								</choice>
+							</oneOrMore>
+						</element>
+					</optional>
+					<optional>
+						<element name="publicationStmt">
+							<ref name="a.common"/>
+							<optional>
+								<attribute name="encodingAnalog"/>
+							</optional>
+							<oneOrMore>
+								<choice>
+									<ref name="publisher"/>
+									<ref name="date"/>
+									<ref name="address"/>
+									<ref name="num"/>
+									<ref name="p"/>
+								</choice>
+							</oneOrMore>
+						</element>
+					</optional>
+					<optional>
+						<element name="seriesStmt">
+							<ref name="a.common"/>
+							<optional>
+								<attribute name="encodingAnalog"/>
+							</optional>
+							<oneOrMore>
+								<choice>
+									<ref name="titleProper"/>
+									<ref name="num"/>
+									<ref name="p"/>
+								</choice>
+							</oneOrMore>
+						</element>
+					</optional>
+					<optional>
+						<element name="noteStmt">
+							<ref name="a.common"/>
+							<optional>
+								<attribute name="encodingAnalog"/>
+							</optional>
+							<oneOrMore>
+								<ref name="note"/>
+							</oneOrMore>
+						</element>
+					</optional>
+				</element>
+				<optional>
+					<element name="profileDesc">
+						<ref name="a.common"/>
+						<optional>
+							<attribute name="encodingAnalog"/>
+						</optional>
+						<optional>
+							<element name="creation">
+								<ref name="a.common"/>
+								<optional>
+									<attribute name="encodingAnalog"/>
+								</optional>
+								<zeroOrMore>
+									<choice>
+										<text/>
+										<ref name="m.phrase.basic"/>
+										<ref name="date"/>
+									</choice>
+								</zeroOrMore>
+							</element>
+						</optional>
+						<optional>
+							<element name="langUsage">
+								<ref name="a.common"/>
+								<optional>
+									<attribute name="encodingAnalog"/>
+								</optional>
+								<zeroOrMore>
+									<choice>
+										<text/>
+										<ref name="m.phrase.basic"/>
+										<ref name="language"/>
+									</choice>
+								</zeroOrMore>
+							</element>
+						</optional>
+						<optional>
+							<element name="descRules">
+								<ref name="a.common"/>
+								<optional>
+									<attribute name="encodingAnalog"/>
+								</optional>
+								<zeroOrMore>
+									<choice>
+										<text/>
+										<ref name="m.phrase.basic"/>
+									</choice>
+								</zeroOrMore>
+							</element>
+						</optional>
+					</element>
+				</optional>
+				<optional>
+					<element name="revisionDesc">
+						<ref name="a.common"/>
+						<optional>
+							<attribute name="encodingAnalog"/>
+						</optional>
+						<choice>
+							<ref name="list"/>
+							<oneOrMore>
+								<element name="change">
+									<ref name="a.common"/>
+									<optional>
+										<attribute name="encodingAnalog"/>
+									</optional>
+									<ref name="date"/>
+									<oneOrMore>
+										<ref name="item"/>
+									</oneOrMore>
+								</element>
+							</oneOrMore>
+						</choice>
+					</element>
+				</optional>
+			</element>
+-->
+			<!-- TC; 2012-03-08: Remove <frontmatter> -->
+			<!-- 
+				<optional>
+				<element name="frontMatter">
+					<ref name="a.common"/>
+					<optional>
+						<element name="titlePage">
+							<ref name="a.common"/>
+							<oneOrMore>
+								<choice>
+									<ref name="m.blocks"/>
+									<ref name="author"/>
+									<ref name="date"/>
+									<ref name="edition"/>
+									<ref name="num"/>
+									<ref name="publisher"/>
+									<ref name="bibSeries"/>
+									<ref name="sponsor"/>
+									<ref name="titleProper"/>
+									<ref name="subTitle"/>
+								</choice>
+							</oneOrMore>
+						</element>
+					</optional>
+					<zeroOrMore>
+						<ref name="div"/>
+					</zeroOrMore>
+				</element>
+			</optional>
+			-->
+			<element name="archDesc">
+				<ref name="a.common"/>
+				<attribute name="level">
+					<choice>
+						<ref name="av.level"/>
+					</choice>
+				</attribute>
+				<ref name="a.desc.base"/>
+				<optional>
+					<attribute name="localType">
+						<data type="NMTOKEN"/>
+					</attribute>
+				</optional>
+				<optional>
+					<attribute name="relatedEncoding"/>
+				</optional>
+				<!-- TC; 2012-03-07: Removed runner -->
+				<!--
+					<zeroOrMore>
+					<element name="runner">
+						<ref name="a.common"/>
+						<optional>
+							<attribute name="placement">
+								<choice>
+									<value>header</value>
+									<value>footer</value>
+									<value>watermark</value>
+								</choice>
+							</attribute>
+						</optional>
+						<optional>
+							<attribute name="role"/>
+						</optional>
+						<zeroOrMore>
+							<choice>
+								<text/>
+								<ref name="m.phrase.bare"/>
+							</choice>
+						</zeroOrMore>
+					</element>
+				</zeroOrMore>
+				-->
+				<ref name="did"/>
+				<zeroOrMore>
+					<!-- 2013-01-22; TC: changed m.desc.full to m.desc.base (i.e., no note) -->
+					<ref name="m.desc.base"/>
+				</zeroOrMore>
+				<!-- TC; 2012-03-08: Added <dao> and <daoGrp> -->
+				<!-- TC; 2012-04-15: removed <dao> and <daoGrp>; see issue #128 -->
+				<!--
+					<zeroOrMore>
+					<choice>
+						<ref name="dao"/>
+						<ref name="daoGrp"/>
+					</choice>
+				</zeroOrMore>
+				-->
+				<!-- TC; 2012-03-07: Added EAC-CPF-based <relations> -->
+				<optional>
+					<element name="relations">
+						<oneOrMore>
+							<ref name="m.relation"/>
+						</oneOrMore>
+					</element>
+				</optional>
+				<choice>
+					<zeroOrMore>
+						<ref name="dsc"/>
+					</zeroOrMore>
+
+					<optional>
+						<ref name="m.cOrC01"/>
+					</optional>
+
+				</choice>
+			</element>
+		</element>
+	</define>
+	<define name="titleProper">
+		<element name="titleProper">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="render">
+					<choice>
+						<ref name="av.render"/>
+					</choice>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="localType"/>
+			</optional>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<ref name="m.phrase.bare"/>
+					<!-- TC; 2012-03-07: Removed <abbr> and <expan> -->
+					<!-- <ref name="abbr"/> -->
+					<ref name="date"/>
+					<!-- <ref name="expan"/> -->
+					<ref name="num"/>
+				</choice>
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="subtitle">
+		<element name="subtitle">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<ref name="m.phrase.bare"/>
+					<!-- TC; 2012-03-07: Removed <abbr> and <expan> -->
+					<!-- <ref name="abbr"/> -->
+					<ref name="date"/>
+					<!-- <ref name="expan"/> -->
+					<ref name="num"/>
+				</choice>
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="author">
+		<element name="author">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<ref name="m.phrase.bare"/>
+				</choice>
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="sponsor">
+		<element name="sponsor">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<ref name="m.phrase.bare"/>
+				</choice>
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="div">
+		<element name="div">
+			<ref name="a.common"/>
+			<optional>
+				<ref name="head"/>
+			</optional>
+			<zeroOrMore>
+				<ref name="m.blocks"/>
+			</zeroOrMore>
+			<zeroOrMore>
+				<ref name="div"/>
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="did">
+		<element name="did">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<optional>
+				<ref name="head"/>
+			</optional>
+			<oneOrMore>
+				<ref name="m.did"/>
+
+
+			</oneOrMore>
+			<!-- TC: 2012-06-13: add formsavailable element; removed 2013-04-15 -->
+			<!--<optional>
+				<element name="availableForms">
+					<zeroOrMore>
+						<choice>
+							<element name="container">
+								<ref name="a.common"/>
+								<optional>
+									<attribute name="label"/>
+								</optional>
+								<optional>
+									<attribute name="localType">
+										<data type="NMTOKEN"/>
+									</attribute>
+								</optional>
+								<optional>
+									<attribute name="encodingAnalog"/>
+								</optional>
+								<optional>
+									<attribute name="parent">
+										<data type="IDREFS"/>
+									</attribute>
+								</optional>
+								
+								<optional>
+									<attribute name="containerId">
+										<data type="NMTOKEN"/>
+									</attribute>
+								</optional>
+								
+								<zeroOrMore>
+									<choice>
+										<text/>
+										<ref name="emph"/>
+										<ref name="e.lb"/>
+										<ref name="ref"/>
+									</choice>
+								</zeroOrMore>
+							</element>
+							<ref name="dao"/>
+						</choice>
+					</zeroOrMore>
+
+				</element>
+			</optional>-->
+
+		</element>
+	</define>
+	<define name="dimensions">
+		<element name="dimensions">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="label"/>
+			</optional>
+			<optional>
+				<attribute name="localType"/>
+			</optional>
+			<optional>
+				<attribute name="unit"/>
+			</optional>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<!-- TC; 2012-06-13: allow only <emph> and <ref> as element children -->
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<ref name="emph"/>
+					<ref name="e.lb"/>
+					<ref name="ref"/>
+				</choice>
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="origination">
+		<element name="origination">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="label"/>
+			</optional>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<ref name="m.phrase.basic"/>
+					<ref name="corpName"/>
+					<ref name="famName"/>
+					<ref name="name"/>
+					<ref name="persName"/>
+				</choice>
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="repository">
+		<element name="repository">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="label"/>
+			</optional>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<ref name="m.phrase.basic"/>
+					<ref name="address"/>
+					<ref name="corpName"/>
+					<ref name="name"/>
+					<ref name="subArea"/>
+				</choice>
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="subArea">
+		<element name="subArea">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<ref name="m.phrase.bare"/>
+				</choice>
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="unitDate">
+		<element name="unitDate">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="label"/>
+			</optional>
+			<!-- Probably we have to change localType here -->
+			<!-- 2013-01-15: changed back to type -->
+			<optional>
+				<attribute name="unitDateType">
+					<choice>
+						<value>bulk</value>
+						<value>inclusive</value>
+					</choice>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="dateChar"/>
+			</optional>
+			<ref name="am.dates.era"/>
+			<ref name="am.dates.calendar"/>
+			<!-- 2013-01-23; TC: removed @normal -->
+			<!-- <ref name="am.date.normal"/> -->
+			<optional>
+				<attribute name="certainty"/>
+			</optional>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<ref name="emph"/>
+					<ref name="e.lb"/>
+					<ref name="m.refs"/>
+				</choice>
+			</zeroOrMore>
+
+		</element>
+	</define>
+	<define name="unitTitle">
+		<element name="unitTitle">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="label"/>
+			</optional>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<optional>
+				<attribute name="localType"/>
+			</optional>
+			<!-- TC; 2012-03-08: Add @normal -->
+			<optional>
+				<attribute name="normal"/>
+			</optional>
+			<!-- TC; 2012-03-07: permit only text  -->
+			<!-- TC; 2013-04-15: now text, emph, lb, and refs  -->
+
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<ref name="emph"/>
+					<ref name="e.lb"/>
+					<ref name="m.refs"/>
+				</choice>
+			</zeroOrMore>
+
+		</element>
+	</define>
+	<define name="language">
+		<element name="language">
+			<ref name="a.common"/>
+			<ref name="am.langCode"/>
+			<optional>
+				<attribute name="scriptCode">
+					<!-- <choice>
+						<value>Arab</value>
+						<value>Armn</value>
+						<value>Bali</value>
+						<value>Batk</value>
+						<value>Beng</value>
+						<value>Blis</value>
+						<value>Bopo</value>
+						<value>Brah</value>
+						<value>Brai</value>
+						<value>Bugi</value>
+						<value>Buhd</value>
+						<value>Cans</value>
+						<value>Cham</value>
+						<value>Cher</value>
+						<value>Cirt</value>
+						<value>Copt</value>
+						<value>Cprt</value>
+						<value>Cyrl</value>
+						<value>Cyrs</value>
+						<value>Deva</value>
+						<value>Dsrt</value>
+						<value>Egyd</value>
+						<value>Egyh</value>
+						<value>Egyp</value>
+						<value>Ethi</value>
+						<value>Geok</value>
+						<value>Geor</value>
+						<value>Glag</value>
+						<value>Goth</value>
+						<value>Grek</value>
+						<value>Gujr</value>
+						<value>Guru</value>
+						<value>Hang</value>
+						<value>Hani</value>
+						<value>Hano</value>
+						<value>Hans</value>
+						<value>Hant</value>
+						<value>Hebr</value>
+						<value>Hira</value>
+						<value>Hmng</value>
+						<value>Hrkt</value>
+						<value>Hung</value>
+						<value>Inds</value>
+						<value>Ital</value>
+						<value>Java</value>
+						<value>Kali</value>
+						<value>Kana</value>
+						<value>Khar</value>
+						<value>Khmr</value>
+						<value>Knda</value>
+						<value>Laoo</value>
+						<value>Latf</value>
+						<value>Latg</value>
+						<value>Latn</value>
+						<value>Lepc</value>
+						<value>Limb</value>
+						<value>Lina</value>
+						<value>Linb</value>
+						<value>Mand</value>
+						<value>Maya</value>
+						<value>Mero</value>
+						<value>Mlym</value>
+						<value>Mong</value>
+						<value>Mymr</value>
+						<value>Nkoo</value>
+						<value>Ogam</value>
+						<value>Orkh</value>
+						<value>Orya</value>
+						<value>Osma</value>
+						<value>Perm</value>
+						<value>Phag</value>
+						<value>Phnx</value>
+						<value>Plrd</value>
+						<value>Qaaa</value>
+						<value>Qabx</value>
+						<value>Roro</value>
+						<value>Runr</value>
+						<value>Sara</value>
+						<value>Shaw</value>
+						<value>Sinh</value>
+						<value>Sylo</value>
+						<value>Syrc</value>
+						<value>Syre</value>
+						<value>Syrj</value>
+						<value>Syrn</value>
+						<value>Tagb</value>
+						<value>Tale</value>
+						<value>Talu</value>
+						<value>Taml</value>
+						<value>Telu</value>
+						<value>Teng</value>
+						<value>Tfng</value>
+						<value>Tglg</value>
+						<value>Thaa</value>
+						<value>Thai</value>
+						<value>Tibt</value>
+						<value>Ugar</value>
+						<value>Vaii</value>
+						<value>Visp</value>
+						<value>Xpeo</value>
+						<value>Xsux</value>
+						<value>Yiii</value>
+						<value>Zxxx</value>
+						<value>Zyyy</value>
+						<value>Zzzz</value>
+					</choice>
+					-->
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<ref name="m.phrase.bare"/>
+				</choice>
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="materialSpec">
+		<element name="materialSpec">
+			<!-- TC: 2012-06-13: adopt same content model as phystech -->
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<optional>
+				<attribute name="localType"/>
+			</optional>
+			<optional>
+				<ref name="head"/>
+			</optional>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
+		</element>
+	</define>
+	<define name="accruals">
+		<element name="accruals">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<optional>
+				<ref name="head"/>
+			</optional>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
+		</element>
+	</define>
+	<define name="accessRestrict">
+		<element name="accessRestrict">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<optional>
+				<attribute name="localType"/>
+			</optional>
+			<optional>
+				<ref name="head"/>
+			</optional>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
+		</element>
+	</define>
+	<define name="acqInfo">
+		<element name="acqInfo">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<optional>
+				<ref name="head"/>
+			</optional>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
+		</element>
+	</define>
+	<define name="altFormAvail">
+		<element name="altFormAvail">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<optional>
+				<attribute name="localType"/>
+			</optional>
+			<optional>
+				<ref name="head"/>
+			</optional>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
+		</element>
+	</define>
+	<define name="originalsLoc">
+		<element name="originalsLoc">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<optional>
+				<attribute name="localType"/>
+			</optional>
+			<optional>
+				<ref name="head"/>
+			</optional>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
+		</element>
+	</define>
+	<define name="physTech">
+		<element name="physTech">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<optional>
+				<attribute name="localType"/>
+			</optional>
+			<optional>
+				<ref name="head"/>
+			</optional>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
+		</element>
+	</define>
+	<define name="appraisal">
+		<element name="appraisal">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<optional>
+				<ref name="head"/>
+			</optional>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
+		</element>
+	</define>
+	<define name="custodHist">
+		<element name="custodHist">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<optional>
+				<ref name="head"/>
+			</optional>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
+		</element>
+	</define>
+	<define name="preferCite">
+		<element name="preferCite">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<optional>
+				<ref name="head"/>
+			</optional>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
+		</element>
+	</define>
+	<define name="processInfo">
+		<element name="processInfo">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="localType"/>
+			</optional>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<optional>
+				<ref name="head"/>
+			</optional>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
+		</element>
+	</define>
+	<define name="useRestrict">
+		<element name="useRestrict">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<optional>
+				<attribute name="localType"/>
+			</optional>
+			<optional>
+				<ref name="head"/>
+			</optional>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
+		</element>
+	</define>
+	<define name="biogHist">
+		<element name="biogHist">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<optional>
+				<ref name="head"/>
+			</optional>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
+		</element>
+	</define>
+	<define name="controlAccess">
+		<element name="controlAccess">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<optional>
+				<ref name="head"/>
+			</optional>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+						<ref name="m.access.entry"/>
+					</choice>
+				</oneOrMore>
+			</choice>
+		</element>
+	</define>
+	<define name="odd">
+		<element name="odd">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="localType"/>
+			</optional>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<optional>
+				<ref name="head"/>
+			</optional>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
+		</element>
+	</define>
+	<define name="scopeContent">
+		<element name="scopeContent">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<optional>
+				<ref name="head"/>
+			</optional>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+
+						<ref name="m.blocks"/>
+
+						<!-- TC; 2012-03-07: Removed <arrangement> -->
+						<!-- <ref name="arrangement"/> -->
+						<!-- TC: 2012-06-08 remove recursion in note elements -->
+						<!-- <ref name="scopecontent"/> -->
+						<!-- TC; 2012-03-08: Removed <dao>, <daogrp> -->
+						<!--
+					<ref name="dao"/>
+					<ref name="daoGrp"/>
+					-->
+					</choice>
+				</oneOrMore>
+			</choice>
+		</element>
+	</define>
+	<define name="arrangement">
+		<element name="arrangement">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<optional>
+				<ref name="head"/>
+			</optional>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
+		</element>
+	</define>
+	<define name="bibliography">
+		<element name="bibliography">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<optional>
+				<ref name="head"/>
+			</optional>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+						<ref name="m.refs"/>
+						<zeroOrMore>
+							<ref name="bibRef"/>
+						</zeroOrMore>
+						<zeroOrMore>
+							<ref name="archRef"/>
+						</zeroOrMore>
+					</choice>
+					<!-- TC: 2012-06-08 remove recursion in note elements -->
+					<!-- <ref name="bibliography"/> -->
+
+				</oneOrMore>
+			</choice>
+		</element>
+	</define>
+	<!-- TC; 2012-03-08: Removed <filePlan> -->
+	<!--
+		<define name="filePlan">
+		<element name="filePlan">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<optional>
+				<ref name="head"/>
+			</optional>
+			<oneOrMore>
+				<choice>
+					<ref name="m.blocks"/>
+					<ref name="filePlan"/>
+				</choice>
+			</oneOrMore>
+		</element>
+	</define>
+	-->
+	<define name="relatedMaterial">
+		<element name="relatedMaterial">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="localType"/>
+			</optional>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<optional>
+				<ref name="head"/>
+			</optional>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+						<ref name="m.refs"/>
+						<zeroOrMore>
+							<ref name="bibRef"/>
+						</zeroOrMore>
+						<zeroOrMore>
+							<ref name="archRef"/>
+						</zeroOrMore>
+					</choice>
+					<!-- TC: 2012-06-08 remove recursion in note elements -->
+					<!-- <ref name="bibliography"/> -->
+
+				</oneOrMore>
+			</choice>
+		</element>
+	</define>
+	<define name="separatedMaterial">
+		<element name="separatedMaterial">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="localType"/>
+			</optional>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<optional>
+				<ref name="head"/>
+			</optional>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+						<ref name="m.refs"/>
+						<zeroOrMore>
+							<ref name="bibRef"/>
+						</zeroOrMore>
+						<zeroOrMore>
+							<ref name="archRef"/>
+						</zeroOrMore>
+					</choice>
+					<!-- TC: 2012-06-08 remove recursion in note elements -->
+					<!-- <ref name="bibliography"/> -->
+
+				</oneOrMore>
+			</choice>
+		</element>
+	</define>
+	<define name="otherFindAid">
+		<element name="otherFindAid">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<optional>
+				<ref name="head"/>
+			</optional>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+						<ref name="m.refs"/>
+						<!-- TC: 2012-06-08 remove recursion in note elements -->
+						<!-- <ref name="otherfindaid"/> -->
+
+					</choice>
+				</oneOrMore>
+			</choice>
+		</element>
+	</define>
+	<define name="index">
+		<element name="index">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<optional>
+				<ref name="head"/>
+			</optional>
+			<zeroOrMore>
+				<ref name="m.blocks"/>
+			</zeroOrMore>
+			<choice>
+				<group>
+					<optional>
+						<ref name="listHead"/>
+					</optional>
+					<oneOrMore>
+						<ref name="indexEntry"/>
+					</oneOrMore>
+				</group>
+				<!-- TC: 2012-06-08 remove recursion in note elements -->
+				<!-- <oneOrMore>
+					<ref name="index"/>
+				</oneOrMore>
+				-->
+			</choice>
+		</element>
+	</define>
+	<define name="indexEntry">
+		<element name="indexEntry">
+			<ref name="a.common"/>
+			<choice>
+				<element name="nameGrp">
+					<ref name="a.common"/>
+					<oneOrMore>
+						<choice>
+							<ref name="m.access.title"/>
+							<ref name="e.nameGrpNote"/>
+						</choice>
+					</oneOrMore>
+				</element>
+				<ref name="m.access.title"/>
+			</choice>
+			<optional>
+				<choice>
+					<element name="ptrGrp">
+						<ref name="a.common"/>
+						<oneOrMore>
+							<choice>
+								<!--	<ref name="ptr"/> -->
+								<ref name="ref"/>
+							</choice>
+						</oneOrMore>
+					</element>
+					<!-- <ref name="ptr"/> -->
+					<ref name="ref"/>
+				</choice>
+			</optional>
+			<zeroOrMore>
+				<ref name="indexEntry"/>
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="dsc">
+		<element name="dsc">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="dscType">
+					<choice>
+						<value>analyticOver</value>
+						<value>combined</value>
+						<value>inDepth</value>
+						<value>otherType</value>
+					</choice>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="otherType">
+					<data type="NMTOKEN"/>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<ref name="am.dsctab.tPattern"/>
+			<group>
+				<optional>
+					<ref name="head"/>
+				</optional>
+				<zeroOrMore>
+					<ref name="m.blocks"/>
+				</zeroOrMore>
+			</group>
+			<choice>
+				<!-- TC; 2012-03-07: Replaced by pattern m.cOrC01 -->
+				<!-- 
+						<group>
+						<optional>
+						<ref name="tHead"/>
+						</optional>
+						<choice>
+						<oneOrMore>
+							<ref name="c"/>
+							<optional>
+								<ref name="tHead"/>
+							</optional>
+						</oneOrMore>
+						<oneOrMore>
+							<ref name="c01"/>
+							<optional>
+								<ref name="tHead"/>
+							</optional>
+						</oneOrMore>
+					</choice>
+					</group>
+					-->
+				<ref name="m.cOrC01"/>
+
+				<!-- TC; 2012-03-07: Removed dsc -->
+				<!-- <zeroOrMore>
+					<ref name="dsc"/>
+				</zeroOrMore>
+				-->
+			</choice>
+		</element>
+	</define>
+	<define name="c">
+		<element name="c">
+			<ref name="m.c.base"/>
+			<zeroOrMore>
+				<ref name="c"/>
+
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="c01">
+		<element name="c01">
+			<ref name="m.c.base"/>
+			<zeroOrMore>
+				<ref name="c02"/>
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="c02">
+		<element name="c02">
+			<ref name="m.c.base"/>
+			<zeroOrMore>
+				<ref name="c03"/>
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="c03">
+		<element name="c03">
+			<ref name="m.c.base"/>
+			<zeroOrMore>
+				<ref name="c04"/>
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="c04">
+		<element name="c04">
+			<ref name="m.c.base"/>
+			<zeroOrMore>
+				<ref name="c05"/>
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="c05">
+		<element name="c05">
+			<ref name="m.c.base"/>
+			<zeroOrMore>
+				<ref name="c06"/>
+
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="c06">
+		<element name="c06">
+			<ref name="m.c.base"/>
+			<zeroOrMore>
+				<ref name="c07"/>
+
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="c07">
+		<element name="c07">
+			<ref name="m.c.base"/>
+			<zeroOrMore>
+				<ref name="c08"/>
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="c08">
+		<element name="c08">
+			<ref name="m.c.base"/>
+			<zeroOrMore>
+				<ref name="c09"/>
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="c09">
+		<element name="c09">
+			<ref name="m.c.base"/>
+			<zeroOrMore>
+				<ref name="c10"/>
+			</zeroOrMore>
+
+		</element>
+	</define>
+	<define name="c10">
+		<element name="c10">
+			<ref name="m.c.base"/>
+			<zeroOrMore>
+				<ref name="c11"/>
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="c11">
+		<element name="c11">
+			<ref name="m.c.base"/>
+			<zeroOrMore>
+				<ref name="c12"/>
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="c12">
+		<element name="c12">
+			<ref name="m.c.base"/>
+		</element>
+	</define>
+	<define name="head">
+		<element name="head">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="altHead"/>
+			</optional>
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<ref name="m.phrase.bare"/>
+				</choice>
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="p">
+		<element name="p">
+			<ref name="a.common"/>
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<ref name="m.para.content"/>
+				</choice>
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="dao">
+		<element name="dao">
+			<ref name="a.common"/>
+			<ref name="a.external.ptr"/>
+			<optional>
+				<ref name="daoDesc"/>
+			</optional>
+			<!-- TC: 2012-03-08: added @type -->
+			<!-- TC: 2013-01-22: added @daoType with list of values and @otherDaoType-->
+			<attribute name="daoType">
+				<choice>
+					<value>bornDigital</value>
+					<value>derived</value>
+					<value>unknown</value>
+					<value>other</value>
+				</choice>
+			</attribute>
+			<optional>
+				<attribute name="otherDaoType"/>
+			</optional>
+		</element>
+	</define>
+	<define name="daoDesc">
+		<element name="daoDesc">
+			<ref name="a.common"/>
+			<optional>
+				<ref name="head"/>
+			</optional>
+			<oneOrMore>
+				<ref name="m.blocks"/>
+			</oneOrMore>
+		</element>
+	</define>
+	<define name="daoGrp">
+		<element name="daoGrp">
+			<ref name="a.common"/>
+			<!-- TC: 2012-06-13: allow only simple xlink attributes -->
+			<!-- <ref name="extendedLink"/> -->
+			<optional>
+				<ref name="daoDesc"/>
+			</optional>
+			<oneOrMore>
+				<choice>
+					<element name="daoLoc">
+						<ref name="a.common"/>
+						<ref name="a.loc.external.ptr"/>
+						<optional>
+							<ref name="daoDesc"/>
+						</optional>
+					</element>
+					<!-- 2012-06-13: remove extended links -->
+					<!-- <ref name="extended.els"/> -->
+				</choice>
+			</oneOrMore>
+		</element>
+	</define>
+	<!-- TC 2012-06-08: remove ptr -->
+	<!--
+	<define name="ptr">
+		<element name="ptr">
+			<ref name="a.common"/>
+			<ref name="a.internal.ptr"/>
+			<empty/>
+		</element>
+	</define>
+	-->
+	<define name="ref">
+		<element name="ref">
+			<ref name="a.common"/>
+			<ref name="a.internal.ptr"/>
+			<!-- TC; 2013-06-13: permit only text -->
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<!-- <ref name="m.para.content.norefs"/> -->
+					<!--TC; 2012-06-13: restrict bibRef to bibliography only -->
+					<!-- <ref name="bibRef"/> -->
+					<!-- <ref name="title"/> -->
+					<!-- <ref name="extRef"/> -->
+					<!-- <ref name="archRef"/> -->
+				</choice>
+			</zeroOrMore>
+		</element>
+	</define>
+	<!-- TC 2012-06-08: remove extRef -->
+	<!--<define name="extRef">
+		<element name="extRef">
+			<ref name="a.common"/>
+			<ref name="a.external.ptr"/>
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<ref name="m.para.content.norefs"/>
+					<ref name="bibRef"/>
+					<ref name="title"/>
+					<ref name="archRef"/>
+					<ref name="ref"/>
+				</choice>
+			</zeroOrMore>
+		</element>
+	</define>
+	-->
+	<define name="title">
+		<element name="title">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="localType"/>
+			</optional>
+			<optional>
+				<attribute name="render">
+					<choice>
+						<ref name="av.render"/>
+					</choice>
+				</attribute>
+			</optional>
+			<ref name="a.access"/>
+			<!-- TC; 2012-06-13: remove linking attributes -->
+			<!--
+				<optional>
+				<ref name="a.external.ptr"/>
+			</optional>
+			-->
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<!-- TC; 2013-06-13: permit only text -->
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<!--
+				    <ref name="m.phrase.bare"/>
+					<ref name="date"/>
+					<ref name="num"/>
+					-->
+				</choice>
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="archRef">
+		<element name="archRef">
+			<ref name="a.common"/>
+			<!--	<optional>
+				<ref name="a.external.ptr"/>
+			</optional>
+		-->
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<ref name="m.phrase.basic.norefs"/>
+					<!--TC; 2012-06-13: restrict bibRef to bibliography only -->
+					<!-- <ref name="bibRef"/>-->
+					<ref name="ref"/>
+					<ref name="title"/>
+					<!-- <ref name="extref"/> -->
+					<!-- TC; 2012-10-10: removed did elements  -->
+					<!--<ref name="m.did"/> -->
+				</choice>
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="bibRef">
+		<element name="bibRef">
+			<ref name="a.common"/>
+			<!-- TC: 2012-06-13: remove linking attrs from bibref -->
+			<!--
+				<optional>
+				<ref name="a.external.ptr"/>
+			</optional>
+			-->
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<!-- TC; 2013-06-10: change content model to match archref -->
+			<!--	<optional>
+				<ref name="a.external.ptr"/>
+			</optional>
+	    -->
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<ref name="m.phrase.basic.norefs"/>
+					<ref name="ref"/>
+					<ref name="title"/>
+				</choice>
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="edition">
+		<element name="edition">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<ref name="m.phrase.bare"/>
+				</choice>
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="bibSeries">
+		<element name="bibSeries">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<ref name="m.phrase.bare"/>
+					<ref name="title"/>
+					<ref name="num"/>
+				</choice>
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="imprint">
+		<element name="imprint">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<ref name="m.phrase.bare"/>
+					<ref name="publisher"/>
+					<ref name="geogName"/>
+					<ref name="date"/>
+				</choice>
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="publisher">
+		<element name="publisher">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<ref name="m.phrase.bare"/>
+				</choice>
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="corpName">
+		<element name="corpName">
+			<ref name="a.common"/>
+			<ref name="a.access"/>
+			<optional>
+				<attribute name="role"/>
+			</optional>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<ref name="m.phrase.bare"/>
+					<!--<ref name="subarea"/> -->
+				</choice>
+			</zeroOrMore>
+
+		</element>
+	</define>
+	<define name="famName">
+		<element name="famName">
+			<ref name="a.common"/>
+			<ref name="a.access"/>
+			<optional>
+				<attribute name="role"/>
+			</optional>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<ref name="m.phrase.bare"/>
+					<!-- <ref name="subarea"/> -->
+				</choice>
+			</zeroOrMore>
+
+
+
+		</element>
+	</define>
+	<define name="geogName">
+		<element name="geogName">
+			<ref name="a.common"/>
+			<ref name="a.access"/>
+			<optional>
+				<attribute name="role"/>
+			</optional>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<ref name="m.phrase.bare"/>
+					<!--	<ref name="subarea"/>
+			-->
+				</choice>
+			</zeroOrMore>
+
+
+
+		</element>
+	</define>
+	<define name="name">
+		<element name="name">
+			<ref name="a.common"/>
+			<ref name="a.access"/>
+			<optional>
+				<attribute name="role"/>
+			</optional>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<ref name="m.phrase.bare"/>
+					<!-- 	<ref name="subarea"/>-->
+
+				</choice>
+			</zeroOrMore>
+
+
+
+		</element>
+	</define>
+	<define name="persName">
+		<element name="persName">
+			<ref name="a.common"/>
+			<ref name="a.access"/>
+			<optional>
+				<attribute name="role"/>
+			</optional>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<!-- <ref name="m.phrase.bare"/> -->
+				</choice>
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="date">
+		<element name="date">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="localType"/>
+			</optional>
+			<ref name="am.dates.era"/>
+			<ref name="am.dates.calendar"/>
+			<ref name="am.date.normal"/>
+			<optional>
+				<attribute name="certainty"/>
+			</optional>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<!-- TC; 2013-06-13: permit only text -->
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<!-- <ref name="m.phrase.bare"/> -->
+				</choice>
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="num">
+		<element name="num">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="localType"/>
+			</optional>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<ref name="m.phrase.bare"/>
+					<ref name="ref"/>
+				</choice>
+			</zeroOrMore>
+		</element>
+	</define>
+	<!-- TC: 2012-03-07: Removed <abbr> and <expan> -->
+	<!--
+	<define name="abbr">
+		<element name="abbr">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="expan"/>
+			</optional>
+			<text/>
+		</element>
+	</define>
+	<define name="expan">
+		<element name="expan">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="abbr"/>
+			</optional>
+			<text/>
+		</element>
+	</define>
+	-->
+	<define name="address">
+		<element name="address">
+			<ref name="a.common"/>
+			<oneOrMore>
+				<element name="addressLine">
+					<ref name="a.common"/>
+					<attribute name="localType"/>
+					<zeroOrMore>
+						<choice>
+							<text/>
+							<ref name="m.phrase.bare"/>
+							<ref name="ref"/>
+						</choice>
+					</zeroOrMore>
+				</element>
+			</oneOrMore>
+		</element>
+	</define>
+	<define name="event">
+		<element name="event">
+			<ref name="a.common"/>
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<ref name="m.para.content"/>
+				</choice>
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="list">
+		<element name="list">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="listType">
+					<choice>
+						<!-- 2013-01-25; TC: removed simple, changed marked to unordered -->
+						<!-- <value>simple</value> -->
+						<value>defList</value>
+						<value>unordered</value>
+						<value>ordered</value>
+					</choice>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="mark">
+					<!-- 2013-01-25; TC: added values from CSS "list-style-type" property list -->
+					<choice>
+						<value>disc</value>
+						<value>circle</value>
+						<value>square</value>
+						<value>decimal</value>
+						<value>decimal-leading-zero</value>
+						<value>lower-roman</value>
+						<value>upper-roman</value>
+						<value>lower-greek</value>
+						<value>lower-latin</value>
+						<value>upper-latin</value>
+						<value>armenian</value>
+						<value>georgian</value>
+						<value>lower-alpha</value>
+						<value>upper-alpha</value>
+						<value>none</value>
+						<value>inherit</value>
+					</choice>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="numeration">
+					<choice>
+						<value>arabic</value>
+						<value>upperAlpha</value>
+						<value>lowerAlpha</value>
+						<value>upperRoman</value>
+						<value>lowerRoman</value>
+					</choice>
+				</attribute>
+			</optional>
+			<!-- TC: 2012-03-08: Remove continuation -->
+			<!-- <optional>
+				<attribute name="continuation">
+					<choice>
+						<value>continues</value>
+						<value>starts</value>
+					</choice>
+				</attribute>
+			</optional>
+		    -->
+			<optional>
+				<ref name="head"/>
+			</optional>
+			<choice>
+				<oneOrMore>
+					<ref name="item"/>
+				</oneOrMore>
+				<group>
+					<optional>
+						<ref name="listHead"/>
+					</optional>
+					<oneOrMore>
+						<element name="defItem">
+							<ref name="a.common"/>
+							<element name="label">
+								<ref name="a.common"/>
+								<zeroOrMore>
+									<choice>
+										<text/>
+										<ref name="m.phrase.plus"/>
+									</choice>
+								</zeroOrMore>
+							</element>
+							<ref name="item"/>
+						</element>
+					</oneOrMore>
+				</group>
+			</choice>
+		</element>
+	</define>
+	<define name="listHead">
+		<element name="listHead">
+			<ref name="a.common"/>
+			<optional>
+				<element name="head01">
+					<ref name="a.common"/>
+					<zeroOrMore>
+						<choice>
+							<text/>
+							<ref name="m.phrase.bare"/>
+						</choice>
+					</zeroOrMore>
+				</element>
+			</optional>
+			<optional>
+				<element name="head02">
+					<ref name="a.common"/>
+					<zeroOrMore>
+						<choice>
+							<text/>
+							<ref name="m.phrase.bare"/>
+						</choice>
+					</zeroOrMore>
+				</element>
+			</optional>
+			<optional>
+				<element name="head03">
+					<ref name="a.common"/>
+					<zeroOrMore>
+						<choice>
+							<text/>
+							<ref name="m.phrase.bare"/>
+						</choice>
+					</zeroOrMore>
+				</element>
+			</optional>
+		</element>
+	</define>
+	<define name="item">
+		<element name="item">
+			<ref name="a.common"/>
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<ref name="m.para.content"/>
+				</choice>
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="note">
+		<element name="note">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="localType"/>
+			</optional>
+			<optional>
+				<attribute name="label"/>
+			</optional>
+			<optional>
+				<attribute name="show">
+					<choice>
+						<value>embed</value>
+						<value>new</value>
+					</choice>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="actuate">
+					<choice>
+						<value>onload</value>
+						<value>onrequest</value>
+					</choice>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<oneOrMore>
+				<ref name="m.blocks"/>
+			</oneOrMore>
+		</element>
+	</define>
+	<!-- TC 2012-06-08: deprecate tHead -->
+	<!-- <define name="tHead">
+		<element name="tHead">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="vAlign">
+					<choice>
+						<value>top</value>
+						<value>middle</value>
+						<value>bottom</value>
+					</choice>
+				</attribute>
+			</optional>
+			<oneOrMore>
+				<ref name="row"/>
+			</oneOrMore>
+		</element>
+	</define>
+	-->
+	<define name="row">
+		<element name="row">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="rowSep">
+					<ref name="yesorno"/>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="vAlign">
+					<choice>
+						<value>top</value>
+						<value>middle</value>
+						<value>bottom</value>
+					</choice>
+				</attribute>
+			</optional>
+			<oneOrMore>
+				<element name="entry">
+					<ref name="a.common"/>
+					<optional>
+						<attribute name="colName">
+							<data type="NMTOKEN"/>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="namEst">
+							<data type="NMTOKEN"/>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="nameEnd">
+							<data type="NMTOKEN"/>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="moreRows">
+							<data type="NMTOKEN"/>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="colSep">
+							<ref name="yesorno"/>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="rowSep">
+							<ref name="yesorno"/>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="align">
+							<choice>
+								<value>left</value>
+								<value>right</value>
+								<value>center</value>
+								<value>justify</value>
+								<value>char</value>
+							</choice>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="char"/>
+					</optional>
+					<optional>
+						<attribute name="charOff">
+							<data type="NMTOKEN"/>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="vAlign">
+							<choice>
+								<value>top</value>
+								<value>middle</value>
+								<value>bottom</value>
+							</choice>
+						</attribute>
+					</optional>
+					<zeroOrMore>
+						<choice>
+							<text/>
+							<choice>
+								<ref name="m.phrase.plus"/>
+								<!--	<ref name="address"/> -->
+								<ref name="list"/>
+								<ref name="note"/>
+							</choice>
+						</choice>
+					</zeroOrMore>
+				</element>
+			</oneOrMore>
+		</element>
+	</define>
+
+
+
+	<!-- 2012-06-13: remove extended links -->
+	<!-- 
+		<define name="extended.els">
+		<choice>
+			<ref name="resource"/>
+			<ref name="arc"/>
+			<element name="ptrLoc">
+				<ref name="a.common"/>
+				<ref name="a.loc.internal.ptr"/>
+				<empty/>
+			</element>
+			<element name="extPtrLoc">
+				<ref name="a.common"/>
+				<ref name="a.loc.external.ptr"/>
+				<empty/>
+			</element>
+			<element name="refLoc">
+				<ref name="a.common"/>
+				<ref name="a.loc.internal.ptr"/>
+				<zeroOrMore>
+					<choice>
+						<text/>
+						<ref name="m.para.content.norefs"/>
+					</choice>
+				</zeroOrMore>
+			</element>
+			<element name="extRefLoc">
+				<ref name="a.common"/>
+				<ref name="a.loc.external.ptr"/>
+				<zeroOrMore>
+					<choice>
+						<text/>
+						<ref name="m.para.content.norefs"/>
+					</choice>
+				</zeroOrMore>
+			</element>
+		</choice>
+	</define>
+	-->
+	<!-- 2012-06-13: remove extended links -->
+	<!-- <define name="extended">
+		<ref name="extendedLink"/>
+		<zeroOrMore>
+			<choice>
+				<ref name="resource"/>
+				<ref name="arc"/>
+				<text/>
+			</choice>
+		</zeroOrMore>
+	</define>
+	<define name="arc">
+		<element name="arc">
+			<ref name="a.common"/>
+			<ref name="arcLink"/>
+			<empty/>
+		</element>
+	</define>
+	<define name="resource">
+		<element name="resource">
+			<ref name="a.common"/>
+			<ref name="resourceLink"/>
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<ref name="m.render"/>
+				</choice>
+			</zeroOrMore>
+		</element>
+	</define>
+-->
+	<!-- 
+	XLINK DEFINITIONS
+	-->
+	<define name="xlink.href">
+		<attribute name="xlink:href">
+			<data type="anyURI"/>
+		</attribute>
+	</define>
+	<define name="xlink.role">
+		<attribute name="xlink:role">
+			<data type="anyURI"/>
+		</attribute>
+	</define>
+	<define name="xlink.arcrole">
+		<attribute name="xlink:arcrole">
+			<data type="anyURI"/>
+		</attribute>
+	</define>
+	<define name="xlink.title">
+		<attribute name="xlink:title"/>
+	</define>
+	<define name="xlink.show">
+		<attribute name="xlink:show">
+			<choice>
+				<value>new</value>
+				<value>replace</value>
+				<value>embed</value>
+				<value>other</value>
+				<value>none</value>
+			</choice>
+		</attribute>
+	</define>
+	<define name="xlink.actuate">
+		<attribute name="xlink:actuate">
+			<choice>
+				<value>onLoad</value>
+				<value>onRequest</value>
+				<value>other</value>
+				<value>none</value>
+			</choice>
+		</attribute>
+	</define>
+	<define name="xlink.label">
+		<attribute name="xlink:label">
+			<data type="NMTOKEN"/>
+		</attribute>
+	</define>
+	<define name="xlink.from">
+		<attribute name="xlink:from">
+			<data type="NMTOKEN"/>
+		</attribute>
+	</define>
+	<define name="xlink.to">
+		<attribute name="xlink:to">
+			<data type="NMTOKEN"/>
+		</attribute>
+	</define>
+	<define name="simpleLink">
+		<attribute a:defaultValue="simple" name="xlink:type">
+			<value>simple</value>
+		</attribute>
+		<optional>
+			<ref name="xlink.href"/>
+		</optional>
+		<optional>
+			<ref name="xlink.role"/>
+		</optional>
+		<optional>
+			<ref name="xlink.arcrole"/>
+		</optional>
+		<optional>
+			<ref name="xlink.title"/>
+		</optional>
+		<optional>
+			<ref name="xlink.show"/>
+		</optional>
+		<optional>
+			<ref name="xlink.actuate"/>
+		</optional>
+	</define>
+	<!--
+	<define name="extendedLink">
+		<attribute a:defaultValue="extended" name="xlink:type">
+			<value>extended</value>
+		</attribute>
+		<optional>
+			<ref name="xlink.role"/>
+		</optional>
+		<optional>
+			<ref name="xlink.title"/>
+		</optional>
+	</define-->
+	<define name="locatorLink">
+		<attribute a:defaultValue="locator" name="xlink:type">
+			<value>locator</value>
+		</attribute>
+		<ref name="xlink.href"/>
+		<optional>
+			<ref name="xlink.role"/>
+		</optional>
+		<optional>
+			<ref name="xlink.title"/>
+		</optional>
+		<optional>
+			<ref name="xlink.label"/>
+		</optional>
+	</define>
+	<define name="arcLink">
+		<attribute a:defaultValue="arc" name="xlink:type">
+			<value>arc</value>
+		</attribute>
+		<optional>
+			<ref name="xlink.arcrole"/>
+		</optional>
+		<optional>
+			<ref name="xlink.title"/>
+		</optional>
+		<optional>
+			<ref name="xlink.show"/>
+		</optional>
+		<optional>
+			<ref name="xlink.actuate"/>
+		</optional>
+		<optional>
+			<ref name="xlink.from"/>
+		</optional>
+		<optional>
+			<ref name="xlink.to"/>
+		</optional>
+	</define>
+
+	<define name="resourceLink">
+		<attribute a:defaultValue="resource" name="xlink:type">
+			<value>resource</value>
+		</attribute>
+		<optional>
+			<ref name="xlink.role"/>
+		</optional>
+		<optional>
+			<ref name="xlink.title"/>
+		</optional>
+		<optional>
+			<ref name="xlink.label"/>
+		</optional>
+	</define>
+
+	<!-- TC: 2012-03-07: REVISION PATTERNS -->
+	<define name="m.cOrC01">
+		<choice>
+			<oneOrMore>
+				<ref name="c"/>
+				<!-- TC; 2012-06-08: deprecate thead -->
+				<!--<optional>
+					<ref name="thead"/>
+				</optional>
+				-->
+			</oneOrMore>
+			<oneOrMore>
+				<ref name="c01"/>
+				<!-- TC; 2012-06-08: deprecate thead -->
+				<!--<optional>
+					<ref name="thead"/>
+					</optional>
+				-->
+			</oneOrMore>
+		</choice>
+	</define>
+
+	<define name="m.c.base">
+		<ref name="a.desc.c"/>
+		<optional>
+			<ref name="head"/>
+		</optional>
+		<ref name="did"/>
+		<!-- 2013-01-22; TC change m.desc.full to m.desc.base -->
+		<zeroOrMore>
+			<ref name="m.desc.base"/>
+		</zeroOrMore>
+		<!-- TC; 2012-06-08: deprecate tHead -->
+		<!--<optional>
+			<ref name="tHead"/>
+			</optional>
+		-->
+		<!-- TC; 2012-03-08: Added <dao> and <daoGrp> -->
+		<zeroOrMore>
+			<choice>
+				<ref name="dao"/>
+				<ref name="daoGrp"/>
+			</choice>
+		</zeroOrMore>
+		<optional>
+			<element name="relations">
+				<oneOrMore>
+					<ref name="m.relation"/>
+				</oneOrMore>
+			</element>
+		</optional>
+	</define>
+
+	<define name="legalStatus">
+		<element name="legalStatus">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="localType">
+					<data type="NMTOKEN"/>
+				</attribute>
+			</optional>
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<ref name="m.phrase.bare"/>
+					<ref name="date"/>
+				</choice>
+			</zeroOrMore>
+		</element>
+	</define>
+
+	<!-- EAC-CPF-based Patterns for Relations -->
+
+	<div a:documentation="Relations">
+
+		<define name="e.relations">
+			<element a:id="relations" name="relations">
+				<ref name="a.common"/>
+				<optional>
+					<ref name="lang"/>
+				</optional>
+				<optional>
+					<ref name="base"/>
+				</optional>
+				<zeroOrMore>
+					<ref name="e.cpfRelation"/>
+				</zeroOrMore>
+				<zeroOrMore>
+					<ref name="e.resourceRelation"/>
+				</zeroOrMore>
+				<zeroOrMore>
+					<ref name="e.functionRelation"/>
+				</zeroOrMore>
+			</element>
+		</define>
+
+		<define name="e.relationEntry">
+			<element a:id="relationEntry" name="relationEntry">
+				<ref name="a.common"/>
+				<optional>
+					<ref name="a.localType"/>
+				</optional>
+				<optional>
+					<ref name="m.entryLanguageAttributes"/>
+				</optional>
+				<text/>
+			</element>
+		</define>
+
+		<define name="e.objectXMLWrap">
+			<element a:id="objectXMLWrap" name="objectXMLWrap">
+				<ref name="a.common"/>
+				<ref name="e.anyName"/>
+			</element>
+		</define>
+		<define name="e.objectBinWrap">
+			<element a:id="objectBinWrap" name="objectBinWrap">
+				<ref name="a.common"/>
+				<data type="base64Binary"/>
+			</element>
+		</define>
+
+		<define name="m.relationBody">
+			<optional>
+				<ref name="a.lastDateTimeVerified"/>
+			</optional>
+			<optional>
+				<ref name="simpleLink"/>
+			</optional>
+			<zeroOrMore>
+				<ref name="e.relationEntry"/>
+			</zeroOrMore>
+			<optional>
+				<choice>
+					<ref name="e.objectXMLWrap"/>
+					<!--		<ref name="e.objectBinWrap"/> -->
+				</choice>
+			</optional>
+			<optional>
+				<ref name="m.dates"/>
+			</optional>
+			<optional>
+				<ref name="e.placeEntry"/>
+			</optional>
+			<optional>
+				<ref name="e.descriptiveNote"/>
+			</optional>
+		</define>
+
+		<define name="e.cpfRelation">
+			<element a:id="cpfRelation" name="cpfRelation">
+				<ref name="a.common"/>
+				<optional>
+					<ref name="lang"/>
+				</optional>
+				<optional>
+					<attribute a:id="cpfRelationType" name="cpfRelationType">
+						<choice>
+							<value>identity</value>
+							<value>hierarchical</value>
+							<value>hierarchical-parent</value>
+							<value>hierarchical-child</value>
+							<value>temporal</value>
+							<value>temporal-earlier</value>
+							<value>temporal-later</value>
+							<value>family</value>
+							<value>associative</value>
+						</choice>
+					</attribute>
+				</optional>
+				<ref name="m.relationBody"/>
+			</element>
+		</define>
+
+		<define name="e.resourceRelation">
+			<element a:id="resourceRelation" name="resourceRelation">
+				<ref name="a.common"/>
+				<optional>
+					<ref name="lang"/>
+				</optional>
+				<optional>
+					<attribute a:id="resourceRelationType" name="resourceRelationType">
+						<choice>
+							<value>creatorOf</value>
+							<value>subjectOf</value>
+							<value>other</value>
+						</choice>
+					</attribute>
+				</optional>
+				<ref name="m.relationBody"/>
+			</element>
+		</define>
+
+		<define name="e.functionRelation">
+			<element a:id="functionRelation" name="functionRelation">
+				<ref name="a.common"/>
+				<optional>
+					<ref name="lang"/>
+				</optional>
+				<optional>
+					<attribute a:id="functionRelationType" name="functionRelationType">
+						<choice>
+							<value>controls</value>
+							<value>owns</value>
+							<value>performs</value>
+						</choice>
+					</attribute>
+				</optional>
+				<ref name="m.relationBody"/>
+			</element>
+		</define>
+	</div>
+	<define name="a.localType">
+		<attribute a:id="localType" name="localType">
+			<data type="anyURI"/>
+		</attribute>
+	</define>
+	<define name="lang" ns="http://www.w3.org/XML/1998/namespace">
+		<attribute a:id="xmlLang" name="xml:lang">
+			<choice>
+				<data type="language"/>
+				<value/>
+			</choice>
+		</attribute>
+	</define>
+
+	<define name="base" ns="http://www.w3.org/XML/1998/namespace">
+		<attribute a:id="xmlBase" name="xml:base">
+			<data type="anyURI"/>
+		</attribute>
+	</define>
+	<define name="m.entryLanguageAttributes">
+		<optional>
+			<ref name="a.scriptCode"/>
+		</optional>
+		<optional>
+			<ref name="lang"/>
+		</optional>
+		<optional>
+			<ref name="a.transliteration"/>
+		</optional>
+	</define>
+	<define name="e.anyName">
+		<element a:id="e.anyName">
+			<anyName>
+				<except>
+					<nsName ns="urn:isbn:1-931666-22-9"/>
+				</except>
+			</anyName>
+			<ref name="m.anything"/>
+		</element>
+	</define>
+
+	<define name="m.anything">
+		<zeroOrMore>
+			<attribute a:id="a.anyName">
+				<anyName/>
+			</attribute>
+		</zeroOrMore>
+		<zeroOrMore>
+			<choice>
+				<ref name="e.anyName"/>
+				<text/>
+			</choice>
+		</zeroOrMore>
+	</define>
+
+	<div a:documentation="Dates">
+
+		<define name="a.lastDateTimeVerified">
+			<attribute a:id="lastDateTimeVerified" name="lastDateTimeVerified">
+				<ref name="m.data.standardDateTime"/>
+			</attribute>
+		</define>
+
+		<define name="m.data.standardDateTime">
+			<choice>
+				<data type="date">
+					<param name="maxInclusive">2099-12-31</param>
+				</data>
+				<data type="gYear">
+					<param name="maxInclusive">2099</param>
+				</data>
+				<data type="gYearMonth">
+					<param name="maxInclusive">2099-12</param>
+				</data>
+				<data type="dateTime">
+					<param name="maxInclusive">2099-12-31T23:59:59</param>
+				</data>
+			</choice>
+		</define>
+
+		<define name="m.data.standardDate">
+			<choice>
+				<data type="date">
+					<param name="maxInclusive">2099-12-31</param>
+				</data>
+				<data type="gYear">
+					<param name="maxInclusive">2099</param>
+				</data>
+				<data type="gYearMonth">
+					<param name="maxInclusive">2099-12</param>
+				</data>
+			</choice>
+		</define>
+
+		<define name="e.dateSingle">
+			<element a:id="date" name="dateSingle">
+				<ref name="a.common"/>
+				<optional>
+					<ref name="lang"/>
+				</optional>
+				<optional>
+					<ref name="a.localType"/>
+				</optional>
+				<ref name="m.dateSingle"/>
+			</element>
+		</define>
+
+		<define name="m.dateSingle">
+			<optional>
+				<attribute a:id="standardDate" name="standardDate">
+					<ref name="m.data.standardDate"/>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute a:id="notBefore" name="notBefore">
+					<ref name="m.data.standardDate"/>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute a:id="notAfter" name="notAfter">
+					<ref name="m.data.standardDate"/>
+				</attribute>
+			</optional>
+			<text/>
+		</define>
+
+		<define name="e.dateRange">
+			<element a:id="dateRange" name="dateRange">
+				<ref name="a.common"/>
+				<optional>
+					<ref name="lang"/>
+				</optional>
+				<optional>
+					<ref name="a.localType"/>
+				</optional>
+				<optional>
+					<element a:id="fromDate" name="fromDate">
+						<ref name="a.common"/>
+						<optional>
+							<ref name="lang"/>
+						</optional>
+						<optional>
+							<ref name="a.localType"/>
+						</optional>
+						<ref name="m.dateSingle"/>
+					</element>
+				</optional>
+				<optional>
+					<element a:id="toDate" name="toDate">
+						<ref name="a.common"/>
+						<optional>
+							<ref name="lang"/>
+						</optional>
+						<optional>
+							<ref name="a.localType"/>
+						</optional>
+						<ref name="m.dateSingle"/>
+					</element>
+				</optional>
+			</element>
+		</define>
+
+		<define name="e.dateSet">
+			<element a:id="dateSet" name="dateSet">
+				<ref name="a.common"/>
+				<optional>
+					<ref name="lang"/>
+				</optional>
+				<optional>
+					<ref name="a.localType"/>
+				</optional>
+				<choice>
+					<ref name="e.dateSingle"/>
+					<ref name="e.dateRange"/>
+				</choice>
+				<oneOrMore>
+					<choice>
+						<ref name="e.dateSingle"/>
+						<ref name="e.dateRange"/>
+					</choice>
+				</oneOrMore>
+			</element>
+		</define>
+
+		<define name="m.dates">
+			<choice>
+				<ref name="e.dateSingle"/>
+				<ref name="e.dateRange"/>
+				<ref name="e.dateSet"/>
+			</choice>
+		</define>
+
+	</div>
+
+
+	<div a:documentation="Language">
+
+		<define name="e.language">
+			<element a:id="language" name="language">
+				<ref name="a.common"/>
+				<optional>
+					<ref name="lang"/>
+				</optional>
+				<attribute a:id="languageCode" name="languageCode">
+					<data type="string">
+						<param name="pattern">[a-z]{3}</param>
+					</data>
+				</attribute>
+				<text/>
+			</element>
+		</define>
+
+		<define name="e.script">
+			<element a:id="script" name="script">
+				<ref name="a.common"/>
+				<optional>
+					<ref name="lang"/>
+				</optional>
+				<ref name="a.scriptCode"/>
+				<text/>
+			</element>
+		</define>
+
+		<define name="a.scriptCode">
+			<attribute a:id="scriptCode" name="scriptCode">
+				<data type="string">
+					<param name="pattern">[A-Z][a-z]{3}</param>
+				</data>
+			</attribute>
+		</define>
+
+
+		<define name="a.transliteration">
+			<attribute a:id="transliteration" name="transliteration">
+				<data type="NMTOKEN"/>
+			</attribute>
+		</define>
+
+
+
+	</div>
+
+	<define name="e.placeEntry">
+		<element a:id="placeEntry" name="placeEntry">
+			<ref name="a.common"/>
+			<optional>
+				<ref name="m.entryLanguageAttributes"/>
+			</optional>
+			<optional>
+				<ref name="a.localType"/>
+			</optional>
+			<optional>
+				<attribute a:id="countryCode" name="countryCode">
+					<choice>
+						<data type="string">
+							<param name="pattern">[A-Z]{2}</param>
+						</data>
+						<data type="string">
+							<param name="pattern">[A-Z]{4}</param>
+						</data>
+					</choice>
+				</attribute>
+			</optional>
+			<optional>
+				<ref name="a.vocabularySource"/>
+			</optional>
+			<optional>
+				<attribute a:id="accuracy" name="accuarcy">
+					<text/>
+				</attribute>
+			</optional>
+			<optional>
+				<ref name="m.geographicalCoordinates"/>
+			</optional>
+			<text/>
+		</element>
+	</define>
+	<define name="e.descriptiveNote">
+		<element a:id="descriptiveNote" name="descriptiveNote">
+			<ref name="a.common"/>
+			<optional>
+				<ref name="lang"/>
+			</optional>
+			<oneOrMore>
+				<ref name="p"/>
+			</oneOrMore>
+		</element>
+	</define>
+	<define name="a.vocabularySource">
+		<attribute a:id="vocabularySource" name="vocabularySource">
+			<data type="anyURI"/>
+		</attribute>
+	</define>
+	<define name="m.geographicalCoordinates">
+		<attribute a:id="longitude" name="longitude">
+			<data type="NMTOKEN"/>
+		</attribute>
+		<attribute a:id="latitude" name="latitude">
+			<data type="NMTOKEN"/>
+		</attribute>
+		<optional>
+			<attribute a:id="altitude" name="altitude">
+				<data type="NMTOKEN"/>
+			</attribute>
+		</optional>
+	</define>
+	<!-- control replaces eadheader -->
+	<define name="e.control">
+		<element name="control">
+			<!--		<optional>
+				<attribute name="id">
+					<data type="ID"/>
+				</attribute>
+			</optional>
+			-->
+			<optional>
+				<ref name="lang"/>
+			</optional>
+			<optional>
+				<ref name="base"/>
+			</optional>
+			<element a:id="recordId" name="recordId">
+				<optional>
+					<attribute name="id">
+						<data type="ID"/>
+					</attribute>
+				</optional>
+				<data type="NMTOKEN"/>
+			</element>
+			<zeroOrMore>
+				<element a:id="otherRecordId" name="otherRecordId">
+					<optional>
+						<attribute name="id">
+							<data type="ID"/>
+						</attribute>
+					</optional>
+					<ref name="m.id"/>
+				</element>
+			</zeroOrMore>
+			<element name="fileDesc">
+				<ref name="a.common"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<element name="titleStmt">
+					<ref name="a.common"/>
+					<optional>
+						<attribute name="encodingAnalog"/>
+					</optional>
+					<oneOrMore>
+						<ref name="titleProper"/>
+					</oneOrMore>
+					<zeroOrMore>
+						<ref name="subtitle"/>
+					</zeroOrMore>
+					<zeroOrMore>
+						<ref name="author"/>
+					</zeroOrMore>
+					<zeroOrMore>
+						<ref name="sponsor"/>
+					</zeroOrMore>
+				</element>
+				<optional>
+					<element name="editionStmt">
+						<ref name="a.common"/>
+						<optional>
+							<attribute name="encodingAnalog"/>
+						</optional>
+						<oneOrMore>
+							<choice>
+								<ref name="edition"/>
+								<ref name="p"/>
+							</choice>
+						</oneOrMore>
+					</element>
+				</optional>
+				<optional>
+					<element name="publicationStmt">
+						<ref name="a.common"/>
+						<optional>
+							<attribute name="encodingAnalog"/>
+						</optional>
+						<oneOrMore>
+							<choice>
+								<ref name="publisher"/>
+								<ref name="date"/>
+								<ref name="address"/>
+								<ref name="num"/>
+								<ref name="p"/>
+							</choice>
+						</oneOrMore>
+					</element>
+				</optional>
+				<optional>
+					<element name="seriesStmt">
+						<ref name="a.common"/>
+						<optional>
+							<attribute name="encodingAnalog"/>
+						</optional>
+						<oneOrMore>
+							<choice>
+								<ref name="titleProper"/>
+								<ref name="num"/>
+								<ref name="p"/>
+							</choice>
+						</oneOrMore>
+					</element>
+				</optional>
+				<optional>
+					<element name="noteStmt">
+						<ref name="a.common"/>
+						<optional>
+							<attribute name="encodingAnalog"/>
+						</optional>
+						<oneOrMore>
+							<ref name="e.controlNote"/>
+						</oneOrMore>
+					</element>
+				</optional>
+			</element>
+			<element a:id="maintenanceStatus" name="maintenanceStatus">
+				<optional>
+					<attribute name="id">
+						<data type="ID"/>
+					</attribute>
+				</optional>
+				<choice>
+					<value>revised</value>
+					<value>deleted</value>
+					<value>new</value>
+					<value>deletedSplit</value>
+					<value>deletedReplaced</value>
+					<value>cancelled</value>
+					<value>derived</value>
+				</choice>
+			</element>
+			<optional>
+				<element a:id="publicationStatus" name="publicationStatus">
+					<optional>
+						<attribute name="id">
+							<data type="ID"/>
+						</attribute>
+					</optional>
+					<choice>
+						<value>inProcess</value>
+						<value>approved</value>
+					</choice>
+				</element>
+			</optional>
+			<ref name="e.maintenanceAgency"/>
+			<optional>
+				<choice>
+					<ref name="e.languageDeclaration"/>
+					<element name="languageDeclarations">
+						<ref name="a.common"/>
+						<ref name="e.languageDeclaration"/>
+						<oneOrMore>
+							<ref name="e.languageDeclaration"/>
+						</oneOrMore>
+					</element>
+				</choice>
+			</optional>
+			<zeroOrMore>
+				<ref name="e.conventionDeclaration"/>
+			</zeroOrMore>
+			<zeroOrMore>
+				<ref name="e.localTypeDeclaration"/>
+			</zeroOrMore>
+			<zeroOrMore>
+				<ref name="e.localControl"/>
+			</zeroOrMore>
+			<ref name="e.maintenanceHistory"/>
+			<optional>
+				<ref name="e.sources"/>
+			</optional>
+		</element>
+	</define>
+
+	<!-- Patterns from EAC-CPF for <control> -->
+
+	<define name="e.maintenanceAgency">
+		<element name="maintenanceAgency">
+			<ref name="a.common"/>
+			<optional>
+				<element name="agencyCode">
+					<optional>
+						<ref name="a.common"/>
+					</optional>
+					<text/>
+					<!-- <ref name="m.data.standardRepository"/> -->
+				</element>
+			</optional>
+			<zeroOrMore>
+				<element name="otherAgencyCode">
+					<ref name="a.common"/>
+					<ref name="a.localType"/>
+					<data type="NMTOKEN"/>
+				</element>
+			</zeroOrMore>
+			<element a:id="agencyName" name="agencyName">
+
+				<text/>
+			</element>
+			<optional>
+				<ref name="e.descriptiveNote"/>
+			</optional>
+		</element>
+	</define>
+
+	<define name="m.data.standardRepository">
+		<data type="token">
+			<a:documentation>This pattern represents the character pattern requirements of ISIL (ISO
+				15511). Values that conform to the pattern are not, strictly speaking, conformant to
+				ISIL, as all repository codes must be registered with a national authority and the
+				national authority must be registered wth the official ISIL registering authority,
+				the Royal Library of Belgium (http://biblstandard.dk/isil/).</a:documentation>
+			<param name="pattern"
+				>(([A-Z]{2})|([a-zA-Z]{1})|([a-zA-Z]{3,4}))(-[a-zA-Z0-9:/\-]{1,11})</param>
+		</data>
+	</define>
+
+
+	<define name="e.maintenanceHistory">
+		<element a:id="maintenanceHistory" name="maintenanceHistory">
+			<ref name="a.common"/>
+			<oneOrMore>
+				<element a:id="maintenanceEvent" name="maintenanceEvent">
+					<ref name="a.common"/>
+					<element a:id="eventType" name="eventType">
+						<ref name="a.common"/>
+						<choice>
+							<value>created</value>
+							<value>revised</value>
+							<value>deleted</value>
+							<value>cancelled</value>
+							<value>derived</value>
+							<value>updated</value>
+							<value>unknown</value>
+						</choice>
+					</element>
+					<element a:id="eventDateTime" name="eventDateTime">
+						<ref name="a.common"/>
+						<optional>
+							<attribute a:id="standardDateTime" name="standardDateTime">
+								<ref name="m.data.standardDateTime"/>
+							</attribute>
+						</optional>
+						<text/>
+					</element>
+					<element a:id="agentType" name="agentType">
+						<ref name="a.common"/>
+						<choice>
+							<value>human</value>
+							<value>machine</value>
+							<value>unknown</value>
+						</choice>
+					</element>
+					<element a:id="agent" name="agent">
+						<ref name="a.common"/>
+						<text/>
+					</element>
+					<optional>
+						<element a:id="eventDesccription" name="eventDescription">
+							<ref name="a.common"/>
+							<text/>
+						</element>
+					</optional>
+				</element>
+			</oneOrMore>
+		</element>
+	</define>
+
+
+
+	<define name="e.languageDeclaration">
+		<element a:id="languageDeclaration" name="languageDeclaration">
+			<ref name="a.common"/>
+			<ref name="e.language"/>
+			<ref name="e.script"/>
+			<optional>
+				<ref name="e.descriptiveNote"/>
+			</optional>
+		</element>
+	</define>
+
+
+
+
+
+
+
+	<define name="e.sources">
+		<element name="sources">
+			<ref name="a.common"/>
+			<optional>
+				<attribute a:id="xmlBase" name="xml:base">
+					<data type="anyURI"/>
+				</attribute>
+			</optional>
+			<oneOrMore>
+				<element name="source">
+					<ref name="a.common"/>
+					<optional>
+						<ref name="a.lastDateTimeVerified"/>
+					</optional>
+					<optional>
+						<ref name="simpleLink"/>
+					</optional>
+					<optional>
+						<element name="sourceEntry">
+							<optional>
+								<ref name="m.entryLanguageAttributes"/>
+							</optional>
+							<text/>
+						</element>
+					</optional>
+					<optional>
+						<choice>
+							<ref name="e.objectXMLWrap"/>
+							<ref name="e.objectBinWrap"/>
+						</choice>
+					</optional>
+					<optional>
+						<ref name="e.descriptiveNote"/>
+					</optional>
+				</element>
+			</oneOrMore>
+		</element>
+	</define>
+
+
+
+
+
+
+
+
+
+
+
+
+	<define name="e.conventionDeclaration">
+		<element a:id="conventionDeclaration" name="conventionDeclaration">
+			<ref name="a.common"/>
+			<optional>
+				<ref name="e.abbreviation"/>
+			</optional>
+			<ref name="e.citation"/>
+			<optional>
+				<ref name="e.descriptiveNote"/>
+			</optional>
+		</element>
+	</define>
+
+	<define name="e.abbreviation">
+		<element a:id="abbreviation" name="abbreviation">
+			<ref name="a.common"/>
+			<data type="token"/>
+		</element>
+	</define>
+
+	<define name="e.citation">
+		<element a:id="citation" name="citation">
+			<ref name="a.common"/>
+			<optional>
+				<ref name="simpleLink"/>
+			</optional>
+			<optional>
+				<ref name="a.lastDateTimeVerified"/>
+			</optional>
+			<ref name="m.mixedContent"/>
+		</element>
+	</define>
+	<define name="m.mixedContent">
+		<zeroOrMore>
+			<choice>
+				<text/>
+				<ref name="e.span"/>
+			</choice>
+		</zeroOrMore>
+	</define>
+	<define name="e.span">
+		<optional>
+			<element a:id="span" name="span">
+				<ref name="a.common"/>
+				<ref name="a.localType"/>
+				<optional>
+					<attribute a:id="style" name="style">
+						<text/>
+					</attribute>
+				</optional>
+				<text/>
+			</element>
+		</optional>
+	</define>
+	<define name="e.localControl">
+		<element a:id="localControl" name="localControl">
+			<ref name="a.common"/>
+			<ref name="a.localType"/>
+			<optional>
+				<ref name="e.term"/>
+			</optional>
+			<optional>
+				<choice>
+					<ref name="e.dateSingle"/>
+					<ref name="e.dateRange"/>
+				</choice>
+			</optional>
+		</element>
+	</define>
+	<define name="e.term">
+		<element name="term">
+			<ref name="a.common"/>
+			<optional>
+				<ref name="m.entryLanguageAttributes"/>
+			</optional>
+			<optional>
+				<ref name="a.lastDateTimeVerified"/>
+			</optional>
+			<optional>
+				<attribute name="source">
+					<data type="string"/>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="identifier"/>
+			</optional>
+			<text/>
+		</element>
+	</define>
+	<define name="e.localTypeDeclaration">
+		<element a:id="localTypeDeclaration" name="localTypeDeclaration">
+			<ref name="a.common"/>
+			<optional>
+				<ref name="e.abbreviation"/>
+			</optional>
+			<ref name="e.citation"/>
+			<optional>
+				<ref name="e.descriptiveNote"/>
+			</optional>
+		</element>
+	</define>
+	<define name="m.id">
+		<optional>
+			<ref name="a.localType"/>
+		</optional>
+		<text/>
+	</define>
+
+	<!--TC; 2012-06-13: create pattern for <emph> so it can be referenced from multiple patterns -->
+	<define name="emph">
+		<element name="emph">
+			<optional>
+				<attribute name="render">
+					<choice>
+						<ref name="av.render"/>
+					</choice>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="id">
+					<data type="ID"/>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="altRender"/>
+			</optional>
+			<!-- TC; 2013-06-13: permit only text -->
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<!-- <ref name="m.phrase.basic"/> -->
+				</choice>
+			</zeroOrMore>
+		</element>
+	</define>
+
+	<!-- TC 2012-10-10: added relations -->
+	<define name="m.relation">
+		<element name="relation">
+			<optional>
+				<attribute name="lang">
+					<data type="string"/>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="scriptcode">
+					<data type="string"/>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="id">
+					<data type="ID"/>
+				</attribute>
+			</optional>
+			<attribute name="relationType">
+				<choice>
+					<value>cpfRelation</value>
+					<value>resourceRelation</value>
+					<value>functionRelation</value>
+					<value>otherRelation</value>
+				</choice>
+			</attribute>
+			<optional>
+				<attribute name="otherRelationType">
+					<data type="string"/>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="lastDateTimeVerified">
+					<data type="dateTime"/>
+				</attribute>
+			</optional>
+			<optional>
+				<ref name="a.links"/>
+			</optional>
+
+			<optional>
+				<choice>
+					<element name="dateSingle">
+						<text/>
+					</element>
+					<element name="dateSet">
+						<ref name="a.common"/>
+						<optional>
+							<ref name="a.localType"/>
+						</optional>
+						<choice>
+							<element name="dateSingle">
+								<text/>
+							</element>
+							<ref name="m.dateRange"/>
+						</choice>
+						<oneOrMore>
+							<choice>
+								<element name="dateSingle">
+									<text/>
+								</element>
+								<ref name="m.dateRange"/>
+							</choice>
+						</oneOrMore>
+					</element>
+					<ref name="m.dateRange"/>
+				</choice>
+			</optional>
+			<oneOrMore>
+				<element name="relationEntry">
+					<ref name="a.common"/>
+					<optional>
+						<ref name="a.localType"/>
+					</optional>
+					<optional>
+						<ref name="m.entryLanguageAttributes"/>
+					</optional>
+					<text/>
+				</element>
+			</oneOrMore>
+			<optional>
+				<element name="descriptiveNote">
+					<ref name="a.common"/>
+					<oneOrMore>
+						<ref name="p"/>
+					</oneOrMore>
+				</element>
+
+			</optional>
+			<optional>
+				<element a:id="placeEntry" name="placeEntry">
+					<ref name="a.common"/>
+					<optional>
+						<ref name="m.entryLanguageAttributes"/>
+					</optional>
+					<optional>
+						<ref name="a.localType"/>
+					</optional>
+					<optional>
+						<attribute a:id="countryCode" name="countryCode">
+							<choice>
+								<data type="string">
+									<param name="pattern">[A-Z]{2}</param>
+								</data>
+								<data type="string">
+									<param name="pattern">[A-Z]{4}</param>
+								</data>
+							</choice>
+						</attribute>
+					</optional>
+					<optional>
+						<ref name="a.vocabularySource"/>
+					</optional>
+					<optional>
+						<attribute a:id="accuracy" name="accuarcy">
+							<text/>
+						</attribute>
+					</optional>
+					<optional>
+						<ref name="m.geographicalCoordinates"/>
+					</optional>
+					<text/>
+				</element>
+			</optional>
+		</element>
+	</define>
+	<define name="m.dateRange">
+		<element name="dateRange">
+			<zeroOrMore>
+				<choice>
+					<element name="dateSingle">
+						<ref name="a.common"/>
+						<optional>
+							<ref name="a.localType"/>
+						</optional>
+						<text/>
+					</element>
+					<optional>
+						<element name="fromDate">
+							<ref name="a.common"/>
+							<element name="dateSingle">
+								<text/>
+							</element>
+						</element>
+					</optional>
+					<optional>
+						<element name="toDate">
+							<ref name="a.common"/>
+							<element name="dateSingle">
+								<text/>
+							</element>
+						</element>
+					</optional>
+				</choice>
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="a.links">
+		<attribute name="href">
+			<data type="anyURI"/>
+		</attribute>
+		<attribute name="role">
+			<data type="string"/>
+		</attribute>
+		<attribute name="arcrole">
+			<data type="string"/>
+		</attribute>
+		<attribute name="title">
+			<data type="string"/>
+		</attribute>
+		<attribute name="show">
+			<choice>
+				<value>new</value>
+				<value>replace</value>
+				<value>embed</value>
+				<value>other</value>
+				<value>none</value>
+			</choice>
+		</attribute>
+		<attribute name="actuate">
+			<choice>
+				<value>onLoad</value>
+				<value>onRequest</value>
+				<value>other</value>
+				<value>none</value>
+			</choice>
+		</attribute>
+
+	</define>
+	<define name="e.part">
+		<element name="part">
+			<optional>
+				<attribute name="id"/>
+			</optional>
+			<optional>
+				<attribute name="lang"/>
+			</optional>
+			<optional>
+				<attribute name="script"/>
+			</optional>
+			<optional>
+				<attribute name="localType"/>
+			</optional>
+			<optional>
+				<attribute name="localTypeSource"/>
+			</optional>
+			<text/>
+		</element>
+	</define>
+	<define name="e.lb">
+		<element name="lb">
+			<empty/>
+		</element>
+	</define>
+	<define name="e.unitDateStructured">
+		<element name="unitDateStructured">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="label"/>
+			</optional>
+			<optional>
+				<attribute name="unitDateType">
+					<choice>
+						<value>bulk</value>
+						<value>inclusive</value>
+					</choice>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<optional>
+				<attribute name="dateChar"/>
+			</optional>
+			<ref name="am.dates.era"/>
+			<ref name="am.dates.calendar"/>
+			<oneOrMore>
+				<choice>
+					<ref name="e.dateSingle"/>
+					<ref name="e.dateRange"/>
+					<ref name="e.dateSet"/>
+				</choice>
+			</oneOrMore>
+		</element>
+	</define>
+	<!-- 2013-01-25: TC: shares pattern definition of block note -->
+	<define name="e.controlNote">
+		<element name="controlNote">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="localType"/>
+			</optional>
+			<optional>
+				<attribute name="localTypeSource"/>
+			</optional>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<oneOrMore>
+				<ref name="m.blocks"/>
+			</oneOrMore>
+		</element>
+	</define>
+
+	<define name="e.nameGrpNote">
+		<element name="nameGrpNote">
+			<ref name="a.common"/>
+			<oneOrMore>
+				<oneOrMore>
+					<ref name="m.phrase.basic"/>
+				</oneOrMore>
+			</oneOrMore>
+		</element>
+	</define>
+
+	<define name="m.access.entry">
+		<choice>
+			<element name="corpNameEntry">
+				<ref name="a.common"/>
+				<ref name="a.access.no.normal"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<optional>
+					<attribute name="role"/>
+				</optional>
+				<oneOrMore>
+					<ref name="e.part"/>
+				</oneOrMore>
+			</element>
+			<element name="famNameEntry">
+				<ref name="a.common"/>
+				<ref name="a.access.no.normal"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<optional>
+					<attribute name="role"/>
+				</optional>
+				<oneOrMore>
+					<ref name="e.part"/>
+				</oneOrMore>
+			</element>
+			<element name="geogNameEntry">
+				<ref name="a.common"/>
+				<ref name="a.access.no.normal"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<optional>
+					<attribute name="role"/>
+				</optional>
+				<oneOrMore>
+					<ref name="e.part"/>
+				</oneOrMore>
+			</element>
+			<element name="genericNameEntry">
+				<ref name="a.common"/>
+				<ref name="a.access.no.normal"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<optional>
+					<attribute name="role"/>
+				</optional>
+				<oneOrMore>
+					<ref name="e.part"/>
+				</oneOrMore>
+			</element>
+			<element name="occupationEntry">
+				<ref name="a.common"/>
+				<ref name="a.access.no.normal"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+
+				<oneOrMore>
+					<ref name="e.part"/>
+				</oneOrMore>
+			</element>
+			<element name="persNameEntry">
+				<ref name="a.common"/>
+				<ref name="a.access.no.normal"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<optional>
+					<attribute name="role"/>
+				</optional>
+				<oneOrMore>
+					<ref name="e.part"/>
+				</oneOrMore>
+			</element>
+			<element name="subjectEntry">
+				<ref name="a.common"/>
+				<ref name="a.access.no.normal"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<oneOrMore>
+					<ref name="e.part"/>
+				</oneOrMore>
+			</element>
+			<element name="genreFormEntry">
+				<ref name="a.common"/>
+				<optional>
+					<attribute name="localType"/>
+				</optional>
+				<ref name="a.access.no.normal"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<oneOrMore>
+					<ref name="e.part"/>
+				</oneOrMore>
+			</element>
+			<element name="functionEntry">
+				<ref name="a.common"/>
+				<ref name="a.access.no.normal"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<oneOrMore>
+					<ref name="e.part"/>
+				</oneOrMore>
+			</element>
+			<element name="titleEntry">
+				<ref name="a.common"/>
+				<ref name="a.access.no.normal"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<oneOrMore>
+					<ref name="e.part"/>
+				</oneOrMore>
+			</element>
+		</choice>
+	</define>
+</grammar>
