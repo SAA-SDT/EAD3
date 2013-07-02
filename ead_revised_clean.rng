@@ -12,7 +12,7 @@
 			<optional>
 				<attribute name="relatedEncoding"/>
 			</optional>
-			<ref name="e.control"/>
+<!--			<ref name="e.control"/> -->
 			<element name="archDesc">
 				<ref name="a.common"/>
 				<attribute name="level">
@@ -52,8 +52,503 @@
 		</element>
     </define>
     <!-- ELEMENTS -->
+	
+	<define name="accessRestrict">
+		<element name="accessRestrict">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<optional>
+				<attribute name="localType"/>
+			</optional>
+			<optional>
+				<ref name="head"/>
+			</optional>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
+		</element>
+	</define>
+	<define name="acqInfo">
+		<element name="acqInfo">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<optional>
+				<ref name="head"/>
+			</optional>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
+		</element>
+	</define>
+	<define name="altFormAvail">
+		<element name="altFormAvail">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<optional>
+				<attribute name="localType"/>
+			</optional>
+			<optional>
+				<ref name="head"/>
+			</optional>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
+		</element>
+	</define>
+	<define name="originalsLoc">
+		<element name="originalsLoc">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<optional>
+				<attribute name="localType"/>
+			</optional>
+			<optional>
+				<ref name="head"/>
+			</optional>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
+		</element>
+	</define>
+	<define name="physTech">
+		<element name="physTech">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<optional>
+				<attribute name="localType"/>
+			</optional>
+			<optional>
+				<ref name="head"/>
+			</optional>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
+		</element>
+	</define>
+	<define name="appraisal">
+		<element name="appraisal">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<optional>
+				<ref name="head"/>
+			</optional>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
+		</element>
+	</define>
+	<define name="custodHist">
+		<element name="custodHist">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<optional>
+				<ref name="head"/>
+			</optional>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
+		</element>
+	</define>
+	<define name="preferCite">
+		<element name="preferCite">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<optional>
+				<ref name="head"/>
+			</optional>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
+		</element>
+	</define>
+	<define name="processInfo">
+		<element name="processInfo">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="localType"/>
+			</optional>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<optional>
+				<ref name="head"/>
+			</optional>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
+		</element>
+	</define>
+	<define name="useRestrict">
+		<element name="useRestrict">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<optional>
+				<attribute name="localType"/>
+			</optional>
+			<optional>
+				<ref name="head"/>
+			</optional>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
+		</element>
+	</define>
+	<define name="biogHist">
+		<element name="biogHist">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<optional>
+				<ref name="head"/>
+			</optional>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
+		</element>
+	</define>
+	<define name="controlAccess">
+		<element name="controlAccess">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<optional>
+				<ref name="head"/>
+			</optional>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+						<ref name="m.access.entry"/>
+					</choice>
+				</oneOrMore>
+			</choice>
+		</element>
+	</define>
+	<define name="odd">
+		<element name="odd">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="localType"/>
+			</optional>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<optional>
+				<ref name="head"/>
+			</optional>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
+		</element>
+	</define>
+	<define name="scopeContent">
+		<element name="scopeContent">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<optional>
+				<ref name="head"/>
+			</optional>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+
+						<ref name="m.blocks"/>
+
+						<!-- TC; 2012-03-07: Removed <arrangement> -->
+						<!-- <ref name="arrangement"/> -->
+						<!-- TC: 2012-06-08 remove recursion in note elements -->
+						<!-- <ref name="scopecontent"/> -->
+						<!-- TC; 2012-03-08: Removed <dao>, <daogrp> -->
+						<!--
+					<ref name="dao"/>
+					<ref name="daoGrp"/>
+					-->
+					</choice>
+				</oneOrMore>
+			</choice>
+		</element>
+	</define>
+	<define name="arrangement">
+		<element name="arrangement">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<optional>
+				<ref name="head"/>
+			</optional>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
+		</element>
+	</define>
+	<define name="bibliography">
+		<element name="bibliography">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<optional>
+				<ref name="head"/>
+			</optional>
+			<choice>
+				<group>
+					<ref name="div"/>
+					<oneOrMore>
+						<ref name="div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+						<ref name="m.refs"/>
+						<zeroOrMore>
+							<ref name="bibRef"/>
+						</zeroOrMore>
+						<zeroOrMore>
+							<ref name="archRef"/>
+						</zeroOrMore>
+					</choice>
+					<!-- TC: 2012-06-08 remove recursion in note elements -->
+					<!-- <ref name="bibliography"/> -->
+
+				</oneOrMore>
+			</choice>
+		</element>
+	</define>
+	
+	
     
-    <!-- ATTRIBUTES -->
+    <!-- ATTRIBUTE VALUE LISTS -->
+    
+	<define name="av.level">
+		<choice>
+			<value>class</value>
+			<value>collection</value>
+			<value>file</value>
+			<value>fonds</value>
+			<value>item</value>
+			<value>otherLevel</value>
+			<value>recordGrp</value>
+			<value>series</value>
+			<value>subFonds</value>
+			<value>subGrp</value>
+			<value>subSeries</value>
+		</choice>
+	</define>
     
     <!-- MODELS -->
+	<define name="a.common">
+		<optional>
+			<attribute name="id">
+				<data type="ID"/>
+			</attribute>
+		</optional>
+		<optional>
+			<attribute name="altRender"/>
+		</optional>
+		<optional>
+			<attribute name="audience">
+				<choice>
+					<value>external</value>
+					<value>internal</value>
+				</choice>
+			</attribute>
+		</optional>
+		<optional>
+			<attribute name="altRender"/>
+		</optional>
+	</define>
+	
+	<define name="m.desc.base">
+		<choice>
+			<ref name="accessRestrict"/>
+			<ref name="accruals"/>
+			<ref name="acqInfo"/>
+			<ref name="altFormAvail"/>
+			<ref name="appraisal"/>
+			<ref name="arrangement"/>
+			<ref name="bibliography"/>
+			<ref name="biogHist"/>
+			<ref name="controlAccess"/>
+			<ref name="custodHist"/>
+			<ref name="index"/>
+			<ref name="legalStatus"/>
+			<ref name="materialSpec"/>
+			<ref name="odd"/>
+			<ref name="originalsLoc"/>
+			<ref name="otherFindAid"/>
+			<ref name="physTech"/>
+			<ref name="preferCite"/>
+			<ref name="processInfo"/>
+			<ref name="relatedMaterial"/>
+			<ref name="scopeContent"/>
+			<ref name="separatedMaterial"/>
+			<ref name="useRestrict"/>
+		</choice>
+	</define>
 </grammar>
