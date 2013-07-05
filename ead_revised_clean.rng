@@ -323,6 +323,34 @@
 			</choice>
 		</element>
 	</define>
+	<define name="e.materialspec">
+		<element name="materialspec">
+			<!-- TC: 2012-06-13: adopt same content model as phystech -->
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodinganalog"/>
+			</optional>
+			<optional>
+				<attribute name="localType"/>
+			</optional>
+			<optional>
+				<ref name="e.head"/>
+			</optional>
+			<choice>
+				<group>
+					<ref name="e.div"/>
+					<oneOrMore>
+						<ref name="e.div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+					</choice>
+				</oneOrMore>
+			</choice>
+		</element>
+	</define>
 	<define name="e.prefercite">
 		<element name="prefercite">
 			<ref name="a.common"/>
@@ -811,6 +839,112 @@
 			</zeroOrMore>
 		</element>
 	</define>
+	<define name="c">
+		<element name="c">
+			<ref name="m.c.base"/>
+			<zeroOrMore>
+				<ref name="c"/>
+				
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="c01">
+		<element name="c01">
+			<ref name="m.c.base"/>
+			<zeroOrMore>
+				<ref name="c02"/>
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="c02">
+		<element name="c02">
+			<ref name="m.c.base"/>
+			<zeroOrMore>
+				<ref name="c03"/>
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="c03">
+		<element name="c03">
+			<ref name="m.c.base"/>
+			<zeroOrMore>
+				<ref name="c04"/>
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="c04">
+		<element name="c04">
+			<ref name="m.c.base"/>
+			<zeroOrMore>
+				<ref name="c05"/>
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="c05">
+		<element name="c05">
+			<ref name="m.c.base"/>
+			<zeroOrMore>
+				<ref name="c06"/>
+				
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="c06">
+		<element name="c06">
+			<ref name="m.c.base"/>
+			<zeroOrMore>
+				<ref name="c07"/>
+				
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="c07">
+		<element name="c07">
+			<ref name="m.c.base"/>
+			<zeroOrMore>
+				<ref name="c08"/>
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="c08">
+		<element name="c08">
+			<ref name="m.c.base"/>
+			<zeroOrMore>
+				<ref name="c09"/>
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="c09">
+		<element name="c09">
+			<ref name="m.c.base"/>
+			<zeroOrMore>
+				<ref name="c10"/>
+			</zeroOrMore>
+			
+		</element>
+	</define>
+	<define name="c10">
+		<element name="c10">
+			<ref name="m.c.base"/>
+			<zeroOrMore>
+				<ref name="c11"/>
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="c11">
+		<element name="c11">
+			<ref name="m.c.base"/>
+			<zeroOrMore>
+				<ref name="c12"/>
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="c12">
+		<element name="c12">
+			<ref name="m.c.base"/>
+		</element>
+	</define>
+	
 	
     <!-- ATTRIBUTE VALUE LISTS -->
     
@@ -1232,6 +1366,29 @@
 				<ref name="e.c01"/>
 			</oneOrMore>
 		</choice>
+	</define>	
+	<define name="m.c.base">
+		<ref name="a.desc.c"/>
+		<optional>
+			<ref name="e.head"/>
+		</optional>
+		<ref name="e.did"/>
+		<zeroOrMore>
+			<ref name="m.desc.base"/>
+		</zeroOrMore>
+		<zeroOrMore>
+			<choice>
+				<ref name="e.dao"/>
+				<ref name="e.daogrp"/>
+			</choice>
+		</zeroOrMore>
+		<optional>
+			<element name="e.relations">
+				<oneOrMore>
+					<ref name="m.relation"/>
+				</oneOrMore>
+			</element>
+		</optional>
 	</define>
 
 	<define name="m.access.entry">
