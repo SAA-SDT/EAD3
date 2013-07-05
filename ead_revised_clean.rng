@@ -98,7 +98,7 @@
 			</choice>
 		</element>
 	</define>
-	<define name="accruals">
+	<define name="e.accruals">
 		<element name="accruals">
 			<ref name="a.common"/>
 			<optional>
@@ -122,8 +122,8 @@
 			</choice>
 		</element>
 	</define>
-	<define name="e.acqInfo">
-		<element name="acqInfo">
+	<define name="e.acqinfo">
+		<element name="acqinfo">
 			<ref name="a.common"/>
 			<optional>
 				<attribute name="encodingAnalog"/>
@@ -200,8 +200,8 @@
 			</choice>
 		</element>
 	</define>
-	<define name="e.physTech">
-		<element name="physTech">
+	<define name="e.phystech">
+		<element name="phystech">
 			<ref name="a.common"/>
 			<optional>
 				<attribute name="encodingAnalog"/>
@@ -251,11 +251,11 @@
 			</choice>
 		</element>
 	</define>
-	<define name="e.custodHist">
-		<element name="custodHist">
+	<define name="e.custodhist">
+		<element name="custodhist">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodingAnalog"/>
+				<attribute name="encodinganalog"/>
 			</optional>
 			<optional>
 				<ref name="e.head"/>
@@ -562,7 +562,108 @@
 			</choice>
 		</element>
 	</define>
-	
+	<define name="e.relatedmaterial">
+		<element name="relatedmaterial">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="localType"/>
+			</optional>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<optional>
+				<ref name="e.head"/>
+			</optional>
+			<choice>
+				<group>
+					<ref name="e.div"/>
+					<oneOrMore>
+						<ref name="e.div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+						<ref name="m.refs"/>
+						<zeroOrMore>
+							<ref name="e.bibref"/>
+						</zeroOrMore>
+						<zeroOrMore>
+							<ref name="e.archref"/>
+						</zeroOrMore>
+					</choice>
+					<!-- TC: 2012-06-08 remove recursion in note elements -->
+					<!-- <ref name="bibliography"/> -->
+					
+				</oneOrMore>
+			</choice>
+		</element>
+	</define>
+	<define name="e.separatedmaterial">
+		<element name="separatedMaterial">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="localType"/>
+			</optional>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<optional>
+				<ref name="e.head"/>
+			</optional>
+			<choice>
+				<group>
+					<ref name="e.div"/>
+					<oneOrMore>
+						<ref name="e.div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+						<ref name="m.refs"/>
+						<zeroOrMore>
+							<ref name="e.bibref"/>
+						</zeroOrMore>
+						<zeroOrMore>
+							<ref name="e.archref"/>
+						</zeroOrMore>
+					</choice>
+					<!-- TC: 2012-06-08 remove recursion in note elements -->
+					<!-- <ref name="bibliography"/> -->
+					
+				</oneOrMore>
+			</choice>
+		</element>
+	</define>
+	<define name="e.otherfindaid">
+		<element name="otheraindaid">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodinganalog"/>
+			</optional>
+			<optional>
+				<ref name="e.head"/>
+			</optional>
+			<choice>
+				<group>
+					<ref name="e.div"/>
+					<oneOrMore>
+						<ref name="e.div"/>
+					</oneOrMore>
+				</group>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+						<ref name="m.refs"/>
+						<!-- TC: 2012-06-08 remove recursion in note elements -->
+						<!-- <ref name="otherfindaid"/> -->
+						
+					</choice>
+				</oneOrMore>
+			</choice>
+		</element>
+	</define>
 	<define name="e.head">
 		<element name="head">
 			<ref name="a.common"/>
@@ -830,14 +931,14 @@
 			<ref name="e.bibliography"/>
 			<ref name="e.bioghist"/>
 			<ref name="e.controlaccess"/>
-			<ref name="e.custodHist"/>
+			<ref name="e.custodhist"/>
 			<ref name="e.index"/>
 			<ref name="e.legalstatus"/>
 			<ref name="e.materialspec"/>
 			<ref name="e.odd"/>
 			<ref name="e.originalsLoc"/>
 			<ref name="e.otherfindaid"/>
-			<ref name="e.physTech"/>
+			<ref name="e.phystech"/>
 			<ref name="e.prefercite"/>
 			<ref name="e.processInfo"/>
 			<ref name="e.relatedmaterial"/>
@@ -854,10 +955,10 @@
 					<attribute name="label"/>
 				</optional>
 				<optional>
-					<attribute name="encodingAnalog"/>
+					<attribute name="encodinganalog"/>
 				</optional>
 				<optional>
-					<attribute name="localType"/>
+					<attribute name="localtype"/>
 				</optional>
 				<ref name="am.langcode"/>
 				<ref name="m.mixed.basic"/>
@@ -923,7 +1024,7 @@
 					<attribute name="label"/>
 				</optional>
 				<optional>
-					<attribute name="encodingAnalog"/>
+					<attribute name="encodinganalog"/>
 				</optional>
 				<optional>
 					<attribute name="source">
@@ -939,7 +1040,7 @@
 					</attribute>
 				</optional>
 				<optional>
-					<attribute name="physDescStructuredType">
+					<attribute name="physdescstructuredtype">
 						<choice>
 							<value>carrier</value>
 							<value>materialType</value>
@@ -949,16 +1050,16 @@
 				</optional>
 				<zeroOrMore>
 					<choice>
-						<element name="specifiedMaterials">
+						<element name="specifiedmaterials">
 							<ref name="a.common"/>
 							<optional>
 								<attribute name="label"/>
 							</optional>
 							<optional>
-								<attribute name="localType"/>
+								<attribute name="localtype"/>
 							</optional>
 							<optional>
-								<attribute name="localTypeSource"/>
+								<attribute name="localtypesource"/>
 							</optional>
 							<optional>
 								<attribute name="encodinganalog"/>
@@ -1017,7 +1118,7 @@
 							</optional>
 							<ref name="m.mixed.basic"/>
 						</element>
-						<ref name="num"/>
+						<ref name="e.num"/>
 					</choice>
 				</zeroOrMore>
 			</element>
@@ -1041,9 +1142,9 @@
 				<ref name="m.mixed.basic"/>
 			</element>
 			<ref name="e.repository"/>
-			<ref name="e.unitDate"/>
-			<!-- 2013-01-23; TC: added unitDateStructured -->
-			<ref name="e.unitDateStructured"/>
+			<ref name="e.unitdate"/>
+
+			<ref name="e.unitdatestructured"/>
 			<element name="unitId">
 				<ref name="a.common"/>
 				<optional>
@@ -1064,7 +1165,6 @@
 				<optional>
 					<attribute name="encodingAnalog"/>
 				</optional>
-				<!-- TC; 2012-6-13: only permit <emph> and <ref> as element children -->
                  <ref name="m.mixed.basic"/>
 			</element>
 			<ref name="e.unittitle"/>
