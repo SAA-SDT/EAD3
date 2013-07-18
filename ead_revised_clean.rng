@@ -1291,38 +1291,8 @@
 				<zeroOrMore>
 					<choice>
 
-						<element name="physDetails">
-							<ref name="a.common"/>
-							<optional>
-								<attribute name="label"/>
-							</optional>
-							<optional>
-								<attribute name="localType"/>
-							</optional>
-							<optional>
-								<attribute name="localTypeSource"/>
-							</optional>
-							<optional>
-								<attribute name="encodinganalog"/>
-							</optional>
-							<ref name="m.mixed.basic"/>
-						</element>
-						<element name="physType">
-							<ref name="a.common"/>
-							<optional>
-								<attribute name="label"/>
-							</optional>
-							<optional>
-								<attribute name="localType"/>
-							</optional>
-							<optional>
-								<attribute name="localTypeSource"/>
-							</optional>
-							<optional>
-								<attribute name="encodinganalog"/>
-							</optional>
-							<ref name="m.mixed.basic"/>
-						</element>
+						
+						
 						<ref name="e.dimensions"/>
 						<element name="extent">
 							<ref name="a.common"/>
