@@ -1280,10 +1280,13 @@
 					<attribute name="physdescstructuredtype">
 						<choice>
 							<value>carrier</value>
-							<value>materialType</value>
-							<value>spaceOccupied</value>
+							<value>materialtype</value>
+							<value>spaceoccupied</value>
 						</choice>
 					</attribute>
+				</optional>
+				<optional>
+					<attribute name="coverage"/>
 				</optional>
 				<zeroOrMore>
 					<choice>
@@ -1340,7 +1343,6 @@
 							</optional>
 							<ref name="m.mixed.basic"/>
 						</element>
-						<ref name="e.num"/>
 					</choice>
 				</zeroOrMore>
 			</element>
