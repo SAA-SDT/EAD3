@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<grammar 
-  xmlns="http://relaxng.org/ns/structure/1.0"
-  xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-  datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
-    <start>
-            <ref name="e.ead"/>
-    </start>
-    <define name="e.ead">
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+	xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+	datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+	<start>
+		<ref name="e.ead"/>
+	</start>
+	<define name="e.ead">
 		<element name="ead">
 			<ref name="a.common"/>
 			<optional>
 				<attribute name="relatedEncoding"/>
 			</optional>
-<!--			<ref name="e.control"/> -->
+			<!--			<ref name="e.control"/> -->
 			<element name="archDesc">
 				<ref name="a.common"/>
 				<attribute name="level">
@@ -51,10 +50,10 @@
 				</choice>
 			</element>
 		</element>
-    </define>
-    
+	</define>
+
 	<!-- ELEMENTS -->
-	
+
 	<define name="e.did">
 		<element name="did">
 			<ref name="a.common"/>
@@ -66,11 +65,11 @@
 			</optional>
 			<oneOrMore>
 				<ref name="m.did"/>
-			</oneOrMore>			
+			</oneOrMore>
 		</element>
 	</define>
-	
-	
+
+
 	<define name="e.accessrestrict">
 		<element name="accessrestrict">
 			<ref name="a.common"/>
@@ -316,16 +315,7 @@
 			</choice>
 			<optional>
 				<choice>
-					<element name="ptrGrp">
-						<ref name="a.common"/>
-						<oneOrMore>
-							<choice>
-								<ref name="e.ref"/>
-							</choice>
-						</oneOrMore>
-					</element>
-           <!--         <ref name="ptr"/> -->
-					<ref name="e.ref"/>
+					<ref name="m.refs"/>
 				</choice>
 			</optional>
 			<zeroOrMore>
@@ -656,7 +646,7 @@
 					</choice>
 					<!-- TC: 2012-06-08 remove recursion in note elements -->
 					<!-- <ref name="bibliography"/> -->
-					
+
 				</oneOrMore>
 			</choice>
 		</element>
@@ -693,7 +683,7 @@
 					</choice>
 					<!-- TC: 2012-06-08 remove recursion in note elements -->
 					<!-- <ref name="bibliography"/> -->
-					
+
 				</oneOrMore>
 			</choice>
 		</element>
@@ -720,7 +710,7 @@
 						<ref name="m.refs"/>
 						<!-- TC: 2012-06-08 remove recursion in note elements -->
 						<!-- <ref name="otherfindaid"/> -->
-						
+
 					</choice>
 				</oneOrMore>
 			</choice>
@@ -773,7 +763,7 @@
 			</optional>
 		</element>
 	</define>
-	
+
 	<define name="e.emph">
 		<element name="emph">
 			<ref name="a.common"/>
@@ -790,21 +780,21 @@
 			<text/>
 		</element>
 	</define>
-	
-	<define name="e.lb">	
+
+	<define name="e.lb">
 		<element name="lb">
 			<ref name="a.common.empty"/>
 			<empty/>
 		</element>
 	</define>
-	
+
 	<define name="e.ref">
 		<element name="ref">
 			<ref name="a.common"/>
-		    <text/>
+			<text/>
 		</element>
 	</define>
-	
+
 	<define name="e.dsc">
 		<element name="dsc">
 			<ref name="a.common"/>
@@ -842,7 +832,7 @@
 			</choice>
 		</element>
 	</define>
-	
+
 	<define name="e.div">
 		<element name="div">
 			<ref name="a.common"/>
@@ -857,7 +847,7 @@
 			</zeroOrMore>
 		</element>
 	</define>
-	
+
 	<define name="e.bibref">
 		<element name="bibref">
 			<ref name="a.common"/>
@@ -872,7 +862,7 @@
 			</zeroOrMore>
 		</element>
 	</define>
-	
+
 	<define name="e.archref">
 		<element name="archref">
 			<ref name="a.common"/>
@@ -888,7 +878,7 @@
 			</zeroOrMore>
 		</element>
 	</define>
-	
+
 	<define name="e.title">
 		<element name="title">
 			<ref name="a.common"/>
@@ -907,7 +897,7 @@
 				<attribute name="encodingAnalog"/>
 			</optional>
 			<zeroOrMore>
-             <ref name="m.mixed.basic"/>
+				<ref name="m.mixed.basic"/>
 			</zeroOrMore>
 		</element>
 	</define>
@@ -916,7 +906,7 @@
 			<ref name="m.c.base"/>
 			<zeroOrMore>
 				<ref name="e.c"/>
-				
+
 			</zeroOrMore>
 		</element>
 	</define>
@@ -957,7 +947,7 @@
 			<ref name="m.c.base"/>
 			<zeroOrMore>
 				<ref name="e.c06"/>
-				
+
 			</zeroOrMore>
 		</element>
 	</define>
@@ -966,7 +956,7 @@
 			<ref name="m.c.base"/>
 			<zeroOrMore>
 				<ref name="e.c07"/>
-				
+
 			</zeroOrMore>
 		</element>
 	</define>
@@ -992,7 +982,7 @@
 			<zeroOrMore>
 				<ref name="e.c10"/>
 			</zeroOrMore>
-			
+
 		</element>
 	</define>
 	<define name="e.c10">
@@ -1016,10 +1006,33 @@
 			<ref name="m.c.base"/>
 		</element>
 	</define>
-	
-	
-    <!-- ATTRIBUTE VALUE LISTS -->
-    
+
+	<define name="e.dimensions">
+		<element name="dimensions">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="label"/>
+			</optional>
+			<optional>
+				<attribute name="localType"/>
+			</optional>
+			<optional>
+				<attribute name="unit"/>
+			</optional>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<zeroOrMore>
+				<choice>
+					<ref name="m.mixed.elements"/>
+					<ref name="e.dimensions"/>
+				</choice>
+			</zeroOrMore>
+		</element>
+	</define>
+
+	<!-- ATTRIBUTE VALUE LISTS -->
+
 	<define name="av.level">
 		<choice>
 			<value>class</value>
@@ -1035,7 +1048,7 @@
 			<value>subSeries</value>
 		</choice>
 	</define>
-	
+
 	<define name="av.render">
 		<choice>
 			<value>altRender</value>
@@ -1055,8 +1068,8 @@
 			<value>underline</value>
 		</choice>
 	</define>
-    
-    <!-- MODELS -->
+
+	<!-- MODELS -->
 	<define name="a.dsctab.tPattern">
 		<optional>
 			<attribute name="tPattern">
@@ -1092,7 +1105,7 @@
 			<attribute name="script"/>
 		</optional>
 	</define>
-	
+
 	<define name="a.desc.base">
 		<optional>
 			<attribute name="otherLevel">
@@ -1102,7 +1115,7 @@
 		<optional>
 			<attribute name="encodingAnalog"/>
 		</optional>
-	</define>	
+	</define>
 	<define name="a.desc.c">
 		<ref name="a.common"/>
 		<optional>
@@ -1113,7 +1126,7 @@
 			</attribute>
 		</optional>
 		<ref name="a.desc.base"/>
-<!--		<ref name="am.dsctab.tPattern"/> -->
+		<!--		<ref name="am.dsctab.tPattern"/> -->
 	</define>
 	<define name="a.access.no.normal">
 		<optional>
@@ -1130,21 +1143,20 @@
 			<attribute name="identifier"/>
 		</optional>
 	</define>
-	
+
 	<define name="a.access">
 		<ref name="a.access.no.normal"/>
 		<optional>
 			<attribute name="normal"/>
 		</optional>
 	</define>
-	
+
 	<define name="am.langcode">
 		<optional>
-			<attribute name="langcode">
-			</attribute>
+			<attribute name="langcode"> </attribute>
 		</optional>
 	</define>
-	
+
 	<define name="m.desc.base">
 		<choice>
 			<ref name="e.accessrestrict"/>
@@ -1188,13 +1200,13 @@
 				<ref name="am.langcode"/>
 				<ref name="m.mixed.basic"/>
 			</element>
-			<element name="langMaterial">
+			<element name="langmaterial">
 				<ref name="a.common"/>
 				<optional>
 					<attribute name="label"/>
 				</optional>
 				<optional>
-					<attribute name="encodingAnalog"/>
+					<attribute name="encodinganalog"/>
 				</optional>
 				<ref name="m.mixed.basic"/>
 			</element>
@@ -1275,22 +1287,7 @@
 				</optional>
 				<zeroOrMore>
 					<choice>
-						<element name="specifiedmaterials">
-							<ref name="a.common"/>
-							<optional>
-								<attribute name="label"/>
-							</optional>
-							<optional>
-								<attribute name="localtype"/>
-							</optional>
-							<optional>
-								<attribute name="localtypesource"/>
-							</optional>
-							<optional>
-								<attribute name="encodinganalog"/>
-							</optional>
-							<ref name="m.mixed.basic"/>
-						</element>
+
 						<element name="physDetails">
 							<ref name="a.common"/>
 							<optional>
@@ -1390,7 +1387,7 @@
 				<optional>
 					<attribute name="encodingAnalog"/>
 				</optional>
-                 <ref name="m.mixed.basic"/>
+				<ref name="m.mixed.basic"/>
 			</element>
 			<ref name="e.unittitle"/>
 			<element name="container">
@@ -1417,19 +1414,19 @@
 						<data type="NMTOKEN"/>
 					</attribute>
 				</optional>
-				
-					<ref name="m.mixed.basic"/>
-				
+
+				<ref name="m.mixed.basic"/>
+
 			</element>
 			<ref name="e.dao"/>
 		</choice>
 	</define>
-	
+
 	<define name="m.refs">
-			<ref name="e.ref"/>
-			<ref name="e.ptr"/>
+		<ref name="e.ref"/>
+		<ref name="e.ptr"/>
 	</define>
-	
+
 	<define name="m.mixed.basic">
 		<zeroOrMore>
 			<choice>
@@ -1440,15 +1437,22 @@
 			</choice>
 		</zeroOrMore>
 	</define>
-	
+	<!-- to allow recursion in some elements, e.g., dimensions -->
+	<define name="m.mixed.elements">
+		<text/>
+		<ref name="e.emph"/>
+		<ref name="e.lb"/>
+		<ref name="e.ref"/>
+	</define>
+
 	<define name="m.blocks">
 		<choice>
 			<ref name="m.inter"/>
 			<ref name="e.p"/>
 		</choice>
 	</define>
-	
-	
+
+
 	<define name="m.inter">
 		<choice>
 			<ref name="m.inter.noquote"/>
@@ -1461,7 +1465,7 @@
 					</choice>
 				</oneOrMore>
 			</element>
-			
+
 		</choice>
 	</define>
 	<define name="m.inter.noquote">
@@ -1505,7 +1509,7 @@
 					</element>
 				</oneOrMore>
 			</element>
-			
+
 			<ref name="e.list"/>
 			<element name="e.table">
 				<ref name="a.common"/>
@@ -1612,7 +1616,7 @@
 								</optional>
 								<empty/>
 							</element>
-							
+
 						</zeroOrMore>
 						<element name="tbody">
 							<ref name="a.common"/>
@@ -1643,7 +1647,7 @@
 				<ref name="e.c01"/>
 			</oneOrMore>
 		</choice>
-	</define>	
+	</define>
 	<define name="m.c.base">
 		<ref name="a.desc.c"/>
 		<optional>
@@ -1728,7 +1732,7 @@
 				<optional>
 					<attribute name="encodingAnalog"/>
 				</optional>
-				
+
 				<oneOrMore>
 					<ref name="e.part"/>
 				</oneOrMore>
