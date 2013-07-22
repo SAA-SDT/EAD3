@@ -1058,6 +1058,19 @@
 			</zeroOrMore>
 		</element>
 	</define>
+	
+	<define name="e.address">
+		<element name="address">
+			<ref name="a.common"/>
+			<oneOrMore>
+				<element name="addressLine">
+					<ref name="a.common"/>
+					<attribute name="localType"/>
+					<ref name="m.mixed.basic"/>
+				</element>
+			</oneOrMore>
+		</element>
+	</define>
 
 	<!-- ATTRIBUTE VALUE LISTS -->
 
