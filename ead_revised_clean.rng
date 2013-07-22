@@ -69,7 +69,7 @@
 		</element>
 	</define>
 	<define name="repository">
-		<element name="repository">
+		<element name="e.repository">
 			<ref name="a.common"/>
 			<optional>
 				<attribute name="label"/>
@@ -82,8 +82,8 @@
 					<ref name="e.corpName"/>
 					<ref name="e.name"/>
 					<ref name="e.famname"/>
-					<optional<ref name="e.address"/></optional>
-					<optional<ref name="e.descriptivenote"/></optional>
+					<optional><ref name="e.address"/></optional>
+					<optional><ref name="e.descriptivenote"/></optional>
 				</choice>
 			</zeroOrMore>
 		</element>
@@ -1071,6 +1071,108 @@
 			</oneOrMore>
 		</element>
 	</define>
+	
+	<define name="e.corpname">
+	<element name="corpname">
+		<ref name="a.common"/>
+		<ref name="a.access"/>
+		<optional>
+			<attribute name="role"/>
+		</optional>
+		<optional>
+			<attribute name="encodingAnalog"/>
+		</optional>
+		<zeroOrMore>
+			<choice>
+				<text/>
+				<ref name="m.mixed.basic"/>
+			</choice>
+		</zeroOrMore>
+		
+	</element>
+	</define>
+	<define name="e.famname">
+		<element name="famname">
+			<ref name="a.common"/>
+			<ref name="a.access"/>
+			<optional>
+				<attribute name="role"/>
+			</optional>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<ref name="m.mixed.basic"/>
+				</choice>
+			</zeroOrMore>
+			
+			
+			
+		</element>
+	</define>
+	<define name="e.geogname">
+		<element name="geogname">
+			<ref name="a.common"/>
+			<ref name="a.access"/>
+			<optional>
+				<attribute name="role"/>
+			</optional>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<ref name="m.mixed.basic"/>
+				</choice>
+			</zeroOrMore>
+			
+			
+			
+		</element>
+	</define>
+	<define name="e.name">
+		<element name="name">
+			<ref name="a.common"/>
+			<ref name="a.access"/>
+			<optional>
+				<attribute name="role"/>
+			</optional>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<ref name="m.mixed.basic"/>
+				</choice>
+			</zeroOrMore>
+			
+			
+			
+		</element>
+	</define>
+	<define name="e.persname">
+		<element name="persname">
+			<ref name="a.common"/>
+			<ref name="a.access"/>
+			<optional>
+				<attribute name="role"/>
+			</optional>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<ref name="m.mixed.basic"/>
+				</choice>
+			</zeroOrMore>
+		</element>
+	</define>
+	
 
 	<!-- ATTRIBUTE VALUE LISTS -->
 
