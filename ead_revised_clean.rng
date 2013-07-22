@@ -68,6 +68,26 @@
 			</oneOrMore>
 		</element>
 	</define>
+	<define name="e.origination">
+		<element name="origination">
+		<ref name="a.common"/>
+		<optional>
+			<attribute name="label"/>
+		</optional>
+		<optional>
+			<attribute name="encodingAnalog"/>
+		</optional>
+		<oneOrMore>
+			<choice>
+				<ref name="e.corpname"/>
+				<ref name="e.name"/>
+				<ref name="e.famname"/>
+				<optional><ref name="e.address"/></optional>
+				<optional><ref name="e.descriptivenote"/></optional>
+			</choice>
+		</oneOrMore>
+		</element>
+	</define>
 	<define name="e.repository">
 		<element name="e.repository">
 			<ref name="a.common"/>
@@ -77,7 +97,7 @@
 			<optional>
 				<attribute name="encodingAnalog"/>
 			</optional>
-			<zeroOrMore>
+			<oneOrMore>
 				<choice>
 					<ref name="e.corpname"/>
 					<ref name="e.name"/>
@@ -85,7 +105,7 @@
 					<optional><ref name="e.address"/></optional>
 					<optional><ref name="e.descriptivenote"/></optional>
 				</choice>
-			</zeroOrMore>
+			</oneOrMore>
 		</element>
 	</define>
 
@@ -1173,6 +1193,17 @@
 		</element>
 	</define>
 	
+	<define name="e.descriptiveNote">
+		<element name="descriptiveNote">
+			<ref name="a.common"/>
+			<oneOrMore>
+				<ref name="p"/>
+			</oneOrMore>
+		</element>
+	</define>
+	<define name="e.p">
+		
+	</define>
 
 	<!-- ATTRIBUTE VALUE LISTS -->
 
