@@ -68,7 +68,7 @@
 			</oneOrMore>
 		</element>
 	</define>
-	<define name="repository">
+	<define name="e.repository">
 		<element name="e.repository">
 			<ref name="a.common"/>
 			<optional>
@@ -79,7 +79,7 @@
 			</optional>
 			<zeroOrMore>
 				<choice>
-					<ref name="e.corpName"/>
+					<ref name="e.corpname"/>
 					<ref name="e.name"/>
 					<ref name="e.famname"/>
 					<optional><ref name="e.address"/></optional>
