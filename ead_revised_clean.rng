@@ -794,6 +794,14 @@
 			<text/>
 		</element>
 	</define>
+	
+	<define name="e.ptr">
+		<element name="ptr">
+			<ref name="a.common"/>
+			<ref name="a.internal.ptr"/>
+			<empty/>
+		</element>
+	</define>
 
 	<define name="e.dsc">
 		<element name="dsc">
@@ -1768,4 +1776,78 @@
 		</choice>
 	</define>
 
+	<define name="a.internal.ptr">
+		<optional>
+			<attribute name="target">
+				<data type="IDREF"/>
+			</attribute>
+		</optional>
+		<optional>
+			<attribute name="xPointer"/>
+		</optional>
+		<ref name="am.simplelink"/>
+	</define>
+	<define name="am.simplelink">
+		<attribute a:defaultValue="simple" name="type">
+			<value>simple</value>
+		</attribute>
+		<optional>
+			<ref name="a.link.href"/>
+		</optional>
+		<optional>
+			<ref name="a.link.role"/>
+		</optional>
+		<optional>
+			<ref name="a.link.arcrole"/>
+		</optional>
+		<optional>
+			<ref name="a.link.title"/>
+		</optional>
+		<optional>
+			<ref name="a.link.show"/>
+		</optional>
+		<optional>
+			<ref name="a.link.actuate"/>
+		</optional>
+	</define>
+	
+	<define name="a.link.href">
+		<attribute name="href">
+			<data type="anyURI"/>
+		</attribute>
+	</define>
+	<define name="a.link.role">
+		<attribute name="linkrole">
+			<data type="anyURI"/>
+		</attribute>
+	</define>
+	<define name="a.link.arcrole">
+		<attribute name="linkarcrole">
+			<data type="anyURI"/>
+		</attribute>
+	</define>
+	<define name="a.link.title">
+		<attribute name="linktitle"/>
+	</define>
+	<define name="a.link.show">
+		<attribute name="show">
+			<choice>
+				<value>new</value>
+				<value>replace</value>
+				<value>embed</value>
+				<value>other</value>
+				<value>none</value>
+			</choice>
+		</attribute>
+	</define>
+	<define name="a.link.actuate">
+		<attribute name="actuate">
+			<choice>
+				<value>onLoad</value>
+				<value>onRequest</value>
+				<value>other</value>
+				<value>none</value>
+			</choice>
+		</attribute>
+	</define>
 </grammar>
