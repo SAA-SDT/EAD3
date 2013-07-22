@@ -1197,13 +1197,23 @@
 		<element name="descriptiveNote">
 			<ref name="a.common"/>
 			<oneOrMore>
-				<ref name="p"/>
+				<ref name="e.p"/>
 			</oneOrMore>
 		</element>
 	</define>
 	<define name="e.p">
-		
-	</define>
+
+			<element name="p">
+				<ref name="a.common"/>
+				<zeroOrMore>
+					<choice>
+						<text/>
+						<ref name="m.para.content"/>
+					</choice>
+				</zeroOrMore>
+			</element>
+		</define>
+
 
 	<!-- ATTRIBUTE VALUE LISTS -->
 
@@ -1655,6 +1665,37 @@
 					</element>
 				</oneOrMore>
 			</element>
+			
+			<define name="m.para.content">
+				<choice>
+					<ref name="m.phrase.plus"/>
+					<element name="footnote">
+						<ref name="a.common"/>
+						<optional>
+							<attribute name="localType"/>
+						</optional>
+						<optional>
+							<attribute name="show">
+								<choice>
+									<value>embed</value>
+									<value>new</value>
+								</choice>
+							</attribute>
+						</optional>
+						<optional>
+							<attribute name="actuate">
+								<choice>
+									<value>onload</value>
+									<value>onrequest</value>
+								</choice>
+							</attribute>
+						</optional>
+						<oneOrMore>
+							<ref name="m.blocks"/>
+						</oneOrMore>
+					</element>
+				</choice>
+			</define>
 
 			<ref name="e.list"/>
 			<element name="e.table">
