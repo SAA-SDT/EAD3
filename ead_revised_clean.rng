@@ -755,6 +755,95 @@
 			</choice>
 		</element>
 	</define>
+	
+	<define name="list">
+		<element name="list">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="listType">
+					<choice>
+						<!-- 2013-01-25; TC: removed simple, changed marked to unordered -->
+						<!-- <value>simple</value> -->
+						<value>defList</value>
+						<value>unordered</value>
+						<value>ordered</value>
+					</choice>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="mark">
+					<!-- 2013-01-25; TC: added values from CSS "list-style-type" property list -->
+					<choice>
+						<value>disc</value>
+						<value>circle</value>
+						<value>square</value>
+						<value>decimal</value>
+						<value>decimal-leading-zero</value>
+						<value>lower-roman</value>
+						<value>upper-roman</value>
+						<value>lower-greek</value>
+						<value>lower-latin</value>
+						<value>upper-latin</value>
+						<value>armenian</value>
+						<value>georgian</value>
+						<value>lower-alpha</value>
+						<value>upper-alpha</value>
+						<value>none</value>
+						<value>inherit</value>
+					</choice>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="numeration">
+					<choice>
+						<value>arabic</value>
+						<value>upperAlpha</value>
+						<value>lowerAlpha</value>
+						<value>upperRoman</value>
+						<value>lowerRoman</value>
+					</choice>
+				</attribute>
+			</optional>
+			<!-- TC: 2012-03-08: Remove continuation -->
+			<!-- <optional>
+				<attribute name="continuation">
+					<choice>
+						<value>continues</value>
+						<value>starts</value>
+					</choice>
+				</attribute>
+			</optional>
+		    -->
+			<optional>
+				<ref name="head"/>
+			</optional>
+			<choice>
+				<oneOrMore>
+					<ref name="item"/>
+				</oneOrMore>
+				<group>
+					<optional>
+						<ref name="listHead"/>
+					</optional>
+					<oneOrMore>
+						<element name="defItem">
+							<ref name="a.common"/>
+							<element name="label">
+								<ref name="a.common"/>
+								<zeroOrMore>
+									<choice>
+										<text/>
+										<ref name="m.phrase.plus"/>
+									</choice>
+								</zeroOrMore>
+							</element>
+							<ref name="item"/>
+						</element>
+					</oneOrMore>
+				</group>
+			</choice>
+		</element>
+	</define>
 	<define name="e.head">
 		<element name="head">
 			<ref name="a.common"/>
@@ -2148,7 +2237,8 @@
 <define name="m.para.content">
 	<choice>
 		<ref name="m.mixed.basic.plus"/>
-		<ref name="m.access.title"/>		
+		<ref name="m.access.title"/>
+		<ref name="list"/>		
 	</choice>
 	
 </define>
