@@ -127,20 +127,80 @@
 				<attribute name="encodinganalog"/>
 			</optional>
 			<optional>
-				<attribute name="dateChar"/>
+				<attribute name="datechar"/>
 			</optional>
 			<ref name="am.dates.era"/>
 			<ref name="am.dates.calendar"/>
 			<oneOrMore>
+                <ref name="m.dates"/>
+			</oneOrMore>
+		</element>
+	</define>
+	
+	<define name="e.dateSingle">
+		<element a:id="date" name="datesingle">
+			<ref name="a.common"/>
+			<optional>
+				<ref name="a.localtype"/>
+			</optional>
+			<ref name="m.datesingle"/>
+		</element>
+	</define>
+	
+	
+	<define name="e.dateRange">
+		<element name="dateRange">
+			<ref name="a.common"/>
+			<optional>
+				<ref name="a.localtype"/>
+			</optional>
+			<optional>
+				<element name="fromdate">
+					<ref name="a.common"/>
+					<optional>
+						<ref name="a.localtype"/>
+					</optional>
+					<ref name="e.datesingle"/>
+				</element>
+			</optional>
+			<optional>
+				<element name="todate">
+					<ref name="a.common"/>
+					<optional>
+						<ref name="a.localtype"/>
+					</optional>
+					<ref name="e.datesingle"/>
+				</element>
+			</optional>
+		</element>
+	</define>
+	
+	<define name="e.dateset">
+		<element a:id="dateSet" name="dateSet">
+			<ref name="a.common"/>
+			<optional>
+				<ref name="a.localtype"/>
+			</optional>
+			<choice>
+				<ref name="e.datesingle"/>
+				<ref name="e.daterange"/>
+			</choice>
+			<oneOrMore>
 				<choice>
 					<ref name="e.datesingle"/>
 					<ref name="e.daterange"/>
-					<ref name="e.dateset"/>
 				</choice>
 			</oneOrMore>
 		</element>
 	</define>
-
+	
+	<define name="m.dates">
+		<choice>
+			<ref name="e.datesingle"/>
+			<ref name="e.daterange"/>
+			<ref name="e.dateset"/>
+		</choice>
+	</define>
 
 	<define name="e.accessrestrict">
 		<element name="accessrestrict">
@@ -2275,7 +2335,39 @@
 	
 </define>
 
-
+	<define name="m.data.standarddate">
+		<choice>
+			<data type="date">
+				<param name="maxInclusive">2099-12-31</param>
+			</data>
+			<data type="gYear">
+				<param name="maxInclusive">2099</param>
+			</data>
+			<data type="gYearMonth">
+				<param name="maxInclusive">2099-12</param>
+			</data>
+		</choice>
+	</define>
+	
+	<define name="m.datesingle">
+		<optional>
+			<attribute name="standarddate">
+				<ref name="m.data.standarddate"/>
+			</attribute>
+		</optional>
+		<optional>
+			<attribute name="notbefore">
+				<ref name="m.data.standarddate"/>
+			</attribute>
+		</optional>
+		<optional>
+			<attribute  name="notafter">
+				<ref name="m.data.standarddate"/>
+			</attribute>
+		</optional>
+		<text/>
+	</define>
+	
 	<define name="a.internal.ptr">
 		<optional>
 			<attribute name="target">
@@ -2349,5 +2441,20 @@
 				<value>none</value>
 			</choice>
 		</attribute>
+	</define>
+	
+	<define name="am.dates.calendar">
+		<optional>
+			<attribute name="calendar">
+				<data type="NMTOKEN"/>
+			</attribute>
+		</optional>
+	</define>
+	<define name="am.dates.era">
+		<optional>
+			<attribute name="era">
+				<data type="NMTOKEN"/>
+			</attribute>
+		</optional>
 	</define>
 </grammar>
