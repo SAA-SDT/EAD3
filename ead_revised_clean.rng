@@ -109,6 +109,38 @@
 		</element>
 	</define>
 
+	<define name="e.unitdatestructured">
+		<element name="unitdatestructured">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="label"/>
+			</optional>
+			<optional>
+				<attribute name="unitdatetype">
+					<choice>
+						<value>bulk</value>
+						<value>inclusive</value>
+					</choice>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="encodinganalog"/>
+			</optional>
+			<optional>
+				<attribute name="dateChar"/>
+			</optional>
+			<ref name="am.dates.era"/>
+			<ref name="am.dates.calendar"/>
+			<oneOrMore>
+				<choice>
+					<ref name="e.datesingle"/>
+					<ref name="e.daterange"/>
+					<ref name="e.dateset"/>
+				</choice>
+			</oneOrMore>
+		</element>
+	</define>
+
 
 	<define name="e.accessrestrict">
 		<element name="accessrestrict">
@@ -1735,7 +1767,7 @@
 			<ref name="e.unitdate"/>
 
 			<ref name="e.unitdatestructured"/>
-			<element name="unitId">
+			<element name="unitid">
 				<ref name="a.common"/>
 				<optional>
 					<attribute name="label"/>
