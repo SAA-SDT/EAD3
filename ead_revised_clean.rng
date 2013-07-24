@@ -404,8 +404,8 @@
 			</choice>
 		</element>
 	</define>
-	<define name="e.originalsLoc">
-		<element name="originalsLoc">
+	<define name="e.originalsloc">
+		<element name="originalsloc">
 			<ref name="a.common"/>
 			<optional>
 				<attribute name="encodingAnalog"/>
@@ -1565,10 +1565,10 @@
 
 	<define name="e.part">
 		<element name="part">
-        <ref name="a.common"/>
-	    <optional>
-	    	<attribute name="encodinganalog"/>
-	    </optional>
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodinganalog"/>
+			</optional>
 			<optional>
 				<attribute name="localtype"/>
 			</optional>
@@ -1668,6 +1668,99 @@
 		</element>
 	</define>
 -->
+	<define name="e.row">
+		<element name="row">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="rowSep">
+					<ref name="av.yesorno"/>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="vAlign">
+					<choice>
+						<value>top</value>
+						<value>middle</value>
+						<value>bottom</value>
+					</choice>
+				</attribute>
+			</optional>
+			<oneOrMore>
+				<element name="entry">
+					<ref name="a.common"/>
+					<optional>
+						<attribute name="colName">
+							<data type="NMTOKEN"/>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="namEst">
+							<data type="NMTOKEN"/>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="nameEnd">
+							<data type="NMTOKEN"/>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="moreRows">
+							<data type="NMTOKEN"/>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="colSep">
+							<ref name="av.yesorno"/>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="rowSep">
+							<ref name="av.yesorno"/>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="align">
+							<choice>
+								<value>left</value>
+								<value>right</value>
+								<value>center</value>
+								<value>justify</value>
+								<value>char</value>
+							</choice>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="char"/>
+					</optional>
+					<optional>
+						<attribute name="charOff">
+							<data type="NMTOKEN"/>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="vAlign">
+							<choice>
+								<value>top</value>
+								<value>middle</value>
+								<value>bottom</value>
+							</choice>
+						</attribute>
+					</optional>
+					<zeroOrMore>
+						<choice>
+							<text/>
+							<choice>
+								<ref name="m.access.title"/>
+								<ref name="e.list"/>
+								<ref name="e.footnote"/>
+							</choice>
+						</choice>
+					</zeroOrMore>
+				</element>
+			</oneOrMore>
+		</element>
+	</define>
+
 	<!-- ATTRIBUTE VALUE LISTS -->
 
 	<define name="av.level">
@@ -1727,7 +1820,7 @@
 			</attribute>
 		</optional>
 		<optional>
-			<attribute name="altRender"/>
+			<attribute name="altrender"/>
 		</optional>
 		<optional>
 			<attribute name="audience">
@@ -1737,14 +1830,13 @@
 				</choice>
 			</attribute>
 		</optional>
-		<optional>
-			<attribute name="altRender"/>
-		</optional>
 	</define>
 	<define name="a.common">
-		<ref name="a.common"/>
+		<ref name="a.common.empty"/>
 		<optional>
 			<attribute name="lang"/>
+		</optional>
+		<optional>
 			<attribute name="script"/>
 		</optional>
 	</define>
@@ -1793,9 +1885,9 @@
 			<attribute name="normal"/>
 		</optional>
 	</define>
-<define name="a.localtype">
-	<attribute name="localtype"/>
-</define>
+	<define name="a.localtype">
+		<attribute name="localtype"/>
+	</define>
 
 	<define name="am.langcode">
 		<optional>
@@ -1819,7 +1911,7 @@
 			<ref name="e.legalstatus"/>
 			<ref name="e.materialspec"/>
 			<ref name="e.odd"/>
-			<ref name="e.originalsLoc"/>
+			<ref name="e.originalsloc"/>
 			<ref name="e.otherfindaid"/>
 			<ref name="e.phystech"/>
 			<ref name="e.prefercite"/>
