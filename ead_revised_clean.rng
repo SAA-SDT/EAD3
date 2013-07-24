@@ -137,8 +137,8 @@
 		</element>
 	</define>
 	
-	<define name="e.dateSingle">
-		<element a:id="date" name="datesingle">
+	<define name="e.datesingle">
+		<element  name="datesingle">
 			<ref name="a.common"/>
 			<optional>
 				<ref name="a.localtype"/>
@@ -148,8 +148,8 @@
 	</define>
 	
 	
-	<define name="e.dateRange">
-		<element name="dateRange">
+	<define name="e.daterange">
+		<element name="daterange">
 			<ref name="a.common"/>
 			<optional>
 				<ref name="a.localtype"/>
@@ -176,7 +176,7 @@
 	</define>
 	
 	<define name="e.dateset">
-		<element a:id="dateSet" name="dateSet">
+		<element name="dateset">
 			<ref name="a.common"/>
 			<optional>
 				<ref name="a.localtype"/>
