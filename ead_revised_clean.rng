@@ -1705,6 +1705,12 @@
 			<value>underline</value>
 		</choice>
 	</define>
+	<define name="av.yesorno">
+		<choice>
+			<value>yes</value>
+			<value>no</value>
+		</choice>
+	</define>
 
 	<!-- MODELS -->
 	<define name="a.dsctab.tPattern">
@@ -1787,6 +1793,9 @@
 			<attribute name="normal"/>
 		</optional>
 	</define>
+<define name="a.localtype">
+	<attribute name="localtype"/>
+</define>
 
 	<define name="am.langcode">
 		<optional>
