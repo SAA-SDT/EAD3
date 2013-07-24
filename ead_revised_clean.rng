@@ -1729,6 +1729,7 @@
 				<ref name="e.ref"/>
 				<ref name="e.quote"/>
 				<ref name="e.num"/>
+				<ref name="e.footnote"/>
 			</choice>
 		</zeroOrMore>
 	</define>
