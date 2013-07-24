@@ -109,6 +109,38 @@
 		</element>
 	</define>
 
+	<define name="e.unitdate">
+		<element name="unitdate">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="label"/>
+			</optional>
+			<optional>
+				<attribute name="unitdatetype">
+					<choice>
+						<value>bulk</value>
+						<value>inclusive</value>
+					</choice>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="datechar"/>
+			</optional>
+			<ref name="am.dates.era"/>
+			<ref name="am.dates.calendar"/>
+		    <ref name="am.date.normal"/>
+			<optional>
+				<attribute name="certainty"/>
+			</optional>
+			<optional>
+				<attribute name="encodinganalog"/>
+			</optional>
+			<zeroOrMore>
+               <ref name="m.mixed.basic.plus"/>
+			</zeroOrMore>
+			
+		</element>
+	</define>
 	<define name="e.unitdatestructured">
 		<element name="unitdatestructured">
 			<ref name="a.common"/>
@@ -122,6 +154,9 @@
 						<value>inclusive</value>
 					</choice>
 				</attribute>
+			</optional>
+			<optional>
+				<attribute name="certainty"/>
 			</optional>
 			<optional>
 				<attribute name="encodinganalog"/>
@@ -2454,6 +2489,14 @@
 		<optional>
 			<attribute name="era">
 				<data type="NMTOKEN"/>
+			</attribute>
+		</optional>
+	</define>
+	<define name="am.date.normal">
+		<optional>
+			<attribute name="normal">
+				<data type="token">
+				</data>
 			</attribute>
 		</optional>
 	</define>
