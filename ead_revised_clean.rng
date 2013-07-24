@@ -75,16 +75,13 @@
 				<attribute name="label"/>
 			</optional>
 			<optional>
-				<attribute name="encodingAnalog"/>
+				<attribute name="encodinganalog"/>
 			</optional>
 			<oneOrMore>
 				<choice>
 					<ref name="e.corpname"/>
 					<ref name="e.name"/>
 					<ref name="e.famname"/>
-					<optional>
-						<ref name="e.address"/>
-					</optional>
 					<optional>
 						<ref name="e.descriptivenote"/>
 					</optional>
@@ -99,7 +96,7 @@
 				<attribute name="label"/>
 			</optional>
 			<optional>
-				<attribute name="encodingAnalog"/>
+				<attribute name="encodinganalog"/>
 			</optional>
 			<oneOrMore>
 				<choice>
@@ -128,9 +125,6 @@
 			</optional>
 			<optional>
 				<attribute name="localtype"/>
-			</optional>
-			<optional>
-				<attribute name="normal"/>
 			</optional>
 			<zeroOrMore>
 				<choice>
