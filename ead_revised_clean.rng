@@ -269,6 +269,38 @@
 			<ref name="e.dateset"/>
 		</choice>
 	</define>
+	<define name="e.dao">
+		<element name="dao">
+			<ref name="a.common"/>
+			<ref name="am.simplelink"/>			
+			<optional>
+				<ref name="e.daodesc"/>
+			</optional>
+			<attribute name="daotype">
+				<choice>
+					<value>borndigital</value>
+					<value>derived</value>
+					<value>unknown</value>
+					<value>other</value>
+				</choice>
+			</attribute>
+			<optional>
+				<attribute name="otherdaotype"/>
+			</optional>
+		</element>
+	</define>
+	
+	<define name="e.daodesc">
+		<element name="daodesc">
+			<ref name="a.common"/>
+			<optional>
+				<ref name="e.head"/>
+			</optional>
+			<oneOrMore>
+				<ref name="m.blocks"/>
+			</oneOrMore>
+		</element>
+	</define>
 
 	<define name="e.accessrestrict">
 		<element name="accessrestrict">
@@ -2017,7 +2049,6 @@
 	</define>
 	<define name="m.inter.noquote">
 		<choice>
-			<!-- <ref name="address"/> -->
 			<element name="chronList">
 				<ref name="a.common"/>
 				<optional>
@@ -2027,29 +2058,29 @@
 					<ref name="e.head"/>
 				</optional>
 				<optional>
-					<ref name="e.listHead"/>
+					<ref name="e.listhead"/>
 				</optional>
 				<oneOrMore>
-					<element name="chronItem">
+					<element name="chronitem">
 						<choice>
-							<ref name="e.dateSingle"/>
-							<ref name="e.dateRange"/>
+							<ref name="e.datesingle"/>
+							<ref name="e.daterange"/>
 						</choice>
 						<choice>
 							<oneOrMore>
-								<element name="e.chronologicalSet">
+								<element name="e.chronologicalset">
 									<oneOrMore>
 										<ref name="e.event"/>
 									</oneOrMore>
 									<zeroOrMore>
-										<ref name="e.placeEntry"/>
+										<ref name="e.placeentry"/>
 									</zeroOrMore>
 								</element>
 							</oneOrMore>
 							<group>
 								<ref name="e.event"/>
 								<optional>
-									<ref name="e.placeEntry"/>
+									<ref name="e.placeentry"/>
 								</optional>
 							</group>
 						</choice>
