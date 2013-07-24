@@ -70,22 +70,26 @@
 	</define>
 	<define name="e.origination">
 		<element name="origination">
-		<ref name="a.common"/>
-		<optional>
-			<attribute name="label"/>
-		</optional>
-		<optional>
-			<attribute name="encodingAnalog"/>
-		</optional>
-		<oneOrMore>
-			<choice>
-				<ref name="e.corpname"/>
-				<ref name="e.name"/>
-				<ref name="e.famname"/>
-				<optional><ref name="e.address"/></optional>
-				<optional><ref name="e.descriptivenote"/></optional>
-			</choice>
-		</oneOrMore>
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="label"/>
+			</optional>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<oneOrMore>
+				<choice>
+					<ref name="e.corpname"/>
+					<ref name="e.name"/>
+					<ref name="e.famname"/>
+					<optional>
+						<ref name="e.address"/>
+					</optional>
+					<optional>
+						<ref name="e.descriptivenote"/>
+					</optional>
+				</choice>
+			</oneOrMore>
 		</element>
 	</define>
 	<define name="e.repository">
@@ -102,12 +106,41 @@
 					<ref name="e.corpname"/>
 					<ref name="e.name"/>
 					<ref name="e.famname"/>
-					<optional><ref name="e.address"/></optional>
-					<optional><ref name="e.descriptivenote"/></optional>
+					<optional>
+						<ref name="e.address"/>
+					</optional>
+					<optional>
+						<ref name="e.descriptivenote"/>
+					</optional>
 				</choice>
 			</oneOrMore>
 		</element>
 	</define>
+
+	<define name="e.unittitle">
+		<element name="unittitle">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="label"/>
+			</optional>
+			<optional>
+				<attribute name="encodinganalog"/>
+			</optional>
+			<optional>
+				<attribute name="localtype"/>
+			</optional>
+			<optional>
+				<attribute name="normal"/>
+			</optional>
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<ref name="m.para.content"/>
+				</choice>
+			</zeroOrMore>			
+		</element>
+	</define>
+
 
 	<define name="e.unitdate">
 		<element name="unitdate">
@@ -128,7 +161,7 @@
 			</optional>
 			<ref name="am.dates.era"/>
 			<ref name="am.dates.calendar"/>
-		    <ref name="am.date.normal"/>
+			<ref name="am.date.normal"/>
 			<optional>
 				<attribute name="certainty"/>
 			</optional>
@@ -136,9 +169,9 @@
 				<attribute name="encodinganalog"/>
 			</optional>
 			<zeroOrMore>
-               <ref name="m.mixed.basic.plus"/>
+				<ref name="m.mixed.basic.plus"/>
 			</zeroOrMore>
-			
+
 		</element>
 	</define>
 	<define name="e.unitdatestructured">
@@ -167,13 +200,13 @@
 			<ref name="am.dates.era"/>
 			<ref name="am.dates.calendar"/>
 			<oneOrMore>
-                <ref name="m.dates"/>
+				<ref name="m.dates"/>
 			</oneOrMore>
 		</element>
 	</define>
-	
+
 	<define name="e.datesingle">
-		<element  name="datesingle">
+		<element name="datesingle">
 			<ref name="a.common"/>
 			<optional>
 				<ref name="a.localtype"/>
@@ -181,8 +214,8 @@
 			<ref name="m.datesingle"/>
 		</element>
 	</define>
-	
-	
+
+
 	<define name="e.daterange">
 		<element name="daterange">
 			<ref name="a.common"/>
@@ -209,7 +242,7 @@
 			</optional>
 		</element>
 	</define>
-	
+
 	<define name="e.dateset">
 		<element name="dateset">
 			<ref name="a.common"/>
@@ -228,7 +261,7 @@
 			</oneOrMore>
 		</element>
 	</define>
-	
+
 	<define name="m.dates">
 		<choice>
 			<ref name="e.datesingle"/>
@@ -882,7 +915,7 @@
 			</choice>
 		</element>
 	</define>
-	
+
 	<define name="e.list">
 		<element name="list">
 			<ref name="a.common"/>
@@ -958,7 +991,7 @@
 			</choice>
 		</element>
 	</define>
-	
+
 	<define name="e.item">
 		<element name="item">
 			<ref name="a.common"/>
@@ -970,7 +1003,7 @@
 			</zeroOrMore>
 		</element>
 	</define>
-	
+
 	<define name="e.head">
 		<element name="head">
 			<ref name="a.common"/>
@@ -1018,7 +1051,7 @@
 			</optional>
 		</element>
 	</define>
-	
+
 	<define name="e.abbr">
 		<element name="abbr">
 			<ref name="a.common"/>
@@ -1043,7 +1076,7 @@
 			<ref name="m.mixed.basic"/>
 		</element>
 	</define>
-	
+
 
 	<define name="e.emph">
 		<element name="emph">
@@ -1075,7 +1108,7 @@
 			<text/>
 		</element>
 	</define>
-	
+
 	<define name="e.ptr">
 		<element name="ptr">
 			<ref name="a.common"/>
@@ -1319,7 +1352,7 @@
 			</zeroOrMore>
 		</element>
 	</define>
-	
+
 	<define name="e.address">
 		<element name="address">
 			<ref name="a.common"/>
@@ -1332,25 +1365,25 @@
 			</oneOrMore>
 		</element>
 	</define>
-	
+
 	<define name="e.corpname">
-	<element name="corpname">
-		<ref name="a.common"/>
-		<ref name="a.access"/>
-		<optional>
-			<attribute name="role"/>
-		</optional>
-		<optional>
-			<attribute name="encodingAnalog"/>
-		</optional>
-		<zeroOrMore>
-			<choice>
-				<text/>
-				<ref name="m.mixed.basic"/>
-			</choice>
-		</zeroOrMore>
-		
-	</element>
+		<element name="corpname">
+			<ref name="a.common"/>
+			<ref name="a.access"/>
+			<optional>
+				<attribute name="role"/>
+			</optional>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<ref name="m.mixed.basic"/>
+				</choice>
+			</zeroOrMore>
+
+		</element>
 	</define>
 	<define name="e.famname">
 		<element name="famname">
@@ -1368,9 +1401,9 @@
 					<ref name="m.mixed.basic"/>
 				</choice>
 			</zeroOrMore>
-			
-			
-			
+
+
+
 		</element>
 	</define>
 	<define name="e.geogname">
@@ -1389,9 +1422,9 @@
 					<ref name="m.mixed.basic"/>
 				</choice>
 			</zeroOrMore>
-			
-			
-			
+
+
+
 		</element>
 	</define>
 	<define name="e.name">
@@ -1410,9 +1443,9 @@
 					<ref name="m.mixed.basic"/>
 				</choice>
 			</zeroOrMore>
-			
-			
-			
+
+
+
 		</element>
 	</define>
 	<define name="e.persname">
@@ -1433,7 +1466,7 @@
 			</zeroOrMore>
 		</element>
 	</define>
-	
+
 	<define name="e.occupation">
 		<element name="occupation">
 			<ref name="a.common"/>
@@ -1449,7 +1482,7 @@
 			</zeroOrMore>
 		</element>
 	</define>
-	
+
 	<define name="e.subject">
 		<element name="subject">
 			<ref name="a.common"/>
@@ -1465,7 +1498,7 @@
 			</zeroOrMore>
 		</element>
 	</define>
-	
+
 	<define name="e.genreform">
 		<element name="genreform">
 			<ref name="a.common"/>
@@ -1481,7 +1514,7 @@
 			</zeroOrMore>
 		</element>
 	</define>
-	
+
 	<define name="e.function">
 		<element name="function">
 			<ref name="a.common"/>
@@ -1497,9 +1530,9 @@
 			</zeroOrMore>
 		</element>
 	</define>
-	
-	
-	
+
+
+
 	<define name="e.descriptivenote">
 		<element name="descriptivenote">
 			<ref name="a.common"/>
@@ -1508,22 +1541,22 @@
 			</oneOrMore>
 		</element>
 	</define>
-	
-	
+
+
 	<define name="e.p">
 
-			<element name="p">
-				<ref name="a.common"/>
-				<zeroOrMore>
-					<choice>
-						<text/>
-						<ref name="m.para.content"/>
-					</choice>
-				</zeroOrMore>
-			</element>
-		</define>
-	
-	
+		<element name="p">
+			<ref name="a.common"/>
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<ref name="m.para.content"/>
+				</choice>
+			</zeroOrMore>
+		</element>
+	</define>
+
+
 	<define name="e.footnote">
 		<element name="footnote">
 			<ref name="a.common"/>
@@ -1551,7 +1584,7 @@
 			</oneOrMore>
 		</element>
 	</define>
-	
+
 
 
 	<!-- ATTRIBUTE VALUE LISTS -->
@@ -1814,8 +1847,8 @@
 				<zeroOrMore>
 					<choice>
 
-						
-						
+
+
 						<ref name="e.dimensions"/>
 						<element name="extent">
 							<ref name="a.common"/>
@@ -1872,8 +1905,8 @@
 				</optional>
 				<ref name="am.countrycode"/>
 				<optional>
-					<attribute name="repositoryCode">
-						<ref name="data.repositoryCode"/>
+					<attribute name="repositorycode">
+						<ref name="data.repositorycode"/>
 					</attribute>
 				</optional>
 				<optional>
@@ -2023,7 +2056,7 @@
 					</element>
 				</oneOrMore>
 			</element>
-			
+
 			<define name="m.para.content">
 				<choice>
 					<ref name="m.phrase.plus"/>
@@ -2216,7 +2249,7 @@
 			</element>
 		</optional>
 	</define>
-	
+
 	<define name="m.access">
 		<choice>
 			<ref name="e.persname"/>
@@ -2230,7 +2263,7 @@
 			<ref name="e.function"/>
 		</choice>
 	</define>
-	
+
 	<define name="m.access.title">
 		<choice>
 			<ref name="m.access"/>
@@ -2361,14 +2394,14 @@
 			</element>
 		</choice>
 	</define>
-<define name="m.para.content">
-	<choice>
-		<ref name="m.mixed.basic.plus"/>
-		<ref name="m.access.title"/>
-		<ref name="e.list"/>		
-	</choice>
-	
-</define>
+	<define name="m.para.content">
+		<choice>
+			<ref name="m.mixed.basic.plus"/>
+			<ref name="m.access.title"/>
+			<ref name="e.list"/>
+		</choice>
+
+	</define>
 
 	<define name="m.data.standarddate">
 		<choice>
@@ -2383,7 +2416,7 @@
 			</data>
 		</choice>
 	</define>
-	
+
 	<define name="m.datesingle">
 		<optional>
 			<attribute name="standarddate">
@@ -2396,13 +2429,13 @@
 			</attribute>
 		</optional>
 		<optional>
-			<attribute  name="notafter">
+			<attribute name="notafter">
 				<ref name="m.data.standarddate"/>
 			</attribute>
 		</optional>
 		<text/>
 	</define>
-	
+
 	<define name="a.internal.ptr">
 		<optional>
 			<attribute name="target">
@@ -2437,7 +2470,7 @@
 			<ref name="a.link.actuate"/>
 		</optional>
 	</define>
-	
+
 	<define name="a.link.href">
 		<attribute name="href">
 			<data type="anyURI"/>
@@ -2477,7 +2510,7 @@
 			</choice>
 		</attribute>
 	</define>
-	
+
 	<define name="am.dates.calendar">
 		<optional>
 			<attribute name="calendar">
@@ -2495,8 +2528,17 @@
 	<define name="am.date.normal">
 		<optional>
 			<attribute name="normal">
-				<data type="token">
-				</data>
+				<data type="token"/>
+			</attribute>
+		</optional>
+	</define>
+	<define name="data.repositorycode">
+		<data type="token"/>
+	</define>
+	<define name="am.countrycode">
+		<optional>
+			<attribute name="countrycode">
+				<data type="NMTOKEN"/>
 			</attribute>
 		</optional>
 	</define>
