@@ -805,16 +805,32 @@
 	
 	<define name="e.abbr">
 		<element name="abbr">
+
 			<ref name="a.common"/>
-			<text/>
+			<ref name="m.mixed.basic"/>
 		</element>
 	</define>
 	<define name="e.expan">
 		<element name="abbr">
+
 			<ref name="a.common"/>
-			<text/>
+			<ref name="m.mixed.basic"/>
 		</element>
 	</define>
+	<define name="e.num">
+		<element name="num">
+
+			<ref name="a.common"/>
+			<ref name="m.mixed.basic"/>
+		</element>
+	</define>
+	<define name="e.quote">
+		<element name="quote">
+			<ref name="a.common"/>
+			<ref name="m.mixed.basic"/>
+		</element>
+	</define>
+	
 
 	<define name="e.emph">
 		<element name="emph">
@@ -1295,6 +1311,34 @@
 		</define>
 	
 	
+	<define name="e.footnote">
+		<element name="footnote">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="localtype"/>
+			</optional>
+			<optional>
+				<attribute name="show">
+					<choice>
+						<value>embed</value>
+						<value>new</value>
+					</choice>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="actuate">
+					<choice>
+						<value>onload</value>
+						<value>onrequest</value>
+					</choice>
+				</attribute>
+			</optional>
+			<oneOrMore>
+				<ref name="m.blocks"/>
+			</oneOrMore>
+		</element>
+	</define>
+	
 
 
 	<!-- ATTRIBUTE VALUE LISTS -->
@@ -1669,6 +1713,8 @@
 		<zeroOrMore>
 			<choice>
 				<text/>
+				<ref name="e.abbr"/>
+				<ref name="e.expan"/>
 				<ref name="e.emph"/>
 				<ref name="e.lb"/>
 				<ref name="e.ref"/>
@@ -1678,6 +1724,8 @@
 	<!-- to allow recursion in some elements, e.g., dimensions -->
 	<define name="m.mixed.elements">
 		<text/>
+		<ref name="e.abbr"/>
+		<ref name="e.expan"/>
 		<ref name="e.emph"/>
 		<ref name="e.lb"/>
 		<ref name="e.ref"/>
@@ -2087,7 +2135,10 @@
 	</define>
 <define name="m.para.content">
 	<choice>
-		<
+		<ref name="m.mixed.basic"/>
+		<ref name="m.access.title"/>
+		<ref name=""/>
+		
 	</choice>
 	
 </define>
