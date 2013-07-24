@@ -2276,7 +2276,6 @@
 		<zeroOrMore>
 			<choice>
 				<ref name="e.dao"/>
-				<ref name="e.daogrp"/>
 			</choice>
 		</zeroOrMore>
 		<optional>
@@ -2472,6 +2471,98 @@
 			</attribute>
 		</optional>
 		<text/>
+	</define>
+	
+	<define name="m.relation">
+		<element name="relation">
+            <ref name="a.common"/>
+			<optional>
+				<attribute name="scriptcode">
+					<data type="string"/>
+				</attribute>
+			</optional>
+			<attribute name="relationtype">
+				<choice>
+					<value>cpfrelation</value>
+					<value>resourcerelation</value>
+					<value>functionrelation</value>
+					<value>otherrelation</value>
+				</choice>
+			</attribute>
+			<optional>
+				<attribute name="otherrelationrype">
+					<data type="string"/>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="lastdatetimeverified">
+					<data type="dateTime"/>
+				</attribute>
+			</optional>
+			<optional>
+				<ref name="am.simplelink"/>
+			</optional>
+			
+			<optional>
+				<choice>
+					<ref name="e.datesingle"/>
+					<ref name="e.dateset"/>
+					<ref name="e.daterange"/>
+				</choice>
+			</optional>
+			<oneOrMore>
+				<element name="relationEntry">
+					<ref name="a.common"/>
+					<optional>
+						<ref name="a.localtype"/>
+					</optional>
+					<optional>
+						<ref name="m.entrylanguageattributes"/>
+					</optional>
+					<text/>
+				</element>
+			</oneOrMore>
+			<optional>
+				<ref name="e.descriptivenote"/>				
+			</optional>
+			<!--		<optional>
+				<element a:id="placeEntry" name="placeEntry">
+					<ref name="a.common"/>
+					<optional>
+						<ref name="m.entryLanguageAttributes"/>
+					</optional>
+					<optional>
+						<ref name="a.localType"/>
+					</optional>
+					<optional>
+						<attribute a:id="countryCode" name="countryCode">
+							<choice>
+								<data type="string">
+									<param name="pattern">[A-Z]{2}</param>
+								</data>
+								<data type="string">
+									<param name="pattern">[A-Z]{4}</param>
+								</data>
+							</choice>
+						</attribute>
+					</optional>
+					<optional>
+						<ref name="a.vocabularySource"/>
+					</optional>
+					<optional>
+						<attribute a:id="accuracy" name="accuarcy">
+							<text/>
+						</attribute>
+					</optional>
+					<optional>
+						<ref name="m.geographicalCoordinates"/>
+					</optional>
+					<text/>
+				</element>
+				
+			</optional>
+			-->
+		</element>
 	</define>
 
 	<define name="a.internal.ptr">
