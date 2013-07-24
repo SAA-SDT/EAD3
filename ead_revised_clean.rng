@@ -347,7 +347,6 @@
 					<oneOrMore>
 						<choice>
 							<ref name="m.access.title"/>
-							<ref name="e.namegrpnote"/>
 						</choice>
 					</oneOrMore>
 				</element>
@@ -1193,6 +1192,72 @@
 		</element>
 	</define>
 	
+	<define name="e.occupation">
+		<element name="occupation">
+			<ref name="a.common"/>
+			<ref name="a.access"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<ref name="m.mixed.basic"/>
+				</choice>
+			</zeroOrMore>
+		</element>
+	</define>
+	
+	<define name="e.subject">
+		<element name="subject">
+			<ref name="a.common"/>
+			<ref name="a.access"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<ref name="m.mixed.basic"/>
+				</choice>
+			</zeroOrMore>
+		</element>
+	</define>
+	
+	<define name="e.genreform">
+		<element name="genreform">
+			<ref name="a.common"/>
+			<ref name="a.access"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<ref name="m.mixed.basic"/>
+				</choice>
+			</zeroOrMore>
+		</element>
+	</define>
+	
+	<define name="e.function">
+		<element name="function">
+			<ref name="a.common"/>
+			<ref name="a.access"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<ref name="m.mixed.basic"/>
+				</choice>
+			</zeroOrMore>
+		</element>
+	</define>
+	
+	
+	
 	<define name="e.descriptivenote">
 		<element name="descriptivenote">
 			<ref name="a.common"/>
@@ -1201,6 +1266,8 @@
 			</oneOrMore>
 		</element>
 	</define>
+	
+	
 	<define name="e.p">
 
 			<element name="p">
@@ -1857,6 +1924,27 @@
 				</oneOrMore>
 			</element>
 		</optional>
+	</define>
+	
+	<define name="m.access">
+		<choice>
+			<ref name="e.persname"/>
+			<ref name="e.corpname"/>
+			<ref name="e.famname"/>
+			<ref name="e.geogname"/>
+			<ref name="e.name"/>
+			<ref name="e.occupation"/>
+			<ref name="e.subject"/>
+			<ref name="e.genreform"/>
+			<ref name="e.function"/>
+		</choice>
+	</define>
+	
+	<define name="m.access.title">
+		<choice>
+			<ref name="m.access"/>
+			<ref name="e.title"/>
+		</choice>
 	</define>
 
 	<define name="m.access.entry">
