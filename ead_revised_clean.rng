@@ -1193,8 +1193,8 @@
 		</element>
 	</define>
 	
-	<define name="e.descriptiveNote">
-		<element name="descriptiveNote">
+	<define name="e.descriptivenote">
+		<element name="descriptivenote">
 			<ref name="a.common"/>
 			<oneOrMore>
 				<ref name="e.p"/>
