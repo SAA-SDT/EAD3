@@ -137,7 +137,7 @@
 					<text/>
 					<ref name="m.para.content"/>
 				</choice>
-			</zeroOrMore>			
+			</zeroOrMore>
 		</element>
 	</define>
 
@@ -272,7 +272,7 @@
 	<define name="e.dao">
 		<element name="dao">
 			<ref name="a.common"/>
-			<ref name="am.simplelink"/>			
+			<ref name="am.simplelink"/>
 			<optional>
 				<ref name="e.daodesc"/>
 			</optional>
@@ -289,7 +289,7 @@
 			</optional>
 		</element>
 	</define>
-	
+
 	<define name="e.daodesc">
 		<element name="daodesc">
 			<ref name="a.common"/>
@@ -1563,6 +1563,18 @@
 		</element>
 	</define>
 
+	<define name="e.part">
+		<element name="part">
+        <ref name="a.common"/>
+	    <optional>
+	    	<attribute name="encodinganalog"/>
+	    </optional>
+			<optional>
+				<attribute name="localtype"/>
+			</optional>
+			<text/>
+		</element>
+	</define>
 
 
 	<define name="e.descriptivenote">
@@ -1628,7 +1640,7 @@
 			</zeroOrMore>
 		</element>
 	</define>
-<!--
+	<!--
 	<define name="e.placeentry">
 		<element name="placeentry">
 			<ref name="a.common"/>
@@ -2109,7 +2121,7 @@
 									<oneOrMore>
 										<ref name="e.event"/>
 									</oneOrMore>
-							<!--		<zeroOrMore>
+									<!--		<zeroOrMore>
 										<ref name="e.placeentry"/>
 									</zeroOrMore>
 						   -->
@@ -2117,7 +2129,7 @@
 							</oneOrMore>
 							<group>
 								<ref name="e.event"/>
-						<!--		<optional>
+								<!--		<optional>
 									<ref name="e.placeentry"/>
 								</optional>
 						-->
@@ -2472,10 +2484,10 @@
 		</optional>
 		<text/>
 	</define>
-	
+
 	<define name="m.relation">
 		<element name="relation">
-            <ref name="a.common"/>
+			<ref name="a.common"/>
 			<optional>
 				<attribute name="scriptcode">
 					<data type="string"/>
@@ -2502,7 +2514,7 @@
 			<optional>
 				<ref name="am.simplelink"/>
 			</optional>
-			
+
 			<optional>
 				<choice>
 					<ref name="e.datesingle"/>
@@ -2517,13 +2529,16 @@
 						<ref name="a.localtype"/>
 					</optional>
 					<optional>
-						<ref name="m.entrylanguageattributes"/>
+
+						<attribute name="transliteration">
+							<data type="NMTOKEN"/>
+						</attribute>
 					</optional>
 					<text/>
 				</element>
 			</oneOrMore>
 			<optional>
-				<ref name="e.descriptivenote"/>				
+				<ref name="e.descriptivenote"/>
 			</optional>
 			<!--		<optional>
 				<element a:id="placeEntry" name="placeEntry">
@@ -2671,4 +2686,5 @@
 			</attribute>
 		</optional>
 	</define>
+
 </grammar>
