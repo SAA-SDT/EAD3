@@ -805,21 +805,18 @@
 	
 	<define name="e.abbr">
 		<element name="abbr">
-
 			<ref name="a.common"/>
 			<ref name="m.mixed.basic"/>
 		</element>
 	</define>
 	<define name="e.expan">
-		<element name="abbr">
-
+		<element name="expan">
 			<ref name="a.common"/>
 			<ref name="m.mixed.basic"/>
 		</element>
 	</define>
 	<define name="e.num">
 		<element name="num">
-
 			<ref name="a.common"/>
 			<ref name="m.mixed.basic"/>
 		</element>
@@ -1721,6 +1718,20 @@
 			</choice>
 		</zeroOrMore>
 	</define>
+	<define name="m.mixed.basic.plus">
+		<zeroOrMore>
+			<choice>
+				<text/>
+				<ref name="e.abbr"/>
+				<ref name="e.expan"/>
+				<ref name="e.emph"/>
+				<ref name="e.lb"/>
+				<ref name="e.ref"/>
+				<ref name="e.quote"/>
+				<ref name="e.num"/>
+			</choice>
+		</zeroOrMore>
+	</define>
 	<!-- to allow recursion in some elements, e.g., dimensions -->
 	<define name="m.mixed.elements">
 		<text/>
@@ -2135,10 +2146,8 @@
 	</define>
 <define name="m.para.content">
 	<choice>
-		<ref name="m.mixed.basic"/>
-		<ref name="m.access.title"/>
-		<ref name=""/>
-		
+		<ref name="m.mixed.basic.plus"/>
+		<ref name="m.access.title"/>		
 	</choice>
 	
 </define>
