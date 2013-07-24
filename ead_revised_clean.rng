@@ -802,6 +802,19 @@
 			</optional>
 		</element>
 	</define>
+	
+	<define name="e.abbr">
+		<element name="abbr">
+			<ref name="a.common"/>
+			<text/>
+		</element>
+	</define>
+	<define name="e.expan">
+		<element name="abbr">
+			<ref name="a.common"/>
+			<text/>
+		</element>
+	</define>
 
 	<define name="e.emph">
 		<element name="emph">
@@ -1280,6 +1293,8 @@
 				</zeroOrMore>
 			</element>
 		</define>
+	
+	
 
 
 	<!-- ATTRIBUTE VALUE LISTS -->
@@ -2070,6 +2085,13 @@
 			</element>
 		</choice>
 	</define>
+<define name="m.para.content">
+	<choice>
+		<
+	</choice>
+	
+</define>
+
 
 	<define name="a.internal.ptr">
 		<optional>
