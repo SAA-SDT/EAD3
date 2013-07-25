@@ -1138,7 +1138,7 @@
 	<define name="e.ptr">
 		<element name="ptr">
 			<ref name="a.common"/>
-			<ref name="am.internal.ptr"/>
+			<ref name="a.internal.ptr"/>
 			<empty/>
 		</element>
 	</define>
@@ -1882,45 +1882,6 @@
 	<define name="a.localtype">
 		<attribute name="localtype"/>
 	</define>
-	<define name="a.link.href">
-		<attribute name="href">
-			<data type="anyURI"/>
-		</attribute>
-	</define>
-	<define name="a.link.role">
-		<attribute name="linkrole">
-			<data type="anyURI"/>
-		</attribute>
-	</define>
-	<define name="a.link.arcrole">
-		<attribute name="linkarcrole">
-			<data type="anyURI"/>
-		</attribute>
-	</define>
-	<define name="a.link.title">
-		<attribute name="linktitle"/>
-	</define>
-	<define name="a.link.show">
-		<attribute name="show">
-			<choice>
-				<value>new</value>
-				<value>replace</value>
-				<value>embed</value>
-				<value>other</value>
-				<value>none</value>
-			</choice>
-		</attribute>
-	</define>
-	<define name="a.link.actuate">
-		<attribute name="actuate">
-			<choice>
-				<value>onLoad</value>
-				<value>onRequest</value>
-				<value>other</value>
-				<value>none</value>
-			</choice>
-		</attribute>
-	</define>
 
 	<define name="am.langcode">
 		<optional>
@@ -2008,7 +1969,15 @@
 					<attribute name="label"/>
 				</optional>
 				<optional>
-					<attribute name="encodinganalog"/>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<optional>
+					<attribute name="source">
+						<data type="token"/>
+					</attribute>
+				</optional>
+				<optional>
+					<attribute name="identifier"/>
 				</optional>
 				<optional>
 					<attribute name="rules">
@@ -2018,13 +1987,21 @@
 				<ref name="m.mixed.basic"/>
 			</element>
 
-			<element name="physdescstructured">
+			<element name="physDescStructured">
 				<ref name="a.common"/>
 				<optional>
 					<attribute name="label"/>
 				</optional>
 				<optional>
 					<attribute name="encodinganalog"/>
+				</optional>
+				<optional>
+					<attribute name="source">
+						<data type="token"/>
+					</attribute>
+				</optional>
+				<optional>
+					<attribute name="identifier"/>
 				</optional>
 				<optional>
 					<attribute name="rules">
@@ -2698,14 +2675,14 @@
 		</element>
 	</define>
 
-	<define name="am.internal.ptr">
+	<define name="a.internal.ptr">
 		<optional>
 			<attribute name="target">
 				<data type="IDREF"/>
 			</attribute>
 		</optional>
 		<optional>
-			<attribute name="xpointer"/>
+			<attribute name="xPointer"/>
 		</optional>
 		<ref name="am.simplelink"/>
 	</define>
@@ -2733,7 +2710,45 @@
 		</optional>
 	</define>
 
-	
+	<define name="a.link.href">
+		<attribute name="href">
+			<data type="anyURI"/>
+		</attribute>
+	</define>
+	<define name="a.link.role">
+		<attribute name="linkrole">
+			<data type="anyURI"/>
+		</attribute>
+	</define>
+	<define name="a.link.arcrole">
+		<attribute name="linkarcrole">
+			<data type="anyURI"/>
+		</attribute>
+	</define>
+	<define name="a.link.title">
+		<attribute name="linktitle"/>
+	</define>
+	<define name="a.link.show">
+		<attribute name="show">
+			<choice>
+				<value>new</value>
+				<value>replace</value>
+				<value>embed</value>
+				<value>other</value>
+				<value>none</value>
+			</choice>
+		</attribute>
+	</define>
+	<define name="a.link.actuate">
+		<attribute name="actuate">
+			<choice>
+				<value>onLoad</value>
+				<value>onRequest</value>
+				<value>other</value>
+				<value>none</value>
+			</choice>
+		</attribute>
+	</define>
 
 	<define name="am.dates.calendar">
 		<optional>
