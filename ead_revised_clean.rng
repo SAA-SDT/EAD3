@@ -722,34 +722,22 @@
 		<element name="bibliography">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodingAnalog"/>
+				<attribute name="encodinganalog"/>
 			</optional>
 			<optional>
 				<ref name="e.head"/>
 			</optional>
 			<choice>
-				<group>
-					<ref name="e.div"/>
-					<oneOrMore>
-						<ref name="e.div"/>
-					</oneOrMore>
-				</group>
 				<oneOrMore>
 					<choice>
 						<ref name="m.blocks"/>
-						<ref name="m.refs"/>
-						<zeroOrMore>
-							<ref name="e.bibref"/>
-						</zeroOrMore>
-						<zeroOrMore>
-							<ref name="e.archref"/>
-						</zeroOrMore>
+						<ref name="e.bibliography"/>
+						<ref name="e.archref"/>
+						<ref name="e.bibref"/>
 					</choice>
-					<!-- TC: 2012-06-08 remove recursion in note elements -->
-					<!-- <ref name="bibliography"/> -->
-
 				</oneOrMore>
 			</choice>
+			
 		</element>
 	</define>
 	<define name="e.relatedmaterial">
@@ -1890,7 +1878,7 @@
 			<ref name="e.otherfindaid"/>
 			<ref name="e.phystech"/>
 			<ref name="e.prefercite"/>
-			<ref name="e.processInfo"/>
+			<ref name="e.processinfo"/>
 			<ref name="e.relatedmaterial"/>
 			<ref name="e.scopecontent"/>
 			<ref name="e.separatedmaterial"/>
