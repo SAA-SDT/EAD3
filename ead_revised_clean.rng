@@ -643,16 +643,11 @@
 				<ref name="e.head"/>
 			</optional>
 			<choice>
-				<group>
-					<ref name="e.div"/>
-					<oneOrMore>
-						<ref name="e.div"/>
-					</oneOrMore>
-				</group>
 				<oneOrMore>
 					<choice>
 						<ref name="m.blocks"/>
-						<ref name="m.access.entry"/>
+						<ref name="m.access"/>
+						<ref name="e.controlaccess"/>
 					</choice>
 				</oneOrMore>
 			</choice>
@@ -753,26 +748,13 @@
 				<ref name="e.head"/>
 			</optional>
 			<choice>
-				<group>
-					<ref name="e.div"/>
-					<oneOrMore>
-						<ref name="e.div"/>
-					</oneOrMore>
-				</group>
 				<oneOrMore>
 					<choice>
 						<ref name="m.blocks"/>
-						<ref name="m.refs"/>
-						<zeroOrMore>
-							<ref name="e.bibref"/>
-						</zeroOrMore>
-						<zeroOrMore>
-							<ref name="e.archref"/>
-						</zeroOrMore>
+						<ref name="e.relatedmaterial"/>
+						<ref name="e.archref"/>
+						<ref name="e.bibref"/>
 					</choice>
-					<!-- TC: 2012-06-08 remove recursion in note elements -->
-					<!-- <ref name="bibliography"/> -->
-
 				</oneOrMore>
 			</choice>
 		</element>
@@ -790,26 +772,13 @@
 				<ref name="e.head"/>
 			</optional>
 			<choice>
-				<group>
-					<ref name="e.div"/>
-					<oneOrMore>
-						<ref name="e.div"/>
-					</oneOrMore>
-				</group>
 				<oneOrMore>
 					<choice>
 						<ref name="m.blocks"/>
-						<ref name="m.refs"/>
-						<zeroOrMore>
-							<ref name="e.bibref"/>
-						</zeroOrMore>
-						<zeroOrMore>
-							<ref name="e.archref"/>
-						</zeroOrMore>
+						<ref name="e.separatedmaterial"/>
+						<ref name="e.archref"/>
+						<ref name="e.bibref"/>
 					</choice>
-					<!-- TC: 2012-06-08 remove recursion in note elements -->
-					<!-- <ref name="bibliography"/> -->
-
 				</oneOrMore>
 			</choice>
 		</element>
@@ -824,19 +793,12 @@
 				<ref name="e.head"/>
 			</optional>
 			<choice>
-				<group>
-					<ref name="e.div"/>
-					<oneOrMore>
-						<ref name="e.div"/>
-					</oneOrMore>
-				</group>
 				<oneOrMore>
 					<choice>
 						<ref name="m.blocks"/>
-						<ref name="m.refs"/>
-						<!-- TC: 2012-06-08 remove recursion in note elements -->
-						<!-- <ref name="otherfindaid"/> -->
-
+						<ref name="e.otherfindaid"/>
+						<ref name="e.archref"/>
+						<ref name="e.bibref"/>
 					</choice>
 				</oneOrMore>
 			</choice>
@@ -1260,16 +1222,7 @@
 		<element name="dimensions">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="label"/>
-			</optional>
-			<optional>
-				<attribute name="localType"/>
-			</optional>
-			<optional>
-				<attribute name="unit"/>
-			</optional>
-			<optional>
-				<attribute name="encodingAnalog"/>
+				<attribute name="localtype"/>
 			</optional>
 			<zeroOrMore>
 				<choice>
@@ -1369,14 +1322,11 @@
 				<attribute name="role"/>
 			</optional>
 			<optional>
-				<attribute name="encodingAnalog"/>
+				<attribute name="encodinganalog"/>
 			</optional>
-			<zeroOrMore>
-				<choice>
-					<text/>
-					<ref name="m.mixed.basic"/>
-				</choice>
-			</zeroOrMore>
+			<oneOrMore>
+				<ref name="e.part"/>
+			</oneOrMore>
 
 		</element>
 	</define>
@@ -1388,14 +1338,11 @@
 				<attribute name="role"/>
 			</optional>
 			<optional>
-				<attribute name="encodingAnalog"/>
+				<attribute name="encodinganalog"/>
 			</optional>
-			<zeroOrMore>
-				<choice>
-					<text/>
-					<ref name="m.mixed.basic"/>
-				</choice>
-			</zeroOrMore>
+			<oneOrMore>
+				<ref name="e.part"/>
+			</oneOrMore>
 
 
 
@@ -1409,14 +1356,11 @@
 				<attribute name="role"/>
 			</optional>
 			<optional>
-				<attribute name="encodingAnalog"/>
+				<attribute name="encodinganalog"/>
 			</optional>
-			<zeroOrMore>
-				<choice>
-					<text/>
-					<ref name="m.mixed.basic"/>
-				</choice>
-			</zeroOrMore>
+			<oneOrMore>
+				<ref name="e.part"/>
+			</oneOrMore>
 
 
 
@@ -1430,14 +1374,11 @@
 				<attribute name="role"/>
 			</optional>
 			<optional>
-				<attribute name="encodingAnalog"/>
+				<attribute name="encodinganalog"/>
 			</optional>
-			<zeroOrMore>
-				<choice>
-					<text/>
-					<ref name="m.mixed.basic"/>
-				</choice>
-			</zeroOrMore>
+			<oneOrMore>
+				<ref name="e.part"/>
+			</oneOrMore>
 
 
 
@@ -1451,14 +1392,11 @@
 				<attribute name="role"/>
 			</optional>
 			<optional>
-				<attribute name="encodingAnalog"/>
+				<attribute name="encodinganalog"/>
 			</optional>
-			<zeroOrMore>
-				<choice>
-					<text/>
-					<ref name="m.mixed.basic"/>
-				</choice>
-			</zeroOrMore>
+			<oneOrMore>
+				<ref name="e.part"/>
+			</oneOrMore>
 		</element>
 	</define>
 
@@ -1467,14 +1405,11 @@
 			<ref name="a.common"/>
 			<ref name="a.access"/>
 			<optional>
-				<attribute name="encodingAnalog"/>
+				<attribute name="encodinganalog"/>
 			</optional>
-			<zeroOrMore>
-				<choice>
-					<text/>
-					<ref name="m.mixed.basic"/>
-				</choice>
-			</zeroOrMore>
+			<oneOrMore>
+				<ref name="e.part"/>
+			</oneOrMore>
 		</element>
 	</define>
 
@@ -1483,14 +1418,11 @@
 			<ref name="a.common"/>
 			<ref name="a.access"/>
 			<optional>
-				<attribute name="encodingAnalog"/>
+				<attribute name="encodinganalog"/>
 			</optional>
-			<zeroOrMore>
-				<choice>
-					<text/>
-					<ref name="m.mixed.basic"/>
-				</choice>
-			</zeroOrMore>
+			<oneOrMore>
+				<ref name="e.part"/>
+			</oneOrMore>
 		</element>
 	</define>
 
@@ -1499,14 +1431,11 @@
 			<ref name="a.common"/>
 			<ref name="a.access"/>
 			<optional>
-				<attribute name="encodingAnalog"/>
+				<attribute name="encodinganalog"/>
 			</optional>
-			<zeroOrMore>
-				<choice>
-					<text/>
-					<ref name="m.mixed.basic"/>
-				</choice>
-			</zeroOrMore>
+			<oneOrMore>
+				<ref name="e.part"/>
+			</oneOrMore>
 		</element>
 	</define>
 
@@ -1515,14 +1444,11 @@
 			<ref name="a.common"/>
 			<ref name="a.access"/>
 			<optional>
-				<attribute name="encodingAnalog"/>
+				<attribute name="encodinganalog"/>
 			</optional>
-			<zeroOrMore>
-				<choice>
-					<text/>
-					<ref name="m.mixed.basic"/>
-				</choice>
-			</zeroOrMore>
+			<oneOrMore>
+				<ref name="e.part"/>
+			</oneOrMore>
 		</element>
 	</define>
 
@@ -1977,7 +1903,6 @@
 						<data type="NMTOKEN"/>
 					</attribute>
 				</optional>
-				<optional>
 					<attribute name="physdescstructuredtype">
 						<choice>
 							<value>carrier</value>
@@ -1985,10 +1910,13 @@
 							<value>spaceoccupied</value>
 						</choice>
 					</attribute>
-				</optional>
-				<optional>
-					<attribute name="coverage"/>
-				</optional>
+					<attribute name="coverage">
+						<choice>
+							<value>whole</value>
+							<value>part</value>
+						</choice>
+					</attribute>
+				
 				<element name="quantity">
 					<ref name="a.common"/>
 					<text/>
@@ -1998,6 +1926,14 @@
 					<optional>
 						<attribute name="identifier"/>
 					</optional>
+					<optional>
+						<attribute name="source"/>
+					</optional>
+					<optional>
+						<attribute name="rules">
+							<data type="NMTOKEN"/>
+						</attribute>
+					</optional>					
 					<text/>
 				</element>
 				<zeroOrMore>
@@ -2141,7 +2077,7 @@
 	<define name="m.inter">
 		<choice>
 			<ref name="m.inter.noquote"/>
-			<element name="blockQuote">
+			<element name="blockquote">
 				<ref name="a.common"/>
 				<oneOrMore>
 					<choice>
@@ -2155,10 +2091,10 @@
 	</define>
 	<define name="m.inter.noquote">
 		<choice>
-			<element name="chronList">
+			<element name="chronlist">
 				<ref name="a.common"/>
 				<optional>
-					<attribute name="encodingAnalog"/>
+					<attribute name="encodinganalog"/>
 				</optional>
 				<optional>
 					<ref name="e.head"/>
@@ -2376,7 +2312,7 @@
 			<ref name="e.title"/>
 		</choice>
 	</define>
-
+<!--
 	<define name="m.access.entry">
 		<choice>
 			<element name="corpNameEntry">
@@ -2500,6 +2436,7 @@
 			</element>
 		</choice>
 	</define>
+	-->
 	<define name="m.para.content">
 		<choice>
 			<ref name="m.mixed.basic.plus"/>
