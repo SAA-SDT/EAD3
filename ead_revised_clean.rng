@@ -1378,6 +1378,38 @@
 			</zeroOrMore>
 		</element>
 	</define>
+	
+	<define name="e.physfacet">
+		<element name="physFacet">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="label"/>
+			</optional>
+			<optional>
+				<attribute name="localtype"/>
+			</optional>
+			<optional>
+				<attribute name="unit"/>
+			</optional>
+			<optional>
+				<attribute name="source">
+					<data type="token"/>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="identifier"/>
+			</optional>
+			<optional>
+				<attribute name="rules">
+					<data type="NMTOKEN"/>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="encodinganalog"/>
+			</optional>
+			<ref name="m.mixed.basic"/>
+		</element>
+	</define>
 
 	<define name="e.address">
 		<element name="address">
@@ -2024,8 +2056,10 @@
 				<zeroOrMore>
 					<choice>
 						<ref name="e.dimensions"/>
+						<ref name="e.physfacet"/>
 					</choice>
 				</zeroOrMore>
+				
 			</element>
 			<element name="physloc">
 				<ref name="a.common"/>
