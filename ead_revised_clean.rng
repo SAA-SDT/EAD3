@@ -519,15 +519,10 @@
 				<ref name="e.head"/>
 			</optional>
 			<choice>
-				<group>
-					<ref name="e.div"/>
-					<oneOrMore>
-						<ref name="e.div"/>
-					</oneOrMore>
-				</group>
 				<oneOrMore>
 					<choice>
 						<ref name="m.blocks"/>
+						<ref name="e.legalstatus"/>
 					</choice>
 				</oneOrMore>
 			</choice>
@@ -547,15 +542,10 @@
 				<ref name="e.head"/>
 			</optional>
 			<choice>
-				<group>
-					<ref name="e.div"/>
-					<oneOrMore>
-						<ref name="e.div"/>
-					</oneOrMore>
-				</group>
 				<oneOrMore>
 					<choice>
 						<ref name="m.blocks"/>
+						<ref name="e.materialspec"/>
 					</choice>
 				</oneOrMore>
 			</choice>
@@ -571,22 +561,17 @@
 				<ref name="e.head"/>
 			</optional>
 			<choice>
-				<group>
-					<ref name="e.div"/>
-					<oneOrMore>
-						<ref name="e.div"/>
-					</oneOrMore>
-				</group>
 				<oneOrMore>
 					<choice>
 						<ref name="m.blocks"/>
+						<ref name="e.prefercite"/>
 					</choice>
 				</oneOrMore>
 			</choice>
 		</element>
 	</define>
-	<define name="e.processInfo">
-		<element name="processInfo">
+	<define name="e.processinfo">
+		<element name="processinfo">
 			<ref name="a.common"/>
 			<optional>
 				<attribute name="localType"/>
@@ -598,15 +583,10 @@
 				<ref name="e.head"/>
 			</optional>
 			<choice>
-				<group>
-					<ref name="e.div"/>
-					<oneOrMore>
-						<ref name="e.div"/>
-					</oneOrMore>
-				</group>
 				<oneOrMore>
 					<choice>
 						<ref name="m.blocks"/>
+						<ref name="e.processinfo"/>
 					</choice>
 				</oneOrMore>
 			</choice>
@@ -625,15 +605,10 @@
 				<ref name="e.head"/>
 			</optional>
 			<choice>
-				<group>
-					<ref name="e.div"/>
-					<oneOrMore>
-						<ref name="e.div"/>
-					</oneOrMore>
-				</group>
 				<oneOrMore>
 					<choice>
 						<ref name="m.blocks"/>
+						<ref name="e.userestrict"/>
 					</choice>
 				</oneOrMore>
 			</choice>
@@ -649,15 +624,10 @@
 				<ref name="e.head"/>
 			</optional>
 			<choice>
-				<group>
-					<ref name="e.div"/>
-					<oneOrMore>
-						<ref name="e.div"/>
-					</oneOrMore>
-				</group>
 				<oneOrMore>
 					<choice>
 						<ref name="m.blocks"/>
+						<ref name="e.bioghist"/>
 					</choice>
 				</oneOrMore>
 			</choice>
@@ -701,15 +671,10 @@
 				<ref name="e.head"/>
 			</optional>
 			<choice>
-				<group>
-					<ref name="e.div"/>
-					<oneOrMore>
-						<ref name="e.div"/>
-					</oneOrMore>
-				</group>
 				<oneOrMore>
 					<choice>
 						<ref name="m.blocks"/>
+						<ref name="e.odd"/>
 					</choice>
 				</oneOrMore>
 			</choice>
@@ -725,18 +690,10 @@
 				<ref name="e.head"/>
 			</optional>
 			<choice>
-				<group>
-					<ref name="e.div"/>
-					<oneOrMore>
-						<ref name="e.div"/>
-					</oneOrMore>
-				</group>
 				<oneOrMore>
 					<choice>
-
 						<ref name="m.blocks"/>
-
-
+						<ref name="e.scopecontent"/>
 					</choice>
 				</oneOrMore>
 			</choice>
@@ -752,15 +709,10 @@
 				<ref name="e.head"/>
 			</optional>
 			<choice>
-				<group>
-					<ref name="e.div"/>
-					<oneOrMore>
-						<ref name="e.div"/>
-					</oneOrMore>
-				</group>
 				<oneOrMore>
 					<choice>
 						<ref name="m.blocks"/>
+						<ref name="e.arrangement"/>
 					</choice>
 				</oneOrMore>
 			</choice>
