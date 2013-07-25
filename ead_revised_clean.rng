@@ -1963,7 +1963,7 @@
 			<ref name="e.origination"/>
 
 
-			<element name="physDesc">
+			<element name="physdesc">
 				<ref name="a.common"/>
 				<optional>
 					<attribute name="label"/>
@@ -1988,6 +1988,15 @@
 					<attribute name="encodinganalog"/>
 				</optional>
 				<optional>
+					<attribute name="altrender"/>
+				</optional>
+				<optional>
+					<attribute name="audience"/>
+				</optional>
+				<optional>
+					<attribute name="source"/>
+				</optional>
+				<optional>
 					<attribute name="rules">
 						<data type="NMTOKEN"/>
 					</attribute>
@@ -2006,9 +2015,6 @@
 				</optional>
 				<zeroOrMore>
 					<choice>
-
-
-
 						<ref name="e.dimensions"/>
 						<element name="extent">
 							<ref name="a.common"/>
@@ -2032,7 +2038,7 @@
 					</choice>
 				</zeroOrMore>
 			</element>
-			<element name="physLoc">
+			<element name="physloc">
 				<ref name="a.common"/>
 				<optional>
 					<attribute name="label"/>
