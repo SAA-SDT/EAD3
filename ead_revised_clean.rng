@@ -1969,15 +1969,7 @@
 					<attribute name="label"/>
 				</optional>
 				<optional>
-					<attribute name="encodingAnalog"/>
-				</optional>
-				<optional>
-					<attribute name="source">
-						<data type="token"/>
-					</attribute>
-				</optional>
-				<optional>
-					<attribute name="identifier"/>
+					<attribute name="encodinganalog"/>
 				</optional>
 				<optional>
 					<attribute name="rules">
@@ -1987,21 +1979,13 @@
 				<ref name="m.mixed.basic"/>
 			</element>
 
-			<element name="physDescStructured">
+			<element name="physdescstructured">
 				<ref name="a.common"/>
 				<optional>
 					<attribute name="label"/>
 				</optional>
 				<optional>
 					<attribute name="encodinganalog"/>
-				</optional>
-				<optional>
-					<attribute name="source">
-						<data type="token"/>
-					</attribute>
-				</optional>
-				<optional>
-					<attribute name="identifier"/>
 				</optional>
 				<optional>
 					<attribute name="rules">
