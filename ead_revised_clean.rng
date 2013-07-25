@@ -310,15 +310,10 @@
 				<ref name="e.head"/>
 			</optional>
 			<choice>
-				<group>
-					<ref name="e.div"/>
-					<oneOrMore>
-						<ref name="e.div"/>
-					</oneOrMore>
-				</group>
 				<oneOrMore>
 					<choice>
 						<ref name="m.blocks"/>
+						<ref name="e.accessrestrict"/>
 					</choice>
 				</oneOrMore>
 			</choice>
@@ -334,15 +329,10 @@
 				<ref name="e.head"/>
 			</optional>
 			<choice>
-				<group>
-					<ref name="e.div"/>
-					<oneOrMore>
-						<ref name="e.div"/>
-					</oneOrMore>
-				</group>
 				<oneOrMore>
 					<choice>
 						<ref name="m.blocks"/>
+						<ref name="e.accruals"/>
 					</choice>
 				</oneOrMore>
 			</choice>
@@ -358,15 +348,10 @@
 				<ref name="e.head"/>
 			</optional>
 			<choice>
-				<group>
-					<ref name="e.div"/>
-					<oneOrMore>
-						<ref name="e.div"/>
-					</oneOrMore>
-				</group>
 				<oneOrMore>
 					<choice>
 						<ref name="m.blocks"/>
+						<ref name="e.acqinfo"/>
 					</choice>
 				</oneOrMore>
 			</choice>
@@ -385,15 +370,10 @@
 				<ref name="e.head"/>
 			</optional>
 			<choice>
-				<group>
-					<ref name="e.div"/>
-					<oneOrMore>
-						<ref name="e.div"/>
-					</oneOrMore>
-				</group>
 				<oneOrMore>
 					<choice>
 						<ref name="m.blocks"/>
+						<ref name="e.altformavail"/>
 					</choice>
 				</oneOrMore>
 			</choice>
@@ -412,15 +392,10 @@
 				<ref name="e.head"/>
 			</optional>
 			<choice>
-				<group>
-					<ref name="e.div"/>
-					<oneOrMore>
-						<ref name="e.div"/>
-					</oneOrMore>
-				</group>
 				<oneOrMore>
 					<choice>
 						<ref name="m.blocks"/>
+						<ref name="e.originalsloc"/>
 					</choice>
 				</oneOrMore>
 			</choice>
@@ -439,15 +414,10 @@
 				<ref name="e.head"/>
 			</optional>
 			<choice>
-				<group>
-					<ref name="e.div"/>
-					<oneOrMore>
-						<ref name="e.div"/>
-					</oneOrMore>
-				</group>
 				<oneOrMore>
 					<choice>
 						<ref name="m.blocks"/>
+						<ref name="e.phystech"/>
 					</choice>
 				</oneOrMore>
 			</choice>
@@ -463,15 +433,10 @@
 				<ref name="e.head"/>
 			</optional>
 			<choice>
-				<group>
-					<ref name="e.div"/>
-					<oneOrMore>
-						<ref name="e.div"/>
-					</oneOrMore>
-				</group>
 				<oneOrMore>
 					<choice>
 						<ref name="m.blocks"/>
+						<ref name="e.appraisal"/>
 					</choice>
 				</oneOrMore>
 			</choice>
@@ -487,15 +452,10 @@
 				<ref name="e.head"/>
 			</optional>
 			<choice>
-				<group>
-					<ref name="e.div"/>
-					<oneOrMore>
-						<ref name="e.div"/>
-					</oneOrMore>
-				</group>
 				<oneOrMore>
 					<choice>
 						<ref name="m.blocks"/>
+						<ref name="e.custodhist"/>
 					</choice>
 				</oneOrMore>
 			</choice>
@@ -2296,7 +2256,7 @@
 				</oneOrMore>
 			</element>
 			<ref name="e.list"/>
-			<element name="e.table">
+			<element name="table">
 				<ref name="a.common"/>
 				<optional>
 					<attribute name="frame">
