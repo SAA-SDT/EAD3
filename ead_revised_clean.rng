@@ -79,18 +79,19 @@
 			</optional>
 			<oneOrMore>
 				<choice>
+					<ref name="e.persname"/>
 					<ref name="e.corpname"/>
 					<ref name="e.name"/>
 					<ref name="e.famname"/>
-					<optional>
-						<ref name="e.descriptivenote"/>
-					</optional>
 				</choice>
 			</oneOrMore>
+			<optional>
+				<ref name="e.descriptivenote"/>
+			</optional>
 		</element>
 	</define>
 	<define name="e.repository">
-		<element name="e.repository">
+		<element name="repository">
 			<ref name="a.common"/>
 			<optional>
 				<attribute name="label"/>
@@ -1372,7 +1373,7 @@
 			</optional>
 			<zeroOrMore>
 				<choice>
-					<ref name="m.mixed.elements"/>
+					<ref name="m.mixed.basic"/>
 					<ref name="e.dimensions"/>
 				</choice>
 			</zeroOrMore>
@@ -2018,7 +2019,7 @@
 					<ref name="e.descriptivenote"/>
 				</optional>
 			</element>
-			<element name="didNote">
+			<element name="didnote">
 				<ref name="a.common"/>
 				<optional>
 					<attribute name="label"/>
@@ -2094,7 +2095,9 @@
 				</element>
 				<element name="unittype">
 					<ref name="a.common"/>
-					<attribute name="identifier"/>
+					<optional>
+						<attribute name="identifier"/>
+					</optional>
 					<text/>
 				</element>
 				<zeroOrMore>
@@ -2148,7 +2151,7 @@
 					<attribute name="identifier"/>
 				</optional>
 				<optional>
-					<attribute name="encodingAnalog"/>
+					<attribute name="encodinganalog"/>
 				</optional>
 				<ref name="m.mixed.basic"/>
 			</element>
