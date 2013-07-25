@@ -2012,6 +2012,15 @@
 				<optional>
 					<attribute name="coverage"/>
 				</optional>
+				<element name="quantity">
+					<ref name="a.common"/>
+					<text/>
+				</element>
+				<element name="unittype">
+					<ref name="a.common"/>
+					<attribute name="identifier"/>
+					<text/>
+				</element>				
 				<zeroOrMore>
 					<choice>
 						<ref name="e.dimensions"/>
