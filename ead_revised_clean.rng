@@ -1378,9 +1378,9 @@
 			</zeroOrMore>
 		</element>
 	</define>
-	
+
 	<define name="e.physfacet">
-		<element name="physFacet">
+		<element name="physfacet">
 			<ref name="a.common"/>
 			<optional>
 				<attribute name="label"/>
@@ -2052,14 +2052,16 @@
 					<ref name="a.common"/>
 					<attribute name="identifier"/>
 					<text/>
-				</element>				
+				</element>
 				<zeroOrMore>
-					<choice>
-						<ref name="e.dimensions"/>
-						<ref name="e.physfacet"/>
-					</choice>
+					<ref name="e.dimensions"/>
 				</zeroOrMore>
-				
+				<zeroOrMore>
+					<ref name="e.physfacet"/>
+				</zeroOrMore>
+				<optional>
+					<ref name="e.descriptivenote"/>
+				</optional>
 			</element>
 			<element name="physloc">
 				<ref name="a.common"/>
