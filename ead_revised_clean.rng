@@ -1392,18 +1392,8 @@
 				<attribute name="unit"/>
 			</optional>
 			<optional>
-				<attribute name="source">
-					<data type="token"/>
-				</attribute>
-			</optional>
-			<optional>
 				<attribute name="identifier"/>
-			</optional>
-			<optional>
-				<attribute name="rules">
-					<data type="NMTOKEN"/>
-				</attribute>
-			</optional>
+			</optional>			
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
