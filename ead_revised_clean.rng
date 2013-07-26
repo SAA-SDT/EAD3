@@ -1706,6 +1706,33 @@
 			</oneOrMore>
 		</element>
 	</define>
+	<define name="e.objectxmlwrap">
+		<element name="objectxmlwrap">
+			<ref name="a.common"/>
+			<ref name="e.anyname"/>
+		</element>
+	</define>
+    <define name="e.anyname">
+	<element>
+		<anyName>
+			<except>
+				<nsName ns="urn:isbn:1-931666-22-9"/>
+			</except>
+		</anyName>
+		<zeroOrMore>
+			<attribute>
+				<anyName/>
+			</attribute>
+		</zeroOrMore>
+		<zeroOrMore>
+			<choice>
+				<ref name="e.anyname"/>
+				<text/>
+			</choice>
+		</zeroOrMore>
+	</element>
+</define>
+
 
 	<!-- ATTRIBUTE VALUE LISTS -->
 
@@ -2498,7 +2525,7 @@
 				</choice>
 			</attribute>
 			<optional>
-				<attribute name="otherrelationrype">
+				<attribute name="otherrelationtype">
 					<data type="string"/>
 				</attribute>
 			</optional>
@@ -2573,6 +2600,9 @@
 				
 			</optional>
 			-->
+			<optional>
+               <ref name="e.objectxmlwrap"/>
+			</optional>
 		</element>
 	</define>
 
