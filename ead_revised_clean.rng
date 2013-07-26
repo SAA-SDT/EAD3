@@ -21,7 +21,7 @@
 				</attribute>
 				<ref name="a.desc.base"/>
 				<optional>
-					<attribute name="localType">
+					<attribute name="localtype">
 						<data type="NMTOKEN"/>
 					</attribute>
 				</optional>
@@ -304,7 +304,7 @@
 				<attribute name="encodingAnalog"/>
 			</optional>
 			<optional>
-				<attribute name="localType"/>
+				<attribute name="localtype"/>
 			</optional>
 			<optional>
 				<ref name="e.head"/>
@@ -364,7 +364,7 @@
 				<attribute name="encodingAnalog"/>
 			</optional>
 			<optional>
-				<attribute name="localType"/>
+				<attribute name="localtype"/>
 			</optional>
 			<optional>
 				<ref name="e.head"/>
@@ -386,7 +386,7 @@
 				<attribute name="encodingAnalog"/>
 			</optional>
 			<optional>
-				<attribute name="localType"/>
+				<attribute name="localtype"/>
 			</optional>
 			<optional>
 				<ref name="e.head"/>
@@ -408,7 +408,7 @@
 				<attribute name="encodingAnalog"/>
 			</optional>
 			<optional>
-				<attribute name="localType"/>
+				<attribute name="localtype"/>
 			</optional>
 			<optional>
 				<ref name="e.head"/>
@@ -536,7 +536,7 @@
 				<attribute name="encodinganalog"/>
 			</optional>
 			<optional>
-				<attribute name="localType"/>
+				<attribute name="localtype"/>
 			</optional>
 			<optional>
 				<ref name="e.head"/>
@@ -574,7 +574,7 @@
 		<element name="processinfo">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="localType"/>
+				<attribute name="localtype"/>
 			</optional>
 			<optional>
 				<attribute name="encodingAnalog"/>
@@ -599,7 +599,7 @@
 				<attribute name="encodingAnalog"/>
 			</optional>
 			<optional>
-				<attribute name="localType"/>
+				<attribute name="localtype"/>
 			</optional>
 			<optional>
 				<ref name="e.head"/>
@@ -657,7 +657,7 @@
 		<element name="odd">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="localType"/>
+				<attribute name="localtype"/>
 			</optional>
 			<optional>
 				<attribute name="encodingAnalog"/>
@@ -739,7 +739,7 @@
 		<element name="relatedmaterial">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="localType"/>
+				<attribute name="localtype"/>
 			</optional>
 			<optional>
 				<attribute name="encodingAnalog"/>
@@ -763,7 +763,7 @@
 		<element name="separatedMaterial">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="localType"/>
+				<attribute name="localtype"/>
 			</optional>
 			<optional>
 				<attribute name="encodingAnalog"/>
@@ -1094,7 +1094,7 @@
 		<element name="title">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="localType"/>
+				<attribute name="localtype"/>
 			</optional>
 			<optional>
 				<attribute name="render">
@@ -1307,7 +1307,7 @@
 			<oneOrMore>
 				<element name="addressLine">
 					<ref name="a.common"/>
-					<attribute name="localType"/>
+					<attribute name="localtype"/>
 					<ref name="m.mixed.basic"/>
 				</element>
 			</oneOrMore>
@@ -1854,7 +1854,7 @@
 					<attribute name="encodingAnalog"/>
 				</optional>
 				<optional>
-					<attribute name="localType"/>
+					<attribute name="localtype"/>
 				</optional>
 				<optional>
 					<attribute name="localTypeSource"/>
@@ -1894,9 +1894,6 @@
 				</optional>
 				<optional>
 					<attribute name="encodinganalog"/>
-				</optional>
-				<optional>
-					<attribute name="source"/>
 				</optional>
 				<optional>
 					<attribute name="rules">
@@ -1952,7 +1949,7 @@
 					<attribute name="label"/>
 				</optional>
 				<optional>
-					<attribute name="localType"/>
+					<attribute name="localtype"/>
 				</optional>
 				<optional>
 					<attribute name="encodingAnalog"/>
@@ -1975,7 +1972,7 @@
 					<attribute name="label"/>
 				</optional>
 				<optional>
-					<attribute name="localType"/>
+					<attribute name="localtype"/>
 				</optional>
 				<ref name="am.countrycode"/>
 				<optional>
@@ -1998,7 +1995,7 @@
 					<attribute name="label"/>
 				</optional>
 				<optional>
-					<attribute name="localType">
+					<attribute name="localtype">
 						<data type="NMTOKEN"/>
 					</attribute>
 				</optional>
@@ -2404,7 +2401,6 @@
 			<element name="genreFormEntry">
 				<ref name="a.common"/>
 				<optional>
-					<attribute name="localType"/>
 				</optional>
 				<ref name="a.access.no.normal"/>
 				<optional>
