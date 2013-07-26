@@ -1537,7 +1537,7 @@
 			<oneOrMore>
 				<element name="addressLine">
 					<ref name="a.common"/>
-					<attribute name="localtype"/>
+					<optional><attribute name="localtype"/></optional>
 					<ref name="m.mixed.basic"/>
 				</element>
 			</oneOrMore>
