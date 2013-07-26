@@ -32,20 +32,15 @@
 				<zeroOrMore>
 					<ref name="m.desc.base"/>
 				</zeroOrMore>
-				<choice>
-					<zeroOrMore>
-						<ref name="e.dsc"/>
-					</zeroOrMore>
-					<optional>
-						<ref name="m.cOrC01"/>
-					</optional>
-				</choice>
 				<zeroOrMore>
 					<ref name="e.dao"/>
 				</zeroOrMore>
 				<optional>
 					<ref name="e.relations"/>
 				</optional>
+					<zeroOrMore>
+						<ref name="e.dsc"/>
+					</zeroOrMore>
 			</element>
 		</element>
 	</define>
@@ -1267,6 +1262,9 @@
 					<ref name="m.blocks"/>
 				</zeroOrMore>
 			</group>
+			<optional>
+				<ref name="m.cOrC01"/>
+			</optional>
 			<choice>
 
 				<ref name="m.cOrC01"/>
