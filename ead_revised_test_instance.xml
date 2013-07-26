@@ -1,156 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?oxygen RNGSchema="ead_revised.rng" type="xml"?>
-<ead xmlns="urn:isbn:1-931666-22-9">
-    <control>
-        <recordId>xxxx</recordId>
-        <fileDesc>
-            <titleStmt>
-                <titleProper>xxxx</titleProper>
-            </titleStmt>
-            <noteStmt>
-                <controlNote>
-                    <p>xxx</p>
-                </controlNote>
-            </noteStmt>
-
-        </fileDesc>
-        <maintenanceStatus>new </maintenanceStatus>
-        <maintenanceAgency>
-            <agencyName>xxx</agencyName>
-        </maintenanceAgency>
-        <languageDeclarations>
-            <languageDeclaration>
-                <language languageCode="eng"/>
-                <script scriptCode="Latn"/>
-            </languageDeclaration>
-            <languageDeclaration>
-                <language languageCode="ger"/>
-                <script scriptCode="Latn"/>
-            </languageDeclaration>
-        </languageDeclarations>
-        <localTypeDeclaration>
-            <citation/>
-        </localTypeDeclaration>
-        <maintenanceHistory>
-            <maintenanceEvent>
-                <eventType>created</eventType>
-                <eventDateTime></eventDateTime>
-                <agentType>human</agentType>
-                <agent></agent>
-            </maintenanceEvent>
-        </maintenanceHistory>
-        
-    </control>
-
-    <archDesc level="collection">
+<?xml-model href="file:/Users/terry/Dropbox/EAD-Revision/ead_revised_clean.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<ead>
+    <archdesc level="collection">
         <did>
-            <container>xxx</container>
             <abstract/>
-            <unitTitle>Records of Stuff</unitTitle>
-            <unitDate unitDateType="inclusive">1970-1987?</unitDate>
-            <unitDateStructured unitDateType="inclusive">
-                <dateRange>
-                    <fromDate>1970</fromDate>
-                    <toDate notBefore="1985" notAfter="1990">1987</toDate>
-                </dateRange>
-            </unitDateStructured>
-            <langMaterial><language/></langMaterial>
-            <physDesc/>
-            <physDescStructured physDescStructuredType="carrier">
-                <dimensions/>
-                <num/>
-                <extent></extent>
-                <physType/>
-            </physDescStructured>
-        </did>
-
-        <biogHist>
-            <chronList>
-                <chronItem>
-                    <dateSingle>1987</dateSingle>
-                    <chronologicalSet>
-                        <event/>
-                        <event/>
-                        <placeEntry/>
-                        <placeEntry/>
-                    </chronologicalSet>
-                    <chronologicalSet>
-                        <event/>
-                    </chronologicalSet>
-                </chronItem>
-                <chronItem>
-                    <dateSingle>1988</dateSingle>
-                    <event>xxx</event>
-                </chronItem>
-            </chronList>
-        </biogHist>
-        <biogHist><div></div><div></div></biogHist>
-        <accessRestrict>
-            <list listType="ordered" numeration="arabic">
-                <item>xxx</item>
-            </list>
-        </accessRestrict>
-        <scopeContent>
-            <head/>
-            <div>
-                <head/>
-            </div>
-            <div>
-                <head/>
-            </div>
-        </scopeContent>
-        <bibliography><head></head><list><item></item></list></bibliography>
-        <controlAccess>
-            <genericNameEntry>
-                <part></part>
-            </genericNameEntry>
-            <functionEntry>
-                <part></part>
-            </functionEntry>
+            <repository/>
+            <origination>
+                <persname>
+                    <part/>
+                </persname>
+                <descriptivenote>
+                    <p/>
+                </descriptivenote>
+            </origination>
+            <origination><persname>
+                <part>ssss</part>
+            </persname></origination>
+            <unitdatestructured>
+                <daterange>
+                    <fromdate>
+                        <datesingle/>
+                    </fromdate>
+                </daterange>
+            </unitdatestructured>
+            <materialspec><p>ssklslks</p></materialspec>
+            <unitid></unitid>
+            <unitid></unitid>
+            <physdescstructured  coverage="part" physdescstructuredtype="carrier">
+                <quantity/>
+                <unittype/>
+            </physdescstructured>
+            <didnote/>
             
-            <subjectEntry >
-                <part/>
-            </subjectEntry>
-        </controlAccess>
-        <legalStatus>Blah blah blah</legalStatus>
-       
-        <materialSpec>
-            <p></p>
-        </materialSpec>
-        <relations>
-            <relation relationType="cpfRelation">
-                <relationEntry>xxx</relationEntry>
-            </relation>
-        </relations>
-        <c>
-            <did>
-                <unitTitle>Series 1: Old stuff</unitTitle>
-                <didNote/>
-
-                    <container containerId="xxxxxxxxx" localType="Box">1</container>
-                    <container containerId="yyyyyyyyy" localType="Folder">1</container>
-
-                    <dao daoType="derived" xmlns:ns1="http://www.w3.org/1999/xlink"
-                        ns1:type="simple"/>
-
-            </did>
-            <relations>
-                <relation relationType="cpfRelation">
-                    <relationEntry>xxxx</relationEntry>
-                </relation>
-            </relations>
-            <c>
-                <did>
-                    <unitTitle>Stuff</unitTitle>
-                </did>
-            </c>
-        </c>
-        <c>
-            <did>
-                <unitTitle>Series 2: New stuff</unitTitle>
-            </did>
-            <dao daoType="unknown" xmlns:ns1="http://www.w3.org/1999/xlink" ns1:type="simple"/>
-        </c>
-        
-    </archDesc>
+        </did>
+        <accessrestrict>
+            <head/>
+            <p/>
+        </accessrestrict>
+        <bibliography>
+            <head/>
+            <p/>
+        </bibliography>
+        <controlaccess>
+            <head/>
+            <blockquote><p></p></blockquote>
+            <controlaccess>
+                <table>
+                    <colspec/>
+                    <row>
+                        <thentry></thentry>
+                        <thentry></thentry>
+                        <thentry></thentry>
+                    </row>
+                    <row><entry></entry>
+                    <entry></entry>
+                    <entry></entry>
+                    </row>
+                </table>
+                <corpname>
+                    <part/>
+                </corpname>
+            </controlaccess>
+        </controlaccess>
+        <relations><relation relationtype="cpfrelation" href="http://www.example.com" linktitle="blah" linkarcrole="blah blah">
+<relationentry></relationentry>
+            <objectxmlwrap><pols></pols></objectxmlwrap>
+        </relation></relations>
+        <dsc><c01>
+            <did></did>
+        </c01></dsc>
+        <dsc><c><did><unitid>a</unitid></did></c></dsc>
+    </archdesc>
 </ead>
