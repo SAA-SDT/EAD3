@@ -2240,6 +2240,7 @@
 						<choice>
 							<oneOrMore>
 								<element name="e.chronologicalset">
+									<ref name="a.common"/>
 									<oneOrMore>
 										<ref name="e.event"/>
 									</oneOrMore>
