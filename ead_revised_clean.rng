@@ -9,10 +9,10 @@
 		<element name="ead">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="relatedEncoding"/>
+				<attribute name="relatedencoding"/>
 			</optional>
 			<!--			<ref name="e.control"/> -->
-			<element name="archDesc">
+			<element name="archdesc">
 				<ref name="a.common"/>
 				<attribute name="level">
 					<choice>
@@ -26,20 +26,12 @@
 					</attribute>
 				</optional>
 				<optional>
-					<attribute name="relatedEncoding"/>
+					<attribute name="relatedencoding"/>
 				</optional>
 				<ref name="e.did"/>
 				<zeroOrMore>
 					<ref name="m.desc.base"/>
 				</zeroOrMore>
-				<!--		<optional>
-					<element name="relations">
-						<oneOrMore>
-							<ref name="m.relation"/>
-						</oneOrMore>
-						
-					</element>
-				</optional>-->
 				<choice>
 					<zeroOrMore>
 						<ref name="e.dsc"/>
@@ -48,6 +40,12 @@
 						<ref name="m.cOrC01"/>
 					</optional>
 				</choice>
+				<zeroOrMore>
+					<ref name="e.dao"/>
+				</zeroOrMore>
+				<optional>
+					<ref name="e.relations"/>
+				</optional>
 			</element>
 		</element>
 	</define>
@@ -315,13 +313,6 @@
 		</element>
 	</define>
 
-	<define name="m.dates">
-		<choice>
-			<ref name="e.datesingle"/>
-			<ref name="e.daterange"/>
-			<ref name="e.dateset"/>
-		</choice>
-	</define>
 	<define name="e.dao">
 		<element name="dao">
 			<ref name="a.common"/>
@@ -954,7 +945,7 @@
 		<element name="head">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="altHead"/>
+				<attribute name="althead"/>
 			</optional>
 			<ref name="m.mixed.basic"/>
 		</element>
@@ -998,6 +989,184 @@
 		</element>
 	</define>
 
+<define name="e.table">
+	<element name="table">
+		<ref name="a.common"/>
+		<optional>
+			<attribute name="frame">
+				<choice>
+					<value>top</value>
+					<value>bottom</value>
+					<value>topbot</value>
+					<value>all</value>
+					<value>sides</value>
+					<value>none</value>
+				</choice>
+			</attribute>
+		</optional>
+		<optional>
+			<attribute name="cols"/>
+		</optional>
+		<optional>
+			<attribute name="width"/>
+		</optional>
+		<optional>
+			<attribute name="colsep">
+				<ref name="av.yesorno"/>
+			</attribute>
+		</optional>
+		<optional>
+			<attribute name="rowsep">
+				<ref name="av.yesorno"/>
+			</attribute>
+		</optional>
+		<optional>
+			<ref name="e.head"/>
+		</optional>
+		<optional>
+			<element name="colspec">
+				<ref name="a.common.empty"/>
+				<optional>
+					<attribute name="cols">
+						<data type="NMTOKEN"/>
+					</attribute>
+				</optional>
+				<optional>
+					<attribute name="colname">
+						<data type="NMTOKEN"/>
+					</attribute>
+				</optional>
+				<optional>
+					<attribute name="width"/>
+				</optional>
+				<optional>
+					<attribute name="colsep">
+						<ref name="av.yesorno"/>
+					</attribute>
+				</optional>
+				<optional>
+					<attribute name="rowsep">
+						<ref name="av.yesorno"/>
+					</attribute>
+				</optional>
+				<optional>
+					<attribute name="align">
+						<choice>
+							<value>left</value>
+							<value>right</value>
+							<value>center</value>
+							<value>justify</value>
+						</choice>
+					</attribute>
+				</optional>
+				<optional>
+					<attribute name="valign">
+						<choice>
+							<value>top</value>
+							<value>middle</value>
+							<value>bottom</value>
+							<value>baseline</value>
+						</choice>
+					</attribute>
+				</optional>
+				<empty/>
+			</element>
+		</optional>
+		<oneOrMore>
+			
+			<ref name="e.row"/>
+		</oneOrMore>
+	</element>
+</define>
+	<define name="e.row">
+		<element name="row">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="rowsep">
+					<ref name="av.yesorno"/>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="valign">
+					<choice>
+						<value>top</value>
+						<value>middle</value>
+						<value>bottom</value>
+						<value>baseline</value>
+					</choice>
+				</attribute>
+			</optional>
+			<oneOrMore>
+				<element name="entry">
+					<ref name="a.common"/>
+					<optional>
+						<attribute name="colname">
+							<data type="NMTOKEN"/>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="namest">
+							<data type="NMTOKEN"/>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="nameend">
+							<data type="NMTOKEN"/>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="morerows">
+							<data type="NMTOKEN"/>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="colsep">
+							<ref name="av.yesorno"/>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="rowsep">
+							<ref name="av.yesorno"/>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="align">
+							<choice>
+								<value>left</value>
+								<value>right</value>
+								<value>center</value>
+								<value>justify</value>
+							</choice>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="valign">
+							<choice>
+								<value>top</value>
+								<value>middle</value>
+								<value>bottom</value>
+								<value>baseline</value>
+							</choice>
+						</attribute>
+					</optional>
+					<zeroOrMore>
+						<choice>
+							<text/>
+							<choice>
+								<ref name="m.access.title"/>
+								<ref name="e.list"/>
+								<ref name="e.footnote"/>
+							</choice>
+						</choice>
+					</zeroOrMore>
+				</element>
+				<element name="thentry">
+					<ref name="a.common"/>
+					<ref name="m.mixed.basic"/>
+				</element>
+			</oneOrMore>
+		</element>
+	</define>
 	<define name="e.abbr">
 		<element name="abbr">
 			<ref name="a.common"/>
@@ -1067,17 +1236,17 @@
 		<element name="dsc">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="dscType">
+				<attribute name="dsctype">
 					<choice>
-						<value>analyticOver</value>
+						<value>analyticover</value>
 						<value>combined</value>
-						<value>inDepth</value>
-						<value>otherType</value>
+						<value>indepth</value>
+						<value>othertype</value>
 					</choice>
 				</attribute>
 			</optional>
 			<optional>
-				<attribute name="otherType">
+				<attribute name="othertype">
 					<data type="NMTOKEN"/>
 				</attribute>
 			</optional>
@@ -1098,6 +1267,7 @@
 				<ref name="m.cOrC01"/>
 
 			</choice>
+			
 		</element>
 	</define>
 
@@ -1250,7 +1420,6 @@
 			<zeroOrMore>
 				<ref name="e.c10"/>
 			</zeroOrMore>
-
 		</element>
 	</define>
 	<define name="e.c10">
@@ -1614,124 +1783,42 @@
 		</element>
 	</define>
 -->
-	<define name="e.row">
-		<element name="row">
-			<ref name="a.common"/>
-			<optional>
-				<attribute name="rowSep">
-					<ref name="av.yesorno"/>
-				</attribute>
-			</optional>
-			<optional>
-				<attribute name="vAlign">
-					<choice>
-						<value>top</value>
-						<value>middle</value>
-						<value>bottom</value>
-					</choice>
-				</attribute>
-			</optional>
+	
+	<define name="e.relations">
+		<element name="relations">
 			<oneOrMore>
-				<element name="entry">
-					<ref name="a.common"/>
-					<optional>
-						<attribute name="colName">
-							<data type="NMTOKEN"/>
-						</attribute>
-					</optional>
-					<optional>
-						<attribute name="namEst">
-							<data type="NMTOKEN"/>
-						</attribute>
-					</optional>
-					<optional>
-						<attribute name="nameEnd">
-							<data type="NMTOKEN"/>
-						</attribute>
-					</optional>
-					<optional>
-						<attribute name="moreRows">
-							<data type="NMTOKEN"/>
-						</attribute>
-					</optional>
-					<optional>
-						<attribute name="colSep">
-							<ref name="av.yesorno"/>
-						</attribute>
-					</optional>
-					<optional>
-						<attribute name="rowSep">
-							<ref name="av.yesorno"/>
-						</attribute>
-					</optional>
-					<optional>
-						<attribute name="align">
-							<choice>
-								<value>left</value>
-								<value>right</value>
-								<value>center</value>
-								<value>justify</value>
-								<value>char</value>
-							</choice>
-						</attribute>
-					</optional>
-					<optional>
-						<attribute name="char"/>
-					</optional>
-					<optional>
-						<attribute name="charOff">
-							<data type="NMTOKEN"/>
-						</attribute>
-					</optional>
-					<optional>
-						<attribute name="vAlign">
-							<choice>
-								<value>top</value>
-								<value>middle</value>
-								<value>bottom</value>
-							</choice>
-						</attribute>
-					</optional>
-					<zeroOrMore>
-						<choice>
-							<text/>
-							<choice>
-								<ref name="m.access.title"/>
-								<ref name="e.list"/>
-								<ref name="e.footnote"/>
-							</choice>
-						</choice>
-					</zeroOrMore>
-				</element>
+				<ref name="m.relation"/>
 			</oneOrMore>
 		</element>
 	</define>
+	
 	<define name="e.objectxmlwrap">
 		<element name="objectxmlwrap">
 			<ref name="a.common"/>
 			<ref name="e.anyname"/>
 		</element>
 	</define>
-    <define name="e.anyname">
-	<element>
-		<anyName>
-			<except>
-				<nsName ns="urn:isbn:1-931666-22-9"/>
-			</except>
-		</anyName>
-		<zeroOrMore>
-			<attribute>
-				<anyName/>
-			</attribute>
-		</zeroOrMore>
-		<zeroOrMore>
-			<choice>
-				<ref name="e.anyname"/>
-				<text/>
-			</choice>
-		</zeroOrMore>
-	</element>
-</define>
+	<define name="e.anyname">
+		<element>
+			<anyName>
+				<except>
+					<nsName ns="urn:isbn:1-931666-22-9"/>
+				</except>
+			</anyName>
+			<!--<zeroOrMore>
+				<attribute>
+					<anyName/>
+				</attribute>
+			</zeroOrMore>
+			-->
+			<zeroOrMore>
+				<choice>
+					<ref name="e.anyname"/>
+					<text/>
+				</choice>
+			</zeroOrMore>
+		</element>
+	</define>
 
 
 	<!-- ATTRIBUTE VALUE LISTS -->
@@ -1892,6 +1979,13 @@
 			<ref name="e.scopecontent"/>
 			<ref name="e.separatedmaterial"/>
 			<ref name="e.userestrict"/>
+		</choice>
+	</define>
+	<define name="m.dates">
+		<choice>
+			<ref name="e.datesingle"/>
+			<ref name="e.daterange"/>
+			<ref name="e.dateset"/>
 		</choice>
 	</define>
 	<define name="m.did">
@@ -2162,131 +2256,7 @@
 				</oneOrMore>
 			</element>
 			<ref name="e.list"/>
-			<element name="table">
-				<ref name="a.common"/>
-				<optional>
-					<attribute name="frame">
-						<choice>
-							<value>top</value>
-							<value>bottom</value>
-							<value>topbot</value>
-							<value>all</value>
-							<value>sides</value>
-							<value>none</value>
-						</choice>
-					</attribute>
-				</optional>
-				<optional>
-					<attribute name="colSep">
-						<ref name="av.yesorno"/>
-					</attribute>
-				</optional>
-				<optional>
-					<attribute name="rowSep">
-						<ref name="av.yesorno"/>
-					</attribute>
-				</optional>
-				<optional>
-					<attribute name="pgWide">
-						<ref name="av.yesorno"/>
-					</attribute>
-				</optional>
-				<optional>
-					<ref name="e.head"/>
-				</optional>
-				<oneOrMore>
-					<element name="tGroup">
-						<ref name="a.common"/>
-						<attribute name="cols">
-							<data type="NMTOKEN"/>
-						</attribute>
-						<optional>
-							<attribute name="colSep">
-								<ref name="av.yesorno"/>
-							</attribute>
-						</optional>
-						<optional>
-							<attribute name="rowSep">
-								<ref name="av.yesorno"/>
-							</attribute>
-						</optional>
-						<optional>
-							<attribute name="align">
-								<choice>
-									<value>left</value>
-									<value>right</value>
-									<value>center</value>
-									<value>justify</value>
-									<value>char</value>
-								</choice>
-							</attribute>
-						</optional>
-						<zeroOrMore>
-							<element name="colSpec">
-								<optional>
-									<attribute name="colNum">
-										<data type="NMTOKEN"/>
-									</attribute>
-								</optional>
-								<optional>
-									<attribute name="colName">
-										<data type="NMTOKEN"/>
-									</attribute>
-								</optional>
-								<optional>
-									<attribute name="colWidth"/>
-								</optional>
-								<optional>
-									<attribute name="colSep">
-										<ref name="av.yesorno"/>
-									</attribute>
-								</optional>
-								<optional>
-									<attribute name="rowSep">
-										<ref name="av.yesorno"/>
-									</attribute>
-								</optional>
-								<optional>
-									<attribute name="align">
-										<choice>
-											<value>left</value>
-											<value>right</value>
-											<value>center</value>
-											<value>justify</value>
-											<value>char</value>
-										</choice>
-									</attribute>
-								</optional>
-								<optional>
-									<attribute name="char"/>
-								</optional>
-								<optional>
-									<attribute name="charOff">
-										<data type="NMTOKEN"/>
-									</attribute>
-								</optional>
-								<empty/>
-							</element>
-
-						</zeroOrMore>
-						<element name="tbody">
-							<ref name="a.common"/>
-							<optional>
-								<attribute name="valign">
-									<choice>
-										<value>top</value>
-										<value>middle</value>
-										<value>bottom</value>
-									</choice>
-								</attribute>
-							</optional>
-							<oneOrMore>
-								<ref name="e.row"/>
-							</oneOrMore>
-						</element>
-					</element>
-				</oneOrMore>
-			</element>
+			<ref name="e.table"/>
 		</choice>
 	</define>
 	<define name="m.cOrC01">
@@ -2546,7 +2516,7 @@
 				</choice>
 			</optional>
 			<oneOrMore>
-				<element name="relationEntry">
+				<element name="relationentry">
 					<ref name="a.common"/>
 					<optional>
 						<ref name="a.localtype"/>
@@ -2601,7 +2571,7 @@
 			</optional>
 			-->
 			<optional>
-               <ref name="e.objectxmlwrap"/>
+				<ref name="e.objectxmlwrap"/>
 			</optional>
 		</element>
 	</define>
