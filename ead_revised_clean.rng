@@ -1220,6 +1220,7 @@
 	<define name="e.ref">
 		<element name="ref">
 			<ref name="a.common"/>
+			<ref name="a.internal.ptr"/>
 			<text/>
 		</element>
 	</define>
