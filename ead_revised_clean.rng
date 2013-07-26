@@ -1097,74 +1097,78 @@
 				</attribute>
 			</optional>
 			<oneOrMore>
-				<element name="entry">
-					<ref name="a.common"/>
-					<optional>
-						<attribute name="colname">
-							<data type="NMTOKEN"/>
-						</attribute>
-					</optional>
-					<optional>
-						<attribute name="namest">
-							<data type="NMTOKEN"/>
-						</attribute>
-					</optional>
-					<optional>
-						<attribute name="nameend">
-							<data type="NMTOKEN"/>
-						</attribute>
-					</optional>
-					<optional>
-						<attribute name="morerows">
-							<data type="NMTOKEN"/>
-						</attribute>
-					</optional>
-					<optional>
-						<attribute name="colsep">
-							<ref name="av.yesorno"/>
-						</attribute>
-					</optional>
-					<optional>
-						<attribute name="rowsep">
-							<ref name="av.yesorno"/>
-						</attribute>
-					</optional>
-					<optional>
-						<attribute name="align">
+				<choice>
+					<element name="thentry">
+						<ref name="a.common"/>
+						<ref name="m.mixed.basic"/>
+					</element>
+					<element name="entry">
+						<ref name="a.common"/>
+						<optional>
+							<attribute name="colname">
+								<data type="NMTOKEN"/>
+							</attribute>
+						</optional>
+						<optional>
+							<attribute name="namest">
+								<data type="NMTOKEN"/>
+							</attribute>
+						</optional>
+						<optional>
+							<attribute name="nameend">
+								<data type="NMTOKEN"/>
+							</attribute>
+						</optional>
+						<optional>
+							<attribute name="morerows">
+								<data type="NMTOKEN"/>
+							</attribute>
+						</optional>
+						<optional>
+							<attribute name="colsep">
+								<ref name="av.yesorno"/>
+							</attribute>
+						</optional>
+						<optional>
+							<attribute name="rowsep">
+								<ref name="av.yesorno"/>
+							</attribute>
+						</optional>
+						<optional>
+							<attribute name="align">
+								<choice>
+									<value>left</value>
+									<value>right</value>
+									<value>center</value>
+									<value>justify</value>
+								</choice>
+							</attribute>
+						</optional>
+						<optional>
+							<attribute name="valign">
+								<choice>
+									<value>top</value>
+									<value>middle</value>
+									<value>bottom</value>
+									<value>baseline</value>
+								</choice>
+							</attribute>
+						</optional>
+						<zeroOrMore>
 							<choice>
-								<value>left</value>
-								<value>right</value>
-								<value>center</value>
-								<value>justify</value>
+								<text/>
+								<choice>
+									<ref name="m.access.title"/>
+									<ref name="e.list"/>
+									<ref name="e.footnote"/>
+								</choice>
 							</choice>
-						</attribute>
-					</optional>
-					<optional>
-						<attribute name="valign">
-							<choice>
-								<value>top</value>
-								<value>middle</value>
-								<value>bottom</value>
-								<value>baseline</value>
-							</choice>
-						</attribute>
-					</optional>
-					<zeroOrMore>
-						<choice>
-							<text/>
-							<choice>
-								<ref name="m.access.title"/>
-								<ref name="e.list"/>
-								<ref name="e.footnote"/>
-							</choice>
-						</choice>
-					</zeroOrMore>
-				</element>
-				<element name="thentry">
-					<ref name="a.common"/>
-					<ref name="m.mixed.basic"/>
-				</element>
+						</zeroOrMore>
+					</element>
+				</choice>
+				
 			</oneOrMore>
+			
 		</element>
 	</define>
 	<define name="e.abbr">
