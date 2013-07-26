@@ -90,6 +90,64 @@
 			</optional>
 		</element>
 	</define>
+	<define name="e.physdescstructured">
+		<element name="physdescstructured">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="label"/>
+			</optional>
+			<optional>
+				<attribute name="encodinganalog"/>
+			</optional>
+			<optional>
+				<attribute name="rules">
+					<data type="NMTOKEN"/>
+				</attribute>
+			</optional>
+			<attribute name="physdescstructuredtype">
+				<choice>
+					<value>carrier</value>
+					<value>materialtype</value>
+					<value>spaceoccupied</value>
+				</choice>
+			</attribute>
+			<attribute name="coverage">
+				<choice>
+					<value>whole</value>
+					<value>part</value>
+				</choice>
+			</attribute>
+
+			<element name="quantity">
+				<ref name="a.common"/>
+				<text/>
+			</element>
+			<element name="unittype">
+				<ref name="a.common"/>
+				<optional>
+					<attribute name="identifier"/>
+				</optional>
+				<optional>
+					<attribute name="source"/>
+				</optional>
+				<optional>
+					<attribute name="rules">
+						<data type="NMTOKEN"/>
+					</attribute>
+				</optional>
+				<text/>
+			</element>
+			<zeroOrMore>
+				<ref name="e.dimensions"/>
+			</zeroOrMore>
+			<zeroOrMore>
+				<ref name="e.physfacet"/>
+			</zeroOrMore>
+			<optional>
+				<ref name="e.descriptivenote"/>
+			</optional>
+		</element>
+	</define>
 	<define name="e.repository">
 		<element name="repository">
 			<ref name="a.common"/>
@@ -732,7 +790,7 @@
 					</choice>
 				</oneOrMore>
 			</choice>
-			
+
 		</element>
 	</define>
 	<define name="e.relatedmaterial">
@@ -1247,56 +1305,56 @@
 			</optional>
 			<optional>
 				<attribute name="identifier"/>
-			</optional>			
+			</optional>
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
 			<ref name="m.mixed.basic"/>
 		</element>
 	</define>
-<define name="e.language">
-	<element name="language">
-		<ref name="a.common"/>
-	<optional>
-		<attribute name="encodinganalog"/>
-	</optional>
-	<optional>
-		<attribute name="label"/>
-	</optional>
-	<optional>
-		<attribute name="langcode"/>
-	</optional>
-  <text/>
-	</element>
-</define>
+	<define name="e.language">
+		<element name="language">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodinganalog"/>
+			</optional>
+			<optional>
+				<attribute name="label"/>
+			</optional>
+			<optional>
+				<attribute name="langcode"/>
+			</optional>
+			<text/>
+		</element>
+	</define>
 	<define name="e.script">
 		<element name="script">
 			<ref name="a.common"/>
-		<optional>
-			<attribute name="encodinganalog"/>
-		</optional>
-		<optional>
-			<attribute name="label"/>
-		</optional>
-		<optional>
-			<attribute name="scriptcode"/>
-		</optional>
-		<text/>
+			<optional>
+				<attribute name="encodinganalog"/>
+			</optional>
+			<optional>
+				<attribute name="label"/>
+			</optional>
+			<optional>
+				<attribute name="scriptcode"/>
+			</optional>
+			<text/>
 		</element>
 	</define>
-	
+
 	<define name="e.languageset">
 		<element name="languageset">
 			<ref name="a.common"/>
-		<optional>
-			<attribute name="encodinganalog"/>
-		</optional>
-		<oneOrMore>
-			<ref name="e.language"/>
-		</oneOrMore>
-		<oneOrMore>
-			<ref name="e.script"/>
-		</oneOrMore>
+			<optional>
+				<attribute name="encodinganalog"/>
+			</optional>
+			<oneOrMore>
+				<ref name="e.language"/>
+			</oneOrMore>
+			<oneOrMore>
+				<ref name="e.script"/>
+			</oneOrMore>
 		</element>
 
 	</define>
@@ -1886,63 +1944,13 @@
 				</optional>
 				<ref name="m.mixed.basic"/>
 			</element>
-
-			<element name="physdescstructured">
-				<ref name="a.common"/>
-				<optional>
-					<attribute name="label"/>
-				</optional>
-				<optional>
-					<attribute name="encodinganalog"/>
-				</optional>
-				<optional>
-					<attribute name="rules">
-						<data type="NMTOKEN"/>
-					</attribute>
-				</optional>
-					<attribute name="physdescstructuredtype">
-						<choice>
-							<value>carrier</value>
-							<value>materialtype</value>
-							<value>spaceoccupied</value>
-						</choice>
-					</attribute>
-					<attribute name="coverage">
-						<choice>
-							<value>whole</value>
-							<value>part</value>
-						</choice>
-					</attribute>
-				
-				<element name="quantity">
-					<ref name="a.common"/>
-					<text/>
-				</element>
-				<element name="unittype">
-					<ref name="a.common"/>
-					<optional>
-						<attribute name="identifier"/>
-					</optional>
-					<optional>
-						<attribute name="source"/>
-					</optional>
-					<optional>
-						<attribute name="rules">
-							<data type="NMTOKEN"/>
-						</attribute>
-					</optional>					
-					<text/>
-				</element>
-				<zeroOrMore>
-					<ref name="e.dimensions"/>
-				</zeroOrMore>
-				<zeroOrMore>
-					<ref name="e.physfacet"/>
-				</zeroOrMore>
-				<optional>
-					<ref name="e.descriptivenote"/>
-				</optional>
+			<element name="parallelphysdescset">
+				<ref name="e.physdescstructured"/>
+				<oneOrMore>
+					<ref name="e.physdescstructured"/>
+				</oneOrMore>
 			</element>
+			<ref name="e.physdescstructured"/>
 			<element name="physloc">
 				<ref name="a.common"/>
 				<optional>
@@ -2309,7 +2317,7 @@
 			<ref name="e.title"/>
 		</choice>
 	</define>
-<!--
+	<!--
 	<define name="m.access.entry">
 		<choice>
 			<element name="corpNameEntry">
