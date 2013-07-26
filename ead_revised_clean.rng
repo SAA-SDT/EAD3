@@ -58,7 +58,7 @@
 		<element name="did">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodingAnalog"/>
+				<attribute name="encodinganalog"/>
 			</optional>
 			<optional>
 				<ref name="e.head"/>
@@ -359,7 +359,7 @@
 		<element name="accessrestrict">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodingAnalog"/>
+				<attribute name="encodinganalog"/>
 			</optional>
 			<optional>
 				<attribute name="localtype"/>
@@ -381,7 +381,7 @@
 		<element name="accruals">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodingAnalog"/>
+				<attribute name="encodinganalog"/>
 			</optional>
 			<optional>
 				<ref name="e.head"/>
@@ -400,7 +400,7 @@
 		<element name="acqinfo">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodingAnalog"/>
+				<attribute name="encodinganalog"/>
 			</optional>
 			<optional>
 				<ref name="e.head"/>
@@ -419,7 +419,7 @@
 		<element name="altformavail">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodingAnalog"/>
+				<attribute name="encodinganalog"/>
 			</optional>
 			<optional>
 				<attribute name="localtype"/>
@@ -441,7 +441,7 @@
 		<element name="originalsloc">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodingAnalog"/>
+				<attribute name="encodinganalog"/>
 			</optional>
 			<optional>
 				<attribute name="localtype"/>
@@ -463,7 +463,7 @@
 		<element name="phystech">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodingAnalog"/>
+				<attribute name="encodinganalog"/>
 			</optional>
 			<optional>
 				<attribute name="localtype"/>
@@ -485,7 +485,7 @@
 		<element name="appraisal">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodingAnalog"/>
+				<attribute name="encodinganalog"/>
 			</optional>
 			<optional>
 				<ref name="e.head"/>
@@ -523,7 +523,7 @@
 		<element name="index">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodingAnalog"/>
+				<attribute name="encodinganalog"/>
 			</optional>
 			<optional>
 				<ref name="e.head"/>
@@ -571,7 +571,7 @@
 		<element name="legalstatus">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodingAnalog"/>
+				<attribute name="encodinganalog"/>
 			</optional>
 			<optional>
 				<ref name="e.head"/>
@@ -588,7 +588,6 @@
 	</define>
 	<define name="e.materialspec">
 		<element name="materialspec">
-			<!-- TC: 2012-06-13: adopt same content model as phystech -->
 			<ref name="a.common"/>
 			<optional>
 				<attribute name="encodinganalog"/>
@@ -613,7 +612,7 @@
 		<element name="prefercite">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodingAnalog"/>
+				<attribute name="encodinganalog"/>
 			</optional>
 			<optional>
 				<ref name="e.head"/>
@@ -635,7 +634,7 @@
 				<attribute name="localtype"/>
 			</optional>
 			<optional>
-				<attribute name="encodingAnalog"/>
+				<attribute name="encodinganalog"/>
 			</optional>
 			<optional>
 				<ref name="e.head"/>
@@ -654,7 +653,7 @@
 		<element name="userestrict">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodingAnalog"/>
+				<attribute name="encodinganalog"/>
 			</optional>
 			<optional>
 				<attribute name="localtype"/>
@@ -676,7 +675,7 @@
 		<element name="bioghist">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodingAnalog"/>
+				<attribute name="encodinganalog"/>
 			</optional>
 			<optional>
 				<ref name="e.head"/>
@@ -695,7 +694,7 @@
 		<element name="controlaccess">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodingAnalog"/>
+				<attribute name="encodinganalog"/>
 			</optional>
 			<optional>
 				<ref name="e.head"/>
@@ -718,7 +717,7 @@
 				<attribute name="localtype"/>
 			</optional>
 			<optional>
-				<attribute name="encodingAnalog"/>
+				<attribute name="encodinganalog"/>
 			</optional>
 			<optional>
 				<ref name="e.head"/>
@@ -737,7 +736,7 @@
 		<element name="scopecontent">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodingAnalog"/>
+				<attribute name="encodinganalog"/>
 			</optional>
 			<optional>
 				<ref name="e.head"/>
@@ -756,7 +755,7 @@
 		<element name="arrangement">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodingAnalog"/>
+				<attribute name="encodinganalog"/>
 			</optional>
 			<optional>
 				<ref name="e.head"/>
@@ -800,7 +799,7 @@
 				<attribute name="localtype"/>
 			</optional>
 			<optional>
-				<attribute name="encodingAnalog"/>
+				<attribute name="encodinganalog"/>
 			</optional>
 			<optional>
 				<ref name="e.head"/>
@@ -824,7 +823,7 @@
 				<attribute name="localtype"/>
 			</optional>
 			<optional>
-				<attribute name="encodingAnalog"/>
+				<attribute name="encodinganalog"/>
 			</optional>
 			<optional>
 				<ref name="e.head"/>
@@ -1083,7 +1082,7 @@
 				</attribute>
 			</optional>
 			<optional>
-				<attribute name="encodingAnalog"/>
+				<attribute name="encodinganalog"/>
 			</optional>
 			<ref name="a.dsctab.tPattern"/>
 			<group>
@@ -1121,7 +1120,7 @@
 		<element name="bibref">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodingAnalog"/>
+				<attribute name="encodinganalog"/>
 			</optional>
 			<zeroOrMore>
 				<choice>
@@ -1136,7 +1135,7 @@
 		<element name="archref">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodingAnalog"/>
+				<attribute name="encodinganalog"/>
 			</optional>
 			<zeroOrMore>
 				<choice>
@@ -1163,7 +1162,7 @@
 			</optional>
 			<ref name="a.access"/>
 			<optional>
-				<attribute name="encodingAnalog"/>
+				<attribute name="encodinganalog"/>
 			</optional>
 			<zeroOrMore>
 				<ref name="m.mixed.basic"/>
@@ -1795,7 +1794,7 @@
 			</attribute>
 		</optional>
 		<optional>
-			<attribute name="encodingAnalog"/>
+			<attribute name="encodinganalog"/>
 		</optional>
 	</define>
 	<define name="a.desc.c">
@@ -1856,7 +1855,6 @@
 			<ref name="e.custodhist"/>
 			<ref name="e.index"/>
 			<ref name="e.legalstatus"/>
-			<ref name="e.materialspec"/>
 			<ref name="e.odd"/>
 			<ref name="e.originalsloc"/>
 			<ref name="e.otherfindaid"/>
@@ -1909,7 +1907,7 @@
 					<attribute name="label"/>
 				</optional>
 				<optional>
-					<attribute name="encodingAnalog"/>
+					<attribute name="encodinganalog"/>
 				</optional>
 				<optional>
 					<attribute name="localtype"/>
@@ -1960,14 +1958,13 @@
 					<attribute name="localtype"/>
 				</optional>
 				<optional>
-					<attribute name="encodingAnalog"/>
+					<attribute name="encodinganalog"/>
 				</optional>
 				<optional>
 					<attribute name="parent">
 						<data type="IDREFS"/>
 					</attribute>
 				</optional>
-				<!-- TC: 2012-06-13: only permit emph and ref as element children -->
 				<ref name="m.mixed.basic"/>
 			</element>
 			<ref name="e.repository"/>
@@ -2008,7 +2005,7 @@
 					</attribute>
 				</optional>
 				<optional>
-					<attribute name="encodingAnalog"/>
+					<attribute name="encodinganalog"/>
 				</optional>
 				<optional>
 					<attribute name="parent">
@@ -2025,6 +2022,7 @@
 				<ref name="m.mixed.basic"/>
 
 			</element>
+			<ref name="e.materialspec"/>
 			<ref name="e.dao"/>
 		</choice>
 	</define>
@@ -2324,7 +2322,7 @@
 				<ref name="a.common"/>
 				<ref name="a.access.no.normal"/>
 				<optional>
-					<attribute name="encodingAnalog"/>
+					<attribute name="encodinganalog"/>
 				</optional>
 				<optional>
 					<attribute name="role"/>
@@ -2337,7 +2335,7 @@
 				<ref name="a.common"/>
 				<ref name="a.access.no.normal"/>
 				<optional>
-					<attribute name="encodingAnalog"/>
+					<attribute name="encodinganalog"/>
 				</optional>
 				<optional>
 					<attribute name="role"/>
@@ -2350,7 +2348,7 @@
 				<ref name="a.common"/>
 				<ref name="a.access.no.normal"/>
 				<optional>
-					<attribute name="encodingAnalog"/>
+					<attribute name="encodinganalog"/>
 				</optional>
 				<optional>
 					<attribute name="role"/>
@@ -2363,7 +2361,7 @@
 				<ref name="a.common"/>
 				<ref name="a.access.no.normal"/>
 				<optional>
-					<attribute name="encodingAnalog"/>
+					<attribute name="encodinganalog"/>
 				</optional>
 				<optional>
 					<attribute name="role"/>
@@ -2376,7 +2374,7 @@
 				<ref name="a.common"/>
 				<ref name="a.access.no.normal"/>
 				<optional>
-					<attribute name="encodingAnalog"/>
+					<attribute name="encodinganalog"/>
 				</optional>
 
 				<oneOrMore>
@@ -2387,7 +2385,7 @@
 				<ref name="a.common"/>
 				<ref name="a.access.no.normal"/>
 				<optional>
-					<attribute name="encodingAnalog"/>
+					<attribute name="encodinganalog"/>
 				</optional>
 				<optional>
 					<attribute name="role"/>
@@ -2400,7 +2398,7 @@
 				<ref name="a.common"/>
 				<ref name="a.access.no.normal"/>
 				<optional>
-					<attribute name="encodingAnalog"/>
+					<attribute name="encodinganalog"/>
 				</optional>
 				<oneOrMore>
 					<ref name="e.part"/>
@@ -2412,7 +2410,7 @@
 				</optional>
 				<ref name="a.access.no.normal"/>
 				<optional>
-					<attribute name="encodingAnalog"/>
+					<attribute name="encodinganalog"/>
 				</optional>
 				<oneOrMore>
 					<ref name="e.part"/>
@@ -2422,7 +2420,7 @@
 				<ref name="a.common"/>
 				<ref name="a.access.no.normal"/>
 				<optional>
-					<attribute name="encodingAnalog"/>
+					<attribute name="encodinganalog"/>
 				</optional>
 				<oneOrMore>
 					<ref name="e.part"/>
@@ -2432,7 +2430,7 @@
 				<ref name="a.common"/>
 				<ref name="a.access.no.normal"/>
 				<optional>
-					<attribute name="encodingAnalog"/>
+					<attribute name="encodinganalog"/>
 				</optional>
 				<oneOrMore>
 					<ref name="e.part"/>
