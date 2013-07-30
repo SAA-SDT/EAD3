@@ -2728,83 +2728,83 @@
 					<ref name="m.id"/>
 				</element>
 			</zeroOrMore>
-			<element name="fileDesc">
+			<element name="filedesc">
 				<ref name="a.common"/>
 				<optional>
-					<attribute name="encodingAnalog"/>
+					<attribute name="encodinganalog"/>
 				</optional>
 				<element name="titleStmt">
 					<ref name="a.common"/>
 					<optional>
-						<attribute name="encodingAnalog"/>
+						<attribute name="encodinganalog"/>
 					</optional>
 					<oneOrMore>
-						<ref name="titleProper"/>
+						<ref name="e.titleproper"/>
 					</oneOrMore>
 					<zeroOrMore>
-						<ref name="subtitle"/>
+						<ref name="e.subtitle"/>
 					</zeroOrMore>
 					<zeroOrMore>
-						<ref name="author"/>
+						<ref name="e.author"/>
 					</zeroOrMore>
 					<zeroOrMore>
-						<ref name="sponsor"/>
+						<ref name="e.sponsor"/>
 					</zeroOrMore>
 				</element>
 				<optional>
-					<element name="editionStmt">
+					<element name="editionstmt">
 						<ref name="a.common"/>
 						<optional>
-							<attribute name="encodingAnalog"/>
+							<attribute name="encodinganalog"/>
 						</optional>
 						<oneOrMore>
 							<choice>
-								<ref name="edition"/>
-								<ref name="p"/>
+								<ref name="e.edition"/>
+								<ref name="e.p"/>
 							</choice>
 						</oneOrMore>
 					</element>
 				</optional>
 				<optional>
-					<element name="publicationStmt">
+					<element name="publicationstmt">
 						<ref name="a.common"/>
 						<optional>
-							<attribute name="encodingAnalog"/>
+							<attribute name="encodinganalog"/>
 						</optional>
 						<oneOrMore>
 							<choice>
-								<ref name="publisher"/>
-								<ref name="date"/>
-								<ref name="address"/>
-								<ref name="num"/>
-								<ref name="p"/>
+								<ref name="e.publisher"/>
+								<ref name="e.date"/>
+								<ref name="e.address"/>
+								<ref name="e.num"/>
+								<ref name="e.p"/>
 							</choice>
 						</oneOrMore>
 					</element>
 				</optional>
 				<optional>
-					<element name="seriesStmt">
+					<element name="seriesstmt">
 						<ref name="a.common"/>
 						<optional>
-							<attribute name="encodingAnalog"/>
+							<attribute name="encodinganalog"/>
 						</optional>
 						<oneOrMore>
 							<choice>
-								<ref name="titleProper"/>
-								<ref name="num"/>
-								<ref name="p"/>
+								<ref name="e.titleproper"/>
+								<ref name="e.num"/>
+								<ref name="e.p"/>
 							</choice>
 						</oneOrMore>
 					</element>
 				</optional>
 				<optional>
-					<element name="noteStmt">
+					<element name="notestmt">
 						<ref name="a.common"/>
 						<optional>
-							<attribute name="encodingAnalog"/>
+							<attribute name="encodinganalog"/>
 						</optional>
 						<oneOrMore>
-							<ref name="e.controlNote"/>
+							<ref name="e.controlnote"/>
 						</oneOrMore>
 					</element>
 				</optional>
@@ -2873,5 +2873,121 @@
 		</optional>
 		<text/>
 	</define>
+	<define name="e.titleproper">
+		<element name="titleproper">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="render">
+					<choice>
+						<ref name="av.render"/>
+					</choice>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="localtype"/>
+			</optional>
+			<optional>
+				<attribute name="encodinganalog"/>
+			</optional>
+			<zeroOrMore>
+				<ref name="m.mixed.basic"/>
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="e.subtitle">
+		<element name="subtitle">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodinganalog"/>
+			</optional>
+			<zeroOrMore>
 
+					<ref name="m.mixed.basic"/>
+
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="e.author">
+		<element name="author">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodinganalog"/>
+			</optional>
+			<zeroOrMore>
+					<ref name="m.mixed.basic"/>
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="e.sponsor">
+		<element name="sponsor">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodinganalog"/>
+			</optional>
+			<zeroOrMore>
+				<ref name="m.mixed.basic"/>
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="e.edition">
+		<element name="edition">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodinganalog"/>
+			</optional>
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<ref name="m.mixed.basic"/>
+				</choice>
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="e.date">
+		<element name="date">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="localtype"/>
+			</optional>
+			<ref name="am.dates.era"/>
+			<ref name="am.dates.calendar"/>
+			<ref name="am.date.normal"/>
+			<optional>
+				<attribute name="certainty"/>
+			</optional>
+			<optional>
+				<attribute name="encodinganalog"/>
+			</optional>
+		      <ref name="m.mixed.basic"/>
+		</element>
+	</define>
+	
+	<define name="e.publisher">
+		<element name="publisher">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodingAnalog"/>
+			</optional>
+			<zeroOrMore>
+				<choice>
+					<text/>
+					<ref name="m.mixed.basic"/>
+				</choice>
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="e.controlnote">
+		<element name="controlnote">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="localtype"/>
+			</optional>
+			<optional>
+				<attribute name="encodinganalog"/>
+			</optional>
+			<oneOrMore>
+				<ref name="m.blocks"/>
+			</oneOrMore>
+		</element>
+	</define>
 </grammar>
