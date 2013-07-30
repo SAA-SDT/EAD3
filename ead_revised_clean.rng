@@ -11,7 +11,7 @@
 			<optional>
 				<attribute name="relatedencoding"/>
 			</optional>
-			<!--			<ref name="e.control"/> -->
+			<ref name="e.control"/>
 			<element name="archdesc">
 				<ref name="a.common"/>
 				<attribute name="level">
