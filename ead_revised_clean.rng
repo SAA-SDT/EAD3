@@ -382,6 +382,25 @@
 			</choice>
 		</element>
 	</define>
+	<define name="e.fileplan">
+		<element name="fileplan">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="encodinganalog"/>
+			</optional>
+			<optional>
+				<ref name="e.head"/>
+			</optional>
+			<choice>
+				<oneOrMore>
+					<choice>
+						<ref name="m.blocks"/>
+						<ref name="e.fileplan"/>
+					</choice>
+				</oneOrMore>
+			</choice>
+		</element>
+	</define>
 	<define name="e.acqinfo">
 		<element name="acqinfo">
 			<ref name="a.common"/>
@@ -1971,6 +1990,7 @@
 			<ref name="e.bioghist"/>
 			<ref name="e.controlaccess"/>
 			<ref name="e.custodhist"/>
+			<ref name="e.fileplan"/>
 			<ref name="e.index"/>
 			<ref name="e.legalstatus"/>
 			<ref name="e.odd"/>
