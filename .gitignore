@@ -1,3 +1,3 @@
 .DS_Store
 .strawman
-*.xsl
+/xslt
