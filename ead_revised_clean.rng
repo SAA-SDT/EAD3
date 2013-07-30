@@ -2809,12 +2809,8 @@
 					</element>
 				</optional>
 			</element>
-			<element a:id="maintenanceStatus" name="maintenanceStatus">
-				<optional>
-					<attribute name="id">
-						<data type="ID"/>
-					</attribute>
-				</optional>
+			<element name="maintenanceStatus">
+<ref name="a.common"/>
 				<choice>
 					<value>revised</value>
 					<value>deleted</value>
@@ -2826,19 +2822,15 @@
 				</choice>
 			</element>
 			<optional>
-				<element a:id="publicationStatus" name="publicationStatus">
-					<optional>
-						<attribute name="id">
-							<data type="ID"/>
-						</attribute>
-					</optional>
+				<element name="publicationStatus">
+<ref name="a.common"/>
 					<choice>
 						<value>inProcess</value>
 						<value>approved</value>
 					</choice>
 				</element>
 			</optional>
-			<ref name="e.maintenanceAgency"/>
+			<ref name="e.maintenanceagency"/>
 			<optional>
 				<choice>
 					<ref name="e.languageDeclaration"/>
@@ -2988,6 +2980,35 @@
 			<oneOrMore>
 				<ref name="m.blocks"/>
 			</oneOrMore>
+		</element>
+	</define>
+	
+	<!-- from EAC-CPF -->
+	
+	<define name="e.maintenanceagency">
+		<element name="maintenanceagency">
+			<ref name="a.common"/>
+			<optional>
+				<element name="agencycode">
+					<optional>
+						<ref name="a.common"/>
+					</optional>
+					<text/>
+				</element>
+			</optional>
+			<zeroOrMore>
+				<element name="otheragencycode">
+					<ref name="a.common"/>
+					<attribute name="localtype"/>
+					<data type="NMTOKEN"/>
+				</element>
+			</zeroOrMore>
+			<element name="agencyname">
+				<text/>
+			</element>
+			<optional>
+				<ref name="e.descriptivenote"/>
+			</optional>
 		</element>
 	</define>
 </grammar>
