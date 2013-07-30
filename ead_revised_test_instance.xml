@@ -26,6 +26,11 @@
             <materialspec><p>ssklslks</p></materialspec>
             <unitid></unitid>
             <unitid></unitid>
+            <repository><corpname>
+                <part></part>
+            </corpname><address><addressLine></addressLine></address><descriptivenote>
+                <p></p>
+            </descriptivenote></repository>
             <physdescstructured  coverage="part" physdescstructuredtype="carrier">
                 <quantity/>
                 <unittype/>
