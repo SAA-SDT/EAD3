@@ -2723,9 +2723,16 @@
 				<data type="NMTOKEN"/>
 			</element>
 			<zeroOrMore>
-				<element a:id="otherRecordId" name="otherRecordId">
+				<element  name="otherrecordid">
 <ref name="a.common"/>
 					<ref name="m.id"/>
+				</element>
+			</zeroOrMore>
+			<zeroOrMore>
+				<element  name="representation">
+					<ref name="a.common"/>
+					<ref name="am.simplelink"/>
+					<text/>
 				</element>
 			</zeroOrMore>
 			<element name="filedesc">
