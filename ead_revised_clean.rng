@@ -2899,9 +2899,90 @@
 					</optional>
 				</element>
 			</zeroOrMore>
-			<ref name="e.maintenancehistory"/>
+			<element  name="maintenancehistory">
+				<ref name="a.common"/>
+				<oneOrMore>
+					<element name="maintenanceevent">
+						<ref name="a.common"/>
+						<element name="eventtype">
+							<ref name="a.common"/>
+							<choice>
+								<value>created</value>
+								<value>revised</value>
+								<value>deleted</value>
+								<value>cancelled</value>
+								<value>derived</value>
+								<value>updated</value>
+								<value>unknown</value>
+							</choice>
+						</element>
+						<element  name="eventdatetime">
+							<ref name="a.common"/>
+							<optional>
+								<attribute  name="standarddatetime">
+									<ref name="m.data.standardDateTime"/>
+								</attribute>
+							</optional>
+							<text/>
+						</element>
+						<element  name="agenttype">
+							<ref name="a.common"/>
+							<choice>
+								<value>human</value>
+								<value>machine</value>
+								<value>unknown</value>
+							</choice>
+						</element>
+						<element a:id="agent" name="agent">
+							<ref name="a.common"/>
+							<text/>
+						</element>
+						<optional>
+							<element a:id="eventdesccription" name="eventdescription">
+								<ref name="a.common"/>
+								<text/>
+							</element>
+						</optional>
+					</element>
+				</oneOrMore>
+			</element>
 			<optional>
-				<ref name="e.sources"/>
+				<element name="sources">
+					<ref name="a.common"/>
+					<optional>
+						<attribute name="base">
+							<data type="anyURI"/>
+						</attribute>
+					</optional>
+					<oneOrMore>
+						<element name="source">
+							<ref name="a.common"/>
+							<optional>
+								<ref name="a.lastdatetimeverified"/>
+							</optional>
+							<optional>
+								<ref name="am.simplelink"/>
+							</optional>
+							<optional>
+								<element name="sourceEntry">
+									<ref name="a.common"/>
+									<optional>
+										<attribute name="transliteration"/>
+									</optional>
+									<text/>
+								</element>
+							</optional>
+							<optional>
+								<choice>
+									<ref name="e.objectxmlwrap"/>
+								</choice>
+							</optional>
+							<optional>
+								<ref name="e.descriptivenote"/>
+							</optional>
+						</element>
+					</oneOrMore>
+				</element>
 			</optional>
 		</element>
 	</define>
