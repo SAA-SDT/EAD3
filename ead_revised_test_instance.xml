@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="file:/Users/terry/Dropbox/EAD-Revision/ead_revised_clean.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="file:ead_revised_clean.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <ead>
     <archdesc level="collection">
         <did>
@@ -67,8 +67,8 @@
             <objectxmlwrap><pols></pols></objectxmlwrap>
         </relation></relations>
         <dsc><c01>
-            <did></did>
+            <did><unitdate></unitdate></did>
         </c01></dsc>
-        <dsc><c><did><unitid>a</unitid></did></c></dsc>
+        <dsc><c><did><unitid >a</unitid></did></c></dsc>
     </archdesc>
 </ead>
