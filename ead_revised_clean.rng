@@ -2831,20 +2831,18 @@
 				</element>
 			</optional>
 			<ref name="e.maintenanceagency"/>
-			<optional>
-				<choice>
-					<ref name="e.languageDeclaration"/>
-					<element name="languageDeclarations">
-						<ref name="a.common"/>
-						<ref name="e.languageDeclaration"/>
-						<oneOrMore>
-							<ref name="e.languageDeclaration"/>
-						</oneOrMore>
-					</element>
-				</choice>
-			</optional>
 			<zeroOrMore>
-				<ref name="e.conventionDeclaration"/>
+					<element name="languagedeclaration">
+						<ref name="a.common"/>
+						<ref name="e.language"/>
+						<ref name="e.script"/>
+						<optional>
+							<ref name="e.descriptivenote"/>
+						</optional>
+					</element>				
+			</zeroOrMore>
+			<zeroOrMore>
+				<ref name="e.conventiondeclaration"/>
 			</zeroOrMore>
 			<zeroOrMore>
 				<ref name="e.localTypeDeclaration"/>
