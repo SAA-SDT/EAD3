@@ -2842,15 +2842,64 @@
 					</element>				
 			</zeroOrMore>
 			<zeroOrMore>
-				<ref name="e.conventiondeclaration"/>
+
+					<element  name="conventiondeclaration">
+						<ref name="a.common"/>
+						<optional>
+							<ref name="e.abbr"/>
+						</optional>
+						<ref name="e.citation"/>
+						<optional>
+							<ref name="e.descriptivenote"/>
+						</optional>
+					</element>
+				
 			</zeroOrMore>
 			<zeroOrMore>
-				<ref name="e.localTypeDeclaration"/>
+				<element name="localtypedeclaration">
+					<ref name="a.common"/>
+					<optional>
+						<ref name="e.abbr"/>
+					</optional>
+					<ref name="e.citation"/>
+					<optional>
+						<ref name="e.descriptivenote"/>
+					</optional>
+				</element>
 			</zeroOrMore>
 			<zeroOrMore>
-				<ref name="e.localControl"/>
+				<element name="localcontrol">
+					<ref name="a.common"/>
+					<attribute name="localtype"/>
+					<optional>
+						<element name="term">
+							<ref name="a.common"/>
+							<optional>
+								<attribute name="transliteration"/>
+							</optional>
+							<optional>
+								<ref name="a.lastdatetimeverified"/>
+							</optional>
+							<optional>
+								<attribute name="source">
+									<data type="string"/>
+								</attribute>
+							</optional>
+							<optional>
+								<attribute name="identifier"/>
+							</optional>
+							<text/>
+						</element>
+					</optional>
+					<optional>
+						<choice>
+							<ref name="e.datesingle"/>
+							<ref name="e.daterange"/>
+						</choice>
+					</optional>
+				</element>
 			</zeroOrMore>
-			<ref name="e.maintenanceHistory"/>
+			<ref name="e.maintenancehistory"/>
 			<optional>
 				<ref name="e.sources"/>
 			</optional>
@@ -3008,5 +3057,43 @@
 				<ref name="e.descriptivenote"/>
 			</optional>
 		</element>
+		
+		
+		
+	</define>
+	
+	<define name="e.citation">
+		<element a:id="citation" name="citation">
+			<ref name="a.common"/>
+			<optional>
+				<ref name="am.simplelink"/>
+			</optional>
+			<optional>
+				<ref name="a.lastdatetimeverified"/>
+			</optional>
+			<ref name="m.mixed.basic"/>
+		</element>
+	</define>
+	<define name="a.lastdatetimeverified">
+		<attribute name="lastdatetimeverified">
+			<ref name="m.data.standardDateTime"/>
+		</attribute>
+	</define>
+	
+	<define name="m.data.standardDateTime">
+		<choice>
+			<data type="date">
+				<param name="maxInclusive">2099-12-31</param>
+			</data>
+			<data type="gYear">
+				<param name="maxInclusive">2099</param>
+			</data>
+			<data type="gYearMonth">
+				<param name="maxInclusive">2099-12</param>
+			</data>
+			<data type="dateTime">
+				<param name="maxInclusive">2099-12-31T23:59:59</param>
+			</data>
+		</choice>
 	</define>
 </grammar>
