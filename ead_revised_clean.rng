@@ -2724,11 +2724,7 @@
 			</element>
 			<zeroOrMore>
 				<element a:id="otherRecordId" name="otherRecordId">
-					<optional>
-						<attribute name="id">
-							<data type="ID"/>
-						</attribute>
-					</optional>
+<ref name="a.common"/>
 					<ref name="m.id"/>
 				</element>
 			</zeroOrMore>
@@ -2871,5 +2867,11 @@
 		</element>
 	</define>
 	
+	<define name="m.id">
+		<optional>
+			<attribute name="localtype"/>
+		</optional>
+		<text/>
+	</define>
 
 </grammar>
