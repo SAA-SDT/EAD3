@@ -2714,14 +2714,12 @@
 		<element name="control">
             <ref name="a.common"/>
 			<optional>
-				<ref name="base"/>
+				<attribute name="base">
+					<data type="anyURI"/>
+				</attribute>
 			</optional>
-			<element a:id="recordId" name="recordId">
-				<optional>
-					<attribute name="id">
-						<data type="ID"/>
-					</attribute>
-				</optional>
+			<element  name="recordid">
+<ref name="a.common"/>
 				<data type="NMTOKEN"/>
 			</element>
 			<zeroOrMore>

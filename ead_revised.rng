@@ -5256,7 +5256,9 @@ Other changes:
 				<ref name="lang"/>
 			</optional>
 			<optional>
-				<ref name="base"/>
+				<attribute name="base">
+					<data type="anyURI"/>
+				</attribute>
 			</optional>
 			<element a:id="recordId" name="recordId">
 				<optional>
