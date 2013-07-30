@@ -2707,5 +2707,171 @@
 			</attribute>
 		</optional>
 	</define>
+	
+	<!-- Control and inherited models from EAC-CPF -->
+	
+	<define name="e.control">
+		<element name="control">
+            <ref name="a.common"/>
+			<optional>
+				<ref name="base"/>
+			</optional>
+			<element a:id="recordId" name="recordId">
+				<optional>
+					<attribute name="id">
+						<data type="ID"/>
+					</attribute>
+				</optional>
+				<data type="NMTOKEN"/>
+			</element>
+			<zeroOrMore>
+				<element a:id="otherRecordId" name="otherRecordId">
+					<optional>
+						<attribute name="id">
+							<data type="ID"/>
+						</attribute>
+					</optional>
+					<ref name="m.id"/>
+				</element>
+			</zeroOrMore>
+			<element name="fileDesc">
+				<ref name="a.common"/>
+				<optional>
+					<attribute name="encodingAnalog"/>
+				</optional>
+				<element name="titleStmt">
+					<ref name="a.common"/>
+					<optional>
+						<attribute name="encodingAnalog"/>
+					</optional>
+					<oneOrMore>
+						<ref name="titleProper"/>
+					</oneOrMore>
+					<zeroOrMore>
+						<ref name="subtitle"/>
+					</zeroOrMore>
+					<zeroOrMore>
+						<ref name="author"/>
+					</zeroOrMore>
+					<zeroOrMore>
+						<ref name="sponsor"/>
+					</zeroOrMore>
+				</element>
+				<optional>
+					<element name="editionStmt">
+						<ref name="a.common"/>
+						<optional>
+							<attribute name="encodingAnalog"/>
+						</optional>
+						<oneOrMore>
+							<choice>
+								<ref name="edition"/>
+								<ref name="p"/>
+							</choice>
+						</oneOrMore>
+					</element>
+				</optional>
+				<optional>
+					<element name="publicationStmt">
+						<ref name="a.common"/>
+						<optional>
+							<attribute name="encodingAnalog"/>
+						</optional>
+						<oneOrMore>
+							<choice>
+								<ref name="publisher"/>
+								<ref name="date"/>
+								<ref name="address"/>
+								<ref name="num"/>
+								<ref name="p"/>
+							</choice>
+						</oneOrMore>
+					</element>
+				</optional>
+				<optional>
+					<element name="seriesStmt">
+						<ref name="a.common"/>
+						<optional>
+							<attribute name="encodingAnalog"/>
+						</optional>
+						<oneOrMore>
+							<choice>
+								<ref name="titleProper"/>
+								<ref name="num"/>
+								<ref name="p"/>
+							</choice>
+						</oneOrMore>
+					</element>
+				</optional>
+				<optional>
+					<element name="noteStmt">
+						<ref name="a.common"/>
+						<optional>
+							<attribute name="encodingAnalog"/>
+						</optional>
+						<oneOrMore>
+							<ref name="e.controlNote"/>
+						</oneOrMore>
+					</element>
+				</optional>
+			</element>
+			<element a:id="maintenanceStatus" name="maintenanceStatus">
+				<optional>
+					<attribute name="id">
+						<data type="ID"/>
+					</attribute>
+				</optional>
+				<choice>
+					<value>revised</value>
+					<value>deleted</value>
+					<value>new</value>
+					<value>deletedSplit</value>
+					<value>deletedReplaced</value>
+					<value>cancelled</value>
+					<value>derived</value>
+				</choice>
+			</element>
+			<optional>
+				<element a:id="publicationStatus" name="publicationStatus">
+					<optional>
+						<attribute name="id">
+							<data type="ID"/>
+						</attribute>
+					</optional>
+					<choice>
+						<value>inProcess</value>
+						<value>approved</value>
+					</choice>
+				</element>
+			</optional>
+			<ref name="e.maintenanceAgency"/>
+			<optional>
+				<choice>
+					<ref name="e.languageDeclaration"/>
+					<element name="languageDeclarations">
+						<ref name="a.common"/>
+						<ref name="e.languageDeclaration"/>
+						<oneOrMore>
+							<ref name="e.languageDeclaration"/>
+						</oneOrMore>
+					</element>
+				</choice>
+			</optional>
+			<zeroOrMore>
+				<ref name="e.conventionDeclaration"/>
+			</zeroOrMore>
+			<zeroOrMore>
+				<ref name="e.localTypeDeclaration"/>
+			</zeroOrMore>
+			<zeroOrMore>
+				<ref name="e.localControl"/>
+			</zeroOrMore>
+			<ref name="e.maintenanceHistory"/>
+			<optional>
+				<ref name="e.sources"/>
+			</optional>
+		</element>
+	</define>
+	
 
 </grammar>
