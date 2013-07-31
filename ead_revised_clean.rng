@@ -180,8 +180,9 @@
 			</optional>
 			<zeroOrMore>
 				<choice>
-					<text/>
-					<ref name="m.para.content"/>
+					<ref name="m.mixed.elements"/>
+					<ref name="m.access.title"/>
+					<ref name="e.footnote"/>
 				</choice>
 			</zeroOrMore>
 		</element>
