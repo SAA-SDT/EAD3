@@ -38,9 +38,9 @@
 				<optional>
 					<ref name="e.relations"/>
 				</optional>
-					<zeroOrMore>
-						<ref name="e.dsc"/>
-					</zeroOrMore>
+				<zeroOrMore>
+					<ref name="e.dsc"/>
+				</zeroOrMore>
 			</element>
 		</element>
 	</define>
@@ -1003,95 +1003,95 @@
 		</element>
 	</define>
 
-<define name="e.table">
-	<element name="table">
-		<ref name="a.common"/>
-		<optional>
-			<attribute name="frame">
-				<choice>
-					<value>top</value>
-					<value>bottom</value>
-					<value>topbot</value>
-					<value>all</value>
-					<value>sides</value>
-					<value>none</value>
-				</choice>
-			</attribute>
-		</optional>
-		<optional>
-			<attribute name="cols"/>
-		</optional>
-		<optional>
-			<attribute name="width"/>
-		</optional>
-		<optional>
-			<attribute name="colsep">
-				<ref name="av.yesorno"/>
-			</attribute>
-		</optional>
-		<optional>
-			<attribute name="rowsep">
-				<ref name="av.yesorno"/>
-			</attribute>
-		</optional>
-		<optional>
-			<ref name="e.head"/>
-		</optional>
-		<optional>
-			<element name="colspec">
-				<ref name="a.common.empty"/>
-				<optional>
-					<attribute name="cols">
-						<data type="NMTOKEN"/>
-					</attribute>
-				</optional>
-				<optional>
-					<attribute name="colname">
-						<data type="NMTOKEN"/>
-					</attribute>
-				</optional>
-				<optional>
-					<attribute name="width"/>
-				</optional>
-				<optional>
-					<attribute name="colsep">
-						<ref name="av.yesorno"/>
-					</attribute>
-				</optional>
-				<optional>
-					<attribute name="rowsep">
-						<ref name="av.yesorno"/>
-					</attribute>
-				</optional>
-				<optional>
-					<attribute name="align">
-						<choice>
-							<value>left</value>
-							<value>right</value>
-							<value>center</value>
-							<value>justify</value>
-						</choice>
-					</attribute>
-				</optional>
-				<optional>
-					<attribute name="valign">
-						<choice>
-							<value>top</value>
-							<value>middle</value>
-							<value>bottom</value>
-							<value>baseline</value>
-						</choice>
-					</attribute>
-				</optional>
-				<empty/>
-			</element>
-		</optional>
-		<oneOrMore>
-			
-			<ref name="e.row"/>
-		</oneOrMore>
-	</element>
-</define>
+	<define name="e.table">
+		<element name="table">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="frame">
+					<choice>
+						<value>top</value>
+						<value>bottom</value>
+						<value>topbot</value>
+						<value>all</value>
+						<value>sides</value>
+						<value>none</value>
+					</choice>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="cols"/>
+			</optional>
+			<optional>
+				<attribute name="width"/>
+			</optional>
+			<optional>
+				<attribute name="colsep">
+					<ref name="av.yesorno"/>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="rowsep">
+					<ref name="av.yesorno"/>
+				</attribute>
+			</optional>
+			<optional>
+				<ref name="e.head"/>
+			</optional>
+			<optional>
+				<element name="colspec">
+					<ref name="a.common.empty"/>
+					<optional>
+						<attribute name="cols">
+							<data type="NMTOKEN"/>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="colname">
+							<data type="NMTOKEN"/>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="width"/>
+					</optional>
+					<optional>
+						<attribute name="colsep">
+							<ref name="av.yesorno"/>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="rowsep">
+							<ref name="av.yesorno"/>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="align">
+							<choice>
+								<value>left</value>
+								<value>right</value>
+								<value>center</value>
+								<value>justify</value>
+							</choice>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="valign">
+							<choice>
+								<value>top</value>
+								<value>middle</value>
+								<value>bottom</value>
+								<value>baseline</value>
+							</choice>
+						</attribute>
+					</optional>
+					<empty/>
+				</element>
+			</optional>
+			<oneOrMore>
+
+				<ref name="e.row"/>
+			</oneOrMore>
+		</element>
+	</define>
 	<define name="e.row">
 		<element name="row">
 			<ref name="a.common"/>
@@ -1180,9 +1180,9 @@
 						</zeroOrMore>
 					</element>
 				</choice>
-				
+
 			</oneOrMore>
-			
+
 		</element>
 	</define>
 	<define name="e.abbr">
@@ -1206,7 +1206,9 @@
 	<define name="e.quote">
 		<element name="quote">
 			<ref name="a.common"/>
-			<optional><attribute name="localtype"/></optional>
+			<optional>
+				<attribute name="localtype"/>
+			</optional>
 			<ref name="m.mixed.basic"/>
 		</element>
 	</define>
@@ -1290,7 +1292,7 @@
 				<ref name="m.cOrC01"/>
 
 			</choice>
-			
+
 		</element>
 	</define>
 
@@ -1317,8 +1319,8 @@
 			</optional>
 			<zeroOrMore>
 				<choice>
-					<ref name="m.mixed.basic"/>
-					<ref name="e.title"/>
+					<ref name="m.access.title"/>
+					<ref name="e.footnote"/>
 				</choice>
 			</zeroOrMore>
 		</element>
@@ -1333,8 +1335,8 @@
 			<zeroOrMore>
 				<choice>
 					<text/>
-					<ref name="m.mixed.basic"/>
-					<ref name="e.title"/>
+					<ref name="m.access.title"/>
+					<ref name="e.footnote"/>
 				</choice>
 			</zeroOrMore>
 		</element>
@@ -1556,7 +1558,9 @@
 			<oneOrMore>
 				<element name="addressLine">
 					<ref name="a.common"/>
-					<optional><attribute name="localtype"/></optional>
+					<optional>
+						<attribute name="localtype"/>
+					</optional>
 					<ref name="m.mixed.basic"/>
 				</element>
 			</oneOrMore>
@@ -1806,7 +1810,7 @@
 		</element>
 	</define>
 -->
-	
+
 	<define name="e.relations">
 		<element name="relations">
 			<oneOrMore>
@@ -1814,7 +1818,7 @@
 			</oneOrMore>
 		</element>
 	</define>
-	
+
 	<define name="e.objectxmlwrap">
 		<element name="objectxmlwrap">
 			<ref name="a.common"/>
@@ -2164,6 +2168,8 @@
 					</attribute>
 				</optional>
 
+				<ref name="m.access.title"/>
+				<ref name="e.footnote"/>
 
 			</element>
 			<ref name="e.materialspec"/>
@@ -2188,7 +2194,7 @@
 		<zeroOrMore>
 			<choice>
 				<text/>
-                <ref name="m.mixed.elements"/>
+				<ref name="m.mixed.elements"/>
 				<ref name="e.quote"/>
 				<ref name="e.num"/>
 				<ref name="e.footnote"/>
@@ -2700,29 +2706,29 @@
 			</attribute>
 		</optional>
 	</define>
-	
+
 	<!-- Control and inherited models from EAC-CPF -->
-	
+
 	<define name="e.control">
 		<element name="control">
-            <ref name="a.common"/>
+			<ref name="a.common"/>
 			<optional>
 				<attribute name="base">
 					<data type="anyURI"/>
 				</attribute>
 			</optional>
-			<element  name="recordid">
-<ref name="a.common"/>
+			<element name="recordid">
+				<ref name="a.common"/>
 				<data type="NMTOKEN"/>
 			</element>
 			<zeroOrMore>
-				<element  name="otherrecordid">
-<ref name="a.common"/>
+				<element name="otherrecordid">
+					<ref name="a.common"/>
 					<ref name="m.id"/>
 				</element>
 			</zeroOrMore>
 			<zeroOrMore>
-				<element  name="representation">
+				<element name="representation">
 					<ref name="a.common"/>
 					<ref name="am.simplelink"/>
 					<text/>
@@ -2810,7 +2816,7 @@
 				</optional>
 			</element>
 			<element name="maintenanceStatus">
-<ref name="a.common"/>
+				<ref name="a.common"/>
 				<choice>
 					<value>revised</value>
 					<value>deleted</value>
@@ -2823,7 +2829,7 @@
 			</element>
 			<optional>
 				<element name="publicationStatus">
-<ref name="a.common"/>
+					<ref name="a.common"/>
 					<choice>
 						<value>inProcess</value>
 						<value>approved</value>
@@ -2832,28 +2838,28 @@
 			</optional>
 			<ref name="e.maintenanceagency"/>
 			<zeroOrMore>
-					<element name="languagedeclaration">
-						<ref name="a.common"/>
-						<ref name="e.language"/>
-						<ref name="e.script"/>
-						<optional>
-							<ref name="e.descriptivenote"/>
-						</optional>
-					</element>				
+				<element name="languagedeclaration">
+					<ref name="a.common"/>
+					<ref name="e.language"/>
+					<ref name="e.script"/>
+					<optional>
+						<ref name="e.descriptivenote"/>
+					</optional>
+				</element>
 			</zeroOrMore>
 			<zeroOrMore>
 
-					<element  name="conventiondeclaration">
-						<ref name="a.common"/>
-						<optional>
-							<ref name="e.abbr"/>
-						</optional>
-						<ref name="e.citation"/>
-						<optional>
-							<ref name="e.descriptivenote"/>
-						</optional>
-					</element>
-				
+				<element name="conventiondeclaration">
+					<ref name="a.common"/>
+					<optional>
+						<ref name="e.abbr"/>
+					</optional>
+					<ref name="e.citation"/>
+					<optional>
+						<ref name="e.descriptivenote"/>
+					</optional>
+				</element>
+
 			</zeroOrMore>
 			<zeroOrMore>
 				<element name="localtypedeclaration">
@@ -2899,7 +2905,7 @@
 					</optional>
 				</element>
 			</zeroOrMore>
-			<element  name="maintenancehistory">
+			<element name="maintenancehistory">
 				<ref name="a.common"/>
 				<oneOrMore>
 					<element name="maintenanceevent">
@@ -2916,16 +2922,16 @@
 								<value>unknown</value>
 							</choice>
 						</element>
-						<element  name="eventdatetime">
+						<element name="eventdatetime">
 							<ref name="a.common"/>
 							<optional>
-								<attribute  name="standarddatetime">
+								<attribute name="standarddatetime">
 									<ref name="m.data.standardDateTime"/>
 								</attribute>
 							</optional>
 							<text/>
 						</element>
-						<element  name="agenttype">
+						<element name="agenttype">
 							<ref name="a.common"/>
 							<choice>
 								<value>human</value>
@@ -2986,7 +2992,7 @@
 			</optional>
 		</element>
 	</define>
-	
+
 	<define name="m.id">
 		<optional>
 			<attribute name="localtype"/>
@@ -3022,7 +3028,7 @@
 			</optional>
 			<zeroOrMore>
 
-					<ref name="m.mixed.basic"/>
+				<ref name="m.mixed.basic"/>
 
 			</zeroOrMore>
 		</element>
@@ -3034,7 +3040,7 @@
 				<attribute name="encodinganalog"/>
 			</optional>
 			<zeroOrMore>
-					<ref name="m.mixed.basic"/>
+				<ref name="m.mixed.basic"/>
 			</zeroOrMore>
 		</element>
 	</define>
@@ -3078,10 +3084,10 @@
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
-		      <ref name="m.mixed.basic"/>
+			<ref name="m.mixed.basic"/>
 		</element>
 	</define>
-	
+
 	<define name="e.publisher">
 		<element name="publisher">
 			<ref name="a.common"/>
@@ -3110,9 +3116,9 @@
 			</oneOrMore>
 		</element>
 	</define>
-	
+
 	<!-- from EAC-CPF -->
-	
+
 	<define name="e.maintenanceagency">
 		<element name="maintenanceagency">
 			<ref name="a.common"/>
@@ -3138,11 +3144,11 @@
 				<ref name="e.descriptivenote"/>
 			</optional>
 		</element>
-		
-		
-		
+
+
+
 	</define>
-	
+
 	<define name="e.citation">
 		<element a:id="citation" name="citation">
 			<ref name="a.common"/>
@@ -3160,7 +3166,7 @@
 			<ref name="m.data.standardDateTime"/>
 		</attribute>
 	</define>
-	
+
 	<define name="m.data.standardDateTime">
 		<choice>
 			<data type="date">
