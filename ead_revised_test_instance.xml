@@ -36,7 +36,9 @@
             <origination><persname>
                 <part>ssss</part>
             </persname></origination>
-            <unittitle><</unittitle>
+<unittitle><title></title> blaj ablaj asksjk <name>
+    <part></part>
+</name></unittitle>
             <unitdatestructured>
                 <daterange>
                     <fromdate>
@@ -65,7 +67,9 @@
         </accessrestrict>
         <bibliography>
             <head/>
-            <p/>
+            <archref><title></title> nbaaaj <name>
+                <part></part>
+            </name> aklaka <emph></emph></archref>
         </bibliography>
         <controlaccess>
             <head/>

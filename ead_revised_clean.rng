@@ -178,13 +178,7 @@
 			<optional>
 				<attribute name="localtype"/>
 			</optional>
-			<zeroOrMore>
-				<choice>
-					<ref name="m.mixed.elements"/>
-					<ref name="m.access.title"/>
-					<ref name="e.footnote"/>
-				</choice>
-			</zeroOrMore>
+			<ref name="m.mixed.basic.plus.access"/>
 		</element>
 	</define>
 
@@ -1320,9 +1314,7 @@
 			</optional>
 			<zeroOrMore>
 				<choice>
-					<ref name="m.mixed.elements"/>
-					<ref name="m.access.title"/>
-					<ref name="e.footnote"/>
+                   <ref name="m.mixed.basic.plus.access"/>
 				</choice>
 			</zeroOrMore>
 		</element>
@@ -1336,10 +1328,7 @@
 			</optional>
 			<zeroOrMore>
 				<choice>
-					<text/>
-					<ref name="m.mixed.elements"/>
-					<ref name="m.access.title"/>
-					<ref name="e.footnote"/>
+					<ref name="m.mixed.basic.plus.access"/>
 				</choice>
 			</zeroOrMore>
 		</element>
@@ -2171,8 +2160,7 @@
 					</attribute>
 				</optional>
 
-				<ref name="m.access.title"/>
-				<ref name="e.footnote"/>
+				<ref name="m.mixed.basic.plus.access"/>
 
 			</element>
 			<ref name="e.materialspec"/>
@@ -2189,7 +2177,12 @@
 		<zeroOrMore>
 			<choice>
 				<text/>
-				<ref name="m.mixed.elements"/>
+				<ref name="e.abbr"/>
+				<ref name="e.expan"/>
+				<ref name="e.emph"/>
+				<ref name="e.lb"/>
+				<ref name="e.ref"/>
+				<ref name="e.ptr"/>
 			</choice>
 		</zeroOrMore>
 	</define>
@@ -2197,7 +2190,20 @@
 		<zeroOrMore>
 			<choice>
 				<text/>
-				<ref name="m.mixed.elements"/>
+				<ref name="m.mixed.basic"/>
+				<ref name="e.quote"/>
+				<ref name="e.num"/>
+				<ref name="e.footnote"/>
+				<ref name="e.date"/>
+			</choice>
+		</zeroOrMore>
+	</define>
+	<define name="m.mixed.basic.plus.access">
+		<zeroOrMore>
+			<choice>
+				<text/>
+				<ref name="m.access.title"/>
+				<ref name="m.mixed.basic"/>
 				<ref name="e.quote"/>
 				<ref name="e.num"/>
 				<ref name="e.footnote"/>
