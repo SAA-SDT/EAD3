@@ -871,7 +871,7 @@
 		<element name="list">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="listType">
+				<attribute name="listtype">
 					<choice>
 						<value>deflist</value>
 						<value>unordered</value>
@@ -1266,7 +1266,7 @@
 				</attribute>
 			</optional>
 			<optional>
-				<attribute name="othertype">
+				<attribute name="otherdsctype">
 					<data type="NMTOKEN"/>
 				</attribute>
 			</optional>
@@ -2186,6 +2186,7 @@
 				<ref name="e.emph"/>
 				<ref name="e.lb"/>
 				<ref name="e.ref"/>
+				<ref name="e.ptr"/>
 			</choice>
 		</zeroOrMore>
 	</define>
