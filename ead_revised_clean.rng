@@ -2181,12 +2181,7 @@
 		<zeroOrMore>
 			<choice>
 				<text/>
-				<ref name="e.abbr"/>
-				<ref name="e.expan"/>
-				<ref name="e.emph"/>
-				<ref name="e.lb"/>
-				<ref name="e.ref"/>
-				<ref name="e.ptr"/>
+				<ref name="m.mixed.elements"/>
 			</choice>
 		</zeroOrMore>
 	</define>
@@ -2194,14 +2189,11 @@
 		<zeroOrMore>
 			<choice>
 				<text/>
-				<ref name="e.abbr"/>
-				<ref name="e.expan"/>
-				<ref name="e.emph"/>
-				<ref name="e.lb"/>
-				<ref name="e.ref"/>
+                <ref name="m.mixed.elements"/>
 				<ref name="e.quote"/>
 				<ref name="e.num"/>
 				<ref name="e.footnote"/>
+				<ref name="e.date"/>
 			</choice>
 		</zeroOrMore>
 	</define>
@@ -2213,6 +2205,7 @@
 		<ref name="e.emph"/>
 		<ref name="e.lb"/>
 		<ref name="e.ref"/>
+		<ref name="e.ptr"/>
 	</define>
 
 	<define name="m.blocks">
