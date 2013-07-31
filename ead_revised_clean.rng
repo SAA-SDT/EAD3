@@ -1320,6 +1320,7 @@
 			</optional>
 			<zeroOrMore>
 				<choice>
+					<ref name="m.mixed.elements"/>
 					<ref name="m.access.title"/>
 					<ref name="e.footnote"/>
 				</choice>
@@ -1336,6 +1337,7 @@
 			<zeroOrMore>
 				<choice>
 					<text/>
+					<ref name="m.mixed.elements"/>
 					<ref name="m.access.title"/>
 					<ref name="e.footnote"/>
 				</choice>
