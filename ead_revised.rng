@@ -1255,7 +1255,9 @@
 		<element name="ref">
 			<ref name="a.common"/>
 			<ref name="a.internal.ptr"/>
-			<text/>
+			<zeroOrMore>
+				<ref name="m.mixed.basic.plus.access"/>
+			</zeroOrMore>
 		</element>
 	</define>
 
@@ -2397,130 +2399,7 @@
 			<ref name="e.title"/>
 		</choice>
 	</define>
-	<!--
-	<define name="m.access.entry">
-		<choice>
-			<element name="corpNameEntry">
-				<ref name="a.common"/>
-				<ref name="a.access.no.normal"/>
-				<optional>
-					<attribute name="encodinganalog"/>
-				</optional>
-				<optional>
-					<attribute name="role"/>
-				</optional>
-				<oneOrMore>
-					<ref name="e.part"/>
-				</oneOrMore>
-			</element>
-			<element name="famNameEntry">
-				<ref name="a.common"/>
-				<ref name="a.access.no.normal"/>
-				<optional>
-					<attribute name="encodinganalog"/>
-				</optional>
-				<optional>
-					<attribute name="role"/>
-				</optional>
-				<oneOrMore>
-					<ref name="e.part"/>
-				</oneOrMore>
-			</element>
-			<element name="geogNameEntry">
-				<ref name="a.common"/>
-				<ref name="a.access.no.normal"/>
-				<optional>
-					<attribute name="encodinganalog"/>
-				</optional>
-				<optional>
-					<attribute name="role"/>
-				</optional>
-				<oneOrMore>
-					<ref name="e.part"/>
-				</oneOrMore>
-			</element>
-			<element name="genericNameEntry">
-				<ref name="a.common"/>
-				<ref name="a.access.no.normal"/>
-				<optional>
-					<attribute name="encodinganalog"/>
-				</optional>
-				<optional>
-					<attribute name="role"/>
-				</optional>
-				<oneOrMore>
-					<ref name="e.part"/>
-				</oneOrMore>
-			</element>
-			<element name="occupationEntry">
-				<ref name="a.common"/>
-				<ref name="a.access.no.normal"/>
-				<optional>
-					<attribute name="encodinganalog"/>
-				</optional>
-
-				<oneOrMore>
-					<ref name="e.part"/>
-				</oneOrMore>
-			</element>
-			<element name="persNameEntry">
-				<ref name="a.common"/>
-				<ref name="a.access.no.normal"/>
-				<optional>
-					<attribute name="encodinganalog"/>
-				</optional>
-				<optional>
-					<attribute name="role"/>
-				</optional>
-				<oneOrMore>
-					<ref name="e.part"/>
-				</oneOrMore>
-			</element>
-			<element name="subjectEntry">
-				<ref name="a.common"/>
-				<ref name="a.access.no.normal"/>
-				<optional>
-					<attribute name="encodinganalog"/>
-				</optional>
-				<oneOrMore>
-					<ref name="e.part"/>
-				</oneOrMore>
-			</element>
-			<element name="genreFormEntry">
-				<ref name="a.common"/>
-				<optional>
-				</optional>
-				<ref name="a.access.no.normal"/>
-				<optional>
-					<attribute name="encodinganalog"/>
-				</optional>
-				<oneOrMore>
-					<ref name="e.part"/>
-				</oneOrMore>
-			</element>
-			<element name="functionEntry">
-				<ref name="a.common"/>
-				<ref name="a.access.no.normal"/>
-				<optional>
-					<attribute name="encodinganalog"/>
-				</optional>
-				<oneOrMore>
-					<ref name="e.part"/>
-				</oneOrMore>
-			</element>
-			<element name="titleEntry">
-				<ref name="a.common"/>
-				<ref name="a.access.no.normal"/>
-				<optional>
-					<attribute name="encodinganalog"/>
-				</optional>
-				<oneOrMore>
-					<ref name="e.part"/>
-				</oneOrMore>
-			</element>
-		</choice>
-	</define>
-	-->
+	
 	<define name="m.para.content">
 		<choice>
 			<ref name="m.mixed.basic.plus"/>
