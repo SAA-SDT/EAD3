@@ -1237,9 +1237,6 @@
 					</choice>
 				</attribute>
 			</optional>
-			<optional>
-				<attribute name="altrender"/>
-			</optional>
 			<text/>
 		</element>
 	</define>
