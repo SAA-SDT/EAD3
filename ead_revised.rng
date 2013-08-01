@@ -1256,7 +1256,19 @@
 			<ref name="a.common"/>
 			<ref name="a.internal.ptr"/>
 			<zeroOrMore>
-				<ref name="m.mixed.basic.plus.access"/>
+				<choice>
+					<text/>
+					<ref name="e.abbr"/>
+					<ref name="e.expan"/>
+					<ref name="e.emph"/>
+					<ref name="e.lb"/>
+					<ref name="e.ptr"/>
+					<ref name="e.quote"/>
+					<ref name="e.num"/>
+					<ref name="e.footnote"/>
+					<ref name="e.date"/>
+					<ref name="m.access.title"/>
+				</choice>
 			</zeroOrMore>
 		</element>
 	</define>
@@ -2245,6 +2257,7 @@
 			</choice>
 		</zeroOrMore>
 	</define>
+	
 	<define name="m.mixed.basic.plus">
 		<zeroOrMore>
 			<choice>
