@@ -34,7 +34,7 @@
                 </descriptivenote>
             </origination>
             <origination><persname>
-                <part>ssss</part>
+                <part></part>
             </persname></origination>
 <unittitle><title></title> blaj ablaj asksjk <name>
     <part></part>
@@ -52,7 +52,7 @@
             <repository><corpname>
                 <part></part>
             </corpname><address><addressLine></addressLine></address><descriptivenote>
-                <p></p>
+                <p><ref type="simple"></ref></p>
             </descriptivenote></repository>
             <physdescstructured  coverage="part" physdescstructuredtype="carrier">
                 <quantity/>
