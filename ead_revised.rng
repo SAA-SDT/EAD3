@@ -2304,43 +2304,38 @@
 	</define>
 	<define name="m.inter.noquote">
 		<choice>
-			<element name="chronlist">
-				<ref name="a.common"/>
+			<element a:id="chronList" name="chronList">
+               <ref name="a.common"/>
 				<optional>
-					<attribute name="encodinganalog"/>
-				</optional>
-				<optional>
-					<ref name="e.head"/>
-				</optional>
-				<optional>
-					<ref name="e.listhead"/>
+					<ref name="a.localtype"/>
 				</optional>
 				<oneOrMore>
-					<element name="chronitem">
+					<element a:id="chronItem" name="chronItem">
+						<ref name="a.common"/>
+						<optional>
+							<ref name="a.localtype"/>
+						</optional>
 						<choice>
 							<ref name="e.datesingle"/>
 							<ref name="e.daterange"/>
 						</choice>
 						<choice>
+							<group>
+								<optional>
+									<ref name="e.placeentry"/>
+								</optional>
+								<ref name="e.event"/>
+							</group>
 							<oneOrMore>
-								<element name="e.chronologicalset">
-									<ref name="a.common"/>
+								<element name="chronItemSet">
+									<zeroOrMore>
+										<ref name="e.placeentry"/>
+									</zeroOrMore>
 									<oneOrMore>
 										<ref name="e.event"/>
 									</oneOrMore>
-									<!--		<zeroOrMore>
-										<ref name="e.placeentry"/>
-									</zeroOrMore>
-						   -->
 								</element>
 							</oneOrMore>
-							<group>
-								<ref name="e.event"/>
-								<!--		<optional>
-									<ref name="e.placeentry"/>
-								</optional>
-						-->
-							</group>
 						</choice>
 					</element>
 				</oneOrMore>
