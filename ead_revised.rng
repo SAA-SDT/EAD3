@@ -817,7 +817,7 @@
 		</element>
 	</define>
 	<define name="e.separatedmaterial">
-		<element name="separatedMaterial">
+		<element name="separatedmaterial">
 			<ref name="a.common"/>
 			<optional>
 				<attribute name="localtype"/>
@@ -1616,7 +1616,7 @@
 		<element name="address">
 			<ref name="a.common"/>
 			<oneOrMore>
-				<element name="addressLine">
+				<element name="addressline">
 					<ref name="a.common"/>
 					<optional>
 						<attribute name="localtype"/>
@@ -2316,13 +2316,13 @@
 	</define>
 	<define name="m.inter.noquote">
 		<choice>
-			<element a:id="chronList" name="chronList">
+			<element name="chronlist">
                <ref name="a.common"/>
 				<optional>
 					<ref name="a.localtype"/>
 				</optional>
 				<oneOrMore>
-					<element a:id="chronItem" name="chronItem">
+					<element name="chronitem">
 						<ref name="a.common"/>
 						<optional>
 							<ref name="a.localtype"/>
@@ -2339,7 +2339,7 @@
 								<ref name="e.event"/>
 							</group>
 							<oneOrMore>
-								<element name="chronItemSet">
+								<element name="chronitemset">
 									<zeroOrMore>
 										<ref name="e.placeentry"/>
 									</zeroOrMore>
@@ -2381,7 +2381,7 @@
 			</choice>
 		</zeroOrMore>
 		<optional>
-			<element name="e.relations">
+			<element name="relations">
 				<oneOrMore>
 					<ref name="m.relation"/>
 				</oneOrMore>
@@ -2784,7 +2784,7 @@
 				</choice>
 			</element>
 			<optional>
-				<element name="publicationStatus">
+				<element name="publicationstatus">
 					<ref name="a.common"/>
 					<choice>
 						<value>inProcess</value>
@@ -3119,7 +3119,7 @@
 	</define>
 	
 	<define name="e.placeentry">
-		<element name="placeEntry">
+		<element name="placeentry">
 			<ref name="a.common"/>
 			<optional>
 				<attribute name="transliteration"/>
