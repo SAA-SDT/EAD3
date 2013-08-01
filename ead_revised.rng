@@ -2726,6 +2726,9 @@
 					<data type="anyURI"/>
 				</attribute>
 			</optional>
+			<optional>
+				<attribute name="relatedencoding"/>
+			</optional>
 			<element name="recordid">
 				<ref name="a.common"/>
 				<data type="NMTOKEN"/>
