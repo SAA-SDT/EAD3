@@ -2695,7 +2695,7 @@
 				<optional>
 					<attribute name="encodinganalog"/>
 				</optional>
-				<element name="titleStmt">
+				<element name="titlestmt">
 					<ref name="a.common"/>
 					<optional>
 						<attribute name="encodinganalog"/>
@@ -2926,7 +2926,7 @@
 								<ref name="am.simplelink"/>
 							</optional>
 							<optional>
-								<element name="sourceEntry">
+								<element name="sourceentry">
 									<ref name="a.common"/>
 									<optional>
 										<attribute name="transliteration"/>
