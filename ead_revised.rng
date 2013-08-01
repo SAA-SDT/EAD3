@@ -32,9 +32,6 @@
 				<zeroOrMore>
 					<ref name="m.desc.base"/>
 				</zeroOrMore>
-				<zeroOrMore>
-					<ref name="e.dao"/>
-				</zeroOrMore>
 				<optional>
 					<ref name="e.relations"/>
 				</optional>
