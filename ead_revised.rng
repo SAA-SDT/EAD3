@@ -2618,6 +2618,9 @@
 			<optional>
 				<ref name="e.descriptivenote"/>
 			</optional>
+			<optional>
+				<ref name="e.placeentry"/>
+			</optional>
 			<!--		<optional>
 				<element a:id="placeEntry" name="placeEntry">
 					<ref name="a.common"/>
@@ -3225,6 +3228,50 @@
 			<ref name="m.mixed.basic"/>
 		</element>
 	</define>
+	
+	<define name="e.placeentry">
+		<element name="placeEntry">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="transliteration"/>
+			</optional>
+			<optional>
+				<ref name="a.localtype"/>
+			</optional>
+			<optional>
+				<attribute name="countrycode">
+						<data type="string"/>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="vocabularysource"></attribute>
+			</optional>
+			<optional>
+				<attribute name="accuracy">
+					<text/>
+				</attribute>
+			</optional>
+			<optional>
+				<ref name="m.geographicalcoordinates"/>
+			</optional>
+			<text/>
+		</element>
+	</define>
+	
+	<define name="m.geographicalcoordinates">
+		<attribute  name="longitude">
+			<data type="NMTOKEN"/>
+		</attribute>
+		<attribute  name="latitude">
+			<data type="NMTOKEN"/>
+		</attribute>
+		<optional>
+			<attribute  name="altitude">
+				<data type="NMTOKEN"/>
+			</attribute>
+		</optional>
+	</define>
+	
 	<define name="a.lastdatetimeverified">
 		<attribute name="lastdatetimeverified">
 			<ref name="m.data.standardDateTime"/>
