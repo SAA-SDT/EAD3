@@ -1238,7 +1238,7 @@
 				</attribute>
 			</optional>
 			<optional>
-				<attribute name="altRender"/>
+				<attribute name="altrender"/>
 			</optional>
 			<text/>
 		</element>
@@ -1993,7 +1993,7 @@
 
 	<define name="a.desc.base">
 		<optional>
-			<attribute name="otherLevel">
+			<attribute name="otherlevel">
 				<data type="NMTOKEN"/>
 			</attribute>
 		</optional>
@@ -2125,7 +2125,7 @@
 					<attribute name="localtype"/>
 				</optional>
 				<optional>
-					<attribute name="localTypeSource"/>
+					<attribute name="localtypesource"/>
 				</optional>
 				<ref name="am.langcode"/>
 				<ref name="m.mixed.basic"/>
@@ -2226,7 +2226,7 @@
 				</optional>
 
 				<optional>
-					<attribute name="containerId">
+					<attribute name="containerid">
 						<data type="NMTOKEN"/>
 					</attribute>
 				</optional>
@@ -2563,7 +2563,7 @@
 			</attribute>
 		</optional>
 		<optional>
-			<attribute name="xPointer"/>
+			<attribute name="xpointer"/>
 		</optional>
 		<ref name="am.simplelink"/>
 	</define>
@@ -3051,7 +3051,7 @@
 		<element name="publisher">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="encodingAnalog"/>
+				<attribute name="encodinganalog"/>
 			</optional>
 			<zeroOrMore>
 				<choice>
