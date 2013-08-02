@@ -1372,6 +1372,8 @@
 		</element>
 	</define>
 
+	<!-- Title should have one or more <part>, not m.mixed.basic.  
+	Would that allow it to be added to m.access, eliminating the need for m.access.title? -MR-->
 	<define name="e.title">
 		<element name="title">
 			<ref name="a.common"/>
@@ -1622,7 +1624,7 @@
 		<element name="address">
 			<ref name="a.common"/>
 			<oneOrMore>
-				<element name="addressLine">
+				<element name="addressline">
 					<ref name="a.common"/>
 					<optional>
 						<attribute name="localtype"/>
