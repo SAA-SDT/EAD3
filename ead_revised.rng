@@ -8,6 +8,8 @@
 	<define name="e.ead">
 		<element name="ead">
 			<ref name="a.common"/>
+			<!-- Would it make sense to have a single definition for @relatedencoding? 
+			Do we need to specify a data type? -MR -->
 			<optional>
 				<attribute name="relatedencoding"/>
 			</optional>
