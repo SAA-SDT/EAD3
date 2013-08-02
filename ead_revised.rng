@@ -2766,7 +2766,7 @@
 					</element>
 				</optional>
 			</element>
-			<element name="maintenanceStatus">
+			<element name="maintenancestatus">
 				<ref name="a.common"/>
 				<choice>
 					<value>revised</value>
