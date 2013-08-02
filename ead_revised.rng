@@ -1317,11 +1317,12 @@
 			<optional>
 				<ref name="m.cOrC01"/>
 			</optional>
-			<choice>
+			<!-- Isn't the following <choice> duplicative of the preceding <optional>? -MR -->
+			<!--<choice>
 
 				<ref name="m.cOrC01"/>
 
-			</choice>
+			</choice>-->
 
 		</element>
 	</define>
