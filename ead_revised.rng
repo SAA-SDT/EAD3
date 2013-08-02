@@ -1206,6 +1206,9 @@
 	<define name="e.num">
 		<element name="num">
 			<ref name="a.common"/>
+			<optional>
+				<ref name="a.localtype"/>
+			</optional>
 			<ref name="m.mixed.basic"/>
 		</element>
 	</define>
