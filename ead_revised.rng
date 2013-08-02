@@ -1290,7 +1290,7 @@
 						<value>analyticover</value>
 						<value>combined</value>
 						<value>indepth</value>
-						<value>othertype</value>
+						<value>otherdsctype</value>
 					</choice>
 				</attribute>
 			</optional>
