@@ -29,6 +29,9 @@
 					<attribute name="relatedencoding"/>
 				</optional>
 				<ref name="e.did"/>
+				<!-- Problem with ocurrence of did siblings. Don't want to force <dsc> to be the 
+				last dsc sibling.  Would allowing <relations> to repeat solve this? Just add it to 
+				m.desc.base and wrap that and dsc> into zeroOrMore/choice? -MR -->
 				<zeroOrMore>
 					<ref name="m.desc.base"/>
 				</zeroOrMore>
