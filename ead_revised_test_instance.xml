@@ -1,140 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?oxygen RNGSchema="ead_revised.rng" type="xml"?>
-<ead xmlns="urn:isbn:1-931666-22-9">
+<?xml-model href="file:ead_revised.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<ead>
     <control>
-        <recordId>xxxx</recordId>
-        <fileDesc>
-            <titleStmt>
-                <titleProper>xxxx</titleProper>
-            </titleStmt>
-            <noteStmt>
-                <controlNote>
-                    <p>xxx</p>
-                </controlNote>
-            </noteStmt>
-
-        </fileDesc>
-        <maintenanceStatus>new </maintenanceStatus>
-        <maintenanceAgency>
-            <agencyName>xxx</agencyName>
-        </maintenanceAgency>
-        <languageDeclarations>
-            <languageDeclaration>
-                <language languageCode="eng"/>
-                <script scriptCode="Latn"/>
-            </languageDeclaration>
-            <languageDeclaration>
-                <language languageCode="ger"/>
-                <script scriptCode="Latn"/>
-            </languageDeclaration>
-        </languageDeclarations>
-        <localTypeDeclaration>
-            <citation/>
-        </localTypeDeclaration>
-        <maintenanceEvent>
-            <eventType>unknown</eventType>
-            <eventDateTime>unknown</eventDateTime>
-            <agentType>unknown</agentType>
-            <agent>unknown</agent>
-        </maintenanceEvent>
+        <recordid>xyz</recordid>
+        <filedesc>
+            <titlestmt>
+                <titleproper>Test EAD Instance</titleproper>
+            </titlestmt>
+        </filedesc>
+        <maintenancestatus>new</maintenancestatus>
+        <maintenanceagency>
+            <agencyname>Columbia University Libraries Digital Program Division</agencyname>
+        </maintenanceagency>
+        <maintenancehistory>
+            <maintenanceevent>
+                <eventtype>created</eventtype>
+                <eventdatetime>2013-07-30</eventdatetime>
+                <agenttype>human</agenttype>
+                <agent></agent>
+            </maintenanceevent>
+        </maintenancehistory>
     </control>
-    <archDesc level="collection">
+    <archdesc level="collection">
+
         <did>
             <abstract/>
-            <unitTitle>Records of Stuff</unitTitle>
-            <unitDate unitDateType="inclusive">1970-1987?</unitDate>
-            <unitDateStructured unitDateStructuredType="inclusive">
-                <dateRange>
-                    <fromDate>1970</fromDate>
-                    <toDate notBefore="1985" notAfter="1990">1987</toDate>
-                </dateRange>
-            </unitDateStructured>
-            <langMaterial><language/></langMaterial>
-            <physDesc/>
-            <physDescStructured type="carrier">
-                <dimensions/>
-                <num/>
-                <extent/>
-                <physType/>
-            </physDescStructured>
+            <repository></repository>
+            <origination>
+                <persname>
+                    <part></part>
+                </persname>
+                <descriptivenote>
+                    <p/>
+                </descriptivenote>
+            </origination>
+            <origination><persname>
+                <part></part>
+            </persname></origination>
+<unittitle><title></title> blaj ablaj asksjk <name>
+    <part></part>
+</name></unittitle>
+            <unitdatestructured>
+                <daterange>
+                    <fromdate>
+                        <datesingle/>
+                    </fromdate>
+                </daterange>
+            </unitdatestructured>
+            <materialspec><p>ssklslks</p></materialspec>
+            <unitid></unitid>
+            <unitid></unitid>
+            <repository><corpname>
+                <part></part>
+            </corpname><address><addressline></addressline></address><descriptivenote>
+                <p><ref type="simple"></ref></p>
+            </descriptivenote></repository>
+            <physdescstructured  coverage="part" physdescstructuredtype="carrier">
+                <quantity/>
+                <unittype/>
+            </physdescstructured>
+            <didnote/>
+            
         </did>
-
-        <biogHist>
-            <chronList>
-                <chronItem>
-                    <dateSingle>1987</dateSingle>
-                    <chronologicalSet>
-                        <event/>
-                        <event/>
-                        <placeEntry/>
-                        <placeEntry/>
-                    </chronologicalSet>
-                    <chronologicalSet>
-                        <event/>
-                    </chronologicalSet>
-                </chronItem>
-                <chronItem>
-                    <dateSingle>1988</dateSingle>
-                    <event>xxx</event>
-                </chronItem>
-            </chronList>
-        </biogHist>
-        <accessRestrict>
-            <list listType="ordered" numeration="arabic">
-                <item>xxx</item>
-            </list>
-        </accessRestrict>
-        <scopeContent>
+        <accessrestrict>
             <head/>
-            <div>
-                <head/>
-            </div>
-            <div>
-                <head/>
-            </div>
-        </scopeContent>
-        <controlAccess>
-            <subjectEntry>
-                <part/>
-            </subjectEntry>
-        </controlAccess>
-        <legalStatus>Blah blah blah</legalStatus>
-        <materialSpec>
-            <p>blah blah blah</p>
-        </materialSpec>
-        <relations>
-            <relation relationType="cpfRelation">
-                <relationEntry>xxx</relationEntry>
-            </relation>
-        </relations>
-        <c>
-            <did>
-                <unitTitle>Series 1: Old stuff</unitTitle>
-                <didNote/>
-                <availableForms>
-                    <container containerId="xxxxxxxxx" localType="Box">1</container>
-                    <container containerId="yyyyyyyyy" localType="Folder">1</container>
-
-                    <dao daoType="derived" xmlns:ns1="http://www.w3.org/1999/xlink"
-                        ns1:type="simple"/>
-                </availableForms>
-            </did>
-            <relations>
-                <relation relationType="cpfRelation">
-                    <relationEntry>xxxx</relationEntry>
-                </relation>
-            </relations>
-            <c>
-                <did>
-                    <unitTitle>Stuff</unitTitle>
-                </did>
-            </c>
-        </c>
-        <c>
-            <did>
-                <unitTitle>Series 2: New stuff</unitTitle>
-            </did>
-            <dao daoType="unknown" xmlns:ns1="http://www.w3.org/1999/xlink" ns1:type="simple"/>
-        </c>
-    </archDesc>
+            <p/>
+        </accessrestrict>
+        <bibliography>
+            <head/>
+            <archref><title></title> nbaaaj <name>
+                <part></part>
+            </name> aklaka <emph></emph></archref>
+        </bibliography>
+        <controlaccess>
+            <head/>
+            <blockquote><p></p></blockquote>
+            <controlaccess>
+                <table>
+                    <colspec/>
+                    <row>
+                        <thentry></thentry>
+                        <thentry></thentry>
+                        <thentry></thentry>
+                    </row>
+                    <row><entry></entry>
+                    <entry></entry>
+                    <entry></entry>
+                    </row>
+                </table>
+                <corpname>
+                    <part/>
+                </corpname>
+            </controlaccess>
+        </controlaccess>
+        <relations><relation relationtype="cpfrelation" href="http://www.example.com" linktitle="blah" linkarcrole="blah blah">
+<relationentry></relationentry>
+            <objectxmlwrap><pols></pols></objectxmlwrap>
+        </relation></relations>
+        <dsc><c01>
+            <did><unitdate></unitdate></did>
+        </c01></dsc>
+        <dsc><c><did><unitid >a</unitid></did></c></dsc>
+    </archdesc>
 </ead>
