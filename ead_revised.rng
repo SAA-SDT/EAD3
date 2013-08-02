@@ -212,7 +212,7 @@
 				<attribute name="encodinganalog"/>
 			</optional>
 			<zeroOrMore>
-				<ref name="m.mixed.basic.plus"/>
+				<ref name="m.mixed.basic"/>
 			</zeroOrMore>
 
 		</element>
