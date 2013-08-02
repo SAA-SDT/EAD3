@@ -925,12 +925,7 @@
 							<ref name="a.common"/>
 							<element name="label">
 								<ref name="a.common"/>
-								<zeroOrMore>
-									<choice>
-										<text/>
-										<ref name="m.para.content"/>
-									</choice>
-								</zeroOrMore>
+								<ref name="m.mixed.basic"/>
 							</element>
 							<ref name="e.item"/>
 						</element>
