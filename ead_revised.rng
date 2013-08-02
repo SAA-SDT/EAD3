@@ -2145,6 +2145,7 @@
 				<ref name="m.mixed.basic"/>
 			</element>
 			<element name="parallelphysdescset">
+				<ref name="a.common"/>
 				<ref name="e.physdescstructured"/>
 				<oneOrMore>
 					<ref name="e.physdescstructured"/>
