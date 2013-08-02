@@ -1556,9 +1556,6 @@
 				<attribute name="unit"/>
 			</optional>
 			<optional>
-				<attribute name="identifier"/>
-			</optional>
-			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
 			<ref name="m.mixed.basic"/>
