@@ -2307,7 +2307,7 @@
 	</define>
 	<define name="m.inter.noquote">
 		<choice>
-			<element a:id="chronList" name="chronList">
+			<element a:id="chronlist" name="chronlist">
                <ref name="a.common"/>
 				<optional>
 					<ref name="a.localtype"/>
