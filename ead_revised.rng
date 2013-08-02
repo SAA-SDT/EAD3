@@ -2235,7 +2235,7 @@
 					</attribute>
 				</optional>
 
-				<ref name="m.mixed.basic.plus.access"/>
+				<ref name="m.mixed.basic"/>
 
 			</element>
 			<ref name="e.materialspec"/>
