@@ -2313,7 +2313,7 @@
 					<ref name="a.localtype"/>
 				</optional>
 				<oneOrMore>
-					<element a:id="chronItem" name="chronItem">
+					<element a:id="chronitem" name="chronitem">
 						<ref name="a.common"/>
 						<optional>
 							<ref name="a.localtype"/>
