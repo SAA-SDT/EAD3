@@ -1990,7 +1990,7 @@
 
 	<define name="a.desc.base">
 		<optional>
-			<attribute name="otherLevel">
+			<attribute name="otherlevel">
 				<data type="NMTOKEN"/>
 			</attribute>
 		</optional>
