@@ -1163,11 +1163,7 @@
 						<zeroOrMore>
 							<choice>
 								<text/>
-								<choice>
-									<ref name="m.access.title"/>
-									<ref name="e.list"/>
-									<ref name="e.footnote"/>
-								</choice>
+								<ref name="m.para.content"/>
 							</choice>
 						</zeroOrMore>
 					</element>
