@@ -242,9 +242,9 @@
 			</optional>
 			<ref name="am.dates.era"/>
 			<ref name="am.dates.calendar"/>
-			<oneOrMore>
+			<choice>
 				<ref name="m.dates"/>
-			</oneOrMore>
+			</choice>
 		</element>
 	</define>
 
