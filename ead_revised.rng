@@ -843,7 +843,7 @@
 		</element>
 	</define>
 	<define name="e.otherfindaid">
-		<element name="otheraindaid">
+		<element name="otherfindaid">
 			<ref name="a.common"/>
 			<optional>
 				<attribute name="encodinganalog"/>
