@@ -819,7 +819,7 @@
 		</element>
 	</define>
 	<define name="e.separatedmaterial">
-		<element name="separatedMaterial">
+		<element name="separatedmaterial">
 			<ref name="a.common"/>
 			<optional>
 				<attribute name="localtype"/>
