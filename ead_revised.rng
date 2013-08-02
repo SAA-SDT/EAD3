@@ -3048,7 +3048,9 @@
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
-			<ref name="m.mixed.basic"/>
+			<zeroOrMore>
+				<ref name="m.mixed.basic"/>
+			</zeroOrMore>
 		</element>
 	</define>
 
