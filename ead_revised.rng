@@ -1209,7 +1209,7 @@
 	<define name="e.expan">
 		<element name="expan">
 			<ref name="a.common"/>
-			<ref name="m.mixed.basic"/>
+			<text/>
 		</element>
 	</define>
 	<define name="e.num">
