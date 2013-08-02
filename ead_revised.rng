@@ -1917,29 +1917,29 @@
 			<value>file</value>
 			<value>fonds</value>
 			<value>item</value>
-			<value>otherLevel</value>
-			<value>recordGrp</value>
+			<value>otherlevel</value>
+			<value>recordgrp</value>
 			<value>series</value>
-			<value>subFonds</value>
-			<value>subGrp</value>
-			<value>subSeries</value>
+			<value>subfonds</value>
+			<value>subgrp</value>
+			<value>subseries</value>
 		</choice>
 	</define>
 
 	<define name="av.render">
 		<choice>
-			<value>altRender</value>
+			<value>altrender</value>
 			<value>bold</value>
-			<value>boldDoubleQuote</value>
-			<value>boldItalic</value>
-			<value>boldSingleQuote</value>
-			<value>boldSmCaps</value>
-			<value>boldUnderline</value>
-			<value>doubleQuote</value>
+			<value>bolddoublequote</value>
+			<value>bolditalic</value>
+			<value>boldsinglequote</value>
+			<value>boldsmcaps</value>
+			<value>boldunderline</value>
+			<value>doublequote</value>
 			<value>italic</value>
-			<value>nonProPort</value>
-			<value>singleQuote</value>
-			<value>smCaps</value>
+			<value>nonproport</value>
+			<value>singlequote</value>
+			<value>smcaps</value>
 			<value>sub</value>
 			<value>super</value>
 			<value>underline</value>
@@ -1955,7 +1955,7 @@
 	<!-- MODELS -->
 	<define name="a.dsctab.tPattern">
 		<optional>
-			<attribute name="tPattern">
+			<attribute name="tpattern">
 				<data type="NMTOKEN"/>
 			</attribute>
 		</optional>
