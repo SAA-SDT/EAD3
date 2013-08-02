@@ -3013,9 +3013,9 @@
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
-			<zeroOrMore>
+			
 				<ref name="m.mixed.basic"/>
-			</zeroOrMore>
+			
 		</element>
 	</define>
 	<define name="e.date">
