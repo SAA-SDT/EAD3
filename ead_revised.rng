@@ -2838,6 +2838,7 @@
 								<ref name="a.lastdatetimeverified"/>
 							</optional>
 							<optional>
+								<!-- This source attribute as a data type wherease others don't. Should homogenize. -MR -->
 								<attribute name="source">
 									<data type="string"/>
 								</attribute>
