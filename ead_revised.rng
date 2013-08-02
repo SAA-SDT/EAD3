@@ -19,11 +19,6 @@
 						<ref name="av.level"/>
 					</choice>
 				</attribute>
-				<optional>
-					<attribute name="otherlevel">
-						<data type="NMTOKEN"/>
-					</attribute>
-				</optional>
 				<ref name="a.desc.base"/>
 				<optional>
 					<attribute name="localtype">
