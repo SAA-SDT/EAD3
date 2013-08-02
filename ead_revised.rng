@@ -2138,11 +2138,6 @@
 					<attribute name="encodinganalog"/>
 				</optional>
 				<optional>
-					<attribute name="source">
-						<data type="NMTOKEN"/>
-					</attribute>
-				</optional>
-				<optional>
 					<attribute name="rules">
 						<data type="NMTOKEN"/>
 					</attribute>
