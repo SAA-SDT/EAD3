@@ -2097,7 +2097,6 @@
 				<optional>
 					<attribute name="localtype"/>
 				</optional>
-				<ref name="am.langcode"/>
 				<ref name="m.mixed.basic"/>
 			</element>
 			<element name="langmaterial">
