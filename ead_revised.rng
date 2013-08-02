@@ -1304,7 +1304,7 @@
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
-			<ref name="a.dsctab.tPattern"/>
+			<ref name="a.dsctab.tpattern"/>
 			<group>
 				<optional>
 					<ref name="e.head"/>
@@ -1959,7 +1959,7 @@
 	</define>
 
 	<!-- MODELS -->
-	<define name="a.dsctab.tPattern">
+	<define name="a.dsctab.tpattern">
 		<optional>
 			<attribute name="tpattern">
 				<data type="NMTOKEN"/>
