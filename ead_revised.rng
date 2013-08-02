@@ -3029,10 +3029,7 @@
 				<attribute name="encodinganalog"/>
 			</optional>
 			<zeroOrMore>
-				<choice>
-					<text/>
-					<ref name="m.mixed.basic"/>
-				</choice>
+				<ref name="m.mixed.basic"/>
 			</zeroOrMore>
 		</element>
 	</define>
