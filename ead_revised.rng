@@ -1327,7 +1327,7 @@
 		</element>
 	</define>
 
-	<define name="e.div">
+	<!--<define name="e.div">
 		<element name="div">
 			<ref name="a.common"/>
 			<optional>
@@ -1340,7 +1340,7 @@
 				<ref name="e.div"/>
 			</zeroOrMore>
 		</element>
-	</define>
+	</define>-->
 
 	<define name="e.bibref">
 		<element name="bibref">
