@@ -2223,7 +2223,7 @@
 				</optional>
 
 				<optional>
-					<attribute name="containerId">
+					<attribute name="containerid">
 						<data type="NMTOKEN"/>
 					</attribute>
 				</optional>
