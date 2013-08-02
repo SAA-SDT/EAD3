@@ -8,6 +8,8 @@
 	<define name="e.ead">
 		<element name="ead">
 			<ref name="a.common"/>
+			<!-- Would it make sense to have a single definition for @relatedencoding? 
+			Do we need to specify a data type? -MR -->
 			<optional>
 				<attribute name="relatedencoding"/>
 			</optional>
@@ -29,11 +31,11 @@
 					<attribute name="relatedencoding"/>
 				</optional>
 				<ref name="e.did"/>
+				<!-- Problem with ocurrence of did siblings. Don't want to force <dsc> to be the 
+				last dsc sibling.  Would allowing <relations> to repeat solve this? Just add it to 
+				m.desc.base and wrap that and dsc> into zeroOrMore/choice? -MR -->
 				<zeroOrMore>
 					<ref name="m.desc.base"/>
-				</zeroOrMore>
-				<zeroOrMore>
-					<ref name="e.dao"/>
 				</zeroOrMore>
 				<optional>
 					<ref name="e.relations"/>
@@ -210,7 +212,7 @@
 				<attribute name="encodinganalog"/>
 			</optional>
 			<zeroOrMore>
-				<ref name="m.mixed.basic.plus"/>
+				<ref name="m.mixed.basic"/>
 			</zeroOrMore>
 
 		</element>
@@ -240,9 +242,9 @@
 			</optional>
 			<ref name="am.dates.era"/>
 			<ref name="am.dates.calendar"/>
-			<oneOrMore>
+			<choice>
 				<ref name="m.dates"/>
-			</oneOrMore>
+			</choice>
 		</element>
 	</define>
 
@@ -547,7 +549,7 @@
 		<element name="indexentry">
 			<ref name="a.common"/>
 			<choice>
-				<element name="nameGrp">
+				<element name="namegrp">
 					<ref name="a.common"/>
 					<oneOrMore>
 						<choice>
@@ -703,7 +705,7 @@
 				<oneOrMore>
 					<choice>
 						<ref name="m.blocks"/>
-						<ref name="m.access"/>
+						<ref name="m.access.title"/>
 						<ref name="e.controlaccess"/>
 					</choice>
 				</oneOrMore>
@@ -841,7 +843,7 @@
 		</element>
 	</define>
 	<define name="e.otherfindaid">
-		<element name="otheraindaid">
+		<element name="otherfindaid">
 			<ref name="a.common"/>
 			<optional>
 				<attribute name="encodinganalog"/>
@@ -923,12 +925,7 @@
 							<ref name="a.common"/>
 							<element name="label">
 								<ref name="a.common"/>
-								<zeroOrMore>
-									<choice>
-										<text/>
-										<ref name="m.para.content"/>
-									</choice>
-								</zeroOrMore>
+								<ref name="m.mixed.basic"/>
 							</element>
 							<ref name="e.item"/>
 						</element>
@@ -1166,11 +1163,7 @@
 						<zeroOrMore>
 							<choice>
 								<text/>
-								<choice>
-									<ref name="m.access.title"/>
-									<ref name="e.list"/>
-									<ref name="e.footnote"/>
-								</choice>
+								<ref name="m.para.content"/>
 							</choice>
 						</zeroOrMore>
 					</element>
@@ -1201,18 +1194,21 @@
 	<define name="e.abbr">
 		<element name="abbr">
 			<ref name="a.common"/>
-			<ref name="m.mixed.basic"/>
+			<text/>
 		</element>
 	</define>
 	<define name="e.expan">
 		<element name="expan">
 			<ref name="a.common"/>
-			<ref name="m.mixed.basic"/>
+			<text/>
 		</element>
 	</define>
 	<define name="e.num">
 		<element name="num">
 			<ref name="a.common"/>
+			<optional>
+				<ref name="a.localtype"/>
+			</optional>
 			<ref name="m.mixed.basic"/>
 		</element>
 	</define>
@@ -1287,7 +1283,7 @@
 						<value>analyticover</value>
 						<value>combined</value>
 						<value>indepth</value>
-						<value>othertype</value>
+						<value>otherdsctype</value>
 					</choice>
 				</attribute>
 			</optional>
@@ -1299,7 +1295,7 @@
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
-			<ref name="a.dsctab.tPattern"/>
+			<ref name="a.dsctab.tpattern"/>
 			<group>
 				<optional>
 					<ref name="e.head"/>
@@ -1314,16 +1310,17 @@
 			<optional>
 				<ref name="m.cOrC01"/>
 			</optional>
-			<choice>
+			<!-- Isn't the following <choice> duplicative of the preceding <optional>? -MR -->
+			<!--<choice>
 
 				<ref name="m.cOrC01"/>
 
-			</choice>
+			</choice>-->
 
 		</element>
 	</define>
 
-	<define name="e.div">
+	<!--<define name="e.div">
 		<element name="div">
 			<ref name="a.common"/>
 			<optional>
@@ -1336,7 +1333,7 @@
 				<ref name="e.div"/>
 			</zeroOrMore>
 		</element>
-	</define>
+	</define>-->
 
 	<define name="e.bibref">
 		<element name="bibref">
@@ -1366,6 +1363,8 @@
 		</element>
 	</define>
 
+	<!-- Title should have one or more <part>, not m.mixed.basic.  
+	Would that allow it to be added to m.access, eliminating the need for m.access.title? -MR-->
 	<define name="e.title">
 		<element name="title">
 			<ref name="a.common"/>
@@ -1383,9 +1382,9 @@
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
-			<zeroOrMore>
+			
 				<ref name="m.mixed.basic"/>
-			</zeroOrMore>
+			
 		</element>
 	</define>
 	<define name="e.c">
@@ -1555,9 +1554,6 @@
 			</optional>
 			<optional>
 				<attribute name="unit"/>
-			</optional>
-			<optional>
-				<attribute name="identifier"/>
 			</optional>
 			<optional>
 				<attribute name="encodinganalog"/>
@@ -1917,29 +1913,29 @@
 			<value>file</value>
 			<value>fonds</value>
 			<value>item</value>
-			<value>otherLevel</value>
-			<value>recordGrp</value>
+			<value>otherlevel</value>
+			<value>recordgrp</value>
 			<value>series</value>
-			<value>subFonds</value>
-			<value>subGrp</value>
-			<value>subSeries</value>
+			<value>subfonds</value>
+			<value>subgrp</value>
+			<value>subseries</value>
 		</choice>
 	</define>
 
 	<define name="av.render">
 		<choice>
-			<value>altRender</value>
+			<value>altrender</value>
 			<value>bold</value>
-			<value>boldDoubleQuote</value>
-			<value>boldItalic</value>
-			<value>boldSingleQuote</value>
-			<value>boldSmCaps</value>
-			<value>boldUnderline</value>
-			<value>doubleQuote</value>
+			<value>bolddoublequote</value>
+			<value>bolditalic</value>
+			<value>boldsinglequote</value>
+			<value>boldsmcaps</value>
+			<value>boldunderline</value>
+			<value>doublequote</value>
 			<value>italic</value>
-			<value>nonProPort</value>
-			<value>singleQuote</value>
-			<value>smCaps</value>
+			<value>nonproport</value>
+			<value>singlequote</value>
+			<value>smcaps</value>
 			<value>sub</value>
 			<value>super</value>
 			<value>underline</value>
@@ -1953,9 +1949,9 @@
 	</define>
 
 	<!-- MODELS -->
-	<define name="a.dsctab.tPattern">
+	<define name="a.dsctab.tpattern">
 		<optional>
-			<attribute name="tPattern">
+			<attribute name="tpattern">
 				<data type="NMTOKEN"/>
 			</attribute>
 		</optional>
@@ -2089,7 +2085,6 @@
 				<optional>
 					<attribute name="localtype"/>
 				</optional>
-				<ref name="am.langcode"/>
 				<ref name="m.mixed.basic"/>
 			</element>
 			<element name="langmaterial">
@@ -2140,11 +2135,6 @@
 					<attribute name="encodinganalog"/>
 				</optional>
 				<optional>
-					<attribute name="source">
-						<data type="NMTOKEN"/>
-					</attribute>
-				</optional>
-				<optional>
 					<attribute name="rules">
 						<data type="NMTOKEN"/>
 					</attribute>
@@ -2152,6 +2142,7 @@
 				<ref name="m.mixed.basic"/>
 			</element>
 			<element name="parallelphysdescset">
+				<ref name="a.common"/>
 				<ref name="e.physdescstructured"/>
 				<oneOrMore>
 					<ref name="e.physdescstructured"/>
@@ -2228,7 +2219,7 @@
 					</attribute>
 				</optional>
 
-				<ref name="m.mixed.basic.plus.access"/>
+				<ref name="m.mixed.basic"/>
 
 			</element>
 			<ref name="e.materialspec"/>
@@ -2316,13 +2307,17 @@
 	</define>
 	<define name="m.inter.noquote">
 		<choice>
+
 			<element name="chronlist">
+
                <ref name="a.common"/>
 				<optional>
 					<ref name="a.localtype"/>
 				</optional>
 				<oneOrMore>
+
 					<element name="chronitem">
+
 						<ref name="a.common"/>
 						<optional>
 							<ref name="a.localtype"/>
@@ -2374,11 +2369,6 @@
 		<ref name="e.did"/>
 		<zeroOrMore>
 			<ref name="m.desc.base"/>
-		</zeroOrMore>
-		<zeroOrMore>
-			<choice>
-				<ref name="e.dao"/>
-			</choice>
 		</zeroOrMore>
 		<optional>
 			<element name="relations">
@@ -2642,6 +2632,7 @@
 			</attribute>
 		</optional>
 	</define>
+	<!-- unitdate/@normal no longer enforces the iso 8601 pattern. Why? -MR -->
 	<define name="am.date.normal">
 		<optional>
 			<attribute name="normal">
@@ -2675,6 +2666,11 @@
 			</optional>
 			<element name="recordid">
 				<ref name="a.common"/>
+				<optional>
+					<attribute name="instanceurl">
+						<data type="anyURI"/>
+					</attribute>
+				</optional>
 				<data type="NMTOKEN"/>
 			</element>
 			<zeroOrMore>
@@ -2687,6 +2683,9 @@
 				<element name="representation">
 					<ref name="a.common"/>
 					<ref name="am.simplelink"/>
+					<optional>
+						<ref name="a.localtype"/>
+					</optional>
 					<text/>
 				</element>
 			</zeroOrMore>
@@ -2771,7 +2770,7 @@
 					</element>
 				</optional>
 			</element>
-			<element name="maintenanceStatus">
+			<element name="maintenancestatus">
 				<ref name="a.common"/>
 				<choice>
 					<value>revised</value>
@@ -2843,6 +2842,7 @@
 								<ref name="a.lastdatetimeverified"/>
 							</optional>
 							<optional>
+								<!-- This source attribute as a data type wherease others don't. Should homogenize. -MR -->
 								<attribute name="source">
 									<data type="string"/>
 								</attribute>
@@ -2971,9 +2971,9 @@
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
-			<zeroOrMore>
+			
 				<ref name="m.mixed.basic"/>
-			</zeroOrMore>
+			
 		</element>
 	</define>
 	<define name="e.subtitle">
@@ -2982,11 +2982,11 @@
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
-			<zeroOrMore>
+			
 
 				<ref name="m.mixed.basic"/>
 
-			</zeroOrMore>
+			
 		</element>
 	</define>
 	<define name="e.author">
@@ -2995,9 +2995,9 @@
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
-			<zeroOrMore>
+			
 				<ref name="m.mixed.basic"/>
-			</zeroOrMore>
+			
 		</element>
 	</define>
 	<define name="e.sponsor">
@@ -3006,9 +3006,9 @@
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
-			<zeroOrMore>
+			
 				<ref name="m.mixed.basic"/>
-			</zeroOrMore>
+			
 		</element>
 	</define>
 	<define name="e.edition">
@@ -3017,12 +3017,9 @@
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
-			<zeroOrMore>
-				<choice>
-					<text/>
-					<ref name="m.mixed.basic"/>
-				</choice>
-			</zeroOrMore>
+			
+				<ref name="m.mixed.basic"/>
+			
 		</element>
 	</define>
 	<define name="e.date">
@@ -3040,7 +3037,9 @@
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
-			<ref name="m.mixed.basic"/>
+			
+				<ref name="m.mixed.basic"/>
+			
 		</element>
 	</define>
 
@@ -3050,12 +3049,9 @@
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
-			<zeroOrMore>
-				<choice>
-					<text/>
-					<ref name="m.mixed.basic"/>
-				</choice>
-			</zeroOrMore>
+			
+				<ref name="m.mixed.basic"/>
+			
 		</element>
 	</define>
 	<define name="e.controlnote">
