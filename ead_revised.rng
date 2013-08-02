@@ -2779,7 +2779,7 @@
 				</choice>
 			</element>
 			<optional>
-				<element name="publicationStatus">
+				<element name="publicationstatus">
 					<ref name="a.common"/>
 					<choice>
 						<value>inProcess</value>
