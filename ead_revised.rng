@@ -1203,7 +1203,7 @@
 	<define name="e.abbr">
 		<element name="abbr">
 			<ref name="a.common"/>
-			<ref name="m.mixed.basic"/>
+			<text/>
 		</element>
 	</define>
 	<define name="e.expan">
