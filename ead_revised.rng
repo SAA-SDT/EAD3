@@ -2679,6 +2679,11 @@
 			</optional>
 			<element name="recordid">
 				<ref name="a.common"/>
+				<optional>
+					<attribute name="instanceurl">
+						<data type="anyURI"/>
+					</attribute>
+				</optional>
 				<data type="NMTOKEN"/>
 			</element>
 			<zeroOrMore>
