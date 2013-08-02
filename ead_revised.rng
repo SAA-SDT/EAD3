@@ -549,7 +549,7 @@
 		<element name="indexentry">
 			<ref name="a.common"/>
 			<choice>
-				<element name="nameGrp">
+				<element name="namegrp">
 					<ref name="a.common"/>
 					<oneOrMore>
 						<choice>
