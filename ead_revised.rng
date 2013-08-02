@@ -2696,6 +2696,9 @@
 				<element name="representation">
 					<ref name="a.common"/>
 					<ref name="am.simplelink"/>
+					<optional>
+						<ref name="a.localtype"/>
+					</optional>
 					<text/>
 				</element>
 			</zeroOrMore>
