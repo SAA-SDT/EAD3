@@ -2648,6 +2648,7 @@
 			</attribute>
 		</optional>
 	</define>
+	<!-- unitdate/@normal no longer enforces the iso 8601 pattern. Why? -MR -->
 	<define name="am.date.normal">
 		<optional>
 			<attribute name="normal">
