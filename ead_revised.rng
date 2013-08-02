@@ -2330,7 +2330,7 @@
 								<ref name="e.event"/>
 							</group>
 							<oneOrMore>
-								<element name="chronItemSet">
+								<element name="chronitemset">
 									<zeroOrMore>
 										<ref name="e.placeentry"/>
 									</zeroOrMore>
