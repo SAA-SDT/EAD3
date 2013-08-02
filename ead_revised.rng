@@ -3045,9 +3045,9 @@
 			<optional>
 				<attribute name="encodingAnalog"/>
 			</optional>
-			<zeroOrMore>
+			
 				<ref name="m.mixed.basic"/>
-			</zeroOrMore>
+			
 		</element>
 	</define>
 	<define name="e.controlnote">
