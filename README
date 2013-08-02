@@ -2,5 +2,7 @@
 
 * ead_revised_test_instance.xml: sample EAD for use in testing ead_revised.rng
 
-* ead2002toEADx.xsl: XSLT 2.0 transformation to convert EAD 2002 instances to be valid against ead_revision.rng
+* ead_revised.xsd: W3C XML Schema version of ead_revised.rng
+
+
 
