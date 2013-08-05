@@ -2244,8 +2244,7 @@
 				<ref name="e.ptr"/>
 			</choice>
 		</zeroOrMore>
-	</define>
-	
+	</define>	
 	<define name="m.mixed.basic.plus">
 		<zeroOrMore>
 			<choice>
