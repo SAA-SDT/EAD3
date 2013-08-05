@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="file:ead_revised.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="schematron/ead.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <ead>
     <control>
         <recordid>xyz</recordid>
         <filedesc>
-            <titleStmt>
+            <titlestmt>
                 <titleproper>Test EAD Instance</titleproper>
-            </titleStmt>
+            </titlestmt>
         </filedesc>
-        <maintenanceStatus>new</maintenanceStatus>
+        <maintenancestatus>new</maintenancestatus>
         <maintenanceagency>
             <agencyname>Columbia University Libraries Digital Program Division</agencyname>
         </maintenanceagency>
@@ -17,28 +17,30 @@
                 <eventtype>created</eventtype>
                 <eventdatetime>2013-07-30</eventdatetime>
                 <agenttype>human</agenttype>
-                <agent></agent>
+                <agent/>
             </maintenanceevent>
         </maintenancehistory>
     </control>
     <archdesc level="collection">
         <did>
             <abstract/>
-            <repository></repository>
+            <repository/>
             <origination>
                 <persname>
-                    <part></part>
+                    <part/>
                 </persname>
                 <descriptivenote>
                     <p/>
                 </descriptivenote>
             </origination>
-            <origination><persname>
-                <part></part>
-            </persname></origination>
-<unittitle><title></title> blaj ablaj asksjk <name>
-    <part></part>
-</name></unittitle>
+            <origination>
+                <persname>
+                    <part/>
+                </persname>
+            </origination>
+            <unittitle><title/> blaj ablaj asksjk <name>
+                    <part/>
+                </name></unittitle>
             <unitdatestructured>
                 <daterange>
                     <fromdate>
@@ -46,45 +48,54 @@
                     </fromdate>
                 </daterange>
             </unitdatestructured>
-            <materialspec><p>ssklslks</p></materialspec>
-            <unitid></unitid>
-            <unitid></unitid>
-            <repository><corpname>
-                <part></part>
-            </corpname><address><addressLine></addressLine></address><descriptivenote>
-                <p><ref type="simple"></ref></p>
-            </descriptivenote></repository>
-            <physdescstructured  coverage="part" physdescstructuredtype="carrier">
+            <materialspec>
+                <p>ssklslks</p>
+            </materialspec>
+            <unitid/>
+            <unitid/>
+            <repository>
+                <corpname>
+                    <part/>
+                </corpname>
+                <address><addressline/></address>
+                <descriptivenote>
+                    <p><ref type="simple"/></p>
+                </descriptivenote>
+            </repository>
+            <physdescstructured coverage="part" physdescstructuredtype="carrier">
                 <quantity/>
                 <unittype/>
             </physdescstructured>
             <didnote/>
-            
+
         </did>
         <accessrestrict>
             <head/>
-            <p/>
+            <p><quote/></p>
         </accessrestrict>
         <bibliography>
             <head/>
-            <archref><title></title> nbaaaj <name>
-                <part></part>
-            </name> aklaka <emph></emph></archref>
+            <archref><title/> nbaaaj <name>
+                    <part/>
+                </name> aklaka <emph/></archref>
         </bibliography>
         <controlaccess>
             <head/>
-            <blockquote><p></p></blockquote>
+            <blockquote>
+                <p/>
+            </blockquote>
             <controlaccess>
                 <table>
                     <colspec/>
                     <row>
-                        <thentry></thentry>
-                        <thentry></thentry>
-                        <thentry></thentry>
+                        <thentry/>
+                        <thentry/>
+                        <thentry/>
                     </row>
-                    <row><entry></entry>
-                    <entry></entry>
-                    <entry></entry>
+                    <row>
+                        <entry/>
+                        <entry/>
+                        <entry/>
                     </row>
                 </table>
                 <corpname>
@@ -92,13 +103,30 @@
                 </corpname>
             </controlaccess>
         </controlaccess>
-        <relations><relation relationtype="cpfrelation" href="http://www.example.com" linktitle="blah" linkarcrole="blah blah">
-<relationentry></relationentry>
-            <objectxmlwrap><pols></pols></objectxmlwrap>
-        </relation></relations>
-        <dsc><c01>
-            <did><unitdate></unitdate></did>
-        </c01></dsc>
-        <dsc><c><did><unitid >a</unitid></did></c></dsc>
+        <relations>
+            <relation relationtype="cpfrelation" href="http://www.example.com" linktitle="blah"
+                linkarcrole="blah blah">
+                <relationentry/>
+                <objectxmlwrap>
+                    <pols/>
+                </objectxmlwrap>
+            </relation>
+        </relations>
+        <dsc>
+            <c01 level="otherlevel" otherlevel="ssss">
+                <did>
+                    <unitid countrycode="USsss"/>
+                </did>
+            </c01>
+        </dsc>
+        <dsc>
+            <c01>
+                <did>
+                    <langmaterial>
+                        <language langcode="engddd"/>
+                    </langmaterial>
+                </did>
+            </c01>
+        </dsc>
     </archdesc>
 </ead>
