@@ -53,7 +53,7 @@
             </materialspec>
             <unitid/>
             <unitid/>
-            <repository>
+            <repository script="Latn" lang="eng">
                 <corpname>
                     <part/>
                 </corpname>
@@ -73,7 +73,7 @@
             <head/>
             <p><quote/></p>
         </accessrestrict>
-        <bibliography>
+        <bibliography script="Latn">
             <head/>
             <archref><title/> nbaaaj <name>
                     <part/>
@@ -123,7 +123,7 @@
             <c01>
                 <did>
                     <langmaterial>
-                        <language langcode="engddd"/>
+                        <language langcode="engddd"></language>
                     </langmaterial>
                 </did>
             </c01>

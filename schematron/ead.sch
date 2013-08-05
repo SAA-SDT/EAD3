@@ -5,7 +5,7 @@
     <pattern id="codes">
         <let name="langcodes" value="document('http://id.loc.gov/vocabulary/iso639-2.rdf')" />
         
-        <rule context="@langcode">
+        <rule context="@langcode | @lang">
             <let name="code" value="normalize-space(.)" />
             <assert test="$langcodes//madsrdf:code[normalize-space(.) =$code ]" >
                 The <name/> attribute should contain a code from the iso639-2 codelist.
@@ -21,7 +21,7 @@
         </rule>
         
         <let name="scriptcodes" value="document('http://anonscm.debian.org/gitweb/?p=iso-codes/iso-codes.git;a=blob_plain;f=iso_15924/iso_15924.xml;hb=HEAD')" />        
-        <rule context="@script">
+        <rule context="@scriptcode | @script">
             <let name="code" value="normalize-space(.)" />
             <assert test="$scriptcodes//iso_15924_entry[@alpha_4_code = $code ]" >
                 The <name/> attribute should contain a code from the iso_15924 codelist.
