@@ -19,6 +19,14 @@
                 The <name/> attribute should contain a code from the ISO 3166-1 codelist.
             </assert>
         </rule>
+        
+        <let name="scriptcodes" value="document('http://anonscm.debian.org/gitweb/?p=iso-codes/iso-codes.git;a=blob_plain;f=iso_15924/iso_15924.xml;hb=HEAD')" />        
+        <rule context="@script">
+            <let name="code" value="normalize-space(.)" />
+            <assert test="$scriptcodes//iso_15924_entry[@alpha_4_code = $code ]" >
+                The <name/> attribute should contain a code from the iso_15924 codelist.
+            </assert>
+        </rule>
     </pattern>
     <pattern id="co-occurrence-constraints">
         <rule context="*[@level = 'otherlevel']">
