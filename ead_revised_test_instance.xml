@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="schematron/ead.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<ead>
+<ead xmlns="urn:isbn:1-931666-22-9">
     <control>
         <recordid>xyz</recordid>
         <filedesc>
@@ -105,10 +104,10 @@
         </controlaccess>
         <relations>
             <relation relationtype="cpfrelation" href="http://www.example.com" linktitle="blah"
-                linkarcrole="blah blah">
+                linkarcrole="http://blah-blah" type="simple">
                 <relationentry/>
                 <objectxmlwrap>
-                    <pols/>
+                    <pols xmlns=""/>
                 </objectxmlwrap>
             </relation>
         </relations>
