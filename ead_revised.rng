@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <grammar xmlns="http://relaxng.org/ns/structure/1.0"
 	xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-	datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+	datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
+        ns="urn:isbn:1-931666-22-9">
 	<start>
 		<ref name="e.ead"/>
 	</start>
