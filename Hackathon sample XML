@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.github.com/SAA-SDT/EAD-Revision/master/ead_revised.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<ead>
+    <control lang="eng" relatedencoding="Dublin Core" audience="external" script="latn"
+        id="controlelementid" base="http://arks.princeton.edu">
+        
+        <recordid id="recordidelementid" script="latn" audience="external" lang="eng"
+            instanceurl="http://arks.princeton.edu//ark:/88435/8c97kq432.xml">C0041</recordid>
+        <representation type="simple" href="http://arks.princeton.edu/ark:/88435/8c97kq432">http://arks.princeton.edu/ark:/88435/8c97kq432</representation>
+        <filedesc>
+            <titlestmt >
+                <titleproper lang="eng" encodinganalog="dc:title" >Joseph D. Bennett Papers, 1951-1973: Finding Aid</titleproper>
+            </titlestmt>
+        </filedesc>
+        <maintenancestatus>revised</maintenancestatus>
+        <maintenanceagency>
+            <agencycode>rbscID</agencycode>
+            <agencyname>Princeton University Library. Department of
+                Rare Books and Special Collections.</agencyname>
+        </maintenanceagency>
+        <maintenancehistory>
+            <maintenanceevent>
+                <eventtype>revised</eventtype>
+                <eventdatetime standarddatetime="2012-05-02T14:44:22.655-04:00">Christmas Day 2012 (not really--check @standarddatetime)</eventdatetime>
+                <agenttype>machine</agenttype>
+                <agent>Lib-staff601</agent>
+                <eventdescription>Run through PULFA 2.0 normalization routines.</eventdescription>
+            </maintenanceevent>
+        </maintenancehistory>
+    </control>
+    <archdesc level="collection" relatedencoding="marc21" localtype="findingaid">
+        <did>
+            <unittitle encodinganalog="245$a">Joseph D. Bennett Papers</unittitle>
+            <unitdate encodinganalog="245$f" datechar="">1951-1973</unitdate>
+            <unitdatestructured>
+                <daterange>
+                    <fromdate>
+                        <datesingle standarddate="1951-01-01">1951 January 1</datesingle>
+                    </fromdate>
+                    <todate>
+                        <datesingle standarddate="1973">1973</datesingle>
+                    </todate>
+                </daterange>
+            </unitdatestructured>
+            <physdesc lang="eng">This is free text
+            </physdesc>
+            <physdesc lang="ger">Was auch immer</physdesc>
+            
+            <parallelphysdescset>
+                <physdescstructured physdescstructuredtype="carrier" coverage="whole">
+                    <quantity>5</quantity>
+                    <unittype>boxes</unittype>
+                </physdescstructured>
+                <physdescstructured physdescstructuredtype="spaceoccupied" coverage="whole">
+                    <quantity>2.3</quantity>
+                    <unittype>linear feet</unittype>
+                </physdescstructured>
+            </parallelphysdescset>
+            <origination>
+                <persname rules="legacy" encodinganalog="100" source="lcnaf" role="cre"
+                    identifier="http://viaf.org/viaf/31576533">
+                    <part>Bennett, Joseph D. (Joseph Deericks),
+                        1922-1972.</part></persname>
+            </origination>
+            <repository id="mss" encodinganalog="852$a">
+                
+                <corpname source="lcsh" rules="aacr2">
+                    <part localtype="repository">Princeton University. Library. Dept. of Rare Books
+                    and Special Collections</part>
+                    <part localtype="division">Manuscripts Division</part>
+                </corpname>
+                
+                
+                <address>
+               <addressline>One Washington Road</addressline>
+               <addressline>Princeton, New Jersey 08544 USA</addressline>
+            </address>
+            </repository>
+            <langmaterial encodinganalog="546$a">
+                <language encodinganalog="041$a" langcode="eng" />
+                <languageset>
+                    
+                    <language  langcode="ger" lang="eng">German</language>
+                    <!-- In plain English: The content of the language element is written in English. 
+                        The materials described are in German. -->
+                    <script scriptcode="latnf"/>
+                    <script scriptcode="latn"/>
+                    
+                </languageset>
+                <descriptivenote>
+                    <p></p>
+                </descriptivenote>
+            </langmaterial>
+        </did>
+    </archdesc>
+</ead>
