@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="schematron/ead.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<ead>
+<?xml-model href="ead_revised.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<ead xmlns="urn:isbn:1-931666-22-9">
     <control>
         <recordid>xyz</recordid>
-        <filedesc>
+       <filedesc>
             <titlestmt>
                 <titleproper>Test EAD Instance</titleproper>
             </titlestmt>
-        </filedesc>
-        <maintenancestatus>new</maintenancestatus>
+        </filedesc>       
+        <maintenancestatus>derived</maintenancestatus>
         <maintenanceagency>
             <agencyname>Columbia University Libraries Digital Program Division</agencyname>
         </maintenanceagency>
         <maintenancehistory>
             <maintenanceevent>
-                <eventtype>created</eventtype>
+                <eventtype>derived</eventtype>
                 <eventdatetime>2013-07-30</eventdatetime>
                 <agenttype>human</agenttype>
                 <agent/>
