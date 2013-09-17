@@ -2471,7 +2471,7 @@
 					<ref name="e.daterange"/>
 				</choice>
 			</optional>
-			<oneOrMore>
+			<zeroOrMore>
 				<element name="relationentry">
 					<ref name="a.common"/>
 					<optional>
@@ -2485,7 +2485,7 @@
 					</optional>
 					<text/>
 				</element>
-			</oneOrMore>
+			</zeroOrMore>
 			<optional>
 				<ref name="e.descriptivenote"/>
 			</optional>
