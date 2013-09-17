@@ -1866,6 +1866,7 @@
 
 	<define name="e.relations">
 		<element name="relations">
+			<ref name="a.common"/>
 			<oneOrMore>
 				<ref name="m.relation"/>
 			</oneOrMore>
