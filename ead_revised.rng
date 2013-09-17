@@ -2442,11 +2442,6 @@
 	<define name="m.relation">
 		<element name="relation">
 			<ref name="a.common"/>
-			<optional>
-				<attribute name="scriptcode">
-					<data type="string"/>
-				</attribute>
-			</optional>
 			<attribute name="relationtype">
 				<choice>
 					<value>cpfrelation</value>
