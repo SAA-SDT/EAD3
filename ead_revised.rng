@@ -31,9 +31,6 @@
 					<attribute name="relatedencoding"/>
 				</optional>
 				<ref name="e.did"/>
-				<!-- Problem with ocurrence of did siblings. Don't want to force <dsc> to be the 
-				last dsc sibling.  Would allowing <relations> to repeat solve this? Just add it to 
-				m.desc.base and wrap that and dsc> into zeroOrMore/choice? -MR -->
 				<zeroOrMore>
 					<ref name="m.desc.base"/>
 				</zeroOrMore>
@@ -1869,6 +1866,7 @@
 
 	<define name="e.relations">
 		<element name="relations">
+			<ref name="a.common"/>
 			<oneOrMore>
 				<ref name="m.relation"/>
 			</oneOrMore>
@@ -2444,11 +2442,6 @@
 	<define name="m.relation">
 		<element name="relation">
 			<ref name="a.common"/>
-			<optional>
-				<attribute name="scriptcode">
-					<data type="string"/>
-				</attribute>
-			</optional>
 			<attribute name="relationtype">
 				<choice>
 					<value>cpfrelation</value>
@@ -2470,7 +2463,23 @@
 			<optional>
 				<ref name="am.simplelink"/>
 			</optional>
-
+			<zeroOrMore>
+				<element name="relationentry">
+					<ref name="a.common"/>
+					<optional>
+						<ref name="a.localtype"/>
+					</optional>
+					<optional>
+						<attribute name="transliteration">
+							<data type="NMTOKEN"/>
+						</attribute>
+					</optional>
+					<text/>
+				</element>
+			</zeroOrMore>
+			<optional>
+				<ref name="e.objectxmlwrap"/>
+			</optional>
 			<optional>
 				<choice>
 					<ref name="e.datesingle"/>
@@ -2478,66 +2487,11 @@
 					<ref name="e.daterange"/>
 				</choice>
 			</optional>
-			<oneOrMore>
-				<element name="relationentry">
-					<ref name="a.common"/>
-					<optional>
-						<ref name="a.localtype"/>
-					</optional>
-					<optional>
-
-						<attribute name="transliteration">
-							<data type="NMTOKEN"/>
-						</attribute>
-					</optional>
-					<text/>
-				</element>
-			</oneOrMore>
-			<optional>
-				<ref name="e.descriptivenote"/>
-			</optional>
 			<optional>
 				<ref name="e.placeentry"/>
 			</optional>
-			<!--		<optional>
-				<element a:id="placeEntry" name="placeEntry">
-					<ref name="a.common"/>
-					<optional>
-						<ref name="m.entryLanguageAttributes"/>
-					</optional>
-					<optional>
-						<ref name="a.localType"/>
-					</optional>
-					<optional>
-						<attribute a:id="countryCode" name="countryCode">
-							<choice>
-								<data type="string">
-									<param name="pattern">[A-Z]{2}</param>
-								</data>
-								<data type="string">
-									<param name="pattern">[A-Z]{4}</param>
-								</data>
-							</choice>
-						</attribute>
-					</optional>
-					<optional>
-						<ref name="a.vocabularySource"/>
-					</optional>
-					<optional>
-						<attribute a:id="accuracy" name="accuarcy">
-							<text/>
-						</attribute>
-					</optional>
-					<optional>
-						<ref name="m.geographicalCoordinates"/>
-					</optional>
-					<text/>
-				</element>
-				
-			</optional>
-			-->
 			<optional>
-				<ref name="e.objectxmlwrap"/>
+				<ref name="e.descriptivenote"/>
 			</optional>
 		</element>
 	</define>
@@ -2554,7 +2508,7 @@
 		<ref name="am.simplelink"/>
 	</define>
 	<define name="am.simplelink">
-		<attribute a:defaultValue="simple" name="type">
+		<attribute a:defaultValue="simple" name="linktype">
 			<value>simple</value>
 		</attribute>
 		<optional>
