@@ -2493,43 +2493,6 @@
 			<optional>
 				<ref name="e.placeentry"/>
 			</optional>
-			<!--		<optional>
-				<element a:id="placeEntry" name="placeEntry">
-					<ref name="a.common"/>
-					<optional>
-						<ref name="m.entryLanguageAttributes"/>
-					</optional>
-					<optional>
-						<ref name="a.localType"/>
-					</optional>
-					<optional>
-						<attribute a:id="countryCode" name="countryCode">
-							<choice>
-								<data type="string">
-									<param name="pattern">[A-Z]{2}</param>
-								</data>
-								<data type="string">
-									<param name="pattern">[A-Z]{4}</param>
-								</data>
-							</choice>
-						</attribute>
-					</optional>
-					<optional>
-						<ref name="a.vocabularySource"/>
-					</optional>
-					<optional>
-						<attribute a:id="accuracy" name="accuarcy">
-							<text/>
-						</attribute>
-					</optional>
-					<optional>
-						<ref name="m.geographicalCoordinates"/>
-					</optional>
-					<text/>
-				</element>
-				
-			</optional>
-			-->
 		</element>
 	</define>
 
