@@ -2478,7 +2478,6 @@
 						<ref name="a.localtype"/>
 					</optional>
 					<optional>
-
 						<attribute name="transliteration">
 							<data type="NMTOKEN"/>
 						</attribute>
