@@ -2486,6 +2486,9 @@
 				</element>
 			</zeroOrMore>
 			<optional>
+				<ref name="e.objectxmlwrap"/>
+			</optional>
+			<optional>
 				<ref name="e.descriptivenote"/>
 			</optional>
 			<optional>
@@ -2528,9 +2531,6 @@
 				
 			</optional>
 			-->
-			<optional>
-				<ref name="e.objectxmlwrap"/>
-			</optional>
 		</element>
 	</define>
 
