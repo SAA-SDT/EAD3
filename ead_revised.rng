@@ -2547,7 +2547,7 @@
 		<ref name="am.simplelink"/>
 	</define>
 	<define name="am.simplelink">
-		<attribute a:defaultValue="simple" name="type">
+		<attribute a:defaultValue="simple" name="linktype">
 			<value>simple</value>
 		</attribute>
 		<optional>
