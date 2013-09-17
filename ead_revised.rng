@@ -2488,10 +2488,10 @@
 				</choice>
 			</optional>
 			<optional>
-				<ref name="e.descriptivenote"/>
+				<ref name="e.placeentry"/>
 			</optional>
 			<optional>
-				<ref name="e.placeentry"/>
+				<ref name="e.descriptivenote"/>
 			</optional>
 		</element>
 	</define>
