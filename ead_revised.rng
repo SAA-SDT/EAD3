@@ -2463,14 +2463,6 @@
 			<optional>
 				<ref name="am.simplelink"/>
 			</optional>
-
-			<optional>
-				<choice>
-					<ref name="e.datesingle"/>
-					<ref name="e.dateset"/>
-					<ref name="e.daterange"/>
-				</choice>
-			</optional>
 			<zeroOrMore>
 				<element name="relationentry">
 					<ref name="a.common"/>
@@ -2487,6 +2479,13 @@
 			</zeroOrMore>
 			<optional>
 				<ref name="e.objectxmlwrap"/>
+			</optional>
+			<optional>
+				<choice>
+					<ref name="e.datesingle"/>
+					<ref name="e.dateset"/>
+					<ref name="e.daterange"/>
+				</choice>
 			</optional>
 			<optional>
 				<ref name="e.descriptivenote"/>
