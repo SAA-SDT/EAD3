@@ -1191,6 +1191,9 @@
 	<define name="e.abbr">
 		<element name="abbr">
 			<ref name="a.common"/>
+			<optional>
+				<attribute name="expan"/>
+			</optional>
 			<text/>
 		</element>
 	</define>
