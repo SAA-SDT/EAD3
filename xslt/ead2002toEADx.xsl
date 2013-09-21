@@ -283,6 +283,42 @@
             <xsl:value-of select="."/>
         </xsl:attribute>
     </xsl:template>
+    
+    
+    <!-- ############################################### -->
+    <!-- ADDRESSLINE                                     -->
+    <!-- ############################################### -->
+    
+    <xsl:template match="address[not(parent::repository) and not(parent::publicationtmt)]">
+        <xsl:choose>
+            <xsl:when test="not(parent::entry) 
+                and not(parent::p) 
+                and not(parent::event) 
+                and not(parent::item)
+                and not(parent::extref)
+                and not(parent::extrefloc)
+                and not(parent::ref)
+                and not(parent::refloc)">
+                <xsl:element name="p">
+                    <xsl:for-each select="addressline">
+                        <xsl:apply-templates/>
+                        <xsl:if test="position()!=last()">
+                            <xsl:element name="lb"/>
+                        </xsl:if>
+                    </xsl:for-each>
+                </xsl:element>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:for-each select="addressline">
+                    <xsl:apply-templates/>
+                    <!-- MR: Not sure if we want to add commas here.  -->
+                    <!--<xsl:if test="position()!=last()">
+                        <xsl:text>, </xsl:text>
+                    </xsl:if>-->
+                </xsl:for-each>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
 
 
     <!-- ############################################### -->
