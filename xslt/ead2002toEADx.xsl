@@ -267,7 +267,7 @@
     <!-- @TYPE TO @LOCALTYPE                             -->
     <!-- ############################################### -->
     
-    <xsl:template match="abstract/@type">
+    <xsl:template match="abstract/@type | unitid/@type">
         <xsl:attribute name="localtype">
             <xsl:value-of select="."/>
         </xsl:attribute>
