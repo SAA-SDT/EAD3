@@ -261,6 +261,17 @@
     </xsl:template>
     <xsl:template match="@xsi:schemaLocation" mode="strip-ns"
         xpath-default-namespace="http://www.w3.org/2001/XMLSchema-instance"/>
+    
+    
+    <!-- ############################################### -->
+    <!-- LANGUAGE ATTRIBUTES                             -->
+    <!-- ############################################### -->
+    
+    <xsl:template match="abstract/@langcode">
+        <xsl:attribute name="lang">
+            <xsl:value-of select="."/>
+        </xsl:attribute>
+    </xsl:template>
 
 
     <!-- ############################################### -->
