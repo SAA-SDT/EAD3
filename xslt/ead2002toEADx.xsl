@@ -77,7 +77,7 @@
     </xsl:template>
 
     <!-- SKIP -->
-    <xsl:template match="descgrp | admininfo | titleproper/date | archref/abstract | subtitle/date | 
+    <xsl:template match="descgrp | admininfo | titleproper/date | titleproper/num | archref/abstract | subtitle/date | 
         subtitle/num">
         <xsl:comment>
             <xsl:call-template name="removedElement"/>
