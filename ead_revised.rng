@@ -2949,9 +2949,7 @@
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
-			
-				<ref name="m.mixed.basic"/>
-			
+			<ref name="m.mixed.basic"/>
 		</element>
 	</define>
 	<define name="e.sponsor">
