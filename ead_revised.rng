@@ -573,6 +573,9 @@
 				<attribute name="encodinganalog"/>
 			</optional>
 			<optional>
+				<attribute name="localtype"/>
+			</optional>
+			<optional>
 				<ref name="e.head"/>
 			</optional>
 			<choice>
