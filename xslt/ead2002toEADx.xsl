@@ -67,7 +67,7 @@
     <!-- ############################################### -->
 
     <!-- REMOVE COMPLETELY -->
-    <xsl:template match="frontmatter | runner | arcdesc/address | dsc/address">
+    <xsl:template match="frontmatter | runner | accessrestrict/legalstatus | arcdesc/address | dsc/address">
         <xsl:comment>
             <xsl:call-template name="removedElement"/>
         </xsl:comment>
@@ -77,7 +77,8 @@
     </xsl:template>
 
     <!-- SKIP -->
-    <xsl:template match="descgrp | admininfo | titleproper/date | titleproper/num | archref/abstract | subtitle/date | 
+    <xsl:template match="descgrp | admininfo | titleproper/date | titleproper/num | 
+        accessrestrict/accessrestrict/legalstatus | archref/abstract | subtitle/date | 
         subtitle/num">
         <xsl:comment>
             <xsl:call-template name="removedElement"/>
@@ -320,7 +321,26 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
-
+    
+    <!-- ############################################### -->
+    <!-- ACCESSRESTRICT + LEGALSTATUS                    -->
+    <!-- ############################################### -->
+    
+    <xsl:template match="accessrestrict">
+        <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
+            <xsl:apply-templates select="@*|node()"/>
+        </xsl:element>
+        <xsl:if test="legalstatus[position()=last()]">
+            <xsl:for-each select="legalstatus[position()=last()]">
+                <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
+                    <xsl:element name="p" namespace="{$eadxmlns}">
+                        <xsl:apply-templates select="@*|node()"/>
+                    </xsl:element>
+                </xsl:element>
+            </xsl:for-each>
+        </xsl:if>
+    </xsl:template>
+    
 
     <!-- ############################################### -->
     <!-- OTHER TEMPLATES                                 -->
