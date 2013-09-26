@@ -343,6 +343,24 @@
         </xsl:if>
     </xsl:template>
     
+    <!-- ############################################### -->
+    <!-- CUSTODHIST + ACQINFO                            -->
+    <!-- ############################################### -->
+    
+    <xsl:template match="custodhist">
+        <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
+            <xsl:apply-templates select="@*|node()"/>
+        </xsl:element>
+        <xsl:for-each select="acqinfo">
+            <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
+                <xsl:apply-templates select="@*|node()"/>
+            </xsl:element>
+        </xsl:for-each>
+    </xsl:template>
+    
+    <xsl:template match="custodhist/acqinfo"/>
+    
+    
 
     <!-- ############################################### -->
     <!-- OTHER TEMPLATES                                 -->
