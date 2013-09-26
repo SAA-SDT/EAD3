@@ -332,16 +332,16 @@
         <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
             <xsl:apply-templates select="@*|node()"/>
         </xsl:element>
-        <xsl:if test="legalstatus[position()=last()]">
-            <xsl:for-each select="legalstatus[position()=last()]">
-                <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
-                    <xsl:element name="p" namespace="{$eadxmlns}">
-                        <xsl:apply-templates select="@*|node()"/>
-                    </xsl:element>
+        <xsl:for-each select="legalstatus">
+            <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
+                <xsl:element name="p" namespace="{$eadxmlns}">
+                    <xsl:apply-templates select="@*|node()"/>
                 </xsl:element>
-            </xsl:for-each>
-        </xsl:if>
+            </xsl:element>
+        </xsl:for-each>
     </xsl:template>
+    
+    <xsl:template match="accessrestrict/legalstatus"/>
     
     <!-- ############################################### -->
     <!-- CUSTODHIST + ACQINFO                            -->
