@@ -269,7 +269,9 @@
     <!-- @TYPE TO @LOCALTYPE                             -->
     <!-- ############################################### -->
     
-    <xsl:template match="abstract/@type | accessrestrict/@type | altformavail/@type | phystech/@type | processinfo/@type | titleproper/@type | unitid/@type">
+    <xsl:template match="abstract/@type | accessrestrict/@type | altformavail/@type | 
+        phystech/@type | processinfo/@type | titleproper/@type | unitid/@type | 
+        userestruct/@type">
         <xsl:attribute name="localtype">
             <xsl:value-of select="."/>
         </xsl:attribute>
