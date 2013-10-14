@@ -2856,11 +2856,14 @@
 						</element>
 						<element name="agenttype">
 							<ref name="a.common"/>
-							<choice>
-								<value>human</value>
-								<value>machine</value>
-								<value>unknown</value>
-							</choice>
+							<attribute name="value">
+								<choice>
+									<value>human</value>
+									<value>machine</value>
+									<value>unknown</value>
+								</choice>
+							</attribute>
+							<ref name="m.mixed.basic"/>
 						</element>
 						<element a:id="agent" name="agent">
 							<ref name="a.common"/>
