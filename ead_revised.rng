@@ -2738,9 +2738,9 @@
 						<value>revised</value>
 						<value>deleted</value>
 						<value>new</value>
-						<value>deletedSplit</value>
+						<value>deletedsplit</value>
 						<value>deletedmerged</value>
-						<value>deletedReplaced</value>
+						<value>deletedreplaced</value>
 						<value>cancelled</value>
 						<value>derived</value>
 					</choice>
