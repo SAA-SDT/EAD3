@@ -67,7 +67,7 @@
     <!-- ############################################### -->
 
     <!-- REMOVE COMPLETELY -->
-    <xsl:template match="frontmatter | runner | arcdesc/address | dsc/address">
+    <xsl:template match="frontmatter | runner | accessrestrict/legalstatus | arcdesc/address | dsc/address">
         <xsl:comment>
             <xsl:call-template name="removedElement"/>
         </xsl:comment>
@@ -77,7 +77,9 @@
     </xsl:template>
 
     <!-- SKIP -->
-    <xsl:template match="descgrp | admininfo | titleproper/date">
+    <xsl:template match="descgrp | admininfo | titleproper/date | titleproper/num | 
+        accessrestrict/accessrestrict/legalstatus | archref/abstract | subtitle/date | 
+        subtitle/num">
         <xsl:comment>
             <xsl:call-template name="removedElement"/>
         </xsl:comment>
@@ -261,7 +263,104 @@
     </xsl:template>
     <xsl:template match="@xsi:schemaLocation" mode="strip-ns"
         xpath-default-namespace="http://www.w3.org/2001/XMLSchema-instance"/>
-
+    
+    
+    <!-- ############################################### -->
+    <!-- @TYPE TO @LOCALTYPE                             -->
+    <!-- ############################################### -->
+    
+    <xsl:template match="abstract/@type | accessrestrict/@type | altformavail/@type | 
+        phystech/@type | processinfo/@type | titleproper/@type | unitid/@type | 
+        userestruct/@type">
+        <xsl:attribute name="localtype">
+            <xsl:value-of select="."/>
+        </xsl:attribute>
+    </xsl:template>
+    
+    
+    <!-- ############################################### -->
+    <!-- LANGUAGE ATTRIBUTES                             -->
+    <!-- ############################################### -->
+    
+    <xsl:template match="abstract/@langcode">
+        <xsl:attribute name="lang">
+            <xsl:value-of select="."/>
+        </xsl:attribute>
+    </xsl:template>
+    
+    
+    <!-- ############################################### -->
+    <!-- ADDRESSLINE                                     -->
+    <!-- ############################################### -->
+    
+    <xsl:template match="address[not(parent::repository) and not(parent::publicationtmt)]">
+        <xsl:choose>
+            <xsl:when test="not(parent::entry) 
+                and not(parent::p) 
+                and not(parent::event) 
+                and not(parent::item)
+                and not(parent::extref)
+                and not(parent::extrefloc)
+                and not(parent::ref)
+                and not(parent::refloc)">
+                <xsl:element name="p">
+                    <xsl:for-each select="addressline">
+                        <xsl:apply-templates/>
+                        <xsl:if test="position()!=last()">
+                            <xsl:element name="lb"/>
+                        </xsl:if>
+                    </xsl:for-each>
+                </xsl:element>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:for-each select="addressline">
+                    <xsl:apply-templates/>
+                    <!-- MR: Not sure if we want to add commas here.  -->
+                    <!--<xsl:if test="position()!=last()">
+                        <xsl:text>, </xsl:text>
+                    </xsl:if>-->
+                </xsl:for-each>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+    
+    <!-- ############################################### -->
+    <!-- ACCESSRESTRICT + LEGALSTATUS                    -->
+    <!-- ############################################### -->
+    
+    <xsl:template match="accessrestrict">
+        <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
+            <xsl:apply-templates select="@*|node()"/>
+        </xsl:element>
+        <xsl:for-each select="legalstatus">
+            <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
+                <xsl:element name="p" namespace="{$eadxmlns}">
+                    <xsl:apply-templates select="@*|node()"/>
+                </xsl:element>
+            </xsl:element>
+        </xsl:for-each>
+    </xsl:template>
+    
+    <xsl:template match="accessrestrict/legalstatus"/>
+    
+    <!-- ############################################### -->
+    <!-- CUSTODHIST + ACQINFO                            -->
+    <!-- ############################################### -->
+    
+    <xsl:template match="custodhist">
+        <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
+            <xsl:apply-templates select="@*|node()"/>
+        </xsl:element>
+        <xsl:for-each select="acqinfo">
+            <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
+                <xsl:apply-templates select="@*|node()"/>
+            </xsl:element>
+        </xsl:for-each>
+    </xsl:template>
+    
+    <xsl:template match="custodhist/acqinfo"/>
+    
+    
 
     <!-- ############################################### -->
     <!-- OTHER TEMPLATES                                 -->
