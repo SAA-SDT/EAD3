@@ -2733,15 +2733,18 @@
 			</element>
 			<element name="maintenancestatus">
 				<ref name="a.common"/>
-				<choice>
-					<value>revised</value>
-					<value>deleted</value>
-					<value>new</value>
-					<value>deletedSplit</value>
-					<value>deletedReplaced</value>
-					<value>cancelled</value>
-					<value>derived</value>
-				</choice>
+				<attribute name="value">
+					<choice>
+						<value>revised</value>
+						<value>deleted</value>
+						<value>new</value>
+						<value>deletedSplit</value>
+						<value>deletedReplaced</value>
+						<value>cancelled</value>
+						<value>derived</value>
+					</choice>
+				</attribute>
+				<ref name="m.mixed.basic"/>
 			</element>
 			<optional>
 				<element name="publicationstatus">
