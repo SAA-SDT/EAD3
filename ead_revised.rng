@@ -2739,6 +2739,7 @@
 						<value>deleted</value>
 						<value>new</value>
 						<value>deletedSplit</value>
+						<value>deletedmerged</value>
 						<value>deletedReplaced</value>
 						<value>cancelled</value>
 						<value>derived</value>
