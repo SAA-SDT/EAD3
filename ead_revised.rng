@@ -2835,15 +2835,18 @@
 						<ref name="a.common"/>
 						<element name="eventtype">
 							<ref name="a.common"/>
-							<choice>
-								<value>created</value>
-								<value>revised</value>
-								<value>deleted</value>
-								<value>cancelled</value>
-								<value>derived</value>
-								<value>updated</value>
-								<value>unknown</value>
-							</choice>
+							<attribute name="value">
+								<choice>
+									<value>created</value>
+									<value>revised</value>
+									<value>deleted</value>
+									<value>cancelled</value>
+									<value>derived</value>
+									<value>updated</value>
+									<value>unknown</value>
+								</choice>
+							</attribute>
+							<ref name="m.mixed.basic"/>
 						</element>
 						<element name="eventdatetime">
 							<ref name="a.common"/>
