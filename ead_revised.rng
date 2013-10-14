@@ -2746,10 +2746,13 @@
 			<optional>
 				<element name="publicationstatus">
 					<ref name="a.common"/>
-					<choice>
-						<value>inProcess</value>
-						<value>approved</value>
-					</choice>
+					<attribute name="value">
+						<choice>
+							<value>inProcess</value>
+							<value>approved</value>
+						</choice>
+					</attribute>
+					<ref name="m.mixed.basic"/>
 				</element>
 			</optional>
 			<ref name="e.maintenanceagency"/>
