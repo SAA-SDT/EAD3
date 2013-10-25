@@ -573,6 +573,9 @@
 				<attribute name="encodinganalog"/>
 			</optional>
 			<optional>
+				<attribute name="localtype"/>
+			</optional>
+			<optional>
 				<ref name="e.head"/>
 			</optional>
 			<choice>
@@ -1191,12 +1194,18 @@
 	<define name="e.abbr">
 		<element name="abbr">
 			<ref name="a.common"/>
+			<optional>
+				<attribute name="expan"/>
+			</optional>
 			<text/>
 		</element>
 	</define>
 	<define name="e.expan">
 		<element name="expan">
 			<ref name="a.common"/>
+			<optional>
+				<attribute name="abbr"/>
+			</optional>
 			<text/>
 		</element>
 	</define>
@@ -1783,7 +1792,6 @@
 
 
 	<define name="e.p">
-
 		<element name="p">
 			<ref name="a.common"/>
 			<zeroOrMore>
@@ -2725,23 +2733,30 @@
 			</element>
 			<element name="maintenancestatus">
 				<ref name="a.common"/>
-				<choice>
-					<value>revised</value>
-					<value>deleted</value>
-					<value>new</value>
-					<value>deletedSplit</value>
-					<value>deletedReplaced</value>
-					<value>cancelled</value>
-					<value>derived</value>
-				</choice>
+				<attribute name="value">
+					<choice>
+						<value>revised</value>
+						<value>deleted</value>
+						<value>new</value>
+						<value>deletedsplit</value>
+						<value>deletedmerged</value>
+						<value>deletedreplaced</value>
+						<value>cancelled</value>
+						<value>derived</value>
+					</choice>
+				</attribute>
+				<ref name="m.mixed.basic"/>
 			</element>
 			<optional>
 				<element name="publicationstatus">
 					<ref name="a.common"/>
-					<choice>
-						<value>inProcess</value>
-						<value>approved</value>
-					</choice>
+					<attribute name="value">
+						<choice>
+							<value>inProcess</value>
+							<value>approved</value>
+						</choice>
+					</attribute>
+					<ref name="m.mixed.basic"/>
 				</element>
 			</optional>
 			<ref name="e.maintenanceagency"/>
@@ -2821,15 +2836,18 @@
 						<ref name="a.common"/>
 						<element name="eventtype">
 							<ref name="a.common"/>
-							<choice>
-								<value>created</value>
-								<value>revised</value>
-								<value>deleted</value>
-								<value>cancelled</value>
-								<value>derived</value>
-								<value>updated</value>
-								<value>unknown</value>
-							</choice>
+							<attribute name="value">
+								<choice>
+									<value>created</value>
+									<value>revised</value>
+									<value>deleted</value>
+									<value>cancelled</value>
+									<value>derived</value>
+									<value>updated</value>
+									<value>unknown</value>
+								</choice>
+							</attribute>
+							<ref name="m.mixed.basic"/>
 						</element>
 						<element name="eventdatetime">
 							<ref name="a.common"/>
@@ -2842,11 +2860,14 @@
 						</element>
 						<element name="agenttype">
 							<ref name="a.common"/>
-							<choice>
-								<value>human</value>
-								<value>machine</value>
-								<value>unknown</value>
-							</choice>
+							<attribute name="value">
+								<choice>
+									<value>human</value>
+									<value>machine</value>
+									<value>unknown</value>
+								</choice>
+							</attribute>
+							<ref name="m.mixed.basic"/>
 						</element>
 						<element a:id="agent" name="agent">
 							<ref name="a.common"/>
@@ -2935,11 +2956,7 @@
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
-			
-
 				<ref name="m.mixed.basic"/>
-
-			
 		</element>
 	</define>
 	<define name="e.author">
@@ -2948,9 +2965,7 @@
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
-			
-				<ref name="m.mixed.basic"/>
-			
+			<ref name="m.mixed.basic"/>
 		</element>
 	</define>
 	<define name="e.sponsor">
@@ -2959,9 +2974,7 @@
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
-			
-				<ref name="m.mixed.basic"/>
-			
+			<ref name="m.mixed.basic"/>
 		</element>
 	</define>
 	<define name="e.edition">
