@@ -356,7 +356,7 @@
 	<define name="e.daogrp">
 		<element name="daogrp">
 			<ref name="a.common"/>
-			
+
 			<optional>
 				<ref name="e.daodesc"/>
 			</optional>
@@ -1235,7 +1235,7 @@
 			</oneOrMore>
 		</element>
 	</define>
-	
+
 	<define name="e.abbr">
 		<element name="abbr">
 			<ref name="a.common"/>
@@ -1293,7 +1293,7 @@
 			<ref name="a.common"/>
 			<optional>
 				<attribute name="render">
-						<ref name="av.render"/>
+					<ref name="av.render"/>
 				</attribute>
 			</optional>
 			<text/>
@@ -1407,7 +1407,7 @@
 			</optional>
 			<zeroOrMore>
 				<choice>
-                   <ref name="m.mixed.basic.plus.access"/>
+					<ref name="m.mixed.basic.plus.access"/>
 				</choice>
 			</zeroOrMore>
 		</element>
@@ -1446,9 +1446,9 @@
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
-			
-				<ref name="m.mixed.basic"/>
-			
+
+			<ref name="m.mixed.basic"/>
+
 		</element>
 	</define>
 	<define name="e.c">
@@ -1740,7 +1740,9 @@
 			<zeroOrMore>
 				<element name="geographiccoordinates">
 					<ref name="a.common"/>
-					<attribute name="coordinatesystem"><text/></attribute>
+					<attribute name="coordinatesystem">
+						<text/>
+					</attribute>
 					<text/>
 				</element>
 			</zeroOrMore>
@@ -2118,11 +2120,7 @@
 		<attribute name="localtype"/>
 	</define>
 
-	<define name="am.langcode">
-		<optional>
-			<attribute name="langcode"> </attribute>
-		</optional>
-	</define>
+
 
 	<define name="m.desc.base">
 		<choice>
@@ -2205,7 +2203,6 @@
 				<optional>
 					<attribute name="localtypesource"/>
 				</optional>
-				<ref name="am.langcode"/>
 				<ref name="m.mixed.basic"/>
 			</element>
 
@@ -2331,7 +2328,7 @@
 				<ref name="e.foreign"/>
 			</choice>
 		</zeroOrMore>
-	</define>	
+	</define>
 	<define name="m.mixed.basic.plus">
 		<zeroOrMore>
 			<choice>
@@ -2396,7 +2393,7 @@
 
 			<element name="chronlist">
 
-               <ref name="a.common"/>
+				<ref name="a.common"/>
 				<optional>
 					<ref name="a.localtype"/>
 				</optional>
@@ -2485,7 +2482,7 @@
 			<ref name="e.title"/>
 		</choice>
 	</define>
-	
+
 	<define name="m.para.content">
 		<choice>
 			<ref name="m.mixed.basic.plus"/>
@@ -3026,9 +3023,9 @@
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
-			
-				<ref name="m.mixed.basic"/>
-			
+
+			<ref name="m.mixed.basic"/>
+
 		</element>
 	</define>
 	<define name="e.subtitle">
@@ -3037,7 +3034,7 @@
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
-				<ref name="m.mixed.basic"/>
+			<ref name="m.mixed.basic"/>
 		</element>
 	</define>
 	<define name="e.author">
@@ -3064,9 +3061,9 @@
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
-			
-				<ref name="m.mixed.basic"/>
-			
+
+			<ref name="m.mixed.basic"/>
+
 		</element>
 	</define>
 	<define name="e.date">
@@ -3084,9 +3081,9 @@
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
-			
-				<ref name="m.mixed.basic"/>
-			
+
+			<ref name="m.mixed.basic"/>
+
 		</element>
 	</define>
 
@@ -3096,9 +3093,9 @@
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
-			
-				<ref name="m.mixed.basic"/>
-			
+
+			<ref name="m.mixed.basic"/>
+
 		</element>
 	</define>
 	<define name="e.controlnote">
@@ -3160,7 +3157,7 @@
 			<ref name="m.mixed.basic"/>
 		</element>
 	</define>
-	
+
 	<define name="e.placeentry">
 		<element name="placeentry">
 			<ref name="a.common"/>
@@ -3172,11 +3169,11 @@
 			</optional>
 			<optional>
 				<attribute name="countrycode">
-						<data type="string"/>
+					<data type="string"/>
 				</attribute>
 			</optional>
 			<optional>
-				<attribute name="vocabularysource"></attribute>
+				<attribute name="vocabularysource"/>
 			</optional>
 			<optional>
 				<attribute name="accuracy">
@@ -3189,21 +3186,21 @@
 			<text/>
 		</element>
 	</define>
-	
+
 	<define name="m.geographicalcoordinates">
-		<attribute  name="longitude">
+		<attribute name="longitude">
 			<data type="NMTOKEN"/>
 		</attribute>
-		<attribute  name="latitude">
+		<attribute name="latitude">
 			<data type="NMTOKEN"/>
 		</attribute>
 		<optional>
-			<attribute  name="altitude">
+			<attribute name="altitude">
 				<data type="NMTOKEN"/>
 			</attribute>
 		</optional>
 	</define>
-	
+
 	<define name="a.lastdatetimeverified">
 		<attribute name="lastdatetimeverified">
 			<ref name="m.data.standardDateTime"/>
