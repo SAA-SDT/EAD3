@@ -268,7 +268,22 @@
 					<optional>
 						<ref name="a.localtype"/>
 					</optional>
-					<ref name="e.datesingle"/>
+					<optional>
+						<attribute name="standarddate">
+							<ref name="m.data.standarddate"/>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="notbefore">
+							<ref name="m.data.standarddate"/>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="notafter">
+							<ref name="m.data.standarddate"/>
+						</attribute>
+					</optional>
+					<ref name="m.mixed.basic"/>
 				</element>
 			</optional>
 			<optional>
@@ -277,7 +292,22 @@
 					<optional>
 						<ref name="a.localtype"/>
 					</optional>
-					<ref name="e.datesingle"/>
+					<optional>
+						<attribute name="standarddate">
+							<ref name="m.data.standarddate"/>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="notbefore">
+							<ref name="m.data.standarddate"/>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="notafter">
+							<ref name="m.data.standarddate"/>
+						</attribute>
+					</optional>
+					<ref name="m.mixed.basic"/>
 				</element>
 			</optional>
 		</element>
