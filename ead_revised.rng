@@ -652,17 +652,7 @@
 			<optional>
 				<attribute name="localtype"/>
 			</optional>
-			<optional>
-				<ref name="e.head"/>
-			</optional>
-			<choice>
-				<oneOrMore>
-					<choice>
-						<ref name="m.blocks"/>
-						<ref name="e.materialspec"/>
-					</choice>
-				</oneOrMore>
-			</choice>
+			<ref name="m.mixed.basic"/>
 		</element>
 	</define>
 	<define name="e.prefercite">
