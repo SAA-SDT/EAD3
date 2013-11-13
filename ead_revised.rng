@@ -2399,6 +2399,9 @@
 				<optional>
 					<ref name="a.localtype"/>
 				</optional>
+				<optional>
+					<ref name="e.listhead"/>
+				</optional>
 				<oneOrMore>
 
 					<element name="chronitem">
