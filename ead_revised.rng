@@ -1303,7 +1303,6 @@
 
 	<define name="e.lb">
 		<element name="lb">
-			<ref name="a.common.empty"/>
 			<empty/>
 		</element>
 	</define>
