@@ -1800,6 +1800,9 @@
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
+			<optional>
+				<attribute name="localtype"/>
+			</optional>
 			<oneOrMore>
 				<ref name="e.part"/>
 			</oneOrMore>
@@ -1812,6 +1815,9 @@
 			<ref name="a.access"/>
 			<optional>
 				<attribute name="encodinganalog"/>
+			</optional>
+			<optional>
+				<attribute name="localtype"/>
 			</optional>
 			<oneOrMore>
 				<ref name="e.part"/>
@@ -1826,6 +1832,9 @@
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
+			<optional>
+				<attribute name="localtype"/>
+			</optional>
 			<oneOrMore>
 				<ref name="e.part"/>
 			</oneOrMore>
@@ -1838,6 +1847,9 @@
 			<ref name="a.access"/>
 			<optional>
 				<attribute name="encodinganalog"/>
+			</optional>
+			<optional>
+				<attribute name="localtype"/>
 			</optional>
 			<oneOrMore>
 				<ref name="e.part"/>
