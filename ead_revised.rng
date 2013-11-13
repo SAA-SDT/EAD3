@@ -1610,6 +1610,9 @@
 			<oneOrMore>
 				<ref name="e.script"/>
 			</oneOrMore>
+			<optional>
+				<ref name="e.descriptivenote"/>
+			</optional>
 		</element>
 
 	</define>
