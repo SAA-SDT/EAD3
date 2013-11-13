@@ -182,21 +182,23 @@
     </xs:complexType>
   </xs:element>
   <xs:element name="fromdate">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element ref="ns1:datesingle"/>
-      </xs:sequence>
+    <xs:complexType mixed="true">
+      <xs:group ref="ns1:m.mixed.basic"/>
       <xs:attributeGroup ref="ns1:a.common"/>
       <xs:attribute name="localtype"/>
+      <xs:attribute name="standarddate" type="ns1:m.data.standarddate"/>
+      <xs:attribute name="notbefore" type="ns1:m.data.standarddate"/>
+      <xs:attribute name="notafter" type="ns1:m.data.standarddate"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="todate">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element ref="ns1:datesingle"/>
-      </xs:sequence>
+    <xs:complexType mixed="true">
+      <xs:group ref="ns1:m.mixed.basic"/>
       <xs:attributeGroup ref="ns1:a.common"/>
       <xs:attribute name="localtype"/>
+      <xs:attribute name="standarddate" type="ns1:m.data.standarddate"/>
+      <xs:attribute name="notbefore" type="ns1:m.data.standarddate"/>
+      <xs:attribute name="notafter" type="ns1:m.data.standarddate"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="dateset" substitutionGroup="ns1:m.dates">
@@ -233,6 +235,15 @@
         </xs:simpleType>
       </xs:attribute>
       <xs:attribute name="otherdaotype"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="daogrp">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="ns1:daodesc"/>
+        <xs:element maxOccurs="unbounded" ref="ns1:dao"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="ns1:a.common"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="daodesc">
@@ -415,14 +426,8 @@
     </xs:complexType>
   </xs:element>
   <xs:element name="materialspec" substitutionGroup="ns1:m.did">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" ref="ns1:head"/>
-        <xs:choice maxOccurs="unbounded">
-          <xs:element ref="ns1:m.blocks"/>
-          <xs:element ref="ns1:materialspec"/>
-        </xs:choice>
-      </xs:sequence>
+    <xs:complexType mixed="true">
+      <xs:group ref="ns1:m.mixed.basic"/>
       <xs:attributeGroup ref="ns1:a.common"/>
       <xs:attribute name="encodinganalog"/>
       <xs:attribute name="localtype"/>
@@ -874,10 +879,14 @@
       <xs:attribute name="render" type="ns1:av.render"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="lb">
-    <xs:complexType>
-      <xs:attributeGroup ref="ns1:a.common.empty"/>
+  <xs:element name="foreign">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attribute name="render" type="ns1:av.render"/>
     </xs:complexType>
+  </xs:element>
+  <xs:element name="lb">
+    <xs:complexType/>
   </xs:element>
   <xs:element name="ref">
     <xs:complexType mixed="true">
@@ -899,7 +908,7 @@
   </xs:element>
   <xs:element name="ptr">
     <xs:complexType>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="ns1:a.common.empty"/>
       <xs:attributeGroup ref="ns1:a.internal.ptr"/>
     </xs:complexType>
   </xs:element>
@@ -1159,6 +1168,7 @@
       <xs:sequence>
         <xs:element maxOccurs="unbounded" ref="ns1:language"/>
         <xs:element maxOccurs="unbounded" ref="ns1:script"/>
+        <xs:element minOccurs="0" ref="ns1:descriptivenote"/>
       </xs:sequence>
       <xs:attributeGroup ref="ns1:a.common"/>
       <xs:attribute name="encodinganalog"/>
@@ -1205,11 +1215,18 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element maxOccurs="unbounded" ref="ns1:part"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:geographiccoordinates"/>
       </xs:sequence>
       <xs:attributeGroup ref="ns1:a.common"/>
       <xs:attributeGroup ref="ns1:a.access"/>
       <xs:attribute name="role"/>
       <xs:attribute name="encodinganalog"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="geographiccoordinates">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attribute name="coordinatesystem" use="required"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="name" substitutionGroup="ns1:m.access">
@@ -1242,6 +1259,7 @@
       <xs:attributeGroup ref="ns1:a.common"/>
       <xs:attributeGroup ref="ns1:a.access"/>
       <xs:attribute name="encodinganalog"/>
+      <xs:attribute name="localtype"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="subject" substitutionGroup="ns1:m.access">
@@ -1252,6 +1270,7 @@
       <xs:attributeGroup ref="ns1:a.common"/>
       <xs:attributeGroup ref="ns1:a.access"/>
       <xs:attribute name="encodinganalog"/>
+      <xs:attribute name="localtype"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="genreform" substitutionGroup="ns1:m.access">
@@ -1262,6 +1281,7 @@
       <xs:attributeGroup ref="ns1:a.common"/>
       <xs:attributeGroup ref="ns1:a.access"/>
       <xs:attribute name="encodinganalog"/>
+      <xs:attribute name="localtype"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="function" substitutionGroup="ns1:m.access">
@@ -1272,6 +1292,7 @@
       <xs:attributeGroup ref="ns1:a.common"/>
       <xs:attributeGroup ref="ns1:a.access"/>
       <xs:attribute name="encodinganalog"/>
+      <xs:attribute name="localtype"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="part">
@@ -1464,9 +1485,6 @@
   <xs:attributeGroup name="a.localtype">
     <xs:attribute name="localtype" use="required"/>
   </xs:attributeGroup>
-  <xs:attributeGroup name="am.langcode">
-    <xs:attribute name="langcode"/>
-  </xs:attributeGroup>
   <xs:element name="m.desc.base" abstract="true"/>
   <xs:element name="m.dates" abstract="true"/>
   <xs:complexType name="m.dates">
@@ -1506,7 +1524,6 @@
       <xs:attribute name="encodinganalog"/>
       <xs:attribute name="localtype"/>
       <xs:attribute name="localtypesource"/>
-      <xs:attributeGroup ref="ns1:am.langcode"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="physdesc" substitutionGroup="ns1:m.did">
@@ -1525,6 +1542,7 @@
         <xs:element maxOccurs="unbounded" ref="ns1:physdescstructured"/>
       </xs:sequence>
       <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attribute name="label"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="physloc" substitutionGroup="ns1:m.did">
@@ -1575,6 +1593,7 @@
         <xs:element ref="ns1:lb"/>
         <xs:element ref="ns1:ref"/>
         <xs:element ref="ns1:ptr"/>
+        <xs:element ref="ns1:foreign"/>
       </xs:choice>
     </xs:sequence>
   </xs:group>
@@ -1627,6 +1646,7 @@
   <xs:element name="chronlist" substitutionGroup="ns1:m.inter.noquote">
     <xs:complexType>
       <xs:sequence>
+        <xs:element minOccurs="0" ref="ns1:listhead"/>
         <xs:element maxOccurs="unbounded" ref="ns1:chronitem"/>
       </xs:sequence>
       <xs:attributeGroup ref="ns1:a.common"/>
@@ -1749,7 +1769,7 @@
       </xs:attribute>
       <xs:attribute name="href" type="xs:anyURI"/>
       <xs:attribute name="linkrole" type="xs:anyURI"/>
-      <xs:attribute name="linkarcrole" type="xs:anyURI"/>
+      <xs:attribute name="arcrole" type="xs:anyURI"/>
       <xs:attribute name="linktitle"/>
       <xs:attribute name="show">
         <xs:simpleType>
@@ -1796,7 +1816,7 @@
     </xs:attribute>
     <xs:attribute name="href" type="xs:anyURI"/>
     <xs:attribute name="linkrole" type="xs:anyURI"/>
-    <xs:attribute name="linkarcrole" type="xs:anyURI"/>
+    <xs:attribute name="arcrole" type="xs:anyURI"/>
     <xs:attribute name="linktitle"/>
     <xs:attribute name="show">
       <xs:simpleType>
@@ -1827,7 +1847,7 @@
     <xs:attribute name="linkrole" use="required" type="xs:anyURI"/>
   </xs:attributeGroup>
   <xs:attributeGroup name="a.link.arcrole">
-    <xs:attribute name="linkarcrole" use="required" type="xs:anyURI"/>
+    <xs:attribute name="arcrole" use="required" type="xs:anyURI"/>
   </xs:attributeGroup>
   <xs:attributeGroup name="a.link.title">
     <xs:attribute name="linktitle" use="required"/>
@@ -2170,7 +2190,7 @@
       </xs:attribute>
       <xs:attribute name="href" type="xs:anyURI"/>
       <xs:attribute name="linkrole" type="xs:anyURI"/>
-      <xs:attribute name="linkarcrole" type="xs:anyURI"/>
+      <xs:attribute name="arcrole" type="xs:anyURI"/>
       <xs:attribute name="linktitle"/>
       <xs:attribute name="show">
         <xs:simpleType>
@@ -2311,7 +2331,7 @@
       </xs:attribute>
       <xs:attribute name="href" type="xs:anyURI"/>
       <xs:attribute name="linkrole" type="xs:anyURI"/>
-      <xs:attribute name="linkarcrole" type="xs:anyURI"/>
+      <xs:attribute name="arcrole" type="xs:anyURI"/>
       <xs:attribute name="linktitle"/>
       <xs:attribute name="show">
         <xs:simpleType>

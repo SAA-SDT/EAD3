@@ -22,6 +22,7 @@
 				'properties_ref', 
 				'properties_ptr', 
 				'properties_quote', 
+				'properties_foreign', 
 				'properties_num', 
 				'properties_footnote', 
 				'properties_m.blocks', 
@@ -125,6 +126,7 @@
 				'properties_m.dates', 
 				'properties_dao', 
 				'properties_daodesc', 
+				'properties_daogrp', 
 				'properties_accessrestrict', 
 				'properties_accruals', 
 				'properties_fileplan', 
@@ -158,6 +160,7 @@
 				'properties_title', 
 				'properties_languageset', 
 				'properties_geogname', 
+				'properties_geographiccoordinates', 
 				'properties_occupation', 
 				'properties_subject', 
 				'properties_genreform', 
@@ -184,11 +187,12 @@
 				'properties_am.simplelink_linktype', 
 				'properties_am.simplelink_href', 
 				'properties_am.simplelink_linkrole', 
-				'properties_am.simplelink_linkarcrole', 
+				'properties_am.simplelink_arcrole', 
 				'properties_am.simplelink_show', 
 				'properties_am.simplelink_actuate', 
 				'properties_emph_render', 
 				'properties_a.internal.ptr_target', 
+				'properties_foreign_render', 
 				'properties_footnote_show', 
 				'properties_footnote_actuate', 
 				'properties_am.dates.era_era', 
@@ -206,14 +210,14 @@
 				'properties_m.mixed.basic_linktype', 
 				'properties_m.mixed.basic_href', 
 				'properties_m.mixed.basic_linkrole', 
-				'properties_m.mixed.basic_linkarcrole', 
+				'properties_m.mixed.basic_arcrole', 
 				'properties_m.mixed.basic_show', 
 				'properties_m.mixed.basic_actuate', 
 				'properties_m.mixed.basic_lastdatetimeverified', 
 				'properties_citation_actuate', 
+				'properties_citation_arcrole', 
 				'properties_citation_href', 
 				'properties_citation_lastdatetimeverified', 
-				'properties_citation_linkarcrole', 
 				'properties_citation_linkrole', 
 				'properties_citation_linktype', 
 				'properties_citation_show', 
@@ -222,6 +226,15 @@
 				'properties_m.datesingle_standarddate', 
 				'properties_m.datesingle_notbefore', 
 				'properties_m.datesingle_notafter', 
+				'properties_m.mixed.basic_standarddate', 
+				'properties_m.mixed.basic_notbefore', 
+				'properties_m.mixed.basic_notafter', 
+				'properties_fromdate_notafter', 
+				'properties_fromdate_notbefore', 
+				'properties_fromdate_standarddate', 
+				'properties_todate_notafter', 
+				'properties_todate_notbefore', 
+				'properties_todate_standarddate', 
 				'properties_localcontrol_localtype', 
 				'properties_eventtype_value', 
 				'properties_eventdatetime_standarddatetime', 
@@ -230,7 +243,7 @@
 				'properties_source_linktype', 
 				'properties_source_href', 
 				'properties_source_linkrole', 
-				'properties_source_linkarcrole', 
+				'properties_source_arcrole', 
 				'properties_source_show', 
 				'properties_source_actuate', 
 				'properties_sources_base', 
@@ -246,7 +259,7 @@
 				'properties_relation_linktype', 
 				'properties_relation_href', 
 				'properties_relation_linkrole', 
-				'properties_relation_linkarcrole', 
+				'properties_relation_arcrole', 
 				'properties_relation_show', 
 				'properties_relation_actuate', 
 				'properties_m.para.content_colname', 
@@ -295,6 +308,7 @@
 				'properties_table_colsep', 
 				'properties_table_rowsep', 
 				'properties_title_render', 
+				'properties_geographiccoordinates_coordinatesystem', 
 				'properties_a.localtype_localtype', 
 				'properties_m.mixed.basic_rules', 
 				'properties_physdesc_rules', 
@@ -309,7 +323,7 @@
 				'properties_container_parent', 
 				'properties_a.link.href_href', 
 				'properties_a.link.role_linkrole', 
-				'properties_a.link.arcrole_linkarcrole', 
+				'properties_a.link.arcrole_arcrole', 
 				'properties_a.link.title_linktitle', 
 				'properties_a.link.show_show', 
 				'properties_a.link.actuate_actuate', 
@@ -327,6 +341,7 @@
 				'facets_am.simplelink_show', 
 				'facets_am.simplelink_actuate', 
 				'facets_emph_render', 
+				'facets_foreign_render', 
 				'facets_footnote_show', 
 				'facets_footnote_actuate', 
 				'facets_m.mixed.basic_render', 
@@ -397,6 +412,7 @@
 				'usedBy_ref', 
 				'usedBy_ptr', 
 				'usedBy_quote', 
+				'usedBy_foreign', 
 				'usedBy_num', 
 				'usedBy_footnote', 
 				'usedBy_m.blocks', 
@@ -491,6 +507,7 @@
 				'usedBy_dimensions', 
 				'usedBy_physfacet', 
 				'usedBy_m.dates', 
+				'usedBy_dao', 
 				'usedBy_daodesc', 
 				'usedBy_accessrestrict', 
 				'usedBy_accruals', 
@@ -504,7 +521,6 @@
 				'usedBy_indexentry', 
 				'usedBy_namegrp', 
 				'usedBy_legalstatus', 
-				'usedBy_materialspec', 
 				'usedBy_prefercite', 
 				'usedBy_processinfo', 
 				'usedBy_userestrict', 
@@ -521,6 +537,7 @@
 				'usedBy_otherfindaid', 
 				'usedBy_colspec', 
 				'usedBy_languageset', 
+				'usedBy_geographiccoordinates', 
 				'usedBy_event', 
 				'usedBy_m.inter.noquote', 
 				'usedBy_chronitem', 
@@ -544,7 +561,7 @@
 				'usedBy_am.simplelink_linktype', 
 				'usedBy_am.simplelink_href', 
 				'usedBy_am.simplelink_linkrole', 
-				'usedBy_am.simplelink_linkarcrole', 
+				'usedBy_am.simplelink_arcrole', 
 				'usedBy_am.simplelink_linktitle', 
 				'usedBy_am.simplelink_show', 
 				'usedBy_am.simplelink_actuate', 
@@ -554,6 +571,7 @@
 				'usedBy_emph_render', 
 				'usedBy_a.internal.ptr_target', 
 				'usedBy_a.internal.ptr_xpointer', 
+				'usedBy_foreign_render', 
 				'usedBy_m.mixed.basic_localtype', 
 				'usedBy_footnote_localtype', 
 				'usedBy_footnote_show', 
@@ -587,7 +605,7 @@
 				'usedBy_m.mixed.basic_linktype', 
 				'usedBy_m.mixed.basic_href', 
 				'usedBy_m.mixed.basic_linkrole', 
-				'usedBy_m.mixed.basic_linkarcrole', 
+				'usedBy_m.mixed.basic_arcrole', 
 				'usedBy_m.mixed.basic_linktitle', 
 				'usedBy_m.mixed.basic_show', 
 				'usedBy_m.mixed.basic_actuate', 
@@ -600,8 +618,9 @@
 				'usedBy_m.datesingle_standarddate', 
 				'usedBy_m.datesingle_notbefore', 
 				'usedBy_m.datesingle_notafter', 
-				'usedBy_fromdate_localtype', 
-				'usedBy_todate_localtype', 
+				'usedBy_m.mixed.basic_standarddate', 
+				'usedBy_m.mixed.basic_notbefore', 
+				'usedBy_m.mixed.basic_notafter', 
 				'usedBy_daterange_localtype', 
 				'usedBy_localcontrol_localtype', 
 				'usedBy_eventdatetime_standarddatetime', 
@@ -610,7 +629,7 @@
 				'usedBy_source_linktype', 
 				'usedBy_source_href', 
 				'usedBy_source_linkrole', 
-				'usedBy_source_linkarcrole', 
+				'usedBy_source_arcrole', 
 				'usedBy_source_linktitle', 
 				'usedBy_source_show', 
 				'usedBy_source_actuate', 
@@ -635,7 +654,7 @@
 				'usedBy_relation_linktype', 
 				'usedBy_relation_href', 
 				'usedBy_relation_linkrole', 
-				'usedBy_relation_linkarcrole', 
+				'usedBy_relation_arcrole', 
 				'usedBy_relation_linktitle', 
 				'usedBy_relation_show', 
 				'usedBy_relation_actuate', 
@@ -718,8 +737,6 @@
 				'usedBy_index_encodinganalog', 
 				'usedBy_legalstatus_encodinganalog', 
 				'usedBy_legalstatus_localtype', 
-				'usedBy_materialspec_encodinganalog', 
-				'usedBy_materialspec_localtype', 
 				'usedBy_prefercite_encodinganalog', 
 				'usedBy_processinfo_localtype', 
 				'usedBy_processinfo_encodinganalog', 
@@ -750,18 +767,23 @@
 				'usedBy_table_colsep', 
 				'usedBy_table_rowsep', 
 				'usedBy_languageset_encodinganalog', 
+				'usedBy_geographiccoordinates_coordinatesystem', 
 				'usedBy_geogname_role', 
 				'usedBy_geogname_encodinganalog', 
 				'usedBy_occupation_encodinganalog', 
+				'usedBy_occupation_localtype', 
 				'usedBy_subject_encodinganalog', 
+				'usedBy_subject_localtype', 
 				'usedBy_genreform_encodinganalog', 
+				'usedBy_genreform_localtype', 
 				'usedBy_function_encodinganalog', 
+				'usedBy_function_localtype', 
 				'usedBy_a.localtype_localtype', 
-				'usedBy_am.langcode_langcode', 
 				'usedBy_langmaterial_label', 
 				'usedBy_langmaterial_encodinganalog', 
 				'usedBy_m.mixed.basic_localtypesource', 
 				'usedBy_m.mixed.basic_rules', 
+				'usedBy_parallelphysdescset_label', 
 				'usedBy_m.mixed.basic_parent', 
 				'usedBy_am.countrycode_countrycode', 
 				'usedBy_m.mixed.basic_repositorycode', 
@@ -771,7 +793,7 @@
 				'usedBy_chronlist_localtype', 
 				'usedBy_a.link.href_href', 
 				'usedBy_a.link.role_linkrole', 
-				'usedBy_a.link.arcrole_linkarcrole', 
+				'usedBy_a.link.arcrole_arcrole', 
 				'usedBy_a.link.title_linktitle', 
 				'usedBy_a.link.show_show', 
 				'usedBy_a.link.actuate_actuate', 
@@ -800,7 +822,6 @@
 				'usedBy_a.dsctab.tpattern', 
 				'usedBy_a.access', 
 				'usedBy_a.access.no.normal', 
-				'usedBy_am.langcode', 
 				'usedBy_am.countrycode');
 
         var sourceBoxes= new Array('source_ead', 
@@ -818,6 +839,7 @@
 				'source_ref', 
 				'source_ptr', 
 				'source_quote', 
+				'source_foreign', 
 				'source_num', 
 				'source_footnote', 
 				'source_m.blocks', 
@@ -921,6 +943,7 @@
 				'source_m.dates', 
 				'source_dao', 
 				'source_daodesc', 
+				'source_daogrp', 
 				'source_accessrestrict', 
 				'source_accruals', 
 				'source_fileplan', 
@@ -954,6 +977,7 @@
 				'source_title', 
 				'source_languageset', 
 				'source_geogname', 
+				'source_geographiccoordinates', 
 				'source_occupation', 
 				'source_subject', 
 				'source_genreform', 
@@ -993,7 +1017,7 @@
 				'source_am.simplelink_linktype', 
 				'source_am.simplelink_href', 
 				'source_am.simplelink_linkrole', 
-				'source_am.simplelink_linkarcrole', 
+				'source_am.simplelink_arcrole', 
 				'source_am.simplelink_linktitle', 
 				'source_am.simplelink_show', 
 				'source_am.simplelink_actuate', 
@@ -1003,6 +1027,7 @@
 				'source_emph_render', 
 				'source_a.internal.ptr_target', 
 				'source_a.internal.ptr_xpointer', 
+				'source_foreign_render', 
 				'source_m.mixed.basic_localtype', 
 				'source_quote_localtype', 
 				'source_num_localtype', 
@@ -1053,15 +1078,15 @@
 				'source_m.mixed.basic_linktype', 
 				'source_m.mixed.basic_href', 
 				'source_m.mixed.basic_linkrole', 
-				'source_m.mixed.basic_linkarcrole', 
+				'source_m.mixed.basic_arcrole', 
 				'source_m.mixed.basic_linktitle', 
 				'source_m.mixed.basic_show', 
 				'source_m.mixed.basic_actuate', 
 				'source_m.mixed.basic_lastdatetimeverified', 
 				'source_citation_actuate', 
+				'source_citation_arcrole', 
 				'source_citation_href', 
 				'source_citation_lastdatetimeverified', 
-				'source_citation_linkarcrole', 
 				'source_citation_linkrole', 
 				'source_citation_linktitle', 
 				'source_citation_linktype', 
@@ -1074,8 +1099,17 @@
 				'source_m.datesingle_standarddate', 
 				'source_m.datesingle_notbefore', 
 				'source_m.datesingle_notafter', 
+				'source_m.mixed.basic_standarddate', 
+				'source_m.mixed.basic_notbefore', 
+				'source_m.mixed.basic_notafter', 
 				'source_fromdate_localtype', 
+				'source_fromdate_notafter', 
+				'source_fromdate_notbefore', 
+				'source_fromdate_standarddate', 
 				'source_todate_localtype', 
+				'source_todate_notafter', 
+				'source_todate_notbefore', 
+				'source_todate_standarddate', 
 				'source_daterange_localtype', 
 				'source_localcontrol_localtype', 
 				'source_eventtype_value', 
@@ -1086,7 +1120,7 @@
 				'source_source_linktype', 
 				'source_source_href', 
 				'source_source_linkrole', 
-				'source_source_linkarcrole', 
+				'source_source_arcrole', 
 				'source_source_linktitle', 
 				'source_source_show', 
 				'source_source_actuate', 
@@ -1111,7 +1145,7 @@
 				'source_relation_linktype', 
 				'source_relation_href', 
 				'source_relation_linkrole', 
-				'source_relation_linkarcrole', 
+				'source_relation_arcrole', 
 				'source_relation_linktitle', 
 				'source_relation_show', 
 				'source_relation_actuate', 
@@ -1251,14 +1285,18 @@
 				'source_title_localtype', 
 				'source_title_render', 
 				'source_languageset_encodinganalog', 
+				'source_geographiccoordinates_coordinatesystem', 
 				'source_geogname_role', 
 				'source_geogname_encodinganalog', 
 				'source_occupation_encodinganalog', 
+				'source_occupation_localtype', 
 				'source_subject_encodinganalog', 
+				'source_subject_localtype', 
 				'source_genreform_encodinganalog', 
+				'source_genreform_localtype', 
 				'source_function_encodinganalog', 
+				'source_function_localtype', 
 				'source_a.localtype_localtype', 
-				'source_am.langcode_langcode', 
 				'source_abstract_encodinganalog', 
 				'source_abstract_label', 
 				'source_abstract_localtype', 
@@ -1273,6 +1311,7 @@
 				'source_physdesc_encodinganalog', 
 				'source_physdesc_label', 
 				'source_physdesc_rules', 
+				'source_parallelphysdescset_label', 
 				'source_m.mixed.basic_parent', 
 				'source_physloc_encodinganalog', 
 				'source_physloc_label', 
@@ -1296,7 +1335,7 @@
 				'source_chronlist_localtype', 
 				'source_a.link.href_href', 
 				'source_a.link.role_linkrole', 
-				'source_a.link.arcrole_linkarcrole', 
+				'source_a.link.arcrole_arcrole', 
 				'source_a.link.title_linktitle', 
 				'source_a.link.show_show', 
 				'source_a.link.actuate_actuate', 
@@ -1327,7 +1366,6 @@
 				'source_a.access', 
 				'source_a.access.no.normal', 
 				'source_a.localtype', 
-				'source_am.langcode', 
 				'source_am.countrycode', 
 				'source_a.link.href', 
 				'source_a.link.role', 
@@ -1426,6 +1464,7 @@
 				'instance_unitdatestructured', 
 				'instance_dao', 
 				'instance_daodesc', 
+				'instance_daogrp', 
 				'instance_accessrestrict', 
 				'instance_accruals', 
 				'instance_fileplan', 
@@ -1491,6 +1530,7 @@
 				'diagram_ref', 
 				'diagram_ptr', 
 				'diagram_quote', 
+				'diagram_foreign', 
 				'diagram_num', 
 				'diagram_footnote', 
 				'diagram_m.blocks', 
@@ -1594,6 +1634,7 @@
 				'diagram_m.dates', 
 				'diagram_dao', 
 				'diagram_daodesc', 
+				'diagram_daogrp', 
 				'diagram_accessrestrict', 
 				'diagram_accruals', 
 				'diagram_fileplan', 
@@ -1627,6 +1668,7 @@
 				'diagram_title', 
 				'diagram_languageset', 
 				'diagram_geogname', 
+				'diagram_geographiccoordinates', 
 				'diagram_occupation', 
 				'diagram_subject', 
 				'diagram_genreform', 
@@ -1679,7 +1721,6 @@
 				'diagram_a.access', 
 				'diagram_a.access.no.normal', 
 				'diagram_a.localtype', 
-				'diagram_am.langcode', 
 				'diagram_am.countrycode', 
 				'diagram_a.link.href', 
 				'diagram_a.link.role', 
@@ -1702,10 +1743,10 @@
 				'attributes_abbr', 
 				'attributes_expan', 
 				'attributes_emph', 
-				'attributes_lb', 
 				'attributes_ref', 
 				'attributes_ptr', 
 				'attributes_quote', 
+				'attributes_foreign', 
 				'attributes_num', 
 				'attributes_footnote', 
 				'attributes_date', 
@@ -1802,6 +1843,7 @@
 				'attributes_unitdatestructured', 
 				'attributes_dao', 
 				'attributes_daodesc', 
+				'attributes_daogrp', 
 				'attributes_accessrestrict', 
 				'attributes_accruals', 
 				'attributes_fileplan', 
@@ -1835,6 +1877,7 @@
 				'attributes_title', 
 				'attributes_languageset', 
 				'attributes_geogname', 
+				'attributes_geographiccoordinates', 
 				'attributes_occupation', 
 				'attributes_subject', 
 				'attributes_genreform', 
@@ -1867,7 +1910,6 @@
 				'attributes_a.access', 
 				'attributes_a.access.no.normal', 
 				'attributes_a.localtype', 
-				'attributes_am.langcode', 
 				'attributes_am.countrycode', 
 				'attributes_a.link.href', 
 				'attributes_a.link.role', 
@@ -1893,6 +1935,7 @@
 				'model_emph', 
 				'model_ref', 
 				'model_quote', 
+				'model_foreign', 
 				'model_num', 
 				'model_footnote', 
 				'model_date', 
@@ -1989,6 +2032,7 @@
 				'model_unitdatestructured', 
 				'model_dao', 
 				'model_daodesc', 
+				'model_daogrp', 
 				'model_accessrestrict', 
 				'model_accruals', 
 				'model_fileplan', 
@@ -2021,6 +2065,7 @@
 				'model_title', 
 				'model_languageset', 
 				'model_geogname', 
+				'model_geographiccoordinates', 
 				'model_occupation', 
 				'model_subject', 
 				'model_genreform', 
@@ -2363,6 +2408,7 @@
                                                 <div><b><a href="ead_revised.html#custodhist" target="_self" title="urn:isbn:1-931666-22-9">ns1:custodhist</a></b></div>
                                                 <div><b><a href="ead_revised.html#dao" target="_self" title="urn:isbn:1-931666-22-9">ns1:dao</a></b></div>
                                                 <div><b><a href="ead_revised.html#daodesc" target="_self" title="urn:isbn:1-931666-22-9">ns1:daodesc</a></b></div>
+                                                <div><b><a href="ead_revised.html#daogrp" target="_self" title="urn:isbn:1-931666-22-9">ns1:daogrp</a></b></div>
                                                 <div><b><a href="ead_revised.html#date" target="_self" title="urn:isbn:1-931666-22-9">ns1:date</a></b></div>
                                                 <div><b><a href="ead_revised.html#daterange" target="_self" title="urn:isbn:1-931666-22-9">ns1:daterange</a></b></div>
                                                 <div><b><a href="ead_revised.html#dateset" target="_self" title="urn:isbn:1-931666-22-9">ns1:dateset</a></b></div>
@@ -2387,10 +2433,12 @@
                                                 <div><b><a href="ead_revised.html#filedesc" target="_self" title="urn:isbn:1-931666-22-9">ns1:filedesc</a></b></div>
                                                 <div><b><a href="ead_revised.html#fileplan" target="_self" title="urn:isbn:1-931666-22-9">ns1:fileplan</a></b></div>
                                                 <div><b><a href="ead_revised.html#footnote" target="_self" title="urn:isbn:1-931666-22-9">ns1:footnote</a></b></div>
+                                                <div><b><a href="ead_revised.html#foreign" target="_self" title="urn:isbn:1-931666-22-9">ns1:foreign</a></b></div>
                                                 <div><b><a href="ead_revised.html#fromdate" target="_self" title="urn:isbn:1-931666-22-9">ns1:fromdate</a></b></div>
                                                 <div><b><a href="ead_revised.html#function" target="_self" title="urn:isbn:1-931666-22-9">ns1:function</a></b></div>
                                                 <div><b><a href="ead_revised.html#genreform" target="_self" title="urn:isbn:1-931666-22-9">ns1:genreform</a></b></div>
                                                 <div><b><a href="ead_revised.html#geogname" target="_self" title="urn:isbn:1-931666-22-9">ns1:geogname</a></b></div>
+                                                <div><b><a href="ead_revised.html#geographiccoordinates" target="_self" title="urn:isbn:1-931666-22-9">ns1:geographiccoordinates</a></b></div>
                                                 <div><b><a href="ead_revised.html#head" target="_self" title="urn:isbn:1-931666-22-9">ns1:head</a></b></div>
                                                 <div><b><a href="ead_revised.html#head01" target="_self" title="urn:isbn:1-931666-22-9">ns1:head01</a></b></div>
                                                 <div><b><a href="ead_revised.html#head02" target="_self" title="urn:isbn:1-931666-22-9">ns1:head02</a></b></div>
@@ -2669,7 +2717,6 @@
                                                 <div><b><a href="ead_revised.html#am.date.normal" target="_self" title="urn:isbn:1-931666-22-9">ns1:am.date.normal</a></b></div>
                                                 <div><b><a href="ead_revised.html#am.dates.calendar" target="_self" title="urn:isbn:1-931666-22-9">ns1:am.dates.calendar</a></b></div>
                                                 <div><b><a href="ead_revised.html#am.dates.era" target="_self" title="urn:isbn:1-931666-22-9">ns1:am.dates.era</a></b></div>
-                                                <div><b><a href="ead_revised.html#am.langcode" target="_self" title="urn:isbn:1-931666-22-9">ns1:am.langcode</a></b></div>
                                                 <div><b><a href="ead_revised.html#am.simplelink" target="_self" title="urn:isbn:1-931666-22-9">ns1:am.simplelink</a></b></div>
                                                 <div><b><a href="ead_revised.html#m.datesingle" target="_self" title="urn:isbn:1-931666-22-9">ns1:m.datesingle</a></b></div>
                                                 <div><b><a href="ead_revised.html#m.geographicalcoordinates" target="_self" title="urn:isbn:1-931666-22-9">ns1:m.geographicalcoordinates</a></b></div>
@@ -2766,6 +2813,7 @@
                                           <div><b><a href="ead_revised.html#custodhist" target="_self" title="urn:isbn:1-931666-22-9">ns1:custodhist</a></b></div>
                                           <div><b><a href="ead_revised.html#dao" target="_self" title="urn:isbn:1-931666-22-9">ns1:dao</a></b></div>
                                           <div><b><a href="ead_revised.html#daodesc" target="_self" title="urn:isbn:1-931666-22-9">ns1:daodesc</a></b></div>
+                                          <div><b><a href="ead_revised.html#daogrp" target="_self" title="urn:isbn:1-931666-22-9">ns1:daogrp</a></b></div>
                                           <div><b><a href="ead_revised.html#date" target="_self" title="urn:isbn:1-931666-22-9">ns1:date</a></b></div>
                                           <div><b><a href="ead_revised.html#daterange" target="_self" title="urn:isbn:1-931666-22-9">ns1:daterange</a></b></div>
                                           <div><b><a href="ead_revised.html#dateset" target="_self" title="urn:isbn:1-931666-22-9">ns1:dateset</a></b></div>
@@ -2790,10 +2838,12 @@
                                           <div><b><a href="ead_revised.html#filedesc" target="_self" title="urn:isbn:1-931666-22-9">ns1:filedesc</a></b></div>
                                           <div><b><a href="ead_revised.html#fileplan" target="_self" title="urn:isbn:1-931666-22-9">ns1:fileplan</a></b></div>
                                           <div><b><a href="ead_revised.html#footnote" target="_self" title="urn:isbn:1-931666-22-9">ns1:footnote</a></b></div>
+                                          <div><b><a href="ead_revised.html#foreign" target="_self" title="urn:isbn:1-931666-22-9">ns1:foreign</a></b></div>
                                           <div><b><a href="ead_revised.html#fromdate" target="_self" title="urn:isbn:1-931666-22-9">ns1:fromdate</a></b></div>
                                           <div><b><a href="ead_revised.html#function" target="_self" title="urn:isbn:1-931666-22-9">ns1:function</a></b></div>
                                           <div><b><a href="ead_revised.html#genreform" target="_self" title="urn:isbn:1-931666-22-9">ns1:genreform</a></b></div>
                                           <div><b><a href="ead_revised.html#geogname" target="_self" title="urn:isbn:1-931666-22-9">ns1:geogname</a></b></div>
+                                          <div><b><a href="ead_revised.html#geographiccoordinates" target="_self" title="urn:isbn:1-931666-22-9">ns1:geographiccoordinates</a></b></div>
                                           <div><b><a href="ead_revised.html#head" target="_self" title="urn:isbn:1-931666-22-9">ns1:head</a></b></div>
                                           <div><b><a href="ead_revised.html#head01" target="_self" title="urn:isbn:1-931666-22-9">ns1:head01</a></b></div>
                                           <div><b><a href="ead_revised.html#head02" target="_self" title="urn:isbn:1-931666-22-9">ns1:head02</a></b></div>
@@ -3072,7 +3122,6 @@
                                           <div><b><a href="ead_revised.html#am.date.normal" target="_self" title="urn:isbn:1-931666-22-9">ns1:am.date.normal</a></b></div>
                                           <div><b><a href="ead_revised.html#am.dates.calendar" target="_self" title="urn:isbn:1-931666-22-9">ns1:am.dates.calendar</a></b></div>
                                           <div><b><a href="ead_revised.html#am.dates.era" target="_self" title="urn:isbn:1-931666-22-9">ns1:am.dates.era</a></b></div>
-                                          <div><b><a href="ead_revised.html#am.langcode" target="_self" title="urn:isbn:1-931666-22-9">ns1:am.langcode</a></b></div>
                                           <div><b><a href="ead_revised.html#am.simplelink" target="_self" title="urn:isbn:1-931666-22-9">ns1:am.simplelink</a></b></div>
                                           <div><b><a href="ead_revised.html#m.datesingle" target="_self" title="urn:isbn:1-931666-22-9">ns1:m.datesingle</a></b></div>
                                           <div><b><a href="ead_revised.html#m.geographicalcoordinates" target="_self" title="urn:isbn:1-931666-22-9">ns1:m.geographicalcoordinates</a></b></div>
@@ -3170,6 +3219,7 @@
                                                 <div><b><a href="ead_revised.html#custodhist" target="_self" title="urn:isbn:1-931666-22-9">ns1:custodhist</a></b></div>
                                                 <div><b><a href="ead_revised.html#dao" target="_self" title="urn:isbn:1-931666-22-9">ns1:dao</a></b></div>
                                                 <div><b><a href="ead_revised.html#daodesc" target="_self" title="urn:isbn:1-931666-22-9">ns1:daodesc</a></b></div>
+                                                <div><b><a href="ead_revised.html#daogrp" target="_self" title="urn:isbn:1-931666-22-9">ns1:daogrp</a></b></div>
                                                 <div><b><a href="ead_revised.html#date" target="_self" title="urn:isbn:1-931666-22-9">ns1:date</a></b></div>
                                                 <div><b><a href="ead_revised.html#daterange" target="_self" title="urn:isbn:1-931666-22-9">ns1:daterange</a></b></div>
                                                 <div><b><a href="ead_revised.html#dateset" target="_self" title="urn:isbn:1-931666-22-9">ns1:dateset</a></b></div>
@@ -3194,10 +3244,12 @@
                                                 <div><b><a href="ead_revised.html#filedesc" target="_self" title="urn:isbn:1-931666-22-9">ns1:filedesc</a></b></div>
                                                 <div><b><a href="ead_revised.html#fileplan" target="_self" title="urn:isbn:1-931666-22-9">ns1:fileplan</a></b></div>
                                                 <div><b><a href="ead_revised.html#footnote" target="_self" title="urn:isbn:1-931666-22-9">ns1:footnote</a></b></div>
+                                                <div><b><a href="ead_revised.html#foreign" target="_self" title="urn:isbn:1-931666-22-9">ns1:foreign</a></b></div>
                                                 <div><b><a href="ead_revised.html#fromdate" target="_self" title="urn:isbn:1-931666-22-9">ns1:fromdate</a></b></div>
                                                 <div><b><a href="ead_revised.html#function" target="_self" title="urn:isbn:1-931666-22-9">ns1:function</a></b></div>
                                                 <div><b><a href="ead_revised.html#genreform" target="_self" title="urn:isbn:1-931666-22-9">ns1:genreform</a></b></div>
                                                 <div><b><a href="ead_revised.html#geogname" target="_self" title="urn:isbn:1-931666-22-9">ns1:geogname</a></b></div>
+                                                <div><b><a href="ead_revised.html#geographiccoordinates" target="_self" title="urn:isbn:1-931666-22-9">ns1:geographiccoordinates</a></b></div>
                                                 <div><b><a href="ead_revised.html#head" target="_self" title="urn:isbn:1-931666-22-9">ns1:head</a></b></div>
                                                 <div><b><a href="ead_revised.html#head01" target="_self" title="urn:isbn:1-931666-22-9">ns1:head01</a></b></div>
                                                 <div><b><a href="ead_revised.html#head02" target="_self" title="urn:isbn:1-931666-22-9">ns1:head02</a></b></div>
@@ -3476,7 +3528,6 @@
                                                 <div><b><a href="ead_revised.html#am.date.normal" target="_self" title="urn:isbn:1-931666-22-9">ns1:am.date.normal</a></b></div>
                                                 <div><b><a href="ead_revised.html#am.dates.calendar" target="_self" title="urn:isbn:1-931666-22-9">ns1:am.dates.calendar</a></b></div>
                                                 <div><b><a href="ead_revised.html#am.dates.era" target="_self" title="urn:isbn:1-931666-22-9">ns1:am.dates.era</a></b></div>
-                                                <div><b><a href="ead_revised.html#am.langcode" target="_self" title="urn:isbn:1-931666-22-9">ns1:am.langcode</a></b></div>
                                                 <div><b><a href="ead_revised.html#am.simplelink" target="_self" title="urn:isbn:1-931666-22-9">ns1:am.simplelink</a></b></div>
                                                 <div><b><a href="ead_revised.html#m.datesingle" target="_self" title="urn:isbn:1-931666-22-9">ns1:m.datesingle</a></b></div>
                                                 <div><b><a href="ead_revised.html#m.geographicalcoordinates" target="_self" title="urn:isbn:1-931666-22-9">ns1:m.geographicalcoordinates</a></b></div>
