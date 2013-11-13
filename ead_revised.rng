@@ -1332,7 +1332,7 @@
 
 	<define name="e.ptr">
 		<element name="ptr">
-			<ref name="a.common"/>
+			<ref name="a.common.empty"/>
 			<ref name="a.internal.ptr"/>
 			<empty/>
 		</element>
