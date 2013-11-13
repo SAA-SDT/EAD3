@@ -2628,7 +2628,7 @@
 		</attribute>
 	</define>
 	<define name="a.link.arcrole">
-		<attribute name="linkarcrole">
+		<attribute name="arcrole">
 			<data type="anyURI"/>
 		</attribute>
 	</define>
