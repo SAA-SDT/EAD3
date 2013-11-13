@@ -1298,6 +1298,19 @@
 		</element>
 	</define>
 
+	<define name="e.foreign">
+		<element name="foreign">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="render">
+						<ref name="av.render"/>
+				</attribute>
+			</optional>
+			<text/>
+		</element>
+	</define>
+
+
 	<define name="e.lb">
 		<element name="lb">
 			<ref name="a.common.empty"/>
@@ -2306,6 +2319,7 @@
 				<ref name="e.lb"/>
 				<ref name="e.ref"/>
 				<ref name="e.ptr"/>
+				<ref name="e.foreign"/>
 			</choice>
 		</zeroOrMore>
 	</define>	
