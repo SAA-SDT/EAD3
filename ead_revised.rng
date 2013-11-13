@@ -2225,6 +2225,9 @@
 			</element>
 			<element name="parallelphysdescset">
 				<ref name="a.common"/>
+				<optional>
+					<attribute name="label"/>
+				</optional>
 				<ref name="e.physdescstructured"/>
 				<oneOrMore>
 					<ref name="e.physdescstructured"/>
