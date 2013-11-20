@@ -3,11 +3,10 @@
     <ns uri="http://www.loc.gov/mads/rdf/v1#" prefix="madsrdf"/>
     <ns uri="urn:isbn:1-931666-22-9" prefix="ead"/>
     <pattern id="codes">
-        <let name="langcodes" value="document('http://id.loc.gov/vocabulary/iso639-2.rdf')" />
-        
+        <let name="langcodes" value="document('http://id.loc.gov/vocabulary/iso639-2.rdf')" />        
         <rule context="@langcode | @lang">
             <let name="code" value="normalize-space(.)" />
-            <assert test="$langcodes//madsrdf:code[normalize-space(.) =$code ]" >
+            <assert test="$langcodes//madsrdf:code/normalize-space(.) = $code" >
                 The <name/> attribute should contain a code from the iso639-2 codelist.
             </assert>
         </rule>
@@ -15,7 +14,7 @@
         <let name="countrycodes" value="document('http://www.iso.org/iso/home/standards/country_codes/country_names_and_code_elements_xml')" />        
         <rule context="@countrycode">
             <let name="code" value="normalize-space(.)" />
-            <assert test="$countrycodes//ISO_3166-1_Alpha-2_Code_element[normalize-space(.) = $code ]" >
+            <assert test="$countrycodes//ISO_3166-1_Alpha-2_Code_element/normalize-space(.) = $code" >
                 The <name/> attribute should contain a code from the ISO 3166-1 codelist.
             </assert>
         </rule>
@@ -23,11 +22,12 @@
         <let name="scriptcodes" value="document('http://anonscm.debian.org/gitweb/?p=iso-codes/iso-codes.git;a=blob_plain;f=iso_15924/iso_15924.xml;hb=HEAD')" />        
         <rule context="@scriptcode | @script">
             <let name="code" value="normalize-space(.)" />
-            <assert test="$scriptcodes//iso_15924_entry[@alpha_4_code = $code ]" >
+            <assert test="$scriptcodes//iso_15924_entry/@alpha_4_code = $code " >
                 The <name/> attribute should contain a code from the iso_15924 codelist.
             </assert>
         </rule>
     </pattern>
+    
     <pattern id="co-occurrence-constraints">
         <rule context="*[@level = 'otherlevel']">
             <assert test="normalize-space(@otherlevel)"> If the value of a
