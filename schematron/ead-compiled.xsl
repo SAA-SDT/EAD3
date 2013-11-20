@@ -150,11 +150,11 @@
 		<!--ASSERT -->
 
       <axsl:choose>
-         <axsl:when test="$langcodes//madsrdf:code/normalize-space(.) = $code]"/>
+         <axsl:when test="$langcodes//madsrdf:code/normalize-space(.) = $code"/>
          <axsl:otherwise>
             <axsl:message>The <axsl:text/>
                <axsl:value-of select="name(.)"/>
-               <axsl:text/> attribute should contain a code from the iso639-2 codelist. <axsl:text> (</axsl:text>$langcodes//madsrdf:code/normalize-space(.) = $code]<axsl:text>)</axsl:text>
+               <axsl:text/> attribute should contain a code from the iso639-2 codelist. <axsl:text> (</axsl:text>$langcodes//madsrdf:code/normalize-space(.) = $code<axsl:text>)</axsl:text>
                <axsl:text> [</axsl:text>assert<axsl:text>]</axsl:text>
             </axsl:message>
          </axsl:otherwise>
@@ -171,11 +171,11 @@
 		<!--ASSERT -->
 
       <axsl:choose>
-         <axsl:when test="$countrycodes//ISO_3166-1_Alpha-2_Code_element/normalize-space(.) = $code]"/>
+         <axsl:when test="$countrycodes//ISO_3166-1_Alpha-2_Code_element/normalize-space(.) = $code"/>
          <axsl:otherwise>
             <axsl:message>The <axsl:text/>
                <axsl:value-of select="name(.)"/>
-               <axsl:text/> attribute should contain a code from the ISO 3166-1 codelist. <axsl:text> (</axsl:text>$countrycodes//ISO_3166-1_Alpha-2_Code_element/normalize-space(.) = $code]<axsl:text>)</axsl:text>
+               <axsl:text/> attribute should contain a code from the ISO 3166-1 codelist. <axsl:text> (</axsl:text>$countrycodes//ISO_3166-1_Alpha-2_Code_element/normalize-space(.) = $code<axsl:text>)</axsl:text>
                <axsl:text> [</axsl:text>assert<axsl:text>]</axsl:text>
             </axsl:message>
          </axsl:otherwise>
