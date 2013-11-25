@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="ead_revised.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<ead xmlns="urn:isbn:1-931666-22-9">
+<ead xmlns="http://ead3.archivists.org/schema/">
     <control>
         <recordid>xyz</recordid>
        <filedesc>
