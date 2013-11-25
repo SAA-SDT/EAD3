@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="urn:isbn:1-931666-22-9" xmlns:ns1="urn:isbn:1-931666-22-9" xmlns:schema="http://ead3.archivists.org/schema/">
-  <xs:import namespace="http://ead3.archivists.org/schema/" schemaLocation="ead_revised.xsd"/>
-  <xs:group name="local">
-    <xs:sequence>
-      <xs:any namespace="##other" processContents="skip"/>
-    </xs:sequence>
-  </xs:group>
-</xs:schema>

@@ -37,8 +37,7 @@
   
   
 -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://ead3.archivists.org/schema/" xmlns:ns1="urn:isbn:1-931666-22-9" xmlns:schema="http://ead3.archivists.org/schema/">
-  <xs:import namespace="urn:isbn:1-931666-22-9" schemaLocation="ns1.xsd"/>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://ead3.archivists.org/schema/" xmlns:schema="http://ead3.archivists.org/schema/">
   <xs:element name="ead">
     <xs:complexType>
       <xs:sequence>
@@ -1450,7 +1449,7 @@
   </xs:element>
   <xs:complexType name="e.anyname">
     <xs:choice>
-      <xs:group ref="ns1:local"/>
+      <xs:any namespace="##other" processContents="skip"/>
       <xs:any namespace="##local" processContents="skip"/>
     </xs:choice>
   </xs:complexType>
