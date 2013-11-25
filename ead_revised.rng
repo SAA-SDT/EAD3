@@ -177,6 +177,9 @@
 			<optional>
 				<attribute name="localtype"/>
 			</optional>
+			<optional>
+				<attribute name="normal"/>
+			</optional>
 			<ref name="m.mixed.basic.plus.access"/>
 		</element>
 	</define>
