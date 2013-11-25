@@ -947,10 +947,10 @@
 				<attribute name="numeration">
 					<choice>
 						<value>arabic</value>
-						<value>upperAlpha</value>
-						<value>lowerAlpha</value>
-						<value>upperRoman</value>
-						<value>lowerRoman</value>
+						<value>upperalpha</value>
+						<value>loweralpha</value>
+						<value>upperroman</value>
+						<value>lowerroman</value>
 					</choice>
 				</attribute>
 			</optional>
