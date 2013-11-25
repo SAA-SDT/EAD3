@@ -2838,8 +2838,9 @@
 					<ref name="a.common"/>
 					<attribute name="value">
 						<choice>
-							<value>inProcess</value>
+							<value>inprocess</value>
 							<value>approved</value>
+							<value>published</value>
 						</choice>
 					</attribute>
 					<ref name="m.mixed.basic"/>
