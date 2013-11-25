@@ -2171,7 +2171,7 @@
 				<optional>
 					<attribute name="localtype"/>
 				</optional>
-				<ref name="m.mixed.basic.access"/>
+				<ref name="m.mixed.basic.plus.access"/>
 			</element>
 			<element name="langmaterial">
 				<ref name="a.common"/>
