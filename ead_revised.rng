@@ -387,7 +387,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</optional>
 		</element>
 	</define>
-
+<!--
 	<define name="e.daogrp">
 		<element name="daogrp">
 			<ref name="a.common"/>
@@ -396,7 +396,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="e.daodesc"/>
 			</optional>
 			<oneOrMore>
-				<!--<choice>
+				<choice>
 					<element name="daoloc">
 						<ref name="a.common"/>
 						<ref name="am.simplelink"/>
@@ -406,12 +406,12 @@ For these and/or other purposes and motivations, and without any expectation of 
 					</element>
 					<ref name="extended.els"/>
 					
-				</choice>-->
+				</choice>
 				<ref name="e.dao"/>
 			</oneOrMore>
 		</element>
 	</define>
-
+-->
 
 	<define name="e.daodesc">
 		<element name="daodesc">
@@ -2027,7 +2027,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element>
 			<anyName>
 				<except>
-					<nsName ns="urn:isbn:1-931666-22-9"/>
+					<nsName ns="http://ead3.archivists.org/schema/"/>
 				</except>
 			</anyName>
 			<!--<zeroOrMore>
