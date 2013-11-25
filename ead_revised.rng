@@ -3185,6 +3185,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<element name="agencycode">
 					<ref name="a.common"/>
+					<attribute name="localtype"/>
 					<text/>
 				</element>
 			</optional>
@@ -3202,9 +3203,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="e.descriptivenote"/>
 			</optional>
 		</element>
-
-
-
 	</define>
 
 	<define name="e.citation">
