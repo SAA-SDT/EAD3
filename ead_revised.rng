@@ -3137,7 +3137,7 @@
 				<element name="otheragencycode">
 					<ref name="a.common"/>
 					<attribute name="localtype"/>
-					<data type="NMTOKEN"/>
+					<text/>
 				</element>
 			</zeroOrMore>
 			<element name="agencyname">
