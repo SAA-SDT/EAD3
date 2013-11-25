@@ -70,13 +70,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</optional>
 				<ref name="e.did"/>
 				<zeroOrMore>
-					<ref name="m.desc.base"/>
-				</zeroOrMore>
-				<optional>
-					<ref name="e.relations"/>
-				</optional>
-				<zeroOrMore>
-					<ref name="e.dsc"/>
+					<ref name="m.desc.base.full"/>
 				</zeroOrMore>
 			</element>
 		</element>
@@ -2184,9 +2178,16 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="e.prefercite"/>
 			<ref name="e.processinfo"/>
 			<ref name="e.relatedmaterial"/>
+			<ref name="e.relations"/>
 			<ref name="e.scopecontent"/>
 			<ref name="e.separatedmaterial"/>
 			<ref name="e.userestrict"/>
+		</choice>
+	</define>
+	<define name="m.desc.base.full">
+		<choice>
+			<ref name="m.desc.base"/>
+			<ref name="e.dsc"/>
 		</choice>
 	</define>
 	<define name="m.dates">
@@ -2500,13 +2501,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<zeroOrMore>
 			<ref name="m.desc.base"/>
 		</zeroOrMore>
-		<optional>
-			<element name="relations">
-				<oneOrMore>
-					<ref name="m.relation"/>
-				</oneOrMore>
-			</element>
-		</optional>
 	</define>
 
 	<define name="m.access">
