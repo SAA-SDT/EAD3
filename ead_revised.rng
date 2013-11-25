@@ -2062,7 +2062,7 @@
 		</optional>
 	</define>
 	<define name="a.common">
-		<ref name="a.common.empty"/>
+	<!--	<ref name="a.common.empty"/> -->
 		<optional>
 			<attribute name="lang"/>
 		</optional>
