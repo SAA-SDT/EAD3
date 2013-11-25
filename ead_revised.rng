@@ -2416,6 +2416,7 @@
 						<choice>
 							<ref name="e.datesingle"/>
 							<ref name="e.daterange"/>
+							<ref name="e.dateset"/>
 						</choice>
 						<choice>
 							<group>
