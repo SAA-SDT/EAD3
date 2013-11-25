@@ -3129,9 +3129,7 @@
 			<ref name="a.common"/>
 			<optional>
 				<element name="agencycode">
-					<optional>
 						<ref name="a.common"/>
-					</optional>
 					<text/>
 				</element>
 			</optional>
