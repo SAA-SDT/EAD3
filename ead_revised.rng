@@ -2718,7 +2718,7 @@
 						<data type="anyURI"/>
 					</attribute>
 				</optional>
-				<data type="NMTOKEN"/>
+				<text/>
 			</element>
 			<zeroOrMore>
 				<element name="otherrecordid">
