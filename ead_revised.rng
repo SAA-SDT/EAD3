@@ -2486,6 +2486,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 							</group>
 							<oneOrMore>
 								<element name="chronitemset">
+									<ref name="a.common"/>
 									<zeroOrMore>
 										<ref name="e.placeentry"/>
 									</zeroOrMore>
