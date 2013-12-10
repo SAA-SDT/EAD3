@@ -1,26 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="urn:isbn:1-931666-22-9" xmlns:ns1="urn:isbn:1-931666-22-9">
+<!--
+  
+  Creative Commons Legal Code
+  CC0 1.0 Universal
+  
+      CREATIVE COMMONS CORPORATION IS NOT A LAW FIRM AND DOES NOT PROVIDE LEGAL SERVICES. DISTRIBUTION OF THIS DOCUMENT DOES NOT CREATE AN ATTORNEY-CLIENT RELATIONSHIP. CREATIVE COMMONS PROVIDES THIS INFORMATION ON AN "AS-IS" BASIS. CREATIVE COMMONS MAKES NO WARRANTIES REGARDING THE USE OF THIS DOCUMENT OR THE INFORMATION OR WORKS PROVIDED HEREUNDER, AND DISCLAIMS LIABILITY FOR DAMAGES RESULTING FROM THE USE OF THIS DOCUMENT OR THE INFORMATION OR WORKS PROVIDED HEREUNDER. 
+  
+  Statement of Purpose
+  
+  The laws of most jurisdictions throughout the world automatically confer exclusive Copyright and Related Rights (defined below) upon the creator and subsequent owner(s) (each and all, an "owner") of an original work of authorship and/or a database (each, a "Work").
+  
+  Certain owners wish to permanently relinquish those rights to a Work for the purpose of contributing to a commons of creative, cultural and scientific works ("Commons") that the public can reliably and without fear of later claims of infringement build upon, modify, incorporate in other works, reuse and redistribute as freely as possible in any form whatsoever and for any purposes, including without limitation commercial purposes. These owners may contribute to the Commons to promote the ideal of a free culture and the further production of creative, cultural and scientific works, or to gain reputation or greater distribution for their Work in part through the use and efforts of others.
+  
+  For these and/or other purposes and motivations, and without any expectation of additional consideration or compensation, the person associating CC0 with a Work (the "Affirmer"), to the extent that he or she is an owner of Copyright and Related Rights in the Work, voluntarily elects to apply CC0 to the Work and publicly distribute the Work under its terms, with knowledge of his or her Copyright and Related Rights in the Work and the meaning and intended legal effect of CC0 on those rights.
+  
+  1. Copyright and Related Rights. A Work made available under CC0 may be protected by copyright and related or neighboring rights ("Copyright and Related Rights"). Copyright and Related Rights include, but are not limited to, the following:
+  
+      the right to reproduce, adapt, distribute, perform, display, communicate, and translate a Work;
+      moral rights retained by the original author(s) and/or performer(s);
+      publicity and privacy rights pertaining to a person's image or likeness depicted in a Work;
+      rights protecting against unfair competition in regards to a Work, subject to the limitations in paragraph 4(a), below;
+      rights protecting the extraction, dissemination, use and reuse of data in a Work;
+      database rights (such as those arising under Directive 96/9/EC of the European Parliament and of the Council of 11 March 1996 on the legal protection of databases, and under any national implementation thereof, including any amended or successor version of such directive); and
+      other similar, equivalent or corresponding rights throughout the world based on applicable law or treaty, and any national implementations thereof.
+  
+  2. Waiver. To the greatest extent permitted by, but not in contravention of, applicable law, Affirmer hereby overtly, fully, permanently, irrevocably and unconditionally waives, abandons, and surrenders all of Affirmer's Copyright and Related Rights and associated claims and causes of action, whether now known or unknown (including existing as well as future claims and causes of action), in the Work (i) in all territories worldwide, (ii) for the maximum duration provided by applicable law or treaty (including future time extensions), (iii) in any current or future medium and for any number of copies, and (iv) for any purpose whatsoever, including without limitation commercial, advertising or promotional purposes (the "Waiver"). Affirmer makes the Waiver for the benefit of each member of the public at large and to the detriment of Affirmer's heirs and successors, fully intending that such Waiver shall not be subject to revocation, rescission, cancellation, termination, or any other legal or equitable action to disrupt the quiet enjoyment of the Work by the public as contemplated by Affirmer's express Statement of Purpose.
+  
+  3. Public License Fallback. Should any part of the Waiver for any reason be judged legally invalid or ineffective under applicable law, then the Waiver shall be preserved to the maximum extent permitted taking into account Affirmer's express Statement of Purpose. In addition, to the extent the Waiver is so judged Affirmer hereby grants to each affected person a royalty-free, non transferable, non sublicensable, non exclusive, irrevocable and unconditional license to exercise Affirmer's Copyright and Related Rights in the Work (i) in all territories worldwide, (ii) for the maximum duration provided by applicable law or treaty (including future time extensions), (iii) in any current or future medium and for any number of copies, and (iv) for any purpose whatsoever, including without limitation commercial, advertising or promotional purposes (the "License"). The License shall be deemed effective as of the date CC0 was applied by Affirmer to the Work. Should any part of the License for any reason be judged legally invalid or ineffective under applicable law, such partial invalidity or ineffectiveness shall not invalidate the remainder of the License, and in such case Affirmer hereby affirms that he or she will not (i) exercise any of his or her remaining Copyright and Related Rights in the Work or (ii) assert any associated claims and causes of action with respect to the Work, in either case contrary to Affirmer's express Statement of Purpose.
+  
+  4. Limitations and Disclaimers.
+  
+      No trademark or patent rights held by Affirmer are waived, abandoned, surrendered, licensed or otherwise affected by this document.
+      Affirmer offers the Work as-is and makes no representations or warranties of any kind concerning the Work, express, implied, statutory or otherwise, including without limitation warranties of title, merchantability, fitness for a particular purpose, non infringement, or the absence of latent or other defects, accuracy, or the present or absence of errors, whether or not discoverable, all to the greatest extent permissible under applicable law.
+      Affirmer disclaims responsibility for clearing rights of other persons that may apply to the Work or any use thereof, including without limitation any person's Copyright and Related Rights in the Work. Further, Affirmer disclaims responsibility for obtaining any necessary consents, permissions or other rights required for any use of the Work.
+      Affirmer understands and acknowledges that Creative Commons is not a party to this document and has no duty or obligation with respect to this CC0 or use of the Work.
+  
+  
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://ead3.archivists.org/schema/" xmlns:schema="http://ead3.archivists.org/schema/">
   <xs:element name="ead">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="ns1:control"/>
-        <xs:element ref="ns1:archdesc"/>
+        <xs:element ref="schema:control"/>
+        <xs:element ref="schema:archdesc"/>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="relatedencoding"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="archdesc">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="ns1:did"/>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:m.desc.base"/>
-        <xs:group minOccurs="0" ref="ns1:e.relations"/>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:dsc"/>
+        <xs:element ref="schema:did"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="schema:m.desc.base.full"/>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
-      <xs:attribute name="level" use="required" type="ns1:av.level"/>
-      <xs:attributeGroup ref="ns1:a.desc.base"/>
+      <xs:attributeGroup ref="schema:a.common"/>
+      <xs:attribute name="level" use="required" type="schema:av.level"/>
+      <xs:attributeGroup ref="schema:a.desc.base"/>
       <xs:attribute name="localtype" type="xs:NMTOKEN"/>
       <xs:attribute name="relatedencoding"/>
     </xs:complexType>
@@ -29,39 +65,39 @@
   <xs:element name="did">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="ns1:head"/>
-        <xs:element maxOccurs="unbounded" ref="ns1:m.did"/>
+        <xs:element minOccurs="0" ref="schema:head"/>
+        <xs:element maxOccurs="unbounded" ref="schema:m.did"/>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="encodinganalog"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="origination" substitutionGroup="ns1:m.did">
+  <xs:element name="origination" substitutionGroup="schema:m.did">
     <xs:complexType>
       <xs:sequence>
         <xs:choice maxOccurs="unbounded">
-          <xs:element ref="ns1:persname"/>
-          <xs:element ref="ns1:corpname"/>
-          <xs:element ref="ns1:name"/>
-          <xs:element ref="ns1:famname"/>
+          <xs:element ref="schema:persname"/>
+          <xs:element ref="schema:corpname"/>
+          <xs:element ref="schema:name"/>
+          <xs:element ref="schema:famname"/>
         </xs:choice>
-        <xs:element minOccurs="0" ref="ns1:descriptivenote"/>
+        <xs:element minOccurs="0" ref="schema:descriptivenote"/>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="label"/>
       <xs:attribute name="encodinganalog"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="physdescstructured" substitutionGroup="ns1:m.did">
+  <xs:element name="physdescstructured" substitutionGroup="schema:m.did">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="ns1:quantity"/>
-        <xs:element ref="ns1:unittype"/>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:dimensions"/>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:physfacet"/>
-        <xs:element minOccurs="0" ref="ns1:descriptivenote"/>
+        <xs:element ref="schema:quantity"/>
+        <xs:element ref="schema:unittype"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="schema:dimensions"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="schema:physfacet"/>
+        <xs:element minOccurs="0" ref="schema:descriptivenote"/>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="label"/>
       <xs:attribute name="encodinganalog"/>
       <xs:attribute name="rules" type="xs:NMTOKEN"/>
@@ -86,44 +122,45 @@
   </xs:element>
   <xs:element name="quantity">
     <xs:complexType mixed="true">
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="unittype">
     <xs:complexType mixed="true">
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="identifier"/>
       <xs:attribute name="source"/>
       <xs:attribute name="rules" type="xs:NMTOKEN"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="repository" substitutionGroup="ns1:m.did">
+  <xs:element name="repository" substitutionGroup="schema:m.did">
     <xs:complexType>
       <xs:choice maxOccurs="unbounded">
-        <xs:element ref="ns1:corpname"/>
-        <xs:element ref="ns1:name"/>
-        <xs:element ref="ns1:famname"/>
-        <xs:element minOccurs="0" ref="ns1:address"/>
-        <xs:element minOccurs="0" ref="ns1:descriptivenote"/>
+        <xs:element ref="schema:corpname"/>
+        <xs:element ref="schema:name"/>
+        <xs:element ref="schema:famname"/>
+        <xs:element minOccurs="0" ref="schema:address"/>
+        <xs:element minOccurs="0" ref="schema:descriptivenote"/>
       </xs:choice>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="label"/>
       <xs:attribute name="encodinganalog"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="unittitle" substitutionGroup="ns1:m.did">
+  <xs:element name="unittitle" substitutionGroup="schema:m.did">
     <xs:complexType mixed="true">
-      <xs:group ref="ns1:m.mixed.basic.plus.access"/>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:group ref="schema:m.mixed.basic.plus.access"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="label"/>
       <xs:attribute name="encodinganalog"/>
       <xs:attribute name="localtype"/>
+      <xs:attribute name="normal"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="unitdate" substitutionGroup="ns1:m.did">
+  <xs:element name="unitdate" substitutionGroup="schema:m.did">
     <xs:complexType mixed="true">
-      <xs:group minOccurs="0" maxOccurs="unbounded" ref="ns1:m.mixed.basic"/>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:group minOccurs="0" maxOccurs="unbounded" ref="schema:m.mixed.basic"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="label"/>
       <xs:attribute name="unitdatetype">
         <xs:simpleType>
@@ -134,18 +171,18 @@
         </xs:simpleType>
       </xs:attribute>
       <xs:attribute name="datechar"/>
-      <xs:attributeGroup ref="ns1:am.dates.era"/>
-      <xs:attributeGroup ref="ns1:am.dates.calendar"/>
-      <xs:attributeGroup ref="ns1:am.date.normal"/>
+      <xs:attributeGroup ref="schema:am.dates.era"/>
+      <xs:attributeGroup ref="schema:am.dates.calendar"/>
+      <xs:attributeGroup ref="schema:am.date.normal"/>
       <xs:attribute name="certainty"/>
       <xs:attribute name="encodinganalog"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="unitdatestructured" substitutionGroup="ns1:m.did">
+  <xs:element name="unitdatestructured" substitutionGroup="schema:m.did">
     <xs:complexType>
       <xs:complexContent>
-        <xs:extension base="ns1:m.dates">
-          <xs:attributeGroup ref="ns1:a.common"/>
+        <xs:extension base="schema:m.dates">
+          <xs:attributeGroup ref="schema:a.common"/>
           <xs:attribute name="label"/>
           <xs:attribute name="unitdatetype">
             <xs:simpleType>
@@ -158,72 +195,72 @@
           <xs:attribute name="certainty"/>
           <xs:attribute name="encodinganalog"/>
           <xs:attribute name="datechar"/>
-          <xs:attributeGroup ref="ns1:am.dates.era"/>
-          <xs:attributeGroup ref="ns1:am.dates.calendar"/>
+          <xs:attributeGroup ref="schema:am.dates.era"/>
+          <xs:attributeGroup ref="schema:am.dates.calendar"/>
         </xs:extension>
       </xs:complexContent>
     </xs:complexType>
   </xs:element>
-  <xs:element name="datesingle" substitutionGroup="ns1:m.dates">
+  <xs:element name="datesingle" substitutionGroup="schema:m.dates">
     <xs:complexType mixed="true">
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="localtype"/>
-      <xs:attributeGroup ref="ns1:m.datesingle"/>
+      <xs:attributeGroup ref="schema:m.datesingle"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="daterange" substitutionGroup="ns1:m.dates">
+  <xs:element name="daterange" substitutionGroup="schema:m.dates">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="ns1:fromdate"/>
-        <xs:element minOccurs="0" ref="ns1:todate"/>
+        <xs:element minOccurs="0" ref="schema:fromdate"/>
+        <xs:element minOccurs="0" ref="schema:todate"/>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="localtype"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="fromdate">
     <xs:complexType mixed="true">
-      <xs:group ref="ns1:m.mixed.basic"/>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:group ref="schema:m.mixed.basic"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="localtype"/>
-      <xs:attribute name="standarddate" type="ns1:m.data.standarddate"/>
-      <xs:attribute name="notbefore" type="ns1:m.data.standarddate"/>
-      <xs:attribute name="notafter" type="ns1:m.data.standarddate"/>
+      <xs:attribute name="standarddate" type="schema:m.data.standarddate"/>
+      <xs:attribute name="notbefore" type="schema:m.data.standarddate"/>
+      <xs:attribute name="notafter" type="schema:m.data.standarddate"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="todate">
     <xs:complexType mixed="true">
-      <xs:group ref="ns1:m.mixed.basic"/>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:group ref="schema:m.mixed.basic"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="localtype"/>
-      <xs:attribute name="standarddate" type="ns1:m.data.standarddate"/>
-      <xs:attribute name="notbefore" type="ns1:m.data.standarddate"/>
-      <xs:attribute name="notafter" type="ns1:m.data.standarddate"/>
+      <xs:attribute name="standarddate" type="schema:m.data.standarddate"/>
+      <xs:attribute name="notbefore" type="schema:m.data.standarddate"/>
+      <xs:attribute name="notafter" type="schema:m.data.standarddate"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="dateset" substitutionGroup="ns1:m.dates">
+  <xs:element name="dateset" substitutionGroup="schema:m.dates">
     <xs:complexType>
       <xs:sequence>
         <xs:choice>
-          <xs:element ref="ns1:datesingle"/>
-          <xs:element ref="ns1:daterange"/>
+          <xs:element ref="schema:datesingle"/>
+          <xs:element ref="schema:daterange"/>
         </xs:choice>
         <xs:choice maxOccurs="unbounded">
-          <xs:element ref="ns1:datesingle"/>
-          <xs:element ref="ns1:daterange"/>
+          <xs:element ref="schema:datesingle"/>
+          <xs:element ref="schema:daterange"/>
         </xs:choice>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="localtype"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="dao" substitutionGroup="ns1:m.did">
+  <xs:element name="dao" substitutionGroup="schema:m.did">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="ns1:daodesc"/>
+        <xs:element minOccurs="0" ref="schema:daodesc"/>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
-      <xs:attributeGroup ref="ns1:am.simplelink"/>
+      <xs:attributeGroup ref="schema:a.common"/>
+      <xs:attributeGroup ref="schema:am.simplelink"/>
       <xs:attribute name="daotype" use="required">
         <xs:simpleType>
           <xs:restriction base="xs:token">
@@ -237,156 +274,172 @@
       <xs:attribute name="otherdaotype"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="daogrp">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" ref="ns1:daodesc"/>
-        <xs:element maxOccurs="unbounded" ref="ns1:dao"/>
-      </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
-    </xs:complexType>
-  </xs:element>
+  <!--
+    <define name="e.daogrp">
+    	<element name="daogrp">
+    		<ref name="a.common"/>
+    
+    		<optional>
+    			<ref name="e.daodesc"/>
+    		</optional>
+    		<oneOrMore>
+    			<choice>
+    				<element name="daoloc">
+    					<ref name="a.common"/>
+    					<ref name="am.simplelink"/>
+    					<optional>
+    						<ref name="e.daodesc"/>
+    					</optional>
+    				</element>
+    				<ref name="extended.els"/>
+    
+    			</choice>
+    			<ref name="e.dao"/>
+    		</oneOrMore>
+    	</element>
+    </define>
+  -->
   <xs:element name="daodesc">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="ns1:head"/>
-        <xs:element maxOccurs="unbounded" ref="ns1:m.blocks"/>
+        <xs:element minOccurs="0" ref="schema:head"/>
+        <xs:element maxOccurs="unbounded" ref="schema:m.blocks"/>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="accessrestrict" substitutionGroup="ns1:m.desc.base">
+  <xs:element name="accessrestrict" substitutionGroup="schema:m.desc.base">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="ns1:head"/>
+        <xs:element minOccurs="0" ref="schema:head"/>
         <xs:choice maxOccurs="unbounded">
-          <xs:element ref="ns1:m.blocks"/>
-          <xs:element ref="ns1:accessrestrict"/>
+          <xs:element ref="schema:m.blocks"/>
+          <xs:element ref="schema:accessrestrict"/>
         </xs:choice>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="encodinganalog"/>
       <xs:attribute name="localtype"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="accruals" substitutionGroup="ns1:m.desc.base">
+  <xs:element name="accruals" substitutionGroup="schema:m.desc.base">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="ns1:head"/>
+        <xs:element minOccurs="0" ref="schema:head"/>
         <xs:choice maxOccurs="unbounded">
-          <xs:element ref="ns1:m.blocks"/>
-          <xs:element ref="ns1:accruals"/>
+          <xs:element ref="schema:m.blocks"/>
+          <xs:element ref="schema:accruals"/>
         </xs:choice>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="encodinganalog"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="fileplan" substitutionGroup="ns1:m.desc.base">
+  <xs:element name="fileplan" substitutionGroup="schema:m.desc.base">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="ns1:head"/>
+        <xs:element minOccurs="0" ref="schema:head"/>
         <xs:choice maxOccurs="unbounded">
-          <xs:element ref="ns1:m.blocks"/>
-          <xs:element ref="ns1:fileplan"/>
+          <xs:element ref="schema:m.blocks"/>
+          <xs:element ref="schema:fileplan"/>
         </xs:choice>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="encodinganalog"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="acqinfo" substitutionGroup="ns1:m.desc.base">
+  <xs:element name="acqinfo" substitutionGroup="schema:m.desc.base">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="ns1:head"/>
+        <xs:element minOccurs="0" ref="schema:head"/>
         <xs:choice maxOccurs="unbounded">
-          <xs:element ref="ns1:m.blocks"/>
-          <xs:element ref="ns1:acqinfo"/>
+          <xs:element ref="schema:m.blocks"/>
+          <xs:element ref="schema:acqinfo"/>
         </xs:choice>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="encodinganalog"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="altformavail" substitutionGroup="ns1:m.desc.base">
+  <xs:element name="altformavail" substitutionGroup="schema:m.desc.base">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="ns1:head"/>
+        <xs:element minOccurs="0" ref="schema:head"/>
         <xs:choice maxOccurs="unbounded">
-          <xs:element ref="ns1:m.blocks"/>
-          <xs:element ref="ns1:altformavail"/>
+          <xs:element ref="schema:m.blocks"/>
+          <xs:element ref="schema:altformavail"/>
         </xs:choice>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
-      <xs:attribute name="encodinganalog"/>
-      <xs:attribute name="localtype"/>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="originalsloc" substitutionGroup="ns1:m.desc.base">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" ref="ns1:head"/>
-        <xs:choice maxOccurs="unbounded">
-          <xs:element ref="ns1:m.blocks"/>
-          <xs:element ref="ns1:originalsloc"/>
-        </xs:choice>
-      </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="encodinganalog"/>
       <xs:attribute name="localtype"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="phystech" substitutionGroup="ns1:m.desc.base">
+  <xs:element name="originalsloc" substitutionGroup="schema:m.desc.base">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="ns1:head"/>
+        <xs:element minOccurs="0" ref="schema:head"/>
         <xs:choice maxOccurs="unbounded">
-          <xs:element ref="ns1:m.blocks"/>
-          <xs:element ref="ns1:phystech"/>
+          <xs:element ref="schema:m.blocks"/>
+          <xs:element ref="schema:originalsloc"/>
         </xs:choice>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="encodinganalog"/>
       <xs:attribute name="localtype"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="appraisal" substitutionGroup="ns1:m.desc.base">
+  <xs:element name="phystech" substitutionGroup="schema:m.desc.base">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="ns1:head"/>
+        <xs:element minOccurs="0" ref="schema:head"/>
         <xs:choice maxOccurs="unbounded">
-          <xs:element ref="ns1:m.blocks"/>
-          <xs:element ref="ns1:appraisal"/>
+          <xs:element ref="schema:m.blocks"/>
+          <xs:element ref="schema:phystech"/>
         </xs:choice>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
+      <xs:attribute name="encodinganalog"/>
+      <xs:attribute name="localtype"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="appraisal" substitutionGroup="schema:m.desc.base">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="schema:head"/>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element ref="schema:m.blocks"/>
+          <xs:element ref="schema:appraisal"/>
+        </xs:choice>
+      </xs:sequence>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="encodinganalog"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="custodhist" substitutionGroup="ns1:m.desc.base">
+  <xs:element name="custodhist" substitutionGroup="schema:m.desc.base">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="ns1:head"/>
+        <xs:element minOccurs="0" ref="schema:head"/>
         <xs:choice maxOccurs="unbounded">
-          <xs:element ref="ns1:m.blocks"/>
-          <xs:element ref="ns1:custodhist"/>
+          <xs:element ref="schema:m.blocks"/>
+          <xs:element ref="schema:custodhist"/>
         </xs:choice>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="encodinganalog"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="index" substitutionGroup="ns1:m.desc.base">
+  <xs:element name="index" substitutionGroup="schema:m.desc.base">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="ns1:head"/>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:m.blocks"/>
+        <xs:element minOccurs="0" ref="schema:head"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="schema:m.blocks"/>
         <xs:sequence>
-          <xs:element minOccurs="0" ref="ns1:listhead"/>
-          <xs:element maxOccurs="unbounded" ref="ns1:indexentry"/>
+          <xs:element minOccurs="0" ref="schema:listhead"/>
+          <xs:element maxOccurs="unbounded" ref="schema:indexentry"/>
         </xs:sequence>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="encodinganalog"/>
     </xs:complexType>
   </xs:element>
@@ -394,228 +447,228 @@
     <xs:complexType>
       <xs:sequence>
         <xs:choice>
-          <xs:element ref="ns1:namegrp"/>
-          <xs:element ref="ns1:m.access.title"/>
+          <xs:element ref="schema:namegrp"/>
+          <xs:element ref="schema:m.access.title"/>
         </xs:choice>
-        <xs:group minOccurs="0" ref="ns1:m.refs"/>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:indexentry"/>
+        <xs:group minOccurs="0" ref="schema:m.refs"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="schema:indexentry"/>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="namegrp">
     <xs:complexType>
       <xs:sequence>
-        <xs:element maxOccurs="unbounded" ref="ns1:m.access.title"/>
+        <xs:element maxOccurs="unbounded" ref="schema:m.access.title"/>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="legalstatus" substitutionGroup="ns1:m.desc.base">
+  <xs:element name="legalstatus" substitutionGroup="schema:m.desc.base">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="ns1:head"/>
+        <xs:element minOccurs="0" ref="schema:head"/>
         <xs:choice maxOccurs="unbounded">
-          <xs:element ref="ns1:m.blocks"/>
-          <xs:element ref="ns1:legalstatus"/>
+          <xs:element ref="schema:m.blocks"/>
+          <xs:element ref="schema:legalstatus"/>
         </xs:choice>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="encodinganalog"/>
       <xs:attribute name="localtype"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="materialspec" substitutionGroup="ns1:m.did">
+  <xs:element name="materialspec" substitutionGroup="schema:m.did">
     <xs:complexType mixed="true">
-      <xs:group ref="ns1:m.mixed.basic"/>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:group ref="schema:m.mixed.basic"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="encodinganalog"/>
       <xs:attribute name="localtype"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="prefercite" substitutionGroup="ns1:m.desc.base">
+  <xs:element name="prefercite" substitutionGroup="schema:m.desc.base">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="ns1:head"/>
+        <xs:element minOccurs="0" ref="schema:head"/>
         <xs:choice maxOccurs="unbounded">
-          <xs:element ref="ns1:m.blocks"/>
-          <xs:element ref="ns1:prefercite"/>
+          <xs:element ref="schema:m.blocks"/>
+          <xs:element ref="schema:prefercite"/>
         </xs:choice>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="encodinganalog"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="processinfo" substitutionGroup="ns1:m.desc.base">
+  <xs:element name="processinfo" substitutionGroup="schema:m.desc.base">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="ns1:head"/>
+        <xs:element minOccurs="0" ref="schema:head"/>
         <xs:choice maxOccurs="unbounded">
-          <xs:element ref="ns1:m.blocks"/>
-          <xs:element ref="ns1:processinfo"/>
+          <xs:element ref="schema:m.blocks"/>
+          <xs:element ref="schema:processinfo"/>
         </xs:choice>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="localtype"/>
       <xs:attribute name="encodinganalog"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="userestrict" substitutionGroup="ns1:m.desc.base">
+  <xs:element name="userestrict" substitutionGroup="schema:m.desc.base">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="ns1:head"/>
+        <xs:element minOccurs="0" ref="schema:head"/>
         <xs:choice maxOccurs="unbounded">
-          <xs:element ref="ns1:m.blocks"/>
-          <xs:element ref="ns1:userestrict"/>
+          <xs:element ref="schema:m.blocks"/>
+          <xs:element ref="schema:userestrict"/>
         </xs:choice>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="encodinganalog"/>
       <xs:attribute name="localtype"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="bioghist" substitutionGroup="ns1:m.desc.base">
+  <xs:element name="bioghist" substitutionGroup="schema:m.desc.base">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="ns1:head"/>
+        <xs:element minOccurs="0" ref="schema:head"/>
         <xs:choice maxOccurs="unbounded">
-          <xs:element ref="ns1:m.blocks"/>
-          <xs:element ref="ns1:bioghist"/>
+          <xs:element ref="schema:m.blocks"/>
+          <xs:element ref="schema:bioghist"/>
         </xs:choice>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="encodinganalog"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="controlaccess" substitutionGroup="ns1:m.desc.base">
+  <xs:element name="controlaccess" substitutionGroup="schema:m.desc.base">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="ns1:head"/>
+        <xs:element minOccurs="0" ref="schema:head"/>
         <xs:choice maxOccurs="unbounded">
-          <xs:element ref="ns1:m.blocks"/>
-          <xs:element ref="ns1:m.access.title"/>
-          <xs:element ref="ns1:controlaccess"/>
+          <xs:element ref="schema:m.blocks"/>
+          <xs:element ref="schema:m.access.title"/>
+          <xs:element ref="schema:controlaccess"/>
         </xs:choice>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="encodinganalog"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="odd" substitutionGroup="ns1:m.desc.base">
+  <xs:element name="odd" substitutionGroup="schema:m.desc.base">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="ns1:head"/>
+        <xs:element minOccurs="0" ref="schema:head"/>
         <xs:choice maxOccurs="unbounded">
-          <xs:element ref="ns1:m.blocks"/>
-          <xs:element ref="ns1:odd"/>
+          <xs:element ref="schema:m.blocks"/>
+          <xs:element ref="schema:odd"/>
         </xs:choice>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="localtype"/>
       <xs:attribute name="encodinganalog"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="scopecontent" substitutionGroup="ns1:m.desc.base">
+  <xs:element name="scopecontent" substitutionGroup="schema:m.desc.base">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="ns1:head"/>
+        <xs:element minOccurs="0" ref="schema:head"/>
         <xs:choice maxOccurs="unbounded">
-          <xs:element ref="ns1:m.blocks"/>
-          <xs:element ref="ns1:scopecontent"/>
+          <xs:element ref="schema:m.blocks"/>
+          <xs:element ref="schema:scopecontent"/>
         </xs:choice>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="encodinganalog"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="arrangement" substitutionGroup="ns1:m.desc.base">
+  <xs:element name="arrangement" substitutionGroup="schema:m.desc.base">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="ns1:head"/>
+        <xs:element minOccurs="0" ref="schema:head"/>
         <xs:choice maxOccurs="unbounded">
-          <xs:element ref="ns1:m.blocks"/>
-          <xs:element ref="ns1:arrangement"/>
+          <xs:element ref="schema:m.blocks"/>
+          <xs:element ref="schema:arrangement"/>
         </xs:choice>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="encodinganalog"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="bibliography" substitutionGroup="ns1:m.desc.base">
+  <xs:element name="bibliography" substitutionGroup="schema:m.desc.base">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="ns1:head"/>
+        <xs:element minOccurs="0" ref="schema:head"/>
         <xs:choice maxOccurs="unbounded">
-          <xs:element ref="ns1:m.blocks"/>
-          <xs:element ref="ns1:bibliography"/>
-          <xs:element ref="ns1:archref"/>
-          <xs:element ref="ns1:bibref"/>
+          <xs:element ref="schema:m.blocks"/>
+          <xs:element ref="schema:bibliography"/>
+          <xs:element ref="schema:archref"/>
+          <xs:element ref="schema:bibref"/>
         </xs:choice>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="encodinganalog"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="relatedmaterial" substitutionGroup="ns1:m.desc.base">
+  <xs:element name="relatedmaterial" substitutionGroup="schema:m.desc.base">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="ns1:head"/>
+        <xs:element minOccurs="0" ref="schema:head"/>
         <xs:choice maxOccurs="unbounded">
-          <xs:element ref="ns1:m.blocks"/>
-          <xs:element ref="ns1:relatedmaterial"/>
-          <xs:element ref="ns1:archref"/>
-          <xs:element ref="ns1:bibref"/>
+          <xs:element ref="schema:m.blocks"/>
+          <xs:element ref="schema:relatedmaterial"/>
+          <xs:element ref="schema:archref"/>
+          <xs:element ref="schema:bibref"/>
         </xs:choice>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="localtype"/>
       <xs:attribute name="encodinganalog"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="separatedmaterial" substitutionGroup="ns1:m.desc.base">
+  <xs:element name="separatedmaterial" substitutionGroup="schema:m.desc.base">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="ns1:head"/>
+        <xs:element minOccurs="0" ref="schema:head"/>
         <xs:choice maxOccurs="unbounded">
-          <xs:element ref="ns1:m.blocks"/>
-          <xs:element ref="ns1:separatedmaterial"/>
-          <xs:element ref="ns1:archref"/>
-          <xs:element ref="ns1:bibref"/>
+          <xs:element ref="schema:m.blocks"/>
+          <xs:element ref="schema:separatedmaterial"/>
+          <xs:element ref="schema:archref"/>
+          <xs:element ref="schema:bibref"/>
         </xs:choice>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="localtype"/>
       <xs:attribute name="encodinganalog"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="otherfindaid" substitutionGroup="ns1:m.desc.base">
+  <xs:element name="otherfindaid" substitutionGroup="schema:m.desc.base">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="ns1:head"/>
+        <xs:element minOccurs="0" ref="schema:head"/>
         <xs:choice maxOccurs="unbounded">
-          <xs:element ref="ns1:m.blocks"/>
-          <xs:element ref="ns1:otherfindaid"/>
-          <xs:element ref="ns1:archref"/>
-          <xs:element ref="ns1:bibref"/>
+          <xs:element ref="schema:m.blocks"/>
+          <xs:element ref="schema:otherfindaid"/>
+          <xs:element ref="schema:archref"/>
+          <xs:element ref="schema:bibref"/>
         </xs:choice>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="encodinganalog"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="list" substitutionGroup="ns1:m.inter.noquote">
+  <xs:element name="list" substitutionGroup="schema:m.inter.noquote">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="ns1:head"/>
+        <xs:element minOccurs="0" ref="schema:head"/>
         <xs:choice>
-          <xs:element maxOccurs="unbounded" ref="ns1:item"/>
+          <xs:element maxOccurs="unbounded" ref="schema:item"/>
           <xs:sequence>
-            <xs:element minOccurs="0" ref="ns1:listhead"/>
-            <xs:element maxOccurs="unbounded" ref="ns1:defitem"/>
+            <xs:element minOccurs="0" ref="schema:listhead"/>
+            <xs:element maxOccurs="unbounded" ref="schema:defitem"/>
           </xs:sequence>
         </xs:choice>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="listtype">
         <xs:simpleType>
           <xs:restriction base="xs:token">
@@ -651,10 +704,10 @@
         <xs:simpleType>
           <xs:restriction base="xs:token">
             <xs:enumeration value="arabic"/>
-            <xs:enumeration value="upperAlpha"/>
-            <xs:enumeration value="lowerAlpha"/>
-            <xs:enumeration value="upperRoman"/>
-            <xs:enumeration value="lowerRoman"/>
+            <xs:enumeration value="upperalpha"/>
+            <xs:enumeration value="loweralpha"/>
+            <xs:enumeration value="upperroman"/>
+            <xs:enumeration value="lowerroman"/>
           </xs:restriction>
         </xs:simpleType>
       </xs:attribute>
@@ -663,67 +716,67 @@
   <xs:element name="defitem">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="ns1:label"/>
-        <xs:element ref="ns1:item"/>
+        <xs:element ref="schema:label"/>
+        <xs:element ref="schema:item"/>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="label">
     <xs:complexType mixed="true">
-      <xs:group ref="ns1:m.mixed.basic"/>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:group ref="schema:m.mixed.basic"/>
+      <xs:attributeGroup ref="schema:a.common"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="item">
     <xs:complexType mixed="true">
-      <xs:group minOccurs="0" maxOccurs="unbounded" ref="ns1:m.para.content"/>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:group minOccurs="0" maxOccurs="unbounded" ref="schema:m.para.content"/>
+      <xs:attributeGroup ref="schema:a.common"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="head">
     <xs:complexType mixed="true">
-      <xs:group ref="ns1:m.mixed.basic"/>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:group ref="schema:m.mixed.basic"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="althead"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="listhead">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="ns1:head01"/>
-        <xs:element minOccurs="0" ref="ns1:head02"/>
-        <xs:element minOccurs="0" ref="ns1:head03"/>
+        <xs:element minOccurs="0" ref="schema:head01"/>
+        <xs:element minOccurs="0" ref="schema:head02"/>
+        <xs:element minOccurs="0" ref="schema:head03"/>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="head01">
     <xs:complexType mixed="true">
-      <xs:group minOccurs="0" maxOccurs="unbounded" ref="ns1:m.mixed.basic"/>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:group minOccurs="0" maxOccurs="unbounded" ref="schema:m.mixed.basic"/>
+      <xs:attributeGroup ref="schema:a.common"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="head02">
     <xs:complexType mixed="true">
-      <xs:group minOccurs="0" maxOccurs="unbounded" ref="ns1:m.mixed.basic"/>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:group minOccurs="0" maxOccurs="unbounded" ref="schema:m.mixed.basic"/>
+      <xs:attributeGroup ref="schema:a.common"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="head03">
     <xs:complexType mixed="true">
-      <xs:group minOccurs="0" maxOccurs="unbounded" ref="ns1:m.mixed.basic"/>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:group minOccurs="0" maxOccurs="unbounded" ref="schema:m.mixed.basic"/>
+      <xs:attributeGroup ref="schema:a.common"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="table" substitutionGroup="ns1:m.inter.noquote">
+  <xs:element name="table" substitutionGroup="schema:m.inter.noquote">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="ns1:head"/>
-        <xs:element minOccurs="0" ref="ns1:colspec"/>
-        <xs:element maxOccurs="unbounded" ref="ns1:row"/>
+        <xs:element minOccurs="0" ref="schema:head"/>
+        <xs:element minOccurs="0" ref="schema:colspec"/>
+        <xs:element maxOccurs="unbounded" ref="schema:row"/>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="frame">
         <xs:simpleType>
           <xs:restriction base="xs:token">
@@ -738,18 +791,18 @@
       </xs:attribute>
       <xs:attribute name="cols"/>
       <xs:attribute name="width"/>
-      <xs:attribute name="colsep" type="ns1:av.yesorno"/>
-      <xs:attribute name="rowsep" type="ns1:av.yesorno"/>
+      <xs:attribute name="colsep" type="schema:av.yesorno"/>
+      <xs:attribute name="rowsep" type="schema:av.yesorno"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="colspec">
     <xs:complexType>
-      <xs:attributeGroup ref="ns1:a.common.empty"/>
+      <xs:attributeGroup ref="schema:a.common.empty"/>
       <xs:attribute name="cols" type="xs:NMTOKEN"/>
       <xs:attribute name="colname" type="xs:NMTOKEN"/>
       <xs:attribute name="width"/>
-      <xs:attribute name="colsep" type="ns1:av.yesorno"/>
-      <xs:attribute name="rowsep" type="ns1:av.yesorno"/>
+      <xs:attribute name="colsep" type="schema:av.yesorno"/>
+      <xs:attribute name="rowsep" type="schema:av.yesorno"/>
       <xs:attribute name="align">
         <xs:simpleType>
           <xs:restriction base="xs:token">
@@ -775,11 +828,11 @@
   <xs:element name="row">
     <xs:complexType>
       <xs:choice maxOccurs="unbounded">
-        <xs:element ref="ns1:thentry"/>
-        <xs:element ref="ns1:entry"/>
+        <xs:element ref="schema:thentry"/>
+        <xs:element ref="schema:entry"/>
       </xs:choice>
-      <xs:attributeGroup ref="ns1:a.common"/>
-      <xs:attribute name="rowsep" type="ns1:av.yesorno"/>
+      <xs:attributeGroup ref="schema:a.common"/>
+      <xs:attribute name="rowsep" type="schema:av.yesorno"/>
       <xs:attribute name="valign">
         <xs:simpleType>
           <xs:restriction base="xs:token">
@@ -794,20 +847,20 @@
   </xs:element>
   <xs:element name="thentry">
     <xs:complexType mixed="true">
-      <xs:group ref="ns1:m.mixed.basic"/>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:group ref="schema:m.mixed.basic"/>
+      <xs:attributeGroup ref="schema:a.common"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="entry">
     <xs:complexType mixed="true">
-      <xs:group minOccurs="0" maxOccurs="unbounded" ref="ns1:m.para.content"/>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:group minOccurs="0" maxOccurs="unbounded" ref="schema:m.para.content"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="colname" type="xs:NMTOKEN"/>
       <xs:attribute name="namest" type="xs:NMTOKEN"/>
       <xs:attribute name="nameend" type="xs:NMTOKEN"/>
       <xs:attribute name="morerows" type="xs:NMTOKEN"/>
-      <xs:attribute name="colsep" type="ns1:av.yesorno"/>
-      <xs:attribute name="rowsep" type="ns1:av.yesorno"/>
+      <xs:attribute name="colsep" type="schema:av.yesorno"/>
+      <xs:attribute name="rowsep" type="schema:av.yesorno"/>
       <xs:attribute name="align">
         <xs:simpleType>
           <xs:restriction base="xs:token">
@@ -833,9 +886,9 @@
   <xs:element name="thead">
     <xs:complexType>
       <xs:sequence>
-        <xs:element maxOccurs="unbounded" ref="ns1:row"/>
+        <xs:element maxOccurs="unbounded" ref="schema:row"/>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="valign">
         <xs:simpleType>
           <xs:restriction base="xs:token">
@@ -849,40 +902,40 @@
   </xs:element>
   <xs:element name="abbr">
     <xs:complexType mixed="true">
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="expan"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="expan">
     <xs:complexType mixed="true">
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="abbr"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="num">
     <xs:complexType mixed="true">
-      <xs:group ref="ns1:m.mixed.basic"/>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:group ref="schema:m.mixed.basic"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="localtype"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="quote">
     <xs:complexType mixed="true">
-      <xs:group ref="ns1:m.mixed.basic"/>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:group ref="schema:m.mixed.basic"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="localtype"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="emph">
     <xs:complexType mixed="true">
-      <xs:attributeGroup ref="ns1:a.common"/>
-      <xs:attribute name="render" type="ns1:av.render"/>
+      <xs:attributeGroup ref="schema:a.common"/>
+      <xs:attribute name="render" type="schema:av.render"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="foreign">
     <xs:complexType mixed="true">
-      <xs:attributeGroup ref="ns1:a.common"/>
-      <xs:attribute name="render" type="ns1:av.render"/>
+      <xs:attributeGroup ref="schema:a.common"/>
+      <xs:attribute name="render" type="schema:av.render"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="lb">
@@ -891,38 +944,38 @@
   <xs:element name="ref">
     <xs:complexType mixed="true">
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element ref="ns1:abbr"/>
-        <xs:element ref="ns1:expan"/>
-        <xs:element ref="ns1:emph"/>
-        <xs:element ref="ns1:lb"/>
-        <xs:element ref="ns1:ptr"/>
-        <xs:element ref="ns1:quote"/>
-        <xs:element ref="ns1:num"/>
-        <xs:element ref="ns1:footnote"/>
-        <xs:element ref="ns1:date"/>
-        <xs:element ref="ns1:m.access.title"/>
+        <xs:element ref="schema:abbr"/>
+        <xs:element ref="schema:expan"/>
+        <xs:element ref="schema:emph"/>
+        <xs:element ref="schema:lb"/>
+        <xs:element ref="schema:ptr"/>
+        <xs:element ref="schema:quote"/>
+        <xs:element ref="schema:num"/>
+        <xs:element ref="schema:footnote"/>
+        <xs:element ref="schema:date"/>
+        <xs:element ref="schema:m.access.title"/>
       </xs:choice>
-      <xs:attributeGroup ref="ns1:a.common"/>
-      <xs:attributeGroup ref="ns1:a.internal.ptr"/>
+      <xs:attributeGroup ref="schema:a.common"/>
+      <xs:attributeGroup ref="schema:a.internal.ptr"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="ptr">
     <xs:complexType>
-      <xs:attributeGroup ref="ns1:a.common.empty"/>
-      <xs:attributeGroup ref="ns1:a.internal.ptr"/>
+      <xs:attributeGroup ref="schema:a.common.empty"/>
+      <xs:attributeGroup ref="schema:a.internal.ptr"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="dsc">
+  <xs:element name="dsc" substitutionGroup="schema:m.desc.base.full">
     <xs:complexType>
       <xs:sequence>
         <xs:sequence>
-          <xs:element minOccurs="0" ref="ns1:head"/>
-          <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:m.blocks"/>
+          <xs:element minOccurs="0" ref="schema:head"/>
+          <xs:element minOccurs="0" maxOccurs="unbounded" ref="schema:m.blocks"/>
         </xs:sequence>
-        <xs:element minOccurs="0" ref="ns1:thead"/>
-        <xs:group minOccurs="0" ref="ns1:m.cOrC01"/>
+        <xs:element minOccurs="0" ref="schema:thead"/>
+        <xs:group minOccurs="0" ref="schema:m.cOrC01"/>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="dsctype">
         <xs:simpleType>
           <xs:restriction base="xs:token">
@@ -935,7 +988,7 @@
       </xs:attribute>
       <xs:attribute name="otherdsctype" type="xs:NMTOKEN"/>
       <xs:attribute name="encodinganalog"/>
-      <xs:attributeGroup ref="ns1:a.dsctab.tpattern"/>
+      <xs:attributeGroup ref="schema:a.dsctab.tpattern"/>
     </xs:complexType>
   </xs:element>
   <!--
@@ -956,15 +1009,15 @@
   -->
   <xs:element name="bibref">
     <xs:complexType mixed="true">
-      <xs:group minOccurs="0" maxOccurs="unbounded" ref="ns1:m.mixed.basic.plus.access"/>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:group minOccurs="0" maxOccurs="unbounded" ref="schema:m.mixed.basic.plus.access"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="encodinganalog"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="archref">
     <xs:complexType mixed="true">
-      <xs:group minOccurs="0" maxOccurs="unbounded" ref="ns1:m.mixed.basic.plus.access"/>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:group minOccurs="0" maxOccurs="unbounded" ref="schema:m.mixed.basic.plus.access"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="encodinganalog"/>
     </xs:complexType>
   </xs:element>
@@ -972,23 +1025,25 @@
      Title should have one or more <part>, not m.mixed.basic.  
     Would that allow it to be added to m.access, eliminating the need for m.access.title? -MR
   -->
-  <xs:element name="title" substitutionGroup="ns1:m.access.title">
-    <xs:complexType mixed="true">
-      <xs:group ref="ns1:m.mixed.basic"/>
-      <xs:attributeGroup ref="ns1:a.common"/>
+  <xs:element name="title" substitutionGroup="schema:m.access.title">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="schema:part"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="localtype"/>
-      <xs:attribute name="render" type="ns1:av.render"/>
-      <xs:attributeGroup ref="ns1:a.access"/>
+      <xs:attribute name="render" type="schema:av.render"/>
+      <xs:attributeGroup ref="schema:a.access"/>
       <xs:attribute name="encodinganalog"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="c">
     <xs:complexType>
       <xs:complexContent>
-        <xs:extension base="ns1:m.c.base">
-          <xs:sequence>
-            <xs:element minOccurs="0" ref="ns1:thead"/>
-            <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:c"/>
+        <xs:extension base="schema:m.c.base">
+          <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:element minOccurs="0" ref="schema:thead"/>
+            <xs:element maxOccurs="unbounded" ref="schema:c"/>
           </xs:sequence>
         </xs:extension>
       </xs:complexContent>
@@ -997,10 +1052,10 @@
   <xs:element name="c01">
     <xs:complexType>
       <xs:complexContent>
-        <xs:extension base="ns1:m.c.base">
-          <xs:sequence>
-            <xs:element minOccurs="0" ref="ns1:thead"/>
-            <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:c02"/>
+        <xs:extension base="schema:m.c.base">
+          <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:element minOccurs="0" ref="schema:thead"/>
+            <xs:element maxOccurs="unbounded" ref="schema:c02"/>
           </xs:sequence>
         </xs:extension>
       </xs:complexContent>
@@ -1009,10 +1064,10 @@
   <xs:element name="c02">
     <xs:complexType>
       <xs:complexContent>
-        <xs:extension base="ns1:m.c.base">
-          <xs:sequence>
-            <xs:element minOccurs="0" ref="ns1:thead"/>
-            <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:c03"/>
+        <xs:extension base="schema:m.c.base">
+          <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:element minOccurs="0" ref="schema:thead"/>
+            <xs:element maxOccurs="unbounded" ref="schema:c03"/>
           </xs:sequence>
         </xs:extension>
       </xs:complexContent>
@@ -1021,10 +1076,10 @@
   <xs:element name="c03">
     <xs:complexType>
       <xs:complexContent>
-        <xs:extension base="ns1:m.c.base">
-          <xs:sequence>
-            <xs:element minOccurs="0" ref="ns1:thead"/>
-            <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:c04"/>
+        <xs:extension base="schema:m.c.base">
+          <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:element minOccurs="0" ref="schema:thead"/>
+            <xs:element maxOccurs="unbounded" ref="schema:c04"/>
           </xs:sequence>
         </xs:extension>
       </xs:complexContent>
@@ -1033,10 +1088,10 @@
   <xs:element name="c04">
     <xs:complexType>
       <xs:complexContent>
-        <xs:extension base="ns1:m.c.base">
-          <xs:sequence>
-            <xs:element minOccurs="0" ref="ns1:thead"/>
-            <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:c05"/>
+        <xs:extension base="schema:m.c.base">
+          <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:element minOccurs="0" ref="schema:thead"/>
+            <xs:element maxOccurs="unbounded" ref="schema:c05"/>
           </xs:sequence>
         </xs:extension>
       </xs:complexContent>
@@ -1045,10 +1100,10 @@
   <xs:element name="c05">
     <xs:complexType>
       <xs:complexContent>
-        <xs:extension base="ns1:m.c.base">
-          <xs:sequence>
-            <xs:element minOccurs="0" ref="ns1:thead"/>
-            <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:c06"/>
+        <xs:extension base="schema:m.c.base">
+          <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:element minOccurs="0" ref="schema:thead"/>
+            <xs:element maxOccurs="unbounded" ref="schema:c06"/>
           </xs:sequence>
         </xs:extension>
       </xs:complexContent>
@@ -1057,10 +1112,10 @@
   <xs:element name="c06">
     <xs:complexType>
       <xs:complexContent>
-        <xs:extension base="ns1:m.c.base">
-          <xs:sequence>
-            <xs:element minOccurs="0" ref="ns1:thead"/>
-            <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:c07"/>
+        <xs:extension base="schema:m.c.base">
+          <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:element minOccurs="0" ref="schema:thead"/>
+            <xs:element maxOccurs="unbounded" ref="schema:c07"/>
           </xs:sequence>
         </xs:extension>
       </xs:complexContent>
@@ -1069,10 +1124,10 @@
   <xs:element name="c07">
     <xs:complexType>
       <xs:complexContent>
-        <xs:extension base="ns1:m.c.base">
-          <xs:sequence>
-            <xs:element minOccurs="0" ref="ns1:thead"/>
-            <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:c08"/>
+        <xs:extension base="schema:m.c.base">
+          <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:element minOccurs="0" ref="schema:thead"/>
+            <xs:element maxOccurs="unbounded" ref="schema:c08"/>
           </xs:sequence>
         </xs:extension>
       </xs:complexContent>
@@ -1081,10 +1136,10 @@
   <xs:element name="c08">
     <xs:complexType>
       <xs:complexContent>
-        <xs:extension base="ns1:m.c.base">
+        <xs:extension base="schema:m.c.base">
           <xs:sequence>
-            <xs:element minOccurs="0" ref="ns1:thead"/>
-            <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:c09"/>
+            <xs:element minOccurs="0" ref="schema:thead"/>
+            <xs:element minOccurs="0" maxOccurs="unbounded" ref="schema:c09"/>
           </xs:sequence>
         </xs:extension>
       </xs:complexContent>
@@ -1093,10 +1148,10 @@
   <xs:element name="c09">
     <xs:complexType>
       <xs:complexContent>
-        <xs:extension base="ns1:m.c.base">
-          <xs:sequence>
-            <xs:element minOccurs="0" ref="ns1:thead"/>
-            <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:c10"/>
+        <xs:extension base="schema:m.c.base">
+          <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:element minOccurs="0" ref="schema:thead"/>
+            <xs:element maxOccurs="unbounded" ref="schema:c10"/>
           </xs:sequence>
         </xs:extension>
       </xs:complexContent>
@@ -1105,10 +1160,10 @@
   <xs:element name="c10">
     <xs:complexType>
       <xs:complexContent>
-        <xs:extension base="ns1:m.c.base">
-          <xs:sequence>
-            <xs:element minOccurs="0" ref="ns1:thead"/>
-            <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:c11"/>
+        <xs:extension base="schema:m.c.base">
+          <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:element minOccurs="0" ref="schema:thead"/>
+            <xs:element maxOccurs="unbounded" ref="schema:c11"/>
           </xs:sequence>
         </xs:extension>
       </xs:complexContent>
@@ -1117,30 +1172,30 @@
   <xs:element name="c11">
     <xs:complexType>
       <xs:complexContent>
-        <xs:extension base="ns1:m.c.base">
-          <xs:sequence>
-            <xs:element minOccurs="0" ref="ns1:thead"/>
-            <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:c12"/>
+        <xs:extension base="schema:m.c.base">
+          <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:element minOccurs="0" ref="schema:thead"/>
+            <xs:element maxOccurs="unbounded" ref="schema:c12"/>
           </xs:sequence>
         </xs:extension>
       </xs:complexContent>
     </xs:complexType>
   </xs:element>
-  <xs:element name="c12" type="ns1:m.c.base"/>
+  <xs:element name="c12" type="schema:m.c.base"/>
   <xs:element name="dimensions">
     <xs:complexType mixed="true">
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:group ref="ns1:m.mixed.basic"/>
-        <xs:element ref="ns1:dimensions"/>
+        <xs:group ref="schema:m.mixed.basic"/>
+        <xs:element ref="schema:dimensions"/>
       </xs:choice>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="localtype"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="physfacet">
     <xs:complexType mixed="true">
-      <xs:group ref="ns1:m.mixed.basic"/>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:group ref="schema:m.mixed.basic"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="label"/>
       <xs:attribute name="localtype"/>
       <xs:attribute name="unit"/>
@@ -1149,7 +1204,7 @@
   </xs:element>
   <xs:element name="language">
     <xs:complexType mixed="true">
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="encodinganalog"/>
       <xs:attribute name="label"/>
       <xs:attribute name="langcode"/>
@@ -1157,7 +1212,7 @@
   </xs:element>
   <xs:element name="script">
     <xs:complexType mixed="true">
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="encodinganalog"/>
       <xs:attribute name="label"/>
       <xs:attribute name="scriptcode"/>
@@ -1166,138 +1221,138 @@
   <xs:element name="languageset">
     <xs:complexType>
       <xs:sequence>
-        <xs:element maxOccurs="unbounded" ref="ns1:language"/>
-        <xs:element maxOccurs="unbounded" ref="ns1:script"/>
-        <xs:element minOccurs="0" ref="ns1:descriptivenote"/>
+        <xs:element maxOccurs="unbounded" ref="schema:language"/>
+        <xs:element maxOccurs="unbounded" ref="schema:script"/>
+        <xs:element minOccurs="0" ref="schema:descriptivenote"/>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="encodinganalog"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="address">
     <xs:complexType>
       <xs:sequence>
-        <xs:element maxOccurs="unbounded" ref="ns1:addressline"/>
+        <xs:element maxOccurs="unbounded" ref="schema:addressline"/>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="addressline">
     <xs:complexType mixed="true">
-      <xs:group ref="ns1:m.mixed.basic"/>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:group ref="schema:m.mixed.basic"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="localtype"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="corpname" substitutionGroup="ns1:m.access">
+  <xs:element name="corpname" substitutionGroup="schema:m.access">
     <xs:complexType>
       <xs:sequence>
-        <xs:element maxOccurs="unbounded" ref="ns1:part"/>
+        <xs:element maxOccurs="unbounded" ref="schema:part"/>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
-      <xs:attributeGroup ref="ns1:a.access"/>
+      <xs:attributeGroup ref="schema:a.common"/>
+      <xs:attributeGroup ref="schema:a.access"/>
       <xs:attribute name="role"/>
       <xs:attribute name="encodinganalog"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="famname" substitutionGroup="ns1:m.access">
+  <xs:element name="famname" substitutionGroup="schema:m.access">
     <xs:complexType>
       <xs:sequence>
-        <xs:element maxOccurs="unbounded" ref="ns1:part"/>
+        <xs:element maxOccurs="unbounded" ref="schema:part"/>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
-      <xs:attributeGroup ref="ns1:a.access"/>
+      <xs:attributeGroup ref="schema:a.common"/>
+      <xs:attributeGroup ref="schema:a.access"/>
       <xs:attribute name="role"/>
       <xs:attribute name="encodinganalog"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="geogname" substitutionGroup="ns1:m.access">
+  <xs:element name="geogname" substitutionGroup="schema:m.access">
     <xs:complexType>
       <xs:sequence>
-        <xs:element maxOccurs="unbounded" ref="ns1:part"/>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:geographiccoordinates"/>
+        <xs:element maxOccurs="unbounded" ref="schema:part"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="schema:geographiccoordinates"/>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
-      <xs:attributeGroup ref="ns1:a.access"/>
+      <xs:attributeGroup ref="schema:a.common"/>
+      <xs:attributeGroup ref="schema:a.access"/>
       <xs:attribute name="role"/>
       <xs:attribute name="encodinganalog"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="geographiccoordinates">
     <xs:complexType mixed="true">
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="coordinatesystem" use="required"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="name" substitutionGroup="ns1:m.access">
+  <xs:element name="name" substitutionGroup="schema:m.access">
     <xs:complexType>
       <xs:sequence>
-        <xs:element maxOccurs="unbounded" ref="ns1:part"/>
+        <xs:element maxOccurs="unbounded" ref="schema:part"/>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
-      <xs:attributeGroup ref="ns1:a.access"/>
+      <xs:attributeGroup ref="schema:a.common"/>
+      <xs:attributeGroup ref="schema:a.access"/>
       <xs:attribute name="role"/>
       <xs:attribute name="encodinganalog"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="persname" substitutionGroup="ns1:m.access">
+  <xs:element name="persname" substitutionGroup="schema:m.access">
     <xs:complexType>
       <xs:sequence>
-        <xs:element maxOccurs="unbounded" ref="ns1:part"/>
+        <xs:element maxOccurs="unbounded" ref="schema:part"/>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
-      <xs:attributeGroup ref="ns1:a.access"/>
+      <xs:attributeGroup ref="schema:a.common"/>
+      <xs:attributeGroup ref="schema:a.access"/>
       <xs:attribute name="role"/>
       <xs:attribute name="encodinganalog"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="occupation" substitutionGroup="ns1:m.access">
+  <xs:element name="occupation" substitutionGroup="schema:m.access">
     <xs:complexType>
       <xs:sequence>
-        <xs:element maxOccurs="unbounded" ref="ns1:part"/>
+        <xs:element maxOccurs="unbounded" ref="schema:part"/>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
-      <xs:attributeGroup ref="ns1:a.access"/>
+      <xs:attributeGroup ref="schema:a.common"/>
+      <xs:attributeGroup ref="schema:a.access"/>
       <xs:attribute name="encodinganalog"/>
       <xs:attribute name="localtype"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="subject" substitutionGroup="ns1:m.access">
+  <xs:element name="subject" substitutionGroup="schema:m.access">
     <xs:complexType>
       <xs:sequence>
-        <xs:element maxOccurs="unbounded" ref="ns1:part"/>
+        <xs:element maxOccurs="unbounded" ref="schema:part"/>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
-      <xs:attributeGroup ref="ns1:a.access"/>
+      <xs:attributeGroup ref="schema:a.common"/>
+      <xs:attributeGroup ref="schema:a.access"/>
       <xs:attribute name="encodinganalog"/>
       <xs:attribute name="localtype"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="genreform" substitutionGroup="ns1:m.access">
+  <xs:element name="genreform" substitutionGroup="schema:m.access">
     <xs:complexType>
       <xs:sequence>
-        <xs:element maxOccurs="unbounded" ref="ns1:part"/>
+        <xs:element maxOccurs="unbounded" ref="schema:part"/>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
-      <xs:attributeGroup ref="ns1:a.access"/>
+      <xs:attributeGroup ref="schema:a.common"/>
+      <xs:attributeGroup ref="schema:a.access"/>
       <xs:attribute name="encodinganalog"/>
       <xs:attribute name="localtype"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="function" substitutionGroup="ns1:m.access">
+  <xs:element name="function" substitutionGroup="schema:m.access">
     <xs:complexType>
       <xs:sequence>
-        <xs:element maxOccurs="unbounded" ref="ns1:part"/>
+        <xs:element maxOccurs="unbounded" ref="schema:part"/>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
-      <xs:attributeGroup ref="ns1:a.access"/>
+      <xs:attributeGroup ref="schema:a.common"/>
+      <xs:attributeGroup ref="schema:a.access"/>
       <xs:attribute name="encodinganalog"/>
       <xs:attribute name="localtype"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="part">
     <xs:complexType mixed="true">
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="encodinganalog"/>
       <xs:attribute name="localtype"/>
     </xs:complexType>
@@ -1305,23 +1360,23 @@
   <xs:element name="descriptivenote">
     <xs:complexType>
       <xs:sequence>
-        <xs:element maxOccurs="unbounded" ref="ns1:p"/>
+        <xs:element maxOccurs="unbounded" ref="schema:p"/>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="p" substitutionGroup="ns1:m.blocks">
+  <xs:element name="p" substitutionGroup="schema:m.blocks">
     <xs:complexType mixed="true">
-      <xs:group minOccurs="0" maxOccurs="unbounded" ref="ns1:m.para.content"/>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:group minOccurs="0" maxOccurs="unbounded" ref="schema:m.para.content"/>
+      <xs:attributeGroup ref="schema:a.common"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="footnote">
     <xs:complexType>
       <xs:sequence>
-        <xs:element maxOccurs="unbounded" ref="ns1:m.blocks"/>
+        <xs:element maxOccurs="unbounded" ref="schema:m.blocks"/>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="localtype"/>
       <xs:attribute name="show">
         <xs:simpleType>
@@ -1343,8 +1398,8 @@
   </xs:element>
   <xs:element name="event">
     <xs:complexType mixed="true">
-      <xs:group minOccurs="0" maxOccurs="unbounded" ref="ns1:m.para.content"/>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:group minOccurs="0" maxOccurs="unbounded" ref="schema:m.para.content"/>
+      <xs:attributeGroup ref="schema:a.common"/>
     </xs:complexType>
   </xs:element>
   <!--
@@ -1375,23 +1430,19 @@
     	</element>
     </define>
   -->
-  <xs:group name="e.relations">
-    <xs:sequence>
-      <xs:element name="relations">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element maxOccurs="unbounded" ref="ns1:relation"/>
-          </xs:sequence>
-          <xs:attributeGroup ref="ns1:a.common"/>
-        </xs:complexType>
-      </xs:element>
-    </xs:sequence>
-  </xs:group>
+  <xs:element name="relations" substitutionGroup="schema:m.desc.base">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="schema:relation"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="schema:a.common"/>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="objectxmlwrap">
     <xs:complexType>
       <xs:complexContent>
-        <xs:extension base="ns1:e.anyname">
-          <xs:attributeGroup ref="ns1:a.common"/>
+        <xs:extension base="schema:e.anyname">
+          <xs:attributeGroup ref="schema:a.common"/>
         </xs:extension>
       </xs:complexContent>
     </xs:complexType>
@@ -1460,7 +1511,7 @@
     </xs:attribute>
   </xs:attributeGroup>
   <xs:attributeGroup name="a.common">
-    <xs:attributeGroup ref="ns1:a.common.empty"/>
+    <xs:attributeGroup ref="schema:a.common.empty"/>
     <xs:attribute name="lang"/>
     <xs:attribute name="script"/>
   </xs:attributeGroup>
@@ -1469,9 +1520,9 @@
     <xs:attribute name="encodinganalog"/>
   </xs:attributeGroup>
   <xs:attributeGroup name="a.desc.c">
-    <xs:attributeGroup ref="ns1:a.common"/>
-    <xs:attribute name="level" type="ns1:av.level"/>
-    <xs:attributeGroup ref="ns1:a.desc.base"/>
+    <xs:attributeGroup ref="schema:a.common"/>
+    <xs:attribute name="level" type="schema:av.level"/>
+    <xs:attributeGroup ref="schema:a.desc.base"/>
   </xs:attributeGroup>
   <xs:attributeGroup name="a.access.no.normal">
     <xs:attribute name="source" type="xs:token"/>
@@ -1479,98 +1530,99 @@
     <xs:attribute name="identifier"/>
   </xs:attributeGroup>
   <xs:attributeGroup name="a.access">
-    <xs:attributeGroup ref="ns1:a.access.no.normal"/>
+    <xs:attributeGroup ref="schema:a.access.no.normal"/>
     <xs:attribute name="normal"/>
   </xs:attributeGroup>
   <xs:attributeGroup name="a.localtype">
     <xs:attribute name="localtype" use="required"/>
   </xs:attributeGroup>
-  <xs:element name="m.desc.base" abstract="true"/>
+  <xs:element name="m.desc.base" abstract="true" substitutionGroup="schema:m.desc.base.full"/>
+  <xs:element name="m.desc.base.full" abstract="true"/>
   <xs:element name="m.dates" abstract="true"/>
   <xs:complexType name="m.dates">
     <xs:sequence>
-      <xs:element ref="ns1:m.dates"/>
+      <xs:element ref="schema:m.dates"/>
     </xs:sequence>
   </xs:complexType>
   <xs:element name="m.did" abstract="true"/>
-  <xs:element name="abstract" substitutionGroup="ns1:m.did">
+  <xs:element name="abstract" substitutionGroup="schema:m.did">
     <xs:complexType mixed="true">
-      <xs:group ref="ns1:m.mixed.basic"/>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:group ref="schema:m.mixed.basic.plus.access"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="label"/>
       <xs:attribute name="encodinganalog"/>
       <xs:attribute name="localtype"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="langmaterial" substitutionGroup="ns1:m.did">
+  <xs:element name="langmaterial" substitutionGroup="schema:m.did">
     <xs:complexType>
       <xs:sequence>
         <xs:choice maxOccurs="unbounded">
-          <xs:element ref="ns1:language"/>
-          <xs:element ref="ns1:languageset"/>
+          <xs:element ref="schema:language"/>
+          <xs:element ref="schema:languageset"/>
         </xs:choice>
-        <xs:element minOccurs="0" ref="ns1:descriptivenote"/>
+        <xs:element minOccurs="0" ref="schema:descriptivenote"/>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="label"/>
       <xs:attribute name="encodinganalog"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="didnote" substitutionGroup="ns1:m.did">
+  <xs:element name="didnote" substitutionGroup="schema:m.did">
     <xs:complexType mixed="true">
-      <xs:group ref="ns1:m.mixed.basic"/>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:group ref="schema:m.mixed.basic"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="label"/>
       <xs:attribute name="encodinganalog"/>
       <xs:attribute name="localtype"/>
       <xs:attribute name="localtypesource"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="physdesc" substitutionGroup="ns1:m.did">
+  <xs:element name="physdesc" substitutionGroup="schema:m.did">
     <xs:complexType mixed="true">
-      <xs:group ref="ns1:m.mixed.basic"/>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:group ref="schema:m.mixed.basic"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="label"/>
       <xs:attribute name="encodinganalog"/>
       <xs:attribute name="rules" type="xs:NMTOKEN"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="parallelphysdescset" substitutionGroup="ns1:m.did">
+  <xs:element name="parallelphysdescset" substitutionGroup="schema:m.did">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="ns1:physdescstructured"/>
-        <xs:element maxOccurs="unbounded" ref="ns1:physdescstructured"/>
+        <xs:element ref="schema:physdescstructured"/>
+        <xs:element maxOccurs="unbounded" ref="schema:physdescstructured"/>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="label"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="physloc" substitutionGroup="ns1:m.did">
+  <xs:element name="physloc" substitutionGroup="schema:m.did">
     <xs:complexType mixed="true">
-      <xs:group ref="ns1:m.mixed.basic"/>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:group ref="schema:m.mixed.basic"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="label"/>
       <xs:attribute name="localtype"/>
       <xs:attribute name="encodinganalog"/>
       <xs:attribute name="parent" type="xs:IDREFS"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="unitid" substitutionGroup="ns1:m.did">
+  <xs:element name="unitid" substitutionGroup="schema:m.did">
     <xs:complexType mixed="true">
-      <xs:group ref="ns1:m.mixed.basic"/>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:group ref="schema:m.mixed.basic"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="label"/>
       <xs:attribute name="localtype"/>
-      <xs:attributeGroup ref="ns1:am.countrycode"/>
-      <xs:attribute name="repositorycode" type="ns1:data.repositorycode"/>
+      <xs:attributeGroup ref="schema:am.countrycode"/>
+      <xs:attribute name="repositorycode" type="schema:data.repositorycode"/>
       <xs:attribute name="identifier"/>
       <xs:attribute name="encodinganalog"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="container" substitutionGroup="ns1:m.did">
+  <xs:element name="container" substitutionGroup="schema:m.did">
     <xs:complexType mixed="true">
-      <xs:group ref="ns1:m.mixed.basic"/>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:group ref="schema:m.mixed.basic"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="label"/>
       <xs:attribute name="localtype" type="xs:NMTOKEN"/>
       <xs:attribute name="encodinganalog"/>
@@ -1580,76 +1632,76 @@
   </xs:element>
   <xs:group name="m.refs">
     <xs:sequence>
-      <xs:element ref="ns1:ref"/>
-      <xs:element ref="ns1:ptr"/>
+      <xs:element ref="schema:ref"/>
+      <xs:element ref="schema:ptr"/>
     </xs:sequence>
   </xs:group>
   <xs:group name="m.mixed.basic">
     <xs:sequence>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element ref="ns1:abbr"/>
-        <xs:element ref="ns1:expan"/>
-        <xs:element ref="ns1:emph"/>
-        <xs:element ref="ns1:lb"/>
-        <xs:element ref="ns1:ref"/>
-        <xs:element ref="ns1:ptr"/>
-        <xs:element ref="ns1:foreign"/>
+        <xs:element ref="schema:abbr"/>
+        <xs:element ref="schema:expan"/>
+        <xs:element ref="schema:emph"/>
+        <xs:element ref="schema:lb"/>
+        <xs:element ref="schema:ref"/>
+        <xs:element ref="schema:ptr"/>
+        <xs:element ref="schema:foreign"/>
       </xs:choice>
     </xs:sequence>
   </xs:group>
   <xs:group name="m.mixed.basic.plus">
     <xs:sequence>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:group ref="ns1:m.mixed.basic"/>
-        <xs:element ref="ns1:quote"/>
-        <xs:element ref="ns1:num"/>
-        <xs:element ref="ns1:footnote"/>
-        <xs:element ref="ns1:date"/>
+        <xs:group ref="schema:m.mixed.basic"/>
+        <xs:element ref="schema:quote"/>
+        <xs:element ref="schema:num"/>
+        <xs:element ref="schema:footnote"/>
+        <xs:element ref="schema:date"/>
       </xs:choice>
     </xs:sequence>
   </xs:group>
   <xs:group name="m.mixed.basic.plus.access">
     <xs:sequence>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element ref="ns1:m.access.title"/>
-        <xs:group ref="ns1:m.mixed.basic"/>
-        <xs:element ref="ns1:quote"/>
-        <xs:element ref="ns1:num"/>
-        <xs:element ref="ns1:footnote"/>
-        <xs:element ref="ns1:date"/>
+        <xs:element ref="schema:m.access.title"/>
+        <xs:group ref="schema:m.mixed.basic"/>
+        <xs:element ref="schema:quote"/>
+        <xs:element ref="schema:num"/>
+        <xs:element ref="schema:footnote"/>
+        <xs:element ref="schema:date"/>
       </xs:choice>
     </xs:sequence>
   </xs:group>
   <!-- to allow recursion in some elements, e.g., dimensions -->
   <xs:group name="m.mixed.elements">
     <xs:sequence>
-      <xs:element ref="ns1:abbr"/>
-      <xs:element ref="ns1:expan"/>
-      <xs:element ref="ns1:emph"/>
-      <xs:element ref="ns1:lb"/>
-      <xs:element ref="ns1:ref"/>
-      <xs:element ref="ns1:ptr"/>
+      <xs:element ref="schema:abbr"/>
+      <xs:element ref="schema:expan"/>
+      <xs:element ref="schema:emph"/>
+      <xs:element ref="schema:lb"/>
+      <xs:element ref="schema:ref"/>
+      <xs:element ref="schema:ptr"/>
     </xs:sequence>
   </xs:group>
   <xs:element name="m.blocks" abstract="true"/>
-  <xs:element name="m.inter" abstract="true" substitutionGroup="ns1:m.blocks"/>
-  <xs:element name="blockquote" substitutionGroup="ns1:m.inter">
+  <xs:element name="m.inter" abstract="true" substitutionGroup="schema:m.blocks"/>
+  <xs:element name="blockquote" substitutionGroup="schema:m.inter">
     <xs:complexType>
       <xs:choice maxOccurs="unbounded">
-        <xs:element ref="ns1:m.inter.noquote"/>
-        <xs:element ref="ns1:p"/>
+        <xs:element ref="schema:m.inter.noquote"/>
+        <xs:element ref="schema:p"/>
       </xs:choice>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="m.inter.noquote" abstract="true" substitutionGroup="ns1:m.inter"/>
-  <xs:element name="chronlist" substitutionGroup="ns1:m.inter.noquote">
+  <xs:element name="m.inter.noquote" abstract="true" substitutionGroup="schema:m.inter"/>
+  <xs:element name="chronlist" substitutionGroup="schema:m.inter.noquote">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="ns1:listhead"/>
-        <xs:element maxOccurs="unbounded" ref="ns1:chronitem"/>
+        <xs:element minOccurs="0" ref="schema:listhead"/>
+        <xs:element maxOccurs="unbounded" ref="schema:chronitem"/>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="localtype"/>
     </xs:complexType>
   </xs:element>
@@ -1657,57 +1709,51 @@
     <xs:complexType>
       <xs:sequence>
         <xs:choice>
-          <xs:element ref="ns1:datesingle"/>
-          <xs:element ref="ns1:daterange"/>
+          <xs:element ref="schema:datesingle"/>
+          <xs:element ref="schema:daterange"/>
+          <xs:element ref="schema:dateset"/>
         </xs:choice>
         <xs:choice>
           <xs:sequence>
-            <xs:element minOccurs="0" ref="ns1:placeentry"/>
-            <xs:element ref="ns1:event"/>
+            <xs:element minOccurs="0" ref="schema:placeentry"/>
+            <xs:element ref="schema:event"/>
           </xs:sequence>
-          <xs:element maxOccurs="unbounded" ref="ns1:chronitemset"/>
+          <xs:element maxOccurs="unbounded" ref="schema:chronitemset"/>
         </xs:choice>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="localtype"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="chronitemset">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:placeentry"/>
-        <xs:element maxOccurs="unbounded" ref="ns1:event"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="schema:placeentry"/>
+        <xs:element maxOccurs="unbounded" ref="schema:event"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:group name="m.cOrC01">
     <xs:choice>
-      <xs:element maxOccurs="unbounded" ref="ns1:c"/>
-      <xs:element maxOccurs="unbounded" ref="ns1:c01"/>
+      <xs:element maxOccurs="unbounded" ref="schema:c"/>
+      <xs:element maxOccurs="unbounded" ref="schema:c01"/>
     </xs:choice>
   </xs:group>
   <xs:complexType name="m.c.base">
     <xs:sequence>
-      <xs:element minOccurs="0" ref="ns1:head"/>
-      <xs:element ref="ns1:did"/>
-      <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:m.desc.base"/>
-      <xs:element minOccurs="0" name="relations">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element maxOccurs="unbounded" ref="ns1:relation"/>
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
+      <xs:element minOccurs="0" ref="schema:head"/>
+      <xs:element ref="schema:did"/>
+      <xs:element minOccurs="0" maxOccurs="unbounded" ref="schema:m.desc.base"/>
     </xs:sequence>
-    <xs:attributeGroup ref="ns1:a.desc.c"/>
+    <xs:attributeGroup ref="schema:a.desc.c"/>
   </xs:complexType>
-  <xs:element name="m.access" abstract="true" substitutionGroup="ns1:m.access.title"/>
+  <xs:element name="m.access" abstract="true" substitutionGroup="schema:m.access.title"/>
   <xs:element name="m.access.title" abstract="true"/>
   <xs:group name="m.para.content">
     <xs:choice>
-      <xs:group ref="ns1:m.mixed.basic.plus"/>
-      <xs:element ref="ns1:m.access.title"/>
-      <xs:element ref="ns1:list"/>
+      <xs:group ref="schema:m.mixed.basic.plus"/>
+      <xs:element ref="schema:m.access.title"/>
+      <xs:element ref="schema:list"/>
     </xs:choice>
   </xs:group>
   <xs:simpleType name="m.data.standarddate">
@@ -1730,24 +1776,24 @@
     </xs:union>
   </xs:simpleType>
   <xs:attributeGroup name="m.datesingle">
-    <xs:attribute name="standarddate" type="ns1:m.data.standarddate"/>
-    <xs:attribute name="notbefore" type="ns1:m.data.standarddate"/>
-    <xs:attribute name="notafter" type="ns1:m.data.standarddate"/>
+    <xs:attribute name="standarddate" type="schema:m.data.standarddate"/>
+    <xs:attribute name="notbefore" type="schema:m.data.standarddate"/>
+    <xs:attribute name="notafter" type="schema:m.data.standarddate"/>
   </xs:attributeGroup>
   <xs:element name="relation">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:relationentry"/>
-        <xs:element minOccurs="0" ref="ns1:objectxmlwrap"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="schema:relationentry"/>
+        <xs:element minOccurs="0" ref="schema:objectxmlwrap"/>
         <xs:choice minOccurs="0">
-          <xs:element ref="ns1:datesingle"/>
-          <xs:element ref="ns1:dateset"/>
-          <xs:element ref="ns1:daterange"/>
+          <xs:element ref="schema:datesingle"/>
+          <xs:element ref="schema:dateset"/>
+          <xs:element ref="schema:daterange"/>
         </xs:choice>
-        <xs:element minOccurs="0" ref="ns1:placeentry"/>
-        <xs:element minOccurs="0" ref="ns1:descriptivenote"/>
+        <xs:element minOccurs="0" ref="schema:placeentry"/>
+        <xs:element minOccurs="0" ref="schema:descriptivenote"/>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="relationtype" use="required">
         <xs:simpleType>
           <xs:restriction base="xs:token">
@@ -1760,43 +1806,12 @@
       </xs:attribute>
       <xs:attribute name="otherrelationtype" type="xs:string"/>
       <xs:attribute name="lastdatetimeverified" type="xs:dateTime"/>
-      <xs:attribute name="linktype">
-        <xs:simpleType>
-          <xs:restriction base="xs:token">
-            <xs:enumeration value="simple"/>
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:attribute>
-      <xs:attribute name="href" type="xs:anyURI"/>
-      <xs:attribute name="linkrole" type="xs:anyURI"/>
-      <xs:attribute name="arcrole" type="xs:anyURI"/>
-      <xs:attribute name="linktitle"/>
-      <xs:attribute name="show">
-        <xs:simpleType>
-          <xs:restriction base="xs:token">
-            <xs:enumeration value="new"/>
-            <xs:enumeration value="replace"/>
-            <xs:enumeration value="embed"/>
-            <xs:enumeration value="other"/>
-            <xs:enumeration value="none"/>
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:attribute>
-      <xs:attribute name="actuate">
-        <xs:simpleType>
-          <xs:restriction base="xs:token">
-            <xs:enumeration value="onLoad"/>
-            <xs:enumeration value="onRequest"/>
-            <xs:enumeration value="other"/>
-            <xs:enumeration value="none"/>
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:attribute>
+      <xs:attributeGroup ref="schema:am.simplelink"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="relationentry">
     <xs:complexType mixed="true">
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="localtype"/>
       <xs:attribute name="transliteration" type="xs:NMTOKEN"/>
     </xs:complexType>
@@ -1804,10 +1819,10 @@
   <xs:attributeGroup name="a.internal.ptr">
     <xs:attribute name="target" type="xs:IDREF"/>
     <xs:attribute name="xpointer"/>
-    <xs:attributeGroup ref="ns1:am.simplelink"/>
+    <xs:attributeGroup ref="schema:am.simplelink"/>
   </xs:attributeGroup>
   <xs:attributeGroup name="am.simplelink">
-    <xs:attribute name="linktype" use="required">
+    <xs:attribute name="linktype">
       <xs:simpleType>
         <xs:restriction base="xs:token">
           <xs:enumeration value="simple"/>
@@ -1897,120 +1912,116 @@
   <xs:element name="control">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="ns1:recordid"/>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:otherrecordid"/>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:representation"/>
-        <xs:element ref="ns1:filedesc"/>
-        <xs:element ref="ns1:maintenancestatus"/>
-        <xs:element minOccurs="0" ref="ns1:publicationstatus"/>
-        <xs:element ref="ns1:maintenanceagency"/>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:languagedeclaration"/>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:conventiondeclaration"/>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:localtypedeclaration"/>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:localcontrol"/>
-        <xs:element ref="ns1:maintenancehistory"/>
-        <xs:element minOccurs="0" ref="ns1:sources"/>
+        <xs:element ref="schema:recordid"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="schema:otherrecordid"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="schema:representation"/>
+        <xs:element ref="schema:filedesc"/>
+        <xs:element ref="schema:maintenancestatus"/>
+        <xs:element minOccurs="0" ref="schema:publicationstatus"/>
+        <xs:element ref="schema:maintenanceagency"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="schema:languagedeclaration"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="schema:conventiondeclaration"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="schema:localtypedeclaration"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="schema:localcontrol"/>
+        <xs:element ref="schema:maintenancehistory"/>
+        <xs:element minOccurs="0" ref="schema:sources"/>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="base" type="xs:anyURI"/>
       <xs:attribute name="relatedencoding"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="recordid">
-    <xs:complexType>
-      <xs:simpleContent>
-        <xs:extension base="xs:NMTOKEN">
-          <xs:attributeGroup ref="ns1:a.common"/>
-          <xs:attribute name="instanceurl" type="xs:anyURI"/>
-        </xs:extension>
-      </xs:simpleContent>
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="schema:a.common"/>
+      <xs:attribute name="instanceurl" type="xs:anyURI"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="otherrecordid">
     <xs:complexType mixed="true">
-      <xs:attributeGroup ref="ns1:a.common"/>
-      <xs:attributeGroup ref="ns1:m.id"/>
+      <xs:attributeGroup ref="schema:a.common"/>
+      <xs:attributeGroup ref="schema:m.id"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="representation">
     <xs:complexType mixed="true">
-      <xs:attributeGroup ref="ns1:a.common"/>
-      <xs:attributeGroup ref="ns1:am.simplelink"/>
+      <xs:attributeGroup ref="schema:a.common"/>
+      <xs:attributeGroup ref="schema:am.simplelink"/>
       <xs:attribute name="localtype"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="filedesc">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="ns1:titlestmt"/>
-        <xs:element minOccurs="0" ref="ns1:editionstmt"/>
-        <xs:element minOccurs="0" ref="ns1:publicationstmt"/>
-        <xs:element minOccurs="0" ref="ns1:seriesstmt"/>
-        <xs:element minOccurs="0" ref="ns1:notestmt"/>
+        <xs:element ref="schema:titlestmt"/>
+        <xs:element minOccurs="0" ref="schema:editionstmt"/>
+        <xs:element minOccurs="0" ref="schema:publicationstmt"/>
+        <xs:element minOccurs="0" ref="schema:seriesstmt"/>
+        <xs:element minOccurs="0" ref="schema:notestmt"/>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="encodinganalog"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="titlestmt">
     <xs:complexType>
       <xs:sequence>
-        <xs:element maxOccurs="unbounded" ref="ns1:titleproper"/>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:subtitle"/>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:author"/>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:sponsor"/>
+        <xs:element maxOccurs="unbounded" ref="schema:titleproper"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="schema:subtitle"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="schema:author"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="schema:sponsor"/>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="encodinganalog"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="editionstmt">
     <xs:complexType>
       <xs:choice maxOccurs="unbounded">
-        <xs:element ref="ns1:edition"/>
-        <xs:element ref="ns1:p"/>
+        <xs:element ref="schema:edition"/>
+        <xs:element ref="schema:p"/>
       </xs:choice>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="encodinganalog"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="publicationstmt">
     <xs:complexType>
       <xs:choice maxOccurs="unbounded">
-        <xs:element ref="ns1:publisher"/>
-        <xs:element ref="ns1:date"/>
-        <xs:element ref="ns1:address"/>
-        <xs:element ref="ns1:num"/>
-        <xs:element ref="ns1:p"/>
+        <xs:element ref="schema:publisher"/>
+        <xs:element ref="schema:date"/>
+        <xs:element ref="schema:address"/>
+        <xs:element ref="schema:num"/>
+        <xs:element ref="schema:p"/>
       </xs:choice>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="encodinganalog"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="seriesstmt">
     <xs:complexType>
       <xs:choice maxOccurs="unbounded">
-        <xs:element ref="ns1:titleproper"/>
-        <xs:element ref="ns1:num"/>
-        <xs:element ref="ns1:p"/>
+        <xs:element ref="schema:titleproper"/>
+        <xs:element ref="schema:num"/>
+        <xs:element ref="schema:p"/>
       </xs:choice>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="encodinganalog"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="notestmt">
     <xs:complexType>
       <xs:sequence>
-        <xs:element maxOccurs="unbounded" ref="ns1:controlnote"/>
+        <xs:element maxOccurs="unbounded" ref="schema:controlnote"/>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="encodinganalog"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="maintenancestatus">
     <xs:complexType mixed="true">
-      <xs:group ref="ns1:m.mixed.basic"/>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:group ref="schema:m.mixed.basic"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="value" use="required">
         <xs:simpleType>
           <xs:restriction base="xs:token">
@@ -2029,13 +2040,14 @@
   </xs:element>
   <xs:element name="publicationstatus">
     <xs:complexType mixed="true">
-      <xs:group ref="ns1:m.mixed.basic"/>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:group ref="schema:m.mixed.basic"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="value" use="required">
         <xs:simpleType>
           <xs:restriction base="xs:token">
-            <xs:enumeration value="inProcess"/>
+            <xs:enumeration value="inprocess"/>
             <xs:enumeration value="approved"/>
+            <xs:enumeration value="published"/>
           </xs:restriction>
         </xs:simpleType>
       </xs:attribute>
@@ -2044,51 +2056,51 @@
   <xs:element name="languagedeclaration">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="ns1:language"/>
-        <xs:element ref="ns1:script"/>
-        <xs:element minOccurs="0" ref="ns1:descriptivenote"/>
+        <xs:element ref="schema:language"/>
+        <xs:element ref="schema:script"/>
+        <xs:element minOccurs="0" ref="schema:descriptivenote"/>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="conventiondeclaration">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="ns1:abbr"/>
-        <xs:element ref="ns1:citation"/>
-        <xs:element minOccurs="0" ref="ns1:descriptivenote"/>
+        <xs:element minOccurs="0" ref="schema:abbr"/>
+        <xs:element ref="schema:citation"/>
+        <xs:element minOccurs="0" ref="schema:descriptivenote"/>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="localtypedeclaration">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="ns1:abbr"/>
-        <xs:element ref="ns1:citation"/>
-        <xs:element minOccurs="0" ref="ns1:descriptivenote"/>
+        <xs:element minOccurs="0" ref="schema:abbr"/>
+        <xs:element ref="schema:citation"/>
+        <xs:element minOccurs="0" ref="schema:descriptivenote"/>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="localcontrol">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="ns1:term"/>
+        <xs:element minOccurs="0" ref="schema:term"/>
         <xs:choice minOccurs="0">
-          <xs:element ref="ns1:datesingle"/>
-          <xs:element ref="ns1:daterange"/>
+          <xs:element ref="schema:datesingle"/>
+          <xs:element ref="schema:daterange"/>
         </xs:choice>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="localtype" use="required"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="term">
     <xs:complexType mixed="true">
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="transliteration"/>
-      <xs:attribute name="lastdatetimeverified" type="ns1:m.data.standardDateTime"/>
+      <xs:attribute name="lastdatetimeverified" type="schema:m.data.standardDateTime"/>
       <xs:attribute name="source" type="xs:string"/>
       <xs:attribute name="identifier"/>
     </xs:complexType>
@@ -2096,27 +2108,27 @@
   <xs:element name="maintenancehistory">
     <xs:complexType>
       <xs:sequence>
-        <xs:element maxOccurs="unbounded" ref="ns1:maintenanceevent"/>
+        <xs:element maxOccurs="unbounded" ref="schema:maintenanceevent"/>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="maintenanceevent">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="ns1:eventtype"/>
-        <xs:element ref="ns1:eventdatetime"/>
-        <xs:element ref="ns1:agenttype"/>
-        <xs:element ref="ns1:agent"/>
-        <xs:element minOccurs="0" ref="ns1:eventdescription"/>
+        <xs:element ref="schema:eventtype"/>
+        <xs:element ref="schema:eventdatetime"/>
+        <xs:element ref="schema:agenttype"/>
+        <xs:element ref="schema:agent"/>
+        <xs:element minOccurs="0" ref="schema:eventdescription"/>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="eventtype">
     <xs:complexType mixed="true">
-      <xs:group ref="ns1:m.mixed.basic"/>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:group ref="schema:m.mixed.basic"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="value" use="required">
         <xs:simpleType>
           <xs:restriction base="xs:token">
@@ -2134,14 +2146,14 @@
   </xs:element>
   <xs:element name="eventdatetime">
     <xs:complexType mixed="true">
-      <xs:attributeGroup ref="ns1:a.common"/>
-      <xs:attribute name="standarddatetime" type="ns1:m.data.standardDateTime"/>
+      <xs:attributeGroup ref="schema:a.common"/>
+      <xs:attribute name="standarddatetime" type="schema:m.data.standardDateTime"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="agenttype">
     <xs:complexType mixed="true">
-      <xs:group ref="ns1:m.mixed.basic"/>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:group ref="schema:m.mixed.basic"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="value" use="required">
         <xs:simpleType>
           <xs:restriction base="xs:token">
@@ -2155,69 +2167,38 @@
   </xs:element>
   <xs:element name="agent">
     <xs:complexType mixed="true">
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="eventdescription">
     <xs:complexType mixed="true">
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="sources">
     <xs:complexType>
       <xs:sequence>
-        <xs:element maxOccurs="unbounded" ref="ns1:source"/>
+        <xs:element maxOccurs="unbounded" ref="schema:source"/>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="base" type="xs:anyURI"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="source">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="ns1:sourceentry"/>
-        <xs:element minOccurs="0" ref="ns1:objectxmlwrap"/>
-        <xs:element minOccurs="0" ref="ns1:descriptivenote"/>
+        <xs:element minOccurs="0" ref="schema:sourceentry"/>
+        <xs:element minOccurs="0" ref="schema:objectxmlwrap"/>
+        <xs:element minOccurs="0" ref="schema:descriptivenote"/>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
-      <xs:attribute name="lastdatetimeverified" type="ns1:m.data.standardDateTime"/>
-      <xs:attribute name="linktype">
-        <xs:simpleType>
-          <xs:restriction base="xs:token">
-            <xs:enumeration value="simple"/>
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:attribute>
-      <xs:attribute name="href" type="xs:anyURI"/>
-      <xs:attribute name="linkrole" type="xs:anyURI"/>
-      <xs:attribute name="arcrole" type="xs:anyURI"/>
-      <xs:attribute name="linktitle"/>
-      <xs:attribute name="show">
-        <xs:simpleType>
-          <xs:restriction base="xs:token">
-            <xs:enumeration value="new"/>
-            <xs:enumeration value="replace"/>
-            <xs:enumeration value="embed"/>
-            <xs:enumeration value="other"/>
-            <xs:enumeration value="none"/>
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:attribute>
-      <xs:attribute name="actuate">
-        <xs:simpleType>
-          <xs:restriction base="xs:token">
-            <xs:enumeration value="onLoad"/>
-            <xs:enumeration value="onRequest"/>
-            <xs:enumeration value="other"/>
-            <xs:enumeration value="none"/>
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:attribute>
+      <xs:attributeGroup ref="schema:a.common"/>
+      <xs:attribute name="lastdatetimeverified" type="schema:m.data.standardDateTime"/>
+      <xs:attributeGroup ref="schema:am.simplelink"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="sourceentry">
     <xs:complexType mixed="true">
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="transliteration"/>
     </xs:complexType>
   </xs:element>
@@ -2226,66 +2207,66 @@
   </xs:attributeGroup>
   <xs:element name="titleproper">
     <xs:complexType mixed="true">
-      <xs:group ref="ns1:m.mixed.basic"/>
-      <xs:attributeGroup ref="ns1:a.common"/>
-      <xs:attribute name="render" type="ns1:av.render"/>
+      <xs:group ref="schema:m.mixed.basic"/>
+      <xs:attributeGroup ref="schema:a.common"/>
+      <xs:attribute name="render" type="schema:av.render"/>
       <xs:attribute name="localtype"/>
       <xs:attribute name="encodinganalog"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="subtitle">
     <xs:complexType mixed="true">
-      <xs:group ref="ns1:m.mixed.basic"/>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:group ref="schema:m.mixed.basic"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="encodinganalog"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="author">
     <xs:complexType mixed="true">
-      <xs:group ref="ns1:m.mixed.basic"/>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:group ref="schema:m.mixed.basic"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="encodinganalog"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="sponsor">
     <xs:complexType mixed="true">
-      <xs:group ref="ns1:m.mixed.basic"/>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:group ref="schema:m.mixed.basic"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="encodinganalog"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="edition">
     <xs:complexType mixed="true">
-      <xs:group ref="ns1:m.mixed.basic"/>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:group ref="schema:m.mixed.basic"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="encodinganalog"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="date">
     <xs:complexType mixed="true">
-      <xs:group ref="ns1:m.mixed.basic"/>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:group ref="schema:m.mixed.basic"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="localtype"/>
-      <xs:attributeGroup ref="ns1:am.dates.era"/>
-      <xs:attributeGroup ref="ns1:am.dates.calendar"/>
-      <xs:attributeGroup ref="ns1:am.date.normal"/>
+      <xs:attributeGroup ref="schema:am.dates.era"/>
+      <xs:attributeGroup ref="schema:am.dates.calendar"/>
+      <xs:attributeGroup ref="schema:am.date.normal"/>
       <xs:attribute name="certainty"/>
       <xs:attribute name="encodinganalog"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="publisher">
     <xs:complexType mixed="true">
-      <xs:group ref="ns1:m.mixed.basic"/>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:group ref="schema:m.mixed.basic"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="encodinganalog"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="controlnote">
     <xs:complexType>
       <xs:sequence>
-        <xs:element maxOccurs="unbounded" ref="ns1:m.blocks"/>
+        <xs:element maxOccurs="unbounded" ref="schema:m.blocks"/>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="localtype"/>
       <xs:attribute name="encodinganalog"/>
     </xs:complexType>
@@ -2294,72 +2275,38 @@
   <xs:element name="maintenanceagency">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="ns1:agencycode"/>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:otheragencycode"/>
-        <xs:element ref="ns1:agencyname"/>
-        <xs:element minOccurs="0" ref="ns1:descriptivenote"/>
+        <xs:element minOccurs="0" ref="schema:agencycode"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="schema:otheragencycode"/>
+        <xs:element ref="schema:agencyname"/>
+        <xs:element minOccurs="0" ref="schema:descriptivenote"/>
       </xs:sequence>
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="agencycode">
     <xs:complexType mixed="true">
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
+      <xs:attribute name="localtype" use="required"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="otheragencycode">
-    <xs:complexType>
-      <xs:simpleContent>
-        <xs:extension base="xs:NMTOKEN">
-          <xs:attributeGroup ref="ns1:a.common"/>
-          <xs:attribute name="localtype" use="required"/>
-        </xs:extension>
-      </xs:simpleContent>
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="schema:a.common"/>
+      <xs:attribute name="localtype" use="required"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="agencyname" type="xs:string"/>
   <xs:element name="citation">
     <xs:complexType mixed="true">
-      <xs:group ref="ns1:m.mixed.basic"/>
-      <xs:attributeGroup ref="ns1:a.common"/>
-      <xs:attribute name="linktype">
-        <xs:simpleType>
-          <xs:restriction base="xs:token">
-            <xs:enumeration value="simple"/>
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:attribute>
-      <xs:attribute name="href" type="xs:anyURI"/>
-      <xs:attribute name="linkrole" type="xs:anyURI"/>
-      <xs:attribute name="arcrole" type="xs:anyURI"/>
-      <xs:attribute name="linktitle"/>
-      <xs:attribute name="show">
-        <xs:simpleType>
-          <xs:restriction base="xs:token">
-            <xs:enumeration value="new"/>
-            <xs:enumeration value="replace"/>
-            <xs:enumeration value="embed"/>
-            <xs:enumeration value="other"/>
-            <xs:enumeration value="none"/>
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:attribute>
-      <xs:attribute name="actuate">
-        <xs:simpleType>
-          <xs:restriction base="xs:token">
-            <xs:enumeration value="onLoad"/>
-            <xs:enumeration value="onRequest"/>
-            <xs:enumeration value="other"/>
-            <xs:enumeration value="none"/>
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:attribute>
-      <xs:attribute name="lastdatetimeverified" type="ns1:m.data.standardDateTime"/>
+      <xs:group ref="schema:m.mixed.basic"/>
+      <xs:attributeGroup ref="schema:a.common"/>
+      <xs:attributeGroup ref="schema:am.simplelink"/>
+      <xs:attribute name="lastdatetimeverified" type="schema:m.data.standardDateTime"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="placeentry">
     <xs:complexType mixed="true">
-      <xs:attributeGroup ref="ns1:a.common"/>
+      <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="transliteration"/>
       <xs:attribute name="localtype"/>
       <xs:attribute name="countrycode" type="xs:string"/>
@@ -2376,7 +2323,7 @@
     <xs:attribute name="altitude" type="xs:NMTOKEN"/>
   </xs:attributeGroup>
   <xs:attributeGroup name="a.lastdatetimeverified">
-    <xs:attribute name="lastdatetimeverified" use="required" type="ns1:m.data.standardDateTime"/>
+    <xs:attribute name="lastdatetimeverified" use="required" type="schema:m.data.standardDateTime"/>
   </xs:attributeGroup>
   <xs:simpleType name="m.data.standardDateTime">
     <xs:union>
