@@ -371,9 +371,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="dao">
 			<ref name="a.common"/>
 			<ref name="am.simplelink"/>
-			<optional>
-				<ref name="e.daodesc"/>
-			</optional>
 			<attribute name="daotype">
 				<choice>
 					<value>borndigital</value>
@@ -384,6 +381,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</attribute>
 			<optional>
 				<attribute name="otherdaotype"/>
+			</optional>
+			<optional>
+				<ref name="e.daodesc"/>
 			</optional>
 		</element>
 	</define>
