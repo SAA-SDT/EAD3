@@ -3172,6 +3172,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.maintenanceagency">
 		<element name="maintenanceagency">
 			<ref name="a.common"/>
+			<ref name="am.countrycode"/>
 			<optional>
 				<element name="agencycode">
 					<ref name="a.common"/>
