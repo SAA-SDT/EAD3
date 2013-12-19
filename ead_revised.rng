@@ -3280,4 +3280,14 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</data>
 		</choice>
 	</define>
+	
+	<define name="a.coverage">
+		<attribute name="coverage">
+			<choice>
+				<value>whole</value>
+				<value>part</value>
+			</choice>
+		</attribute>
+	</define>
+	
 </grammar>
