@@ -2003,6 +2003,11 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.relations">
 		<element name="relations">
 			<ref name="a.common"/>
+			<optional>
+				<attribute name="base">
+					<data type="anyURI"/>
+				</attribute>
+			</optional>
 			<oneOrMore>
 				<ref name="m.relation"/>
 			</oneOrMore>
