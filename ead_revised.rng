@@ -144,6 +144,14 @@ For these and/or other purposes and motivations, and without any expectation of 
 
 			<element name="quantity">
 				<ref name="a.common"/>
+				<optional>
+					<attribute name="approximate">
+						<choice>
+							<value>yes</value>
+							<value>no</value>
+						</choice>
+					</attribute>
+				</optional>
 				<text/>
 			</element>
 			<element name="unittype">
