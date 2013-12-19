@@ -128,7 +128,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</choice>
 			</attribute>
 			<ref name="a.coverage"/>
-
 			<element name="quantity">
 				<ref name="a.common"/>
 				<optional>
@@ -157,10 +156,10 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<text/>
 			</element>
 			<zeroOrMore>
-				<ref name="e.dimensions"/>
-			</zeroOrMore>
-			<zeroOrMore>
-				<ref name="e.physfacet"/>
+				<choice>
+					<ref name="e.physfacet"/>
+					<ref name="e.dimensions"/>
+				</choice>
 			</zeroOrMore>
 			<optional>
 				<ref name="e.descriptivenote"/>
