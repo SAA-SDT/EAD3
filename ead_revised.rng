@@ -184,9 +184,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<optional>
 						<ref name="e.address"/>
 					</optional>
-					<optional>
-						<ref name="e.descriptivenote"/>
-					</optional>
 				</choice>
 			</oneOrMore>
 		</element>
