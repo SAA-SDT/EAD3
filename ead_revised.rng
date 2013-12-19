@@ -3004,10 +3004,12 @@ For these and/or other purposes and motivations, and without any expectation of 
 							<text/>
 						</element>
 						<optional>
-							<element a:id="eventdesccription" name="eventdescription">
-								<ref name="a.common"/>
-								<text/>
-							</element>
+							<oneOrMore>
+								<element a:id="eventdesccription" name="eventdescription">
+									<ref name="a.common"/>
+									<text/>
+								</element>
+							</oneOrMore>
 						</optional>
 					</element>
 				</oneOrMore>
