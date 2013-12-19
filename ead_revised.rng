@@ -3206,6 +3206,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</element>
 			</zeroOrMore>
 			<element name="agencyname">
+				<ref name="a.common"/>
 				<text/>
 			</element>
 			<optional>
