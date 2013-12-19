@@ -123,11 +123,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
-			<optional>
-				<attribute name="rules">
-					<data type="NMTOKEN"/>
-				</attribute>
-			</optional>
 			<attribute name="physdescstructuredtype">
 				<choice>
 					<value>carrier</value>
@@ -2282,11 +2277,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</optional>
 				<optional>
 					<attribute name="encodinganalog"/>
-				</optional>
-				<optional>
-					<attribute name="rules">
-						<data type="NMTOKEN"/>
-					</attribute>
 				</optional>
 				<ref name="m.mixed.basic"/>
 			</element>
