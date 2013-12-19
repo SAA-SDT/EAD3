@@ -381,6 +381,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<attribute name="otherdaotype"/>
 			</optional>
 			<optional>
+				<ref name="a.coverage"/>
+			</optional>
+			<optional>
 				<ref name="e.daodesc"/>
 			</optional>
 		</element>
