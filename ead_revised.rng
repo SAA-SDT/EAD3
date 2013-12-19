@@ -178,6 +178,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</optional>
 			<oneOrMore>
 				<choice>
+					<ref name="e.persname"/>
 					<ref name="e.corpname"/>
 					<ref name="e.name"/>
 					<ref name="e.famname"/>
