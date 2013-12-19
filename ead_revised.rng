@@ -3031,7 +3031,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 							<optional>
 								<ref name="am.simplelink"/>
 							</optional>
-							<optional>
+							<zeroOrMore>
 								<element name="sourceentry">
 									<ref name="a.common"/>
 									<optional>
@@ -3039,7 +3039,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 									</optional>
 									<text/>
 								</element>
-							</optional>
+							</zeroOrMore>
 							<optional>
 								<choice>
 									<ref name="e.objectxmlwrap"/>
