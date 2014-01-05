@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<ead xsi:schemaLocation="urn:isbn:1-931666-22-9 http://www.loc.gov/ead/ead.xsd" xmlns:ns2="http://www.w3.org/1999/xlink" xmlns="urn:isbn:1-931666-22-9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <eadheader findaidstatus="Completed" repositoryencoding="iso15511" countryencoding="iso3166-1" dateencoding="iso8601" langencoding="iso639-2b">
+<ead xsi:schemaLocation="urn:isbn:1-931666-22-9 http://www.loc.gov/ead/ead.xsd"
+    xmlns:ns2="http://www.w3.org/1999/xlink" xmlns="urn:isbn:1-931666-22-9"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <eadheader findaidstatus="Completed" repositoryencoding="iso15511" countryencoding="iso3166-1"
+        dateencoding="iso8601" langencoding="iso639-2b">
         <eadid countrycode="US" mainagencycode="US-MH-Ar">hua88888:HOLLISnumber|||</eadid>
         <filedesc>
             <titlestmt>
-                <titleproper>Bowers, Kate. Everything but the kitchen sink : an inventory (titleproper in titlestatement in filedesc) |||
-                    <num>Resource (call) |||.Ident (num) |||</num>
+                <titleproper>Bowers, Kate. Everything but the kitchen sink : an inventory
+                    (titleproper in titlestatement in filedesc) ||| <num>Resource (call) |||.Ident
+                        (num) |||</num>
                 </titleproper>
                 <titleproper type="filing">Finding aid filing title |||</titleproper>
                 <subtitle>Finding aid subtitle |||</subtitle>
@@ -17,7 +21,8 @@
             </editionstmt>
             <publicationstmt>
                 <p>
-                    <extref ns2:type="simple" ns2:actuate="onLoad" ns2:show="embed" ns2:href="http://nrs.harvard.edu/urn-3:HUL.OIS:hu_archive_shield"/>
+                    <extref ns2:type="simple" ns2:actuate="onLoad" ns2:show="embed"
+                        ns2:href="http://nrs.harvard.edu/urn-3:HUL.OIS:hu_archive_shield"/>
                 </p>
                 <publisher>Harvard University Archives</publisher>
                 <address>
@@ -38,7 +43,7 @@
         </filedesc>
         <profiledesc>
             <creation>This finding aid was produced using the Archivists' Toolkit
-                <date>2013-02-12T11:11-0500</date>
+                    <date>2013-02-12T11:11-0500</date>
             </creation>
             <langusage>Language of Finding AId (langusage?) |||</langusage>
             <descrules>Local</descrules>
@@ -60,48 +65,69 @@
             <langmaterial>
                 <language langcode="eng"/>
             </langmaterial>
-            <container id="cid15001" type="Box" label="Mixed materials">Container 1 indicator (is this container tag?) |||</container>
+            <container id="cid15001" type="Box" label="Mixed materials">Container 1 indicator (is
+                this container tag?) |||</container>
             <physdesc>
                 <extent>1.0 Cubic feet</extent>
                 <extent>Container summary|||</extent>
             </physdesc>
             <unitdate normal="1989/1999" type="bulk">Bulk, 1989-1999</unitdate>
-            <unitdate normal="1000/2000" type="inclusive">Date expression (AT outputs this instead of date range as EAD, uses date range if this empty)|||</unitdate>
-            <abstract id="ref7" label="Abstract">Abstract without a label content -- 1st note input, 2nd note on "Notes etc" tab : |||</abstract>
-            <abstract id="ref1" label="abstract label||| ">3rd note input : abstract content|||</abstract>
+            <unitdate normal="1000/2000" type="inclusive">Date expression (AT outputs this instead
+                of date range as EAD, uses date range if this empty)|||</unitdate>
+            <abstract id="ref7" label="Abstract">Abstract without a label content -- 1st note input,
+                2nd note on "Notes etc" tab : |||</abstract>
+            <abstract id="ref1" label="abstract label||| ">3rd note input : abstract
+                content|||</abstract>
             <physdesc id="ref34" label="Dimensions note">
                 <dimensions>Dimensions note no label |||</dimensions>
             </physdesc>
             <physdesc id="ref243" label="Dimensions note label|||">
                 <dimensions>Dimensions note with label text of content|||</dimensions>
             </physdesc>
-            <physdesc id="ref43" label="General Physical Description note">General physical description note no label |||</physdesc>
-            <langmaterial id="ref44" label="Language of Materials note">English (Language of materials note no label content)|||</langmaterial>
-            <langmaterial id="ref64" label="Language of Materials Note Label">English.</langmaterial>
+            <physdesc id="ref43" label="General Physical Description note">General physical
+                description note no label |||</physdesc>
+            <langmaterial id="ref44" label="Language of Materials note">English (Language of
+                materials note no label content)|||</langmaterial>
+            <langmaterial id="ref64" label="Language of Materials Note Label"
+                >English.</langmaterial>
             <physloc id="ref28" label="Location note">Location note no label |||</physloc>
-            <physloc id="ref11" label="Location note (maybe physloc?) label |||">Location note (maybe physloc?) content. |||</physloc>
-            <materialspec id="ref46" label="Material Specific Details note">Material specific details note no label |||</materialspec>
+            <physloc id="ref11" label="Location note (maybe physloc?) label |||">Location note
+                (maybe physloc?) content. |||</physloc>
+            <materialspec id="ref46" label="Material Specific Details note">Material specific
+                details note no label |||</materialspec>
             <physdesc id="ref47" label="Physical Facet note">
                 <physfacet>Physical facet note no label |||</physfacet>
             </physdesc>
             <origination label="creator">
-                <persname rules="aacr" source="naf" role="Creator (cre)">Bowers, Kate, 1963- |||</persname>
+                <persname rules="aacr" source="naf" role="Creator (cre)">Bowers, Kate, 1963-
+                    |||</persname>
             </origination>
             <origination label="creator">
-                <persname rules="local" source="local" role="Originator (org)">Test|||, Name|||, Ms.|||, Number|||, Suffix|||, Title|||,  (Fuller form|||), 1880-1980|||, qualifier|||</persname>
+                <persname rules="local" source="local" role="Originator (org)">Test|||, Name|||,
+                    Ms.|||, Number|||, Suffix|||, Title|||, (Fuller form|||), 1880-1980|||,
+                    qualifier|||</persname>
             </origination>
         </did>
         <separatedmaterial id="ref18">
             <head>Separated Materials label |||</head>
-            <p>Separated Materials note content 1st note in "Notes, etc" tab, umpteenth note added, but dragged to first note position in notes tab in AT. It appears that the note order in AT has some impact on the note order in the resulting EAD. It looks as if those notes that go outside the DID are exporting simply in the order in which they appear in AT. |||</p>
+            <p>Separated Materials note content 1st note in "Notes, etc" tab, umpteenth note added,
+                but dragged to first note position in notes tab in AT. It appears that the note
+                order in AT has some impact on the note order in the resulting EAD. It looks as if
+                those notes that go outside the DID are exporting simply in the order in which they
+                appear in AT. |||</p>
         </separatedmaterial>
         <odd id="ref209">
             <head>Kate's -- note -- about -- input |||</head>
-            <p>All generic text I added is meant to indicate the type of input field in the AT. Text I added has three pipes at the end of it ||| unless it was impossible due to the type of data (numeric). Data from related tables (e.g. Repository name) does not have three pipes, nor does text generated from the style sheet. I did not use pipes in text from real-world examples.</p>
+            <p>All generic text I added is meant to indicate the type of input field in the AT. Text
+                I added has three pipes at the end of it ||| unless it was impossible due to the
+                type of data (numeric). Data from related tables (e.g. Repository name) does not
+                have three pipes, nor does text generated from the style sheet. I did not use pipes
+                in text from real-world examples.</p>
         </odd>
         <accruals id="ref8">
             <head>Accruals note</head>
-            <p>Accruals content without label -- 2nd note input, 3rd note on "Notes, etc." tab : |||</p>
+            <p>Accruals content without label -- 2nd note input, 3rd note on "Notes, etc." tab :
+                |||</p>
         </accruals>
         <accruals id="ref3">
             <head>Accruals note label|||</head>
@@ -121,24 +147,31 @@
         </arrangement>
         <bibliography id="ref9">
             <head>Bibliography</head>
-            <p>Bibliography note no "title" content ||| 5th note input . Can be wrapped in tags thus (but why not bibref?): 
-                <blockquote>
+            <p>Bibliography note no "title" content ||| 5th note input . Can be wrapped in tags thus
+                (but why not bibref?): <blockquote>
                     <p>content in blockquote|||</p>
                 </blockquote>
-                <corpname rules="AACR2" source="NAF" role="origination">content in corpname|||</corpname>
+                <corpname rules="AACR2" source="NAF" role="origination">content in
+                    corpname|||</corpname>
                 <date calendar="gregorian" normal="1900" era="ce">content in date|||</date>
                 <emph render="bolditalic">content in emph with bold italic selected |||</emph>
-                <extref ns2:actuate="onRequest" ns2:show="new" ns2:title="Harvard University Archives Home Page|||" ns2:href="http://nrs.harvard.edu/urn-3:hul.eresource:archives">content in extref |||</extref>
-                <famname rules="AACR2" source="NAF" role="origination">content in famname|||</famname> content in function|||</p>
+                <extref ns2:actuate="onRequest" ns2:show="new"
+                    ns2:title="Harvard University Archives Home Page|||"
+                    ns2:href="http://nrs.harvard.edu/urn-3:hul.eresource:archives">content in extref
+                    |||</extref>
+                <famname rules="AACR2" source="NAF" role="origination">content in
+                    famname|||</famname> content in function|||</p>
         </bibliography>
         <bibliography id="ref10">
-            <head>Bibliography note "Title" area (in other notes this box is labeled "label") |||</head>
-            <p>Note in bibliography. 
-                <persname role="author">wrapped text in persname (i.e. author|||</persname>
+            <head>Bibliography note "Title" area (in other notes this box is labeled "label")
+                |||</head>
+            <p>Note in bibliography. <persname role="author">wrapped text in persname (i.e.
+                    author|||</persname>
                 <title render="italic">wrapped text in title render italic</title>
                 <geogname>wrapped text in geogname</geogname>
                 <corpname role="publisher">wrapped text in corpname (i.e. publisher)</corpname>
-                <date calendar="gregorian" era="ce">wrapped text in date (i.e. pub date)</date> 9th note input. |||</p>
+                <date calendar="gregorian" era="ce">wrapped text in date (i.e. pub date)</date> 9th
+                note input. |||</p>
         </bibliography>
         <arrangement id="ref5">
             <head>Arrangement note</head>
@@ -146,7 +179,8 @@
         </arrangement>
         <bioghist id="ref16">
             <head>Biographical/Historical note</head>
-            <p>Biographical historical note without label content. Note inserted placement by clicking in list of notes. |||</p>
+            <p>Biographical historical note without label content. Note inserted placement by
+                clicking in list of notes. |||</p>
         </bioghist>
         <bioghist id="ref17">
             <head>Biographical historical note label |||</head>
@@ -161,7 +195,8 @@
                     <eventgrp>
                         <event>1991 event 1 |||</event>
                         <event>1991 event 2 |||</event>
-                        <event>1991&lt;title render="italic"&gt; wrapped in title tag &lt;/title&gt;  event 3 |||</event>
+                        <event>1991&lt;title render="italic"&gt; wrapped in title tag &lt;/title&gt;
+                            event 3 |||</event>
                     </eventgrp>
                 </chronitem>
                 <chronitem>
@@ -220,8 +255,8 @@
         </odd>
         <acqinfo id="ref31">
             <head>Immediate Source of Acquisition note</head>
-            <p>Acquisition information note content no label 
-                <corpname>content wrapped in corpname tag</corpname> |||</p>
+            <p>Acquisition information note content no label <corpname>content wrapped in corpname
+                    tag</corpname> |||</p>
         </acqinfo>
         <acqinfo id="ref32">
             <head>Acquisition information note label |||</head>
@@ -295,37 +330,50 @@
             <head>Separated Materials note</head>
             <p>Separated materials note content no label |||</p>
         </separatedmaterial>
-        <dao ns2:actuate="onRequest" ns2:show="new" ns2:title="Title (i.e. Everything but the kitchen sink, unitttitle) |||
-" ns2:href="DigitalObjectID|||">
+        <dao ns2:actuate="onRequest" ns2:show="new"
+            ns2:title="Title (i.e. Everything but the kitchen sink, unitttitle) |||
+"
+            ns2:href="DigitalObjectID|||">
             <daodesc>
-                <p>Title (i.e. Everything but the kitchen sink, unitttitle) |||
-, Date expression (any text here overrides begin and end dates, otherwise yyyy-yyyy)||| (DigitalObjectLabel|||)</p>
+                <p>Title (i.e. Everything but the kitchen sink, unitttitle) ||| , Date expression
+                    (any text here overrides begin and end dates, otherwise yyyy-yyyy)|||
+                    (DigitalObjectLabel|||)</p>
             </daodesc>
         </dao>
         <controlaccess>
-            <corpname rules="DACS" source="local" role="Creator (cre)">Acme Publishing (Boston, Mass.).</corpname>
+            <corpname rules="DACS" source="local" role="Creator (cre)">Acme Publishing (Boston,
+                Mass.).</corpname>
             <persname rules="aacr" source="local" role="Creator (cre)">Engelhart, Anne</persname>
-            <persname rules="local" source="local">Test|||, Name|||, Ms.|||, Number|||, Suffix|||, Title|||,  (Fuller form|||), 1880-1980|||, qualifier|||</persname>
+            <persname rules="local" source="local">Test|||, Name|||, Ms.|||, Number|||, Suffix|||,
+                Title|||, (Fuller form|||), 1880-1980|||, qualifier|||</persname>
             <persname rules="local" source="local" role="Donor (dnr)">Zinsser, Thomas</persname>
             <subject source="ingest">Aged women--United States</subject>
         </controlaccess>
         <dsc>
             <c01 id="ref55" level="series">
                 <did>
-                    <unittitle>Series title of series with Series-level notes with labels |||</unittitle>
+                    <unittitle>Series title of series with Series-level notes with labels
+                        |||</unittitle>
                     <unitid>Series I |||</unitid>
                     <physdesc>
                         <extent>2.0 Cubic feet</extent>
                     </physdesc>
                     <unitdate normal="1880/1900" type="inclusive">1880-1900</unitdate>
-                    <abstract id="ref123" label="Series-level abstract label|||">Series-level abstract text|||</abstract>
+                    <abstract id="ref123" label="Series-level abstract label|||">Series-level
+                        abstract text|||</abstract>
                     <physdesc id="ref132" label="Series-level dimensions label |||">
                         <dimensions>Series-level dimensions text |||</dimensions>
                     </physdesc>
-                    <physdesc id="ref137" label="Series-level general physical description label |||">Series-level general physical description text |||</physdesc>
-                    <langmaterial id="ref140" label="Series-level language of materials label|||">Series-level language of materials text|||</langmaterial>
-                    <physloc id="ref143" label="Series-level location label|||">Series-level location text|||</physloc>
-                    <materialspec id="ref144" label="Series-level material specific details label|||">Series-level material specific details text|||</materialspec>
+                    <physdesc id="ref137"
+                        label="Series-level general physical description label |||">Series-level
+                        general physical description text |||</physdesc>
+                    <langmaterial id="ref140" label="Series-level language of materials label|||"
+                        >Series-level language of materials text|||</langmaterial>
+                    <physloc id="ref143" label="Series-level location label|||">Series-level
+                        location text|||</physloc>
+                    <materialspec id="ref144"
+                        label="Series-level material specific details label|||">Series-level
+                        material specific details text|||</materialspec>
                     <physdesc id="ref147" label="Series-level physical facet label|||">
                         <physfacet>Series-level physical facet text|||</physfacet>
                     </physdesc>
@@ -394,7 +442,8 @@
                     <p>Series-level other finding aid text|||</p>
                 </otherfindaid>
                 <phystech id="ref146">
-                    <head>Series-level physical characteristics and technical requirements label|||</head>
+                    <head>Series-level physical characteristics and technical requirements
+                        label|||</head>
                     <p>Series-level physical characteristics and technical requirements text|||</p>
                 </phystech>
                 <prefercite id="ref148">
@@ -420,19 +469,25 @@
             </c01>
             <c01 id="ref154" level="series">
                 <did>
-                    <unittitle>Series title of Series with Series-level notes without labels|||</unittitle>
+                    <unittitle>Series title of Series with Series-level notes without
+                        labels|||</unittitle>
                     <unitid>Series II |||</unitid>
                     <physdesc>
                         <extent>3.0 Linear feet</extent>
                     </physdesc>
-                    <abstract id="ref156" label="Abstract">abstract, series-level text, no label |||</abstract>
+                    <abstract id="ref156" label="Abstract">abstract, series-level text, no label
+                        |||</abstract>
                     <physdesc id="ref165" label="Dimensions note">
                         <dimensions>dimensions, series-level text, no label |||</dimensions>
                     </physdesc>
-                    <physdesc id="ref170" label="General Physical Description note">general physical description, series-level text, no label |||</physdesc>
-                    <langmaterial id="ref173" label="Language of Materials note">language of material, series-level text, no label |||</langmaterial>
-                    <physloc id="ref175" label="Location note">location note, series-level text, no label |||</physloc>
-                    <materialspec id="ref176" label="Material Specific Details note">material specific details, series-level text, no label |||</materialspec>
+                    <physdesc id="ref170" label="General Physical Description note">general physical
+                        description, series-level text, no label |||</physdesc>
+                    <langmaterial id="ref173" label="Language of Materials note">language of
+                        material, series-level text, no label |||</langmaterial>
+                    <physloc id="ref175" label="Location note">location note, series-level text, no
+                        label |||</physloc>
+                    <materialspec id="ref176" label="Material Specific Details note">material
+                        specific details, series-level text, no label |||</materialspec>
                     <physdesc id="ref179" label="Physical Facet note">
                         <physfacet>physical facet, series-level text, no label |||</physfacet>
                     </physdesc>
@@ -499,7 +554,8 @@
                 </otherfindaid>
                 <phystech id="ref178">
                     <head>Physical Characteristics and Technical Requirements note</head>
-                    <p>physical characteristics and technical requirements, series-level text, no label |||</p>
+                    <p>physical characteristics and technical requirements, series-level text, no
+                        label |||</p>
                 </phystech>
                 <prefercite id="ref180">
                     <head>Preferred Citation note</head>
@@ -523,18 +579,27 @@
                 </separatedmaterial>
                 <c02 id="ref59" level="item">
                     <did>
-                        <unittitle>Item title of item with Item-level notes, labled and unlabeled |||</unittitle>
+                        <unittitle>Item title of item with Item-level notes, labled and unlabeled
+                            |||</unittitle>
                         <unitdate normal="1880/1900" type="inclusive">ca. 1880-1900</unitdate>
-                        <abstract id="ref92" label="Abstract">Abstract note content at folder level, no label |||</abstract>
-                        <abstract id="ref90" label="Abstract note label at folder level|||">Abstract note content at folder level|||</abstract>
+                        <abstract id="ref92" label="Abstract">Abstract note content at folder level,
+                            no label |||</abstract>
+                        <abstract id="ref90" label="Abstract note label at folder level|||">Abstract
+                            note content at folder level|||</abstract>
                         <physdesc id="ref108" label="Dimensions note">
-                            <dimensions>Dimensions note content at folder level, no label |||</dimensions>
+                            <dimensions>Dimensions note content at folder level, no label
+                                |||</dimensions>
                         </physdesc>
                         <physdesc id="ref109" label="Dimensions note label at folder level |||">
                             <dimensions>Dimensions note content at folder level |||</dimensions>
                         </physdesc>
-                        <physdesc id="ref121" label="General Physical Description note">General physical description note content at folder level, no label |||</physdesc>
-                        <physdesc id="ref120" label="General physical description note label at folder level|||">General physical description note content at folder level |||</physdesc>
+                        <physdesc id="ref121" label="General Physical Description note">General
+                            physical description note content at folder level, no label
+                            |||</physdesc>
+                        <physdesc id="ref120"
+                            label="General physical description note label at folder level|||"
+                            >General physical description note content at folder level
+                            |||</physdesc>
                     </did>
                     <accruals id="ref93">
                         <head>Accruals note</head>
@@ -579,7 +644,8 @@
                     </bioghist>
                     <accessrestrict id="ref102">
                         <head>Conditions Governing Access note</head>
-                        <p>Conditions governing accessl note content at folder level, no label |||</p>
+                        <p>Conditions governing accessl note content at folder level, no label
+                            |||</p>
                     </accessrestrict>
                     <accessrestrict id="ref103">
                         <head>Conditions governing access label at folder level |||</head>
@@ -637,23 +703,19 @@
                         <head>Multi-part general note label |||</head>
                         <list type="ordered">
                             <head>Ordered List title</head>
-                            <item>Ordered list 
-                                <emph render="bold">item 1</emph></item>
-                            <item>Ordered list 
-                                <emph render="bold">item 2</emph></item>
-                            <item>Ordered list 
-                                <emph render="bold">item 3</emph></item>
-                            <item>Ordered list 
-                                <emph render="bold">item 4</emph></item>
-                            <item>Ordered list 
-                                <emph render="bold">item 5</emph></item>
+                            <item>Ordered list <emph render="bold">item 1</emph></item>
+                            <item>Ordered list <emph render="bold">item 2</emph></item>
+                            <item>Ordered list <emph render="bold">item 3</emph></item>
+                            <item>Ordered list <emph render="bold">item 4</emph></item>
+                            <item>Ordered list <emph render="bold">item 5</emph></item>
                         </list>
                     </odd>
                 </c02>
             </c01>
             <c01 id="ref122" level="series">
                 <did>
-                    <unittitle>Series title of Series with Generic instances, box-folder type numbering|||</unittitle>
+                    <unittitle>Series title of Series with Generic instances, box-folder type
+                        numbering|||</unittitle>
                     <unitid>Series III |||</unitid>
                 </did>
                 <c02 id="ref155" level="item">
@@ -664,39 +726,46 @@
                 <c02 id="ref57" level="item">
                     <did>
                         <unittitle>Folder title of Folder 2|||</unittitle>
-                        <container id="cid16002" type="Box-folder" label="Mixed materials">1.2</container>
+                        <container id="cid16002" type="Box-folder" label="Mixed materials"
+                            >1.2</container>
                         <unitdate normal="1880/1900" type="inclusive">1880-1900</unitdate>
                     </did>
                 </c02>
                 <c02 id="ref67" level="item">
                     <did>
                         <unittitle>Folder title of Folder 3 |||</unittitle>
-                        <container id="cid16005" type="Box-folder" label="Mixed materials">1.3</container>
+                        <container id="cid16005" type="Box-folder" label="Mixed materials"
+                            >1.3</container>
                         <unitdate normal="1880/1880">ca. 1880</unitdate>
                     </did>
                 </c02>
                 <c02 id="ref68" level="item">
                     <did>
                         <unittitle>Folder title of Folder 4|||</unittitle>
-                        <container id="cid16006" type="Box-folder" label="Mixed materials">1.4</container>
+                        <container id="cid16006" type="Box-folder" label="Mixed materials"
+                            >1.4</container>
                     </did>
                 </c02>
                 <c02 id="ref73" level="item">
                     <did>
                         <unittitle>Folder title of Folder 5 |||</unittitle>
-                        <container id="cid16011" type="Box-folder" label="Mixed materials">1.5</container>
+                        <container id="cid16011" type="Box-folder" label="Mixed materials"
+                            >1.5</container>
                     </did>
                 </c02>
                 <c02 id="ref74" level="item">
                     <did>
                         <unittitle>Folder title of Folder 6 |||</unittitle>
-                        <container id="cid16012" type="Box-folder" label="Mixed materials">1.6</container>
+                        <container id="cid16012" type="Box-folder" label="Mixed materials"
+                            >1.6</container>
                     </did>
                 </c02>
                 <c02 id="ref75" level="item">
                     <did>
-                        <unittitle>Folder title of Folder 7 (folder with a container summary) |||</unittitle>
-                        <container id="cid16013" type="Box-folder" label="Mixed materials">1.7</container>
+                        <unittitle>Folder title of Folder 7 (folder with a container summary)
+                            |||</unittitle>
+                        <container id="cid16013" type="Box-folder" label="Mixed materials"
+                            >1.7</container>
                         <physdesc>
                             <extent>2 folders</extent>
                         </physdesc>
@@ -706,7 +775,8 @@
                 <c02 id="ref76" level="item">
                     <did>
                         <unittitle>Folder title of Folder 8 (folder with a footage) |||</unittitle>
-                        <container id="cid16014" type="Box-folder" label="Mixed materials">1.8</container>
+                        <container id="cid16014" type="Box-folder" label="Mixed materials"
+                            >1.8</container>
                         <physdesc>
                             <extent>2.0 Linear feet</extent>
                         </physdesc>
@@ -716,8 +786,9 @@
             </c01>
             <c01 id="ref54" level="series">
                 <did>
-                    <unittitle>Series title of series with Generic instances, boxes and folders in separate fields in instances 
-                        <title render="italic">This text is wrapped in title tag</title>|||</unittitle>
+                    <unittitle>Series title of series with Generic instances, boxes and folders in
+                        separate fields in instances <title render="italic">This text is wrapped in
+                            title tag</title>|||</unittitle>
                     <unitid>Series IV |||</unitid>
                     <physdesc>
                         <extent>1.0 Cubic feet</extent>
@@ -783,7 +854,8 @@
                 </c02>
                 <c02 id="ref77" level="item">
                     <did>
-                        <unittitle>Folder title of Folder 7 (folder with a container summary) |||</unittitle>
+                        <unittitle>Folder title of Folder 7 (folder with a container summary)
+                            |||</unittitle>
                         <unitid>UniqueID7|||</unitid>
                         <container id="cid16015" type="Box" label="Mixed materials">2</container>
                         <container parent="cid16015" type="Folder">7</container>
@@ -808,7 +880,8 @@
             </c01>
             <c01 id="ref60" level="series">
                 <did>
-                    <unittitle>Series title of series with Generic folders, no instances, unique identifiers instead |||</unittitle>
+                    <unittitle>Series title of series with Generic folders, no instances, unique
+                        identifiers instead |||</unittitle>
                     <unitid>Series V |||</unitid>
                     <unitdate normal="1880/1890" type="inclusive">1880-1890</unitdate>
                 </did>
@@ -910,11 +983,13 @@
                 </did>
                 <c02 otherlevel="subsubseries" id="ref226" level="otherlevel">
                     <did>
-                        <unittitle>Subsubseries title of Rawls papers lots of notes in folder-level descriptions |||</unittitle>
+                        <unittitle>Subsubseries title of Rawls papers lots of notes in folder-level
+                            descriptions |||</unittitle>
                     </did>
                     <c03 id="ref233" level="item">
                         <did>
-                            <unittitle>Philosophy 168, Kant lectures, Part I, The Content and of the Moral Law, lectures 4-9</unittitle>
+                            <unittitle>Philosophy 168, Kant lectures, Part I, The Content and of the
+                                Moral Law, lectures 4-9</unittitle>
                             <container id="cid19011" type="Box" label="Text">1</container>
                             <container parent="cid19011" type="Folder">11</container>
                             <unitdate normal="1977/1977">1977 Spring</unitdate>
@@ -942,10 +1017,12 @@
                     </c03>
                     <c03 id="ref237" level="item">
                         <did>
-                            <unittitle>Striker lectures, Following Nature, A Study of Stoic Ethics. Wallace Lectures, Oxford</unittitle>
+                            <unittitle>Striker lectures, Following Nature, A Study of Stoic Ethics.
+                                Wallace Lectures, Oxford</unittitle>
                             <container id="cid19014" type="Box" label="Text">1</container>
                             <container parent="cid19014" type="Folder">14</container>
-                            <unitdate normal="1984/1990" type="inclusive"> 1984, revised 1990</unitdate>
+                            <unitdate normal="1984/1990" type="inclusive"> 1984, revised
+                                1990</unitdate>
                         </did>
                     </c03>
                     <c03 id="ref238" level="item">
@@ -968,13 +1045,16 @@
                             <list type="ordered">
                                 <head>Explanatory notes transcribed from folder front flap:</head>
                                 <item>Of the Original Contract</item>
-                                <item>Justice as An Artificial Virtue and Definition of Property</item>
+                                <item>Justice as An Artificial Virtue and Definition of
+                                    Property</item>
                                 <item>Judicious Spectator and Principle of Utility</item>
                             </list>
                         </scopecontent>
                         <odd id="ref208">
                             <head>Kate's -- note -- about -- input</head>
-                            <p>Notes from folder flap are in an ordered list with a title (i.e. head&gt;) filled in. Don't understand why these are numbered in the AT style sheets, they ought to simply be bulleted.</p>
+                            <p>Notes from folder flap are in an ordered list with a title (i.e.
+                                head&gt;) filled in. Don't understand why these are numbered in the
+                                AT style sheets, they ought to simply be bulleted.</p>
                         </odd>
                     </c03>
                     <c03 id="ref225" level="item">
@@ -988,17 +1068,20 @@
                 </c02>
                 <c02 id="ref190" level="subseries">
                     <did>
-                        <unittitle>Subseries title of subseries of Harvard University archives examples using Box and Folder type instances|||</unittitle>
+                        <unittitle>Subseries title of subseries of Harvard University archives
+                            examples using Box and Folder type instances|||</unittitle>
                     </did>
                     <c03 otherlevel="subsubseries" id="ref227" level="otherlevel">
                         <did>
-                            <unittitle>Subsubseries title of graphic materials in folders |||</unittitle>
+                            <unittitle>Subsubseries title of graphic materials in folders
+                                |||</unittitle>
                             <unitid>HUV 2181</unitid>
                         </did>
                         <c04 id="ref228" level="item">
                             <did>
                                 <unittitle>Watercolor drawing of Christ Church, ca. 1781</unittitle>
-                                <container id="cid19008" type="Folder" label="Graphic materials">1</container>
+                                <container id="cid19008" type="Folder" label="Graphic materials"
+                                    >1</container>
                                 <physdesc>
                                     <extent> 1 drawing</extent>
                                 </physdesc>
@@ -1007,23 +1090,28 @@
                         </c04>
                         <c04 id="ref186" level="item">
                             <did>
-                                <unittitle>Watercolor drawing of a group of four houses on Holmes Place</unittitle>
-                                <container id="cid18001" type="Folder" label="Graphic materials">2</container>
+                                <unittitle>Watercolor drawing of a group of four houses on Holmes
+                                    Place</unittitle>
+                                <container id="cid18001" type="Folder" label="Graphic materials"
+                                    >2</container>
                                 <physdesc>
                                     <extent>1 drawing</extent>
                                 </physdesc>
                                 <unitdate>ca. 1781</unitdate>
                             </did>
                             <controlaccess>
-                                <subject source="lcsh">Cambridge (Massachusetts)--Buildings, structures, etc. </subject>
+                                <subject source="lcsh">Cambridge (Massachusetts)--Buildings,
+                                    structures, etc. </subject>
                                 <subject source="aat">Houses</subject>
                                 <genreform source="aat">Watercolors (paintings)</genreform>
                             </controlaccess>
                         </c04>
                         <c04 id="ref229" level="item">
                             <did>
-                                <unittitle>A Plot of Cambridge Common with a view of the Roads &amp; a principal part of the Buildings thereon</unittitle>
-                                <container id="cid19009" type="Folder" label="Graphic materials">3</container>
+                                <unittitle>A Plot of Cambridge Common with a view of the Roads &amp;
+                                    a principal part of the Buildings thereon</unittitle>
+                                <container id="cid19009" type="Folder" label="Graphic materials"
+                                    >3</container>
                                 <physdesc>
                                     <extent> 1 drawing</extent>
                                 </physdesc>
@@ -1035,8 +1123,10 @@
                         </c04>
                         <c04 id="ref231" level="item">
                             <did>
-                                <unittitle>A Plan of the Colleges with the Land Adjoining containing about six acres as survey'd in June 1784</unittitle>
-                                <container id="cid19010" type="Folder" label="Graphic materials">4</container>
+                                <unittitle>A Plan of the Colleges with the Land Adjoining containing
+                                    about six acres as survey'd in June 1784</unittitle>
+                                <container id="cid19010" type="Folder" label="Graphic materials"
+                                    >4</container>
                                 <physdesc>
                                     <extent>1 drawing</extent>
                                 </physdesc>
@@ -1050,7 +1140,8 @@
                 </c02>
                 <c02 id="ref192" level="subseries">
                     <did>
-                        <unittitle>Subseries title of subseries of Schlesinger examples |||</unittitle>
+                        <unittitle>Subseries title of subseries of Schlesinger examples
+                            |||</unittitle>
                     </did>
                     <c03 id="ref193" level="item">
                         <did>
@@ -1063,13 +1154,16 @@
                         </accessrestrict>
                         <odd id="ref196">
                             <head>Kate's -- note -- about -- input</head>
-                            <p>In this example, I put nothing into the label area for access restrictions note and folder number is in the component unique identifier field.</p>
+                            <p>In this example, I put nothing into the label area for access
+                                restrictions note and folder number is in the component unique
+                                identifier field.</p>
                         </odd>
                     </c03>
                     <c03 id="ref195" level="item">
                         <did>
                             <unittitle>Donor lists removed from #95.12.</unittitle>
-                            <container id="cid18004" type="Folder" label="Text">118F+B.14</container>
+                            <container id="cid18004" type="Folder" label="Text"
+                                >118F+B.14</container>
                         </did>
                         <accessrestrict id="ref197">
                             <head>Access restrictions</head>
@@ -1077,13 +1171,15 @@
                         </accessrestrict>
                         <odd id="ref198">
                             <head>Kate's -- note -- about -- input</head>
-                            <p>In this example, I labeled the conditions governing access note. Folder number is in an instance.</p>
+                            <p>In this example, I labeled the conditions governing access note.
+                                Folder number is in an instance.</p>
                         </odd>
                     </c03>
                     <c03 id="ref199" level="item">
                         <did>
                             <unittitle>Complete level II training packet</unittitle>
-                            <container id="cid18005" type="Folder" label="Text">14.20-14.21</container>
+                            <container id="cid18005" type="Folder" label="Text"
+                                >14.20-14.21</container>
                             <unitdate normal="1982/1982">1982</unitdate>
                             <physdesc id="ref205" label="Physical Facet note">
                                 <physfacet>[disassembled]</physfacet>
@@ -1097,7 +1193,8 @@
                     <c03 id="ref201" level="item">
                         <did>
                             <unittitle>Mass Choice annual plan</unittitle>
-                            <container id="cid18006" type="Box-folder" label="Text">15.11</container>
+                            <container id="cid18006" type="Box-folder" label="Text"
+                                >15.11</container>
                             <unitdate>1985-1986</unitdate>
                         </did>
                         <relatedmaterial id="ref202">
@@ -1120,25 +1217,29 @@
                     </did>
                     <c03 otherlevel="subsubseries" id="ref222" level="otherlevel">
                         <did>
-                            <unittitle>Subsubseries title for folders with component unique identifier as folder-box numbers |||</unittitle>
+                            <unittitle>Subsubseries title for folders with component unique
+                                identifier as folder-box numbers |||</unittitle>
                         </did>
                         <c04 id="ref219" level="item">
                             <did>
-                                <unittitle>Report, An Estimate of Future Copper Consumption, Research</unittitle>
+                                <unittitle>Report, An Estimate of Future Copper Consumption,
+                                    Research</unittitle>
                                 <unitid>Box 2, f. 1</unitid>
                                 <unitdate normal="1933/1933">1933</unitdate>
                             </did>
                         </c04>
                         <c04 id="ref220" level="item">
                             <did>
-                                <unittitle>Report, An Estimate of Future Copper Consumption</unittitle>
+                                <unittitle>Report, An Estimate of Future Copper
+                                    Consumption</unittitle>
                                 <unitid>Box 2, f. 2-3 </unitid>
                                 <unitdate normal="1933/1933">1933</unitdate>
                             </did>
                         </c04>
                         <c04 id="ref221" level="item">
                             <did>
-                                <unittitle>Report, An Estimate of Future Copper Consumption [Typescript]</unittitle>
+                                <unittitle>Report, An Estimate of Future Copper Consumption
+                                    [Typescript]</unittitle>
                                 <unitid>Box 2, f. 2-3</unitid>
                                 <unitdate normal="1933/1933">1933</unitdate>
                             </did>
@@ -1146,54 +1247,68 @@
                     </c03>
                     <c03 otherlevel="subsubseries" id="ref224" level="otherlevel">
                         <did>
-                            <unittitle>Subsubseries title of folders with instances of Box-folder type |||</unittitle>
+                            <unittitle>Subsubseries title of folders with instances of Box-folder
+                                type |||</unittitle>
                         </did>
                         <c04 id="ref213" level="item">
                             <did>
-                                <unittitle>Report, An Estimate of Future Copper Consumption, Research</unittitle>
-                                <container id="cid19001" type="Box-folder" label="Mixed materials">2.1</container>
+                                <unittitle>Report, An Estimate of Future Copper Consumption,
+                                    Research</unittitle>
+                                <container id="cid19001" type="Box-folder" label="Mixed materials"
+                                    >2.1</container>
                                 <unitdate normal="1933/1933">1933</unitdate>
                             </did>
                         </c04>
                         <c04 id="ref214" level="item">
                             <did>
-                                <unittitle>Report, An Estimate of Future Copper Consumption</unittitle>
-                                <container id="cid19002" type="Box-folder" label="Mixed materials">2.2-3</container>
+                                <unittitle>Report, An Estimate of Future Copper
+                                    Consumption</unittitle>
+                                <container id="cid19002" type="Box-folder" label="Mixed materials"
+                                    >2.2-3</container>
                                 <unitdate normal="1933/1933">1933</unitdate>
                             </did>
                         </c04>
                         <c04 id="ref215" level="item">
                             <did>
-                                <unittitle>Report, An Estimate of Future Copper Consumption [Typescript]</unittitle>
-                                <container id="cid19003" type="Box-folder" label="Mixed materials">2.2-3</container>
+                                <unittitle>Report, An Estimate of Future Copper Consumption
+                                    [Typescript]</unittitle>
+                                <container id="cid19003" type="Box-folder" label="Mixed materials"
+                                    >2.2-3</container>
                                 <unitdate normal="1933/1933">1933</unitdate>
                             </did>
                         </c04>
                     </c03>
                     <c03 otherlevel="subsubseries" id="ref223" level="otherlevel">
                         <did>
-                            <unittitle>Subsubseries title for folders with instances of Box and Folder type |||</unittitle>
+                            <unittitle>Subsubseries title for folders with instances of Box and
+                                Folder type |||</unittitle>
                         </did>
                         <c04 id="ref218" level="item">
                             <did>
-                                <unittitle>Report, An Estimate of Future Copper Consumption, Research</unittitle>
-                                <container id="cid19006" type="Box" label="Mixed materials">2</container>
+                                <unittitle>Report, An Estimate of Future Copper Consumption,
+                                    Research</unittitle>
+                                <container id="cid19006" type="Box" label="Mixed materials"
+                                    >2</container>
                                 <container parent="cid19006" type="Folder">1</container>
                                 <unitdate normal="1933/1933">1933</unitdate>
                             </did>
                         </c04>
                         <c04 id="ref217" level="item">
                             <did>
-                                <unittitle>Report, An Estimate of Future Copper Consumption</unittitle>
-                                <container id="cid19005" type="Box" label="Mixed materials">2</container>
+                                <unittitle>Report, An Estimate of Future Copper
+                                    Consumption</unittitle>
+                                <container id="cid19005" type="Box" label="Mixed materials"
+                                    >2</container>
                                 <container parent="cid19005" type="Folder">2-3</container>
                                 <unitdate normal="1933/1933">1933</unitdate>
                             </did>
                         </c04>
                         <c04 id="ref216" level="item">
                             <did>
-                                <unittitle>Report, An Estimate of Future Copper Consumption [Typescript]</unittitle>
-                                <container id="cid19004" type="Box" label="Mixed materials">2</container>
+                                <unittitle>Report, An Estimate of Future Copper Consumption
+                                    [Typescript]</unittitle>
+                                <container id="cid19004" type="Box" label="Mixed materials"
+                                    >2</container>
                                 <container parent="cid19004" type="Folder">2-3</container>
                                 <unitdate normal="1933/1933">1933</unitdate>
                             </did>
