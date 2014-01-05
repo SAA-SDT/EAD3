@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../ead_revised.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><ead xmlns="urn:isbn:1-931666-22-9">
+<?xml-model href="../ead_revised.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<ead xmlns="http://ead3.archivists.org/schema/">
     <!--eadheader now control: Inserting minimal control element--><control>
       <recordid>[recordid]</recordid>
       <filedesc>
@@ -19,7 +20,7 @@
       <maintenancehistory>
          <maintenanceevent>
             <eventtype>derived</eventtype>
-            <eventdatetime>2013-08-30T12:48:42.941-04:00</eventdatetime>
+            <eventdatetime>2014-01-05T18:43:49.908-05:00</eventdatetime>
             <agenttype>machine</agenttype>
             <agent/>
          </maintenanceevent>
@@ -35,7 +36,7 @@
             </note>
             <origination>
                 <!--Added child part element to persname--><persname>
-               <part>Bowers, Kate (persname)||| </part>
+               <part xmlns="urn:isbn:1-931666-22-9">Bowers, Kate (persname)||| </part>
             </persname>
                 (origination)||| </origination>
             <physdesc>physdesc||| <extent>extent||| </extent>
@@ -43,7 +44,7 @@
             <physloc>physloc ||| </physloc>
             <repository>
                 <!--Added child part element to corpname--><corpname>
-               <part>corpname ||| </part>
+               <part xmlns="urn:isbn:1-931666-22-9">corpname ||| </part>
             </corpname> in repository ||| </repository>
             <unitdate calendar="gregorian" era="ce">unitdate ||| </unitdate>
             <unitid> unitid ||| </unitid>
@@ -54,9 +55,7 @@
             <p>p in add||| </p>
         </odd>
         <!--DEPRECATED ELEMENT descgrp REMOVED-->
-            <address>
-         <addressline>addressline in address in add||| </addressline>
-      </address>
+            <p>addressline in address in add||| </p>
             <bibliography>
                 <bibref linktype="simple">bibref in bibliography in add|||
                 </bibref>
@@ -74,7 +73,7 @@
                 <head>head in index in add||| </head>
                 <indexentry>
                     <!--Added child part element to corpname--><corpname>
-               <part>corpname in indexentry in add||| </part>
+               <part xmlns="urn:isbn:1-931666-22-9">corpname in indexentry in add||| </part>
             </corpname>
                 </indexentry>
                 <indexentry>
@@ -132,9 +131,7 @@
             <acqinfo>
                 <p>p in acquinfo in admininfo, no head ||| </p>
             </acqinfo>
-            <address>
-         <addressline>addressline in address in admininfo ||| </addressline>
-      </address>
+            <p>addressline in address in admininfo ||| </p>
             <altformavail>
                 <head>adtformavailable head||| </head>
                 <p> p in alformavailable in admininfo ||| </p>
@@ -260,9 +257,7 @@
                     <p>p in add||| </p>
                 </odd>
                 <!--DEPRECATED ELEMENT descgrp REMOVED-->
-                    <address>
-               <addressline>addressline in address in add||| </addressline>
-            </address>
+                    <p>addressline in address in add||| </p>
                     <bibliography>
                         <bibref linktype="simple">bibref in bibliography in
                             add||| </bibref>
@@ -280,7 +275,7 @@
                         <head>head in index in add||| </head>
                         <indexentry>
                             <!--Added child part element to corpname--><corpname>
-                     <part>corpname in indexentry in add|||
+                     <part xmlns="urn:isbn:1-931666-22-9">corpname in indexentry in add|||
                             </part>
                   </corpname>
                         </indexentry>
@@ -339,9 +334,7 @@
                     <acqinfo>
                         <p>p in acquinfo in admininfo, no head ||| </p>
                     </acqinfo>
-                    <address>
-               <addressline>addressline in address in admininfo ||| </addressline>
-            </address>
+                    <p>addressline in address in admininfo ||| </p>
                     <altformavail>
                         <head>adtformavailable head||| </head>
                         <p> p in alformavailable in admininfo ||| </p>

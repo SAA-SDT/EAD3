@@ -40,7 +40,8 @@ For these and/or other purposes and motivations, and without any expectation of 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs xsi xd"
     xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://ead3.archivists.org/schema/" version="2.0">
     <xd:doc scope="stylesheet">
         <xd:desc>
             <xd:p><xd:b>Created on:</xd:b> Feb 27, 2012</xd:p>
@@ -63,15 +64,20 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- enumeration '[inProcess, approved]' -->
     <xsl:param name="publicationStatus" select="'inProcess'"/>
 
-    <xsl:param name="eadxmlns" select="'urn:isbn:1-931666-22-9'"/>
+    <xsl:param name="eadxmlns" select="'http://ead3.archivists.org/schema/'"/>
 
     <xsl:variable name="instance-ns-stripped">
         <xsl:apply-templates select="/" mode="strip-ns"/>
     </xsl:variable>
 
     <xsl:template match="/">
-        <xsl:processing-instruction name="xml-model"><xsl:text>href="../ead_revised.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"</xsl:text></xsl:processing-instruction>
-        <xsl:for-each select="$instance-ns-stripped">
+        <xsl:processing-instruction name="xml-model">
+          <xsl:text>href="../ead_revised.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"</xsl:text>
+        </xsl:processing-instruction>
+        <!--<xsl:copy-of select="$instance-ns-stripped"/>
+        -->
+        <!--<xsl:apply-templates select="/" mode="strip-ns"/>
+        --><xsl:for-each select="$instance-ns-stripped">
             <xsl:apply-templates/>
         </xsl:for-each>
     </xsl:template>
@@ -81,11 +87,10 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
 
 
-    <!-- add namespace to all elements -->
     <xsl:template match="element()">
-        <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
-            <xsl:apply-templates select="@*|node()"/>
-        </xsl:element>
+        <xsl:element name="{local-name()}" namespace="http://ead3.archivists.org/schema/">
+                <xsl:apply-templates select="@*|node()"/>
+            </xsl:element>
     </xsl:template>
 
     <!-- copy the attributes -->
@@ -95,7 +100,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <!--  need to add in the new xmlns, starting with the root ead element -->
     <!-- xsl:template match="ead">
-        <ead namespace="{$eadxmlns}">
+        <ead>
             <xsl:apply-templates select="@*|node()"/> 
         </ead>
     </xsl:template -->
@@ -158,7 +163,7 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:text>eadheader now control: </xsl:text>
             <xsl:text>Inserting minimal control element</xsl:text>
         </xsl:message>
-        <xsl:element name="control" namespace="{$eadxmlns}" xmlns="urn:isbn:1-931666-22-9">
+        <control>
             <recordid>[recordid]</recordid>
             <xsl:apply-templates select="filedesc"/>
             <maintenancestatus>derived</maintenancestatus>
@@ -175,7 +180,7 @@ For these and/or other purposes and motivations, and without any expectation of 
                     <agent/>
                 </maintenanceevent>
             </maintenancehistory>
-        </xsl:element>
+        </control>
     </xsl:template>
 
     <!-- blockquote -->
@@ -290,7 +295,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- NAMESPACE STRIPPING ELEMENTS                    -->
     <!-- ############################################### -->
     <xsl:template match="*" mode="strip-ns">
-        <xsl:element name="{local-name()}" inherit-namespaces="no">
+        <xsl:element name="{local-name()}" namespace="" inherit-namespaces="no">
             <xsl:apply-templates select="@* | node()" mode="strip-ns"/>
         </xsl:element>
     </xsl:template>
