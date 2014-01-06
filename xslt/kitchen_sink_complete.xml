@@ -13,15 +13,15 @@
                 <sponsor>sponsor ||| </sponsor>
             </titlestmt>
         </filedesc>
-      <maintenancestatus>derived</maintenancestatus>
+      <maintenancestatus value="derived"/>
       <maintenanceagency>
          <agencyname>[agency name]</agencyname>
       </maintenanceagency>
       <maintenancehistory>
          <maintenanceevent>
-            <eventtype>derived</eventtype>
-            <eventdatetime>2014-01-05T18:43:49.908-05:00</eventdatetime>
-            <agenttype>machine</agenttype>
+            <eventtype value="derived"/>
+            <eventdatetime>2014-01-05T19:30:46.044-05:00</eventdatetime>
+            <agenttype value="machine"/>
             <agent/>
          </maintenanceevent>
       </maintenancehistory>
@@ -34,17 +34,20 @@
             <note>
                 <p>p in note||| </p>
             </note>
-            <origination>
-                <!--Added child part element to persname--><persname>
-               <part xmlns="urn:isbn:1-931666-22-9">Bowers, Kate (persname)||| </part>
+            <origination><!--Added child part element to persname-->
+            <persname>
+               <part>Bowers, Kate (persname)||| </part>
             </persname>
-                (origination)||| </origination>
+            <descriptivenote>
+                
+                (origination)||| </descriptivenote>
+         </origination>
             <physdesc>physdesc||| <extent>extent||| </extent>
             </physdesc>
             <physloc>physloc ||| </physloc>
             <repository>
                 <!--Added child part element to corpname--><corpname>
-               <part xmlns="urn:isbn:1-931666-22-9">corpname ||| </part>
+               <part>corpname ||| </part>
             </corpname> in repository ||| </repository>
             <unitdate calendar="gregorian" era="ce">unitdate ||| </unitdate>
             <unitid> unitid ||| </unitid>
@@ -73,7 +76,7 @@
                 <head>head in index in add||| </head>
                 <indexentry>
                     <!--Added child part element to corpname--><corpname>
-               <part xmlns="urn:isbn:1-931666-22-9">corpname in indexentry in add||| </part>
+               <part>corpname in indexentry in add||| </part>
             </corpname>
                 </indexentry>
                 <indexentry>
@@ -242,7 +245,9 @@
                     <note>
                         <p>p in note in did in series level c ||| </p>
                     </note>
-                    <origination>origination in did in series level c ||| </origination>
+                    <origination>
+                  <descriptivenote>origination in did in series level c ||| </descriptivenote>
+               </origination>
                     <physdesc>physdesc in did in series level c ||| </physdesc>
                     <physloc>physloc in did in series level c ||| </physloc>
                     <repository>repository in did in series level c ||| </repository>
@@ -275,7 +280,7 @@
                         <head>head in index in add||| </head>
                         <indexentry>
                             <!--Added child part element to corpname--><corpname>
-                     <part xmlns="urn:isbn:1-931666-22-9">corpname in indexentry in add|||
+                     <part>corpname in indexentry in add|||
                             </part>
                   </corpname>
                         </indexentry>
