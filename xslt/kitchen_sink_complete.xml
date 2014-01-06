@@ -20,7 +20,7 @@
       <maintenancehistory>
          <maintenanceevent>
             <eventtype value="derived"/>
-            <eventdatetime>2014-01-06T11:28:18.958-05:00</eventdatetime>
+            <eventdatetime>2014-01-06T12:04:31.765-05:00</eventdatetime>
             <agenttype value="machine"/>
             <agent/>
          </maintenanceevent>
@@ -45,10 +45,13 @@
             <physdesc>physdesc||| <extent>extent||| </extent>
             </physdesc>
             <physloc>physloc ||| </physloc>
-            <repository>
-                <!--Added child part element to corpname--><corpname>
+            <repository><!--Added child part element to corpname-->
+            <corpname>
                <part>corpname ||| </part>
-            </corpname> in repository ||| </repository>
+            </corpname>
+            <!--
+                corpname |||  in repository ||| -->
+         </repository>
             <unitdate calendar="gregorian" era="ce">unitdate ||| </unitdate>
             <unitid> unitid ||| </unitid>
             <unittitle> unittitle ||| </unittitle>
@@ -252,7 +255,14 @@
                </origination>
                     <physdesc>physdesc in did in series level c ||| </physdesc>
                     <physloc>physloc in did in series level c ||| </physloc>
-                    <repository>repository in did in series level c ||| </repository>
+                    <repository>
+                  <repository>
+                     <name>
+                        <part>repository in did in series level c ||| </part>
+                     </name>
+                  </repository>
+                  <!--repository in did in series level c ||| -->
+               </repository>
                     <unitdate calendar="gregorian" era="ce">unitdate in did in
                         series level c ||| </unitdate>
                     <unitid>unitid in did in series level c ||| </unitid>

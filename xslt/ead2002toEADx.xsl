@@ -242,7 +242,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
     <!-- DID ELEMENTS                                    -->
     <!-- ############################################### -->
-<!-- origination:
+    <!-- origination:
      when child *name is present:   
         create origination for each *name element
         put all text in a comment
@@ -254,18 +254,43 @@ For these and/or other purposes and motivations, and without any expectation of 
         <xsl:for-each select="corpname | name | persname | famname">
             <origination>
                 <xsl:apply-templates select="self::*"/>
-                <xsl:comment><xsl:value-of select="parent::origination//text()"/></xsl:comment>
+                <xsl:comment>
+                    <xsl:value-of select="parent::origination//text()"/>
+                </xsl:comment>
             </origination>
         </xsl:for-each>
         <xsl:if test="empty(corpname | name | persname | famname)">
             <origination>
-                <name><part><xsl:value-of select="./text()"/></part></name>
+                <name>
+                    <part>
+                        <xsl:value-of select="./text()"/>
+                    </part>
+                </name>
             </origination>
-        <!--    <descriptivenote>
+            <!--    <descriptivenote>
                 <xsl:value-of separator=" " select="node() except (corpname | name | persname | famname)"/>
             </descriptivenote>
          -->
         </xsl:if>
+    </xsl:template>
+
+
+    <xsl:template match="repository">
+        <repository>
+            <xsl:apply-templates select="corpname | name | persname | famname | address"/>
+            <xsl:if test="empty(corpname | name | persname | famname | address)">
+                <repository>
+                    <name>
+                        <part>
+                            <xsl:value-of select=".//text()"/>
+                        </part>
+                    </name>
+                </repository>
+            </xsl:if>
+            <xsl:comment>
+                <xsl:value-of select=".//text()"/>
+            </xsl:comment>
+        </repository>
     </xsl:template>
 
     <!-- ############################################### -->
