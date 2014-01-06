@@ -588,14 +588,13 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<ref name="e.head"/>
 			</optional>
-			<choice>
-				<oneOrMore>
-					<choice>
-						<ref name="m.blocks"/>
-						<ref name="e.custodhist"/>
-					</choice>
-				</oneOrMore>
-			</choice>
+			<oneOrMore>
+				<choice>
+					<ref name="m.blocks"/>
+					<ref name="e.custodhist"/>
+				</choice>
+			</oneOrMore>
+			
 		</element>
 	</define>
 	<define name="e.index">
