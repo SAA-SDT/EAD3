@@ -20,7 +20,7 @@
       <maintenancehistory>
          <maintenanceevent>
             <eventtype value="derived"/>
-            <eventdatetime>2014-01-05T19:30:46.044-05:00</eventdatetime>
+            <eventdatetime>2014-01-06T11:28:18.958-05:00</eventdatetime>
             <agenttype value="machine"/>
             <agent/>
          </maintenanceevent>
@@ -38,9 +38,9 @@
             <persname>
                <part>Bowers, Kate (persname)||| </part>
             </persname>
-            <descriptivenote>
-                
-                (origination)||| </descriptivenote>
+            <!--
+                Bowers, Kate (persname)||| 
+                (origination)||| -->
          </origination>
             <physdesc>physdesc||| <extent>extent||| </extent>
             </physdesc>
@@ -246,7 +246,9 @@
                         <p>p in note in did in series level c ||| </p>
                     </note>
                     <origination>
-                  <descriptivenote>origination in did in series level c ||| </descriptivenote>
+                  <name>
+                     <part>origination in did in series level c ||| </part>
+                  </name>
                </origination>
                     <physdesc>physdesc in did in series level c ||| </physdesc>
                     <physloc>physloc in did in series level c ||| </physloc>

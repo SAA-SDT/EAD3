@@ -242,16 +242,30 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
     <!-- DID ELEMENTS                                    -->
     <!-- ############################################### -->
+<!-- origination:
+     when child *name is present:   
+        create origination for each *name element
+        put all text in a comment
+      otherwise:
+      put all text in <name>/<part>
+-->
 
     <xsl:template match="origination">
-        <origination>
-        <xsl:apply-templates select="corpname | name | persname | famname"/>
-        <xsl:if test="exists(node() except (corpname | name | persname | famname))">
-            <descriptivenote>
+        <xsl:for-each select="corpname | name | persname | famname">
+            <origination>
+                <xsl:apply-templates select="self::*"/>
+                <xsl:comment><xsl:value-of select="parent::origination//text()"/></xsl:comment>
+            </origination>
+        </xsl:for-each>
+        <xsl:if test="empty(corpname | name | persname | famname)">
+            <origination>
+                <name><part><xsl:value-of select="./text()"/></part></name>
+            </origination>
+        <!--    <descriptivenote>
                 <xsl:value-of separator=" " select="node() except (corpname | name | persname | famname)"/>
             </descriptivenote>
+         -->
         </xsl:if>
-        </origination>
     </xsl:template>
 
     <!-- ############################################### -->
