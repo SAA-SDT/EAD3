@@ -588,6 +588,11 @@ ul > li.doc{
     margin-left:10px;
 }
 
+/* No margin for pre from the table.*/
+td > pre {
+    margin:0px;
+}
+
 /* Wrap the long lines in the 'pre' section. */
 pre {
     white-space: pre-wrap;       /* css-3 */

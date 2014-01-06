@@ -74,15 +74,12 @@
   </xs:element>
   <xs:element name="origination" substitutionGroup="schema:m.did">
     <xs:complexType>
-      <xs:sequence>
-        <xs:choice maxOccurs="unbounded">
-          <xs:element ref="schema:persname"/>
-          <xs:element ref="schema:corpname"/>
-          <xs:element ref="schema:name"/>
-          <xs:element ref="schema:famname"/>
-        </xs:choice>
-        <xs:element minOccurs="0" ref="schema:descriptivenote"/>
-      </xs:sequence>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element ref="schema:corpname"/>
+        <xs:element ref="schema:famname"/>
+        <xs:element ref="schema:name"/>
+        <xs:element ref="schema:persname"/>
+      </xs:choice>
       <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="label"/>
       <xs:attribute name="encodinganalog"/>
@@ -93,14 +90,15 @@
       <xs:sequence>
         <xs:element ref="schema:quantity"/>
         <xs:element ref="schema:unittype"/>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="schema:dimensions"/>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="schema:physfacet"/>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="schema:physfacet"/>
+          <xs:element ref="schema:dimensions"/>
+        </xs:choice>
         <xs:element minOccurs="0" ref="schema:descriptivenote"/>
       </xs:sequence>
       <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="label"/>
       <xs:attribute name="encodinganalog"/>
-      <xs:attribute name="rules" type="xs:NMTOKEN"/>
       <xs:attribute name="physdescstructuredtype" use="required">
         <xs:simpleType>
           <xs:restriction base="xs:token">
@@ -110,19 +108,20 @@
           </xs:restriction>
         </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="coverage" use="required">
-        <xs:simpleType>
-          <xs:restriction base="xs:token">
-            <xs:enumeration value="whole"/>
-            <xs:enumeration value="part"/>
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:attribute>
+      <xs:attributeGroup ref="schema:a.coverage"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="quantity">
     <xs:complexType mixed="true">
       <xs:attributeGroup ref="schema:a.common"/>
+      <xs:attribute name="approximate">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="yes"/>
+            <xs:enumeration value="no"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
     </xs:complexType>
   </xs:element>
   <xs:element name="unittype">
@@ -135,13 +134,15 @@
   </xs:element>
   <xs:element name="repository" substitutionGroup="schema:m.did">
     <xs:complexType>
-      <xs:choice maxOccurs="unbounded">
-        <xs:element ref="schema:corpname"/>
-        <xs:element ref="schema:name"/>
-        <xs:element ref="schema:famname"/>
+      <xs:sequence>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element ref="schema:corpname"/>
+          <xs:element ref="schema:famname"/>
+          <xs:element ref="schema:name"/>
+          <xs:element ref="schema:persname"/>
+        </xs:choice>
         <xs:element minOccurs="0" ref="schema:address"/>
-        <xs:element minOccurs="0" ref="schema:descriptivenote"/>
-      </xs:choice>
+      </xs:sequence>
       <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="label"/>
       <xs:attribute name="encodinganalog"/>
@@ -272,6 +273,14 @@
         </xs:simpleType>
       </xs:attribute>
       <xs:attribute name="otherdaotype"/>
+      <xs:attribute name="coverage">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="whole"/>
+            <xs:enumeration value="part"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
     </xs:complexType>
   </xs:element>
   <!--
@@ -1194,9 +1203,8 @@
   </xs:element>
   <xs:element name="physfacet">
     <xs:complexType mixed="true">
-      <xs:group ref="schema:m.mixed.basic"/>
+      <xs:group ref="schema:m.mixed.basic.plus.access"/>
       <xs:attributeGroup ref="schema:a.common"/>
-      <xs:attribute name="label"/>
       <xs:attribute name="localtype"/>
       <xs:attribute name="unit"/>
       <xs:attribute name="encodinganalog"/>
@@ -1436,6 +1444,7 @@
         <xs:element maxOccurs="unbounded" ref="schema:relation"/>
       </xs:sequence>
       <xs:attributeGroup ref="schema:a.common"/>
+      <xs:attribute name="base" type="xs:anyURI"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="objectxmlwrap">
@@ -1584,7 +1593,6 @@
       <xs:attributeGroup ref="schema:a.common"/>
       <xs:attribute name="label"/>
       <xs:attribute name="encodinganalog"/>
-      <xs:attribute name="rules" type="xs:NMTOKEN"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="parallelphysdescset" substitutionGroup="schema:m.did">
@@ -1731,6 +1739,7 @@
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="schema:placeentry"/>
         <xs:element maxOccurs="unbounded" ref="schema:event"/>
       </xs:sequence>
+      <xs:attributeGroup ref="schema:a.common"/>
     </xs:complexType>
   </xs:element>
   <xs:group name="m.cOrC01">
@@ -2120,7 +2129,7 @@
         <xs:element ref="schema:eventdatetime"/>
         <xs:element ref="schema:agenttype"/>
         <xs:element ref="schema:agent"/>
-        <xs:element minOccurs="0" ref="schema:eventdescription"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="schema:eventdescription"/>
       </xs:sequence>
       <xs:attributeGroup ref="schema:a.common"/>
     </xs:complexType>
@@ -2187,7 +2196,7 @@
   <xs:element name="source">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="schema:sourceentry"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="schema:sourceentry"/>
         <xs:element minOccurs="0" ref="schema:objectxmlwrap"/>
         <xs:element minOccurs="0" ref="schema:descriptivenote"/>
       </xs:sequence>
@@ -2277,10 +2286,11 @@
       <xs:sequence>
         <xs:element minOccurs="0" ref="schema:agencycode"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="schema:otheragencycode"/>
-        <xs:element ref="schema:agencyname"/>
+        <xs:element maxOccurs="unbounded" ref="schema:agencyname"/>
         <xs:element minOccurs="0" ref="schema:descriptivenote"/>
       </xs:sequence>
       <xs:attributeGroup ref="schema:a.common"/>
+      <xs:attributeGroup ref="schema:am.countrycode"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="agencycode">
@@ -2295,7 +2305,11 @@
       <xs:attribute name="localtype" use="required"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="agencyname" type="xs:string"/>
+  <xs:element name="agencyname">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="schema:a.common"/>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="citation">
     <xs:complexType mixed="true">
       <xs:group ref="schema:m.mixed.basic"/>
@@ -2349,4 +2363,14 @@
       </xs:simpleType>
     </xs:union>
   </xs:simpleType>
+  <xs:attributeGroup name="a.coverage">
+    <xs:attribute name="coverage" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="whole"/>
+          <xs:enumeration value="part"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
 </xs:schema>
