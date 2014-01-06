@@ -40,8 +40,8 @@ For these and/or other purposes and motivations, and without any expectation of 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs xsi xd"
     xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns="http://ead3.archivists.org/schema/" version="2.0">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ead3.archivists.org/schema/"
+    version="2.0">
     <xd:doc scope="stylesheet">
         <xd:desc>
             <xd:p><xd:b>Created on:</xd:b> Feb 27, 2012</xd:p>
@@ -72,12 +72,13 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <xsl:template match="/">
         <xsl:processing-instruction name="xml-model">
-          <xsl:text>href="../ead_revised.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"</xsl:text>
+            <xsl:text>href="../ead_revised.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"</xsl:text>
         </xsl:processing-instruction>
         <!--<xsl:copy-of select="$instance-ns-stripped"/>
         -->
         <!--<xsl:apply-templates select="/" mode="strip-ns"/>
-        --><xsl:for-each select="$instance-ns-stripped">
+        -->
+        <xsl:for-each select="$instance-ns-stripped">
             <xsl:apply-templates/>
         </xsl:for-each>
     </xsl:template>
@@ -89,8 +90,8 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <xsl:template match="element()">
         <xsl:element name="{local-name()}" namespace="http://ead3.archivists.org/schema/">
-                <xsl:apply-templates select="@*|node()"/>
-            </xsl:element>
+            <xsl:apply-templates select="@*|node()"/>
+        </xsl:element>
     </xsl:template>
 
     <!-- copy the attributes -->
@@ -110,7 +111,8 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
 
     <!-- REMOVE COMPLETELY -->
-    <xsl:template match="frontmatter | runner | accessrestrict/legalstatus | arcdesc/address | dsc/address">
+    <xsl:template
+        match="frontmatter | runner | accessrestrict/legalstatus | arcdesc/address | dsc/address">
         <xsl:comment>
             <xsl:call-template name="removedElement"/>
         </xsl:comment>
@@ -120,7 +122,8 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xsl:template>
 
     <!-- SKIP -->
-    <xsl:template match="descgrp | admininfo | titleproper/date | titleproper/num | 
+    <xsl:template
+        match="descgrp | admininfo | titleproper/date | titleproper/num | 
         accessrestrict/accessrestrict/legalstatus | archref/abstract | subtitle/date | 
         subtitle/num">
         <xsl:comment>
@@ -156,9 +159,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <xsl:template match="eadheader">
         <xsl:comment>
-        <xsl:text>eadheader now control: </xsl:text>
-        <xsl:text>Inserting minimal control element</xsl:text>
-    </xsl:comment>
+            <xsl:text>eadheader now control: </xsl:text>
+            <xsl:text>Inserting minimal control element</xsl:text>
+        </xsl:comment>
         <xsl:message>
             <xsl:text>eadheader now control: </xsl:text>
             <xsl:text>Inserting minimal control element</xsl:text>
@@ -166,17 +169,17 @@ For these and/or other purposes and motivations, and without any expectation of 
         <control>
             <recordid>[recordid]</recordid>
             <xsl:apply-templates select="filedesc"/>
-            <maintenancestatus>derived</maintenancestatus>
+            <maintenancestatus value="derived"/>
             <maintenanceagency>
                 <agencyname>[agency name]</agencyname>
             </maintenanceagency>
             <maintenancehistory>
                 <maintenanceevent>
-                    <eventtype>derived</eventtype>
+                    <eventtype value="derived"/>
                     <eventdatetime>
                         <xsl:value-of select="current-dateTime()"/>
                     </eventdatetime>
-                    <agenttype>machine</agenttype>
+                    <agenttype value="machine"/>
                     <agent/>
                 </maintenanceevent>
             </maintenancehistory>
@@ -235,12 +238,26 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:template match="table">
         <xsl:call-template name="gonna-deal-with-this-later"/>
     </xsl:template>
-    
-    
+
+    <!-- ############################################### -->
+    <!-- DID ELEMENTS                                    -->
+    <!-- ############################################### -->
+
+    <xsl:template match="origination">
+        <origination>
+        <xsl:apply-templates select="corpname | name | persname | famname"/>
+        <xsl:if test="exists(node() except (corpname | name | persname | famname))">
+            <descriptivenote>
+                <xsl:value-of separator=" " select="node() except (corpname | name | persname | famname)"/>
+            </descriptivenote>
+        </xsl:if>
+        </origination>
+    </xsl:template>
+
     <!-- ############################################### -->
     <!-- NAMES                                           -->
     <!-- ############################################### -->
-    
+
     <xsl:template match="corpname | famname | persname | name">
         <xsl:comment>
             <xsl:text>Added child part element to </xsl:text>
@@ -250,10 +267,12 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:text>Added child part element to </xsl:text>
             <xsl:value-of select="local-name()"/>
         </xsl:message>
-        
-        <xsl:element name="{local-name()}"  namespace="{$eadxmlns}" xmlns="urn:isbn:1-931666-22-9">
+
+        <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
             <xsl:apply-templates select="@*"/>
-            <part><xsl:apply-templates/></part>
+            <part>
+                <xsl:apply-templates/>
+            </part>
         </xsl:element>
     </xsl:template>
 
@@ -273,12 +292,12 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <xsl:template match="c/note | arcdesc/note | descgrp/note">
         <xsl:comment>
-                    <xsl:text>ELEMENT </xsl:text>
-                    <xsl:value-of select="local-name()"/>
-                    <xsl:text>&#160;</xsl:text>
-                    <xsl:text>RENAMED as 'odd'</xsl:text>
-                    <xsl:text>&#10;</xsl:text>
-                </xsl:comment>
+            <xsl:text>ELEMENT </xsl:text>
+            <xsl:value-of select="local-name()"/>
+            <xsl:text>&#160;</xsl:text>
+            <xsl:text>RENAMED as 'odd'</xsl:text>
+            <xsl:text>&#10;</xsl:text>
+        </xsl:comment>
         <xsl:message>
             <xsl:text>ELEMENT </xsl:text>
             <xsl:value-of select="local-name()"/>
@@ -306,39 +325,41 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xsl:template>
     <xsl:template match="@xsi:schemaLocation" mode="strip-ns"
         xpath-default-namespace="http://www.w3.org/2001/XMLSchema-instance"/>
-    
-    
+
+
     <!-- ############################################### -->
     <!-- @TYPE TO @LOCALTYPE                             -->
     <!-- ############################################### -->
-    
-    <xsl:template match="abstract/@type | accessrestrict/@type | altformavail/@type | 
+
+    <xsl:template
+        match="abstract/@type | accessrestrict/@type | altformavail/@type | 
         phystech/@type | processinfo/@type | titleproper/@type | unitid/@type | 
         userestruct/@type">
         <xsl:attribute name="localtype">
             <xsl:value-of select="."/>
         </xsl:attribute>
     </xsl:template>
-    
-    
+
+
     <!-- ############################################### -->
     <!-- LANGUAGE ATTRIBUTES                             -->
     <!-- ############################################### -->
-    
+
     <xsl:template match="abstract/@langcode">
         <xsl:attribute name="lang">
             <xsl:value-of select="."/>
         </xsl:attribute>
     </xsl:template>
-    
-    
+
+
     <!-- ############################################### -->
     <!-- ADDRESSLINE                                     -->
     <!-- ############################################### -->
-    
+
     <xsl:template match="address[not(parent::repository) and not(parent::publicationtmt)]">
         <xsl:choose>
-            <xsl:when test="not(parent::entry) 
+            <xsl:when
+                test="not(parent::entry) 
                 and not(parent::p) 
                 and not(parent::event) 
                 and not(parent::item)
@@ -366,11 +387,11 @@ For these and/or other purposes and motivations, and without any expectation of 
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
-    
+
     <!-- ############################################### -->
     <!-- ACCESSRESTRICT + LEGALSTATUS                    -->
     <!-- ############################################### -->
-    
+
     <xsl:template match="accessrestrict">
         <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
             <xsl:apply-templates select="@*|node()"/>
@@ -383,13 +404,13 @@ For these and/or other purposes and motivations, and without any expectation of 
             </xsl:element>
         </xsl:for-each>
     </xsl:template>
-    
+
     <xsl:template match="accessrestrict/legalstatus"/>
-    
+
     <!-- ############################################### -->
     <!-- CUSTODHIST + ACQINFO                            -->
     <!-- ############################################### -->
-    
+
     <xsl:template match="custodhist">
         <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
             <xsl:apply-templates select="@*|node()"/>
@@ -400,10 +421,10 @@ For these and/or other purposes and motivations, and without any expectation of 
             </xsl:element>
         </xsl:for-each>
     </xsl:template>
-    
+
     <xsl:template match="custodhist/acqinfo"/>
-    
-    
+
+
 
     <!-- ############################################### -->
     <!-- OTHER TEMPLATES                                 -->
@@ -418,12 +439,12 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <xsl:template name="nowOdd">
         <xsl:comment>
-                    <xsl:text>ELEMENT </xsl:text>
-                    <xsl:value-of select="local-name()"/>
-                    <xsl:text>&#160;</xsl:text>
-                    <xsl:text>RENAMED as 'odd'</xsl:text>
-                    <xsl:text>&#10;</xsl:text>
-                </xsl:comment>
+            <xsl:text>ELEMENT </xsl:text>
+            <xsl:value-of select="local-name()"/>
+            <xsl:text>&#160;</xsl:text>
+            <xsl:text>RENAMED as 'odd'</xsl:text>
+            <xsl:text>&#10;</xsl:text>
+        </xsl:comment>
         <xsl:message>
             <xsl:text>ELEMENT </xsl:text>
             <xsl:value-of select="local-name()"/>
@@ -452,12 +473,12 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <xsl:template name="gonna-deal-with-this-later">
         <xsl:comment>
-        <xsl:text>NOT GONNA DEAL WITH</xsl:text>
-        <xsl:text>&#160;</xsl:text>
-        <xsl:value-of select="local-name()"/>
-        <xsl:text>&#160;</xsl:text>
-        <xsl:text>NOW</xsl:text>
-        <xsl:text>&#10;</xsl:text>
+            <xsl:text>NOT GONNA DEAL WITH</xsl:text>
+            <xsl:text>&#160;</xsl:text>
+            <xsl:value-of select="local-name()"/>
+            <xsl:text>&#160;</xsl:text>
+            <xsl:text>NOW</xsl:text>
+            <xsl:text>&#10;</xsl:text>
         </xsl:comment>
     </xsl:template>
 
