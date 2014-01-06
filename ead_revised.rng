@@ -103,15 +103,12 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</optional>
 			<oneOrMore>
 				<choice>
-					<ref name="e.persname"/>
 					<ref name="e.corpname"/>
-					<ref name="e.name"/>
 					<ref name="e.famname"/>
+					<ref name="e.name"/>
+					<ref name="e.persname"/>
 				</choice>
 			</oneOrMore>
-			<optional>
-				<ref name="e.descriptivenote"/>
-			</optional>
 		</element>
 	</define>
 	<define name="e.physdescstructured">
@@ -123,11 +120,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
-			<optional>
-				<attribute name="rules">
-					<data type="NMTOKEN"/>
-				</attribute>
-			</optional>
 			<attribute name="physdescstructuredtype">
 				<choice>
 					<value>carrier</value>
@@ -135,15 +127,17 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<value>spaceoccupied</value>
 				</choice>
 			</attribute>
-			<attribute name="coverage">
-				<choice>
-					<value>whole</value>
-					<value>part</value>
-				</choice>
-			</attribute>
-
+			<ref name="a.coverage"/>
 			<element name="quantity">
 				<ref name="a.common"/>
+				<optional>
+					<attribute name="approximate">
+						<choice>
+							<value>yes</value>
+							<value>no</value>
+						</choice>
+					</attribute>
+				</optional>
 				<text/>
 			</element>
 			<element name="unittype">
@@ -162,10 +156,10 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<text/>
 			</element>
 			<zeroOrMore>
-				<ref name="e.dimensions"/>
-			</zeroOrMore>
-			<zeroOrMore>
-				<ref name="e.physfacet"/>
+				<choice>
+					<ref name="e.physfacet"/>
+					<ref name="e.dimensions"/>
+				</choice>
 			</zeroOrMore>
 			<optional>
 				<ref name="e.descriptivenote"/>
@@ -184,16 +178,14 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<oneOrMore>
 				<choice>
 					<ref name="e.corpname"/>
-					<ref name="e.name"/>
 					<ref name="e.famname"/>
-					<optional>
-						<ref name="e.address"/>
-					</optional>
-					<optional>
-						<ref name="e.descriptivenote"/>
-					</optional>
+					<ref name="e.name"/>
+					<ref name="e.persname"/>
 				</choice>
 			</oneOrMore>
+			<optional>
+				<ref name="e.address"/>
+			</optional>
 		</element>
 	</define>
 
@@ -383,6 +375,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<attribute name="otherdaotype"/>
 			</optional>
 			<optional>
+				<ref name="a.coverage"/>
+			</optional>
+			<optional>
 				<ref name="e.daodesc"/>
 			</optional>
 		</element>
@@ -437,14 +432,13 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<ref name="e.head"/>
 			</optional>
-			<choice>
-				<oneOrMore>
-					<choice>
-						<ref name="m.blocks"/>
-						<ref name="e.accessrestrict"/>
-					</choice>
-				</oneOrMore>
-			</choice>
+			<oneOrMore>
+				<choice>
+					<ref name="m.blocks"/>
+					<ref name="e.accessrestrict"/>
+				</choice>
+			</oneOrMore>
+			
 		</element>
 	</define>
 	<define name="e.accruals">
@@ -456,14 +450,13 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<ref name="e.head"/>
 			</optional>
-			<choice>
-				<oneOrMore>
-					<choice>
-						<ref name="m.blocks"/>
-						<ref name="e.accruals"/>
-					</choice>
-				</oneOrMore>
-			</choice>
+			<oneOrMore>
+				<choice>
+					<ref name="m.blocks"/>
+					<ref name="e.accruals"/>
+				</choice>
+			</oneOrMore>
+			
 		</element>
 	</define>
 	<define name="e.fileplan">
@@ -475,14 +468,13 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<ref name="e.head"/>
 			</optional>
-			<choice>
-				<oneOrMore>
-					<choice>
-						<ref name="m.blocks"/>
-						<ref name="e.fileplan"/>
-					</choice>
-				</oneOrMore>
-			</choice>
+			<oneOrMore>
+				<choice>
+					<ref name="m.blocks"/>
+					<ref name="e.fileplan"/>
+				</choice>
+			</oneOrMore>
+			
 		</element>
 	</define>
 	<define name="e.acqinfo">
@@ -494,14 +486,13 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<ref name="e.head"/>
 			</optional>
-			<choice>
-				<oneOrMore>
-					<choice>
-						<ref name="m.blocks"/>
-						<ref name="e.acqinfo"/>
-					</choice>
-				</oneOrMore>
-			</choice>
+			<oneOrMore>
+				<choice>
+					<ref name="m.blocks"/>
+					<ref name="e.acqinfo"/>
+				</choice>
+			</oneOrMore>
+			
 		</element>
 	</define>
 	<define name="e.altformavail">
@@ -516,14 +507,13 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<ref name="e.head"/>
 			</optional>
-			<choice>
-				<oneOrMore>
-					<choice>
-						<ref name="m.blocks"/>
-						<ref name="e.altformavail"/>
-					</choice>
-				</oneOrMore>
-			</choice>
+			<oneOrMore>
+				<choice>
+					<ref name="m.blocks"/>
+					<ref name="e.altformavail"/>
+				</choice>
+			</oneOrMore>
+			
 		</element>
 	</define>
 	<define name="e.originalsloc">
@@ -538,14 +528,13 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<ref name="e.head"/>
 			</optional>
-			<choice>
-				<oneOrMore>
-					<choice>
-						<ref name="m.blocks"/>
-						<ref name="e.originalsloc"/>
-					</choice>
-				</oneOrMore>
-			</choice>
+			<oneOrMore>
+				<choice>
+					<ref name="m.blocks"/>
+					<ref name="e.originalsloc"/>
+				</choice>
+			</oneOrMore>
+			
 		</element>
 	</define>
 	<define name="e.phystech">
@@ -560,14 +549,13 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<ref name="e.head"/>
 			</optional>
-			<choice>
-				<oneOrMore>
-					<choice>
-						<ref name="m.blocks"/>
-						<ref name="e.phystech"/>
-					</choice>
-				</oneOrMore>
-			</choice>
+			<oneOrMore>
+				<choice>
+					<ref name="m.blocks"/>
+					<ref name="e.phystech"/>
+				</choice>
+			</oneOrMore>
+			
 		</element>
 	</define>
 	<define name="e.appraisal">
@@ -579,14 +567,13 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<ref name="e.head"/>
 			</optional>
-			<choice>
-				<oneOrMore>
-					<choice>
-						<ref name="m.blocks"/>
-						<ref name="e.appraisal"/>
-					</choice>
-				</oneOrMore>
-			</choice>
+			<oneOrMore>
+				<choice>
+					<ref name="m.blocks"/>
+					<ref name="e.appraisal"/>
+				</choice>
+			</oneOrMore>
+			
 		</element>
 	</define>
 	<define name="e.custodhist">
@@ -598,14 +585,13 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<ref name="e.head"/>
 			</optional>
-			<choice>
-				<oneOrMore>
-					<choice>
-						<ref name="m.blocks"/>
-						<ref name="e.custodhist"/>
-					</choice>
-				</oneOrMore>
-			</choice>
+			<oneOrMore>
+				<choice>
+					<ref name="m.blocks"/>
+					<ref name="e.custodhist"/>
+				</choice>
+			</oneOrMore>
+			
 		</element>
 	</define>
 	<define name="e.index">
@@ -668,14 +654,12 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<ref name="e.head"/>
 			</optional>
-			<choice>
-				<oneOrMore>
-					<choice>
-						<ref name="m.blocks"/>
-						<ref name="e.legalstatus"/>
-					</choice>
-				</oneOrMore>
-			</choice>
+			<oneOrMore>
+				<choice>
+					<ref name="m.blocks"/>
+					<ref name="e.legalstatus"/>
+				</choice>
+			</oneOrMore>
 		</element>
 	</define>
 	<define name="e.materialspec">
@@ -699,14 +683,13 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<ref name="e.head"/>
 			</optional>
-			<choice>
-				<oneOrMore>
-					<choice>
-						<ref name="m.blocks"/>
-						<ref name="e.prefercite"/>
-					</choice>
-				</oneOrMore>
-			</choice>
+			<oneOrMore>
+				<choice>
+					<ref name="m.blocks"/>
+					<ref name="e.prefercite"/>
+				</choice>
+			</oneOrMore>
+			
 		</element>
 	</define>
 	<define name="e.processinfo">
@@ -721,14 +704,13 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<ref name="e.head"/>
 			</optional>
-			<choice>
-				<oneOrMore>
-					<choice>
-						<ref name="m.blocks"/>
-						<ref name="e.processinfo"/>
-					</choice>
-				</oneOrMore>
-			</choice>
+			<oneOrMore>
+				<choice>
+					<ref name="m.blocks"/>
+					<ref name="e.processinfo"/>
+				</choice>
+			</oneOrMore>
+			
 		</element>
 	</define>
 	<define name="e.userestrict">
@@ -743,14 +725,13 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<ref name="e.head"/>
 			</optional>
-			<choice>
-				<oneOrMore>
-					<choice>
-						<ref name="m.blocks"/>
-						<ref name="e.userestrict"/>
-					</choice>
-				</oneOrMore>
-			</choice>
+			<oneOrMore>
+				<choice>
+					<ref name="m.blocks"/>
+					<ref name="e.userestrict"/>
+				</choice>
+			</oneOrMore>
+			
 		</element>
 	</define>
 	<define name="e.bioghist">
@@ -762,14 +743,13 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<ref name="e.head"/>
 			</optional>
-			<choice>
-				<oneOrMore>
-					<choice>
-						<ref name="m.blocks"/>
-						<ref name="e.bioghist"/>
-					</choice>
-				</oneOrMore>
-			</choice>
+			<oneOrMore>
+				<choice>
+					<ref name="m.blocks"/>
+					<ref name="e.bioghist"/>
+				</choice>
+			</oneOrMore>
+
 		</element>
 	</define>
 	<define name="e.controlaccess">
@@ -781,15 +761,14 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<ref name="e.head"/>
 			</optional>
-			<choice>
-				<oneOrMore>
-					<choice>
-						<ref name="m.blocks"/>
-						<ref name="m.access.title"/>
-						<ref name="e.controlaccess"/>
-					</choice>
-				</oneOrMore>
-			</choice>
+			<oneOrMore>
+				<choice>
+					<ref name="m.blocks"/>
+					<ref name="m.access.title"/>
+					<ref name="e.controlaccess"/>
+				</choice>
+			</oneOrMore>
+			
 		</element>
 	</define>
 	<define name="e.odd">
@@ -804,14 +783,12 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<ref name="e.head"/>
 			</optional>
-			<choice>
-				<oneOrMore>
-					<choice>
-						<ref name="m.blocks"/>
-						<ref name="e.odd"/>
-					</choice>
-				</oneOrMore>
-			</choice>
+			<oneOrMore>
+				<choice>
+					<ref name="m.blocks"/>
+					<ref name="e.odd"/>
+				</choice>
+			</oneOrMore>
 		</element>
 	</define>
 	<define name="e.scopecontent">
@@ -823,14 +800,13 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<ref name="e.head"/>
 			</optional>
-			<choice>
-				<oneOrMore>
-					<choice>
-						<ref name="m.blocks"/>
-						<ref name="e.scopecontent"/>
-					</choice>
-				</oneOrMore>
-			</choice>
+			<oneOrMore>
+				<choice>
+					<ref name="m.blocks"/>
+					<ref name="e.scopecontent"/>
+				</choice>
+			</oneOrMore>
+			
 		</element>
 	</define>
 	<define name="e.arrangement">
@@ -842,14 +818,13 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<ref name="e.head"/>
 			</optional>
-			<choice>
-				<oneOrMore>
-					<choice>
-						<ref name="m.blocks"/>
-						<ref name="e.arrangement"/>
-					</choice>
-				</oneOrMore>
-			</choice>
+			<oneOrMore>
+				<choice>
+					<ref name="m.blocks"/>
+					<ref name="e.arrangement"/>
+				</choice>
+			</oneOrMore>
+			
 		</element>
 	</define>
 	<define name="e.bibliography">
@@ -861,17 +836,14 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<ref name="e.head"/>
 			</optional>
-			<choice>
-				<oneOrMore>
-					<choice>
-						<ref name="m.blocks"/>
-						<ref name="e.bibliography"/>
-						<ref name="e.archref"/>
-						<ref name="e.bibref"/>
-					</choice>
-				</oneOrMore>
-			</choice>
-
+			<oneOrMore>
+				<choice>
+					<ref name="m.blocks"/>
+					<ref name="e.bibliography"/>
+					<ref name="e.archref"/>
+					<ref name="e.bibref"/>
+				</choice>
+			</oneOrMore>
 		</element>
 	</define>
 	<define name="e.relatedmaterial">
@@ -886,16 +858,15 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<ref name="e.head"/>
 			</optional>
-			<choice>
-				<oneOrMore>
-					<choice>
-						<ref name="m.blocks"/>
-						<ref name="e.relatedmaterial"/>
-						<ref name="e.archref"/>
-						<ref name="e.bibref"/>
-					</choice>
-				</oneOrMore>
-			</choice>
+			<oneOrMore>
+				<choice>
+					<ref name="m.blocks"/>
+					<ref name="e.relatedmaterial"/>
+					<ref name="e.archref"/>
+					<ref name="e.bibref"/>
+				</choice>
+			</oneOrMore>
+			
 		</element>
 	</define>
 	<define name="e.separatedmaterial">
@@ -910,16 +881,15 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<ref name="e.head"/>
 			</optional>
-			<choice>
-				<oneOrMore>
-					<choice>
-						<ref name="m.blocks"/>
-						<ref name="e.separatedmaterial"/>
-						<ref name="e.archref"/>
-						<ref name="e.bibref"/>
-					</choice>
-				</oneOrMore>
-			</choice>
+			<oneOrMore>
+				<choice>
+					<ref name="m.blocks"/>
+					<ref name="e.separatedmaterial"/>
+					<ref name="e.archref"/>
+					<ref name="e.bibref"/>
+				</choice>
+			</oneOrMore>
+			
 		</element>
 	</define>
 	<define name="e.otherfindaid">
@@ -931,16 +901,15 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<ref name="e.head"/>
 			</optional>
-			<choice>
-				<oneOrMore>
-					<choice>
-						<ref name="m.blocks"/>
-						<ref name="e.otherfindaid"/>
-						<ref name="e.archref"/>
-						<ref name="e.bibref"/>
-					</choice>
-				</oneOrMore>
-			</choice>
+			<oneOrMore>
+				<choice>
+					<ref name="m.blocks"/>
+					<ref name="e.otherfindaid"/>
+					<ref name="e.archref"/>
+					<ref name="e.bibref"/>
+				</choice>
+			</oneOrMore>
+			
 		</element>
 	</define>
 
@@ -1665,9 +1634,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="physfacet">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="label"/>
-			</optional>
-			<optional>
 				<attribute name="localtype"/>
 			</optional>
 			<optional>
@@ -1676,7 +1642,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
-			<ref name="m.mixed.basic"/>
+			<ref name="m.mixed.basic.plus.access"/>
 		</element>
 	</define>
 	<define name="e.language">
@@ -2011,6 +1977,11 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.relations">
 		<element name="relations">
 			<ref name="a.common"/>
+			<optional>
+				<attribute name="base">
+					<data type="anyURI"/>
+				</attribute>
+			</optional>
 			<oneOrMore>
 				<ref name="m.relation"/>
 			</oneOrMore>
@@ -2277,11 +2248,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</optional>
 				<optional>
 					<attribute name="encodinganalog"/>
-				</optional>
-				<optional>
-					<attribute name="rules">
-						<data type="NMTOKEN"/>
-					</attribute>
 				</optional>
 				<ref name="m.mixed.basic"/>
 			</element>
@@ -3017,10 +2983,12 @@ For these and/or other purposes and motivations, and without any expectation of 
 							<text/>
 						</element>
 						<optional>
-							<element a:id="eventdesccription" name="eventdescription">
-								<ref name="a.common"/>
-								<text/>
-							</element>
+							<oneOrMore>
+								<element a:id="eventdesccription" name="eventdescription">
+									<ref name="a.common"/>
+									<text/>
+								</element>
+							</oneOrMore>
 						</optional>
 					</element>
 				</oneOrMore>
@@ -3042,7 +3010,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 							<optional>
 								<ref name="am.simplelink"/>
 							</optional>
-							<optional>
+							<zeroOrMore>
 								<element name="sourceentry">
 									<ref name="a.common"/>
 									<optional>
@@ -3050,7 +3018,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 									</optional>
 									<text/>
 								</element>
-							</optional>
+							</zeroOrMore>
 							<optional>
 								<choice>
 									<ref name="e.objectxmlwrap"/>
@@ -3183,6 +3151,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.maintenanceagency">
 		<element name="maintenanceagency">
 			<ref name="a.common"/>
+			<ref name="am.countrycode"/>
 			<optional>
 				<element name="agencycode">
 					<ref name="a.common"/>
@@ -3197,9 +3166,12 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<text/>
 				</element>
 			</zeroOrMore>
-			<element name="agencyname">
-				<text/>
-			</element>
+			<oneOrMore>
+				<element name="agencyname">
+					<ref name="a.common"/>
+					<text/>
+				</element>
+			</oneOrMore>
 			<optional>
 				<ref name="e.descriptivenote"/>
 			</optional>
@@ -3284,4 +3256,14 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</data>
 		</choice>
 	</define>
+	
+	<define name="a.coverage">
+		<attribute name="coverage">
+			<choice>
+				<value>whole</value>
+				<value>part</value>
+			</choice>
+		</attribute>
+	</define>
+	
 </grammar>
