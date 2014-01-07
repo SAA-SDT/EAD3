@@ -616,7 +616,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 					</oneOrMore>
 				</group>
 				<oneOrMore>
-					<ref name="index"/>
+					<ref name="e.index"/>
 				</oneOrMore>
 			</choice>
 		</element>
