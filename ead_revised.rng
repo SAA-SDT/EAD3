@@ -615,6 +615,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 						<ref name="e.indexentry"/>
 					</oneOrMore>
 				</group>
+				<oneOrMore>
+					<ref name="index"/>
+				</oneOrMore>
 			</choice>
 		</element>
 	</define>
