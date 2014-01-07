@@ -46,8 +46,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.ead">
 		<element name="ead">
 			<ref name="a.common"/>
-			<!-- Would it make sense to have a single definition for @relatedencoding? 
-			Do we need to specify a data type? -MR -->
 			<optional>
 				<attribute name="relatedencoding"/>
 			</optional>
@@ -1380,13 +1378,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<ref name="m.cOrC01"/>
 			</optional>
-			<!-- Isn't the following <choice> duplicative of the preceding <optional>? -MR -->
-			<!--<choice>
-
-				<ref name="m.cOrC01"/>
-
-			</choice>-->
-
 		</element>
 	</define>
 
@@ -1433,8 +1424,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</element>
 	</define>
 
-	<!-- Title should have one or more <part>, not m.mixed.basic.  
-	Would that allow it to be added to m.access, eliminating the need for m.access.title? -MR-->
 	<define name="e.title">
 		<element name="title">
 			<ref name="a.common"/>
@@ -2703,7 +2692,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</attribute>
 		</optional>
 	</define>
-	<!-- unitdate/@normal no longer enforces the iso 8601 pattern. Why? -MR -->
+	
 	<define name="am.date.normal">
 		<optional>
 			<attribute name="normal">
@@ -2921,7 +2910,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 								<ref name="a.lastdatetimeverified"/>
 							</optional>
 							<optional>
-								<!-- This source attribute as a data type wherease others don't. Should homogenize. -MR -->
 								<attribute name="source">
 									<data type="string"/>
 								</attribute>
