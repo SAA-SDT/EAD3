@@ -1363,7 +1363,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
-			<ref name="a.dsctab.tpattern"/>
 			<group>
 				<optional>
 					<ref name="e.head"/>
@@ -2053,13 +2052,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 	</define>
 
 	<!-- MODELS -->
-	<define name="a.dsctab.tpattern">
-		<optional>
-			<attribute name="tpattern">
-				<data type="NMTOKEN"/>
-			</attribute>
-		</optional>
-	</define>
 	<define name="a.common.empty">
 		<optional>
 			<attribute name="id">
