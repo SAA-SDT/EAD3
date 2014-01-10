@@ -2215,9 +2215,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<optional>
 					<attribute name="localtype"/>
 				</optional>
-				<optional>
-					<attribute name="localtypesource"/>
-				</optional>
 				<ref name="m.mixed.basic"/>
 			</element>
 
