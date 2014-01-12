@@ -1351,7 +1351,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<choice>
 						<value>analyticover</value>
 						<value>combined</value>
-						<value>indepth</value>
+						<value>in-depth</value>
 						<value>otherdsctype</value>
 					</choice>
 				</attribute>
