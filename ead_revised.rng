@@ -2236,6 +2236,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<optional>
 					<attribute name="label"/>
 				</optional>
+				<optional>
+					<attribute name="encodinganalog"/>
+				</optional>
 				<ref name="e.physdescstructured"/>
 				<oneOrMore>
 					<ref name="e.physdescstructured"/>
