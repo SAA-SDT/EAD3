@@ -665,6 +665,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="materialspec">
 			<ref name="a.common"/>
 			<optional>
+				<attribute name="label"/>
+			</optional>
+			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
 			<optional>
