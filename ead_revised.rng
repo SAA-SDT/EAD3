@@ -1633,9 +1633,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<attribute name="unit"/>
 			</optional>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
 			<ref name="m.mixed.basic.plus.access"/>
 		</element>
 	</define>
