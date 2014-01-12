@@ -1612,6 +1612,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<attribute name="localtype"/>
 			</optional>
+			<optional>
+				<attribute name="unit"/>
+			</optional>
 			<zeroOrMore>
 				<choice>
 					<ref name="m.mixed.basic"/>
