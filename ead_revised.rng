@@ -626,9 +626,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<element name="namegrp">
 					<ref name="a.common"/>
 					<oneOrMore>
-						<choice>
-							<ref name="m.access.title"/>
-						</choice>
+						<ref name="m.access.title"/>
 					</oneOrMore>
 				</element>
 				<ref name="m.access.title"/>
