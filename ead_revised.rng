@@ -2999,9 +2999,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 								</element>
 							</zeroOrMore>
 							<optional>
-								<choice>
-									<ref name="e.objectxmlwrap"/>
-								</choice>
+								<ref name="e.objectxmlwrap"/>
 							</optional>
 							<optional>
 								<ref name="e.descriptivenote"/>
