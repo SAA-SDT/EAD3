@@ -1452,7 +1452,10 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="title">
 			<ref name="a.common"/>
 			<optional>
-				<ref name="a.localtype"/>
+				<attribute name="localtype"/>
+			</optional>
+			<optional>
+				<attribute name="relator"/>
 			</optional>
 			<optional>
 				<attribute name="render">
@@ -1730,7 +1733,10 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.common"/>
 			<ref name="a.access"/>
 			<optional>
-				<attribute name="role"/>
+				<attribute name="localtype"/>
+			</optional>
+			<optional>
+				<attribute name="relator"/>
 			</optional>
 			<optional>
 				<attribute name="encodinganalog"/>
@@ -1746,7 +1752,10 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.common"/>
 			<ref name="a.access"/>
 			<optional>
-				<attribute name="role"/>
+				<attribute name="localtype"/>
+			</optional>
+			<optional>
+				<attribute name="relator"/>
 			</optional>
 			<optional>
 				<attribute name="encodinganalog"/>
@@ -1764,13 +1773,16 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.common"/>
 			<ref name="a.access"/>
 			<optional>
-				<attribute name="role"/>
+				<attribute name="localtype"/>
+			</optional>
+			<optional>
+				<attribute name="relator"/>
 			</optional>
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
 			<oneOrMore>
-				<ref name="e.part"/> 
+				<ref name="e.part"/>
 			</oneOrMore>
 			<zeroOrMore>
 				<element name="geographiccoordinates">
@@ -1791,7 +1803,10 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.common"/>
 			<ref name="a.access"/>
 			<optional>
-				<attribute name="role"/>
+				<attribute name="localtype"/>
+			</optional>
+			<optional>
+				<attribute name="relator"/>
 			</optional>
 			<optional>
 				<attribute name="encodinganalog"/>
@@ -1809,7 +1824,10 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.common"/>
 			<ref name="a.access"/>
 			<optional>
-				<attribute name="role"/>
+				<attribute name="localtype"/>
+			</optional>
+			<optional>
+				<attribute name="relator"/>
 			</optional>
 			<optional>
 				<attribute name="encodinganalog"/>
@@ -1828,7 +1846,10 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<attribute name="encodinganalog"/>
 			</optional>
 			<optional>
-				<ref name="a.localtype"/>
+				<attribute name="localtype"/>
+			</optional>
+			<optional>
+				<attribute name="relator"/>
 			</optional>
 			<oneOrMore>
 				<ref name="e.part"/>
@@ -1844,7 +1865,10 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<attribute name="encodinganalog"/>
 			</optional>
 			<optional>
-				<ref name="a.localtype"/>
+				<attribute name="localtype"/>
+			</optional>
+			<optional>
+				<attribute name="relator"/>
 			</optional>
 			<oneOrMore>
 				<ref name="e.part"/>
@@ -1860,7 +1884,10 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<attribute name="encodinganalog"/>
 			</optional>
 			<optional>
-				<ref name="a.localtype"/>
+				<attribute name="localtype"/>
+			</optional>
+			<optional>
+				<attribute name="relator"/>
 			</optional>
 			<oneOrMore>
 				<ref name="e.part"/>
@@ -1876,7 +1903,10 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<attribute name="encodinganalog"/>
 			</optional>
 			<optional>
-				<ref name="a.localtype"/>
+				<attribute name="localtype"/>
+			</optional>
+			<optional>
+				<attribute name="relator"/>
 			</optional>
 			<oneOrMore>
 				<ref name="e.part"/>
@@ -2999,7 +3029,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 							<oneOrMore>
 								<element a:id="eventdesccription" name="eventdescription">
 									<ref name="a.common"/>
-									<optional><ref name="a.localtype"/></optional>
+									<optional>
+										<ref name="a.localtype"/>
+									</optional>
 									<text/>
 								</element>
 							</oneOrMore>
@@ -3010,7 +3042,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<element name="sources">
 					<ref name="a.common"/>
-					<optional><ref name="a.localtype"/></optional>
+					<optional>
+						<ref name="a.localtype"/>
+					</optional>
 					<optional>
 						<attribute name="base">
 							<data type="anyURI"/>
