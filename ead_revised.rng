@@ -609,6 +609,12 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</choice>
 			<optional>
 				<choice>
+					<element name="ptrgrp">
+						<ref name="a.common"/>
+						<oneOrMore>
+							<ref name="m.refs"/>
+						</oneOrMore>
+					</element>
 					<ref name="m.refs"/>
 				</choice>
 			</optional>
@@ -2301,8 +2307,10 @@ For these and/or other purposes and motivations, and without any expectation of 
 	</define>
 
 	<define name="m.refs">
-		<ref name="e.ref"/>
-		<ref name="e.ptr"/>
+		<choice>
+			<ref name="e.ref"/>
+			<ref name="e.ptr"/>
+		</choice>
 	</define>
 
 	<define name="m.mixed.basic">
