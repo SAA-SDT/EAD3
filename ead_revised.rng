@@ -623,10 +623,10 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<element name="namegrp">
 					<ref name="a.common"/>
 					<oneOrMore>
-						<ref name="m.access.title"/>
+						<ref name="m.access"/>
 					</oneOrMore>
 				</element>
-				<ref name="m.access.title"/>
+				<ref name="m.access"/>
 			</choice>
 			<optional>
 				<choice>
@@ -778,7 +778,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<oneOrMore>
 				<choice>
 					<ref name="m.blocks"/>
-					<ref name="m.access.title"/>
+					<ref name="m.access"/>
 					<ref name="e.controlaccess"/>
 				</choice>
 			</oneOrMore>
@@ -1353,7 +1353,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="e.num"/>
 					<ref name="e.footnote"/>
 					<ref name="e.date"/>
-					<ref name="m.access.title"/>
+					<ref name="m.access"/>
 				</choice>
 			</zeroOrMore>
 		</element>
@@ -2390,7 +2390,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<zeroOrMore>
 			<choice>
 				<text/>
-				<ref name="m.access.title"/>
+				<ref name="m.access"/>
 				<ref name="m.mixed.basic"/>
 				<ref name="e.quote"/>
 				<ref name="e.num"/>
@@ -2516,20 +2516,16 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="e.subject"/>
 			<ref name="e.genreform"/>
 			<ref name="e.function"/>
-		</choice>
-	</define>
-
-	<define name="m.access.title">
-		<choice>
-			<ref name="m.access"/>
 			<ref name="e.title"/>
 		</choice>
 	</define>
 
+	
+
 	<define name="m.para.content">
 		<choice>
 			<ref name="m.mixed.basic.plus"/>
-			<ref name="m.access.title"/>
+			<ref name="m.access"/>
 			<ref name="e.list"/>
 		</choice>
 
