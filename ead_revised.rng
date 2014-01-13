@@ -293,22 +293,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<optional>
 						<ref name="a.localtype"/>
 					</optional>
-					<optional>
-						<attribute name="standarddate">
-							<ref name="m.data.standarddate"/>
-						</attribute>
-					</optional>
-					<optional>
-						<attribute name="notbefore">
-							<ref name="m.data.standarddate"/>
-						</attribute>
-					</optional>
-					<optional>
-						<attribute name="notafter">
-							<ref name="m.data.standarddate"/>
-						</attribute>
-					</optional>
-					<ref name="m.mixed.basic"/>
+					<ref name="m.datesingle"/>
 				</element>
 			</optional>
 			<optional>
@@ -317,22 +302,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<optional>
 						<ref name="a.localtype"/>
 					</optional>
-					<optional>
-						<attribute name="standarddate">
-							<ref name="m.data.standarddate"/>
-						</attribute>
-					</optional>
-					<optional>
-						<attribute name="notbefore">
-							<ref name="m.data.standarddate"/>
-						</attribute>
-					</optional>
-					<optional>
-						<attribute name="notafter">
-							<ref name="m.data.standarddate"/>
-						</attribute>
-					</optional>
-					<ref name="m.mixed.basic"/>
+					<ref name="m.datesingle"/>
 				</element>
 			</optional>
 		</element>
