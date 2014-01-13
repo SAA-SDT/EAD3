@@ -399,7 +399,15 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.daogrp">
 		<element name="daogrp">
 			<ref name="a.common"/>
-			<ref name="extendedLink"/>
+			<attribute a:defaultValue="extended" name="linktype">
+				<value>extended</value>
+			</attribute>
+			<optional>
+				<attribute name="role"/>
+			</optional>
+			<optional>
+				<attribute name="title"/>
+			</optional>
 			<optional>
 				<ref name="e.daodesc"/>
 			</optional>
@@ -412,160 +420,59 @@ For these and/or other purposes and motivations, and without any expectation of 
 							<ref name="e.daodesc"/>
 						</optional>
 					</element>
-					<ref name="extended.els"/>
+					<choice>
+						<element name="resource">
+							<ref name="a.common"/>
+							<ref name="a.resourceLink"/>
+							<zeroOrMore>
+								<choice>
+									<text/>
+									<ref name="e.emph"/>
+								</choice>
+							</zeroOrMore>
+						</element>
+						<element name="arc">
+							<ref name="a.common"/>
+							<ref name="a.arcLink"/>
+							<empty/>
+						</element>
+						<element name="ptrloc">
+							<ref name="a.common"/>
+							<ref name="a.loc.internal.ptr"/>
+							<empty/>
+						</element>
+						<element name="extptrloc">
+							<ref name="a.common"/>
+							<ref name="a.loc.external.ptr"/>
+							<empty/>
+						</element>
+						<element name="refloc">
+							<ref name="a.common"/>
+							<ref name="a.loc.internal.ptr"/>
+							<zeroOrMore>
+								<choice>
+									<text/>
+									<ref name="m.mixed.basic"/>
+								</choice>
+							</zeroOrMore>
+						</element>
+						<element name="extrefloc">
+							<ref name="a.common"/>
+							<ref name="a.loc.external.ptr"/>
+							<zeroOrMore>
+								<choice>
+									<text/>
+									<ref name="m.mixed.basic"/>
+								</choice>
+							</zeroOrMore>
+						</element>
+					</choice>
 				</choice>
 			</oneOrMore>
 		</element>
 	</define>
-	<define name="extendedLink">
-		<attribute a:defaultValue="extended" name="linktype">
-			<value>extended</value>
-		</attribute>
-		<optional>
-			<attribute name="role"/>
-		</optional>
-		<optional>
-			<attribute name="title"/>
-		</optional>
-	</define>
-	
-	<define name="a.loc.external.ptr">
-		<ref name="locatorLink"/>
-		<optional>
-			<attribute name="entityref">
-				<data type="ENTITY"/>
-			</attribute>
-		</optional>
-		<optional>
-			<attribute name="xpointer"/>
-		</optional>
-	</define>
-	
-	<define name="locatorLink">
-		<attribute a:defaultValue="locator" name="type">
-			<value>locator</value>
-		</attribute>
-		<attribute name="href"/>
-		<optional>
-			<attribute name="role"/>
-		</optional>
-		<optional>
-			<attribute name="title"/>
-		</optional>
-		<optional>
-			<attribute name="label"/>
-		</optional>
-	</define>
 	
 	
-
-	<define name="extended.els">
-		<choice>
-			<ref name="resource"/>
-			<ref name="arc"/>
-			<element name="ptrloc">
-				<ref name="a.common"/>
-				<ref name="a.loc.internal.ptr"/>
-				<empty/>
-			</element>
-			<element name="extptrloc">
-				<ref name="a.common"/>
-				<ref name="a.loc.external.ptr"/>
-				<empty/>
-			</element>
-			<element name="refloc">
-				<ref name="a.common"/>
-				<ref name="a.loc.internal.ptr"/>
-				<zeroOrMore>
-					<choice>
-						<text/>
-						<ref name="m.mixed.basic"/>
-					</choice>
-				</zeroOrMore>
-			</element>
-			<element name="extrefloc">
-				<ref name="a.common"/>
-				<ref name="a.loc.external.ptr"/>
-				<zeroOrMore>
-					<choice>
-						<text/>
-						<ref name="m.mixed.basic"/>
-					</choice>
-				</zeroOrMore>
-			</element>
-		</choice>
-	</define>
-	<define name="a.loc.internal.ptr">
-		<ref name="locatorLink"/>
-		<optional>
-			<attribute name="target">
-				<data type="IDREF"/>
-			</attribute>
-		</optional>
-		<optional>
-			<attribute name="xpointer"/>
-		</optional>
-	</define>
-	
-	<define name="arc">
-		<element name="arc">
-			<ref name="a.common"/>
-			<ref name="arcLink"/>
-			<empty/>
-		</element>
-	</define>
-	<define name="resource">
-		<element name="resource">
-			<ref name="a.common"/>
-			<ref name="resourceLink"/>
-			<zeroOrMore>
-				<choice>
-					<text/>
-					<ref name="e.emph"/>
-				</choice>
-			</zeroOrMore>
-		</element>
-	</define>
-	
-	<define name="arcLink">
-		<attribute a:defaultValue="arc" name="type">
-			<value>arc</value>
-		</attribute>
-		<optional>
-			<attribute name="arcrole"/>
-		</optional>
-		<optional>
-			<attribute name="title"/>
-		</optional>
-		<optional>
-			<attribute name="show"/>
-		</optional>
-		<optional>
-			<attribute name="actuate"/>
-		</optional>
-		<optional>
-			<attribute name="from"/>
-		</optional>
-		<optional>
-			<attribute name="to"/>
-		</optional>
-	</define>
-	
-	<define name="resourceLink">
-		<attribute a:defaultValue="resource" name="type">
-			<value>resource</value>
-		</attribute>
-		<optional>
-			<attribute name="role"/>
-		</optional>
-		<optional>
-			<attribute name="title"/>
-		</optional>
-		<optional>
-			<attribute name="label"/>
-		</optional>
-	</define>
-
 	<define name="e.accessrestrict">
 		<element name="accessrestrict">
 			<ref name="a.common"/>
@@ -2906,6 +2813,88 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</choice>
 		</attribute>
 	</define>
+	
+	<define name="a.loc.external.ptr">
+		<ref name="a.locatorLink"/>
+		<optional>
+			<attribute name="entityref">
+				<data type="ENTITY"/>
+			</attribute>
+		</optional>
+		<optional>
+			<attribute name="xpointer"/>
+		</optional>
+	</define>
+	
+	<define name="a.locatorLink">
+		<attribute a:defaultValue="locator" name="type">
+			<value>locator</value>
+		</attribute>
+		<attribute name="href"/>
+		<optional>
+			<attribute name="role"/>
+		</optional>
+		<optional>
+			<attribute name="title"/>
+		</optional>
+		<optional>
+			<attribute name="label"/>
+		</optional>
+	</define>
+	
+	
+	
+	<define name="a.loc.internal.ptr">
+		<ref name="a.locatorLink"/>
+		<optional>
+			<attribute name="target">
+				<data type="IDREF"/>
+			</attribute>
+		</optional>
+		<optional>
+			<attribute name="xpointer"/>
+		</optional>
+	</define>
+	
+	<define name="a.arcLink">
+		<attribute a:defaultValue="arc" name="type">
+			<value>arc</value>
+		</attribute>
+		<optional>
+			<attribute name="arcrole"/>
+		</optional>
+		<optional>
+			<attribute name="title"/>
+		</optional>
+		<optional>
+			<attribute name="show"/>
+		</optional>
+		<optional>
+			<attribute name="actuate"/>
+		</optional>
+		<optional>
+			<attribute name="from"/>
+		</optional>
+		<optional>
+			<attribute name="to"/>
+		</optional>
+	</define>
+	
+	<define name="a.resourceLink">
+		<attribute a:defaultValue="resource" name="type">
+			<value>resource</value>
+		</attribute>
+		<optional>
+			<attribute name="role"/>
+		</optional>
+		<optional>
+			<attribute name="title"/>
+		</optional>
+		<optional>
+			<attribute name="label"/>
+		</optional>
+	</define>
+	
 
 	<define name="am.dates.calendar">
 		<optional>
