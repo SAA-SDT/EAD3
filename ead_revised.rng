@@ -335,7 +335,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</choice>
 			</attribute>
 			<optional>
-				<attribute name="entityref"><data type="ENTITY"/></attribute>
+				<attribute name="entityref">
+					<data type="ENTITY"/>
+				</attribute>
 			</optional>
 			<optional>
 				<attribute name="xpointer"/>
@@ -351,7 +353,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</optional>
 		</element>
 	</define>
-<!--
+	<!--
 	<define name="e.daogrp">
 		<element name="daogrp">
 			<ref name="a.common"/>
@@ -407,12 +409,15 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="e.accessrestrict"/>
 				</choice>
 			</oneOrMore>
-			
+
 		</element>
 	</define>
 	<define name="e.accruals">
 		<element name="accruals">
 			<ref name="a.common"/>
+			<optional>
+				<ref name="a.localtype"/>
+			</optional>
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
@@ -425,12 +430,15 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="e.accruals"/>
 				</choice>
 			</oneOrMore>
-			
+
 		</element>
 	</define>
 	<define name="e.fileplan">
 		<element name="fileplan">
 			<ref name="a.common"/>
+			<optional>
+				<ref name="a.localtype"/>
+			</optional>
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
@@ -443,12 +451,15 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="e.fileplan"/>
 				</choice>
 			</oneOrMore>
-			
+
 		</element>
 	</define>
 	<define name="e.acqinfo">
 		<element name="acqinfo">
 			<ref name="a.common"/>
+			<optional>
+				<ref name="a.localtype"/>
+			</optional>
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
@@ -461,7 +472,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="e.acqinfo"/>
 				</choice>
 			</oneOrMore>
-			
+
 		</element>
 	</define>
 	<define name="e.altformavail">
@@ -482,7 +493,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="e.altformavail"/>
 				</choice>
 			</oneOrMore>
-			
+
 		</element>
 	</define>
 	<define name="e.originalsloc">
@@ -503,7 +514,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="e.originalsloc"/>
 				</choice>
 			</oneOrMore>
-			
+
 		</element>
 	</define>
 	<define name="e.phystech">
@@ -524,12 +535,15 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="e.phystech"/>
 				</choice>
 			</oneOrMore>
-			
+
 		</element>
 	</define>
 	<define name="e.appraisal">
 		<element name="appraisal">
 			<ref name="a.common"/>
+			<optional>
+				<ref name="a.localtype"/>
+			</optional>
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
@@ -542,12 +556,15 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="e.appraisal"/>
 				</choice>
 			</oneOrMore>
-			
+
 		</element>
 	</define>
 	<define name="e.custodhist">
 		<element name="custodhist">
 			<ref name="a.common"/>
+			<optional>
+				<ref name="a.localtype"/>
+			</optional>
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
@@ -560,12 +577,15 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="e.custodhist"/>
 				</choice>
 			</oneOrMore>
-			
+
 		</element>
 	</define>
 	<define name="e.index">
 		<element name="index">
 			<ref name="a.common"/>
+			<optional>
+				<ref name="a.localtype"/>
+			</optional>
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
@@ -657,6 +677,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="prefercite">
 			<ref name="a.common"/>
 			<optional>
+				<ref name="a.localtype"/>
+			</optional>
+			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
 			<optional>
@@ -668,7 +691,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="e.prefercite"/>
 				</choice>
 			</oneOrMore>
-			
+
 		</element>
 	</define>
 	<define name="e.processinfo">
@@ -689,7 +712,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="e.processinfo"/>
 				</choice>
 			</oneOrMore>
-			
+
 		</element>
 	</define>
 	<define name="e.userestrict">
@@ -710,12 +733,15 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="e.userestrict"/>
 				</choice>
 			</oneOrMore>
-			
+
 		</element>
 	</define>
 	<define name="e.bioghist">
 		<element name="bioghist">
 			<ref name="a.common"/>
+			<optional>
+				<ref name="a.localtype"/>
+			</optional>
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
@@ -733,6 +759,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 	</define>
 	<define name="e.controlaccess">
 		<element name="controlaccess">
+			<optional>
+				<ref name="a.localtype"/>
+			</optional>
 			<ref name="a.common"/>
 			<optional>
 				<attribute name="encodinganalog"/>
@@ -747,7 +776,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="e.controlaccess"/>
 				</choice>
 			</oneOrMore>
-			
+
 		</element>
 	</define>
 	<define name="e.odd">
@@ -774,6 +803,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="scopecontent">
 			<ref name="a.common"/>
 			<optional>
+				<ref name="a.localtype"/>
+			</optional>
+			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
 			<optional>
@@ -785,12 +817,15 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="e.scopecontent"/>
 				</choice>
 			</oneOrMore>
-			
+
 		</element>
 	</define>
 	<define name="e.arrangement">
 		<element name="arrangement">
 			<ref name="a.common"/>
+			<optional>
+				<ref name="a.localtype"/>
+			</optional>
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
@@ -803,12 +838,15 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="e.arrangement"/>
 				</choice>
 			</oneOrMore>
-			
+
 		</element>
 	</define>
 	<define name="e.bibliography">
 		<element name="bibliography">
 			<ref name="a.common"/>
+			<optional>
+				<ref name="a.localtype"/>
+			</optional>
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
@@ -845,7 +883,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="e.bibref"/>
 				</choice>
 			</oneOrMore>
-			
+
 		</element>
 	</define>
 	<define name="e.separatedmaterial">
@@ -868,12 +906,15 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="e.bibref"/>
 				</choice>
 			</oneOrMore>
-			
+
 		</element>
 	</define>
 	<define name="e.otherfindaid">
 		<element name="otherfindaid">
 			<ref name="a.common"/>
+			<optional>
+				<ref name="a.localtype"/>
+			</optional>
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
@@ -888,7 +929,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="e.bibref"/>
 				</choice>
 			</oneOrMore>
-			
+
 		</element>
 	</define>
 
@@ -1946,6 +1987,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="relations">
 			<ref name="a.common"/>
 			<optional>
+				<ref name="a.localtype"/>
+			</optional>
+			<optional>
 				<attribute name="base">
 					<data type="anyURI"/>
 				</attribute>
@@ -2663,7 +2707,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</attribute>
 		</optional>
 	</define>
-	
+
 	<define name="am.date.normal">
 		<optional>
 			<attribute name="normal">
@@ -3213,7 +3257,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</data>
 		</choice>
 	</define>
-	
+
 	<define name="a.coverage">
 		<attribute name="coverage">
 			<choice>
@@ -3222,5 +3266,5 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</choice>
 		</attribute>
 	</define>
-	
+
 </grammar>
