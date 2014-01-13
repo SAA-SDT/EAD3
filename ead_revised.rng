@@ -2999,6 +2999,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 							<oneOrMore>
 								<element a:id="eventdesccription" name="eventdescription">
 									<ref name="a.common"/>
+									<optional><ref name="a.localtype"/></optional>
 									<text/>
 								</element>
 							</oneOrMore>
@@ -3009,6 +3010,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<element name="sources">
 					<ref name="a.common"/>
+					<optional><ref name="a.localtype"/></optional>
 					<optional>
 						<attribute name="base">
 							<data type="anyURI"/>
