@@ -1770,7 +1770,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<attribute name="encodinganalog"/>
 			</optional>
 			<oneOrMore>
-				<ref name="e.part"/>
+				<ref name="e.part"/> 
 			</oneOrMore>
 			<zeroOrMore>
 				<element name="geographiccoordinates">
@@ -2152,7 +2152,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<attribute name="normal"/>
 		</optional>
 	</define>
-	
+
 	<define name="a.localtype">
 		<attribute name="localtype"/>
 	</define>
@@ -2520,7 +2520,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</choice>
 	</define>
 
-	
+
 
 	<define name="m.para.content">
 		<choice>
@@ -3044,7 +3044,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</optional>
 		</element>
 	</define>
-	
+
 	<define name="e.titleproper">
 		<element name="titleproper">
 			<ref name="a.common"/>
@@ -3070,6 +3070,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="subtitle">
 			<ref name="a.common"/>
 			<optional>
+				<ref name="a.localtype"/>
+			</optional>
+			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
 			<ref name="m.mixed.basic"/>
@@ -3078,6 +3081,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.author">
 		<element name="author">
 			<ref name="a.common"/>
+			<optional>
+				<ref name="a.localtype"/>
+			</optional>
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
@@ -3088,6 +3094,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="sponsor">
 			<ref name="a.common"/>
 			<optional>
+				<ref name="a.localtype"/>
+			</optional>
+			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
 			<ref name="m.mixed.basic"/>
@@ -3096,6 +3105,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.edition">
 		<element name="edition">
 			<ref name="a.common"/>
+			<optional>
+				<ref name="a.localtype"/>
+			</optional>
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
@@ -3128,6 +3140,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.publisher">
 		<element name="publisher">
 			<ref name="a.common"/>
+			<optional>
+				<ref name="a.localtype"/>
+			</optional>
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
@@ -3174,6 +3189,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<oneOrMore>
 				<element name="agencyname">
 					<ref name="a.common"/>
+					<optional>
+						<ref name="a.localtype"/>
+					</optional>
 					<text/>
 				</element>
 			</oneOrMore>
@@ -3196,49 +3214,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</element>
 	</define>
 
-	<!-- <define name="e.placeentry">
-		<element name="placeentry">
-			<ref name="a.common"/>
-			<optional>
-				<attribute name="transliteration"/>
-			</optional>
-			<optional>
-				<ref name="a.localtype"/>
-			</optional>
-			<optional>
-				<attribute name="countrycode">
-					<data type="string"/>
-				</attribute>
-			</optional>
-			<optional>
-				<attribute name="vocabularysource"/>
-			</optional>
-			<optional>
-				<attribute name="accuracy">
-					<text/>
-				</attribute>
-			</optional>
-			<optional>
-				<ref name="m.geographicalcoordinates"/>
-			</optional>
-			<text/>
-		</element>
-	</define>
-	-->
-
-	<define name="m.geographicalcoordinates">
-		<attribute name="longitude">
-			<data type="NMTOKEN"/>
-		</attribute>
-		<attribute name="latitude">
-			<data type="NMTOKEN"/>
-		</attribute>
-		<optional>
-			<attribute name="altitude">
-				<data type="NMTOKEN"/>
-			</attribute>
-		</optional>
-	</define>
 
 	<define name="a.lastdatetimeverified">
 		<attribute name="lastdatetimeverified">
