@@ -2160,7 +2160,8 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<ref name="a.desc.base"/>
 		<!--		<ref name="am.dsctab.tPattern"/> -->
 	</define>
-	<define name="a.access.no.normal">
+
+	<define name="a.access">
 		<optional>
 			<attribute name="source">
 				<data type="token"/>
@@ -2174,10 +2175,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<optional>
 			<attribute name="identifier"/>
 		</optional>
-	</define>
-
-	<define name="a.access">
-		<ref name="a.access.no.normal"/>
 		<optional>
 			<attribute name="normal"/>
 		</optional>
