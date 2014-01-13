@@ -89,6 +89,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="origination">
 			<ref name="a.common"/>
 			<optional>
+				<ref name="a.localtype"/>
+			</optional>
+			<optional>
 				<attribute name="label"/>
 			</optional>
 			<optional>
@@ -162,6 +165,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.repository">
 		<element name="repository">
 			<ref name="a.common"/>
+			<optional>
+				<ref name="a.localtype"/>
+			</optional>
 			<optional>
 				<attribute name="label"/>
 			</optional>
@@ -2246,6 +2252,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 
 			<element name="physdesc">
 				<ref name="a.common"/>
+				<optional>
+					<ref name="a.localtype"/>
+				</optional>
 				<optional>
 					<attribute name="label"/>
 				</optional>
