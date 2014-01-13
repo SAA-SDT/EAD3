@@ -46,8 +46,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.ead">
 		<element name="ead">
 			<ref name="a.common"/>
-			<!-- Would it make sense to have a single definition for @relatedencoding? 
-			Do we need to specify a data type? -MR -->
 			<optional>
 				<attribute name="relatedencoding"/>
 			</optional>
@@ -295,22 +293,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<optional>
 						<ref name="a.localtype"/>
 					</optional>
-					<optional>
-						<attribute name="standarddate">
-							<ref name="m.data.standarddate"/>
-						</attribute>
-					</optional>
-					<optional>
-						<attribute name="notbefore">
-							<ref name="m.data.standarddate"/>
-						</attribute>
-					</optional>
-					<optional>
-						<attribute name="notafter">
-							<ref name="m.data.standarddate"/>
-						</attribute>
-					</optional>
-					<ref name="m.mixed.basic"/>
+					<ref name="m.datesingle"/>
 				</element>
 			</optional>
 			<optional>
@@ -319,22 +302,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<optional>
 						<ref name="a.localtype"/>
 					</optional>
-					<optional>
-						<attribute name="standarddate">
-							<ref name="m.data.standarddate"/>
-						</attribute>
-					</optional>
-					<optional>
-						<attribute name="notbefore">
-							<ref name="m.data.standarddate"/>
-						</attribute>
-					</optional>
-					<optional>
-						<attribute name="notafter">
-							<ref name="m.data.standarddate"/>
-						</attribute>
-					</optional>
-					<ref name="m.mixed.basic"/>
+					<ref name="m.datesingle"/>
 				</element>
 			</optional>
 		</element>
@@ -615,6 +583,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 						<ref name="e.indexentry"/>
 					</oneOrMore>
 				</group>
+				<oneOrMore>
+					<ref name="e.index"/>
+				</oneOrMore>
 			</choice>
 		</element>
 	</define>
@@ -625,9 +596,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<element name="namegrp">
 					<ref name="a.common"/>
 					<oneOrMore>
-						<choice>
-							<ref name="m.access.title"/>
-						</choice>
+						<ref name="m.access.title"/>
 					</oneOrMore>
 				</element>
 				<ref name="m.access.title"/>
@@ -665,6 +634,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.materialspec">
 		<element name="materialspec">
 			<ref name="a.common"/>
+			<optional>
+				<attribute name="label"/>
+			</optional>
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
@@ -1288,7 +1260,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 					</choice>
 				</attribute>
 			</optional>
-			<text/>
+			<ref name="m.mixed.basic"/>
 		</element>
 	</define>
 
@@ -1349,7 +1321,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<choice>
 						<value>analyticover</value>
 						<value>combined</value>
-						<value>indepth</value>
+						<value>in-depth</value>
 						<value>otherdsctype</value>
 					</choice>
 				</attribute>
@@ -1362,7 +1334,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
-			<ref name="a.dsctab.tpattern"/>
 			<group>
 				<optional>
 					<ref name="e.head"/>
@@ -1377,13 +1348,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<ref name="m.cOrC01"/>
 			</optional>
-			<!-- Isn't the following <choice> duplicative of the preceding <optional>? -MR -->
-			<!--<choice>
-
-				<ref name="m.cOrC01"/>
-
-			</choice>-->
-
 		</element>
 	</define>
 
@@ -1430,8 +1394,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</element>
 	</define>
 
-	<!-- Title should have one or more <part>, not m.mixed.basic.  
-	Would that allow it to be added to m.access, eliminating the need for m.access.title? -MR-->
 	<define name="e.title">
 		<element name="title">
 			<ref name="a.common"/>
@@ -1457,7 +1419,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.c">
 		<element name="c">
 			<ref name="m.c.base"/>
-
 			<zeroOrMore>
 				<optional>
 					<ref name="e.thead"/>
@@ -1621,6 +1582,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<attribute name="localtype"/>
 			</optional>
+			<optional>
+				<attribute name="unit"/>
+			</optional>
 			<zeroOrMore>
 				<choice>
 					<ref name="m.mixed.basic"/>
@@ -1638,9 +1602,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</optional>
 			<optional>
 				<attribute name="unit"/>
-			</optional>
-			<optional>
-				<attribute name="encodinganalog"/>
 			</optional>
 			<ref name="m.mixed.basic.plus.access"/>
 		</element>
@@ -2062,13 +2023,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 	</define>
 
 	<!-- MODELS -->
-	<define name="a.dsctab.tpattern">
-		<optional>
-			<attribute name="tpattern">
-				<data type="NMTOKEN"/>
-			</attribute>
-		</optional>
-	</define>
 	<define name="a.common.empty">
 		<optional>
 			<attribute name="id">
@@ -2232,9 +2186,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<optional>
 					<attribute name="localtype"/>
 				</optional>
-				<optional>
-					<attribute name="localtypesource"/>
-				</optional>
 				<ref name="m.mixed.basic"/>
 			</element>
 
@@ -2255,6 +2206,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="a.common"/>
 				<optional>
 					<attribute name="label"/>
+				</optional>
+				<optional>
+					<attribute name="encodinganalog"/>
 				</optional>
 				<ref name="e.physdescstructured"/>
 				<oneOrMore>
@@ -2550,7 +2504,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="m.data.standarddate"/>
 			</attribute>
 		</optional>
-		<text/>
+		<ref name="m.mixed.basic"/>
 	</define>
 
 	<define name="m.relation">
@@ -2701,7 +2655,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</attribute>
 		</optional>
 	</define>
-	<!-- unitdate/@normal no longer enforces the iso 8601 pattern. Why? -MR -->
+	
 	<define name="am.date.normal">
 		<optional>
 			<attribute name="normal">
@@ -2919,7 +2873,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 								<ref name="a.lastdatetimeverified"/>
 							</optional>
 							<optional>
-								<!-- This source attribute as a data type wherease others don't. Should homogenize. -MR -->
 								<attribute name="source">
 									<data type="string"/>
 								</attribute>
@@ -3020,9 +2973,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 								</element>
 							</zeroOrMore>
 							<optional>
-								<choice>
-									<ref name="e.objectxmlwrap"/>
-								</choice>
+								<ref name="e.objectxmlwrap"/>
 							</optional>
 							<optional>
 								<ref name="e.descriptivenote"/>
