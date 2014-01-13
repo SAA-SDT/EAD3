@@ -2414,7 +2414,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 						<choice>
 							<group>
 								<optional>
-									<ref name="e.placeentry"/>
+									<ref name="e.geogname"/>
 								</optional>
 								<ref name="e.event"/>
 							</group>
@@ -2422,7 +2422,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 								<element name="chronitemset">
 									<ref name="a.common"/>
 									<zeroOrMore>
-										<ref name="e.placeentry"/>
+										<ref name="e.geogname"/>
 									</zeroOrMore>
 									<oneOrMore>
 										<ref name="e.event"/>
@@ -2570,7 +2570,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</choice>
 			</optional>
 			<optional>
-				<ref name="e.placeentry"/>
+				<ref name="e.geogname"/>
 			</optional>
 			<optional>
 				<ref name="e.descriptivenote"/>
@@ -3156,7 +3156,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</element>
 	</define>
 
-	<define name="e.placeentry">
+	<!-- <define name="e.placeentry">
 		<element name="placeentry">
 			<ref name="a.common"/>
 			<optional>
@@ -3184,6 +3184,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<text/>
 		</element>
 	</define>
+	-->
 
 	<define name="m.geographicalcoordinates">
 		<attribute name="longitude">
