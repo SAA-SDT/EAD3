@@ -2127,6 +2127,11 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</choice>
 			</attribute>
 		</optional>
+		<optional>
+			<attribute>
+				<anyName/>
+			</attribute>
+		</optional>
 	</define>
 	<define name="a.common">
 		<ref name="a.common.empty"/>
@@ -2136,6 +2141,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<optional>
 			<attribute name="script"/>
 		</optional>
+
 	</define>
 
 	<define name="a.desc.base">
