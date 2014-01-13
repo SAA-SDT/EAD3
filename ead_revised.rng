@@ -2534,7 +2534,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="m.data.standarddate"/>
 			</attribute>
 		</optional>
-		<text/>
+		<ref name="m.mixed.basic"/>
 	</define>
 
 	<define name="m.relation">
