@@ -329,7 +329,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!--                  NOTES                          -->
     <!-- ############################################### -->
 
-    <xsl:template match="c/note | arcdesc/note | descgrp/note">
+    <xsl:template match="c/note | archdesc/note | descgrp/note">
         <xsl:comment>
             <xsl:text>ELEMENT </xsl:text>
             <xsl:value-of select="local-name()"/>
@@ -347,6 +347,26 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:copy-of select="@*"/>
             <xsl:apply-templates/>
         </xsl:element>
+    </xsl:template>
+    
+    <xsl:template match="did/note">
+        <xsl:comment>
+            <xsl:text>ELEMENT </xsl:text>
+            <xsl:value-of select="local-name()"/>
+            <xsl:text>&#160;</xsl:text>
+            <xsl:text>RENAMED as 'didnote'</xsl:text>
+            <xsl:text>&#10;</xsl:text>
+        </xsl:comment>
+        <xsl:message>
+            <xsl:text>ELEMENT </xsl:text>
+            <xsl:value-of select="local-name()"/>
+            <xsl:text>&#160;</xsl:text>
+            <xsl:text>RENAMED as 'didnote'</xsl:text>
+        </xsl:message>
+        <didnote>
+            <xsl:copy-of select="@*"/>
+            <xsl:apply-templates select="p" mode="skipP"/>
+        </didnote>
     </xsl:template>
 
     <!-- ############################################### -->
@@ -373,7 +393,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:template
         match="abstract/@type | accessrestrict/@type | altformavail/@type | 
         phystech/@type | processinfo/@type | titleproper/@type | unitid/@type | 
-        userestruct/@type">
+        userestruct/@type | odd/@type">
         <xsl:attribute name="localtype">
             <xsl:value-of select="."/>
         </xsl:attribute>
@@ -491,7 +511,8 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:text>RENAMED as 'odd'</xsl:text>
         </xsl:message>
         <xsl:element name="odd" namespace="{$eadxmlns}" xmlns="urn:isbn:1-931666-22-9">
-            <xsl:copy-of select="@*"/>
+            <xsl:copy-of select="@* except @type"/>
+            <xsl:attribute name="localtype" select="@type"/>
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>

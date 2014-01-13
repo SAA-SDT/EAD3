@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../ead_revised.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<ead xmlns="http://ead3.archivists.org/schema/">
+<?xml-model href="../ead_revised.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><ead xmlns="http://ead3.archivists.org/schema/">
     <!--eadheader now control: Inserting minimal control element--><control>
       <recordid>[recordid]</recordid>
       <filedesc>
@@ -20,7 +19,7 @@
       <maintenancehistory>
          <maintenanceevent>
             <eventtype value="derived"/>
-            <eventdatetime>2014-01-06T12:04:31.765-05:00</eventdatetime>
+            <eventdatetime>2014-01-13T17:13:31.305-05:00</eventdatetime>
             <agenttype value="machine"/>
             <agent/>
          </maintenanceevent>
@@ -31,32 +30,27 @@
         <did>
             <abstract>abstract||| </abstract>
             <container>container||| </container>
-            <note>
-                <p>p in note||| </p>
-            </note>
-            <origination><!--Added child part element to persname-->
-            <persname>
+            <!--ELEMENT note RENAMED as 'didnote'
+--><didnote>p in note||| </didnote>
+            <origination><!--Added child part element to persname--><persname>
                <part>Bowers, Kate (persname)||| </part>
             </persname>
             <!--
                 Bowers, Kate (persname)||| 
-                (origination)||| -->
-         </origination>
+                (origination)||| --></origination>
             <physdesc>physdesc||| <extent>extent||| </extent>
             </physdesc>
             <physloc>physloc ||| </physloc>
-            <repository><!--Added child part element to corpname-->
-            <corpname>
+            <repository><!--Added child part element to corpname--><corpname>
                <part>corpname ||| </part>
             </corpname>
             <!--
-                corpname |||  in repository ||| -->
-         </repository>
+                corpname |||  in repository ||| --></repository>
             <unitdate calendar="gregorian" era="ce">unitdate ||| </unitdate>
             <unitid> unitid ||| </unitid>
             <unittitle> unittitle ||| </unittitle>
         </did>
-        <odd type="add">
+        <odd localtype="add">
             <head> head in add||| </head>
             <p>p in add||| </p>
         </odd>
@@ -67,7 +61,7 @@
                 </bibref>
             </bibliography>
             <!--ELEMENT blockquote RENAMED as 'odd'
---><odd>
+--><odd localtype="">
                 <p>p in blockquote in add||| </p>
             </odd>
             <!--NOT GONNA DEAL WITH chronlist NOW
@@ -153,7 +147,7 @@
                 <p>p in appraisal in in admininfo no head||| </p>
             </appraisal>
             <!--ELEMENT blockquote RENAMED as 'odd'
---><odd>
+--><odd localtype="">
                 <p>p in blockquote in admininfo||| </p>
             </odd>
             <!--NOT GONNA DEAL WITH chronlist NOW
@@ -195,7 +189,7 @@
                 <p>p in userestrict in admininfo, no head||| </p>
             </userestrict>
         
-        <odd type="admininfo">
+        <odd localtype="admininfo">
             <p>p in admininfo, no head||| </p>
         </odd>
         <arrangement>
@@ -245,9 +239,8 @@
                 <did>
                     <abstract>abstract in did in series level c ||| </abstract>
                     <container>container in did in series level c ||| </container>
-                    <note>
-                        <p>p in note in did in series level c ||| </p>
-                    </note>
+                    <!--ELEMENT note RENAMED as 'didnote'
+--><didnote>p in note in did in series level c ||| </didnote>
                     <origination>
                   <name>
                      <part>origination in did in series level c ||| </part>
@@ -261,15 +254,14 @@
                         <part>repository in did in series level c ||| </part>
                      </name>
                   </repository>
-                  <!--repository in did in series level c ||| -->
-               </repository>
+                  <!--repository in did in series level c ||| --></repository>
                     <unitdate calendar="gregorian" era="ce">unitdate in did in
                         series level c ||| </unitdate>
                     <unitid>unitid in did in series level c ||| </unitid>
                     <unittitle>unittitle in did in series level c |||
                     </unittitle>
                 </did>
-                <odd type="add">
+                <odd localtype="add">
                     <head> head in add||| </head>
                     <p>p in add||| </p>
                 </odd>
@@ -280,7 +272,7 @@
                             add||| </bibref>
                     </bibliography>
                     <!--ELEMENT blockquote RENAMED as 'odd'
---><odd>
+--><odd localtype="">
                         <p>p in blockquote in add||| </p>
                     </odd>
                     <!--NOT GONNA DEAL WITH chronlist NOW
@@ -367,7 +359,7 @@
                         <p>p in appraisal in in admininfo no head ||| </p>
                     </appraisal>
                     <!--ELEMENT blockquote RENAMED as 'odd'
---><odd>
+--><odd localtype="">
                         <p>p in blockquote in admininfo ||| </p>
                     </odd>
                     <!--NOT GONNA DEAL WITH chronlist NOW
@@ -409,7 +401,7 @@
                         <p>p in userestrict in admininfo, no head ||| </p>
                     </userestrict>
                 
-                <odd type="admininfo">
+                <odd localtype="admininfo">
                     <p>p in admininfo, no head ||| </p>
                 </odd>
                 <arrangement>
