@@ -2707,7 +2707,10 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<zeroOrMore>
 				<element name="otherrecordid">
 					<ref name="a.common"/>
-					<ref name="m.id"/>
+					<optional>
+						<ref name="a.localtype"/>
+					</optional>
+					<text/>
 				</element>
 			</zeroOrMore>
 			<zeroOrMore>
@@ -2992,13 +2995,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</optional>
 		</element>
 	</define>
-
-	<define name="m.id">
-		<optional>
-			<ref name="a.localtype"/>
-		</optional>
-		<text/>
-	</define>
+	
 	<define name="e.titleproper">
 		<element name="titleproper">
 			<ref name="a.common"/>
