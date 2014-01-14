@@ -1310,10 +1310,8 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.common"/>
 			<ref name="a.access"/>
 			<ref name="a.localtype"/>
-			<optional>
-				<attribute name="relator"/>
-			</optional>
 			<ref name="a.encodinganalog"/>
+			<ref name="a.relator"/>
 			<oneOrMore>
 				<ref name="e.part"/>
 			</oneOrMore>
@@ -1325,10 +1323,8 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.common"/>
 			<ref name="a.access"/>
 			<ref name="a.localtype"/>
-			<optional>
-				<attribute name="relator"/>
-			</optional>
 			<ref name="a.encodinganalog"/>
+			<ref name="a.relator"/>
 			<oneOrMore>
 				<ref name="e.part"/>
 			</oneOrMore>
@@ -1340,10 +1336,8 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.common"/>
 			<ref name="a.access"/>
 			<ref name="a.localtype"/>
-			<optional>
-				<attribute name="relator"/>
-			</optional>
 			<ref name="a.encodinganalog"/>
+			<ref name="a.relator"/>
 			<oneOrMore>
 				<ref name="e.part"/>
 			</oneOrMore>
@@ -1364,10 +1358,8 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.common"/>
 			<ref name="a.access"/>
 			<ref name="a.localtype"/>
-			<optional>
-				<attribute name="relator"/>
-			</optional>
 			<ref name="a.encodinganalog"/>
+			<ref name="a.relator"/>
 			<oneOrMore>
 				<ref name="e.part"/>
 			</oneOrMore>
@@ -1379,10 +1371,8 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.common"/>
 			<ref name="a.access"/>
 			<ref name="a.localtype"/>
-			<optional>
-				<attribute name="relator"/>
-			</optional>
 			<ref name="a.encodinganalog"/>
+			<ref name="a.relator"/>
 			<oneOrMore>
 				<ref name="e.part"/>
 			</oneOrMore>
@@ -1395,9 +1385,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.access"/>
 			<ref name="a.encodinganalog"/>
 			<ref name="a.localtype"/>
-			<optional>
-				<attribute name="relator"/>
-			</optional>
+			<ref name="a.relator"/>
 			<oneOrMore>
 				<ref name="e.part"/>
 			</oneOrMore>
@@ -1410,9 +1398,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.access"/>
 			<ref name="a.encodinganalog"/>
 			<ref name="a.localtype"/>
-			<optional>
-				<attribute name="relator"/>
-			</optional>
+			<ref name="a.relator"/>
 			<oneOrMore>
 				<ref name="e.part"/>
 			</oneOrMore>
@@ -1425,9 +1411,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.access"/>
 			<ref name="a.encodinganalog"/>
 			<ref name="a.localtype"/>
-			<optional>
-				<attribute name="relator"/>
-			</optional>
+			<ref name="a.relator"/>
 			<oneOrMore>
 				<ref name="e.part"/>
 			</oneOrMore>
@@ -1440,9 +1424,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.access"/>
 			<ref name="a.encodinganalog"/>
 			<ref name="a.localtype"/>
-			<optional>
-				<attribute name="relator"/>
-			</optional>
+			<ref name="a.relator"/>
 			<oneOrMore>
 				<ref name="e.part"/>
 			</oneOrMore>
@@ -1455,13 +1437,11 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.localtype"/>
 			<ref name="a.access"/>
 			<ref name="a.encodinganalog"/>
+			<ref name="a.relator"/>
 			<optional>
 				<attribute name="render">
 					<ref name="av.render"/>
 				</attribute>
-			</optional>
-			<optional>
-				<attribute name="relator"/>
 			</optional>
 			<oneOrMore>
 				<ref name="e.part"/>
