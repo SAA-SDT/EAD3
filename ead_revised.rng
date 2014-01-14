@@ -619,10 +619,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="a.common"/>
 				<optional>
 					<attribute name="approximate">
-						<choice>
-							<value>yes</value>
-							<value>no</value>
-						</choice>
+						<ref name="av.yesorno"/>
 					</attribute>
 				</optional>
 				<text/>
