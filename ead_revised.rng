@@ -515,7 +515,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<zeroOrMore>
 				<element name="otheragencycode">
 					<ref name="a.common"/>
-					<ref name="a.localtype"/>
+					<optional>
+						<ref name="a.localtype"/>
+					</optional>
 					<text/>
 				</element>
 			</zeroOrMore>
