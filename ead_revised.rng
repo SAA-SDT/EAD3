@@ -53,9 +53,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<element name="archdesc">
 				<ref name="a.common"/>
 				<attribute name="level">
-					<choice>
-						<ref name="av.level"/>
-					</choice>
+					<ref name="av.level"/>
 				</attribute>
 				<ref name="a.desc.base"/>
 				<optional>
