@@ -506,7 +506,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<element name="agencycode">
 					<ref name="a.common"/>
-					<ref name="a.localtype"/>
+					<optional>
+						<ref name="a.localtype"/>
+					</optional>
 					<text/>
 				</element>
 			</optional>
