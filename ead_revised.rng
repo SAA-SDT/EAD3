@@ -2522,10 +2522,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="p">
 			<ref name="a.common"/>
 			<zeroOrMore>
-				<choice>
-					<text/>
-					<ref name="m.para.content"/>
-				</choice>
+				<ref name="m.para.content"/>
 			</zeroOrMore>
 		</element>
 	</define>
