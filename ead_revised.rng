@@ -1740,12 +1740,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 								</choice>
 							</attribute>
 						</optional>
-						<zeroOrMore>
-							<choice>
-								<text/>
-								<ref name="m.para.content"/>
-							</choice>
-						</zeroOrMore>
+						<ref name="m.para.content"/>
 					</element>
 				</choice>
 
