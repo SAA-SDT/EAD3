@@ -2672,15 +2672,12 @@ For these and/or other purposes and motivations, and without any expectation of 
 						<data type="IDREFS"/>
 					</attribute>
 				</optional>
-				
 				<optional>
 					<attribute name="containerid">
 						<data type="NMTOKEN"/>
 					</attribute>
 				</optional>
-				
 				<ref name="m.mixed.basic"/>
-				
 			</element>
 			<ref name="e.materialspec"/>
 			<ref name="e.dao"/>
