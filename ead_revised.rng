@@ -356,9 +356,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 							<optional>
 								<ref name="a.lastdatetimeverified"/>
 							</optional>
-							<optional>
-								<ref name="am.simplelink"/>
-							</optional>
+							<ref name="am.simplelink"/>
 							<zeroOrMore>
 								<element name="sourceentry">
 									<ref name="a.common"/>
