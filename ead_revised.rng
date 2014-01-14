@@ -2600,9 +2600,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 							<data type="dateTime"/>
 						</attribute>
 					</optional>
-					<optional>
-						<ref name="am.simplelink"/>
-					</optional>
+					<ref name="am.simplelink"/>
 					<zeroOrMore>
 						<element name="relationentry">
 							<ref name="a.common"/>
