@@ -3067,6 +3067,12 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</optional>
 	</define>
 	
+	<define name="a.encodinganalog">
+		<optional>
+			<attribute name="encodinganalog"/>
+		</optional>
+	</define>
+	
 	<define name="a.link.href">
 		<attribute name="href">
 			<data type="anyURI"/>
