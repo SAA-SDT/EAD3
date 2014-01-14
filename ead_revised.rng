@@ -369,9 +369,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</attribute>
 			</optional>
 			<ref name="a.encodinganalog"/>
-
 			<ref name="m.mixed.basic"/>
-
 		</element>
 	</define>
 	<define name="e.subtitle">
