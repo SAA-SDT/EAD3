@@ -1867,11 +1867,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="bibref">
 			<ref name="a.common"/>
 			<ref name="a.encodinganalog"/>
-			<zeroOrMore>
-				<choice>
-					<ref name="m.mixed.basic.plus.access"/>
-				</choice>
-			</zeroOrMore>
+			<ref name="m.mixed.basic.plus.access"/>
 		</element>
 	</define>
 
@@ -1879,11 +1875,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="archref">
 			<ref name="a.common"/>
 			<ref name="a.encodinganalog"/>
-			<zeroOrMore>
-				<choice>
-					<ref name="m.mixed.basic.plus.access"/>
-				</choice>
-			</zeroOrMore>
+			<ref name="m.mixed.basic.plus.access"/>
 		</element>
 	</define>
     <!-- dsc -->
