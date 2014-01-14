@@ -107,14 +107,10 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</zeroOrMore>
 			<element name="filedesc">
 				<ref name="a.common"/>
-				<optional>
-					<attribute name="encodinganalog"/>
-				</optional>
+				<ref name="a.encodinganalog"/>
 				<element name="titlestmt">
 					<ref name="a.common"/>
-					<optional>
-						<attribute name="encodinganalog"/>
-					</optional>
+					<ref name="a.encodinganalog"/>
 					<oneOrMore>
 						<ref name="e.titleproper"/>
 					</oneOrMore>
@@ -131,9 +127,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<optional>
 					<element name="editionstmt">
 						<ref name="a.common"/>
-						<optional>
-							<attribute name="encodinganalog"/>
-						</optional>
+						<ref name="a.encodinganalog"/>
 						<oneOrMore>
 							<choice>
 								<ref name="e.edition"/>
@@ -145,9 +139,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<optional>
 					<element name="publicationstmt">
 						<ref name="a.common"/>
-						<optional>
-							<attribute name="encodinganalog"/>
-						</optional>
+						<ref name="a.encodinganalog"/>
 						<oneOrMore>
 							<choice>
 								<ref name="e.publisher"/>
@@ -162,9 +154,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<optional>
 					<element name="seriesstmt">
 						<ref name="a.common"/>
-						<optional>
-							<attribute name="encodinganalog"/>
-						</optional>
+						<ref name="a.encodinganalog"/>
 						<oneOrMore>
 							<choice>
 								<ref name="e.titleproper"/>
@@ -177,9 +167,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<optional>
 					<element name="notestmt">
 						<ref name="a.common"/>
-						<optional>
-							<attribute name="encodinganalog"/>
-						</optional>
+						<ref name="a.encodinganalog"/>
 						<oneOrMore>
 							<ref name="e.controlnote"/>
 						</oneOrMore>
@@ -380,9 +368,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="av.render"/>
 				</attribute>
 			</optional>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 
 			<ref name="m.mixed.basic"/>
 
@@ -392,9 +378,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="subtitle">
 			<ref name="a.common"/>
 			<ref name="a.localtype"/>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<ref name="m.mixed.basic"/>
 		</element>
 	</define>
@@ -402,9 +386,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="author">
 			<ref name="a.common"/>
 			<ref name="a.localtype"/>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<ref name="m.mixed.basic"/>
 		</element>
 	</define>
@@ -412,9 +394,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="sponsor">
 			<ref name="a.common"/>
 			<ref name="a.localtype"/>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<ref name="m.mixed.basic"/>
 		</element>
 	</define>
@@ -422,9 +402,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="edition">
 			<ref name="a.common"/>
 			<ref name="a.localtype"/>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 
 			<ref name="m.mixed.basic"/>
 
@@ -440,9 +418,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<attribute name="certainty"/>
 			</optional>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 
 			<ref name="m.mixed.basic"/>
 
@@ -453,9 +429,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="publisher">
 			<ref name="a.common"/>
 			<ref name="a.localtype"/>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 
 			<ref name="m.mixed.basic"/>
 
@@ -465,9 +439,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="controlnote">
 			<ref name="a.common"/>
 			<ref name="a.localtype"/>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<oneOrMore>
 				<ref name="m.blocks"/>
 			</oneOrMore>
@@ -524,9 +496,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.did">
 		<element name="did">
 			<ref name="a.common"/>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<optional>
 				<ref name="e.head"/>
 			</optional>
@@ -542,9 +512,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<attribute name="label"/>
 			</optional>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<oneOrMore>
 				<choice>
 					<ref name="e.corpname"/>
@@ -561,9 +529,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<attribute name="label"/>
 			</optional>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<attribute name="physdescstructuredtype">
 				<choice>
 					<value>carrier</value>
@@ -604,9 +570,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<attribute name="label"/>
 			</optional>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<oneOrMore>
 				<choice>
 					<ref name="e.corpname"/>
@@ -627,9 +591,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<attribute name="label"/>
 			</optional>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<ref name="a.localtype"/>
 			<optional>
 				<attribute name="normal"/>
@@ -662,9 +624,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<attribute name="certainty"/>
 			</optional>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<ref name="m.mixed.basic"/>
 		</element>
 	</define>
@@ -685,9 +645,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<attribute name="certainty"/>
 			</optional>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<optional>
 				<attribute name="datechar"/>
 			</optional>
@@ -895,9 +853,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.accessrestrict">
 		<element name="accessrestrict">
 			<ref name="a.common"/>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<ref name="a.localtype"/>
 			<optional>
 				<ref name="e.head"/>
@@ -918,9 +874,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="accruals">
 			<ref name="a.common"/>
 			<ref name="a.localtype"/>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<optional>
 				<ref name="e.head"/>
 			</optional>
@@ -937,9 +891,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="fileplan">
 			<ref name="a.common"/>
 			<ref name="a.localtype"/>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<optional>
 				<ref name="e.head"/>
 			</optional>
@@ -956,9 +908,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="acqinfo">
 			<ref name="a.common"/>
 			<ref name="a.localtype"/>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<optional>
 				<ref name="e.head"/>
 			</optional>
@@ -974,9 +924,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.altformavail">
 		<element name="altformavail">
 			<ref name="a.common"/>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<ref name="a.localtype"/>
 			<optional>
 				<ref name="e.head"/>
@@ -993,9 +941,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.originalsloc">
 		<element name="originalsloc">
 			<ref name="a.common"/>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<ref name="a.localtype"/>
 			<optional>
 				<ref name="e.head"/>
@@ -1012,9 +958,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.phystech">
 		<element name="phystech">
 			<ref name="a.common"/>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<ref name="a.localtype"/>
 			<optional>
 				<ref name="e.head"/>
@@ -1032,9 +976,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="appraisal">
 			<ref name="a.common"/>
 			<ref name="a.localtype"/>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<optional>
 				<ref name="e.head"/>
 			</optional>
@@ -1051,9 +993,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="custodhist">
 			<ref name="a.common"/>
 			<ref name="a.localtype"/>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<optional>
 				<ref name="e.head"/>
 			</optional>
@@ -1070,9 +1010,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="index">
 			<ref name="a.common"/>
 			<ref name="a.localtype"/>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<optional>
 				<ref name="e.head"/>
 			</optional>
@@ -1125,9 +1063,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.legalstatus">
 		<element name="legalstatus">
 			<ref name="a.common"/>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<ref name="a.localtype"/>
 			<optional>
 				<ref name="e.head"/>
@@ -1146,9 +1082,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<attribute name="label"/>
 			</optional>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<ref name="a.localtype"/>
 			<ref name="m.mixed.basic"/>
 		</element>
@@ -1157,9 +1091,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="prefercite">
 			<ref name="a.common"/>
 			<ref name="a.localtype"/>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<optional>
 				<ref name="e.head"/>
 			</optional>
@@ -1176,9 +1108,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="processinfo">
 			<ref name="a.common"/>
 			<ref name="a.localtype"/>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<optional>
 				<ref name="e.head"/>
 			</optional>
@@ -1194,9 +1124,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.userestrict">
 		<element name="userestrict">
 			<ref name="a.common"/>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<ref name="a.localtype"/>
 			<optional>
 				<ref name="e.head"/>
@@ -1214,9 +1142,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="bioghist">
 			<ref name="a.common"/>
 			<ref name="a.localtype"/>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<optional>
 				<ref name="e.head"/>
 			</optional>
@@ -1233,9 +1159,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="controlaccess">
 			<ref name="a.common"/>
 			<ref name="a.localtype"/>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<optional>
 				<ref name="e.head"/>
 			</optional>
@@ -1253,9 +1177,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="odd">
 			<ref name="a.common"/>
 			<ref name="a.localtype"/>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<optional>
 				<ref name="e.head"/>
 			</optional>
@@ -1271,9 +1193,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="scopecontent">
 			<ref name="a.common"/>
 			<ref name="a.localtype"/>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<optional>
 				<ref name="e.head"/>
 			</optional>
@@ -1290,9 +1210,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="arrangement">
 			<ref name="a.common"/>
 			<ref name="a.localtype"/>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<optional>
 				<ref name="e.head"/>
 			</optional>
@@ -1309,9 +1227,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="bibliography">
 			<ref name="a.common"/>
 			<ref name="a.localtype"/>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<optional>
 				<ref name="e.head"/>
 			</optional>
@@ -1329,9 +1245,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="relatedmaterial">
 			<ref name="a.common"/>
 			<ref name="a.localtype"/>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<optional>
 				<ref name="e.head"/>
 			</optional>
@@ -1350,9 +1264,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="separatedmaterial">
 			<ref name="a.common"/>
 			<ref name="a.localtype"/>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<optional>
 				<ref name="e.head"/>
 			</optional>
@@ -1371,9 +1283,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="otherfindaid">
 			<ref name="a.common"/>
 			<ref name="a.localtype"/>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<optional>
 				<ref name="e.head"/>
 			</optional>
@@ -1398,9 +1308,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<attribute name="relator"/>
 			</optional>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<oneOrMore>
 				<ref name="e.part"/>
 			</oneOrMore>
@@ -1415,9 +1323,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<attribute name="relator"/>
 			</optional>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<oneOrMore>
 				<ref name="e.part"/>
 			</oneOrMore>
@@ -1434,9 +1340,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<attribute name="relator"/>
 			</optional>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<oneOrMore>
 				<ref name="e.part"/>
 			</oneOrMore>
@@ -1462,9 +1366,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<attribute name="relator"/>
 			</optional>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<oneOrMore>
 				<ref name="e.part"/>
 			</oneOrMore>
@@ -1481,9 +1383,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<attribute name="relator"/>
 			</optional>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<oneOrMore>
 				<ref name="e.part"/>
 			</oneOrMore>
@@ -1494,9 +1394,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="occupation">
 			<ref name="a.common"/>
 			<ref name="a.access"/>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<ref name="a.localtype"/>
 			<optional>
 				<attribute name="relator"/>
@@ -1511,9 +1409,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="subject">
 			<ref name="a.common"/>
 			<ref name="a.access"/>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<ref name="a.localtype"/>
 			<optional>
 				<attribute name="relator"/>
@@ -1528,9 +1424,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="genreform">
 			<ref name="a.common"/>
 			<ref name="a.access"/>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<ref name="a.localtype"/>
 			<optional>
 				<attribute name="relator"/>
@@ -1545,9 +1439,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="function">
 			<ref name="a.common"/>
 			<ref name="a.access"/>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<ref name="a.localtype"/>
 			<optional>
 				<attribute name="relator"/>
@@ -1570,9 +1462,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</attribute>
 			</optional>
 			<ref name="a.access"/>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<oneOrMore>
 				<ref name="e.part"/>
 			</oneOrMore>
@@ -1582,9 +1472,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.part">
 		<element name="part">
 			<ref name="a.common"/>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<ref name="a.localtype"/>
 			<text/>
 		</element>
@@ -2035,9 +1923,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.bibref">
 		<element name="bibref">
 			<ref name="a.common"/>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<zeroOrMore>
 				<choice>
 					<ref name="m.mixed.basic.plus.access"/>
@@ -2049,9 +1935,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.archref">
 		<element name="archref">
 			<ref name="a.common"/>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<zeroOrMore>
 				<choice>
 					<ref name="m.mixed.basic.plus.access"/>
@@ -2078,9 +1962,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<data type="NMTOKEN"/>
 				</attribute>
 			</optional>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<group>
 				<optional>
 					<ref name="e.head"/>
@@ -2289,9 +2171,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.language">
 		<element name="language">
 			<ref name="a.common"/>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<optional>
 				<attribute name="label"/>
 			</optional>
@@ -2304,9 +2184,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.script">
 		<element name="script">
 			<ref name="a.common"/>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<optional>
 				<attribute name="label"/>
 			</optional>
@@ -2321,9 +2199,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.languageset">
 		<element name="languageset">
 			<ref name="a.common"/>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<oneOrMore>
 				<ref name="e.language"/>
 			</oneOrMore>
@@ -2763,9 +2639,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<optional>
 					<attribute name="label"/>
 				</optional>
-				<optional>
-					<attribute name="encodinganalog"/>
-				</optional>
+				<ref name="a.encodinganalog"/>
 				<ref name="m.mixed.basic.plus.access"/>
 			</element>
 			<element name="langmaterial">
@@ -2773,9 +2647,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<optional>
 					<attribute name="label"/>
 				</optional>
-				<optional>
-					<attribute name="encodinganalog"/>
-				</optional>
+				<ref name="a.encodinganalog"/>
 				<oneOrMore>
 					<choice>
 						<ref name="e.language"/>
@@ -2792,9 +2664,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<optional>
 					<attribute name="label"/>
 				</optional>
-				<optional>
-					<attribute name="encodinganalog"/>
-				</optional>
+				<ref name="a.encodinganalog"/>
 				<ref name="m.mixed.basic"/>
 			</element>
 			
@@ -2807,9 +2677,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<optional>
 					<attribute name="label"/>
 				</optional>
-				<optional>
-					<attribute name="encodinganalog"/>
-				</optional>
+				<ref name="a.encodinganalog"/>
 				<ref name="m.mixed.basic"/>
 			</element>
 			<element name="parallelphysdescset">
@@ -2817,9 +2685,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<optional>
 					<attribute name="label"/>
 				</optional>
-				<optional>
-					<attribute name="encodinganalog"/>
-				</optional>
+				<ref name="a.encodinganalog"/>
 				<ref name="e.physdescstructured"/>
 				<oneOrMore>
 					<ref name="e.physdescstructured"/>
@@ -2832,9 +2698,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<optional>
 					<attribute name="label"/>
 				</optional>
-				<optional>
-					<attribute name="encodinganalog"/>
-				</optional>
+				<ref name="a.encodinganalog"/>
 				<optional>
 					<attribute name="parent">
 						<data type="IDREFS"/>
@@ -2861,9 +2725,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<optional>
 					<attribute name="identifier"/>
 				</optional>
-				<optional>
-					<attribute name="encodinganalog"/>
-				</optional>
+				<ref name="a.encodinganalog"/>
 				<ref name="m.mixed.basic"/>
 			</element>
 			<ref name="e.unittitle"/>
@@ -2873,9 +2735,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<attribute name="label"/>
 				</optional>
 				<ref name="a.localtype"/>
-				<optional>
-					<attribute name="encodinganalog"/>
-				</optional>
+				<ref name="a.encodinganalog"/>
 				<optional>
 					<attribute name="parent">
 						<data type="IDREFS"/>
@@ -3023,9 +2883,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<data type="NMTOKEN"/>
 			</attribute>
 		</optional>
-		<optional>
-			<attribute name="encodinganalog"/>
-		</optional>
+		<ref name="a.encodinganalog"/>
 	</define>
 	<define name="a.desc.c">
 		<ref name="a.common"/>
