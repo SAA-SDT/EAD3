@@ -821,10 +821,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 							<ref name="a.common"/>
 							<ref name="a.loc.internal.ptr"/>
 							<zeroOrMore>
-								<choice>
-									<text/>
-									<ref name="m.mixed.basic"/>
-								</choice>
+								<ref name="m.mixed.basic"/>
 							</zeroOrMore>
 						</element>
 						<element name="extrefloc">
