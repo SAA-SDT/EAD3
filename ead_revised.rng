@@ -1541,34 +1541,19 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<element name="head01">
 					<ref name="a.common"/>
-					<zeroOrMore>
-						<choice>
-							<text/>
-							<ref name="m.mixed.basic"/>
-						</choice>
-					</zeroOrMore>
+					<ref name="m.mixed.basic"/>
 				</element>
 			</optional>
 			<optional>
 				<element name="head02">
 					<ref name="a.common"/>
-					<zeroOrMore>
-						<choice>
-							<text/>
-							<ref name="m.mixed.basic"/>
-						</choice>
-					</zeroOrMore>
+					<ref name="m.mixed.basic"/>
 				</element>
 			</optional>
 			<optional>
 				<element name="head03">
 					<ref name="a.common"/>
-					<zeroOrMore>
-						<choice>
-							<text/>
-							<ref name="m.mixed.basic"/>
-						</choice>
-					</zeroOrMore>
+					<ref name="m.mixed.basic"/>
 				</element>
 			</optional>
 		</element>
