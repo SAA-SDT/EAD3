@@ -820,9 +820,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 						<element name="refloc">
 							<ref name="a.common"/>
 							<ref name="a.loc.internal.ptr"/>
-							<zeroOrMore>
-								<ref name="m.mixed.basic"/>
-							</zeroOrMore>
+							<ref name="m.mixed.basic"/>
 						</element>
 						<element name="extrefloc">
 							<ref name="a.common"/>
