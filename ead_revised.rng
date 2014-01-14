@@ -1522,12 +1522,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.item">
 		<element name="item">
 			<ref name="a.common"/>
-			<zeroOrMore>
-				<choice>
-					<text/>
-					<ref name="m.para.content"/>
-				</choice>
-			</zeroOrMore>
+			<ref name="m.para.content"/>
 		</element>
 	</define>
 
