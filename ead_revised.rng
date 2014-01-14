@@ -1489,7 +1489,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.common"/>
 			<ref name="a.access"/>
 			<optional>
-				<attribute name="localtype"/>
+				<ref name="a.localtype"/>
 			</optional>
 			<optional>
 				<attribute name="relator"/>
@@ -1508,7 +1508,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.common"/>
 			<ref name="a.access"/>
 			<optional>
-				<attribute name="localtype"/>
+				<ref name="a.localtype"/>
 			</optional>
 			<optional>
 				<attribute name="relator"/>
@@ -1529,7 +1529,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.common"/>
 			<ref name="a.access"/>
 			<optional>
-				<attribute name="localtype"/>
+				<ref name="a.localtype"/>
 			</optional>
 			<optional>
 				<attribute name="relator"/>
@@ -1559,7 +1559,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.common"/>
 			<ref name="a.access"/>
 			<optional>
-				<attribute name="localtype"/>
+				<ref name="a.localtype"/>
 			</optional>
 			<optional>
 				<attribute name="relator"/>
@@ -1580,7 +1580,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.common"/>
 			<ref name="a.access"/>
 			<optional>
-				<attribute name="localtype"/>
+				<ref name="a.localtype"/>
 			</optional>
 			<optional>
 				<attribute name="relator"/>
@@ -1602,7 +1602,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<attribute name="encodinganalog"/>
 			</optional>
 			<optional>
-				<attribute name="localtype"/>
+				<ref name="a.localtype"/>
 			</optional>
 			<optional>
 				<attribute name="relator"/>
@@ -1621,7 +1621,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<attribute name="encodinganalog"/>
 			</optional>
 			<optional>
-				<attribute name="localtype"/>
+				<ref name="a.localtype"/>
 			</optional>
 			<optional>
 				<attribute name="relator"/>
@@ -1640,7 +1640,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<attribute name="encodinganalog"/>
 			</optional>
 			<optional>
-				<attribute name="localtype"/>
+				<ref name="a.localtype"/>
 			</optional>
 			<optional>
 				<attribute name="relator"/>
@@ -1659,7 +1659,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<attribute name="encodinganalog"/>
 			</optional>
 			<optional>
-				<attribute name="localtype"/>
+				<ref name="a.localtype"/>
 			</optional>
 			<optional>
 				<attribute name="relator"/>
@@ -1673,7 +1673,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="title">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="localtype"/>
+				<ref name="a.localtype"/>
 			</optional>
 			<optional>
 				<attribute name="relator"/>
