@@ -3179,9 +3179,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<ref name="a.common"/>
 		<optional>
 			<attribute name="level">
-				<choice>
-					<ref name="av.level"/>
-				</choice>
+				<ref name="av.level"/>
 			</attribute>
 		</optional>
 		<ref name="a.desc.base"/>
