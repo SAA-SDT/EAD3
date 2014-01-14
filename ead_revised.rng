@@ -401,9 +401,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.common"/>
 			<ref name="a.localtype"/>
 			<ref name="a.encodinganalog"/>
-
 			<ref name="m.mixed.basic"/>
-
 		</element>
 	</define>
 	<define name="e.date">
@@ -417,9 +415,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<attribute name="certainty"/>
 			</optional>
 			<ref name="a.encodinganalog"/>
-
 			<ref name="m.mixed.basic"/>
-
 		</element>
 	</define>
 
@@ -428,9 +424,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.common"/>
 			<ref name="a.localtype"/>
 			<ref name="a.encodinganalog"/>
-
 			<ref name="m.mixed.basic"/>
-
 		</element>
 	</define>
 	<define name="e.controlnote">
@@ -503,6 +497,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</oneOrMore>
 		</element>
 	</define>
+	
 	<define name="e.origination">
 		<element name="origination">
 			<ref name="a.common"/>
@@ -521,6 +516,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</oneOrMore>
 		</element>
 	</define>
+	
 	<define name="e.physdescstructured">
 		<element name="physdescstructured">
 			<ref name="a.common"/>
@@ -561,6 +557,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</optional>
 		</element>
 	</define>
+	
 	<define name="e.repository">
 		<element name="repository">
 			<ref name="a.common"/>
@@ -626,6 +623,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="m.mixed.basic"/>
 		</element>
 	</define>
+	
 	<define name="e.unitdatestructured">
 		<element name="unitdatestructured">
 			<ref name="a.common"/>
@@ -733,6 +731,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</optional>
 		</element>
 	</define>
+	
 	<!--
 	<define name="e.daogrp">
 		<element name="daogrp">
@@ -846,6 +845,18 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</element>
 	</define>
 	
+	<define name="e.materialspec">
+		<element name="materialspec">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="label"/>
+			</optional>
+			<ref name="a.encodinganalog"/>
+			<ref name="a.localtype"/>
+			<ref name="m.mixed.basic"/>
+		</element>
+	</define>	
+	
 	<!-- archdesc notes -->
 	
 	<define name="e.accessrestrict">
@@ -885,6 +896,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 
 		</element>
 	</define>
+	
 	<define name="e.fileplan">
 		<element name="fileplan">
 			<ref name="a.common"/>
@@ -902,6 +914,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 
 		</element>
 	</define>
+	
 	<define name="e.acqinfo">
 		<element name="acqinfo">
 			<ref name="a.common"/>
@@ -919,6 +932,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 
 		</element>
 	</define>
+	
 	<define name="e.altformavail">
 		<element name="altformavail">
 			<ref name="a.common"/>
@@ -933,9 +947,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="e.altformavail"/>
 				</choice>
 			</oneOrMore>
-
 		</element>
 	</define>
+	
 	<define name="e.originalsloc">
 		<element name="originalsloc">
 			<ref name="a.common"/>
@@ -950,9 +964,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="e.originalsloc"/>
 				</choice>
 			</oneOrMore>
-
 		</element>
 	</define>
+	
 	<define name="e.phystech">
 		<element name="phystech">
 			<ref name="a.common"/>
@@ -967,9 +981,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="e.phystech"/>
 				</choice>
 			</oneOrMore>
-
 		</element>
 	</define>
+	
 	<define name="e.appraisal">
 		<element name="appraisal">
 			<ref name="a.common"/>
@@ -984,9 +998,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="e.appraisal"/>
 				</choice>
 			</oneOrMore>
-
 		</element>
 	</define>
+	
 	<define name="e.custodhist">
 		<element name="custodhist">
 			<ref name="a.common"/>
@@ -1001,9 +1015,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="e.custodhist"/>
 				</choice>
 			</oneOrMore>
-
 		</element>
 	</define>
+	
 	<define name="e.index">
 		<element name="index">
 			<ref name="a.common"/>
@@ -1030,6 +1044,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</choice>
 		</element>
 	</define>
+	
 	<define name="e.indexentry">
 		<element name="indexentry">
 			<ref name="a.common"/>
@@ -1058,6 +1073,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</zeroOrMore>
 		</element>
 	</define>
+	
 	<define name="e.legalstatus">
 		<element name="legalstatus">
 			<ref name="a.common"/>
@@ -1074,17 +1090,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</oneOrMore>
 		</element>
 	</define>
-	<define name="e.materialspec">
-		<element name="materialspec">
-			<ref name="a.common"/>
-			<optional>
-				<attribute name="label"/>
-			</optional>
-			<ref name="a.encodinganalog"/>
-			<ref name="a.localtype"/>
-			<ref name="m.mixed.basic"/>
-		</element>
-	</define>
+	
 	<define name="e.prefercite">
 		<element name="prefercite">
 			<ref name="a.common"/>
@@ -1099,9 +1105,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="e.prefercite"/>
 				</choice>
 			</oneOrMore>
-
 		</element>
 	</define>
+	
 	<define name="e.processinfo">
 		<element name="processinfo">
 			<ref name="a.common"/>
@@ -1116,9 +1122,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="e.processinfo"/>
 				</choice>
 			</oneOrMore>
-
 		</element>
 	</define>
+	
 	<define name="e.userestrict">
 		<element name="userestrict">
 			<ref name="a.common"/>
@@ -1133,9 +1139,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="e.userestrict"/>
 				</choice>
 			</oneOrMore>
-
 		</element>
 	</define>
+	
 	<define name="e.bioghist">
 		<element name="bioghist">
 			<ref name="a.common"/>
@@ -1150,9 +1156,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="e.bioghist"/>
 				</choice>
 			</oneOrMore>
-
 		</element>
 	</define>
+	
 	<define name="e.controlaccess">
 		<element name="controlaccess">
 			<ref name="a.common"/>
@@ -1168,9 +1174,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="e.controlaccess"/>
 				</choice>
 			</oneOrMore>
-
 		</element>
 	</define>
+	
 	<define name="e.odd">
 		<element name="odd">
 			<ref name="a.common"/>
@@ -1187,6 +1193,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</oneOrMore>
 		</element>
 	</define>
+	
 	<define name="e.scopecontent">
 		<element name="scopecontent">
 			<ref name="a.common"/>
@@ -1201,9 +1208,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="e.scopecontent"/>
 				</choice>
 			</oneOrMore>
-
 		</element>
 	</define>
+	
 	<define name="e.arrangement">
 		<element name="arrangement">
 			<ref name="a.common"/>
@@ -1218,9 +1225,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="e.arrangement"/>
 				</choice>
 			</oneOrMore>
-
 		</element>
 	</define>
+	
 	<define name="e.bibliography">
 		<element name="bibliography">
 			<ref name="a.common"/>
@@ -1239,6 +1246,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</oneOrMore>
 		</element>
 	</define>
+	
 	<define name="e.relatedmaterial">
 		<element name="relatedmaterial">
 			<ref name="a.common"/>
@@ -1255,9 +1263,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="e.bibref"/>
 				</choice>
 			</oneOrMore>
-
 		</element>
 	</define>
+	
 	<define name="e.separatedmaterial">
 		<element name="separatedmaterial">
 			<ref name="a.common"/>
@@ -1274,9 +1282,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="e.bibref"/>
 				</choice>
 			</oneOrMore>
-
 		</element>
 	</define>
+	
 	<define name="e.otherfindaid">
 		<element name="otherfindaid">
 			<ref name="a.common"/>
@@ -1293,7 +1301,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="e.bibref"/>
 				</choice>
 			</oneOrMore>
-
 		</element>
 	</define>
 	
@@ -1310,9 +1317,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<oneOrMore>
 				<ref name="e.part"/>
 			</oneOrMore>
-			
 		</element>
 	</define>
+	
 	<define name="e.famname">
 		<element name="famname">
 			<ref name="a.common"/>
@@ -1325,11 +1332,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<oneOrMore>
 				<ref name="e.part"/>
 			</oneOrMore>
-			
-			
-			
 		</element>
 	</define>
+	
 	<define name="e.geogname">
 		<element name="geogname">
 			<ref name="a.common"/>
@@ -1351,11 +1356,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<text/>
 				</element>
 			</zeroOrMore>
-			
-			
-			
 		</element>
 	</define>
+	
 	<define name="e.name">
 		<element name="name">
 			<ref name="a.common"/>
@@ -1368,11 +1371,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<oneOrMore>
 				<ref name="e.part"/>
 			</oneOrMore>
-			
-			
-			
 		</element>
 	</define>
+	
 	<define name="e.persname">
 		<element name="persname">
 			<ref name="a.common"/>
@@ -1447,20 +1448,21 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</oneOrMore>
 		</element>
 	</define>
+	
 	<define name="e.title">
 		<element name="title">
 			<ref name="a.common"/>
 			<ref name="a.localtype"/>
-			<optional>
-				<attribute name="relator"/>
-			</optional>
+			<ref name="a.access"/>
+			<ref name="a.encodinganalog"/>
 			<optional>
 				<attribute name="render">
 					<ref name="av.render"/>
 				</attribute>
 			</optional>
-			<ref name="a.access"/>
-			<ref name="a.encodinganalog"/>
+			<optional>
+				<attribute name="relator"/>
+			</optional>
 			<oneOrMore>
 				<ref name="e.part"/>
 			</oneOrMore>
