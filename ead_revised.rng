@@ -2080,9 +2080,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.common"/>
 			<optional>
 				<attribute name="render">
-					<choice>
-						<ref name="av.render"/>
-					</choice>
+					<ref name="av.render"/>
 				</attribute>
 			</optional>
 			<ref name="m.mixed.basic"/>
