@@ -3104,7 +3104,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="m.mixed.basic.plus">
 		<zeroOrMore>
 			<choice>
-				<text/>
 				<ref name="m.mixed.basic"/>
 				<ref name="e.quote"/>
 				<ref name="e.num"/>
