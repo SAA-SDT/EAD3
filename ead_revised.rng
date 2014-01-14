@@ -539,9 +539,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.citation">
 		<element a:id="citation" name="citation">
 			<ref name="a.common"/>
-			<optional>
-				<ref name="am.simplelink"/>
-			</optional>
+			<ref name="am.simplelink"/>
 			<optional>
 				<ref name="a.lastdatetimeverified"/>
 			</optional>
