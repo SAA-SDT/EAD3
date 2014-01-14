@@ -271,14 +271,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 							<optional>
 								<ref name="a.lastdatetimeverified"/>
 							</optional>
-							<optional>
-								<attribute name="source">
-									<data type="string"/>
-								</attribute>
-							</optional>
-							<optional>
-								<attribute name="identifier"/>
-							</optional>
+							<ref name="a.access.no.normal"/>
 							<text/>
 						</element>
 					</optional>
@@ -626,17 +619,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</element>
 			<element name="unittype">
 				<ref name="a.common"/>
-				<optional>
-					<attribute name="identifier"/>
-				</optional>
-				<optional>
-					<attribute name="source"/>
-				</optional>
-				<optional>
-					<attribute name="rules">
-						<data type="NMTOKEN"/>
-					</attribute>
-				</optional>
+				<ref name="a.access.no.normal"/>
 				<text/>
 			</element>
 			<zeroOrMore>
@@ -2428,6 +2411,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.physfacet">
 		<element name="physfacet">
 			<ref name="a.common"/>
+			<ref name="a.access.no.normal"/>
 			<optional>
 				<ref name="a.localtype"/>
 			</optional>
@@ -3218,6 +3202,13 @@ For these and/or other purposes and motivations, and without any expectation of 
 	</define>
 
 	<define name="a.access">
+		<ref name="a.access.no.normal"/>
+		<optional>
+			<attribute name="normal"/>
+		</optional>
+	</define>
+	
+	<define name="a.access.no.normal">
 		<optional>
 			<attribute name="source">
 				<data type="token"/>
@@ -3230,9 +3221,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</optional>
 		<optional>
 			<attribute name="identifier"/>
-		</optional>
-		<optional>
-			<attribute name="normal"/>
 		</optional>
 	</define>
 
