@@ -647,9 +647,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</optional>
 			<ref name="am.dates.era"/>
 			<ref name="am.dates.calendar"/>
-			<choice>
-				<ref name="m.dates"/>
-			</choice>
+			<ref name="m.dates"/>
 		</element>
 	</define>
 
