@@ -1309,10 +1309,10 @@ For these and/or other purposes and motivations, and without any expectation of 
 	</define>
 	<define name="e.controlaccess">
 		<element name="controlaccess">
+			<ref name="a.common"/>
 			<optional>
 				<ref name="a.localtype"/>
 			</optional>
-			<ref name="a.common"/>
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
