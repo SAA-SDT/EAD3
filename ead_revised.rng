@@ -2292,11 +2292,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 						<ref name="e.objectxmlwrap"/>
 					</optional>
 					<optional>
-						<choice>
-							<ref name="e.datesingle"/>
-							<ref name="e.dateset"/>
-							<ref name="e.daterange"/>
-						</choice>
+						<ref name="m.dates"/>
 					</optional>
 					<optional>
 						<ref name="e.geogname"/>
@@ -2382,11 +2378,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 						
 						<ref name="a.common"/>
 						<ref name="a.localtype"/>
-						<choice>
-							<ref name="e.datesingle"/>
-							<ref name="e.daterange"/>
-							<ref name="e.dateset"/>
-						</choice>
+						<ref name="m.dates"/>
 						<choice>
 							<group>
 								<optional>
