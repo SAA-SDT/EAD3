@@ -2210,6 +2210,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.event">
 		<element name="event">
 			<ref name="a.common"/>
+			<ref name="a.localtype"/>
 			<ref name="m.para.content"/>
 		</element>
 	</define>
