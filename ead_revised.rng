@@ -812,8 +812,8 @@ For these and/or other purposes and motivations, and without any expectation of 
 							<ref name="a.loc.internal.ptr"/>
 							<empty/>
 						</element>
-						<element name="extptrloc.empty">
-							<ref name="a.common"/>
+						<element name="extptrloc">
+							<ref name="a.common.empty"/>
 							<ref name="a.loc.external.ptr"/>
 							<empty/>
 						</element>
