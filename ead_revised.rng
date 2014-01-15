@@ -740,6 +740,24 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</element>
 	</define>
 	
+	<define name="e.daoset">
+		<element name="daoset">
+			<ref name="a.common"/>
+			<ref name="a.localtype"/>
+			<ref name="a.encodinganalog"/>
+			<optional>
+				<attribute name="label"/>
+			</optional>
+			<ref name="e.dao"/>
+			<oneOrMore>
+				<ref name="e.dao"/>
+			</oneOrMore>
+			<optional>
+				<ref name="e.descriptivenote"/>
+			</optional>
+		</element>
+	</define>
+	
 	<define name="e.daogrp">
 		<element name="daogrp">
 			<ref name="a.common"/>
