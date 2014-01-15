@@ -727,32 +727,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</optional>
 		</element>
 	</define>
-	
-	<!--
-	<define name="e.daogrp">
-		<element name="daogrp">
-			<ref name="a.common"/>
-
-			<optional>
-				<ref name="e.daodesc"/>
-			</optional>
-			<oneOrMore>
-				<choice>
-					<element name="daoloc">
-						<ref name="a.common"/>
-						<ref name="am.simplelink"/>
-						<optional>
-							<ref name="e.daodesc"/>
-						</optional>
-					</element>
-					<ref name="extended.els"/>
-					
-				</choice>
-				<ref name="e.dao"/>
-			</oneOrMore>
-		</element>
-	</define>
--->
 
 	<define name="e.daodesc">
 		<element name="daodesc">
