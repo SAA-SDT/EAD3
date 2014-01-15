@@ -309,15 +309,13 @@ For these and/or other purposes and motivations, and without any expectation of 
 							<ref name="a.common"/>
 							<text/>
 						</element>
-						<optional>
-							<oneOrMore>
-								<element a:id="eventdesccription" name="eventdescription">
-									<ref name="a.common"/>
-									<ref name="a.localtype"/>
-									<text/>
-								</element>
-							</oneOrMore>
-						</optional>
+						<zeroOrMore>
+							<element a:id="eventdesccription" name="eventdescription">
+								<ref name="a.common"/>
+								<ref name="a.localtype"/>
+								<text/>
+							</element>
+						</zeroOrMore>
 					</element>
 				</oneOrMore>
 			</element>
