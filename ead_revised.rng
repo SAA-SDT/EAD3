@@ -798,6 +798,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 								<choice>
 									<text/>
 									<ref name="e.emph"/>
+									<ref name="e.lb"/>
 								</choice>
 							</zeroOrMore>
 						</element>
