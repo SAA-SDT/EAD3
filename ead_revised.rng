@@ -803,16 +803,16 @@ For these and/or other purposes and motivations, and without any expectation of 
 							</zeroOrMore>
 						</element>
 						<element name="arc">
-							<ref name="a.common"/>
+							<ref name="a.common.empty"/>
 							<ref name="a.arcLink"/>
 							<empty/>
 						</element>
 						<element name="ptrloc">
-							<ref name="a.common"/>
+							<ref name="a.common.empty"/>
 							<ref name="a.loc.internal.ptr"/>
 							<empty/>
 						</element>
-						<element name="extptrloc">
+						<element name="extptrloc.empty">
 							<ref name="a.common"/>
 							<ref name="a.loc.external.ptr"/>
 							<empty/>
