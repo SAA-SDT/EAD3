@@ -2342,16 +2342,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 
 	
 	<!-- MODELS -->
-
-	<define name="m.mixed.elements">
-		<text/>
-		<ref name="e.abbr"/>
-		<ref name="e.expan"/>
-		<ref name="e.emph"/>
-		<ref name="e.lb"/>
-		<ref name="e.ref"/>
-		<ref name="e.ptr"/>
-	</define>
 	
 	<define name="m.blocks">
 		<choice>
