@@ -2926,7 +2926,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 	</define>
 	
 	<define name="a.arcLink">
-		<attribute a:defaultValue="arc" name="type">
+		<attribute a:defaultValue="arc" name="linktype">
 			<value>arc</value>
 		</attribute>
 		<optional>
