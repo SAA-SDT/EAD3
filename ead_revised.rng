@@ -2367,6 +2367,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<element name="chronlist">
 				<ref name="a.common"/>
 				<ref name="a.localtype"/>
+				<ref name="a.encodinganalog"/>
 				<optional>
 					<ref name="e.head"/>
 				</optional>
