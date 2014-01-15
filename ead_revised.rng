@@ -1648,60 +1648,12 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<choice>
 					<element name="thentry">
 						<ref name="a.common"/>
+						<ref name="a.entry"/>
 						<ref name="m.mixed.basic"/>
 					</element>
 					<element name="entry">
 						<ref name="a.common"/>
-						<optional>
-							<attribute name="colname">
-								<data type="NMTOKEN"/>
-							</attribute>
-						</optional>
-						<optional>
-							<attribute name="namest">
-								<data type="NMTOKEN"/>
-							</attribute>
-						</optional>
-						<optional>
-							<attribute name="nameend">
-								<data type="NMTOKEN"/>
-							</attribute>
-						</optional>
-						<optional>
-							<attribute name="morerows">
-								<data type="NMTOKEN"/>
-							</attribute>
-						</optional>
-						<optional>
-							<attribute name="colsep">
-								<ref name="av.yesorno"/>
-							</attribute>
-						</optional>
-						<optional>
-							<attribute name="rowsep">
-								<ref name="av.yesorno"/>
-							</attribute>
-						</optional>
-						<optional>
-							<attribute name="align">
-								<choice>
-									<value>left</value>
-									<value>right</value>
-									<value>center</value>
-									<value>justify</value>
-								</choice>
-							</attribute>
-						</optional>
-						<optional>
-							<attribute name="valign">
-								<choice>
-									<value>top</value>
-									<value>middle</value>
-									<value>bottom</value>
-									<value>baseline</value>
-								</choice>
-							</attribute>
-						</optional>
+						<ref name="a.entry"/>
 						<ref name="m.para.content"/>
 					</element>
 				</choice>
@@ -2980,6 +2932,59 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<value>part</value>
 			</choice>
 		</attribute>
+	</define>
+	
+	<define name="a.entry">
+		<optional>
+			<attribute name="colname">
+				<data type="NMTOKEN"/>
+			</attribute>
+		</optional>
+		<optional>
+			<attribute name="namest">
+				<data type="NMTOKEN"/>
+			</attribute>
+		</optional>
+		<optional>
+			<attribute name="nameend">
+				<data type="NMTOKEN"/>
+			</attribute>
+		</optional>
+		<optional>
+			<attribute name="morerows">
+				<data type="NMTOKEN"/>
+			</attribute>
+		</optional>
+		<optional>
+			<attribute name="colsep">
+				<ref name="av.yesorno"/>
+			</attribute>
+		</optional>
+		<optional>
+			<attribute name="rowsep">
+				<ref name="av.yesorno"/>
+			</attribute>
+		</optional>
+		<optional>
+			<attribute name="align">
+				<choice>
+					<value>left</value>
+					<value>right</value>
+					<value>center</value>
+					<value>justify</value>
+				</choice>
+			</attribute>
+		</optional>
+		<optional>
+			<attribute name="valign">
+				<choice>
+					<value>top</value>
+					<value>middle</value>
+					<value>bottom</value>
+					<value>baseline</value>
+				</choice>
+			</attribute>
+		</optional>
 	</define>
 	
 	<!-- ATTRIBUTE VALUE LISTS -->
