@@ -2368,6 +2368,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="a.common"/>
 				<ref name="a.localtype"/>
 				<optional>
+					<ref name="e.head"/>
+				</optional>
+				<optional>
 					<ref name="e.listhead"/>
 				</optional>
 				<oneOrMore>
