@@ -2821,6 +2821,12 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<attribute name="relator"/>
 		</optional>
 	</define>
+	
+	<define name="a.label">
+		<optional>
+			<attribute name="label"/>
+		</optional>
+	</define>
 
 	<define name="a.localtype">
 		<optional>
