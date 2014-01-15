@@ -2350,7 +2350,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</choice>
 	</define>
 	
-	
 	<define name="m.inter">
 		<choice>
 			<ref name="m.inter.noquote"/>
@@ -2366,6 +2365,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			
 		</choice>
 	</define>
+	
 	<define name="m.inter.noquote">
 		<choice>
 			
@@ -2413,6 +2413,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="e.table"/>
 		</choice>
 	</define>
+	
 	<define name="m.cOrC01">
 		<choice>
 			<oneOrMore>
@@ -2423,6 +2424,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</oneOrMore>
 		</choice>
 	</define>
+	
 	<define name="m.c.base">
 		<ref name="a.desc.c"/>
 		<optional>
@@ -2448,8 +2450,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="e.title"/>
 		</choice>
 	</define>
-	
-	
 	
 	<define name="m.data.standardDateTime">
 		<choice>
@@ -2538,12 +2538,14 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="e.userestrict"/>
 		</choice>
 	</define>
+	
 	<define name="m.desc.base.full">
 		<choice>
 			<ref name="m.desc.base"/>
 			<ref name="e.dsc"/>
 		</choice>
 	</define>
+	
 	<define name="m.dates">
 		<choice>
 			<ref name="e.datesingle"/>
@@ -2551,8 +2553,10 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="e.dateset"/>
 		</choice>
 	</define>
+	
 	<define name="m.did">
 		<choice>
+			
 			<element name="abstract">
 				<ref name="a.common"/>
 				<ref name="a.localtype"/>
@@ -2562,6 +2566,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="a.encodinganalog"/>
 				<ref name="m.mixed.basic.plus.access"/>
 			</element>
+			
 			<element name="langmaterial">
 				<ref name="a.common"/>
 				<optional>
@@ -2578,6 +2583,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="e.descriptivenote"/>
 				</optional>
 			</element>
+			
 			<element name="didnote">
 				<ref name="a.common"/>
 				<ref name="a.localtype"/>
@@ -2590,7 +2596,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 			
 			<ref name="e.origination"/>
 			
-			
 			<element name="physdesc">
 				<ref name="a.common"/>
 				<ref name="a.localtype"/>
@@ -2600,6 +2605,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="a.encodinganalog"/>
 				<ref name="m.mixed.basic"/>
 			</element>
+			
 			<element name="parallelphysdescset">
 				<ref name="a.common"/>
 				<optional>
@@ -2611,7 +2617,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="e.physdescstructured"/>
 				</oneOrMore>
 			</element>
+			
 			<ref name="e.physdescstructured"/>
+			
 			<element name="physloc">
 				<ref name="a.common"/>
 				<ref name="a.localtype"/>
@@ -2626,10 +2634,13 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</optional>
 				<ref name="m.mixed.basic"/>
 			</element>
+			
 			<ref name="e.repository"/>
+			
 			<ref name="e.unitdate"/>
 			
 			<ref name="e.unitdatestructured"/>
+			
 			<element name="unitid">
 				<ref name="a.common"/>
 				<ref name="a.localtype"/>
@@ -2648,7 +2659,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="a.encodinganalog"/>
 				<ref name="m.mixed.basic"/>
 			</element>
+			
 			<ref name="e.unittitle"/>
+			
 			<element name="container">
 				<ref name="a.common"/>
 				<optional>
@@ -2668,7 +2681,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</optional>
 				<ref name="m.mixed.basic"/>
 			</element>
+			
 			<ref name="e.materialspec"/>
+			
 			<ref name="e.dao"/>
 		</choice>
 	</define>
