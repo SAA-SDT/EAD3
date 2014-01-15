@@ -500,9 +500,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="origination">
 			<ref name="a.common"/>
 			<ref name="a.localtype"/>
-			<optional>
-				<attribute name="label"/>
-			</optional>
+			<ref name="a.label"/>
 			<ref name="a.encodinganalog"/>
 			<oneOrMore>
 				<choice>
@@ -518,9 +516,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.physdescstructured">
 		<element name="physdescstructured">
 			<ref name="a.common"/>
-			<optional>
-				<attribute name="label"/>
-			</optional>
+			<ref name="a.label"/>
 			<ref name="a.encodinganalog"/>
 			<attribute name="physdescstructuredtype">
 				<choice>
@@ -560,9 +556,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="repository">
 			<ref name="a.common"/>
 			<ref name="a.localtype"/>
-			<optional>
-				<attribute name="label"/>
-			</optional>
+			<ref name="a.label"/>
 			<ref name="a.encodinganalog"/>
 			<oneOrMore>
 				<choice>
@@ -581,9 +575,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.unittitle">
 		<element name="unittitle">
 			<ref name="a.common"/>
-			<optional>
-				<attribute name="label"/>
-			</optional>
+			<ref name="a.label"/>
 			<ref name="a.encodinganalog"/>
 			<ref name="a.localtype"/>
 			<optional>
@@ -597,9 +589,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.unitdate">
 		<element name="unitdate">
 			<ref name="a.common"/>
-			<optional>
-				<attribute name="label"/>
-			</optional>
+			<ref name="a.label"/>
 			<optional>
 				<attribute name="unitdatetype">
 					<choice>
@@ -625,9 +615,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.unitdatestructured">
 		<element name="unitdatestructured">
 			<ref name="a.common"/>
-			<optional>
-				<attribute name="label"/>
-			</optional>
+			<ref name="a.label"/>
 			<optional>
 				<attribute name="unitdatetype">
 					<choice>
@@ -745,9 +733,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.common"/>
 			<ref name="a.localtype"/>
 			<ref name="a.encodinganalog"/>
-			<optional>
-				<attribute name="label"/>
-			</optional>
+			<ref name="a.label"/>
 			<ref name="e.dao"/>
 			<oneOrMore>
 				<ref name="e.dao"/>
@@ -828,9 +814,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.materialspec">
 		<element name="materialspec">
 			<ref name="a.common"/>
-			<optional>
-				<attribute name="label"/>
-			</optional>
+			<ref name="a.label"/>
 			<ref name="a.encodinganalog"/>
 			<ref name="a.localtype"/>
 			<ref name="m.mixed.basic"/>
@@ -2101,9 +2085,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="language">
 			<ref name="a.common"/>
 			<ref name="a.encodinganalog"/>
-			<optional>
-				<attribute name="label"/>
-			</optional>
+			<ref name="a.label"/>
 			<optional>
 				<attribute name="langcode"/>
 			</optional>
@@ -2114,9 +2096,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="script">
 			<ref name="a.common"/>
 			<ref name="a.encodinganalog"/>
-			<optional>
-				<attribute name="label"/>
-			</optional>
+			<ref name="a.label"/>
 			<optional>
 				<attribute name="scriptcode"/>
 			</optional>
@@ -2518,18 +2498,14 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<element name="abstract">
 				<ref name="a.common"/>
 				<ref name="a.localtype"/>
-				<optional>
-					<attribute name="label"/>
-				</optional>
+				<ref name="a.label"/>
 				<ref name="a.encodinganalog"/>
 				<ref name="m.mixed.basic.plus.access"/>
 			</element>
 			
 			<element name="langmaterial">
 				<ref name="a.common"/>
-				<optional>
-					<attribute name="label"/>
-				</optional>
+				<ref name="a.label"/>
 				<ref name="a.encodinganalog"/>
 				<oneOrMore>
 					<choice>
@@ -2545,9 +2521,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<element name="didnote">
 				<ref name="a.common"/>
 				<ref name="a.localtype"/>
-				<optional>
-					<attribute name="label"/>
-				</optional>
+				<ref name="a.label"/>
 				<ref name="a.encodinganalog"/>
 				<ref name="m.mixed.basic"/>
 			</element>
@@ -2557,18 +2531,14 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<element name="physdesc">
 				<ref name="a.common"/>
 				<ref name="a.localtype"/>
-				<optional>
-					<attribute name="label"/>
-				</optional>
+				<ref name="a.label"/>
 				<ref name="a.encodinganalog"/>
 				<ref name="m.mixed.basic"/>
 			</element>
 			
 			<element name="parallelphysdescset">
 				<ref name="a.common"/>
-				<optional>
-					<attribute name="label"/>
-				</optional>
+				<ref name="a.label"/>
 				<ref name="a.encodinganalog"/>
 				<ref name="e.physdescstructured"/>
 				<oneOrMore>
@@ -2581,9 +2551,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<element name="physloc">
 				<ref name="a.common"/>
 				<ref name="a.localtype"/>
-				<optional>
-					<attribute name="label"/>
-				</optional>
+				<ref name="a.label"/>
 				<ref name="a.encodinganalog"/>
 				<optional>
 					<attribute name="parent">
@@ -2602,9 +2570,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<element name="unitid">
 				<ref name="a.common"/>
 				<ref name="a.localtype"/>
-				<optional>
-					<attribute name="label"/>
-				</optional>
+				<ref name="a.label"/>
 				<ref name="am.countrycode"/>
 				<optional>
 					<attribute name="repositorycode">
@@ -2622,9 +2588,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			
 			<element name="container">
 				<ref name="a.common"/>
-				<optional>
-					<attribute name="label"/>
-				</optional>
+				<ref name="a.label"/>
 				<ref name="a.localtype"/>
 				<ref name="a.encodinganalog"/>
 				<optional>
