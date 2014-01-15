@@ -2685,6 +2685,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="e.materialspec"/>
 			
 			<ref name="e.dao"/>
+			
+			<ref name="e.daogrp"/>
+			
 		</choice>
 	</define>
 	
