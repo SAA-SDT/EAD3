@@ -1571,7 +1571,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<ref name="e.head"/>
 			</optional>
-			<optional>
+			<zeroOrMore>
 				<element name="colspec">
 					<ref name="a.common.empty"/>
 					<optional>
@@ -1619,7 +1619,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 					</optional>
 					<empty/>
 				</element>
-			</optional>
+			</zeroOrMore>
 			<oneOrMore>
 
 				<ref name="e.row"/>
