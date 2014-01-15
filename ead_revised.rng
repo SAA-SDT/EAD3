@@ -2000,11 +2000,13 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.c08">
 		<element name="c08">
 			<ref name="m.c.base"/>
-			<optional>
-				<ref name="e.thead"/>
-			</optional>
 			<zeroOrMore>
-				<ref name="e.c09"/>
+				<optional>
+					<ref name="e.thead"/>
+				</optional>
+				<zeroOrMore>
+					<ref name="e.c09"/>
+				</zeroOrMore>
 			</zeroOrMore>
 		</element>
 	</define>
