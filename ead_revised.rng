@@ -700,14 +700,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="dao">
 			<ref name="a.common"/>
 			<ref name="am.simplelink"/>
-			<attribute name="daotype">
-				<choice>
-					<value>borndigital</value>
-					<value>derived</value>
-					<value>unknown</value>
-					<value>other</value>
-				</choice>
-			</attribute>
 			<optional>
 				<attribute name="entityref">
 					<data type="ENTITY"/>
@@ -716,6 +708,14 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<attribute name="xpointer"/>
 			</optional>
+			<attribute name="daotype">
+				<choice>
+					<value>borndigital</value>
+					<value>derived</value>
+					<value>unknown</value>
+					<value>other</value>
+				</choice>
+			</attribute>
 			<optional>
 				<attribute name="otherdaotype"/>
 			</optional>
