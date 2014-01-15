@@ -2214,35 +2214,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="m.para.content"/>
 		</element>
 	</define>
-	
-	<!--
-	<define name="e.placeentry">
-		<element name="placeentry">
-			<ref name="a.common"/>
-			<optional>
-				<ref name="m.entrylanguageattributes"/>
-			</optional>
-			<optional>
-				<ref name="a.localtype"/>
-			</optional>
-			<optional>
-				<ref name="am.countrycode"/>
-			</optional>
-			<optional>
-				<ref name="a.vocabularysource"/>
-			</optional>
-			<optional>
-				<attribute  name="accuracy">
-					<text/>
-				</attribute>
-			</optional>
-			<optional>
-				<ref name="m.geographicalcoordinates"/>
-			</optional>
-			<text/>
-		</element>
-	</define>
--->
 
 	<!-- relations -->
 	
