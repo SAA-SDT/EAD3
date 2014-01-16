@@ -2034,9 +2034,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.common"/>
 			<ref name="a.access.no.normal"/>
 			<ref name="a.localtype"/>
-			<optional>
-				<attribute name="unit"/>
-			</optional>
 			<ref name="m.mixed.basic.plus.access"/>
 		</element>
 	</define>
