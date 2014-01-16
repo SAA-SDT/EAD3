@@ -343,7 +343,8 @@ For these and/or other purposes and motivations, and without any expectation of 
 							<ref name="a.encodinganalog"/>
 							<optional>
 								<attribute name="standarddatetime">
-									<ref name="m.data.standardDateTime"/>
+									<!--<ref name="m.data.standardDateTime"/>-->
+									<data type="token"/>
 								</attribute>
 							</optional>
 							<text/>
@@ -2245,9 +2246,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 						</attribute>
 					</optional>
 					<optional>
-						<attribute name="lastdatetimeverified">
-							<data type="dateTime"/>
-						</attribute>
+						<ref name="a.lastdatetimeverified"/>
 					</optional>
 					<ref name="am.simplelink"/>
 					<zeroOrMore>
@@ -2418,7 +2417,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</choice>
 	</define>
 	
-	<define name="m.data.standardDateTime">
+	<!--<define name="m.data.standardDateTime">
 		<choice>
 			<data type="date">
 				<param name="maxInclusive">2099-12-31</param>
@@ -2433,7 +2432,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<param name="maxInclusive">2099-12-31T23:59:59</param>
 			</data>
 		</choice>
-	</define>
+	</define>-->
 	
 	<define name="m.para.content">
 		<zeroOrMore>
@@ -2444,7 +2443,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</zeroOrMore>
 	</define>
 	
-	<define name="m.data.standarddate">
+	<!--<define name="m.data.standarddate">
 		<choice>
 			<data type="date">
 				<param name="maxInclusive">2099-12-31</param>
@@ -2456,22 +2455,25 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<param name="maxInclusive">2099-12</param>
 			</data>
 		</choice>
-	</define>
+	</define>-->
 	
 	<define name="m.datesingle">
 		<optional>
 			<attribute name="standarddate">
-				<ref name="m.data.standarddate"/>
+				<!--<ref name="m.data.standarddate"/>-->
+				<data type="token"/>
 			</attribute>
 		</optional>
 		<optional>
 			<attribute name="notbefore">
-				<ref name="m.data.standarddate"/>
+				<!--<ref name="m.data.standarddate"/>-->
+				<data type="token"/>
 			</attribute>
 		</optional>
 		<optional>
 			<attribute name="notafter">
-				<ref name="m.data.standarddate"/>
+				<!--<ref name="m.data.standarddate"/>-->
+				<data type="token"/>
 			</attribute>
 		</optional>
 		<ref name="m.mixed.basic"/>
@@ -2995,7 +2997,8 @@ For these and/or other purposes and motivations, and without any expectation of 
 	
 	<define name="a.lastdatetimeverified">
 		<attribute name="lastdatetimeverified">
-			<ref name="m.data.standardDateTime"/>
+			<!--<ref name="m.data.standardDateTime"/>-->
+			<data type="token"/>
 		</attribute>
 	</define>
 	
