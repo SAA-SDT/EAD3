@@ -79,6 +79,46 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</attribute>
 			</optional>
 			<optional>
+				<attribute name="langencoding">
+					<choice>
+						<value>"iso639-2b</value>
+						<value>other</value>
+					</choice>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="scriptencoding">
+					<choice>
+						<value>iso15924</value>
+						<value>other</value>
+					</choice>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="dateencoding">
+					<choice>
+						<value>iso8601</value>
+						<value>other</value>
+					</choice>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="countryencoding">
+					<choice>
+						<value>iso3166-1</value>
+						<value>other</value>
+					</choice>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="repositoryencoding">
+					<choice>
+						<value>iso15511</value>
+						<value>other</value>
+					</choice>
+				</attribute>
+			</optional>
+			<optional>
 				<attribute name="relatedencoding"/>
 			</optional>
 			<element name="recordid">
