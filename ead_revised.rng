@@ -734,6 +734,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.localtype"/>
 			<ref name="a.encodinganalog"/>
 			<ref name="a.label"/>
+			<ref name="a.coverage"/>
 			<ref name="e.dao"/>
 			<oneOrMore>
 				<ref name="e.dao"/>
