@@ -188,7 +188,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 						<value>derived</value>
 					</choice>
 				</attribute>
-				<ref name="m.mixed.basic"/>
+				<text/>
 			</element>
 			<optional>
 				<element name="publicationstatus">
@@ -200,7 +200,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 							<value>published</value>
 						</choice>
 					</attribute>
-					<ref name="m.mixed.basic"/>
+					<text/>
 				</element>
 			</optional>
 			<ref name="e.maintenanceagency"/>
@@ -283,7 +283,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 									<value>unknown</value>
 								</choice>
 							</attribute>
-							<ref name="m.mixed.basic"/>
+							<text/>
 						</element>
 						<element name="eventdatetime">
 							<ref name="a.common"/>
@@ -303,7 +303,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 									<value>unknown</value>
 								</choice>
 							</attribute>
-							<ref name="m.mixed.basic"/>
+							<text/>
 						</element>
 						<element a:id="agent" name="agent">
 							<ref name="a.common"/>
