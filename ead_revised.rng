@@ -719,7 +719,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</element>
 	</define>
 
-	<define name="e.daodesc">
+	<!--<define name="e.daodesc">
 		<element name="daodesc">
 			<ref name="a.common"/>
 			<optional>
@@ -729,7 +729,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="m.blocks"/>
 			</oneOrMore>
 		</element>
-	</define>
+	</define>-->
 	
 	<define name="e.daoset">
 		<element name="daoset">
@@ -748,7 +748,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</element>
 	</define>
 	
-	<define name="e.daogrp">
+	<!--<define name="e.daogrp">
 		<element name="daogrp">
 			<ref name="a.common"/>
 			<attribute a:defaultValue="extended" name="linktype">
@@ -813,7 +813,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</choice>
 			</oneOrMore>
 		</element>
-	</define>
+	</define>-->
 	
 	<define name="e.materialspec">
 		<element name="materialspec">
@@ -2569,7 +2569,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			
 			<ref name="e.daoset"/>
 			
-			<ref name="e.daogrp"/>
+			<!--<ref name="e.daogrp"/>-->
 			
 		</choice>
 	</define>
@@ -2808,7 +2808,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</attribute>
 	</define>
 	
-	<define name="a.loc.external.ptr">
+	<!--<define name="a.loc.external.ptr">
 		<ref name="a.locatorLink"/>
 		<optional>
 			<attribute name="entityref">
@@ -2818,7 +2818,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<optional>
 			<attribute name="xpointer"/>
 		</optional>
-	</define>
+	</define>-->
 	
 	<define name="a.locatorLink">
 		<attribute a:defaultValue="locator" name="linktype">
@@ -2836,7 +2836,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</optional>
 	</define>
 	
-	<define name="a.loc.internal.ptr">
+	<!--<define name="a.loc.internal.ptr">
 		<ref name="a.locatorLink"/>
 		<optional>
 			<attribute name="target">
@@ -2846,9 +2846,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<optional>
 			<attribute name="xpointer"/>
 		</optional>
-	</define>
+	</define>-->
 	
-	<define name="a.arcLink">
+	<!--<define name="a.arcLink">
 		<attribute a:defaultValue="arc" name="linktype">
 			<value>arc</value>
 		</attribute>
@@ -2870,9 +2870,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<optional>
 			<attribute name="to"/>
 		</optional>
-	</define>
+	</define>-->
 	
-	<define name="a.resourceLink">
+	<!--<define name="a.resourceLink">
 		<attribute a:defaultValue="resource" name="type">
 			<value>resource</value>
 		</attribute>
@@ -2885,7 +2885,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<optional>
 			<attribute name="label"/>
 		</optional>
-	</define>
+	</define>-->
 	
 	<define name="am.dates.calendar">
 		<optional>
