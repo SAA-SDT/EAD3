@@ -687,6 +687,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.dao">
 		<element name="dao">
 			<ref name="a.common"/>
+			<ref name="a.encodinganalog"/>
+			<ref name="a.localtype"/>
+			<ref name="a.label"/>
 			<ref name="am.simplelink"/>
 			<optional>
 				<attribute name="entityref">
