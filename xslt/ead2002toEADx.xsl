@@ -330,7 +330,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:template match="physdesc[child::extent]">
         <physdescstructured physdescstructuredtype="spaceoccupied" coverage="whole">
             <quantity><xsl:apply-templates select="extent/text()"/></quantity>
-            <unittype></unittype>
+            <unittype>xxx</unittype>
         </physdescstructured>
     </xsl:template>
 
