@@ -74,7 +74,9 @@ For these and/or other purposes and motivations, and without any expectation of 
         <xsl:processing-instruction name="xml-model">
             <xsl:text>href="../ead_revised.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"</xsl:text>
         </xsl:processing-instruction>
-        <xsl:processing-instruction name="oxygen"><xsl:text>RNGSchema="../ead_revised.rng" type="xml"</xsl:text></xsl:processing-instruction>
+        <xsl:processing-instruction name="oxygen">
+            <xsl:text>RNGSchema="../ead_revised.rng" type="xml"</xsl:text>
+        </xsl:processing-instruction>
         <!--<xsl:copy-of select="$instance-ns-stripped"/>
         -->
         <!--<xsl:apply-templates select="/" mode="strip-ns"/>
@@ -138,14 +140,17 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <!-- dsc orphan elements -->
 
-    <xsl:template match="descgrp/address | descgrp/blockquote | descgp/descgrp | descgrp/head | descgrp/index | descgrp/list | descgrp/p | descgrp/table">
+    <xsl:template
+        match="descgrp/address | descgrp/blockquote | descgp/descgrp | descgrp/head | descgrp/index | descgrp/list | descgrp/p | descgrp/table">
         <xsl:comment>
             <xsl:call-template name="removedElement"/>
         </xsl:comment>
         <xsl:message>
             <xsl:call-template name="removedElement"/>
         </xsl:message>
-        <xsl:comment><xsl:apply-templates/></xsl:comment>
+        <xsl:comment>
+            <xsl:apply-templates/>
+        </xsl:comment>
     </xsl:template>
 
     <!-- ############################################### -->
@@ -162,15 +167,15 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:call-template name="removedElement"/>
         </xsl:message>
     </xsl:template>
-    
-    
+
+
     <!-- ############################################### -->
     <!-- type attributes                            -->
     <!-- ############################################### -->
 
-<xsl:template match="dsc/@type">
-    <xsl:attribute name="dsctype" select="string(.)"/>
-</xsl:template>
+    <xsl:template match="dsc/@type | list/@type">
+        <xsl:attribute name="{parent::*/local-name()}type" select="string(.)"/>
+    </xsl:template>
 
     <!-- ############################################### -->
     <!-- EADHEADER to CONTROL                            -->
@@ -245,11 +250,14 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
     <!-- LIST                                            -->
     <!-- ############################################### -->
-
+<!--
     <xsl:template match="list">
-        <xsl:call-template name="gonna-deal-with-this-later"/>
+        <list>
+            <xsl:apply-templates select="@*"/>
+            <xsl:apply-templates select="*"/>
+        </list>
     </xsl:template>
-
+-->
     <!-- ############################################### -->
     <!-- TABLE                                           -->
     <!-- ############################################### -->
@@ -280,7 +288,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         </xsl:for-each>
         <xsl:if test="empty(corpname | name | persname | famname)">
             <origination>
-               <xsl:copy-of select="@*"/>
+                <xsl:copy-of select="@*"/>
                 <name>
                     <part>
                         <xsl:apply-templates/>
@@ -299,18 +307,31 @@ For these and/or other purposes and motivations, and without any expectation of 
         <repository>
             <xsl:apply-templates select="corpname | name | persname | famname | address"/>
             <xsl:if test="empty(corpname | name | persname | famname | address)">
-                
-                    <name>
-                        <part>
-                            <xsl:value-of select=".//text()"/>
-                        </part>
-                    </name>
-                
+
+                <name>
+                    <part>
+                        <xsl:value-of select=".//text()"/>
+                    </part>
+                </name>
+
             </xsl:if>
             <xsl:comment>
                 <xsl:value-of select=".//text()"/>
             </xsl:comment>
         </repository>
+    </xsl:template>
+    
+    <xsl:template match="physdesc[child::node() except (extent) ]">
+        <physdesc>
+         <xsl:apply-templates/>
+        </physdesc>
+    </xsl:template>
+    
+    <xsl:template match="physdesc[child::extent]">
+        <physdescstructured physdescstructuredtype="spaceoccupied" coverage="whole">
+            <quantity><xsl:apply-templates select="extent/text()"/></quantity>
+            <unittype></unittype>
+        </physdescstructured>
     </xsl:template>
 
     <!-- ############################################### -->
@@ -368,7 +389,7 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
-    
+
     <xsl:template match="did/note">
         <xsl:comment>
             <xsl:text>ELEMENT </xsl:text>
@@ -434,7 +455,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
     <!-- ADDRESSLINE                                     -->
     <!-- ############################################### -->
-<!--
+    <!--
     <xsl:template match="address[not(parent::repository) and not(parent::publicationtmt)]">
         <xsl:choose>
             <xsl:when
@@ -459,11 +480,11 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:otherwise>
                 <xsl:for-each select="addressline">
                     <xsl:apply-templates/> -->
-                    <!-- MR: Not sure if we want to add commas here.  -->
-                    <!--<xsl:if test="position()!=last()">
+    <!-- MR: Not sure if we want to add commas here.  -->
+    <!--<xsl:if test="position()!=last()">
                         <xsl:text>, </xsl:text>
                     </xsl:if>-->
-<!--               </xsl:for-each>
+    <!--               </xsl:for-each>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
