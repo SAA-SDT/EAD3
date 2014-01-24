@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../ead_revised.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><ead xmlns="http://ead3.archivists.org/schema/">
+<?xml-model href="../ead_revised.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?oxygen RNGSchema="../ead_revised.rng" type="xml"?><ead xmlns="http://ead3.archivists.org/schema/">
     <!--eadheader now control: Inserting minimal control element--><control>
       <recordid>[recordid]</recordid>
       <filedesc>
@@ -19,7 +19,7 @@
       <maintenancehistory>
          <maintenanceevent>
             <eventtype value="derived"/>
-            <eventdatetime>2014-01-13T17:13:31.305-05:00</eventdatetime>
+            <eventdatetime>2014-01-24T10:29:05.156-05:00</eventdatetime>
             <agenttype value="machine"/>
             <agent/>
          </maintenanceevent>
@@ -38,8 +38,10 @@
             <!--
                 Bowers, Kate (persname)||| 
                 (origination)||| --></origination>
-            <physdesc>physdesc||| <extent>extent||| </extent>
-            </physdesc>
+            <physdescstructured physdescstructuredtype="spaceoccupied" coverage="whole">
+            <quantity>extent||| </quantity>
+            <unittype/>
+         </physdescstructured>
             <physloc>physloc ||| </physloc>
             <repository><!--Added child part element to corpname--><corpname>
                <part>corpname ||| </part>
@@ -55,35 +57,40 @@
             <p>p in add||| </p>
         </odd>
         <!--DEPRECATED ELEMENT descgrp REMOVED-->
-            <p>addressline in address in add||| </p>
+            <!--DEPRECATED ELEMENT address REMOVED--><!--
+ addressline in address in add|||  
+-->
             <bibliography>
-                <bibref linktype="simple">bibref in bibliography in add|||
+                <bibref><!--DEPRECATED ELEMENT linktype REMOVED-->bibref in bibliography in add|||
                 </bibref>
             </bibliography>
-            <!--ELEMENT blockquote RENAMED as 'odd'
---><odd localtype="">
-                <p>p in blockquote in add||| </p>
-            </odd>
+            <!--DEPRECATED ELEMENT blockquote REMOVED--><!--
+                 p in blockquote in add|||  
+            -->
             <!--NOT GONNA DEAL WITH chronlist NOW
 -->
             <fileplan>
                 <p>p in fileplan in add||| </p>
             </fileplan>
-            <index>
-                <head>head in index in add||| </head>
-                <indexentry>
-                    <!--Added child part element to corpname--><corpname>
-               <part>corpname in indexentry in add||| </part>
-            </corpname>
-                </indexentry>
-                <indexentry>
-                    <subject>subject in indexentry in add||| </subject>
-                </indexentry>
-            </index>
-            <!--NOT GONNA DEAL WITH list NOW
--->
-            <!--NOT GONNA DEAL WITH list NOW
--->
+            <!--DEPRECATED ELEMENT index REMOVED--><!--
+                 head in index in add|||  
+                 
+                    corpname in indexentry in add||| 
+                 
+                 
+                    subject in indexentry in add||| 
+                 
+            -->
+            <!--DEPRECATED ELEMENT list REMOVED--><!--
+                 head in list in add|||  
+                 item in list in add|||  
+            -->
+            <!--DEPRECATED ELEMENT list REMOVED--><!--
+                 
+                    label in defitem in list in add||| 
+                    item in defitem in add||| 
+                 
+            -->
             <!--ELEMENT note RENAMED as 'odd'
 --><odd>
                 <p>p in note in add||| </p>
@@ -93,10 +100,11 @@
                 <p>p in otherfindaid in add||| </p>
             </otherfindaid>
             <otherfindaid>
-                <!--NOT GONNA DEAL WITH list NOW
--->
+                <list>
+                    <item>item in list in otherfindaid in add||| </item>
+                </list>
             </otherfindaid>
-            <p>p in add||| </p>
+            <!--DEPRECATED ELEMENT p REMOVED--><!--p in add||| -->
             <relatedmaterial>
                 <head>head in relatedmaterial in add||| </head>
                 <p>p in relatedmaterial in add||| </p>
@@ -104,12 +112,17 @@
             <separatedmaterial>
                 <head>head in separatedmaterial in add||| </head>
                 <p>p in separatedmaterial in add||| </p>
-                <!--NOT GONNA DEAL WITH list NOW
--->
+                <list altrender="table" listtype="deflist">
+                    <defitem>
+                        <label>label in defitem in list in list in add (render =
+                            table)||| </label>
+                        <item>item in defitem in deflist in add||| </item>
+                    </defitem>
+                </list>
             </separatedmaterial>
         
         <!--DEPRECATED ELEMENT descgrp REMOVED-->
-            <head>admininfo head ||| </head>
+            <!--DEPRECATED ELEMENT head REMOVED--><!--admininfo head ||| -->
             <accessrestrict>
                 <head>accessrestrict head||| </head>
                 <p>p in accessrestrict in admininfo||| </p>
@@ -131,7 +144,9 @@
             <acqinfo>
                 <p>p in acquinfo in admininfo, no head ||| </p>
             </acqinfo>
-            <p>addressline in address in admininfo ||| </p>
+            <!--DEPRECATED ELEMENT address REMOVED--><!--
+ addressline in address in admininfo |||  
+-->
             <altformavail>
                 <head>adtformavailable head||| </head>
                 <p> p in alformavailable in admininfo ||| </p>
@@ -146,10 +161,9 @@
             <appraisal>
                 <p>p in appraisal in in admininfo no head||| </p>
             </appraisal>
-            <!--ELEMENT blockquote RENAMED as 'odd'
---><odd localtype="">
-                <p>p in blockquote in admininfo||| </p>
-            </odd>
+            <!--DEPRECATED ELEMENT blockquote REMOVED--><!--
+                 p in blockquote in admininfo|||  
+            -->
             <!--NOT GONNA DEAL WITH chronlist NOW
 -->
             <!--NOT GONNA DEAL WITH chronlist NOW
@@ -161,15 +175,18 @@
             <custodhist>
                 <p>p in custodhist in admininfo, no head||| </p>
             </custodhist>
-            <!--NOT GONNA DEAL WITH list NOW
--->
-            <!--NOT GONNA DEAL WITH list NOW
--->
+            <!--DEPRECATED ELEMENT list REMOVED--><!--
+                 list in admininfo head|||  
+                 item in list in admininfo|||  
+            -->
+            <!--DEPRECATED ELEMENT list REMOVED--><!--
+                 item in list in admininfo, no head|||  
+            -->
             <!--ELEMENT note RENAMED as 'odd'
 --><odd>
                 <p>p in note in admin info||| </p>
             </odd>
-            <p>p in admininfo||| </p>
+            <!--DEPRECATED ELEMENT p REMOVED--><!--p in admininfo||| -->
             <prefercite>
                 <head>prefercite head||| </head>
                 <p>p in prefercite in admininfo||| </p>
@@ -213,9 +230,10 @@
         <controlaccess>
             <p>p in controlaccess, no head||| </p>
         </controlaccess>
-        <note>
+        <!--ELEMENT note RENAMED as 'odd'
+--><odd>
             <p>p in note in archdesc||| </p>
-        </note>
+        </odd>
         <odd>
             <head>odd head||| </head>
             <p>p in odd||| </p>
@@ -234,7 +252,7 @@
         <scopecontent>
             <p>p in scopecontent, no head||| </p>
         </scopecontent>
-        <dsc type="combined">
+        <dsc dsctype="combined">
             <c level="series">
                 <did>
                     <abstract>abstract in did in series level c ||| </abstract>
@@ -249,11 +267,9 @@
                     <physdesc>physdesc in did in series level c ||| </physdesc>
                     <physloc>physloc in did in series level c ||| </physloc>
                     <repository>
-                  <repository>
-                     <name>
-                        <part>repository in did in series level c ||| </part>
-                     </name>
-                  </repository>
+                  <name>
+                     <part>repository in did in series level c ||| </part>
+                  </name>
                   <!--repository in did in series level c ||| --></repository>
                     <unitdate calendar="gregorian" era="ce">unitdate in did in
                         series level c ||| </unitdate>
@@ -266,36 +282,41 @@
                     <p>p in add||| </p>
                 </odd>
                 <!--DEPRECATED ELEMENT descgrp REMOVED-->
-                    <p>addressline in address in add||| </p>
+                    <!--DEPRECATED ELEMENT address REMOVED--><!--
+ addressline in address in add|||  
+-->
                     <bibliography>
-                        <bibref linktype="simple">bibref in bibliography in
+                        <bibref><!--DEPRECATED ELEMENT linktype REMOVED-->bibref in bibliography in
                             add||| </bibref>
                     </bibliography>
-                    <!--ELEMENT blockquote RENAMED as 'odd'
---><odd localtype="">
-                        <p>p in blockquote in add||| </p>
-                    </odd>
+                    <!--DEPRECATED ELEMENT blockquote REMOVED--><!--
+                         p in blockquote in add|||  
+                    -->
                     <!--NOT GONNA DEAL WITH chronlist NOW
 -->
                     <fileplan>
                         <p>p in fileplan in add||| </p>
                     </fileplan>
-                    <index>
-                        <head>head in index in add||| </head>
-                        <indexentry>
-                            <!--Added child part element to corpname--><corpname>
-                     <part>corpname in indexentry in add|||
-                            </part>
-                  </corpname>
-                        </indexentry>
-                        <indexentry>
-                            <subject>subject in indexentry in add||| </subject>
-                        </indexentry>
-                    </index>
-                    <!--NOT GONNA DEAL WITH list NOW
--->
-                    <!--NOT GONNA DEAL WITH list NOW
--->
+                    <!--DEPRECATED ELEMENT index REMOVED--><!--
+                         head in index in add|||  
+                         
+                            corpname in indexentry in add|||
+                            
+                         
+                         
+                            subject in indexentry in add||| 
+                         
+                    -->
+                    <!--DEPRECATED ELEMENT list REMOVED--><!--
+                         head in list in add|||  
+                         item in list in add|||  
+                    -->
+                    <!--DEPRECATED ELEMENT list REMOVED--><!--
+                         
+                            label in defitem in list in add||| 
+                            item in defitem in add||| 
+                         
+                    -->
                     <!--ELEMENT note RENAMED as 'odd'
 --><odd>
                         <p>p in note in add||| </p>
@@ -305,10 +326,11 @@
                         <p>p in otherfindaid in add||| </p>
                     </otherfindaid>
                     <otherfindaid>
-                        <!--NOT GONNA DEAL WITH list NOW
--->
+                        <list>
+                            <item>item in list in otherfindaid in add||| </item>
+                        </list>
                     </otherfindaid>
-                    <p>p in add||| </p>
+                    <!--DEPRECATED ELEMENT p REMOVED--><!--p in add||| -->
                     <relatedmaterial>
                         <head>head in relatedmaterial in add||| </head>
                         <p>p in relatedmaterial in add||| </p>
@@ -316,12 +338,18 @@
                     <separatedmaterial>
                         <head>head in separatedmaterial in add||| </head>
                         <p>p in separatedmaterial in add||| </p>
-                        <!--NOT GONNA DEAL WITH list NOW
--->
+                        <list altrender="table" listtype="deflist">
+                            <defitem>
+                                <label>label in defitem in list in list in add
+                                    (render = table)||| </label>
+                                <item>item in defitem in deflist in add|||
+                                </item>
+                            </defitem>
+                        </list>
                     </separatedmaterial>
                 
                 <!--DEPRECATED ELEMENT descgrp REMOVED-->
-                    <head>admininfo head ||| </head>
+                    <!--DEPRECATED ELEMENT head REMOVED--><!--admininfo head ||| -->
                     <accessrestrict>
                         <head>accessrestrict head||| </head>
                         <p>p in accessrestrict in admininfo||| </p>
@@ -343,7 +371,9 @@
                     <acqinfo>
                         <p>p in acquinfo in admininfo, no head ||| </p>
                     </acqinfo>
-                    <p>addressline in address in admininfo ||| </p>
+                    <!--DEPRECATED ELEMENT address REMOVED--><!--
+ addressline in address in admininfo |||  
+-->
                     <altformavail>
                         <head>adtformavailable head||| </head>
                         <p> p in alformavailable in admininfo ||| </p>
@@ -358,10 +388,9 @@
                     <appraisal>
                         <p>p in appraisal in in admininfo no head ||| </p>
                     </appraisal>
-                    <!--ELEMENT blockquote RENAMED as 'odd'
---><odd localtype="">
-                        <p>p in blockquote in admininfo ||| </p>
-                    </odd>
+                    <!--DEPRECATED ELEMENT blockquote REMOVED--><!--
+                         p in blockquote in admininfo |||  
+                    -->
                     <!--NOT GONNA DEAL WITH chronlist NOW
 -->
                     <!--NOT GONNA DEAL WITH chronlist NOW
@@ -373,15 +402,18 @@
                     <custodhist>
                         <p>p in custodhist in admininfo, no head||| </p>
                     </custodhist>
-                    <!--NOT GONNA DEAL WITH list NOW
--->
-                    <!--NOT GONNA DEAL WITH list NOW
--->
+                    <!--DEPRECATED ELEMENT list REMOVED--><!--
+                         list in admininfo head |||  
+                         item in list in admininfo |||  
+                    -->
+                    <!--DEPRECATED ELEMENT list REMOVED--><!--
+                         item in list in admininfo, no head |||  
+                    -->
                     <!--ELEMENT note RENAMED as 'odd'
 --><odd>
                         <p>p in note in admin info ||| </p>
                     </odd>
-                    <p>p in admininfo||| </p>
+                    <!--DEPRECATED ELEMENT p REMOVED--><!--p in admininfo||| -->
                     <prefercite>
                         <head>prefercite head ||| </head>
                         <p>p in prefercite in admininfo ||| </p>
