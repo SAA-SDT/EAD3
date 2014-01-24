@@ -79,10 +79,51 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</attribute>
 			</optional>
 			<optional>
+				<attribute name="langencoding">
+					<choice>
+						<value>"iso639-2b</value>
+						<value>other</value>
+					</choice>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="scriptencoding">
+					<choice>
+						<value>iso15924</value>
+						<value>other</value>
+					</choice>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="dateencoding">
+					<choice>
+						<value>iso8601</value>
+						<value>other</value>
+					</choice>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="countryencoding">
+					<choice>
+						<value>iso3166-1</value>
+						<value>other</value>
+					</choice>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="repositoryencoding">
+					<choice>
+						<value>iso15511</value>
+						<value>other</value>
+					</choice>
+				</attribute>
+			</optional>
+			<optional>
 				<attribute name="relatedencoding"/>
 			</optional>
 			<element name="recordid">
 				<ref name="a.common"/>
+				<ref name="a.encodinganalog"/>
 				<optional>
 					<attribute name="instanceurl">
 						<data type="anyURI"/>
@@ -93,6 +134,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<zeroOrMore>
 				<element name="otherrecordid">
 					<ref name="a.common"/>
+					<ref name="a.encodinganalog"/>
 					<ref name="a.localtype"/>
 					<text/>
 				</element>
@@ -100,6 +142,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<zeroOrMore>
 				<element name="representation">
 					<ref name="a.common"/>
+					<ref name="a.encodinganalog"/>
 					<ref name="am.simplelink"/>
 					<ref name="a.localtype"/>
 					<text/>
@@ -176,6 +219,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</element>
 			<element name="maintenancestatus">
 				<ref name="a.common"/>
+				<ref name="a.encodinganalog"/>
 				<attribute name="value">
 					<choice>
 						<value>revised</value>
@@ -188,11 +232,12 @@ For these and/or other purposes and motivations, and without any expectation of 
 						<value>derived</value>
 					</choice>
 				</attribute>
-				<ref name="m.mixed.basic"/>
+				<text/>
 			</element>
 			<optional>
 				<element name="publicationstatus">
 					<ref name="a.common"/>
+					<ref name="a.encodinganalog"/>
 					<attribute name="value">
 						<choice>
 							<value>inprocess</value>
@@ -200,13 +245,14 @@ For these and/or other purposes and motivations, and without any expectation of 
 							<value>published</value>
 						</choice>
 					</attribute>
-					<ref name="m.mixed.basic"/>
+					<text/>
 				</element>
 			</optional>
 			<ref name="e.maintenanceagency"/>
 			<zeroOrMore>
 				<element name="languagedeclaration">
 					<ref name="a.common"/>
+					<ref name="a.encodinganalog"/>
 					<ref name="e.language"/>
 					<ref name="e.script"/>
 					<optional>
@@ -218,6 +264,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 
 				<element name="conventiondeclaration">
 					<ref name="a.common"/>
+					<ref name="a.encodinganalog"/>
 					<optional>
 						<ref name="e.abbr"/>
 					</optional>
@@ -231,6 +278,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<zeroOrMore>
 				<element name="localtypedeclaration">
 					<ref name="a.common"/>
+					<ref name="a.encodinganalog"/>
 					<optional>
 						<ref name="e.abbr"/>
 					</optional>
@@ -243,10 +291,12 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<zeroOrMore>
 				<element name="localcontrol">
 					<ref name="a.common"/>
+					<ref name="a.encodinganalog"/>
 					<ref name="a.localtype"/>
 					<optional>
 						<element name="term">
 							<ref name="a.common"/>
+							<ref name="a.encodinganalog"/>
 							<optional>
 								<attribute name="transliteration"/>
 							</optional>
@@ -267,11 +317,14 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</zeroOrMore>
 			<element name="maintenancehistory">
 				<ref name="a.common"/>
+				<ref name="a.encodinganalog"/>
 				<oneOrMore>
 					<element name="maintenanceevent">
 						<ref name="a.common"/>
+						<ref name="a.encodinganalog"/>
 						<element name="eventtype">
 							<ref name="a.common"/>
+							<ref name="a.encodinganalog"/>
 							<attribute name="value">
 								<choice>
 									<value>created</value>
@@ -283,19 +336,22 @@ For these and/or other purposes and motivations, and without any expectation of 
 									<value>unknown</value>
 								</choice>
 							</attribute>
-							<ref name="m.mixed.basic"/>
+							<text/>
 						</element>
 						<element name="eventdatetime">
 							<ref name="a.common"/>
+							<ref name="a.encodinganalog"/>
 							<optional>
 								<attribute name="standarddatetime">
-									<ref name="m.data.standardDateTime"/>
+									<!--<ref name="m.data.standardDateTime"/>-->
+									<data type="token"/>
 								</attribute>
 							</optional>
 							<text/>
 						</element>
 						<element name="agenttype">
 							<ref name="a.common"/>
+							<ref name="a.encodinganalog"/>
 							<attribute name="value">
 								<choice>
 									<value>human</value>
@@ -303,15 +359,17 @@ For these and/or other purposes and motivations, and without any expectation of 
 									<value>unknown</value>
 								</choice>
 							</attribute>
-							<ref name="m.mixed.basic"/>
+							<text/>
 						</element>
 						<element a:id="agent" name="agent">
 							<ref name="a.common"/>
+							<ref name="a.encodinganalog"/>
 							<text/>
 						</element>
 						<zeroOrMore>
 							<element a:id="eventdesccription" name="eventdescription">
 								<ref name="a.common"/>
+								<ref name="a.encodinganalog"/>
 								<ref name="a.localtype"/>
 								<text/>
 							</element>
@@ -322,6 +380,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<element name="sources">
 					<ref name="a.common"/>
+					<ref name="a.encodinganalog"/>
 					<ref name="a.localtype"/>
 					<optional>
 						<attribute name="base">
@@ -331,6 +390,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<oneOrMore>
 						<element name="source">
 							<ref name="a.common"/>
+							<ref name="a.encodinganalog"/>
 							<optional>
 								<ref name="a.lastdatetimeverified"/>
 							</optional>
@@ -338,6 +398,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 							<zeroOrMore>
 								<element name="sourceentry">
 									<ref name="a.common"/>
+									<ref name="a.encodinganalog"/>
 									<optional>
 										<attribute name="transliteration"/>
 									</optional>
@@ -440,10 +501,12 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.maintenanceagency">
 		<element name="maintenanceagency">
 			<ref name="a.common"/>
+			<ref name="a.encodinganalog"/>
 			<ref name="am.countrycode"/>
 			<optional>
 				<element name="agencycode">
 					<ref name="a.common"/>
+					<ref name="a.encodinganalog"/>
 					<ref name="a.localtype"/>
 					<text/>
 				</element>
@@ -451,6 +514,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<zeroOrMore>
 				<element name="otheragencycode">
 					<ref name="a.common"/>
+					<ref name="a.encodinganalog"/>
 					<ref name="a.localtype"/>
 					<text/>
 				</element>
@@ -458,6 +522,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<oneOrMore>
 				<element name="agencyname">
 					<ref name="a.common"/>
+					<ref name="a.encodinganalog"/>
 					<ref name="a.localtype"/>
 					<text/>
 				</element>
@@ -471,6 +536,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.citation">
 		<element a:id="citation" name="citation">
 			<ref name="a.common"/>
+			<ref name="a.encodinganalog"/>
 			<ref name="am.simplelink"/>
 			<optional>
 				<ref name="a.lastdatetimeverified"/>
@@ -528,6 +594,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.coverage"/>
 			<element name="quantity">
 				<ref name="a.common"/>
+				<ref name="a.encodinganalog"/>
 				<optional>
 					<attribute name="approximate">
 						<ref name="av.yesorno"/>
@@ -537,6 +604,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</element>
 			<element name="unittype">
 				<ref name="a.common"/>
+				<ref name="a.encodinganalog"/>
 				<ref name="a.access.no.normal"/>
 				<text/>
 			</element>
@@ -687,6 +755,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.dao">
 		<element name="dao">
 			<ref name="a.common"/>
+			<ref name="a.encodinganalog"/>
+			<ref name="a.localtype"/>
+			<ref name="a.label"/>
 			<ref name="am.simplelink"/>
 			<optional>
 				<attribute name="entityref">
@@ -711,12 +782,12 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="a.coverage"/>
 			</optional>
 			<optional>
-				<ref name="e.daodesc"/>
+				<ref name="e.descriptivenote"/>
 			</optional>
 		</element>
 	</define>
 
-	<define name="e.daodesc">
+	<!--<define name="e.daodesc">
 		<element name="daodesc">
 			<ref name="a.common"/>
 			<optional>
@@ -726,7 +797,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="m.blocks"/>
 			</oneOrMore>
 		</element>
-	</define>
+	</define>-->
 	
 	<define name="e.daoset">
 		<element name="daoset">
@@ -734,6 +805,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.localtype"/>
 			<ref name="a.encodinganalog"/>
 			<ref name="a.label"/>
+			<ref name="a.coverage"/>
 			<ref name="e.dao"/>
 			<oneOrMore>
 				<ref name="e.dao"/>
@@ -744,7 +816,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</element>
 	</define>
 	
-	<define name="e.daogrp">
+	<!--<define name="e.daogrp">
 		<element name="daogrp">
 			<ref name="a.common"/>
 			<attribute a:defaultValue="extended" name="linktype">
@@ -809,7 +881,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</choice>
 			</oneOrMore>
 		</element>
-	</define>
+	</define>-->
 	
 	<define name="e.materialspec">
 		<element name="materialspec">
@@ -1419,7 +1491,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.encodinganalog"/>
 			<ref name="a.localtype"/>
 			<ref name="a.access.no.normal"/>
-			<text/>
+			<ref name="m.mixed.basic"/>
 		</element>
 	</define>
 	
@@ -2012,6 +2084,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.dimensions">
 		<element name="dimensions">
 			<ref name="a.common"/>
+			<ref name="a.encodinganalog"/>
 			<ref name="a.localtype"/>
 			<optional>
 				<attribute name="unit"/>
@@ -2028,11 +2101,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.physfacet">
 		<element name="physfacet">
 			<ref name="a.common"/>
+			<ref name="a.encodinganalog"/>
 			<ref name="a.access.no.normal"/>
 			<ref name="a.localtype"/>
-			<optional>
-				<attribute name="unit"/>
-			</optional>
 			<ref name="m.mixed.basic.plus.access"/>
 		</element>
 	</define>
@@ -2095,6 +2166,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.descriptivenote">
 		<element name="descriptivenote">
 			<ref name="a.common"/>
+			<ref name="a.encodinganalog"/>
 			<oneOrMore>
 				<ref name="e.p"/>
 			</oneOrMore>
@@ -2149,6 +2221,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.relations">
 		<element name="relations">
 			<ref name="a.common"/>
+			<ref name="a.encodinganalog"/>
 			<ref name="a.localtype"/>
 			<optional>
 				<attribute name="base">
@@ -2158,6 +2231,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<oneOrMore>
 				<element name="relation">
 					<ref name="a.common"/>
+					<ref name="a.encodinganalog"/>
 					<attribute name="relationtype">
 						<choice>
 							<value>cpfrelation</value>
@@ -2172,14 +2246,13 @@ For these and/or other purposes and motivations, and without any expectation of 
 						</attribute>
 					</optional>
 					<optional>
-						<attribute name="lastdatetimeverified">
-							<data type="dateTime"/>
-						</attribute>
+						<ref name="a.lastdatetimeverified"/>
 					</optional>
 					<ref name="am.simplelink"/>
 					<zeroOrMore>
 						<element name="relationentry">
 							<ref name="a.common"/>
+							<ref name="a.encodinganalog"/>
 							<ref name="a.localtype"/>
 							<optional>
 								<attribute name="transliteration">
@@ -2344,7 +2417,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</choice>
 	</define>
 	
-	<define name="m.data.standardDateTime">
+	<!--<define name="m.data.standardDateTime">
 		<choice>
 			<data type="date">
 				<param name="maxInclusive">2099-12-31</param>
@@ -2359,7 +2432,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<param name="maxInclusive">2099-12-31T23:59:59</param>
 			</data>
 		</choice>
-	</define>
+	</define>-->
 	
 	<define name="m.para.content">
 		<zeroOrMore>
@@ -2370,7 +2443,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</zeroOrMore>
 	</define>
 	
-	<define name="m.data.standarddate">
+	<!--<define name="m.data.standarddate">
 		<choice>
 			<data type="date">
 				<param name="maxInclusive">2099-12-31</param>
@@ -2382,22 +2455,25 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<param name="maxInclusive">2099-12</param>
 			</data>
 		</choice>
-	</define>
+	</define>-->
 	
 	<define name="m.datesingle">
 		<optional>
 			<attribute name="standarddate">
-				<ref name="m.data.standarddate"/>
+				<!--<ref name="m.data.standarddate"/>-->
+				<data type="token"/>
 			</attribute>
 		</optional>
 		<optional>
 			<attribute name="notbefore">
-				<ref name="m.data.standarddate"/>
+				<!--<ref name="m.data.standarddate"/>-->
+				<data type="token"/>
 			</attribute>
 		</optional>
 		<optional>
 			<attribute name="notafter">
-				<ref name="m.data.standarddate"/>
+				<!--<ref name="m.data.standarddate"/>-->
+				<data type="token"/>
 			</attribute>
 		</optional>
 		<ref name="m.mixed.basic"/>
@@ -2565,7 +2641,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			
 			<ref name="e.daoset"/>
 			
-			<ref name="e.daogrp"/>
+			<!--<ref name="e.daogrp"/>-->
 			
 		</choice>
 	</define>
@@ -2804,7 +2880,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</attribute>
 	</define>
 	
-	<define name="a.loc.external.ptr">
+	<!--<define name="a.loc.external.ptr">
 		<ref name="a.locatorLink"/>
 		<optional>
 			<attribute name="entityref">
@@ -2814,7 +2890,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<optional>
 			<attribute name="xpointer"/>
 		</optional>
-	</define>
+	</define>-->
 	
 	<define name="a.locatorLink">
 		<attribute a:defaultValue="locator" name="linktype">
@@ -2832,7 +2908,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</optional>
 	</define>
 	
-	<define name="a.loc.internal.ptr">
+	<!--<define name="a.loc.internal.ptr">
 		<ref name="a.locatorLink"/>
 		<optional>
 			<attribute name="target">
@@ -2842,9 +2918,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<optional>
 			<attribute name="xpointer"/>
 		</optional>
-	</define>
+	</define>-->
 	
-	<define name="a.arcLink">
+	<!--<define name="a.arcLink">
 		<attribute a:defaultValue="arc" name="linktype">
 			<value>arc</value>
 		</attribute>
@@ -2866,9 +2942,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<optional>
 			<attribute name="to"/>
 		</optional>
-	</define>
+	</define>-->
 	
-	<define name="a.resourceLink">
+	<!--<define name="a.resourceLink">
 		<attribute a:defaultValue="resource" name="type">
 			<value>resource</value>
 		</attribute>
@@ -2881,7 +2957,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<optional>
 			<attribute name="label"/>
 		</optional>
-	</define>
+	</define>-->
 	
 	<define name="am.dates.calendar">
 		<optional>
@@ -2921,7 +2997,8 @@ For these and/or other purposes and motivations, and without any expectation of 
 	
 	<define name="a.lastdatetimeverified">
 		<attribute name="lastdatetimeverified">
-			<ref name="m.data.standardDateTime"/>
+			<!--<ref name="m.data.standardDateTime"/>-->
+			<data type="token"/>
 		</attribute>
 	</define>
 	
