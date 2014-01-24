@@ -74,6 +74,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         <xsl:processing-instruction name="xml-model">
             <xsl:text>href="../ead_revised.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"</xsl:text>
         </xsl:processing-instruction>
+        <xsl:processing-instruction name="oxygen"><xsl:text>RNGSchema="../ead_revised.rng" type="xml"</xsl:text></xsl:processing-instruction>
         <!--<xsl:copy-of select="$instance-ns-stripped"/>
         -->
         <!--<xsl:apply-templates select="/" mode="strip-ns"/>
@@ -112,7 +113,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <!-- REMOVE COMPLETELY -->
     <xsl:template
-        match="frontmatter | runner | accessrestrict/legalstatus | arcdesc/address | dsc/address">
+        match="frontmatter | runner | accessrestrict/legalstatus | arcdesc/address | dsc/address | @linktype">
         <xsl:comment>
             <xsl:call-template name="removedElement"/>
         </xsl:comment>
@@ -137,6 +138,16 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <!-- dsc orphan elements -->
 
+    <xsl:template match="descgrp/address | descgrp/blockquote | descgp/descgrp | descgrp/head | descgrp/index | descgrp/list | descgrp/p | descgrp/table">
+        <xsl:comment>
+            <xsl:call-template name="removedElement"/>
+        </xsl:comment>
+        <xsl:message>
+            <xsl:call-template name="removedElement"/>
+        </xsl:message>
+        <xsl:comment><xsl:apply-templates/></xsl:comment>
+    </xsl:template>
+
     <!-- ############################################### -->
     <!-- REVISED CONTENT MODELS                          -->
     <!-- ############################################### -->
@@ -151,7 +162,15 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:call-template name="removedElement"/>
         </xsl:message>
     </xsl:template>
+    
+    
+    <!-- ############################################### -->
+    <!-- type attributes                            -->
+    <!-- ############################################### -->
 
+<xsl:template match="dsc/@type">
+    <xsl:attribute name="dsctype" select="string(.)"/>
+</xsl:template>
 
     <!-- ############################################### -->
     <!-- EADHEADER to CONTROL                            -->
@@ -261,9 +280,10 @@ For these and/or other purposes and motivations, and without any expectation of 
         </xsl:for-each>
         <xsl:if test="empty(corpname | name | persname | famname)">
             <origination>
+               <xsl:copy-of select="@*"/>
                 <name>
                     <part>
-                        <xsl:value-of select="./text()"/>
+                        <xsl:apply-templates/>
                     </part>
                 </name>
             </origination>
@@ -279,13 +299,13 @@ For these and/or other purposes and motivations, and without any expectation of 
         <repository>
             <xsl:apply-templates select="corpname | name | persname | famname | address"/>
             <xsl:if test="empty(corpname | name | persname | famname | address)">
-                <repository>
+                
                     <name>
                         <part>
                             <xsl:value-of select=".//text()"/>
                         </part>
                     </name>
-                </repository>
+                
             </xsl:if>
             <xsl:comment>
                 <xsl:value-of select=".//text()"/>
@@ -414,7 +434,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
     <!-- ADDRESSLINE                                     -->
     <!-- ############################################### -->
-
+<!--
     <xsl:template match="address[not(parent::repository) and not(parent::publicationtmt)]">
         <xsl:choose>
             <xsl:when
@@ -425,7 +445,8 @@ For these and/or other purposes and motivations, and without any expectation of 
                 and not(parent::extref)
                 and not(parent::extrefloc)
                 and not(parent::ref)
-                and not(parent::refloc)">
+                and not(parent::refloc)
+                and not (parent::descgrp)">
                 <xsl:element name="p">
                     <xsl:for-each select="addressline">
                         <xsl:apply-templates/>
@@ -437,16 +458,16 @@ For these and/or other purposes and motivations, and without any expectation of 
             </xsl:when>
             <xsl:otherwise>
                 <xsl:for-each select="addressline">
-                    <xsl:apply-templates/>
+                    <xsl:apply-templates/> -->
                     <!-- MR: Not sure if we want to add commas here.  -->
                     <!--<xsl:if test="position()!=last()">
                         <xsl:text>, </xsl:text>
                     </xsl:if>-->
-                </xsl:for-each>
+<!--               </xsl:for-each>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
-
+-->
     <!-- ############################################### -->
     <!-- ACCESSRESTRICT + LEGALSTATUS                    -->
     <!-- ############################################### -->
