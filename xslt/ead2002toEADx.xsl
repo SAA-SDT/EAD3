@@ -128,7 +128,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:template
         match="descgrp | admininfo | titleproper/date | titleproper/num | 
         accessrestrict/accessrestrict/legalstatus | archref/abstract | subtitle/date | 
-        subtitle/num">
+        subtitle/num | subarea">
         <xsl:comment>
             <xsl:call-template name="removedElement"/>
         </xsl:comment>
@@ -467,7 +467,7 @@ For these and/or other purposes and motivations, and without any expectation of 
                 <xsl:copy-of select="@*"/>
                 <name>
                     <part>
-                        <xsl:apply-templates select="node() except (subarea)"/>
+                        <xsl:apply-templates/>
                     </part>
                 </name>
             </origination>
