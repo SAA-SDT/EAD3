@@ -128,7 +128,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:template
         match="descgrp | admininfo | titleproper/date | titleproper/num | 
         accessrestrict/accessrestrict/legalstatus | archref/abstract | subtitle/date | 
-        subtitle/num | subarea">
+        subtitle/num | subarea | bibseries | imprint | bibref/edition | bibref/publisher">
         <xsl:comment>
             <xsl:call-template name="removedElement"/>
         </xsl:comment>
@@ -167,6 +167,8 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:call-template name="removedElement"/>
         </xsl:message>
     </xsl:template>
+    
+
 
 
     <!-- ############################################### -->
@@ -530,10 +532,10 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xsl:template>
 
     <!-- ############################################### -->
-    <!-- NAMES                                           -->
+    <!-- NAMES  AND CONTROLLACCESS                       -->
     <!-- ############################################### -->
 
-    <xsl:template match="corpname | famname | persname | name | subject | occupation">
+    <xsl:template match="corpname | famname | persname | name | subject | occupation | geogname | function | title | genreform">
         <xsl:comment>
             <xsl:text>Added child part element to </xsl:text>
             <xsl:value-of select="local-name()"/>
@@ -554,12 +556,15 @@ For these and/or other purposes and motivations, and without any expectation of 
     
 
     <!-- ############################################### -->
-    <!-- RENAMED ELEMENTS                                -->
+    <!-- RENAMED ELEMENTS AND ATTRIBUTED                 -->
     <!-- ############################################### -->
 
     <!-- the archaic add -->
     <xsl:template match="add">
         <xsl:call-template name="nowOdd"/>
+    </xsl:template>
+    <xsl:template match="*/@role">
+       <xsl:attribute name="relator"><xsl:value-of select="."/></xsl:attribute>
     </xsl:template>
 
 
@@ -631,7 +636,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:template
         match="abstract/@type | accessrestrict/@type | altformavail/@type | container/@type |
         phystech/@type | processinfo/@type | titleproper/@type | unitid/@type |
-        userestruct/@type | odd/@type">
+        userestruct/@type | odd/@type | date/@type">
         <xsl:attribute name="localtype">
             <xsl:value-of select="."/>
         </xsl:attribute>
@@ -770,6 +775,27 @@ For these and/or other purposes and motivations, and without any expectation of 
         <xsl:text>ORPHANED BY CONVERSION OF INLINE BLOCKQUOTE TO QUOTE. MIGRATION PATH PENDING</xsl:text>
     </xsl:template>
 
+
+    <!-- ############################################### -->
+    <!-- LINK ELEMENTS and ATTRS                         -->
+    <!-- ############################################### -->
+    
+    
+
+<xsl:template match="extref">
+    <ref><xsl:apply-templates/></ref>
+</xsl:template>
+    
+<xsl:template match="ptr">
+        <ptr><xsl:apply-templates/></ptr>
+</xsl:template>
+ 
+ 
+ 
+ 
+    
+    
+
     <xsl:template name="gonna-deal-with-this-later">
         <xsl:comment>
             <xsl:text>NOT GONNA DEAL WITH</xsl:text>
@@ -780,5 +806,7 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:text>&#10;</xsl:text>
         </xsl:comment>
     </xsl:template>
+    
+    
 
 </xsl:stylesheet>
