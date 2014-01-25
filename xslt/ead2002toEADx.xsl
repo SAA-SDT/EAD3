@@ -173,7 +173,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- type attributes                            -->
     <!-- ############################################### -->
 
-    <xsl:template match="dsc/@type | list/@type">
+    <xsl:template match="dsc/@type | list/@type| unitdate/@type">
         <xsl:attribute name="{parent::*/local-name()}type" select="string(.)"/>
     </xsl:template>
 
@@ -200,6 +200,8 @@ For these and/or other purposes and motivations, and without any expectation of 
             <maintenanceagency>
                 <agencyname>[agency name]</agencyname>
             </maintenanceagency>
+            <xsl:apply-templates select="profiledesc/langusage/language"/>
+            <!--
             <xsl:choose>
                 <xsl:when test="profiledesc/langusage/language">
                     <xsl:for-each select="profiledesc/langusage/language">
@@ -240,7 +242,9 @@ For these and/or other purposes and motivations, and without any expectation of 
                 </xsl:when>
                 <xsl:otherwise/>
             </xsl:choose>
-            <xsl:if test="profiledesc/descrules">
+         -->
+         
+         <xsl:if test="profiledesc/descrules">
                 <convetiondeclaration>
                     <xsl:if test="@encodinganalog">
                         <xsl:copy-of select="@encodinganalog"/>
@@ -364,6 +368,24 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xsl:template>
     
     
+    <!-- langusage -->
+    <xsl:template match="language[parent::langusage]">
+        <languagedeclaration>
+            <xsl:apply-templates select="@* except (@langcode | @scriptcode)"/>
+            <language>
+                <xsl:value-of select="@langcode"/>
+            </language>
+            <script>
+                <xsl:value-of select="@scriptcode"/>
+            </script>
+            <descriptivenote>
+                <p>XYZ--<xsl:apply-templates select="parent::langusage/node()[not(self::*)] | text()"/></p>
+            </descriptivenote>
+        </languagedeclaration>
+
+    </xsl:template>
+    
+    
     <!-- blockquote -->
     <xsl:template match="blockquote">
         <xsl:choose>
@@ -445,7 +467,7 @@ For these and/or other purposes and motivations, and without any expectation of 
                 <xsl:copy-of select="@*"/>
                 <name>
                     <part>
-                        <xsl:apply-templates/>
+                        <xsl:apply-templates select="node() except (subarea)"/>
                     </part>
                 </name>
             </origination>
@@ -454,6 +476,25 @@ For these and/or other purposes and motivations, and without any expectation of 
             </descriptivenote>
          -->
         </xsl:if>
+    </xsl:template>
+    
+    
+    
+    
+    
+    <xsl:template match="unittitle">
+        <unittitle>
+            <xsl:copy-of select="@*"></xsl:copy-of>
+            <xsl:apply-templates select="child::node() except (unitdate)"/>
+        </unittitle>
+        <xsl:apply-templates select="unitdate"/>
+    </xsl:template>
+    
+    <xsl:template match="unitdate[parent::did]">
+        <unitdate>
+            <xsl:apply-templates select="@*"></xsl:apply-templates>
+            <xsl:apply-templates select="child::node() except (unitdate)"/>
+        </unitdate>
     </xsl:template>
 
 
@@ -492,7 +533,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- NAMES                                           -->
     <!-- ############################################### -->
 
-    <xsl:template match="corpname | famname | persname | name">
+    <xsl:template match="corpname | famname | persname | name | subject | occupation">
         <xsl:comment>
             <xsl:text>Added child part element to </xsl:text>
             <xsl:value-of select="local-name()"/>
@@ -509,6 +550,8 @@ For these and/or other purposes and motivations, and without any expectation of 
             </part>
         </xsl:element>
     </xsl:template>
+    
+    
 
     <!-- ############################################### -->
     <!-- RENAMED ELEMENTS                                -->
@@ -586,8 +629,8 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
 
     <xsl:template
-        match="abstract/@type | accessrestrict/@type | altformavail/@type | 
-        phystech/@type | processinfo/@type | titleproper/@type | unitid/@type | 
+        match="abstract/@type | accessrestrict/@type | altformavail/@type | container/@type |
+        phystech/@type | processinfo/@type | titleproper/@type | unitid/@type |
         userestruct/@type | odd/@type">
         <xsl:attribute name="localtype">
             <xsl:value-of select="."/>
