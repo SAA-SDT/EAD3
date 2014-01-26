@@ -167,7 +167,7 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:call-template name="removedElement"/>
         </xsl:message>
     </xsl:template>
-    
+
 
 
 
@@ -182,7 +182,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
     <!-- EADHEADER to CONTROL -->
     <!-- ############################################### -->
-    
+
     <xsl:template match="eadheader">
         <xsl:comment>
             <xsl:text>eadheader now control: </xsl:text>
@@ -245,8 +245,8 @@ For these and/or other purposes and motivations, and without any expectation of 
                 <xsl:otherwise/>
             </xsl:choose>
          -->
-         
-         <xsl:if test="profiledesc/descrules">
+
+            <xsl:if test="profiledesc/descrules">
                 <convetiondeclaration>
                     <xsl:if test="@encodinganalog">
                         <xsl:copy-of select="@encodinganalog"/>
@@ -276,10 +276,13 @@ For these and/or other purposes and motivations, and without any expectation of 
                         <eventtype value="created"/>
                         <eventdatetime>
                             <xsl:choose>
-                                <xsl:when test="profiledesc/creation/date and not(profiledesc/creation/date[2])">
-                                    <xsl:if test="profiledesc/creation/date/@normal[not(contains(.,'/'))]">
+                                <xsl:when
+                                    test="profiledesc/creation/date and not(profiledesc/creation/date[2])">
+                                    <xsl:if
+                                        test="profiledesc/creation/date/@normal[not(contains(.,'/'))]">
                                         <xsl:attribute name="standarddatetime">
-                                            <xsl:value-of select="profiledesc/creation/date/@normal"/>
+                                            <xsl:value-of select="profiledesc/creation/date/@normal"
+                                            />
                                         </xsl:attribute>
                                     </xsl:if>
                                     <xsl:value-of select="profiledesc/creation/date"/>
@@ -339,7 +342,7 @@ For these and/or other purposes and motivations, and without any expectation of 
             </maintenancehistory>
         </control>
     </xsl:template>
-    
+
     <xsl:template match="eadid">
         <recordid>
             <xsl:if test="@encodinganalog">
@@ -368,8 +371,8 @@ For these and/or other purposes and motivations, and without any expectation of 
             </otherrecordid>
         </xsl:if>
     </xsl:template>
-    
-    
+
+
     <!-- langusage -->
     <xsl:template match="language[parent::langusage]">
         <languagedeclaration>
@@ -381,13 +384,14 @@ For these and/or other purposes and motivations, and without any expectation of 
                 <xsl:value-of select="@scriptcode"/>
             </script>
             <descriptivenote>
-                <p>XYZ--<xsl:apply-templates select="parent::langusage/node()[not(self::*)] | text()"/></p>
+                <p>XYZ--<xsl:apply-templates
+                        select="parent::langusage/node()[not(self::*)] | text()"/></p>
             </descriptivenote>
         </languagedeclaration>
 
     </xsl:template>
-    
-    
+
+
     <!-- blockquote -->
     <xsl:template match="blockquote">
         <xsl:choose>
@@ -428,7 +432,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
     <!-- LIST                                            -->
     <!-- ############################################### -->
-<!--
+    <!--
     <xsl:template match="list">
         <list>
             <xsl:apply-templates select="@*"/>
@@ -479,22 +483,22 @@ For these and/or other purposes and motivations, and without any expectation of 
          -->
         </xsl:if>
     </xsl:template>
-    
-    
-    
-    
-    
+
+
+
+
+
     <xsl:template match="unittitle">
         <unittitle>
-            <xsl:copy-of select="@*"></xsl:copy-of>
+            <xsl:copy-of select="@*"/>
             <xsl:apply-templates select="child::node() except (unitdate)"/>
         </unittitle>
         <xsl:apply-templates select="unitdate"/>
     </xsl:template>
-    
+
     <xsl:template match="unitdate[parent::did]">
         <unitdate>
-            <xsl:apply-templates select="@*"></xsl:apply-templates>
+            <xsl:apply-templates select="@*"/>
             <xsl:apply-templates select="child::node() except (unitdate)"/>
         </unitdate>
     </xsl:template>
@@ -517,16 +521,18 @@ For these and/or other purposes and motivations, and without any expectation of 
             </xsl:comment>
         </repository>
     </xsl:template>
-    
+
     <xsl:template match="physdesc[child::* except (extent) ]">
         <physdesc>
-         <xsl:apply-templates/>
+            <xsl:apply-templates/>
         </physdesc>
     </xsl:template>
-    
+
     <xsl:template match="physdesc[child::extent]">
         <physdescstructured physdescstructuredtype="spaceoccupied" coverage="whole">
-            <quantity><xsl:apply-templates select="extent/text()"/></quantity>
+            <quantity>
+                <xsl:apply-templates select="extent/text()"/>
+            </quantity>
             <unittype>xxx</unittype>
         </physdescstructured>
     </xsl:template>
@@ -535,7 +541,8 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- NAMES  AND CONTROLLACCESS                       -->
     <!-- ############################################### -->
 
-    <xsl:template match="corpname | famname | persname | name | subject | occupation | geogname | function | title | genreform">
+    <xsl:template
+        match="corpname | famname | persname | name | subject | occupation | geogname | function | title | genreform">
         <xsl:comment>
             <xsl:text>Added child part element to </xsl:text>
             <xsl:value-of select="local-name()"/>
@@ -552,8 +559,8 @@ For these and/or other purposes and motivations, and without any expectation of 
             </part>
         </xsl:element>
     </xsl:template>
-    
-    
+
+
 
     <!-- ############################################### -->
     <!-- RENAMED ELEMENTS AND ATTRIBUTED                 -->
@@ -564,7 +571,9 @@ For these and/or other purposes and motivations, and without any expectation of 
         <xsl:call-template name="nowOdd"/>
     </xsl:template>
     <xsl:template match="*/@role">
-       <xsl:attribute name="relator"><xsl:value-of select="."/></xsl:attribute>
+        <xsl:attribute name="relator">
+            <xsl:value-of select="."/>
+        </xsl:attribute>
     </xsl:template>
 
 
@@ -728,18 +737,36 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:template match="custodhist/acqinfo"/>
 
 
+    <!-- ############################################### -->
+    <!-- LINK ELEMENTS and ATTRS                         -->
+    <!-- ############################################### -->
+
+
+
+    <xsl:template match="extref">
+        <ref>
+            <xsl:apply-templates/>
+        </ref>
+    </xsl:template>
+
+    <xsl:template match="extptr">
+        <ptr>
+            <xsl:apply-templates/>
+        </ptr>
+    </xsl:template>
+
 
     <!-- ############################################### -->
     <!-- OTHER TEMPLATES                                 -->
     <!-- ############################################### -->
-
+    
     <xsl:template name="removedElement">
         <xsl:text>DEPRECATED ELEMENT </xsl:text>
         <xsl:value-of select="local-name()"/>
         <xsl:text>&#160;</xsl:text>
         <xsl:text>REMOVED</xsl:text>
     </xsl:template>
-
+    
     <xsl:template name="nowOdd">
         <xsl:comment>
             <xsl:text>ELEMENT </xsl:text>
@@ -760,42 +787,21 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
-
+    
     <xsl:template name="dscOrphanElements">
         <xsl:text>DSC CHILD ELEMENT </xsl:text>
         <xsl:value-of select="local-name()"/>
         <xsl:text>&#160;</xsl:text>
         <xsl:text>ORPHANED BY DEPRECATION OF DSC. MIGRATION PATH PENDING</xsl:text>
     </xsl:template>
-
+    
     <xsl:template name="blockquoteOrphanElements">
         <xsl:text>INLINE BLOCKQUOTE CHILD ELEMENT </xsl:text>
         <xsl:value-of select="local-name()"/>
         <xsl:text>&#160;</xsl:text>
         <xsl:text>ORPHANED BY CONVERSION OF INLINE BLOCKQUOTE TO QUOTE. MIGRATION PATH PENDING</xsl:text>
     </xsl:template>
-
-
-    <!-- ############################################### -->
-    <!-- LINK ELEMENTS and ATTRS                         -->
-    <!-- ############################################### -->
     
-    
-
-<xsl:template match="extref">
-    <ref><xsl:apply-templates/></ref>
-</xsl:template>
-    
-<xsl:template match="ptr">
-        <ptr><xsl:apply-templates/></ptr>
-</xsl:template>
- 
- 
- 
- 
-    
-    
-
     <xsl:template name="gonna-deal-with-this-later">
         <xsl:comment>
             <xsl:text>NOT GONNA DEAL WITH</xsl:text>
@@ -806,7 +812,5 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:text>&#10;</xsl:text>
         </xsl:comment>
     </xsl:template>
-    
-    
 
 </xsl:stylesheet>

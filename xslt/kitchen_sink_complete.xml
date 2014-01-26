@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../ead_revised.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?oxygen RNGSchema="../ead_revised.rng" type="xml"?><ead xmlns="http://ead3.archivists.org/schema/">
+<?xml-model href="../ead_revised.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?oxygen RNGSchema="../ead_revised.rng" type="xml"?>
+<ead xmlns="http://ead3.archivists.org/schema/">
     <!--eadheader now control: Inserting minimal control element--><control>
-      <recordid>[recordid]</recordid>
+      <recordid>hua88888</recordid>
+      <otherrecordid localtype="eadidpublicid">hua88888</otherrecordid>
       <filedesc>
             <titlestmt>
                 <titleproper>Bowers, Kate. Everything but the kitchen sink : an
@@ -19,9 +22,27 @@
       <maintenancehistory>
          <maintenanceevent>
             <eventtype value="derived"/>
-            <eventdatetime>2014-01-24T10:29:05.156-05:00</eventdatetime>
+            <eventdatetime>2014-01-25T13:17:41.207-05:00</eventdatetime>
             <agenttype value="machine"/>
             <agent/>
+         </maintenanceevent>
+         <maintenanceevent>
+            <eventtype value="created"/>
+            <eventdatetime>2006 April 12||| </eventdatetime>
+            <agenttype value="unknown"/>
+            <agent/>
+            <eventdescription>
+                2006 April 12||| 
+            </eventdescription>
+         </maintenanceevent>
+         <maintenanceevent>
+            <eventtype value="unknown"/>
+            <eventdatetime standarddatetime="">March 23,
+                    2004</eventdatetime>
+            <agenttype value="unknown"/>
+            <agent/>
+            <eventdescription>hua88888 converted from EAD 1.0 to 2002 by v1to02.xsl
+                    (sy2003-10-15).</eventdescription>
          </maintenanceevent>
       </maintenancehistory>
    </control>
@@ -32,22 +53,26 @@
             <container>container||| </container>
             <!--ELEMENT note RENAMED as 'didnote'
 --><didnote>p in note||| </didnote>
-            <origination><!--Added child part element to persname--><persname>
+            <origination><!--Added child part element to persname-->
+            <persname>
                <part>Bowers, Kate (persname)||| </part>
             </persname>
             <!--
                 Bowers, Kate (persname)||| 
-                (origination)||| --></origination>
+                (origination)||| -->
+         </origination>
             <physdescstructured physdescstructuredtype="spaceoccupied" coverage="whole">
             <quantity>extent||| </quantity>
-            <unittype/>
+            <unittype>xxx</unittype>
          </physdescstructured>
             <physloc>physloc ||| </physloc>
-            <repository><!--Added child part element to corpname--><corpname>
+            <repository><!--Added child part element to corpname-->
+            <corpname>
                <part>corpname ||| </part>
             </corpname>
             <!--
-                corpname |||  in repository ||| --></repository>
+                corpname |||  in repository ||| -->
+         </repository>
             <unitdate calendar="gregorian" era="ce">unitdate ||| </unitdate>
             <unitid> unitid ||| </unitid>
             <unittitle> unittitle ||| </unittitle>
@@ -270,7 +295,8 @@
                   <name>
                      <part>repository in did in series level c ||| </part>
                   </name>
-                  <!--repository in did in series level c ||| --></repository>
+                  <!--repository in did in series level c ||| -->
+               </repository>
                     <unitdate calendar="gregorian" era="ce">unitdate in did in
                         series level c ||| </unitdate>
                     <unitid>unitid in did in series level c ||| </unitid>
