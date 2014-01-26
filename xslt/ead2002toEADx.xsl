@@ -772,7 +772,7 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:text>ELEMENT </xsl:text>
             <xsl:value-of select="local-name()"/>
             <xsl:text>&#160;</xsl:text>
-            <xsl:text>RENAMED as 'odd'</xsl:text>
+            <xsl:text>RENAMED as 'odd'</xsl:text>   
             <xsl:text>&#10;</xsl:text>
         </xsl:comment>
         <xsl:message>
@@ -781,7 +781,7 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:text>&#160;</xsl:text>
             <xsl:text>RENAMED as 'odd'</xsl:text>
         </xsl:message>
-        <xsl:element name="odd" namespace="{$eadxmlns}" xmlns="urn:isbn:1-931666-22-9">
+        <xsl:element name="odd" namespace="{$eadxmlns}" xmlns="urn:isbn:1-931666-22-9">    
             <xsl:copy-of select="@* except @type"/>
             <xsl:attribute name="localtype" select="@type"/>
             <xsl:apply-templates/>
