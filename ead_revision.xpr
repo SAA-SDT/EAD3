@@ -265,7 +265,7 @@
                                     <String>${currentFileURL}</String>
                                 </field>
                                 <field name="inputXMLURL">
-                                    <String>../kitchen_sink_EAD_for_testing_think_this_most_complete.xml</String>
+                                    <String>file:/home/thc4/Dropbox/ead-test-col/nwda.orbiacascade.org/ALKMS220.xml</String>
                                 </field>
                                 <field name="defaultScenario">
                                     <Boolean>false</Boolean>
@@ -283,7 +283,7 @@
                                     <Boolean>false</Boolean>
                                 </field>
                                 <field name="outputFile">
-                                    <File>kitchen_sink_complete.xml</File>
+                                    <File>result.xml</File>
                                 </field>
                                 <field name="openOtherLocationInBrowser">
                                     <Boolean>false</Boolean>

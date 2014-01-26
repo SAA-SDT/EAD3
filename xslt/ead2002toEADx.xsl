@@ -245,17 +245,9 @@ For these and/or other purposes and motivations, and without any expectation of 
                 <xsl:otherwise/>
             </xsl:choose>
          -->
+<xsl:apply-templates select="profiledesc/descrules"/>
 
-            <xsl:if test="profiledesc/descrules">
-                <conventiondeclaration>
-                    <xsl:if test="@encodinganalog">
-                        <xsl:copy-of select="@encodinganalog"/>
-                    </xsl:if>
-                    <citation>
-                        <xsl:apply-templates/>
-                    </citation>
-                </conventiondeclaration>
-            </xsl:if>
+
             <maintenancehistory>
                 <xsl:if test="revisiondesc/@encodinganalog">
                     <xsl:copy-of select="revisiondesc/@encodinganalog"/>
@@ -390,7 +382,15 @@ For these and/or other purposes and motivations, and without any expectation of 
         </languagedeclaration>
 
     </xsl:template>
-
+    
+    <!-- descrules -->
+    <xsl:template match="descrules">
+    <conventiondeclaration>
+        <citation>
+            <xsl:apply-templates/>
+        </citation>
+    </conventiondeclaration>
+    </xsl:template>
 
     <!-- blockquote -->
     <xsl:template match="blockquote">
