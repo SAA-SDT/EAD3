@@ -10,11 +10,11 @@
                         <scenarioAssociation-array>
                             <scenarioAssociation>
                                 <field name="url">
-                                    <String>../ead-test-col/</String>
+                                    <String>xslt/ead2002toEADx.xsl</String>
                                 </field>
                                 <field name="scenarioIds">
                                     <list>
-                                        <String>transform_to_ead3</String>
+                                        <String>ead2002toEAD3</String>
                                     </list>
                                 </field>
                                 <field name="scenarioTypes">
@@ -25,11 +25,11 @@
                             </scenarioAssociation>
                             <scenarioAssociation>
                                 <field name="url">
-                                    <String>xslt/ead2002toEADx.xsl</String>
+                                    <String>../ead-test-col/</String>
                                 </field>
                                 <field name="scenarioIds">
                                     <list>
-                                        <String>ead2002toEAD3</String>
+                                        <String>transform_to_ead3</String>
                                     </list>
                                 </field>
                                 <field name="scenarioTypes">
@@ -864,7 +864,7 @@
                                     <Boolean>false</Boolean>
                                 </field>
                                 <field name="outputFile">
-                                    <File>~/working/ead3_results/${cfne}</File>
+                                    <File>/home/thc4/working/ead3_results/${cfne}</File>
                                 </field>
                                 <field name="openOtherLocationInBrowser">
                                     <Boolean>false</Boolean>
@@ -912,6 +912,21 @@
                     <entry>
                         <String>validation.scenario.associations</String>
                         <scenarioAssociation-array>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../working/ead3_results/</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>ead3validation</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>Validation_scenario</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
                             <scenarioAssociation>
                                 <field name="url">
                                     <String>xslt/results/</String>

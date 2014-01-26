@@ -247,14 +247,14 @@ For these and/or other purposes and motivations, and without any expectation of 
          -->
 
             <xsl:if test="profiledesc/descrules">
-                <convetiondeclaration>
+                <conventiondeclaration>
                     <xsl:if test="@encodinganalog">
                         <xsl:copy-of select="@encodinganalog"/>
                     </xsl:if>
                     <citation>
                         <xsl:apply-templates/>
                     </citation>
-                </convetiondeclaration>
+                </conventiondeclaration>
             </xsl:if>
             <maintenancehistory>
                 <xsl:if test="revisiondesc/@encodinganalog">
@@ -624,6 +624,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
     <!-- NAMESPACE STRIPPING ELEMENTS                    -->
     <!-- ############################################### -->
+ 
     <xsl:template match="*" mode="strip-ns">
         <xsl:element name="{local-name()}" namespace="" inherit-namespaces="no">
             <xsl:apply-templates select="@* | node()" mode="strip-ns"/>
@@ -781,7 +782,7 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:text>&#160;</xsl:text>
             <xsl:text>RENAMED as 'odd'</xsl:text>
         </xsl:message>
-        <xsl:element name="odd" namespace="{$eadxmlns}" xmlns="urn:isbn:1-931666-22-9">    
+        <xsl:element name="odd" namespace="{$eadxmlns}" xmlns="urn:isbn:1-931666-22-9">
             <xsl:copy-of select="@* except @type"/>
             <xsl:attribute name="localtype" select="@type"/>
             <xsl:apply-templates/>
