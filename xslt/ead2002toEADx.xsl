@@ -598,11 +598,19 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:template match="add">
         <xsl:call-template name="nowOdd"/>
     </xsl:template>
+    
     <xsl:template match="*/@role">
         <xsl:attribute name="relator">
             <xsl:value-of select="."/>
         </xsl:attribute>
     </xsl:template>
+    
+    <xsl:template match="*/@authfilenumber">
+        <xsl:attribute name="identifier">
+            <xsl:value-of select="."/>
+        </xsl:attribute>
+    </xsl:template>
+    
     <xsl:template match="daodesc">
         <descriptivenote>
             <xsl:apply-templates select="@*"/>
@@ -678,7 +686,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
 
     <xsl:template
-        match="abstract/@type | accessrestrict/@type | altformavail/@type | container/@type |
+        match="abstract/@type | accessrestrict/@type | altformavail/@type | archdesc/@type |container/@type |
         phystech/@type | processinfo/@type | titleproper/@type | title/@type | unitid/@type |
         userestruct/@type | odd/@type | date/@type">
         <xsl:attribute name="localtype">
