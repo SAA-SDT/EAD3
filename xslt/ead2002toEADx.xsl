@@ -463,7 +463,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         <did>
         <xsl:apply-templates select="@*"/>
         <xsl:apply-templates/>
-        <xsl:apply-templates select="parent::*/dao | parent::daogrp" mode="daoIndid"/>
+        <xsl:apply-templates select="parent::*/dao | parent::*/daogrp" mode="daoIndid"/>
         </did>
     </xsl:template>
     
@@ -478,6 +478,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     
     <xsl:template match="dao" mode="daoIndid">
         <dao>
+            <xsl:apply-templates select="@*"/>
             <xsl:apply-templates/>
         </dao>
     </xsl:template>
