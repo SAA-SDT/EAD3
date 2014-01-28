@@ -128,7 +128,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:template
         match="descgrp | admininfo | titleproper/date | titleproper/num | 
         accessrestrict/accessrestrict/legalstatus | archref/abstract | subtitle/date | 
-        subtitle/num | subarea | bibseries | imprint | bibref/edition | bibref/publisher">
+        subtitle/num | subarea | bibseries | imprint | bibref/edition | bibref/publisher | emph/* | abbr/* | expan/*">
         <xsl:comment>
             <xsl:call-template name="removedElement"/>
         </xsl:comment>
@@ -458,6 +458,33 @@ For these and/or other purposes and motivations, and without any expectation of 
       otherwise:
       put all text in <name>/<part>
 -->
+    
+    <xsl:template match="did">
+        <did>
+        <xsl:apply-templates select="@*"/>
+        <xsl:apply-templates/>
+        <xsl:apply-templates select="parent::*/dao | parent::daogrp" mode="daoIndid"/>
+        </did>
+    </xsl:template>
+    
+    <xsl:template match="dao[not(parent::did)] | daogrp[not(parent::did)]">
+    </xsl:template>
+    
+    <xsl:template match="daogrp" mode="daoIndid">
+        <daoset>
+            <xsl:apply-templates/>
+        </daoset>
+    </xsl:template>
+    
+    <xsl:template match="dao" mode="daoIndid">
+        <dao>
+            <xsl:apply-templates/>
+        </dao>
+    </xsl:template>
+    
+   
+    
+    
 
     <xsl:template match="origination">
         <xsl:for-each select="corpname | name | persname | famname">
@@ -559,7 +586,8 @@ For these and/or other purposes and motivations, and without any expectation of 
             </part>
         </xsl:element>
     </xsl:template>
-
+    
+   
 
 
     <!-- ############################################### -->
@@ -574,6 +602,12 @@ For these and/or other purposes and motivations, and without any expectation of 
         <xsl:attribute name="relator">
             <xsl:value-of select="."/>
         </xsl:attribute>
+    </xsl:template>
+    <xsl:template match="daodesc">
+        <descriptivenote>
+            <xsl:apply-templates select="@*"/>
+            <xsl:apply-templates/>
+        </descriptivenote>
     </xsl:template>
 
 
@@ -645,7 +679,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <xsl:template
         match="abstract/@type | accessrestrict/@type | altformavail/@type | container/@type |
-        phystech/@type | processinfo/@type | titleproper/@type | unitid/@type |
+        phystech/@type | processinfo/@type | titleproper/@type | title/@type | unitid/@type |
         userestruct/@type | odd/@type | date/@type">
         <xsl:attribute name="localtype">
             <xsl:value-of select="."/>
@@ -746,16 +780,15 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <xsl:template match="extref">
         <ref>
-            <xsl:apply-templates/>
+            <xsl:value-of select="."/>
         </ref>
     </xsl:template>
 
     <xsl:template match="extptr">
         <ptr>
-            <xsl:apply-templates/>
+            <xsl:value-of select="."/>
         </ptr>
     </xsl:template>
-
 
     <!-- ############################################### -->
     <!-- OTHER TEMPLATES                                 -->
