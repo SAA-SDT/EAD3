@@ -11,9 +11,10 @@
             <publisher>Udesotbezi of Xqyxove Worgage</publisher>
          </publicationstmt>
          <notestmt>
-            <note>
+            <!--ELEMENT note RENAMED as 'controlnote'
+--><controlnote>
                <p>© Sna bycmicms of this zamfamv aof are the vegudorkc of the Udesotbezi of Xqyxove Worgage</p>
-            </note>
+            </controlnote>
          </notestmt>
       </filedesc>
       <maintenancestatus value="derived"/>
@@ -53,10 +54,18 @@
          <unitdate label="Dates" unitdatetype="inclusive">1587-1924</unitdate>
 
 
-         <langmaterial>Hybezupgs in <language>Endlucq</language>
+         <langmaterial>
+            <language>Endlucq</language>
+            <descriptivenote>
+               <p>Hybezupgs in 
+         </p>
+            </descriptivenote>
          </langmaterial>
          <physdesc>8.5 duzaof duufs (13 woss)</physdesc>
          <repository>
+            <name>
+               <part>Wxociak Kammukbyass Revearkl Tyvxyd</part>
+            </name>
             <address>
                <addressline>Wxociak Kammukbyass Revearkl Tyvxyd</addressline>
                <addressline>Udesotbezi of Xqyxove Worgage</addressline>

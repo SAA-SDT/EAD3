@@ -245,7 +245,7 @@ For these and/or other purposes and motivations, and without any expectation of 
                 <xsl:otherwise/>
             </xsl:choose>
          -->
-<xsl:apply-templates select="profiledesc/descrules"/>
+            <xsl:apply-templates select="profiledesc/descrules"/>
 
 
             <maintenancehistory>
@@ -382,14 +382,14 @@ For these and/or other purposes and motivations, and without any expectation of 
         </languagedeclaration>
 
     </xsl:template>
-    
+
     <!-- descrules -->
     <xsl:template match="descrules">
-    <conventiondeclaration>
-        <citation>
-            <xsl:apply-templates/>
-        </citation>
-    </conventiondeclaration>
+        <conventiondeclaration>
+            <citation>
+                <xsl:apply-templates/>
+            </citation>
+        </conventiondeclaration>
     </xsl:template>
 
     <!-- blockquote -->
@@ -458,34 +458,35 @@ For these and/or other purposes and motivations, and without any expectation of 
       otherwise:
       put all text in <name>/<part>
 -->
-    
+
     <xsl:template match="did">
         <did>
-        <xsl:apply-templates select="@*"/>
-        <xsl:apply-templates/>
-        <xsl:apply-templates select="parent::*/dao | parent::*/daogrp | child::dao | child::daogrp" mode="daoIndid"/>
+            <xsl:apply-templates select="@*"/>
+            <xsl:apply-templates/>
+            <xsl:apply-templates
+                select="parent::*/dao | parent::*/daogrp | child::dao | child::daogrp"
+                mode="daoIndid"/>
         </did>
     </xsl:template>
-    
-    <xsl:template match="dao | daogrp">
-    </xsl:template>
-    
+
+    <xsl:template match="dao | daogrp"> </xsl:template>
+
     <xsl:template match="daogrp" mode="daoIndid">
         <daoset>
             <xsl:apply-templates/>
         </daoset>
     </xsl:template>
-    
+
     <xsl:template match="dao" mode="daoIndid">
         <dao>
             <xsl:apply-templates select="@*"/>
             <xsl:apply-templates/>
         </dao>
     </xsl:template>
-    
-   
-    
-    
+
+
+
+
 
     <xsl:template match="origination">
         <xsl:for-each select="corpname | name | persname | famname">
@@ -533,17 +534,15 @@ For these and/or other purposes and motivations, and without any expectation of 
 
 
     <xsl:template match="repository">
-        <repository>
-            <xsl:apply-templates select="corpname | name | persname | famname | address"/>
-            <xsl:if test="empty(corpname | name | persname | famname | address)">
-
+        <repository>            
+            <xsl:if test="empty(corpname | name | persname | famname)">
                 <name>
                     <part>
-                        <xsl:value-of select=".//text()"/>
+                        <xsl:value-of select="descendant::addressline[1]"/>
                     </part>
                 </name>
-
             </xsl:if>
+            <xsl:apply-templates select="corpname | name | persname | famname | address"/>
             <xsl:comment>
                 <xsl:value-of select=".//text()"/>
             </xsl:comment>
@@ -555,6 +554,28 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:apply-templates select="./text() | abbr | emph | expan | lb | ref | ptr"/>
         </physdesc>
     </xsl:template>
+    
+    <xsl:template match="langmaterial">
+        <langmaterial>
+            <xsl:choose>
+                <xsl:when test="count(child::language) &gt; 1">
+                    <languageset>
+                        <xsl:apply-templates select="language"/>
+                    </languageset>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:apply-templates select="language"/>
+                </xsl:otherwise>
+            </xsl:choose>
+            <descriptivenote>
+                <p>
+                <xsl:apply-templates select="./text() | abbr | emph | expan | lb | ref | ptr"/>
+                </p>
+            </descriptivenote>
+        </langmaterial>
+    </xsl:template>
+    
+    
 
 
     <!-- ############################################### -->
@@ -579,8 +600,8 @@ For these and/or other purposes and motivations, and without any expectation of 
             </part>
         </xsl:element>
     </xsl:template>
-    
-   
+
+
 
 
     <!-- ############################################### -->
@@ -591,19 +612,19 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:template match="add">
         <xsl:call-template name="nowOdd"/>
     </xsl:template>
-    
+
     <xsl:template match="*/@role">
         <xsl:attribute name="relator">
             <xsl:value-of select="."/>
         </xsl:attribute>
     </xsl:template>
-    
+
     <xsl:template match="*/@authfilenumber">
         <xsl:attribute name="identifier">
             <xsl:value-of select="."/>
         </xsl:attribute>
     </xsl:template>
-    
+
     <xsl:template match="daodesc">
         <descriptivenote>
             <xsl:apply-templates select="@*"/>
@@ -656,10 +677,29 @@ For these and/or other purposes and motivations, and without any expectation of 
         </didnote>
     </xsl:template>
 
+    <xsl:template match="notestmt/note">
+        <xsl:comment>
+            <xsl:text>ELEMENT </xsl:text>
+            <xsl:value-of select="local-name()"/>
+            <xsl:text>&#160;</xsl:text>
+            <xsl:text>RENAMED as 'controlnote'</xsl:text>
+            <xsl:text>&#10;</xsl:text>
+        </xsl:comment>
+        <xsl:message>
+            <xsl:text>ELEMENT </xsl:text>
+            <xsl:value-of select="local-name()"/>
+            <xsl:text>&#160;</xsl:text>
+            <xsl:text>RENAMED as 'controlnote'</xsl:text>
+        </xsl:message>
+        <controlnote>
+            <xsl:apply-templates/>
+        </controlnote>
+    </xsl:template>
+
     <!-- ############################################### -->
     <!-- NAMESPACE STRIPPING ELEMENTS                    -->
     <!-- ############################################### -->
- 
+
     <xsl:template match="*" mode="strip-ns">
         <xsl:element name="{local-name()}" namespace="" inherit-namespaces="no">
             <xsl:apply-templates select="@* | node()" mode="strip-ns"/>
@@ -794,14 +834,14 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
     <!-- OTHER TEMPLATES                                 -->
     <!-- ############################################### -->
-    
+
     <xsl:template name="removedElement">
         <xsl:text>DEPRECATED ELEMENT </xsl:text>
         <xsl:value-of select="local-name()"/>
         <xsl:text>&#160;</xsl:text>
         <xsl:text>REMOVED</xsl:text>
     </xsl:template>
-    
+
     <xsl:template name="nowOdd">
         <xsl:comment>
             <xsl:text>ELEMENT </xsl:text>
@@ -822,21 +862,21 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
-    
+
     <xsl:template name="dscOrphanElements">
         <xsl:text>DSC CHILD ELEMENT </xsl:text>
         <xsl:value-of select="local-name()"/>
         <xsl:text>&#160;</xsl:text>
         <xsl:text>ORPHANED BY DEPRECATION OF DSC. MIGRATION PATH PENDING</xsl:text>
     </xsl:template>
-    
+
     <xsl:template name="blockquoteOrphanElements">
         <xsl:text>INLINE BLOCKQUOTE CHILD ELEMENT </xsl:text>
         <xsl:value-of select="local-name()"/>
         <xsl:text>&#160;</xsl:text>
         <xsl:text>ORPHANED BY CONVERSION OF INLINE BLOCKQUOTE TO QUOTE. MIGRATION PATH PENDING</xsl:text>
     </xsl:template>
-    
+
     <xsl:template name="gonna-deal-with-this-later">
         <xsl:comment>
             <xsl:text>NOT GONNA DEAL WITH</xsl:text>
