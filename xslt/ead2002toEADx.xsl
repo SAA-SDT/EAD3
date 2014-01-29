@@ -550,20 +550,12 @@ For these and/or other purposes and motivations, and without any expectation of 
         </repository>
     </xsl:template>
 
-    <xsl:template match="physdesc[child::* except (extent) ]">
+    <xsl:template match="physdesc">
         <physdesc>
-            <xsl:apply-templates/>
+            <xsl:apply-templates select="./text() | abbr | emph | expan | lb | ref | ptr"/>
         </physdesc>
     </xsl:template>
 
-    <xsl:template match="physdesc[child::extent]">
-        <physdescstructured physdescstructuredtype="spaceoccupied" coverage="whole">
-            <quantity>
-                <xsl:apply-templates select="extent/text()"/>
-            </quantity>
-            <unittype>xxx</unittype>
-        </physdescstructured>
-    </xsl:template>
 
     <!-- ############################################### -->
     <!-- NAMES  AND CONTROLLACCESS                       -->

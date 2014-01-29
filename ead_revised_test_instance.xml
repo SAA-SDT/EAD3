@@ -75,7 +75,7 @@
         </accessrestrict>
         <bibliography script="Latn">
             <head/>
-            <archref><title/> nbaaaj <name>
+            <archref><<title/> nbaaaj <name>
                     <part/>
                 </name> aklaka <emph/></archref>
         </bibliography>
@@ -117,6 +117,7 @@
                 <did>
                     <unitid countrycode="USsss"/>
                 </did>
+                <accessrestrict><p><list></list></p></accessrestrict>
             </c01>
         </dsc>
         <dsc>
