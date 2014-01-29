@@ -128,7 +128,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:template
         match="descgrp | admininfo | titleproper/date | titleproper/num | 
         accessrestrict/accessrestrict/legalstatus | archref/abstract | subtitle/date | 
-        subtitle/num | subarea | bibseries | imprint | bibref/edition | bibref/publisher | emph/* | abbr/* | expan/*">
+        subtitle/num | subarea | bibseries | imprint | bibref/edition | bibref/publisher | emph/* | abbr/* | expan/* | unittitle[parent::* except (did)]">
         <xsl:comment>
             <xsl:call-template name="removedElement"/>
         </xsl:comment>
@@ -517,7 +517,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 
 
 
-    <xsl:template match="unittitle">
+    <xsl:template match="unittitle[parent::did]">
         <unittitle>
             <xsl:copy-of select="@*"/>
             <xsl:apply-templates select="child::node() except (unitdate)"/>
@@ -534,6 +534,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 
 
     <xsl:template match="repository">
+        
         <repository>            
             <xsl:if test="empty(corpname | name | persname | famname)">
                 <name>
@@ -605,7 +606,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 
 
     <!-- ############################################### -->
-    <!-- RENAMED ELEMENTS AND ATTRIBUTED                 -->
+    <!-- RENAMED ELEMENTS AND ATTRIBUTES                -->
     <!-- ############################################### -->
 
     <!-- the archaic add -->
@@ -637,7 +638,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!--                  NOTES                          -->
     <!-- ############################################### -->
 
-    <xsl:template match="c/note | archdesc/note | descgrp/note">
+    <xsl:template match="c/note | archdesc/note | descgrp/note | c01/note | c02/note | c03/note | c04/note | c05/note | c06/note | c07/note | c08/note | c09/note | c10/note | c11/note | c12/note">
         <xsl:comment>
             <xsl:text>ELEMENT </xsl:text>
             <xsl:value-of select="local-name()"/>
