@@ -463,11 +463,11 @@ For these and/or other purposes and motivations, and without any expectation of 
         <did>
         <xsl:apply-templates select="@*"/>
         <xsl:apply-templates/>
-        <xsl:apply-templates select="parent::*/dao | parent::*/daogrp" mode="daoIndid"/>
+        <xsl:apply-templates select="parent::*/dao | parent::*/daogrp | child::dao | child::daogrp" mode="daoIndid"/>
         </did>
     </xsl:template>
     
-    <xsl:template match="dao[not(parent::did)] | daogrp[not(parent::did)]">
+    <xsl:template match="dao | daogrp">
     </xsl:template>
     
     <xsl:template match="daogrp" mode="daoIndid">

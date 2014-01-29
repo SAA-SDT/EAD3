@@ -29,16 +29,14 @@
                 <persname>
                     <part/>
                 </persname>
-                <descriptivenote>
-                    <p/>
-                </descriptivenote>
+
             </origination>
             <origination>
                 <persname>
                     <part/>
                 </persname>
             </origination>
-            <unittitle><title/> blaj ablaj asksjk <name>
+            <unittitle><ref></ref><title><part></part></title> blaj ablaj asksjk <name>
                     <part/>
                 </name></unittitle>
             <unitdatestructured>
@@ -75,7 +73,7 @@
         </accessrestrict>
         <bibliography script="Latn">
             <head/>
-            <archref><<title/> nbaaaj <name>
+            <archref><title><part></part></title> nbaaaj <name>
                     <part/>
                 </name> aklaka <emph/></archref>
         </bibliography>
