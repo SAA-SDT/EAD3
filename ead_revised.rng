@@ -1714,17 +1714,17 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</optional>
 			<optional>
 				<attribute name="colsep">
-					<ref name="av.yesorno"/>
+					<ref name="av.zeroorone"/>
 				</attribute>
 			</optional>
 			<optional>
 				<attribute name="rowsep">
-					<ref name="av.yesorno"/>
+					<ref name="av.zeroorone"/>
 				</attribute>
 			</optional>
 			<optional>
 				<attribute name="pgwide">
-					<ref name="av.yesorno"/>
+					<ref name="av.zeroorone"/>
 				</attribute>
 			</optional>
 			<optional>
@@ -1738,12 +1738,12 @@ For these and/or other purposes and motivations, and without any expectation of 
 					</attribute>
 					<optional>
 						<attribute name="colsep">
-							<ref name="av.yesorno"/>
+							<ref name="av.zeroorone"/>
 						</attribute>
 					</optional>
 					<optional>
 						<attribute name="rowsep">
-							<ref name="av.yesorno"/>
+							<ref name="av.zeroorone"/>
 						</attribute>
 					</optional>
 					<optional>
@@ -1766,12 +1766,12 @@ For these and/or other purposes and motivations, and without any expectation of 
 							</optional>
 							<optional>
 								<attribute name="colsep">
-									<ref name="av.yesorno"/>
+									<ref name="av.zeroorone"/>
 								</attribute>
 							</optional>
 							<optional>
 								<attribute name="rowsep">
-									<ref name="av.yesorno"/>
+									<ref name="av.zeroorone"/>
 								</attribute>
 							</optional>
 							<optional>
@@ -1810,7 +1810,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.common"/>
 			<optional>
 				<attribute name="rowsep">
-					<ref name="av.yesorno"/>
+					<ref name="av.zeroorone"/>
 				</attribute>
 			</optional>
 			<optional>
@@ -1854,12 +1854,12 @@ For these and/or other purposes and motivations, and without any expectation of 
 					</optional>
 					<optional>
 						<attribute name="colsep">
-							<ref name="av.yesorno"/>
+							<ref name="av.zeroorone"/>
 						</attribute>
 					</optional>
 					<optional>
 						<attribute name="rowsep">
-							<ref name="av.yesorno"/>
+							<ref name="av.zeroorone"/>
 						</attribute>
 					</optional>
 					<optional>
