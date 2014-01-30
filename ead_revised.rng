@@ -1610,7 +1610,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- table -->
 	
 	<define name="e.table">
-		<element name="table">
+		<!--<element name="table">
 			<ref name="a.common"/>
 			<optional>
 				<attribute name="frame">
@@ -1696,8 +1696,137 @@ For these and/or other purposes and motivations, and without any expectation of 
 
 				<ref name="e.row"/>
 			</oneOrMore>
+		</element>-->
+		
+		<element name="table">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="frame">
+					<choice>
+						<value>top</value>
+						<value>bottom</value>
+						<value>topbot</value>
+						<value>all</value>
+						<value>sides</value>
+						<value>none</value>
+					</choice>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="colsep">
+					<ref name="av.yesorno"/>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="rowsep">
+					<ref name="av.yesorno"/>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="pgwide">
+					<ref name="av.yesorno"/>
+				</attribute>
+			</optional>
+			<optional>
+				<ref name="e.head"/>
+			</optional>
+			<oneOrMore>
+				<element name="tgroup">
+					<ref name="a.common"/>
+					<attribute name="cols">
+						<data type="NMTOKEN"/>
+					</attribute>
+					<optional>
+						<attribute name="colsep">
+							<ref name="av.yesorno"/>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="rowsep">
+							<ref name="av.yesorno"/>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="align">
+							<choice>
+								<value>left</value>
+								<value>right</value>
+								<value>center</value>
+								<value>justify</value>
+								<value>char</value>
+							</choice>
+						</attribute>
+					</optional>
+					<zeroOrMore>
+						<element name="colspec">
+							<optional>
+								<attribute name="colnum">
+									<data type="NMTOKEN"/>
+								</attribute>
+							</optional>
+							<optional>
+								<attribute name="colname">
+									<data type="NMTOKEN"/>
+								</attribute>
+							</optional>
+							<optional>
+								<attribute name="colwidth"/>
+							</optional>
+							<optional>
+								<attribute name="colsep">
+									<ref name="av.yesorno"/>
+								</attribute>
+							</optional>
+							<optional>
+								<attribute name="rowsep">
+									<ref name="av.yesorno"/>
+								</attribute>
+							</optional>
+							<optional>
+								<attribute name="align">
+									<choice>
+										<value>left</value>
+										<value>right</value>
+										<value>center</value>
+										<value>justify</value>
+										<value>char</value>
+									</choice>
+								</attribute>
+							</optional>
+							<optional>
+								<attribute name="char"/>
+							</optional>
+							<optional>
+								<attribute name="charoff">
+									<data type="NMTOKEN"/>
+								</attribute>
+							</optional>
+							<empty/>
+						</element>
+					</zeroOrMore>
+					<optional>
+						<ref name="e.thead"/>
+					</optional>
+					<element name="tbody">
+						<ref name="a.common"/>
+						<optional>
+							<attribute name="valign">
+								<choice>
+									<value>top</value>
+									<value>middle</value>
+									<value>bottom</value>
+								</choice>
+							</attribute>
+						</optional>
+						<oneOrMore>
+							<ref name="e.row"/>
+						</oneOrMore>
+					</element>
+				</element>
+			</oneOrMore>
 		</element>
 	</define>
+	
 	<define name="e.row">
 		<element name="row">
 			<ref name="a.common"/>
