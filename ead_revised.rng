@@ -1878,9 +1878,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 					</optional>
 					<ref name="m.para.content"/>
 				</element>
-
 			</oneOrMore>
-
 		</element>
 	</define>
 	<define name="e.thead">
