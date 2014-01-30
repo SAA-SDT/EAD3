@@ -3266,6 +3266,13 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</choice>
 	</define>
 	
+	<define name="av.zeroorone">
+		<choice>
+			<value>0</value>
+			<value>1</value>
+		</choice>
+	</define>
+	
 	<define name="av.yesorno">
 		<choice>
 			<value>yes</value>
