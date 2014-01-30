@@ -1610,7 +1610,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- table -->
 	
 	<define name="e.table">
-		<element name="table">
+		<!--<element name="table">
 			<ref name="a.common"/>
 			<optional>
 				<attribute name="frame">
@@ -1696,28 +1696,128 @@ For these and/or other purposes and motivations, and without any expectation of 
 
 				<ref name="e.row"/>
 			</oneOrMore>
+		</element>-->
+		
+		<element name="table">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="frame">
+					<choice>
+						<value>top</value>
+						<value>bottom</value>
+						<value>topbot</value>
+						<value>all</value>
+						<value>sides</value>
+						<value>none</value>
+					</choice>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="colsep">
+					<ref name="av.zeroorone"/>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="rowsep">
+					<ref name="av.zeroorone"/>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="pgwide">
+					<ref name="av.zeroorone"/>
+				</attribute>
+			</optional>
+			<optional>
+				<ref name="e.head"/>
+			</optional>
+			<oneOrMore>
+				<element name="tgroup">
+					<ref name="a.common"/>
+					<attribute name="cols">
+						<data type="NMTOKEN"/>
+					</attribute>
+					<optional>
+						<attribute name="colsep">
+							<ref name="av.zeroorone"/>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="rowsep">
+							<ref name="av.zeroorone"/>
+						</attribute>
+					</optional>
+					<optional>
+						<ref name="a.align"/>
+					</optional>
+					<zeroOrMore>
+						<element name="colspec">
+							<optional>
+								<attribute name="colnum">
+									<data type="NMTOKEN"/>
+								</attribute>
+							</optional>
+							<optional>
+								<attribute name="colname">
+									<data type="NMTOKEN"/>
+								</attribute>
+							</optional>
+							<optional>
+								<attribute name="colwidth"/>
+							</optional>
+							<optional>
+								<attribute name="colsep">
+									<ref name="av.zeroorone"/>
+								</attribute>
+							</optional>
+							<optional>
+								<attribute name="rowsep">
+									<ref name="av.zeroorone"/>
+								</attribute>
+							</optional>
+							<optional>
+								<ref name="a.align"/>
+							</optional>
+							<optional>
+								<attribute name="char"/>
+							</optional>
+							<optional>
+								<attribute name="charoff">
+									<data type="NMTOKEN"/>
+								</attribute>
+							</optional>
+							<empty/>
+						</element>
+					</zeroOrMore>
+					<optional>
+						<ref name="e.thead"/>
+					</optional>
+					<element name="tbody">
+						<ref name="a.common"/>
+						<optional>
+							<ref name="a.valign"/>
+						</optional>
+						<oneOrMore>
+							<ref name="e.row"/>
+						</oneOrMore>
+					</element>
+				</element>
+			</oneOrMore>
 		</element>
 	</define>
+	
 	<define name="e.row">
 		<element name="row">
 			<ref name="a.common"/>
 			<optional>
 				<attribute name="rowsep">
-					<ref name="av.yesorno"/>
+					<ref name="av.zeroorone"/>
 				</attribute>
 			</optional>
 			<optional>
-				<attribute name="valign">
-					<choice>
-						<value>top</value>
-						<value>middle</value>
-						<value>bottom</value>
-						<value>baseline</value>
-					</choice>
-				</attribute>
+				<ref name="a.valign"/>
 			</optional>
 			<oneOrMore>
-				<choice>
+				<!--<choice>
 					<element name="thentry">
 						<ref name="a.common"/>
 						<ref name="a.entry"/>
@@ -1728,23 +1828,64 @@ For these and/or other purposes and motivations, and without any expectation of 
 						<ref name="a.entry"/>
 						<ref name="m.para.content"/>
 					</element>
-				</choice>
-
+				</choice>-->
+				<element name="entry">
+					<ref name="a.common"/>
+					<!--<ref name="a.entry"/>-->
+					<optional>
+						<attribute name="colname">
+							<data type="NMTOKEN"/>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="namest">
+							<data type="NMTOKEN"/>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="nameend">
+							<data type="NMTOKEN"/>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="morerows">
+							<data type="NMTOKEN"/>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="colsep">
+							<ref name="av.zeroorone"/>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="rowsep">
+							<ref name="av.zeroorone"/>
+						</attribute>
+					</optional>
+					<optional>
+						<ref name="a.align"/>
+					</optional>
+					<optional>
+						<attribute name="char"/>
+					</optional>
+					<optional>
+						<attribute name="charoff">
+							<data type="NMTOKEN"/>
+						</attribute>
+					</optional>
+					<optional>
+						<ref name="a.valign"/>
+					</optional>
+					<ref name="m.para.content"/>
+				</element>
 			</oneOrMore>
-
 		</element>
 	</define>
 	<define name="e.thead">
 		<element name="thead">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="valign">
-					<choice>
-						<value>top</value>
-						<value>middle</value>
-						<value>bottom</value>
-					</choice>
-				</attribute>
+				<ref name="a.valign"/>
 			</optional>
 			<oneOrMore>
 				<ref name="e.row"/>
@@ -3011,7 +3152,30 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</attribute>
 	</define>
 	
-	<define name="a.entry">
+	<define name="a.align">
+		<attribute name="align">
+			<choice>
+				<value>left</value>
+				<value>right</value>
+				<value>center</value>
+				<value>justify</value>
+				<value>char</value>
+			</choice>
+		</attribute>
+	</define>
+	
+	<define name="a.valign">
+		<attribute name="valign">
+			<choice>
+				<value>top</value>
+				<value>middle</value>
+				<value>bottom</value>
+				<!--<value>baseline</value>-->
+			</choice>
+		</attribute>
+	</define>
+	
+	<!--<define name="a.entry">
 		<optional>
 			<attribute name="colname">
 				<data type="NMTOKEN"/>
@@ -3062,7 +3226,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</choice>
 			</attribute>
 		</optional>
-	</define>
+	</define>-->
 	
 	<!-- ATTRIBUTE VALUE LISTS -->
 	
@@ -3100,6 +3264,14 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<value>super</value>
 			<value>underline</value>
 		</choice>
+	</define>
+	
+	<define name="av.zeroorone">
+		<!--<choice>
+			<value>0</value>
+			<value>1</value>
+		</choice>-->
+		<data type="NMTOKEN"/>
 	</define>
 	
 	<define name="av.yesorno">
