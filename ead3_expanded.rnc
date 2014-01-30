@@ -1,0 +1,5404 @@
+# 
+# Creative Commons Legal Code
+# CC0 1.0 Universal
+# 
+#     CREATIVE COMMONS CORPORATION IS NOT A LAW FIRM AND DOES NOT PROVIDE LEGAL SERVICES. DISTRIBUTION OF THIS DOCUMENT DOES NOT CREATE AN ATTORNEY-CLIENT RELATIONSHIP. CREATIVE COMMONS PROVIDES THIS INFORMATION ON AN "AS-IS" BASIS. CREATIVE COMMONS MAKES NO WARRANTIES REGARDING THE USE OF THIS DOCUMENT OR THE INFORMATION OR WORKS PROVIDED HEREUNDER, AND DISCLAIMS LIABILITY FOR DAMAGES RESULTING FROM THE USE OF THIS DOCUMENT OR THE INFORMATION OR WORKS PROVIDED HEREUNDER. 
+# 
+# Statement of Purpose
+# 
+# The laws of most jurisdictions throughout the world automatically confer exclusive Copyright and Related Rights (defined below) upon the creator and subsequent owner(s) (each and all, an "owner") of an original work of authorship and/or a database (each, a "Work").
+# 
+# Certain owners wish to permanently relinquish those rights to a Work for the purpose of contributing to a commons of creative, cultural and scientific works ("Commons") that the public can reliably and without fear of later claims of infringement build upon, modify, incorporate in other works, reuse and redistribute as freely as possible in any form whatsoever and for any purposes, including without limitation commercial purposes. These owners may contribute to the Commons to promote the ideal of a free culture and the further production of creative, cultural and scientific works, or to gain reputation or greater distribution for their Work in part through the use and efforts of others.
+# 
+# For these and/or other purposes and motivations, and without any expectation of additional consideration or compensation, the person associating CC0 with a Work (the "Affirmer"), to the extent that he or she is an owner of Copyright and Related Rights in the Work, voluntarily elects to apply CC0 to the Work and publicly distribute the Work under its terms, with knowledge of his or her Copyright and Related Rights in the Work and the meaning and intended legal effect of CC0 on those rights.
+# 
+# 1. Copyright and Related Rights. A Work made available under CC0 may be protected by copyright and related or neighboring rights ("Copyright and Related Rights"). Copyright and Related Rights include, but are not limited to, the following:
+# 
+#     the right to reproduce, adapt, distribute, perform, display, communicate, and translate a Work;
+#     moral rights retained by the original author(s) and/or performer(s);
+#     publicity and privacy rights pertaining to a person's image or likeness depicted in a Work;
+#     rights protecting against unfair competition in regards to a Work, subject to the limitations in paragraph 4(a), below;
+#     rights protecting the extraction, dissemination, use and reuse of data in a Work;
+#     database rights (such as those arising under Directive 96/9/EC of the European Parliament and of the Council of 11 March 1996 on the legal protection of databases, and under any national implementation thereof, including any amended or successor version of such directive); and
+#     other similar, equivalent or corresponding rights throughout the world based on applicable law or treaty, and any national implementations thereof.
+# 
+# 2. Waiver. To the greatest extent permitted by, but not in contravention of, applicable law, Affirmer hereby overtly, fully, permanently, irrevocably and unconditionally waives, abandons, and surrenders all of Affirmer's Copyright and Related Rights and associated claims and causes of action, whether now known or unknown (including existing as well as future claims and causes of action), in the Work (i) in all territories worldwide, (ii) for the maximum duration provided by applicable law or treaty (including future time extensions), (iii) in any current or future medium and for any number of copies, and (iv) for any purpose whatsoever, including without limitation commercial, advertising or promotional purposes (the "Waiver"). Affirmer makes the Waiver for the benefit of each member of the public at large and to the detriment of Affirmer's heirs and successors, fully intending that such Waiver shall not be subject to revocation, rescission, cancellation, termination, or any other legal or equitable action to disrupt the quiet enjoyment of the Work by the public as contemplated by Affirmer's express Statement of Purpose.
+# 
+# 3. Public License Fallback. Should any part of the Waiver for any reason be judged legally invalid or ineffective under applicable law, then the Waiver shall be preserved to the maximum extent permitted taking into account Affirmer's express Statement of Purpose. In addition, to the extent the Waiver is so judged Affirmer hereby grants to each affected person a royalty-free, non transferable, non sublicensable, non exclusive, irrevocable and unconditional license to exercise Affirmer's Copyright and Related Rights in the Work (i) in all territories worldwide, (ii) for the maximum duration provided by applicable law or treaty (including future time extensions), (iii) in any current or future medium and for any number of copies, and (iv) for any purpose whatsoever, including without limitation commercial, advertising or promotional purposes (the "License"). The License shall be deemed effective as of the date CC0 was applied by Affirmer to the Work. Should any part of the License for any reason be judged legally invalid or ineffective under applicable law, such partial invalidity or ineffectiveness shall not invalidate the remainder of the License, and in such case Affirmer hereby affirms that he or she will not (i) exercise any of his or her remaining Copyright and Related Rights in the Work or (ii) assert any associated claims and causes of action with respect to the Work, in either case contrary to Affirmer's express Statement of Purpose.
+# 
+# 4. Limitations and Disclaimers.
+# 
+#     No trademark or patent rights held by Affirmer are waived, abandoned, surrendered, licensed or otherwise affected by this document.
+#     Affirmer offers the Work as-is and makes no representations or warranties of any kind concerning the Work, express, implied, statutory or otherwise, including without limitation warranties of title, merchantability, fitness for a particular purpose, non infringement, or the absence of latent or other defects, accuracy, or the present or absence of errors, whether or not discoverable, all to the greatest extent permissible under applicable law.
+#     Affirmer disclaims responsibility for clearing rights of other persons that may apply to the Work or any use thereof, including without limitation any person's Copyright and Related Rights in the Work. Further, Affirmer disclaims responsibility for obtaining any necessary consents, permissions or other rights required for any use of the Work.
+#     Affirmer understands and acknowledges that Creative Commons is not a party to this document and has no duty or obligation with respect to this CC0 or use of the Work.
+# 
+#
+
+namespace a = "http://relaxng.org/ns/compatibility/annotations/1.0"
+default namespace ns1 = "http://ead3.archivists.org/schema/"
+
+start = e.ead
+e.ead =
+  element ead {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute relatedencoding { text }?,
+    e.control,
+    element archdesc {
+      attribute id { xsd:ID }?,
+      attribute altrender { text }?,
+      attribute audience { "external" | "internal" }?,
+      attribute lang { text }?,
+      attribute script { text }?,
+      attribute level {
+        "class"
+        | "collection"
+        | "file"
+        | "fonds"
+        | "item"
+        | "otherlevel"
+        | "recordgrp"
+        | "series"
+        | "subfonds"
+        | "subgrp"
+        | "subseries"
+      },
+      attribute otherlevel { xsd:NMTOKEN }?,
+      attribute encodinganalog { text }?,
+      attribute relatedencoding { text }?,
+      e.did,
+      ((e.accessrestrict
+        | e.accruals
+        | e.acqinfo
+        | e.altformavail
+        | e.appraisal
+        | e.arrangement
+        | e.bibliography
+        | e.bioghist
+        | e.controlaccess
+        | e.custodhist
+        | e.fileplan
+        | e.index
+        | e.legalstatus
+        | e.odd
+        | e.originalsloc
+        | e.otherfindaid
+        | e.phystech
+        | e.prefercite
+        | e.processinfo
+        | e.relatedmaterial
+        | e.relations
+        | e.scopecontent
+        | e.separatedmaterial
+        | e.userestrict)
+       | e.dsc)*
+    }
+  }
+# ELEMENTS
+
+# Control
+e.control =
+  element control {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute base { xsd:anyURI }?,
+    attribute langencoding { '"iso639-2b' | "other" }?,
+    attribute scriptencoding { "iso15924" | "other" }?,
+    attribute dateencoding { "iso8601" | "other" }?,
+    attribute countryencoding { "iso3166-1" | "other" }?,
+    attribute repositoryencoding { "iso15511" | "other" }?,
+    attribute relatedencoding { text }?,
+    element recordid {
+      attribute id { xsd:ID }?,
+      attribute altrender { text }?,
+      attribute audience { "external" | "internal" }?,
+      attribute lang { text }?,
+      attribute script { text }?,
+      attribute encodinganalog { text }?,
+      attribute instanceurl { xsd:anyURI }?,
+      text
+    },
+    element otherrecordid {
+      attribute id { xsd:ID }?,
+      attribute altrender { text }?,
+      attribute audience { "external" | "internal" }?,
+      attribute lang { text }?,
+      attribute script { text }?,
+      attribute encodinganalog { text }?,
+      attribute localtype { text }?,
+      text
+    }*,
+    element representation {
+      attribute id { xsd:ID }?,
+      attribute altrender { text }?,
+      attribute audience { "external" | "internal" }?,
+      attribute lang { text }?,
+      attribute script { text }?,
+      attribute encodinganalog { text }?,
+      attribute linktype { "simple" }?,
+      attribute href { xsd:anyURI }?,
+      attribute linkrole { xsd:anyURI }?,
+      attribute arcrole { xsd:anyURI }?,
+      attribute linktitle { text }?,
+      attribute show {
+        "new" | "replace" | "embed" | "other" | "none"
+      }?,
+      attribute actuate { "onLoad" | "onRequest" | "other" | "none" }?,
+      attribute localtype { text }?,
+      text
+    }*,
+    element filedesc {
+      attribute id { xsd:ID }?,
+      attribute altrender { text }?,
+      attribute audience { "external" | "internal" }?,
+      attribute lang { text }?,
+      attribute script { text }?,
+      attribute encodinganalog { text }?,
+      element titlestmt {
+        attribute id { xsd:ID }?,
+        attribute altrender { text }?,
+        attribute audience { "external" | "internal" }?,
+        attribute lang { text }?,
+        attribute script { text }?,
+        attribute encodinganalog { text }?,
+        e.titleproper+,
+        e.subtitle*,
+        e.author*,
+        e.sponsor*
+      },
+      element editionstmt {
+        attribute id { xsd:ID }?,
+        attribute altrender { text }?,
+        attribute audience { "external" | "internal" }?,
+        attribute lang { text }?,
+        attribute script { text }?,
+        attribute encodinganalog { text }?,
+        (e.edition | e.p)+
+      }?,
+      element publicationstmt {
+        attribute id { xsd:ID }?,
+        attribute altrender { text }?,
+        attribute audience { "external" | "internal" }?,
+        attribute lang { text }?,
+        attribute script { text }?,
+        attribute encodinganalog { text }?,
+        (e.publisher | e.date | e.address | e.num | e.p)+
+      }?,
+      element seriesstmt {
+        attribute id { xsd:ID }?,
+        attribute altrender { text }?,
+        attribute audience { "external" | "internal" }?,
+        attribute lang { text }?,
+        attribute script { text }?,
+        attribute encodinganalog { text }?,
+        (e.titleproper | e.num | e.p)+
+      }?,
+      element notestmt {
+        attribute id { xsd:ID }?,
+        attribute altrender { text }?,
+        attribute audience { "external" | "internal" }?,
+        attribute lang { text }?,
+        attribute script { text }?,
+        attribute encodinganalog { text }?,
+        e.controlnote+
+      }?
+    },
+    element maintenancestatus {
+      attribute id { xsd:ID }?,
+      attribute altrender { text }?,
+      attribute audience { "external" | "internal" }?,
+      attribute lang { text }?,
+      attribute script { text }?,
+      attribute encodinganalog { text }?,
+      attribute value {
+        "revised"
+        | "deleted"
+        | "new"
+        | "deletedsplit"
+        | "deletedmerged"
+        | "deletedreplaced"
+        | "cancelled"
+        | "derived"
+      },
+      text
+    },
+    element publicationstatus {
+      attribute id { xsd:ID }?,
+      attribute altrender { text }?,
+      attribute audience { "external" | "internal" }?,
+      attribute lang { text }?,
+      attribute script { text }?,
+      attribute encodinganalog { text }?,
+      attribute value { "inprocess" | "approved" | "published" },
+      text
+    }?,
+    e.maintenanceagency,
+    element languagedeclaration {
+      attribute id { xsd:ID }?,
+      attribute altrender { text }?,
+      attribute audience { "external" | "internal" }?,
+      attribute lang { text }?,
+      attribute script { text }?,
+      attribute encodinganalog { text }?,
+      e.language,
+      e.script,
+      e.descriptivenote?
+    }*,
+    element conventiondeclaration {
+      attribute id { xsd:ID }?,
+      attribute altrender { text }?,
+      attribute audience { "external" | "internal" }?,
+      attribute lang { text }?,
+      attribute script { text }?,
+      attribute encodinganalog { text }?,
+      e.abbr?,
+      e.citation,
+      e.descriptivenote?
+    }*,
+    element localtypedeclaration {
+      attribute id { xsd:ID }?,
+      attribute altrender { text }?,
+      attribute audience { "external" | "internal" }?,
+      attribute lang { text }?,
+      attribute script { text }?,
+      attribute encodinganalog { text }?,
+      e.abbr?,
+      e.citation,
+      e.descriptivenote?
+    }*,
+    element localcontrol {
+      attribute id { xsd:ID }?,
+      attribute altrender { text }?,
+      attribute audience { "external" | "internal" }?,
+      attribute lang { text }?,
+      attribute script { text }?,
+      attribute encodinganalog { text }?,
+      attribute localtype { text }?,
+      element term {
+        attribute id { xsd:ID }?,
+        attribute altrender { text }?,
+        attribute audience { "external" | "internal" }?,
+        attribute lang { text }?,
+        attribute script { text }?,
+        attribute encodinganalog { text }?,
+        attribute transliteration { text }?,
+        attribute lastdatetimeverified {
+          # <ref name="m.data.standardDateTime"/>
+          xsd:token
+        }?,
+        attribute source { xsd:token }?,
+        attribute rules { xsd:NMTOKEN }?,
+        attribute identifier { text }?,
+        text
+      }?,
+      (e.datesingle | e.daterange)?
+    }*,
+    element maintenancehistory {
+      attribute id { xsd:ID }?,
+      attribute altrender { text }?,
+      attribute audience { "external" | "internal" }?,
+      attribute lang { text }?,
+      attribute script { text }?,
+      attribute encodinganalog { text }?,
+      element maintenanceevent {
+        attribute id { xsd:ID }?,
+        attribute altrender { text }?,
+        attribute audience { "external" | "internal" }?,
+        attribute lang { text }?,
+        attribute script { text }?,
+        attribute encodinganalog { text }?,
+        element eventtype {
+          attribute id { xsd:ID }?,
+          attribute altrender { text }?,
+          attribute audience { "external" | "internal" }?,
+          attribute lang { text }?,
+          attribute script { text }?,
+          attribute encodinganalog { text }?,
+          attribute value {
+            "created"
+            | "revised"
+            | "deleted"
+            | "cancelled"
+            | "derived"
+            | "updated"
+            | "unknown"
+          },
+          text
+        },
+        element eventdatetime {
+          attribute id { xsd:ID }?,
+          attribute altrender { text }?,
+          attribute audience { "external" | "internal" }?,
+          attribute lang { text }?,
+          attribute script { text }?,
+          attribute encodinganalog { text }?,
+          attribute standarddatetime {
+            # <ref name="m.data.standardDateTime"/>
+            xsd:token
+          }?,
+          text
+        },
+        element agenttype {
+          attribute id { xsd:ID }?,
+          attribute altrender { text }?,
+          attribute audience { "external" | "internal" }?,
+          attribute lang { text }?,
+          attribute script { text }?,
+          attribute encodinganalog { text }?,
+          attribute value { "human" | "machine" | "unknown" },
+          text
+        },
+        [ a:id = "agent" ]
+        element agent {
+          attribute id { xsd:ID }?,
+          attribute altrender { text }?,
+          attribute audience { "external" | "internal" }?,
+          attribute lang { text }?,
+          attribute script { text }?,
+          attribute encodinganalog { text }?,
+          text
+        },
+        [ a:id = "eventdesccription" ]
+        element eventdescription {
+          attribute id { xsd:ID }?,
+          attribute altrender { text }?,
+          attribute audience { "external" | "internal" }?,
+          attribute lang { text }?,
+          attribute script { text }?,
+          attribute encodinganalog { text }?,
+          attribute localtype { text }?,
+          text
+        }*
+      }+
+    },
+    element sources {
+      attribute id { xsd:ID }?,
+      attribute altrender { text }?,
+      attribute audience { "external" | "internal" }?,
+      attribute lang { text }?,
+      attribute script { text }?,
+      attribute encodinganalog { text }?,
+      attribute localtype { text }?,
+      attribute base { xsd:anyURI }?,
+      element source {
+        attribute id { xsd:ID }?,
+        attribute altrender { text }?,
+        attribute audience { "external" | "internal" }?,
+        attribute lang { text }?,
+        attribute script { text }?,
+        attribute encodinganalog { text }?,
+        attribute lastdatetimeverified {
+          # <ref name="m.data.standardDateTime"/>
+          xsd:token
+        }?,
+        attribute linktype { "simple" }?,
+        attribute href { xsd:anyURI }?,
+        attribute linkrole { xsd:anyURI }?,
+        attribute arcrole { xsd:anyURI }?,
+        attribute linktitle { text }?,
+        attribute show {
+          "new" | "replace" | "embed" | "other" | "none"
+        }?,
+        attribute actuate {
+          "onLoad" | "onRequest" | "other" | "none"
+        }?,
+        element sourceentry {
+          attribute id { xsd:ID }?,
+          attribute altrender { text }?,
+          attribute audience { "external" | "internal" }?,
+          attribute lang { text }?,
+          attribute script { text }?,
+          attribute encodinganalog { text }?,
+          attribute transliteration { text }?,
+          text
+        }*,
+        e.objectxmlwrap?,
+        e.descriptivenote?
+      }+
+    }?
+  }
+e.titleproper =
+  element titleproper {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute localtype { text }?,
+    attribute render {
+      "altrender"
+      | "bold"
+      | "bolddoublequote"
+      | "bolditalic"
+      | "boldsinglequote"
+      | "boldsmcaps"
+      | "boldunderline"
+      | "doublequote"
+      | "italic"
+      | "nonproport"
+      | "singlequote"
+      | "smcaps"
+      | "sub"
+      | "super"
+      | "underline"
+    }?,
+    attribute encodinganalog { text }?,
+    (text
+     | e.abbr
+     | e.expan
+     | e.emph
+     | e.lb
+     | e.ref
+     | e.ptr
+     | e.foreign)*
+  }
+e.subtitle =
+  element subtitle {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute localtype { text }?,
+    attribute encodinganalog { text }?,
+    (text
+     | e.abbr
+     | e.expan
+     | e.emph
+     | e.lb
+     | e.ref
+     | e.ptr
+     | e.foreign)*
+  }
+e.author =
+  element author {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute localtype { text }?,
+    attribute encodinganalog { text }?,
+    (text
+     | e.abbr
+     | e.expan
+     | e.emph
+     | e.lb
+     | e.ref
+     | e.ptr
+     | e.foreign)*
+  }
+e.sponsor =
+  element sponsor {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute localtype { text }?,
+    attribute encodinganalog { text }?,
+    (text
+     | e.abbr
+     | e.expan
+     | e.emph
+     | e.lb
+     | e.ref
+     | e.ptr
+     | e.foreign)*
+  }
+e.edition =
+  element edition {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute localtype { text }?,
+    attribute encodinganalog { text }?,
+    (text
+     | e.abbr
+     | e.expan
+     | e.emph
+     | e.lb
+     | e.ref
+     | e.ptr
+     | e.foreign)*
+  }
+e.date =
+  element date {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute localtype { text }?,
+    attribute era { xsd:NMTOKEN }?,
+    attribute calendar { xsd:NMTOKEN }?,
+    attribute normal { xsd:token }?,
+    attribute certainty { text }?,
+    attribute encodinganalog { text }?,
+    (text
+     | e.abbr
+     | e.expan
+     | e.emph
+     | e.lb
+     | e.ref
+     | e.ptr
+     | e.foreign)*
+  }
+e.publisher =
+  element publisher {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute localtype { text }?,
+    attribute encodinganalog { text }?,
+    (text
+     | e.abbr
+     | e.expan
+     | e.emph
+     | e.lb
+     | e.ref
+     | e.ptr
+     | e.foreign)*
+  }
+e.controlnote =
+  element controlnote {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute localtype { text }?,
+    attribute encodinganalog { text }?,
+    (((element chronlist {
+         attribute id { xsd:ID }?,
+         attribute altrender { text }?,
+         attribute audience { "external" | "internal" }?,
+         attribute lang { text }?,
+         attribute script { text }?,
+         attribute localtype { text }?,
+         attribute encodinganalog { text }?,
+         e.head?,
+         e.listhead?,
+         element chronitem {
+           attribute id { xsd:ID }?,
+           attribute altrender { text }?,
+           attribute audience { "external" | "internal" }?,
+           attribute lang { text }?,
+           attribute script { text }?,
+           attribute localtype { text }?,
+           (e.datesingle | e.daterange | e.dateset),
+           ((e.geogname?, e.event)
+            | element chronitemset {
+                attribute id { xsd:ID }?,
+                attribute altrender { text }?,
+                attribute audience { "external" | "internal" }?,
+                attribute lang { text }?,
+                attribute script { text }?,
+                e.geogname*,
+                e.event+
+              }+)
+         }+
+       }
+       | e.list
+       | e.table)
+      | element blockquote {
+          attribute id { xsd:ID }?,
+          attribute altrender { text }?,
+          attribute audience { "external" | "internal" }?,
+          attribute lang { text }?,
+          attribute script { text }?,
+          ((element chronlist {
+              attribute id { xsd:ID }?,
+              attribute altrender { text }?,
+              attribute audience { "external" | "internal" }?,
+              attribute lang { text }?,
+              attribute script { text }?,
+              attribute localtype { text }?,
+              attribute encodinganalog { text }?,
+              e.head?,
+              e.listhead?,
+              element chronitem {
+                attribute id { xsd:ID }?,
+                attribute altrender { text }?,
+                attribute audience { "external" | "internal" }?,
+                attribute lang { text }?,
+                attribute script { text }?,
+                attribute localtype { text }?,
+                (e.datesingle | e.daterange | e.dateset),
+                ((e.geogname?, e.event)
+                 | element chronitemset {
+                     attribute id { xsd:ID }?,
+                     attribute altrender { text }?,
+                     attribute audience { "external" | "internal" }?,
+                     attribute lang { text }?,
+                     attribute script { text }?,
+                     e.geogname*,
+                     e.event+
+                   }+)
+              }+
+            }
+            | e.list
+            | e.table)
+           | e.p)+
+        })
+     | e.p)+
+  }
+e.maintenanceagency =
+  element maintenanceagency {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute encodinganalog { text }?,
+    attribute countrycode { xsd:NMTOKEN }?,
+    element agencycode {
+      attribute id { xsd:ID }?,
+      attribute altrender { text }?,
+      attribute audience { "external" | "internal" }?,
+      attribute lang { text }?,
+      attribute script { text }?,
+      attribute encodinganalog { text }?,
+      attribute localtype { text }?,
+      text
+    }?,
+    element otheragencycode {
+      attribute id { xsd:ID }?,
+      attribute altrender { text }?,
+      attribute audience { "external" | "internal" }?,
+      attribute lang { text }?,
+      attribute script { text }?,
+      attribute encodinganalog { text }?,
+      attribute localtype { text }?,
+      text
+    }*,
+    element agencyname {
+      attribute id { xsd:ID }?,
+      attribute altrender { text }?,
+      attribute audience { "external" | "internal" }?,
+      attribute lang { text }?,
+      attribute script { text }?,
+      attribute encodinganalog { text }?,
+      attribute localtype { text }?,
+      text
+    }+,
+    e.descriptivenote?
+  }
+e.citation =
+  [ a:id = "citation" ]
+  element citation {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute encodinganalog { text }?,
+    attribute linktype { "simple" }?,
+    attribute href { xsd:anyURI }?,
+    attribute linkrole { xsd:anyURI }?,
+    attribute arcrole { xsd:anyURI }?,
+    attribute linktitle { text }?,
+    attribute show { "new" | "replace" | "embed" | "other" | "none" }?,
+    attribute actuate { "onLoad" | "onRequest" | "other" | "none" }?,
+    attribute lastdatetimeverified {
+      # <ref name="m.data.standardDateTime"/>
+      xsd:token
+    }?,
+    (text
+     | e.abbr
+     | e.expan
+     | e.emph
+     | e.lb
+     | e.ref
+     | e.ptr
+     | e.foreign)*
+  }
+# did
+e.did =
+  element did {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute encodinganalog { text }?,
+    e.head?,
+    (element abstract {
+       attribute id { xsd:ID }?,
+       attribute altrender { text }?,
+       attribute audience { "external" | "internal" }?,
+       attribute lang { text }?,
+       attribute script { text }?,
+       attribute localtype { text }?,
+       attribute label { text }?,
+       attribute encodinganalog { text }?,
+       ((e.persname
+         | e.corpname
+         | e.famname
+         | e.geogname
+         | e.name
+         | e.occupation
+         | e.subject
+         | e.genreform
+         | e.function
+         | e.title)
+        | (text
+           | e.abbr
+           | e.expan
+           | e.emph
+           | e.lb
+           | e.ref
+           | e.ptr
+           | e.foreign)*
+        | e.quote
+        | e.num
+        | e.footnote
+        | e.date)*
+     }
+     | element langmaterial {
+         attribute id { xsd:ID }?,
+         attribute altrender { text }?,
+         attribute audience { "external" | "internal" }?,
+         attribute lang { text }?,
+         attribute script { text }?,
+         attribute label { text }?,
+         attribute encodinganalog { text }?,
+         (e.language | e.languageset)+,
+         e.descriptivenote?
+       }
+     | element didnote {
+         attribute id { xsd:ID }?,
+         attribute altrender { text }?,
+         attribute audience { "external" | "internal" }?,
+         attribute lang { text }?,
+         attribute script { text }?,
+         attribute localtype { text }?,
+         attribute label { text }?,
+         attribute encodinganalog { text }?,
+         (text
+          | e.abbr
+          | e.expan
+          | e.emph
+          | e.lb
+          | e.ref
+          | e.ptr
+          | e.foreign)*
+       }
+     | e.origination
+     | element physdesc {
+         attribute id { xsd:ID }?,
+         attribute altrender { text }?,
+         attribute audience { "external" | "internal" }?,
+         attribute lang { text }?,
+         attribute script { text }?,
+         attribute localtype { text }?,
+         attribute label { text }?,
+         attribute encodinganalog { text }?,
+         (text
+          | e.abbr
+          | e.expan
+          | e.emph
+          | e.lb
+          | e.ref
+          | e.ptr
+          | e.foreign)*
+       }
+     | element parallelphysdescset {
+         attribute id { xsd:ID }?,
+         attribute altrender { text }?,
+         attribute audience { "external" | "internal" }?,
+         attribute lang { text }?,
+         attribute script { text }?,
+         attribute label { text }?,
+         attribute encodinganalog { text }?,
+         e.physdescstructured,
+         e.physdescstructured+
+       }
+     | e.physdescstructured
+     | element physloc {
+         attribute id { xsd:ID }?,
+         attribute altrender { text }?,
+         attribute audience { "external" | "internal" }?,
+         attribute lang { text }?,
+         attribute script { text }?,
+         attribute localtype { text }?,
+         attribute label { text }?,
+         attribute encodinganalog { text }?,
+         attribute parent { xsd:IDREFS }?,
+         (text
+          | e.abbr
+          | e.expan
+          | e.emph
+          | e.lb
+          | e.ref
+          | e.ptr
+          | e.foreign)*
+       }
+     | e.repository
+     | e.unitdate
+     | e.unitdatestructured
+     | element unitid {
+         attribute id { xsd:ID }?,
+         attribute altrender { text }?,
+         attribute audience { "external" | "internal" }?,
+         attribute lang { text }?,
+         attribute script { text }?,
+         attribute localtype { text }?,
+         attribute label { text }?,
+         attribute countrycode { xsd:NMTOKEN }?,
+         attribute repositorycode { xsd:token }?,
+         attribute identifier { text }?,
+         attribute encodinganalog { text }?,
+         (text
+          | e.abbr
+          | e.expan
+          | e.emph
+          | e.lb
+          | e.ref
+          | e.ptr
+          | e.foreign)*
+       }
+     | e.unittitle
+     | element container {
+         attribute id { xsd:ID }?,
+         attribute altrender { text }?,
+         attribute audience { "external" | "internal" }?,
+         attribute lang { text }?,
+         attribute script { text }?,
+         attribute label { text }?,
+         attribute localtype { text }?,
+         attribute encodinganalog { text }?,
+         attribute parent { xsd:IDREFS }?,
+         attribute containerid { xsd:NMTOKEN }?,
+         (text
+          | e.abbr
+          | e.expan
+          | e.emph
+          | e.lb
+          | e.ref
+          | e.ptr
+          | e.foreign)*
+       }
+     | e.materialspec
+     | e.dao
+     | e.daoset
+       # <ref name="e.daogrp"/>
+       )+
+  }
+e.origination =
+  element origination {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute localtype { text }?,
+    attribute label { text }?,
+    attribute encodinganalog { text }?,
+    (e.corpname | e.famname | e.name | e.persname)+
+  }
+e.physdescstructured =
+  element physdescstructured {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute label { text }?,
+    attribute encodinganalog { text }?,
+    attribute physdescstructuredtype {
+      "carrier" | "materialtype" | "spaceoccupied"
+    },
+    attribute coverage { "whole" | "part" },
+    element quantity {
+      attribute id { xsd:ID }?,
+      attribute altrender { text }?,
+      attribute audience { "external" | "internal" }?,
+      attribute lang { text }?,
+      attribute script { text }?,
+      attribute encodinganalog { text }?,
+      attribute approximate { "yes" | "no" }?,
+      text
+    },
+    element unittype {
+      attribute id { xsd:ID }?,
+      attribute altrender { text }?,
+      attribute audience { "external" | "internal" }?,
+      attribute lang { text }?,
+      attribute script { text }?,
+      attribute encodinganalog { text }?,
+      attribute source { xsd:token }?,
+      attribute rules { xsd:NMTOKEN }?,
+      attribute identifier { text }?,
+      text
+    },
+    (e.physfacet | e.dimensions)*,
+    e.descriptivenote?
+  }
+e.repository =
+  element repository {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute localtype { text }?,
+    attribute label { text }?,
+    attribute encodinganalog { text }?,
+    (e.corpname | e.famname | e.name | e.persname)+,
+    e.address?
+  }
+e.unittitle =
+  element unittitle {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute label { text }?,
+    attribute encodinganalog { text }?,
+    attribute localtype { text }?,
+    attribute normal { text }?,
+    ((e.persname
+      | e.corpname
+      | e.famname
+      | e.geogname
+      | e.name
+      | e.occupation
+      | e.subject
+      | e.genreform
+      | e.function
+      | e.title)
+     | (text
+        | e.abbr
+        | e.expan
+        | e.emph
+        | e.lb
+        | e.ref
+        | e.ptr
+        | e.foreign)*
+     | e.quote
+     | e.num
+     | e.footnote
+     | e.date)*
+  }
+e.unitdate =
+  element unitdate {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute label { text }?,
+    attribute unitdatetype { "bulk" | "inclusive" }?,
+    attribute datechar { text }?,
+    attribute era { xsd:NMTOKEN }?,
+    attribute calendar { xsd:NMTOKEN }?,
+    attribute normal { xsd:token }?,
+    attribute certainty { text }?,
+    attribute encodinganalog { text }?,
+    (text
+     | e.abbr
+     | e.expan
+     | e.emph
+     | e.lb
+     | e.ref
+     | e.ptr
+     | e.foreign)*
+  }
+e.unitdatestructured =
+  element unitdatestructured {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute label { text }?,
+    attribute unitdatetype { "bulk" | "inclusive" }?,
+    attribute certainty { text }?,
+    attribute encodinganalog { text }?,
+    attribute datechar { text }?,
+    attribute era { xsd:NMTOKEN }?,
+    attribute calendar { xsd:NMTOKEN }?,
+    (e.datesingle | e.daterange | e.dateset)
+  }
+e.datesingle =
+  element datesingle {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute localtype { text }?,
+    attribute standarddate {
+      # <ref name="m.data.standarddate"/>
+      xsd:token
+    }?,
+    attribute notbefore {
+      # <ref name="m.data.standarddate"/>
+      xsd:token
+    }?,
+    attribute notafter {
+      # <ref name="m.data.standarddate"/>
+      xsd:token
+    }?,
+    (text
+     | e.abbr
+     | e.expan
+     | e.emph
+     | e.lb
+     | e.ref
+     | e.ptr
+     | e.foreign)*
+  }
+e.daterange =
+  element daterange {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute localtype { text }?,
+    element fromdate {
+      attribute id { xsd:ID }?,
+      attribute altrender { text }?,
+      attribute audience { "external" | "internal" }?,
+      attribute lang { text }?,
+      attribute script { text }?,
+      attribute localtype { text }?,
+      attribute standarddate {
+        # <ref name="m.data.standarddate"/>
+        xsd:token
+      }?,
+      attribute notbefore {
+        # <ref name="m.data.standarddate"/>
+        xsd:token
+      }?,
+      attribute notafter {
+        # <ref name="m.data.standarddate"/>
+        xsd:token
+      }?,
+      (text
+       | e.abbr
+       | e.expan
+       | e.emph
+       | e.lb
+       | e.ref
+       | e.ptr
+       | e.foreign)*
+    }?,
+    element todate {
+      attribute id { xsd:ID }?,
+      attribute altrender { text }?,
+      attribute audience { "external" | "internal" }?,
+      attribute lang { text }?,
+      attribute script { text }?,
+      attribute localtype { text }?,
+      attribute standarddate {
+        # <ref name="m.data.standarddate"/>
+        xsd:token
+      }?,
+      attribute notbefore {
+        # <ref name="m.data.standarddate"/>
+        xsd:token
+      }?,
+      attribute notafter {
+        # <ref name="m.data.standarddate"/>
+        xsd:token
+      }?,
+      (text
+       | e.abbr
+       | e.expan
+       | e.emph
+       | e.lb
+       | e.ref
+       | e.ptr
+       | e.foreign)*
+    }?
+  }
+e.dateset =
+  element dateset {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute localtype { text }?,
+    (e.datesingle | e.daterange),
+    (e.datesingle | e.daterange)+
+  }
+e.dao =
+  element dao {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute encodinganalog { text }?,
+    attribute localtype { text }?,
+    attribute label { text }?,
+    attribute linktype { "simple" }?,
+    attribute href { xsd:anyURI }?,
+    attribute linkrole { xsd:anyURI }?,
+    attribute arcrole { xsd:anyURI }?,
+    attribute linktitle { text }?,
+    attribute show { "new" | "replace" | "embed" | "other" | "none" }?,
+    attribute actuate { "onLoad" | "onRequest" | "other" | "none" }?,
+    attribute entityref { xsd:ENTITY }?,
+    attribute xpointer { text }?,
+    attribute daotype {
+      "borndigital" | "derived" | "unknown" | "other"
+    },
+    attribute otherdaotype { text }?,
+    attribute coverage { "whole" | "part" }?,
+    e.descriptivenote?
+  }
+# <define name="e.daodesc">
+#	<element name="daodesc">
+#		<ref name="a.common"/>
+#		<optional>
+#			<ref name="e.head"/>
+#		</optional>
+#		<oneOrMore>
+#			<ref name="m.blocks"/>
+#		</oneOrMore>
+#	</element>
+# </define>
+e.daoset =
+  element daoset {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute localtype { text }?,
+    attribute encodinganalog { text }?,
+    attribute label { text }?,
+    attribute coverage { "whole" | "part" },
+    e.dao,
+    e.dao+,
+    e.descriptivenote?
+  }
+# <define name="e.daogrp">
+#	<element name="daogrp">
+#		<ref name="a.common"/>
+#		<attribute a:defaultValue="extended" name="linktype">
+#			<value>extended</value>
+#		</attribute>
+#		<optional>
+#			<attribute name="role"/>
+#		</optional>
+#		<optional>
+#			<attribute name="title"/>
+#		</optional>
+#		<optional>
+#			<ref name="e.daodesc"/>
+#		</optional>
+#		<oneOrMore>
+#			<choice>
+#				<element name="daoloc">
+#					<ref name="a.common"/>
+#					<ref name="a.loc.external.ptr"/>
+#					<optional>
+#						<ref name="e.daodesc"/>
+#					</optional>
+#				</element>
+#				<choice>
+#					<element name="resource">
+#						<ref name="a.common"/>
+#						<ref name="a.resourceLink"/>
+#						<zeroOrMore>
+#							<choice>
+#								<text/>
+#								<ref name="e.emph"/>
+#								<ref name="e.lb"/>
+#							</choice>
+#						</zeroOrMore>
+#					</element>
+#					<element name="arc">
+#						<ref name="a.common.empty"/>
+#						<ref name="a.arcLink"/>
+#						<empty/>
+#					</element>
+#					<element name="ptrloc">
+#						<ref name="a.common.empty"/>
+#						<ref name="a.loc.internal.ptr"/>
+#						<empty/>
+#					</element>
+#					<element name="extptrloc">
+#						<ref name="a.common.empty"/>
+#						<ref name="a.loc.external.ptr"/>
+#						<empty/>
+#					</element>
+#					<element name="refloc">
+#						<ref name="a.common"/>
+#						<ref name="a.loc.internal.ptr"/>
+#						<ref name="m.mixed.basic"/>
+#					</element>
+#					<element name="extrefloc">
+#						<ref name="a.common"/>
+#						<ref name="a.loc.external.ptr"/>
+#						<ref name="m.mixed.basic"/>
+#					</element>
+#				</choice>
+#			</choice>
+#		</oneOrMore>
+#	</element>
+# </define>
+e.materialspec =
+  element materialspec {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute label { text }?,
+    attribute encodinganalog { text }?,
+    attribute localtype { text }?,
+    (text
+     | e.abbr
+     | e.expan
+     | e.emph
+     | e.lb
+     | e.ref
+     | e.ptr
+     | e.foreign)*
+  }
+# archdesc notes
+e.accessrestrict =
+  element accessrestrict {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute encodinganalog { text }?,
+    attribute localtype { text }?,
+    e.head?,
+    ((((element chronlist {
+          attribute id { xsd:ID }?,
+          attribute altrender { text }?,
+          attribute audience { "external" | "internal" }?,
+          attribute lang { text }?,
+          attribute script { text }?,
+          attribute localtype { text }?,
+          attribute encodinganalog { text }?,
+          e.head?,
+          e.listhead?,
+          element chronitem {
+            attribute id { xsd:ID }?,
+            attribute altrender { text }?,
+            attribute audience { "external" | "internal" }?,
+            attribute lang { text }?,
+            attribute script { text }?,
+            attribute localtype { text }?,
+            (e.datesingle | e.daterange | e.dateset),
+            ((e.geogname?, e.event)
+             | element chronitemset {
+                 attribute id { xsd:ID }?,
+                 attribute altrender { text }?,
+                 attribute audience { "external" | "internal" }?,
+                 attribute lang { text }?,
+                 attribute script { text }?,
+                 e.geogname*,
+                 e.event+
+               }+)
+          }+
+        }
+        | e.list
+        | e.table)
+       | element blockquote {
+           attribute id { xsd:ID }?,
+           attribute altrender { text }?,
+           attribute audience { "external" | "internal" }?,
+           attribute lang { text }?,
+           attribute script { text }?,
+           ((element chronlist {
+               attribute id { xsd:ID }?,
+               attribute altrender { text }?,
+               attribute audience { "external" | "internal" }?,
+               attribute lang { text }?,
+               attribute script { text }?,
+               attribute localtype { text }?,
+               attribute encodinganalog { text }?,
+               e.head?,
+               e.listhead?,
+               element chronitem {
+                 attribute id { xsd:ID }?,
+                 attribute altrender { text }?,
+                 attribute audience { "external" | "internal" }?,
+                 attribute lang { text }?,
+                 attribute script { text }?,
+                 attribute localtype { text }?,
+                 (e.datesingle | e.daterange | e.dateset),
+                 ((e.geogname?, e.event)
+                  | element chronitemset {
+                      attribute id { xsd:ID }?,
+                      attribute altrender { text }?,
+                      attribute audience { "external" | "internal" }?,
+                      attribute lang { text }?,
+                      attribute script { text }?,
+                      e.geogname*,
+                      e.event+
+                    }+)
+               }+
+             }
+             | e.list
+             | e.table)
+            | e.p)+
+         })
+      | e.p)
+     | e.accessrestrict)+
+  }
+e.accruals =
+  element accruals {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute localtype { text }?,
+    attribute encodinganalog { text }?,
+    e.head?,
+    ((((element chronlist {
+          attribute id { xsd:ID }?,
+          attribute altrender { text }?,
+          attribute audience { "external" | "internal" }?,
+          attribute lang { text }?,
+          attribute script { text }?,
+          attribute localtype { text }?,
+          attribute encodinganalog { text }?,
+          e.head?,
+          e.listhead?,
+          element chronitem {
+            attribute id { xsd:ID }?,
+            attribute altrender { text }?,
+            attribute audience { "external" | "internal" }?,
+            attribute lang { text }?,
+            attribute script { text }?,
+            attribute localtype { text }?,
+            (e.datesingle | e.daterange | e.dateset),
+            ((e.geogname?, e.event)
+             | element chronitemset {
+                 attribute id { xsd:ID }?,
+                 attribute altrender { text }?,
+                 attribute audience { "external" | "internal" }?,
+                 attribute lang { text }?,
+                 attribute script { text }?,
+                 e.geogname*,
+                 e.event+
+               }+)
+          }+
+        }
+        | e.list
+        | e.table)
+       | element blockquote {
+           attribute id { xsd:ID }?,
+           attribute altrender { text }?,
+           attribute audience { "external" | "internal" }?,
+           attribute lang { text }?,
+           attribute script { text }?,
+           ((element chronlist {
+               attribute id { xsd:ID }?,
+               attribute altrender { text }?,
+               attribute audience { "external" | "internal" }?,
+               attribute lang { text }?,
+               attribute script { text }?,
+               attribute localtype { text }?,
+               attribute encodinganalog { text }?,
+               e.head?,
+               e.listhead?,
+               element chronitem {
+                 attribute id { xsd:ID }?,
+                 attribute altrender { text }?,
+                 attribute audience { "external" | "internal" }?,
+                 attribute lang { text }?,
+                 attribute script { text }?,
+                 attribute localtype { text }?,
+                 (e.datesingle | e.daterange | e.dateset),
+                 ((e.geogname?, e.event)
+                  | element chronitemset {
+                      attribute id { xsd:ID }?,
+                      attribute altrender { text }?,
+                      attribute audience { "external" | "internal" }?,
+                      attribute lang { text }?,
+                      attribute script { text }?,
+                      e.geogname*,
+                      e.event+
+                    }+)
+               }+
+             }
+             | e.list
+             | e.table)
+            | e.p)+
+         })
+      | e.p)
+     | e.accruals)+
+  }
+e.fileplan =
+  element fileplan {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute localtype { text }?,
+    attribute encodinganalog { text }?,
+    e.head?,
+    ((((element chronlist {
+          attribute id { xsd:ID }?,
+          attribute altrender { text }?,
+          attribute audience { "external" | "internal" }?,
+          attribute lang { text }?,
+          attribute script { text }?,
+          attribute localtype { text }?,
+          attribute encodinganalog { text }?,
+          e.head?,
+          e.listhead?,
+          element chronitem {
+            attribute id { xsd:ID }?,
+            attribute altrender { text }?,
+            attribute audience { "external" | "internal" }?,
+            attribute lang { text }?,
+            attribute script { text }?,
+            attribute localtype { text }?,
+            (e.datesingle | e.daterange | e.dateset),
+            ((e.geogname?, e.event)
+             | element chronitemset {
+                 attribute id { xsd:ID }?,
+                 attribute altrender { text }?,
+                 attribute audience { "external" | "internal" }?,
+                 attribute lang { text }?,
+                 attribute script { text }?,
+                 e.geogname*,
+                 e.event+
+               }+)
+          }+
+        }
+        | e.list
+        | e.table)
+       | element blockquote {
+           attribute id { xsd:ID }?,
+           attribute altrender { text }?,
+           attribute audience { "external" | "internal" }?,
+           attribute lang { text }?,
+           attribute script { text }?,
+           ((element chronlist {
+               attribute id { xsd:ID }?,
+               attribute altrender { text }?,
+               attribute audience { "external" | "internal" }?,
+               attribute lang { text }?,
+               attribute script { text }?,
+               attribute localtype { text }?,
+               attribute encodinganalog { text }?,
+               e.head?,
+               e.listhead?,
+               element chronitem {
+                 attribute id { xsd:ID }?,
+                 attribute altrender { text }?,
+                 attribute audience { "external" | "internal" }?,
+                 attribute lang { text }?,
+                 attribute script { text }?,
+                 attribute localtype { text }?,
+                 (e.datesingle | e.daterange | e.dateset),
+                 ((e.geogname?, e.event)
+                  | element chronitemset {
+                      attribute id { xsd:ID }?,
+                      attribute altrender { text }?,
+                      attribute audience { "external" | "internal" }?,
+                      attribute lang { text }?,
+                      attribute script { text }?,
+                      e.geogname*,
+                      e.event+
+                    }+)
+               }+
+             }
+             | e.list
+             | e.table)
+            | e.p)+
+         })
+      | e.p)
+     | e.fileplan)+
+  }
+e.acqinfo =
+  element acqinfo {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute localtype { text }?,
+    attribute encodinganalog { text }?,
+    e.head?,
+    ((((element chronlist {
+          attribute id { xsd:ID }?,
+          attribute altrender { text }?,
+          attribute audience { "external" | "internal" }?,
+          attribute lang { text }?,
+          attribute script { text }?,
+          attribute localtype { text }?,
+          attribute encodinganalog { text }?,
+          e.head?,
+          e.listhead?,
+          element chronitem {
+            attribute id { xsd:ID }?,
+            attribute altrender { text }?,
+            attribute audience { "external" | "internal" }?,
+            attribute lang { text }?,
+            attribute script { text }?,
+            attribute localtype { text }?,
+            (e.datesingle | e.daterange | e.dateset),
+            ((e.geogname?, e.event)
+             | element chronitemset {
+                 attribute id { xsd:ID }?,
+                 attribute altrender { text }?,
+                 attribute audience { "external" | "internal" }?,
+                 attribute lang { text }?,
+                 attribute script { text }?,
+                 e.geogname*,
+                 e.event+
+               }+)
+          }+
+        }
+        | e.list
+        | e.table)
+       | element blockquote {
+           attribute id { xsd:ID }?,
+           attribute altrender { text }?,
+           attribute audience { "external" | "internal" }?,
+           attribute lang { text }?,
+           attribute script { text }?,
+           ((element chronlist {
+               attribute id { xsd:ID }?,
+               attribute altrender { text }?,
+               attribute audience { "external" | "internal" }?,
+               attribute lang { text }?,
+               attribute script { text }?,
+               attribute localtype { text }?,
+               attribute encodinganalog { text }?,
+               e.head?,
+               e.listhead?,
+               element chronitem {
+                 attribute id { xsd:ID }?,
+                 attribute altrender { text }?,
+                 attribute audience { "external" | "internal" }?,
+                 attribute lang { text }?,
+                 attribute script { text }?,
+                 attribute localtype { text }?,
+                 (e.datesingle | e.daterange | e.dateset),
+                 ((e.geogname?, e.event)
+                  | element chronitemset {
+                      attribute id { xsd:ID }?,
+                      attribute altrender { text }?,
+                      attribute audience { "external" | "internal" }?,
+                      attribute lang { text }?,
+                      attribute script { text }?,
+                      e.geogname*,
+                      e.event+
+                    }+)
+               }+
+             }
+             | e.list
+             | e.table)
+            | e.p)+
+         })
+      | e.p)
+     | e.acqinfo)+
+  }
+e.altformavail =
+  element altformavail {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute encodinganalog { text }?,
+    attribute localtype { text }?,
+    e.head?,
+    ((((element chronlist {
+          attribute id { xsd:ID }?,
+          attribute altrender { text }?,
+          attribute audience { "external" | "internal" }?,
+          attribute lang { text }?,
+          attribute script { text }?,
+          attribute localtype { text }?,
+          attribute encodinganalog { text }?,
+          e.head?,
+          e.listhead?,
+          element chronitem {
+            attribute id { xsd:ID }?,
+            attribute altrender { text }?,
+            attribute audience { "external" | "internal" }?,
+            attribute lang { text }?,
+            attribute script { text }?,
+            attribute localtype { text }?,
+            (e.datesingle | e.daterange | e.dateset),
+            ((e.geogname?, e.event)
+             | element chronitemset {
+                 attribute id { xsd:ID }?,
+                 attribute altrender { text }?,
+                 attribute audience { "external" | "internal" }?,
+                 attribute lang { text }?,
+                 attribute script { text }?,
+                 e.geogname*,
+                 e.event+
+               }+)
+          }+
+        }
+        | e.list
+        | e.table)
+       | element blockquote {
+           attribute id { xsd:ID }?,
+           attribute altrender { text }?,
+           attribute audience { "external" | "internal" }?,
+           attribute lang { text }?,
+           attribute script { text }?,
+           ((element chronlist {
+               attribute id { xsd:ID }?,
+               attribute altrender { text }?,
+               attribute audience { "external" | "internal" }?,
+               attribute lang { text }?,
+               attribute script { text }?,
+               attribute localtype { text }?,
+               attribute encodinganalog { text }?,
+               e.head?,
+               e.listhead?,
+               element chronitem {
+                 attribute id { xsd:ID }?,
+                 attribute altrender { text }?,
+                 attribute audience { "external" | "internal" }?,
+                 attribute lang { text }?,
+                 attribute script { text }?,
+                 attribute localtype { text }?,
+                 (e.datesingle | e.daterange | e.dateset),
+                 ((e.geogname?, e.event)
+                  | element chronitemset {
+                      attribute id { xsd:ID }?,
+                      attribute altrender { text }?,
+                      attribute audience { "external" | "internal" }?,
+                      attribute lang { text }?,
+                      attribute script { text }?,
+                      e.geogname*,
+                      e.event+
+                    }+)
+               }+
+             }
+             | e.list
+             | e.table)
+            | e.p)+
+         })
+      | e.p)
+     | e.altformavail)+
+  }
+e.originalsloc =
+  element originalsloc {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute encodinganalog { text }?,
+    attribute localtype { text }?,
+    e.head?,
+    ((((element chronlist {
+          attribute id { xsd:ID }?,
+          attribute altrender { text }?,
+          attribute audience { "external" | "internal" }?,
+          attribute lang { text }?,
+          attribute script { text }?,
+          attribute localtype { text }?,
+          attribute encodinganalog { text }?,
+          e.head?,
+          e.listhead?,
+          element chronitem {
+            attribute id { xsd:ID }?,
+            attribute altrender { text }?,
+            attribute audience { "external" | "internal" }?,
+            attribute lang { text }?,
+            attribute script { text }?,
+            attribute localtype { text }?,
+            (e.datesingle | e.daterange | e.dateset),
+            ((e.geogname?, e.event)
+             | element chronitemset {
+                 attribute id { xsd:ID }?,
+                 attribute altrender { text }?,
+                 attribute audience { "external" | "internal" }?,
+                 attribute lang { text }?,
+                 attribute script { text }?,
+                 e.geogname*,
+                 e.event+
+               }+)
+          }+
+        }
+        | e.list
+        | e.table)
+       | element blockquote {
+           attribute id { xsd:ID }?,
+           attribute altrender { text }?,
+           attribute audience { "external" | "internal" }?,
+           attribute lang { text }?,
+           attribute script { text }?,
+           ((element chronlist {
+               attribute id { xsd:ID }?,
+               attribute altrender { text }?,
+               attribute audience { "external" | "internal" }?,
+               attribute lang { text }?,
+               attribute script { text }?,
+               attribute localtype { text }?,
+               attribute encodinganalog { text }?,
+               e.head?,
+               e.listhead?,
+               element chronitem {
+                 attribute id { xsd:ID }?,
+                 attribute altrender { text }?,
+                 attribute audience { "external" | "internal" }?,
+                 attribute lang { text }?,
+                 attribute script { text }?,
+                 attribute localtype { text }?,
+                 (e.datesingle | e.daterange | e.dateset),
+                 ((e.geogname?, e.event)
+                  | element chronitemset {
+                      attribute id { xsd:ID }?,
+                      attribute altrender { text }?,
+                      attribute audience { "external" | "internal" }?,
+                      attribute lang { text }?,
+                      attribute script { text }?,
+                      e.geogname*,
+                      e.event+
+                    }+)
+               }+
+             }
+             | e.list
+             | e.table)
+            | e.p)+
+         })
+      | e.p)
+     | e.originalsloc)+
+  }
+e.phystech =
+  element phystech {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute encodinganalog { text }?,
+    attribute localtype { text }?,
+    e.head?,
+    ((((element chronlist {
+          attribute id { xsd:ID }?,
+          attribute altrender { text }?,
+          attribute audience { "external" | "internal" }?,
+          attribute lang { text }?,
+          attribute script { text }?,
+          attribute localtype { text }?,
+          attribute encodinganalog { text }?,
+          e.head?,
+          e.listhead?,
+          element chronitem {
+            attribute id { xsd:ID }?,
+            attribute altrender { text }?,
+            attribute audience { "external" | "internal" }?,
+            attribute lang { text }?,
+            attribute script { text }?,
+            attribute localtype { text }?,
+            (e.datesingle | e.daterange | e.dateset),
+            ((e.geogname?, e.event)
+             | element chronitemset {
+                 attribute id { xsd:ID }?,
+                 attribute altrender { text }?,
+                 attribute audience { "external" | "internal" }?,
+                 attribute lang { text }?,
+                 attribute script { text }?,
+                 e.geogname*,
+                 e.event+
+               }+)
+          }+
+        }
+        | e.list
+        | e.table)
+       | element blockquote {
+           attribute id { xsd:ID }?,
+           attribute altrender { text }?,
+           attribute audience { "external" | "internal" }?,
+           attribute lang { text }?,
+           attribute script { text }?,
+           ((element chronlist {
+               attribute id { xsd:ID }?,
+               attribute altrender { text }?,
+               attribute audience { "external" | "internal" }?,
+               attribute lang { text }?,
+               attribute script { text }?,
+               attribute localtype { text }?,
+               attribute encodinganalog { text }?,
+               e.head?,
+               e.listhead?,
+               element chronitem {
+                 attribute id { xsd:ID }?,
+                 attribute altrender { text }?,
+                 attribute audience { "external" | "internal" }?,
+                 attribute lang { text }?,
+                 attribute script { text }?,
+                 attribute localtype { text }?,
+                 (e.datesingle | e.daterange | e.dateset),
+                 ((e.geogname?, e.event)
+                  | element chronitemset {
+                      attribute id { xsd:ID }?,
+                      attribute altrender { text }?,
+                      attribute audience { "external" | "internal" }?,
+                      attribute lang { text }?,
+                      attribute script { text }?,
+                      e.geogname*,
+                      e.event+
+                    }+)
+               }+
+             }
+             | e.list
+             | e.table)
+            | e.p)+
+         })
+      | e.p)
+     | e.phystech)+
+  }
+e.appraisal =
+  element appraisal {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute localtype { text }?,
+    attribute encodinganalog { text }?,
+    e.head?,
+    ((((element chronlist {
+          attribute id { xsd:ID }?,
+          attribute altrender { text }?,
+          attribute audience { "external" | "internal" }?,
+          attribute lang { text }?,
+          attribute script { text }?,
+          attribute localtype { text }?,
+          attribute encodinganalog { text }?,
+          e.head?,
+          e.listhead?,
+          element chronitem {
+            attribute id { xsd:ID }?,
+            attribute altrender { text }?,
+            attribute audience { "external" | "internal" }?,
+            attribute lang { text }?,
+            attribute script { text }?,
+            attribute localtype { text }?,
+            (e.datesingle | e.daterange | e.dateset),
+            ((e.geogname?, e.event)
+             | element chronitemset {
+                 attribute id { xsd:ID }?,
+                 attribute altrender { text }?,
+                 attribute audience { "external" | "internal" }?,
+                 attribute lang { text }?,
+                 attribute script { text }?,
+                 e.geogname*,
+                 e.event+
+               }+)
+          }+
+        }
+        | e.list
+        | e.table)
+       | element blockquote {
+           attribute id { xsd:ID }?,
+           attribute altrender { text }?,
+           attribute audience { "external" | "internal" }?,
+           attribute lang { text }?,
+           attribute script { text }?,
+           ((element chronlist {
+               attribute id { xsd:ID }?,
+               attribute altrender { text }?,
+               attribute audience { "external" | "internal" }?,
+               attribute lang { text }?,
+               attribute script { text }?,
+               attribute localtype { text }?,
+               attribute encodinganalog { text }?,
+               e.head?,
+               e.listhead?,
+               element chronitem {
+                 attribute id { xsd:ID }?,
+                 attribute altrender { text }?,
+                 attribute audience { "external" | "internal" }?,
+                 attribute lang { text }?,
+                 attribute script { text }?,
+                 attribute localtype { text }?,
+                 (e.datesingle | e.daterange | e.dateset),
+                 ((e.geogname?, e.event)
+                  | element chronitemset {
+                      attribute id { xsd:ID }?,
+                      attribute altrender { text }?,
+                      attribute audience { "external" | "internal" }?,
+                      attribute lang { text }?,
+                      attribute script { text }?,
+                      e.geogname*,
+                      e.event+
+                    }+)
+               }+
+             }
+             | e.list
+             | e.table)
+            | e.p)+
+         })
+      | e.p)
+     | e.appraisal)+
+  }
+e.custodhist =
+  element custodhist {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute localtype { text }?,
+    attribute encodinganalog { text }?,
+    e.head?,
+    ((((element chronlist {
+          attribute id { xsd:ID }?,
+          attribute altrender { text }?,
+          attribute audience { "external" | "internal" }?,
+          attribute lang { text }?,
+          attribute script { text }?,
+          attribute localtype { text }?,
+          attribute encodinganalog { text }?,
+          e.head?,
+          e.listhead?,
+          element chronitem {
+            attribute id { xsd:ID }?,
+            attribute altrender { text }?,
+            attribute audience { "external" | "internal" }?,
+            attribute lang { text }?,
+            attribute script { text }?,
+            attribute localtype { text }?,
+            (e.datesingle | e.daterange | e.dateset),
+            ((e.geogname?, e.event)
+             | element chronitemset {
+                 attribute id { xsd:ID }?,
+                 attribute altrender { text }?,
+                 attribute audience { "external" | "internal" }?,
+                 attribute lang { text }?,
+                 attribute script { text }?,
+                 e.geogname*,
+                 e.event+
+               }+)
+          }+
+        }
+        | e.list
+        | e.table)
+       | element blockquote {
+           attribute id { xsd:ID }?,
+           attribute altrender { text }?,
+           attribute audience { "external" | "internal" }?,
+           attribute lang { text }?,
+           attribute script { text }?,
+           ((element chronlist {
+               attribute id { xsd:ID }?,
+               attribute altrender { text }?,
+               attribute audience { "external" | "internal" }?,
+               attribute lang { text }?,
+               attribute script { text }?,
+               attribute localtype { text }?,
+               attribute encodinganalog { text }?,
+               e.head?,
+               e.listhead?,
+               element chronitem {
+                 attribute id { xsd:ID }?,
+                 attribute altrender { text }?,
+                 attribute audience { "external" | "internal" }?,
+                 attribute lang { text }?,
+                 attribute script { text }?,
+                 attribute localtype { text }?,
+                 (e.datesingle | e.daterange | e.dateset),
+                 ((e.geogname?, e.event)
+                  | element chronitemset {
+                      attribute id { xsd:ID }?,
+                      attribute altrender { text }?,
+                      attribute audience { "external" | "internal" }?,
+                      attribute lang { text }?,
+                      attribute script { text }?,
+                      e.geogname*,
+                      e.event+
+                    }+)
+               }+
+             }
+             | e.list
+             | e.table)
+            | e.p)+
+         })
+      | e.p)
+     | e.custodhist)+
+  }
+e.index =
+  element index {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute localtype { text }?,
+    attribute encodinganalog { text }?,
+    e.head?,
+    (((element chronlist {
+         attribute id { xsd:ID }?,
+         attribute altrender { text }?,
+         attribute audience { "external" | "internal" }?,
+         attribute lang { text }?,
+         attribute script { text }?,
+         attribute localtype { text }?,
+         attribute encodinganalog { text }?,
+         e.head?,
+         e.listhead?,
+         element chronitem {
+           attribute id { xsd:ID }?,
+           attribute altrender { text }?,
+           attribute audience { "external" | "internal" }?,
+           attribute lang { text }?,
+           attribute script { text }?,
+           attribute localtype { text }?,
+           (e.datesingle | e.daterange | e.dateset),
+           ((e.geogname?, e.event)
+            | element chronitemset {
+                attribute id { xsd:ID }?,
+                attribute altrender { text }?,
+                attribute audience { "external" | "internal" }?,
+                attribute lang { text }?,
+                attribute script { text }?,
+                e.geogname*,
+                e.event+
+              }+)
+         }+
+       }
+       | e.list
+       | e.table)
+      | element blockquote {
+          attribute id { xsd:ID }?,
+          attribute altrender { text }?,
+          attribute audience { "external" | "internal" }?,
+          attribute lang { text }?,
+          attribute script { text }?,
+          ((element chronlist {
+              attribute id { xsd:ID }?,
+              attribute altrender { text }?,
+              attribute audience { "external" | "internal" }?,
+              attribute lang { text }?,
+              attribute script { text }?,
+              attribute localtype { text }?,
+              attribute encodinganalog { text }?,
+              e.head?,
+              e.listhead?,
+              element chronitem {
+                attribute id { xsd:ID }?,
+                attribute altrender { text }?,
+                attribute audience { "external" | "internal" }?,
+                attribute lang { text }?,
+                attribute script { text }?,
+                attribute localtype { text }?,
+                (e.datesingle | e.daterange | e.dateset),
+                ((e.geogname?, e.event)
+                 | element chronitemset {
+                     attribute id { xsd:ID }?,
+                     attribute altrender { text }?,
+                     attribute audience { "external" | "internal" }?,
+                     attribute lang { text }?,
+                     attribute script { text }?,
+                     e.geogname*,
+                     e.event+
+                   }+)
+              }+
+            }
+            | e.list
+            | e.table)
+           | e.p)+
+        })
+     | e.p)*,
+    ((e.listhead?, e.indexentry+) | e.index+)
+  }
+e.indexentry =
+  element indexentry {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    (element namegrp {
+       attribute id { xsd:ID }?,
+       attribute altrender { text }?,
+       attribute audience { "external" | "internal" }?,
+       attribute lang { text }?,
+       attribute script { text }?,
+       (e.persname
+        | e.corpname
+        | e.famname
+        | e.geogname
+        | e.name
+        | e.occupation
+        | e.subject
+        | e.genreform
+        | e.function
+        | e.title)+
+     }
+     | (e.persname
+        | e.corpname
+        | e.famname
+        | e.geogname
+        | e.name
+        | e.occupation
+        | e.subject
+        | e.genreform
+        | e.function
+        | e.title)),
+    (element ptrgrp {
+       attribute id { xsd:ID }?,
+       attribute altrender { text }?,
+       attribute audience { "external" | "internal" }?,
+       attribute lang { text }?,
+       attribute script { text }?,
+       (e.ref | e.ptr)+
+     }
+     | (e.ref | e.ptr))?,
+    e.indexentry*
+  }
+e.legalstatus =
+  element legalstatus {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute encodinganalog { text }?,
+    attribute localtype { text }?,
+    e.head?,
+    ((((element chronlist {
+          attribute id { xsd:ID }?,
+          attribute altrender { text }?,
+          attribute audience { "external" | "internal" }?,
+          attribute lang { text }?,
+          attribute script { text }?,
+          attribute localtype { text }?,
+          attribute encodinganalog { text }?,
+          e.head?,
+          e.listhead?,
+          element chronitem {
+            attribute id { xsd:ID }?,
+            attribute altrender { text }?,
+            attribute audience { "external" | "internal" }?,
+            attribute lang { text }?,
+            attribute script { text }?,
+            attribute localtype { text }?,
+            (e.datesingle | e.daterange | e.dateset),
+            ((e.geogname?, e.event)
+             | element chronitemset {
+                 attribute id { xsd:ID }?,
+                 attribute altrender { text }?,
+                 attribute audience { "external" | "internal" }?,
+                 attribute lang { text }?,
+                 attribute script { text }?,
+                 e.geogname*,
+                 e.event+
+               }+)
+          }+
+        }
+        | e.list
+        | e.table)
+       | element blockquote {
+           attribute id { xsd:ID }?,
+           attribute altrender { text }?,
+           attribute audience { "external" | "internal" }?,
+           attribute lang { text }?,
+           attribute script { text }?,
+           ((element chronlist {
+               attribute id { xsd:ID }?,
+               attribute altrender { text }?,
+               attribute audience { "external" | "internal" }?,
+               attribute lang { text }?,
+               attribute script { text }?,
+               attribute localtype { text }?,
+               attribute encodinganalog { text }?,
+               e.head?,
+               e.listhead?,
+               element chronitem {
+                 attribute id { xsd:ID }?,
+                 attribute altrender { text }?,
+                 attribute audience { "external" | "internal" }?,
+                 attribute lang { text }?,
+                 attribute script { text }?,
+                 attribute localtype { text }?,
+                 (e.datesingle | e.daterange | e.dateset),
+                 ((e.geogname?, e.event)
+                  | element chronitemset {
+                      attribute id { xsd:ID }?,
+                      attribute altrender { text }?,
+                      attribute audience { "external" | "internal" }?,
+                      attribute lang { text }?,
+                      attribute script { text }?,
+                      e.geogname*,
+                      e.event+
+                    }+)
+               }+
+             }
+             | e.list
+             | e.table)
+            | e.p)+
+         })
+      | e.p)
+     | e.legalstatus)+
+  }
+e.prefercite =
+  element prefercite {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute localtype { text }?,
+    attribute encodinganalog { text }?,
+    e.head?,
+    ((((element chronlist {
+          attribute id { xsd:ID }?,
+          attribute altrender { text }?,
+          attribute audience { "external" | "internal" }?,
+          attribute lang { text }?,
+          attribute script { text }?,
+          attribute localtype { text }?,
+          attribute encodinganalog { text }?,
+          e.head?,
+          e.listhead?,
+          element chronitem {
+            attribute id { xsd:ID }?,
+            attribute altrender { text }?,
+            attribute audience { "external" | "internal" }?,
+            attribute lang { text }?,
+            attribute script { text }?,
+            attribute localtype { text }?,
+            (e.datesingle | e.daterange | e.dateset),
+            ((e.geogname?, e.event)
+             | element chronitemset {
+                 attribute id { xsd:ID }?,
+                 attribute altrender { text }?,
+                 attribute audience { "external" | "internal" }?,
+                 attribute lang { text }?,
+                 attribute script { text }?,
+                 e.geogname*,
+                 e.event+
+               }+)
+          }+
+        }
+        | e.list
+        | e.table)
+       | element blockquote {
+           attribute id { xsd:ID }?,
+           attribute altrender { text }?,
+           attribute audience { "external" | "internal" }?,
+           attribute lang { text }?,
+           attribute script { text }?,
+           ((element chronlist {
+               attribute id { xsd:ID }?,
+               attribute altrender { text }?,
+               attribute audience { "external" | "internal" }?,
+               attribute lang { text }?,
+               attribute script { text }?,
+               attribute localtype { text }?,
+               attribute encodinganalog { text }?,
+               e.head?,
+               e.listhead?,
+               element chronitem {
+                 attribute id { xsd:ID }?,
+                 attribute altrender { text }?,
+                 attribute audience { "external" | "internal" }?,
+                 attribute lang { text }?,
+                 attribute script { text }?,
+                 attribute localtype { text }?,
+                 (e.datesingle | e.daterange | e.dateset),
+                 ((e.geogname?, e.event)
+                  | element chronitemset {
+                      attribute id { xsd:ID }?,
+                      attribute altrender { text }?,
+                      attribute audience { "external" | "internal" }?,
+                      attribute lang { text }?,
+                      attribute script { text }?,
+                      e.geogname*,
+                      e.event+
+                    }+)
+               }+
+             }
+             | e.list
+             | e.table)
+            | e.p)+
+         })
+      | e.p)
+     | e.prefercite)+
+  }
+e.processinfo =
+  element processinfo {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute localtype { text }?,
+    attribute encodinganalog { text }?,
+    e.head?,
+    ((((element chronlist {
+          attribute id { xsd:ID }?,
+          attribute altrender { text }?,
+          attribute audience { "external" | "internal" }?,
+          attribute lang { text }?,
+          attribute script { text }?,
+          attribute localtype { text }?,
+          attribute encodinganalog { text }?,
+          e.head?,
+          e.listhead?,
+          element chronitem {
+            attribute id { xsd:ID }?,
+            attribute altrender { text }?,
+            attribute audience { "external" | "internal" }?,
+            attribute lang { text }?,
+            attribute script { text }?,
+            attribute localtype { text }?,
+            (e.datesingle | e.daterange | e.dateset),
+            ((e.geogname?, e.event)
+             | element chronitemset {
+                 attribute id { xsd:ID }?,
+                 attribute altrender { text }?,
+                 attribute audience { "external" | "internal" }?,
+                 attribute lang { text }?,
+                 attribute script { text }?,
+                 e.geogname*,
+                 e.event+
+               }+)
+          }+
+        }
+        | e.list
+        | e.table)
+       | element blockquote {
+           attribute id { xsd:ID }?,
+           attribute altrender { text }?,
+           attribute audience { "external" | "internal" }?,
+           attribute lang { text }?,
+           attribute script { text }?,
+           ((element chronlist {
+               attribute id { xsd:ID }?,
+               attribute altrender { text }?,
+               attribute audience { "external" | "internal" }?,
+               attribute lang { text }?,
+               attribute script { text }?,
+               attribute localtype { text }?,
+               attribute encodinganalog { text }?,
+               e.head?,
+               e.listhead?,
+               element chronitem {
+                 attribute id { xsd:ID }?,
+                 attribute altrender { text }?,
+                 attribute audience { "external" | "internal" }?,
+                 attribute lang { text }?,
+                 attribute script { text }?,
+                 attribute localtype { text }?,
+                 (e.datesingle | e.daterange | e.dateset),
+                 ((e.geogname?, e.event)
+                  | element chronitemset {
+                      attribute id { xsd:ID }?,
+                      attribute altrender { text }?,
+                      attribute audience { "external" | "internal" }?,
+                      attribute lang { text }?,
+                      attribute script { text }?,
+                      e.geogname*,
+                      e.event+
+                    }+)
+               }+
+             }
+             | e.list
+             | e.table)
+            | e.p)+
+         })
+      | e.p)
+     | e.processinfo)+
+  }
+e.userestrict =
+  element userestrict {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute encodinganalog { text }?,
+    attribute localtype { text }?,
+    e.head?,
+    ((((element chronlist {
+          attribute id { xsd:ID }?,
+          attribute altrender { text }?,
+          attribute audience { "external" | "internal" }?,
+          attribute lang { text }?,
+          attribute script { text }?,
+          attribute localtype { text }?,
+          attribute encodinganalog { text }?,
+          e.head?,
+          e.listhead?,
+          element chronitem {
+            attribute id { xsd:ID }?,
+            attribute altrender { text }?,
+            attribute audience { "external" | "internal" }?,
+            attribute lang { text }?,
+            attribute script { text }?,
+            attribute localtype { text }?,
+            (e.datesingle | e.daterange | e.dateset),
+            ((e.geogname?, e.event)
+             | element chronitemset {
+                 attribute id { xsd:ID }?,
+                 attribute altrender { text }?,
+                 attribute audience { "external" | "internal" }?,
+                 attribute lang { text }?,
+                 attribute script { text }?,
+                 e.geogname*,
+                 e.event+
+               }+)
+          }+
+        }
+        | e.list
+        | e.table)
+       | element blockquote {
+           attribute id { xsd:ID }?,
+           attribute altrender { text }?,
+           attribute audience { "external" | "internal" }?,
+           attribute lang { text }?,
+           attribute script { text }?,
+           ((element chronlist {
+               attribute id { xsd:ID }?,
+               attribute altrender { text }?,
+               attribute audience { "external" | "internal" }?,
+               attribute lang { text }?,
+               attribute script { text }?,
+               attribute localtype { text }?,
+               attribute encodinganalog { text }?,
+               e.head?,
+               e.listhead?,
+               element chronitem {
+                 attribute id { xsd:ID }?,
+                 attribute altrender { text }?,
+                 attribute audience { "external" | "internal" }?,
+                 attribute lang { text }?,
+                 attribute script { text }?,
+                 attribute localtype { text }?,
+                 (e.datesingle | e.daterange | e.dateset),
+                 ((e.geogname?, e.event)
+                  | element chronitemset {
+                      attribute id { xsd:ID }?,
+                      attribute altrender { text }?,
+                      attribute audience { "external" | "internal" }?,
+                      attribute lang { text }?,
+                      attribute script { text }?,
+                      e.geogname*,
+                      e.event+
+                    }+)
+               }+
+             }
+             | e.list
+             | e.table)
+            | e.p)+
+         })
+      | e.p)
+     | e.userestrict)+
+  }
+e.bioghist =
+  element bioghist {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute localtype { text }?,
+    attribute encodinganalog { text }?,
+    e.head?,
+    ((((element chronlist {
+          attribute id { xsd:ID }?,
+          attribute altrender { text }?,
+          attribute audience { "external" | "internal" }?,
+          attribute lang { text }?,
+          attribute script { text }?,
+          attribute localtype { text }?,
+          attribute encodinganalog { text }?,
+          e.head?,
+          e.listhead?,
+          element chronitem {
+            attribute id { xsd:ID }?,
+            attribute altrender { text }?,
+            attribute audience { "external" | "internal" }?,
+            attribute lang { text }?,
+            attribute script { text }?,
+            attribute localtype { text }?,
+            (e.datesingle | e.daterange | e.dateset),
+            ((e.geogname?, e.event)
+             | element chronitemset {
+                 attribute id { xsd:ID }?,
+                 attribute altrender { text }?,
+                 attribute audience { "external" | "internal" }?,
+                 attribute lang { text }?,
+                 attribute script { text }?,
+                 e.geogname*,
+                 e.event+
+               }+)
+          }+
+        }
+        | e.list
+        | e.table)
+       | element blockquote {
+           attribute id { xsd:ID }?,
+           attribute altrender { text }?,
+           attribute audience { "external" | "internal" }?,
+           attribute lang { text }?,
+           attribute script { text }?,
+           ((element chronlist {
+               attribute id { xsd:ID }?,
+               attribute altrender { text }?,
+               attribute audience { "external" | "internal" }?,
+               attribute lang { text }?,
+               attribute script { text }?,
+               attribute localtype { text }?,
+               attribute encodinganalog { text }?,
+               e.head?,
+               e.listhead?,
+               element chronitem {
+                 attribute id { xsd:ID }?,
+                 attribute altrender { text }?,
+                 attribute audience { "external" | "internal" }?,
+                 attribute lang { text }?,
+                 attribute script { text }?,
+                 attribute localtype { text }?,
+                 (e.datesingle | e.daterange | e.dateset),
+                 ((e.geogname?, e.event)
+                  | element chronitemset {
+                      attribute id { xsd:ID }?,
+                      attribute altrender { text }?,
+                      attribute audience { "external" | "internal" }?,
+                      attribute lang { text }?,
+                      attribute script { text }?,
+                      e.geogname*,
+                      e.event+
+                    }+)
+               }+
+             }
+             | e.list
+             | e.table)
+            | e.p)+
+         })
+      | e.p)
+     | e.bioghist)+
+  }
+e.controlaccess =
+  element controlaccess {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute localtype { text }?,
+    attribute encodinganalog { text }?,
+    e.head?,
+    ((((element chronlist {
+          attribute id { xsd:ID }?,
+          attribute altrender { text }?,
+          attribute audience { "external" | "internal" }?,
+          attribute lang { text }?,
+          attribute script { text }?,
+          attribute localtype { text }?,
+          attribute encodinganalog { text }?,
+          e.head?,
+          e.listhead?,
+          element chronitem {
+            attribute id { xsd:ID }?,
+            attribute altrender { text }?,
+            attribute audience { "external" | "internal" }?,
+            attribute lang { text }?,
+            attribute script { text }?,
+            attribute localtype { text }?,
+            (e.datesingle | e.daterange | e.dateset),
+            ((e.geogname?, e.event)
+             | element chronitemset {
+                 attribute id { xsd:ID }?,
+                 attribute altrender { text }?,
+                 attribute audience { "external" | "internal" }?,
+                 attribute lang { text }?,
+                 attribute script { text }?,
+                 e.geogname*,
+                 e.event+
+               }+)
+          }+
+        }
+        | e.list
+        | e.table)
+       | element blockquote {
+           attribute id { xsd:ID }?,
+           attribute altrender { text }?,
+           attribute audience { "external" | "internal" }?,
+           attribute lang { text }?,
+           attribute script { text }?,
+           ((element chronlist {
+               attribute id { xsd:ID }?,
+               attribute altrender { text }?,
+               attribute audience { "external" | "internal" }?,
+               attribute lang { text }?,
+               attribute script { text }?,
+               attribute localtype { text }?,
+               attribute encodinganalog { text }?,
+               e.head?,
+               e.listhead?,
+               element chronitem {
+                 attribute id { xsd:ID }?,
+                 attribute altrender { text }?,
+                 attribute audience { "external" | "internal" }?,
+                 attribute lang { text }?,
+                 attribute script { text }?,
+                 attribute localtype { text }?,
+                 (e.datesingle | e.daterange | e.dateset),
+                 ((e.geogname?, e.event)
+                  | element chronitemset {
+                      attribute id { xsd:ID }?,
+                      attribute altrender { text }?,
+                      attribute audience { "external" | "internal" }?,
+                      attribute lang { text }?,
+                      attribute script { text }?,
+                      e.geogname*,
+                      e.event+
+                    }+)
+               }+
+             }
+             | e.list
+             | e.table)
+            | e.p)+
+         })
+      | e.p)
+     | (e.persname
+        | e.corpname
+        | e.famname
+        | e.geogname
+        | e.name
+        | e.occupation
+        | e.subject
+        | e.genreform
+        | e.function
+        | e.title)
+     | e.controlaccess)+
+  }
+e.odd =
+  element odd {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute localtype { text }?,
+    attribute encodinganalog { text }?,
+    e.head?,
+    ((((element chronlist {
+          attribute id { xsd:ID }?,
+          attribute altrender { text }?,
+          attribute audience { "external" | "internal" }?,
+          attribute lang { text }?,
+          attribute script { text }?,
+          attribute localtype { text }?,
+          attribute encodinganalog { text }?,
+          e.head?,
+          e.listhead?,
+          element chronitem {
+            attribute id { xsd:ID }?,
+            attribute altrender { text }?,
+            attribute audience { "external" | "internal" }?,
+            attribute lang { text }?,
+            attribute script { text }?,
+            attribute localtype { text }?,
+            (e.datesingle | e.daterange | e.dateset),
+            ((e.geogname?, e.event)
+             | element chronitemset {
+                 attribute id { xsd:ID }?,
+                 attribute altrender { text }?,
+                 attribute audience { "external" | "internal" }?,
+                 attribute lang { text }?,
+                 attribute script { text }?,
+                 e.geogname*,
+                 e.event+
+               }+)
+          }+
+        }
+        | e.list
+        | e.table)
+       | element blockquote {
+           attribute id { xsd:ID }?,
+           attribute altrender { text }?,
+           attribute audience { "external" | "internal" }?,
+           attribute lang { text }?,
+           attribute script { text }?,
+           ((element chronlist {
+               attribute id { xsd:ID }?,
+               attribute altrender { text }?,
+               attribute audience { "external" | "internal" }?,
+               attribute lang { text }?,
+               attribute script { text }?,
+               attribute localtype { text }?,
+               attribute encodinganalog { text }?,
+               e.head?,
+               e.listhead?,
+               element chronitem {
+                 attribute id { xsd:ID }?,
+                 attribute altrender { text }?,
+                 attribute audience { "external" | "internal" }?,
+                 attribute lang { text }?,
+                 attribute script { text }?,
+                 attribute localtype { text }?,
+                 (e.datesingle | e.daterange | e.dateset),
+                 ((e.geogname?, e.event)
+                  | element chronitemset {
+                      attribute id { xsd:ID }?,
+                      attribute altrender { text }?,
+                      attribute audience { "external" | "internal" }?,
+                      attribute lang { text }?,
+                      attribute script { text }?,
+                      e.geogname*,
+                      e.event+
+                    }+)
+               }+
+             }
+             | e.list
+             | e.table)
+            | e.p)+
+         })
+      | e.p)
+     | e.odd)+
+  }
+e.scopecontent =
+  element scopecontent {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute localtype { text }?,
+    attribute encodinganalog { text }?,
+    e.head?,
+    ((((element chronlist {
+          attribute id { xsd:ID }?,
+          attribute altrender { text }?,
+          attribute audience { "external" | "internal" }?,
+          attribute lang { text }?,
+          attribute script { text }?,
+          attribute localtype { text }?,
+          attribute encodinganalog { text }?,
+          e.head?,
+          e.listhead?,
+          element chronitem {
+            attribute id { xsd:ID }?,
+            attribute altrender { text }?,
+            attribute audience { "external" | "internal" }?,
+            attribute lang { text }?,
+            attribute script { text }?,
+            attribute localtype { text }?,
+            (e.datesingle | e.daterange | e.dateset),
+            ((e.geogname?, e.event)
+             | element chronitemset {
+                 attribute id { xsd:ID }?,
+                 attribute altrender { text }?,
+                 attribute audience { "external" | "internal" }?,
+                 attribute lang { text }?,
+                 attribute script { text }?,
+                 e.geogname*,
+                 e.event+
+               }+)
+          }+
+        }
+        | e.list
+        | e.table)
+       | element blockquote {
+           attribute id { xsd:ID }?,
+           attribute altrender { text }?,
+           attribute audience { "external" | "internal" }?,
+           attribute lang { text }?,
+           attribute script { text }?,
+           ((element chronlist {
+               attribute id { xsd:ID }?,
+               attribute altrender { text }?,
+               attribute audience { "external" | "internal" }?,
+               attribute lang { text }?,
+               attribute script { text }?,
+               attribute localtype { text }?,
+               attribute encodinganalog { text }?,
+               e.head?,
+               e.listhead?,
+               element chronitem {
+                 attribute id { xsd:ID }?,
+                 attribute altrender { text }?,
+                 attribute audience { "external" | "internal" }?,
+                 attribute lang { text }?,
+                 attribute script { text }?,
+                 attribute localtype { text }?,
+                 (e.datesingle | e.daterange | e.dateset),
+                 ((e.geogname?, e.event)
+                  | element chronitemset {
+                      attribute id { xsd:ID }?,
+                      attribute altrender { text }?,
+                      attribute audience { "external" | "internal" }?,
+                      attribute lang { text }?,
+                      attribute script { text }?,
+                      e.geogname*,
+                      e.event+
+                    }+)
+               }+
+             }
+             | e.list
+             | e.table)
+            | e.p)+
+         })
+      | e.p)
+     | e.scopecontent)+
+  }
+e.arrangement =
+  element arrangement {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute localtype { text }?,
+    attribute encodinganalog { text }?,
+    e.head?,
+    ((((element chronlist {
+          attribute id { xsd:ID }?,
+          attribute altrender { text }?,
+          attribute audience { "external" | "internal" }?,
+          attribute lang { text }?,
+          attribute script { text }?,
+          attribute localtype { text }?,
+          attribute encodinganalog { text }?,
+          e.head?,
+          e.listhead?,
+          element chronitem {
+            attribute id { xsd:ID }?,
+            attribute altrender { text }?,
+            attribute audience { "external" | "internal" }?,
+            attribute lang { text }?,
+            attribute script { text }?,
+            attribute localtype { text }?,
+            (e.datesingle | e.daterange | e.dateset),
+            ((e.geogname?, e.event)
+             | element chronitemset {
+                 attribute id { xsd:ID }?,
+                 attribute altrender { text }?,
+                 attribute audience { "external" | "internal" }?,
+                 attribute lang { text }?,
+                 attribute script { text }?,
+                 e.geogname*,
+                 e.event+
+               }+)
+          }+
+        }
+        | e.list
+        | e.table)
+       | element blockquote {
+           attribute id { xsd:ID }?,
+           attribute altrender { text }?,
+           attribute audience { "external" | "internal" }?,
+           attribute lang { text }?,
+           attribute script { text }?,
+           ((element chronlist {
+               attribute id { xsd:ID }?,
+               attribute altrender { text }?,
+               attribute audience { "external" | "internal" }?,
+               attribute lang { text }?,
+               attribute script { text }?,
+               attribute localtype { text }?,
+               attribute encodinganalog { text }?,
+               e.head?,
+               e.listhead?,
+               element chronitem {
+                 attribute id { xsd:ID }?,
+                 attribute altrender { text }?,
+                 attribute audience { "external" | "internal" }?,
+                 attribute lang { text }?,
+                 attribute script { text }?,
+                 attribute localtype { text }?,
+                 (e.datesingle | e.daterange | e.dateset),
+                 ((e.geogname?, e.event)
+                  | element chronitemset {
+                      attribute id { xsd:ID }?,
+                      attribute altrender { text }?,
+                      attribute audience { "external" | "internal" }?,
+                      attribute lang { text }?,
+                      attribute script { text }?,
+                      e.geogname*,
+                      e.event+
+                    }+)
+               }+
+             }
+             | e.list
+             | e.table)
+            | e.p)+
+         })
+      | e.p)
+     | e.arrangement)+
+  }
+e.bibliography =
+  element bibliography {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute localtype { text }?,
+    attribute encodinganalog { text }?,
+    e.head?,
+    ((((element chronlist {
+          attribute id { xsd:ID }?,
+          attribute altrender { text }?,
+          attribute audience { "external" | "internal" }?,
+          attribute lang { text }?,
+          attribute script { text }?,
+          attribute localtype { text }?,
+          attribute encodinganalog { text }?,
+          e.head?,
+          e.listhead?,
+          element chronitem {
+            attribute id { xsd:ID }?,
+            attribute altrender { text }?,
+            attribute audience { "external" | "internal" }?,
+            attribute lang { text }?,
+            attribute script { text }?,
+            attribute localtype { text }?,
+            (e.datesingle | e.daterange | e.dateset),
+            ((e.geogname?, e.event)
+             | element chronitemset {
+                 attribute id { xsd:ID }?,
+                 attribute altrender { text }?,
+                 attribute audience { "external" | "internal" }?,
+                 attribute lang { text }?,
+                 attribute script { text }?,
+                 e.geogname*,
+                 e.event+
+               }+)
+          }+
+        }
+        | e.list
+        | e.table)
+       | element blockquote {
+           attribute id { xsd:ID }?,
+           attribute altrender { text }?,
+           attribute audience { "external" | "internal" }?,
+           attribute lang { text }?,
+           attribute script { text }?,
+           ((element chronlist {
+               attribute id { xsd:ID }?,
+               attribute altrender { text }?,
+               attribute audience { "external" | "internal" }?,
+               attribute lang { text }?,
+               attribute script { text }?,
+               attribute localtype { text }?,
+               attribute encodinganalog { text }?,
+               e.head?,
+               e.listhead?,
+               element chronitem {
+                 attribute id { xsd:ID }?,
+                 attribute altrender { text }?,
+                 attribute audience { "external" | "internal" }?,
+                 attribute lang { text }?,
+                 attribute script { text }?,
+                 attribute localtype { text }?,
+                 (e.datesingle | e.daterange | e.dateset),
+                 ((e.geogname?, e.event)
+                  | element chronitemset {
+                      attribute id { xsd:ID }?,
+                      attribute altrender { text }?,
+                      attribute audience { "external" | "internal" }?,
+                      attribute lang { text }?,
+                      attribute script { text }?,
+                      e.geogname*,
+                      e.event+
+                    }+)
+               }+
+             }
+             | e.list
+             | e.table)
+            | e.p)+
+         })
+      | e.p)
+     | e.bibliography
+     | e.archref
+     | e.bibref)+
+  }
+e.relatedmaterial =
+  element relatedmaterial {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute localtype { text }?,
+    attribute encodinganalog { text }?,
+    e.head?,
+    ((((element chronlist {
+          attribute id { xsd:ID }?,
+          attribute altrender { text }?,
+          attribute audience { "external" | "internal" }?,
+          attribute lang { text }?,
+          attribute script { text }?,
+          attribute localtype { text }?,
+          attribute encodinganalog { text }?,
+          e.head?,
+          e.listhead?,
+          element chronitem {
+            attribute id { xsd:ID }?,
+            attribute altrender { text }?,
+            attribute audience { "external" | "internal" }?,
+            attribute lang { text }?,
+            attribute script { text }?,
+            attribute localtype { text }?,
+            (e.datesingle | e.daterange | e.dateset),
+            ((e.geogname?, e.event)
+             | element chronitemset {
+                 attribute id { xsd:ID }?,
+                 attribute altrender { text }?,
+                 attribute audience { "external" | "internal" }?,
+                 attribute lang { text }?,
+                 attribute script { text }?,
+                 e.geogname*,
+                 e.event+
+               }+)
+          }+
+        }
+        | e.list
+        | e.table)
+       | element blockquote {
+           attribute id { xsd:ID }?,
+           attribute altrender { text }?,
+           attribute audience { "external" | "internal" }?,
+           attribute lang { text }?,
+           attribute script { text }?,
+           ((element chronlist {
+               attribute id { xsd:ID }?,
+               attribute altrender { text }?,
+               attribute audience { "external" | "internal" }?,
+               attribute lang { text }?,
+               attribute script { text }?,
+               attribute localtype { text }?,
+               attribute encodinganalog { text }?,
+               e.head?,
+               e.listhead?,
+               element chronitem {
+                 attribute id { xsd:ID }?,
+                 attribute altrender { text }?,
+                 attribute audience { "external" | "internal" }?,
+                 attribute lang { text }?,
+                 attribute script { text }?,
+                 attribute localtype { text }?,
+                 (e.datesingle | e.daterange | e.dateset),
+                 ((e.geogname?, e.event)
+                  | element chronitemset {
+                      attribute id { xsd:ID }?,
+                      attribute altrender { text }?,
+                      attribute audience { "external" | "internal" }?,
+                      attribute lang { text }?,
+                      attribute script { text }?,
+                      e.geogname*,
+                      e.event+
+                    }+)
+               }+
+             }
+             | e.list
+             | e.table)
+            | e.p)+
+         })
+      | e.p)
+     | e.relatedmaterial
+     | e.archref
+     | e.bibref)+
+  }
+e.separatedmaterial =
+  element separatedmaterial {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute localtype { text }?,
+    attribute encodinganalog { text }?,
+    e.head?,
+    ((((element chronlist {
+          attribute id { xsd:ID }?,
+          attribute altrender { text }?,
+          attribute audience { "external" | "internal" }?,
+          attribute lang { text }?,
+          attribute script { text }?,
+          attribute localtype { text }?,
+          attribute encodinganalog { text }?,
+          e.head?,
+          e.listhead?,
+          element chronitem {
+            attribute id { xsd:ID }?,
+            attribute altrender { text }?,
+            attribute audience { "external" | "internal" }?,
+            attribute lang { text }?,
+            attribute script { text }?,
+            attribute localtype { text }?,
+            (e.datesingle | e.daterange | e.dateset),
+            ((e.geogname?, e.event)
+             | element chronitemset {
+                 attribute id { xsd:ID }?,
+                 attribute altrender { text }?,
+                 attribute audience { "external" | "internal" }?,
+                 attribute lang { text }?,
+                 attribute script { text }?,
+                 e.geogname*,
+                 e.event+
+               }+)
+          }+
+        }
+        | e.list
+        | e.table)
+       | element blockquote {
+           attribute id { xsd:ID }?,
+           attribute altrender { text }?,
+           attribute audience { "external" | "internal" }?,
+           attribute lang { text }?,
+           attribute script { text }?,
+           ((element chronlist {
+               attribute id { xsd:ID }?,
+               attribute altrender { text }?,
+               attribute audience { "external" | "internal" }?,
+               attribute lang { text }?,
+               attribute script { text }?,
+               attribute localtype { text }?,
+               attribute encodinganalog { text }?,
+               e.head?,
+               e.listhead?,
+               element chronitem {
+                 attribute id { xsd:ID }?,
+                 attribute altrender { text }?,
+                 attribute audience { "external" | "internal" }?,
+                 attribute lang { text }?,
+                 attribute script { text }?,
+                 attribute localtype { text }?,
+                 (e.datesingle | e.daterange | e.dateset),
+                 ((e.geogname?, e.event)
+                  | element chronitemset {
+                      attribute id { xsd:ID }?,
+                      attribute altrender { text }?,
+                      attribute audience { "external" | "internal" }?,
+                      attribute lang { text }?,
+                      attribute script { text }?,
+                      e.geogname*,
+                      e.event+
+                    }+)
+               }+
+             }
+             | e.list
+             | e.table)
+            | e.p)+
+         })
+      | e.p)
+     | e.separatedmaterial
+     | e.archref
+     | e.bibref)+
+  }
+e.otherfindaid =
+  element otherfindaid {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute localtype { text }?,
+    attribute encodinganalog { text }?,
+    e.head?,
+    ((((element chronlist {
+          attribute id { xsd:ID }?,
+          attribute altrender { text }?,
+          attribute audience { "external" | "internal" }?,
+          attribute lang { text }?,
+          attribute script { text }?,
+          attribute localtype { text }?,
+          attribute encodinganalog { text }?,
+          e.head?,
+          e.listhead?,
+          element chronitem {
+            attribute id { xsd:ID }?,
+            attribute altrender { text }?,
+            attribute audience { "external" | "internal" }?,
+            attribute lang { text }?,
+            attribute script { text }?,
+            attribute localtype { text }?,
+            (e.datesingle | e.daterange | e.dateset),
+            ((e.geogname?, e.event)
+             | element chronitemset {
+                 attribute id { xsd:ID }?,
+                 attribute altrender { text }?,
+                 attribute audience { "external" | "internal" }?,
+                 attribute lang { text }?,
+                 attribute script { text }?,
+                 e.geogname*,
+                 e.event+
+               }+)
+          }+
+        }
+        | e.list
+        | e.table)
+       | element blockquote {
+           attribute id { xsd:ID }?,
+           attribute altrender { text }?,
+           attribute audience { "external" | "internal" }?,
+           attribute lang { text }?,
+           attribute script { text }?,
+           ((element chronlist {
+               attribute id { xsd:ID }?,
+               attribute altrender { text }?,
+               attribute audience { "external" | "internal" }?,
+               attribute lang { text }?,
+               attribute script { text }?,
+               attribute localtype { text }?,
+               attribute encodinganalog { text }?,
+               e.head?,
+               e.listhead?,
+               element chronitem {
+                 attribute id { xsd:ID }?,
+                 attribute altrender { text }?,
+                 attribute audience { "external" | "internal" }?,
+                 attribute lang { text }?,
+                 attribute script { text }?,
+                 attribute localtype { text }?,
+                 (e.datesingle | e.daterange | e.dateset),
+                 ((e.geogname?, e.event)
+                  | element chronitemset {
+                      attribute id { xsd:ID }?,
+                      attribute altrender { text }?,
+                      attribute audience { "external" | "internal" }?,
+                      attribute lang { text }?,
+                      attribute script { text }?,
+                      e.geogname*,
+                      e.event+
+                    }+)
+               }+
+             }
+             | e.list
+             | e.table)
+            | e.p)+
+         })
+      | e.p)
+     | e.otherfindaid
+     | e.archref
+     | e.bibref)+
+  }
+# controlaccess elements
+e.corpname =
+  element corpname {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute source { xsd:token }?,
+    attribute rules { xsd:NMTOKEN }?,
+    attribute identifier { text }?,
+    attribute normal { text }?,
+    attribute localtype { text }?,
+    attribute encodinganalog { text }?,
+    attribute relator { text }?,
+    e.part+
+  }
+e.famname =
+  element famname {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute source { xsd:token }?,
+    attribute rules { xsd:NMTOKEN }?,
+    attribute identifier { text }?,
+    attribute normal { text }?,
+    attribute localtype { text }?,
+    attribute encodinganalog { text }?,
+    attribute relator { text }?,
+    e.part+
+  }
+e.geogname =
+  element geogname {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute source { xsd:token }?,
+    attribute rules { xsd:NMTOKEN }?,
+    attribute identifier { text }?,
+    attribute normal { text }?,
+    attribute localtype { text }?,
+    attribute encodinganalog { text }?,
+    attribute relator { text }?,
+    e.part+,
+    element geographiccoordinates {
+      attribute id { xsd:ID }?,
+      attribute altrender { text }?,
+      attribute audience { "external" | "internal" }?,
+      attribute lang { text }?,
+      attribute script { text }?,
+      attribute coordinatesystem { text },
+      text
+    }*
+  }
+e.name =
+  element name {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute source { xsd:token }?,
+    attribute rules { xsd:NMTOKEN }?,
+    attribute identifier { text }?,
+    attribute normal { text }?,
+    attribute localtype { text }?,
+    attribute encodinganalog { text }?,
+    attribute relator { text }?,
+    e.part+
+  }
+e.persname =
+  element persname {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute source { xsd:token }?,
+    attribute rules { xsd:NMTOKEN }?,
+    attribute identifier { text }?,
+    attribute normal { text }?,
+    attribute localtype { text }?,
+    attribute encodinganalog { text }?,
+    attribute relator { text }?,
+    e.part+
+  }
+e.occupation =
+  element occupation {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute source { xsd:token }?,
+    attribute rules { xsd:NMTOKEN }?,
+    attribute identifier { text }?,
+    attribute normal { text }?,
+    attribute encodinganalog { text }?,
+    attribute localtype { text }?,
+    attribute relator { text }?,
+    e.part+
+  }
+e.subject =
+  element subject {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute source { xsd:token }?,
+    attribute rules { xsd:NMTOKEN }?,
+    attribute identifier { text }?,
+    attribute normal { text }?,
+    attribute encodinganalog { text }?,
+    attribute localtype { text }?,
+    attribute relator { text }?,
+    e.part+
+  }
+e.genreform =
+  element genreform {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute source { xsd:token }?,
+    attribute rules { xsd:NMTOKEN }?,
+    attribute identifier { text }?,
+    attribute normal { text }?,
+    attribute encodinganalog { text }?,
+    attribute localtype { text }?,
+    attribute relator { text }?,
+    e.part+
+  }
+e.function =
+  element function {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute source { xsd:token }?,
+    attribute rules { xsd:NMTOKEN }?,
+    attribute identifier { text }?,
+    attribute normal { text }?,
+    attribute encodinganalog { text }?,
+    attribute localtype { text }?,
+    attribute relator { text }?,
+    e.part+
+  }
+e.title =
+  element title {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute localtype { text }?,
+    attribute source { xsd:token }?,
+    attribute rules { xsd:NMTOKEN }?,
+    attribute identifier { text }?,
+    attribute normal { text }?,
+    attribute encodinganalog { text }?,
+    attribute relator { text }?,
+    attribute render {
+      "altrender"
+      | "bold"
+      | "bolddoublequote"
+      | "bolditalic"
+      | "boldsinglequote"
+      | "boldsmcaps"
+      | "boldunderline"
+      | "doublequote"
+      | "italic"
+      | "nonproport"
+      | "singlequote"
+      | "smcaps"
+      | "sub"
+      | "super"
+      | "underline"
+    }?,
+    e.part+
+  }
+e.part =
+  element part {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute encodinganalog { text }?,
+    attribute localtype { text }?,
+    attribute source { xsd:token }?,
+    attribute rules { xsd:NMTOKEN }?,
+    attribute identifier { text }?,
+    (text
+     | e.abbr
+     | e.expan
+     | e.emph
+     | e.lb
+     | e.ref
+     | e.ptr
+     | e.foreign)*
+  }
+# list
+e.list =
+  element list {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute listtype { "deflist" | "unordered" | "ordered" }?,
+    attribute mark {
+      "disc"
+      | "circle"
+      | "square"
+      | "decimal"
+      | "decimal-leading-zero"
+      | "lower-roman"
+      | "upper-roman"
+      | "lower-greek"
+      | "lower-latin"
+      | "upper-latin"
+      | "armenian"
+      | "georgian"
+      | "lower-alpha"
+      | "upper-alpha"
+      | "none"
+      | "inherit"
+    }?,
+    attribute numeration {
+      "arabic"
+      | "upperalpha"
+      | "loweralpha"
+      | "upperroman"
+      | "lowerroman"
+    }?,
+    e.head?,
+    (e.item+
+     | (e.listhead?,
+        element defitem {
+          attribute id { xsd:ID }?,
+          attribute altrender { text }?,
+          attribute audience { "external" | "internal" }?,
+          attribute lang { text }?,
+          attribute script { text }?,
+          element label {
+            attribute id { xsd:ID }?,
+            attribute altrender { text }?,
+            attribute audience { "external" | "internal" }?,
+            attribute lang { text }?,
+            attribute script { text }?,
+            (text
+             | e.abbr
+             | e.expan
+             | e.emph
+             | e.lb
+             | e.ref
+             | e.ptr
+             | e.foreign)*
+          },
+          e.item
+        }+))
+  }
+e.item =
+  element item {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    (((e.persname
+       | e.corpname
+       | e.famname
+       | e.geogname
+       | e.name
+       | e.occupation
+       | e.subject
+       | e.genreform
+       | e.function
+       | e.title)
+      | (text
+         | e.abbr
+         | e.expan
+         | e.emph
+         | e.lb
+         | e.ref
+         | e.ptr
+         | e.foreign)*
+      | e.quote
+      | e.num
+      | e.footnote
+      | e.date)*
+     | e.list)*
+  }
+e.head =
+  element head {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute althead { text }?,
+    (text
+     | e.abbr
+     | e.expan
+     | e.emph
+     | e.lb
+     | e.ref
+     | e.ptr
+     | e.foreign)*
+  }
+e.listhead =
+  element listhead {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    element head01 {
+      attribute id { xsd:ID }?,
+      attribute altrender { text }?,
+      attribute audience { "external" | "internal" }?,
+      attribute lang { text }?,
+      attribute script { text }?,
+      (text
+       | e.abbr
+       | e.expan
+       | e.emph
+       | e.lb
+       | e.ref
+       | e.ptr
+       | e.foreign)*
+    }?,
+    element head02 {
+      attribute id { xsd:ID }?,
+      attribute altrender { text }?,
+      attribute audience { "external" | "internal" }?,
+      attribute lang { text }?,
+      attribute script { text }?,
+      (text
+       | e.abbr
+       | e.expan
+       | e.emph
+       | e.lb
+       | e.ref
+       | e.ptr
+       | e.foreign)*
+    }?,
+    element head03 {
+      attribute id { xsd:ID }?,
+      attribute altrender { text }?,
+      attribute audience { "external" | "internal" }?,
+      attribute lang { text }?,
+      attribute script { text }?,
+      (text
+       | e.abbr
+       | e.expan
+       | e.emph
+       | e.lb
+       | e.ref
+       | e.ptr
+       | e.foreign)*
+    }?
+  }
+# table
+e.table =
+  # <element name="table">
+  #	<ref name="a.common"/>
+  #	<optional>
+  #		<attribute name="frame">
+  #			<choice>
+  #				<value>top</value>
+  #				<value>bottom</value>
+  #				<value>topbot</value>
+  #				<value>all</value>
+  #				<value>sides</value>
+  #				<value>none</value>
+  #			</choice>
+  #		</attribute>
+  #	</optional>
+  #	<optional>
+  #		<attribute name="cols"/>
+  #	</optional>
+  #	<optional>
+  #		<attribute name="width"/>
+  #	</optional>
+  #	<optional>
+  #		<attribute name="colsep">
+  #			<ref name="av.yesorno"/>
+  #		</attribute>
+  #	</optional>
+  #	<optional>
+  #		<attribute name="rowsep">
+  #			<ref name="av.yesorno"/>
+  #		</attribute>
+  #	</optional>
+  #	<optional>
+  #		<ref name="e.head"/>
+  #	</optional>
+  #	<zeroOrMore>
+  #		<element name="colspec">
+  #			<ref name="a.common.empty"/>
+  #			<optional>
+  #				<attribute name="cols">
+  #					<data type="NMTOKEN"/>
+  #				</attribute>
+  #			</optional>
+  #			<optional>
+  #				<attribute name="colname">
+  #					<data type="NMTOKEN"/>
+  #				</attribute>
+  #			</optional>
+  #			<optional>
+  #				<attribute name="width"/>
+  #			</optional>
+  #			<optional>
+  #				<attribute name="colsep">
+  #					<ref name="av.yesorno"/>
+  #				</attribute>
+  #			</optional>
+  #			<optional>
+  #				<attribute name="rowsep">
+  #					<ref name="av.yesorno"/>
+  #				</attribute>
+  #			</optional>
+  #			<optional>
+  #				<attribute name="align">
+  #					<choice>
+  #						<value>left</value>
+  #						<value>right</value>
+  #						<value>center</value>
+  #						<value>justify</value>
+  #					</choice>
+  #				</attribute>
+  #			</optional>
+  #			<optional>
+  #				<attribute name="valign">
+  #					<choice>
+  #						<value>top</value>
+  #						<value>middle</value>
+  #						<value>bottom</value>
+  #						<value>baseline</value>
+  #					</choice>
+  #				</attribute>
+  #			</optional>
+  #			<empty/>
+  #		</element>
+  #	</zeroOrMore>
+  #	<oneOrMore>
+  # 
+  #		<ref name="e.row"/>
+  #	</oneOrMore>
+  # </element>
+  element table {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute frame {
+      "top" | "bottom" | "topbot" | "all" | "sides" | "none"
+    }?,
+    attribute colsep { xsd:NMTOKEN }?,
+    attribute rowsep { xsd:NMTOKEN }?,
+    attribute pgwide { xsd:NMTOKEN }?,
+    e.head?,
+    element tgroup {
+      attribute id { xsd:ID }?,
+      attribute altrender { text }?,
+      attribute audience { "external" | "internal" }?,
+      attribute lang { text }?,
+      attribute script { text }?,
+      attribute cols { xsd:NMTOKEN },
+      attribute colsep { xsd:NMTOKEN }?,
+      attribute rowsep { xsd:NMTOKEN }?,
+      attribute align {
+        "left" | "right" | "center" | "justify" | "char"
+      }?,
+      element colspec {
+        attribute colnum { xsd:NMTOKEN }?,
+        attribute colname { xsd:NMTOKEN }?,
+        attribute colwidth { text }?,
+        attribute colsep { xsd:NMTOKEN }?,
+        attribute rowsep { xsd:NMTOKEN }?,
+        attribute align {
+          "left" | "right" | "center" | "justify" | "char"
+        }?,
+        attribute char { text }?,
+        attribute charoff { xsd:NMTOKEN }?,
+        empty
+      }*,
+      e.thead?,
+      element tbody {
+        attribute id { xsd:ID }?,
+        attribute altrender { text }?,
+        attribute audience { "external" | "internal" }?,
+        attribute lang { text }?,
+        attribute script { text }?,
+        attribute valign {
+          "top"
+          | "middle"
+          | [
+              # <value>baseline</value>
+              
+            ]
+            "bottom"
+        }?,
+        e.row+
+      }
+    }+
+  }
+e.row =
+  element row {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute rowsep { xsd:NMTOKEN }?,
+    attribute valign {
+      "top"
+      | "middle"
+      | [
+          # <value>baseline</value>
+          
+        ]
+        "bottom"
+    }?,
+    # <choice>
+    #	<element name="thentry">
+    #		<ref name="a.common"/>
+    #		<ref name="a.entry"/>
+    #		<ref name="m.mixed.basic"/>
+    #	</element>
+    #	<element name="entry">
+    #		<ref name="a.common"/>
+    #		<ref name="a.entry"/>
+    #		<ref name="m.para.content"/>
+    #	</element>
+    # </choice>
+    element entry {
+      attribute id { xsd:ID }?,
+      attribute altrender { text }?,
+      attribute audience { "external" | "internal" }?,
+      attribute lang { text }?,
+      attribute script { text }?,
+      # <ref name="a.entry"/>
+      attribute colname { xsd:NMTOKEN }?,
+      attribute namest { xsd:NMTOKEN }?,
+      attribute nameend { xsd:NMTOKEN }?,
+      attribute morerows { xsd:NMTOKEN }?,
+      attribute colsep { xsd:NMTOKEN }?,
+      attribute rowsep { xsd:NMTOKEN }?,
+      attribute align {
+        "left" | "right" | "center" | "justify" | "char"
+      }?,
+      attribute char { text }?,
+      attribute charoff { xsd:NMTOKEN }?,
+      attribute valign {
+        "top"
+        | "middle"
+        | [
+            # <value>baseline</value>
+            
+          ]
+          "bottom"
+      }?,
+      (((e.persname
+         | e.corpname
+         | e.famname
+         | e.geogname
+         | e.name
+         | e.occupation
+         | e.subject
+         | e.genreform
+         | e.function
+         | e.title)
+        | (text
+           | e.abbr
+           | e.expan
+           | e.emph
+           | e.lb
+           | e.ref
+           | e.ptr
+           | e.foreign)*
+        | e.quote
+        | e.num
+        | e.footnote
+        | e.date)*
+       | e.list)*
+    }+
+  }
+e.thead =
+  element thead {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute valign {
+      "top"
+      | "middle"
+      | [
+          # <value>baseline</value>
+          
+        ]
+        "bottom"
+    }?,
+    e.row+
+  }
+# phrase level
+e.abbr =
+  element abbr {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute expan { text }?,
+    text
+  }
+e.expan =
+  element expan {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute abbr { text }?,
+    text
+  }
+e.num =
+  element num {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute localtype { text }?,
+    attribute encodinganalog { text }?,
+    (text
+     | e.abbr
+     | e.expan
+     | e.emph
+     | e.lb
+     | e.ref
+     | e.ptr
+     | e.foreign)*
+  }
+e.quote =
+  element quote {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute localtype { text }?,
+    (text
+     | e.abbr
+     | e.expan
+     | e.emph
+     | e.lb
+     | e.ref
+     | e.ptr
+     | e.foreign)*
+  }
+e.emph =
+  element emph {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute render {
+      "altrender"
+      | "bold"
+      | "bolddoublequote"
+      | "bolditalic"
+      | "boldsinglequote"
+      | "boldsmcaps"
+      | "boldunderline"
+      | "doublequote"
+      | "italic"
+      | "nonproport"
+      | "singlequote"
+      | "smcaps"
+      | "sub"
+      | "super"
+      | "underline"
+    }?,
+    (text
+     | e.abbr
+     | e.expan
+     | e.emph
+     | e.lb
+     | e.ref
+     | e.ptr
+     | e.foreign)*
+  }
+e.foreign =
+  element foreign {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute render {
+      "altrender"
+      | "bold"
+      | "bolddoublequote"
+      | "bolditalic"
+      | "boldsinglequote"
+      | "boldsmcaps"
+      | "boldunderline"
+      | "doublequote"
+      | "italic"
+      | "nonproport"
+      | "singlequote"
+      | "smcaps"
+      | "sub"
+      | "super"
+      | "underline"
+    }?,
+    text
+  }
+e.lb = element lb { empty }
+e.ref =
+  element ref {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute target { xsd:IDREF }?,
+    attribute xpointer { text }?,
+    attribute linktype { "simple" }?,
+    attribute href { xsd:anyURI }?,
+    attribute linkrole { xsd:anyURI }?,
+    attribute arcrole { xsd:anyURI }?,
+    attribute linktitle { text }?,
+    attribute show { "new" | "replace" | "embed" | "other" | "none" }?,
+    attribute actuate { "onLoad" | "onRequest" | "other" | "none" }?,
+    (text
+     | e.abbr
+     | e.expan
+     | e.emph
+     | e.lb
+     | e.ptr
+     | e.quote
+     | e.num
+     | e.footnote
+     | e.date
+     | (e.persname
+        | e.corpname
+        | e.famname
+        | e.geogname
+        | e.name
+        | e.occupation
+        | e.subject
+        | e.genreform
+        | e.function
+        | e.title))*
+  }
+e.ptr =
+  element ptr {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute target { xsd:IDREF }?,
+    attribute xpointer { text }?,
+    attribute linktype { "simple" }?,
+    attribute href { xsd:anyURI }?,
+    attribute linkrole { xsd:anyURI }?,
+    attribute arcrole { xsd:anyURI }?,
+    attribute linktitle { text }?,
+    attribute show { "new" | "replace" | "embed" | "other" | "none" }?,
+    attribute actuate { "onLoad" | "onRequest" | "other" | "none" }?,
+    empty
+  }
+# <define name="e.div">
+#	<element name="div">
+#		<ref name="a.common"/>
+#		<optional>
+#			<ref name="e.head"/>
+#		</optional>
+#		<zeroOrMore>
+#			<ref name="m.blocks"/>
+#		</zeroOrMore>
+#		<zeroOrMore>
+#			<ref name="e.div"/>
+#		</zeroOrMore>
+#	</element>
+# </define>
+
+# bibref and archref
+e.bibref =
+  element bibref {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute encodinganalog { text }?,
+    ((e.persname
+      | e.corpname
+      | e.famname
+      | e.geogname
+      | e.name
+      | e.occupation
+      | e.subject
+      | e.genreform
+      | e.function
+      | e.title)
+     | (text
+        | e.abbr
+        | e.expan
+        | e.emph
+        | e.lb
+        | e.ref
+        | e.ptr
+        | e.foreign)*
+     | e.quote
+     | e.num
+     | e.footnote
+     | e.date)*
+  }
+e.archref =
+  element archref {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute encodinganalog { text }?,
+    ((e.persname
+      | e.corpname
+      | e.famname
+      | e.geogname
+      | e.name
+      | e.occupation
+      | e.subject
+      | e.genreform
+      | e.function
+      | e.title)
+     | (text
+        | e.abbr
+        | e.expan
+        | e.emph
+        | e.lb
+        | e.ref
+        | e.ptr
+        | e.foreign)*
+     | e.quote
+     | e.num
+     | e.footnote
+     | e.date)*
+  }
+# dsc
+e.dsc =
+  element dsc {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute dsctype {
+      "analyticover" | "combined" | "in-depth" | "otherdsctype"
+    }?,
+    attribute otherdsctype { xsd:NMTOKEN }?,
+    attribute encodinganalog { text }?,
+    (e.head?,
+     (((element chronlist {
+          attribute id { xsd:ID }?,
+          attribute altrender { text }?,
+          attribute audience { "external" | "internal" }?,
+          attribute lang { text }?,
+          attribute script { text }?,
+          attribute localtype { text }?,
+          attribute encodinganalog { text }?,
+          e.head?,
+          e.listhead?,
+          element chronitem {
+            attribute id { xsd:ID }?,
+            attribute altrender { text }?,
+            attribute audience { "external" | "internal" }?,
+            attribute lang { text }?,
+            attribute script { text }?,
+            attribute localtype { text }?,
+            (e.datesingle | e.daterange | e.dateset),
+            ((e.geogname?, e.event)
+             | element chronitemset {
+                 attribute id { xsd:ID }?,
+                 attribute altrender { text }?,
+                 attribute audience { "external" | "internal" }?,
+                 attribute lang { text }?,
+                 attribute script { text }?,
+                 e.geogname*,
+                 e.event+
+               }+)
+          }+
+        }
+        | e.list
+        | e.table)
+       | element blockquote {
+           attribute id { xsd:ID }?,
+           attribute altrender { text }?,
+           attribute audience { "external" | "internal" }?,
+           attribute lang { text }?,
+           attribute script { text }?,
+           ((element chronlist {
+               attribute id { xsd:ID }?,
+               attribute altrender { text }?,
+               attribute audience { "external" | "internal" }?,
+               attribute lang { text }?,
+               attribute script { text }?,
+               attribute localtype { text }?,
+               attribute encodinganalog { text }?,
+               e.head?,
+               e.listhead?,
+               element chronitem {
+                 attribute id { xsd:ID }?,
+                 attribute altrender { text }?,
+                 attribute audience { "external" | "internal" }?,
+                 attribute lang { text }?,
+                 attribute script { text }?,
+                 attribute localtype { text }?,
+                 (e.datesingle | e.daterange | e.dateset),
+                 ((e.geogname?, e.event)
+                  | element chronitemset {
+                      attribute id { xsd:ID }?,
+                      attribute altrender { text }?,
+                      attribute audience { "external" | "internal" }?,
+                      attribute lang { text }?,
+                      attribute script { text }?,
+                      e.geogname*,
+                      e.event+
+                    }+)
+               }+
+             }
+             | e.list
+             | e.table)
+            | e.p)+
+         })
+      | e.p)*),
+    e.thead?,
+    (e.c+ | e.c01+)?
+  }
+e.c =
+  element c {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute level {
+      "class"
+      | "collection"
+      | "file"
+      | "fonds"
+      | "item"
+      | "otherlevel"
+      | "recordgrp"
+      | "series"
+      | "subfonds"
+      | "subgrp"
+      | "subseries"
+    }?,
+    attribute otherlevel { xsd:NMTOKEN }?,
+    attribute encodinganalog { text }?,
+    e.head?,
+    e.did,
+    (e.accessrestrict
+     | e.accruals
+     | e.acqinfo
+     | e.altformavail
+     | e.appraisal
+     | e.arrangement
+     | e.bibliography
+     | e.bioghist
+     | e.controlaccess
+     | e.custodhist
+     | e.fileplan
+     | e.index
+     | e.legalstatus
+     | e.odd
+     | e.originalsloc
+     | e.otherfindaid
+     | e.phystech
+     | e.prefercite
+     | e.processinfo
+     | e.relatedmaterial
+     | e.relations
+     | e.scopecontent
+     | e.separatedmaterial
+     | e.userestrict)*,
+    (e.thead?, e.c+)*
+  }
+e.c01 =
+  element c01 {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute level {
+      "class"
+      | "collection"
+      | "file"
+      | "fonds"
+      | "item"
+      | "otherlevel"
+      | "recordgrp"
+      | "series"
+      | "subfonds"
+      | "subgrp"
+      | "subseries"
+    }?,
+    attribute otherlevel { xsd:NMTOKEN }?,
+    attribute encodinganalog { text }?,
+    e.head?,
+    e.did,
+    (e.accessrestrict
+     | e.accruals
+     | e.acqinfo
+     | e.altformavail
+     | e.appraisal
+     | e.arrangement
+     | e.bibliography
+     | e.bioghist
+     | e.controlaccess
+     | e.custodhist
+     | e.fileplan
+     | e.index
+     | e.legalstatus
+     | e.odd
+     | e.originalsloc
+     | e.otherfindaid
+     | e.phystech
+     | e.prefercite
+     | e.processinfo
+     | e.relatedmaterial
+     | e.relations
+     | e.scopecontent
+     | e.separatedmaterial
+     | e.userestrict)*,
+    (e.thead?, e.c02+)*
+  }
+e.c02 =
+  element c02 {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute level {
+      "class"
+      | "collection"
+      | "file"
+      | "fonds"
+      | "item"
+      | "otherlevel"
+      | "recordgrp"
+      | "series"
+      | "subfonds"
+      | "subgrp"
+      | "subseries"
+    }?,
+    attribute otherlevel { xsd:NMTOKEN }?,
+    attribute encodinganalog { text }?,
+    e.head?,
+    e.did,
+    (e.accessrestrict
+     | e.accruals
+     | e.acqinfo
+     | e.altformavail
+     | e.appraisal
+     | e.arrangement
+     | e.bibliography
+     | e.bioghist
+     | e.controlaccess
+     | e.custodhist
+     | e.fileplan
+     | e.index
+     | e.legalstatus
+     | e.odd
+     | e.originalsloc
+     | e.otherfindaid
+     | e.phystech
+     | e.prefercite
+     | e.processinfo
+     | e.relatedmaterial
+     | e.relations
+     | e.scopecontent
+     | e.separatedmaterial
+     | e.userestrict)*,
+    (e.thead?, e.c03+)*
+  }
+e.c03 =
+  element c03 {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute level {
+      "class"
+      | "collection"
+      | "file"
+      | "fonds"
+      | "item"
+      | "otherlevel"
+      | "recordgrp"
+      | "series"
+      | "subfonds"
+      | "subgrp"
+      | "subseries"
+    }?,
+    attribute otherlevel { xsd:NMTOKEN }?,
+    attribute encodinganalog { text }?,
+    e.head?,
+    e.did,
+    (e.accessrestrict
+     | e.accruals
+     | e.acqinfo
+     | e.altformavail
+     | e.appraisal
+     | e.arrangement
+     | e.bibliography
+     | e.bioghist
+     | e.controlaccess
+     | e.custodhist
+     | e.fileplan
+     | e.index
+     | e.legalstatus
+     | e.odd
+     | e.originalsloc
+     | e.otherfindaid
+     | e.phystech
+     | e.prefercite
+     | e.processinfo
+     | e.relatedmaterial
+     | e.relations
+     | e.scopecontent
+     | e.separatedmaterial
+     | e.userestrict)*,
+    (e.thead?, e.c04+)*
+  }
+e.c04 =
+  element c04 {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute level {
+      "class"
+      | "collection"
+      | "file"
+      | "fonds"
+      | "item"
+      | "otherlevel"
+      | "recordgrp"
+      | "series"
+      | "subfonds"
+      | "subgrp"
+      | "subseries"
+    }?,
+    attribute otherlevel { xsd:NMTOKEN }?,
+    attribute encodinganalog { text }?,
+    e.head?,
+    e.did,
+    (e.accessrestrict
+     | e.accruals
+     | e.acqinfo
+     | e.altformavail
+     | e.appraisal
+     | e.arrangement
+     | e.bibliography
+     | e.bioghist
+     | e.controlaccess
+     | e.custodhist
+     | e.fileplan
+     | e.index
+     | e.legalstatus
+     | e.odd
+     | e.originalsloc
+     | e.otherfindaid
+     | e.phystech
+     | e.prefercite
+     | e.processinfo
+     | e.relatedmaterial
+     | e.relations
+     | e.scopecontent
+     | e.separatedmaterial
+     | e.userestrict)*,
+    (e.thead?, e.c05+)*
+  }
+e.c05 =
+  element c05 {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute level {
+      "class"
+      | "collection"
+      | "file"
+      | "fonds"
+      | "item"
+      | "otherlevel"
+      | "recordgrp"
+      | "series"
+      | "subfonds"
+      | "subgrp"
+      | "subseries"
+    }?,
+    attribute otherlevel { xsd:NMTOKEN }?,
+    attribute encodinganalog { text }?,
+    e.head?,
+    e.did,
+    (e.accessrestrict
+     | e.accruals
+     | e.acqinfo
+     | e.altformavail
+     | e.appraisal
+     | e.arrangement
+     | e.bibliography
+     | e.bioghist
+     | e.controlaccess
+     | e.custodhist
+     | e.fileplan
+     | e.index
+     | e.legalstatus
+     | e.odd
+     | e.originalsloc
+     | e.otherfindaid
+     | e.phystech
+     | e.prefercite
+     | e.processinfo
+     | e.relatedmaterial
+     | e.relations
+     | e.scopecontent
+     | e.separatedmaterial
+     | e.userestrict)*,
+    (e.thead?, e.c06+)*
+  }
+e.c06 =
+  element c06 {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute level {
+      "class"
+      | "collection"
+      | "file"
+      | "fonds"
+      | "item"
+      | "otherlevel"
+      | "recordgrp"
+      | "series"
+      | "subfonds"
+      | "subgrp"
+      | "subseries"
+    }?,
+    attribute otherlevel { xsd:NMTOKEN }?,
+    attribute encodinganalog { text }?,
+    e.head?,
+    e.did,
+    (e.accessrestrict
+     | e.accruals
+     | e.acqinfo
+     | e.altformavail
+     | e.appraisal
+     | e.arrangement
+     | e.bibliography
+     | e.bioghist
+     | e.controlaccess
+     | e.custodhist
+     | e.fileplan
+     | e.index
+     | e.legalstatus
+     | e.odd
+     | e.originalsloc
+     | e.otherfindaid
+     | e.phystech
+     | e.prefercite
+     | e.processinfo
+     | e.relatedmaterial
+     | e.relations
+     | e.scopecontent
+     | e.separatedmaterial
+     | e.userestrict)*,
+    (e.thead?, e.c07+)*
+  }
+e.c07 =
+  element c07 {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute level {
+      "class"
+      | "collection"
+      | "file"
+      | "fonds"
+      | "item"
+      | "otherlevel"
+      | "recordgrp"
+      | "series"
+      | "subfonds"
+      | "subgrp"
+      | "subseries"
+    }?,
+    attribute otherlevel { xsd:NMTOKEN }?,
+    attribute encodinganalog { text }?,
+    e.head?,
+    e.did,
+    (e.accessrestrict
+     | e.accruals
+     | e.acqinfo
+     | e.altformavail
+     | e.appraisal
+     | e.arrangement
+     | e.bibliography
+     | e.bioghist
+     | e.controlaccess
+     | e.custodhist
+     | e.fileplan
+     | e.index
+     | e.legalstatus
+     | e.odd
+     | e.originalsloc
+     | e.otherfindaid
+     | e.phystech
+     | e.prefercite
+     | e.processinfo
+     | e.relatedmaterial
+     | e.relations
+     | e.scopecontent
+     | e.separatedmaterial
+     | e.userestrict)*,
+    (e.thead?, e.c08+)*
+  }
+e.c08 =
+  element c08 {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute level {
+      "class"
+      | "collection"
+      | "file"
+      | "fonds"
+      | "item"
+      | "otherlevel"
+      | "recordgrp"
+      | "series"
+      | "subfonds"
+      | "subgrp"
+      | "subseries"
+    }?,
+    attribute otherlevel { xsd:NMTOKEN }?,
+    attribute encodinganalog { text }?,
+    e.head?,
+    e.did,
+    (e.accessrestrict
+     | e.accruals
+     | e.acqinfo
+     | e.altformavail
+     | e.appraisal
+     | e.arrangement
+     | e.bibliography
+     | e.bioghist
+     | e.controlaccess
+     | e.custodhist
+     | e.fileplan
+     | e.index
+     | e.legalstatus
+     | e.odd
+     | e.originalsloc
+     | e.otherfindaid
+     | e.phystech
+     | e.prefercite
+     | e.processinfo
+     | e.relatedmaterial
+     | e.relations
+     | e.scopecontent
+     | e.separatedmaterial
+     | e.userestrict)*,
+    (e.thead?, e.c09*)*
+  }
+e.c09 =
+  element c09 {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute level {
+      "class"
+      | "collection"
+      | "file"
+      | "fonds"
+      | "item"
+      | "otherlevel"
+      | "recordgrp"
+      | "series"
+      | "subfonds"
+      | "subgrp"
+      | "subseries"
+    }?,
+    attribute otherlevel { xsd:NMTOKEN }?,
+    attribute encodinganalog { text }?,
+    e.head?,
+    e.did,
+    (e.accessrestrict
+     | e.accruals
+     | e.acqinfo
+     | e.altformavail
+     | e.appraisal
+     | e.arrangement
+     | e.bibliography
+     | e.bioghist
+     | e.controlaccess
+     | e.custodhist
+     | e.fileplan
+     | e.index
+     | e.legalstatus
+     | e.odd
+     | e.originalsloc
+     | e.otherfindaid
+     | e.phystech
+     | e.prefercite
+     | e.processinfo
+     | e.relatedmaterial
+     | e.relations
+     | e.scopecontent
+     | e.separatedmaterial
+     | e.userestrict)*,
+    (e.thead?, e.c10+)*
+  }
+e.c10 =
+  element c10 {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute level {
+      "class"
+      | "collection"
+      | "file"
+      | "fonds"
+      | "item"
+      | "otherlevel"
+      | "recordgrp"
+      | "series"
+      | "subfonds"
+      | "subgrp"
+      | "subseries"
+    }?,
+    attribute otherlevel { xsd:NMTOKEN }?,
+    attribute encodinganalog { text }?,
+    e.head?,
+    e.did,
+    (e.accessrestrict
+     | e.accruals
+     | e.acqinfo
+     | e.altformavail
+     | e.appraisal
+     | e.arrangement
+     | e.bibliography
+     | e.bioghist
+     | e.controlaccess
+     | e.custodhist
+     | e.fileplan
+     | e.index
+     | e.legalstatus
+     | e.odd
+     | e.originalsloc
+     | e.otherfindaid
+     | e.phystech
+     | e.prefercite
+     | e.processinfo
+     | e.relatedmaterial
+     | e.relations
+     | e.scopecontent
+     | e.separatedmaterial
+     | e.userestrict)*,
+    (e.thead?, e.c11+)*
+  }
+e.c11 =
+  element c11 {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute level {
+      "class"
+      | "collection"
+      | "file"
+      | "fonds"
+      | "item"
+      | "otherlevel"
+      | "recordgrp"
+      | "series"
+      | "subfonds"
+      | "subgrp"
+      | "subseries"
+    }?,
+    attribute otherlevel { xsd:NMTOKEN }?,
+    attribute encodinganalog { text }?,
+    e.head?,
+    e.did,
+    (e.accessrestrict
+     | e.accruals
+     | e.acqinfo
+     | e.altformavail
+     | e.appraisal
+     | e.arrangement
+     | e.bibliography
+     | e.bioghist
+     | e.controlaccess
+     | e.custodhist
+     | e.fileplan
+     | e.index
+     | e.legalstatus
+     | e.odd
+     | e.originalsloc
+     | e.otherfindaid
+     | e.phystech
+     | e.prefercite
+     | e.processinfo
+     | e.relatedmaterial
+     | e.relations
+     | e.scopecontent
+     | e.separatedmaterial
+     | e.userestrict)*,
+    (e.thead?, e.c12+)*
+  }
+e.c12 =
+  element c12 {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute level {
+      "class"
+      | "collection"
+      | "file"
+      | "fonds"
+      | "item"
+      | "otherlevel"
+      | "recordgrp"
+      | "series"
+      | "subfonds"
+      | "subgrp"
+      | "subseries"
+    }?,
+    attribute otherlevel { xsd:NMTOKEN }?,
+    attribute encodinganalog { text }?,
+    e.head?,
+    e.did,
+    (e.accessrestrict
+     | e.accruals
+     | e.acqinfo
+     | e.altformavail
+     | e.appraisal
+     | e.arrangement
+     | e.bibliography
+     | e.bioghist
+     | e.controlaccess
+     | e.custodhist
+     | e.fileplan
+     | e.index
+     | e.legalstatus
+     | e.odd
+     | e.originalsloc
+     | e.otherfindaid
+     | e.phystech
+     | e.prefercite
+     | e.processinfo
+     | e.relatedmaterial
+     | e.relations
+     | e.scopecontent
+     | e.separatedmaterial
+     | e.userestrict)*
+  }
+# other phrase level
+e.dimensions =
+  element dimensions {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute encodinganalog { text }?,
+    attribute localtype { text }?,
+    attribute unit { text }?,
+    ((text
+      | e.abbr
+      | e.expan
+      | e.emph
+      | e.lb
+      | e.ref
+      | e.ptr
+      | e.foreign)*
+     | e.dimensions)*
+  }
+e.physfacet =
+  element physfacet {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute encodinganalog { text }?,
+    attribute source { xsd:token }?,
+    attribute rules { xsd:NMTOKEN }?,
+    attribute identifier { text }?,
+    attribute localtype { text }?,
+    ((e.persname
+      | e.corpname
+      | e.famname
+      | e.geogname
+      | e.name
+      | e.occupation
+      | e.subject
+      | e.genreform
+      | e.function
+      | e.title)
+     | (text
+        | e.abbr
+        | e.expan
+        | e.emph
+        | e.lb
+        | e.ref
+        | e.ptr
+        | e.foreign)*
+     | e.quote
+     | e.num
+     | e.footnote
+     | e.date)*
+  }
+e.language =
+  element language {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute encodinganalog { text }?,
+    attribute label { text }?,
+    attribute langcode { text }?,
+    text
+  }
+e.script =
+  element script {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute encodinganalog { text }?,
+    attribute label { text }?,
+    attribute scriptcode { text }?,
+    text
+  }
+# blocks
+e.languageset =
+  element languageset {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute encodinganalog { text }?,
+    e.language+,
+    e.script+,
+    e.descriptivenote?
+  }
+e.address =
+  element address {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    element addressline {
+      attribute id { xsd:ID }?,
+      attribute altrender { text }?,
+      attribute audience { "external" | "internal" }?,
+      attribute lang { text }?,
+      attribute script { text }?,
+      attribute localtype { text }?,
+      (text
+       | e.abbr
+       | e.expan
+       | e.emph
+       | e.lb
+       | e.ref
+       | e.ptr
+       | e.foreign)*
+    }+
+  }
+e.descriptivenote =
+  element descriptivenote {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute encodinganalog { text }?,
+    e.p+
+  }
+e.p =
+  element p {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    (((e.persname
+       | e.corpname
+       | e.famname
+       | e.geogname
+       | e.name
+       | e.occupation
+       | e.subject
+       | e.genreform
+       | e.function
+       | e.title)
+      | (text
+         | e.abbr
+         | e.expan
+         | e.emph
+         | e.lb
+         | e.ref
+         | e.ptr
+         | e.foreign)*
+      | e.quote
+      | e.num
+      | e.footnote
+      | e.date)*
+     | e.list)*
+  }
+e.footnote =
+  element footnote {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute localtype { text }?,
+    attribute show { "embed" | "new" }?,
+    attribute actuate { "onload" | "onrequest" }?,
+    (((element chronlist {
+         attribute id { xsd:ID }?,
+         attribute altrender { text }?,
+         attribute audience { "external" | "internal" }?,
+         attribute lang { text }?,
+         attribute script { text }?,
+         attribute localtype { text }?,
+         attribute encodinganalog { text }?,
+         e.head?,
+         e.listhead?,
+         element chronitem {
+           attribute id { xsd:ID }?,
+           attribute altrender { text }?,
+           attribute audience { "external" | "internal" }?,
+           attribute lang { text }?,
+           attribute script { text }?,
+           attribute localtype { text }?,
+           (e.datesingle | e.daterange | e.dateset),
+           ((e.geogname?, e.event)
+            | element chronitemset {
+                attribute id { xsd:ID }?,
+                attribute altrender { text }?,
+                attribute audience { "external" | "internal" }?,
+                attribute lang { text }?,
+                attribute script { text }?,
+                e.geogname*,
+                e.event+
+              }+)
+         }+
+       }
+       | e.list
+       | e.table)
+      | element blockquote {
+          attribute id { xsd:ID }?,
+          attribute altrender { text }?,
+          attribute audience { "external" | "internal" }?,
+          attribute lang { text }?,
+          attribute script { text }?,
+          ((element chronlist {
+              attribute id { xsd:ID }?,
+              attribute altrender { text }?,
+              attribute audience { "external" | "internal" }?,
+              attribute lang { text }?,
+              attribute script { text }?,
+              attribute localtype { text }?,
+              attribute encodinganalog { text }?,
+              e.head?,
+              e.listhead?,
+              element chronitem {
+                attribute id { xsd:ID }?,
+                attribute altrender { text }?,
+                attribute audience { "external" | "internal" }?,
+                attribute lang { text }?,
+                attribute script { text }?,
+                attribute localtype { text }?,
+                (e.datesingle | e.daterange | e.dateset),
+                ((e.geogname?, e.event)
+                 | element chronitemset {
+                     attribute id { xsd:ID }?,
+                     attribute altrender { text }?,
+                     attribute audience { "external" | "internal" }?,
+                     attribute lang { text }?,
+                     attribute script { text }?,
+                     e.geogname*,
+                     e.event+
+                   }+)
+              }+
+            }
+            | e.list
+            | e.table)
+           | e.p)+
+        })
+     | e.p)+
+  }
+e.event =
+  element event {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute localtype { text }?,
+    (((e.persname
+       | e.corpname
+       | e.famname
+       | e.geogname
+       | e.name
+       | e.occupation
+       | e.subject
+       | e.genreform
+       | e.function
+       | e.title)
+      | (text
+         | e.abbr
+         | e.expan
+         | e.emph
+         | e.lb
+         | e.ref
+         | e.ptr
+         | e.foreign)*
+      | e.quote
+      | e.num
+      | e.footnote
+      | e.date)*
+     | e.list)*
+  }
+# relations
+e.relations =
+  element relations {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    attribute encodinganalog { text }?,
+    attribute localtype { text }?,
+    attribute base { xsd:anyURI }?,
+    element relation {
+      attribute id { xsd:ID }?,
+      attribute altrender { text }?,
+      attribute audience { "external" | "internal" }?,
+      attribute lang { text }?,
+      attribute script { text }?,
+      attribute encodinganalog { text }?,
+      attribute relationtype {
+        "cpfrelation"
+        | "resourcerelation"
+        | "functionrelation"
+        | "otherrelation"
+      },
+      attribute otherrelationtype { xsd:string }?,
+      attribute lastdatetimeverified {
+        # <ref name="m.data.standardDateTime"/>
+        xsd:token
+      }?,
+      attribute linktype { "simple" }?,
+      attribute href { xsd:anyURI }?,
+      attribute linkrole { xsd:anyURI }?,
+      attribute arcrole { xsd:anyURI }?,
+      attribute linktitle { text }?,
+      attribute show {
+        "new" | "replace" | "embed" | "other" | "none"
+      }?,
+      attribute actuate { "onLoad" | "onRequest" | "other" | "none" }?,
+      element relationentry {
+        attribute id { xsd:ID }?,
+        attribute altrender { text }?,
+        attribute audience { "external" | "internal" }?,
+        attribute lang { text }?,
+        attribute script { text }?,
+        attribute encodinganalog { text }?,
+        attribute localtype { text }?,
+        attribute transliteration { xsd:NMTOKEN }?,
+        text
+      }*,
+      e.objectxmlwrap?,
+      (e.datesingle | e.daterange | e.dateset)?,
+      e.geogname?,
+      e.descriptivenote?
+    }+
+  }
+e.objectxmlwrap =
+  element objectxmlwrap {
+    attribute id { xsd:ID }?,
+    attribute altrender { text }?,
+    attribute audience { "external" | "internal" }?,
+    attribute lang { text }?,
+    attribute script { text }?,
+    e.anyname
+  }
+e.anyname =
+  element * - ns1:* {
+    # <zeroOrMore>
+    #	<attribute>
+    #		<anyName/>
+    #	</attribute>
+    # </zeroOrMore>
+    # 
+    # <zeroOrMore>
+    #	<choice>
+    #		<ref name="e.anyname"/>
+    #		<text/>
+    #	</choice>
+    # </zeroOrMore>
+    e.anyname*
+  }
+# MODELS
+
+# <define name="m.data.standardDateTime">
+#	<choice>
+#		<data type="date">
+#			<param name="maxInclusive">2099-12-31</param>
+#		</data>
+#		<data type="gYear">
+#			<param name="maxInclusive">2099</param>
+#		</data>
+#		<data type="gYearMonth">
+#			<param name="maxInclusive">2099-12</param>
+#		</data>
+#		<data type="dateTime">
+#			<param name="maxInclusive">2099-12-31T23:59:59</param>
+#		</data>
+#	</choice>
+# </define>
+
+# <define name="m.data.standarddate">
+#	<choice>
+#		<data type="date">
+#			<param name="maxInclusive">2099-12-31</param>
+#		</data>
+#		<data type="gYear">
+#			<param name="maxInclusive">2099</param>
+#		</data>
+#		<data type="gYearMonth">
+#			<param name="maxInclusive">2099-12</param>
+#		</data>
+#	</choice>
+# </define>
+
+# ATTRIBUTE MODELS
+
+# <define name="a.loc.external.ptr">
+#	<ref name="a.locatorLink"/>
+#	<optional>
+#		<attribute name="entityref">
+#			<data type="ENTITY"/>
+#		</attribute>
+#	</optional>
+#	<optional>
+#		<attribute name="xpointer"/>
+#	</optional>
+# </define>
+
+# <define name="a.loc.internal.ptr">
+#	<ref name="a.locatorLink"/>
+#	<optional>
+#		<attribute name="target">
+#			<data type="IDREF"/>
+#		</attribute>
+#	</optional>
+#	<optional>
+#		<attribute name="xpointer"/>
+#	</optional>
+# </define>
+
+# <define name="a.arcLink">
+#	<attribute a:defaultValue="arc" name="linktype">
+#		<value>arc</value>
+#	</attribute>
+#	<optional>
+#		<attribute name="arcrole"/>
+#	</optional>
+#	<optional>
+#		<attribute name="title"/>
+#	</optional>
+#	<optional>
+#		<attribute name="show"/>
+#	</optional>
+#	<optional>
+#		<attribute name="actuate"/>
+#	</optional>
+#	<optional>
+#		<attribute name="from"/>
+#	</optional>
+#	<optional>
+#		<attribute name="to"/>
+#	</optional>
+# </define>
+
+# <define name="a.resourceLink">
+#	<attribute a:defaultValue="resource" name="type">
+#		<value>resource</value>
+#	</attribute>
+#	<optional>
+#		<attribute name="role"/>
+#	</optional>
+#	<optional>
+#		<attribute name="title"/>
+#	</optional>
+#	<optional>
+#		<attribute name="label"/>
+#	</optional>
+# </define>
+
+# <define name="a.entry">
+#	<optional>
+#		<attribute name="colname">
+#			<data type="NMTOKEN"/>
+#		</attribute>
+#	</optional>
+#	<optional>
+#		<attribute name="namest">
+#			<data type="NMTOKEN"/>
+#		</attribute>
+#	</optional>
+#	<optional>
+#		<attribute name="nameend">
+#			<data type="NMTOKEN"/>
+#		</attribute>
+#	</optional>
+#	<optional>
+#		<attribute name="morerows">
+#			<data type="NMTOKEN"/>
+#		</attribute>
+#	</optional>
+#	<optional>
+#		<attribute name="colsep">
+#			<ref name="av.yesorno"/>
+#		</attribute>
+#	</optional>
+#	<optional>
+#		<attribute name="rowsep">
+#			<ref name="av.yesorno"/>
+#		</attribute>
+#	</optional>
+#	<optional>
+#		<attribute name="align">
+#			<choice>
+#				<value>left</value>
+#				<value>right</value>
+#				<value>center</value>
+#				<value>justify</value>
+#			</choice>
+#		</attribute>
+#	</optional>
+#	<optional>
+#		<attribute name="valign">
+#			<choice>
+#				<value>top</value>
+#				<value>middle</value>
+#				<value>bottom</value>
+#				<value>baseline</value>
+#			</choice>
+#		</attribute>
+#	</optional>
+# </define>
+
+# ATTRIBUTE VALUE LISTS

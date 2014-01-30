@@ -1137,6 +1137,6 @@
     <projectTree name="ead_revision.xpr">
         <folder path="."/>
         <folder path="../ead-test-col/"/>
-        <folder path="../../working/ead_results/"/>
+        <folder path="../ead_results/"/>
     </projectTree>
 </project>
