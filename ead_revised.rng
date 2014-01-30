@@ -1911,13 +1911,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="thead">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="valign">
-					<choice>
-						<value>top</value>
-						<value>middle</value>
-						<value>bottom</value>
-					</choice>
-				</attribute>
+				<ref name="a.valign"/>
 			</optional>
 			<oneOrMore>
 				<ref name="e.row"/>
