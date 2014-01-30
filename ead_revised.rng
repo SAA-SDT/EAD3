@@ -3178,6 +3178,18 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</attribute>
 	</define>
 	
+	<define name="a.align">
+		<attribute name="align">
+			<choice>
+				<value>left</value>
+				<value>right</value>
+				<value>center</value>
+				<value>justify</value>
+				<value>char</value>
+			</choice>
+		</attribute>
+	</define>
+	
 	<define name="a.valign">
 		<attribute name="valign">
 			<choice>
