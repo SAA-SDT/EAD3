@@ -1747,15 +1747,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 						</attribute>
 					</optional>
 					<optional>
-						<attribute name="align">
-							<choice>
-								<value>left</value>
-								<value>right</value>
-								<value>center</value>
-								<value>justify</value>
-								<value>char</value>
-							</choice>
-						</attribute>
+						<ref name="a.align"/>
 					</optional>
 					<zeroOrMore>
 						<element name="colspec">
@@ -1783,15 +1775,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 								</attribute>
 							</optional>
 							<optional>
-								<attribute name="align">
-									<choice>
-										<value>left</value>
-										<value>right</value>
-										<value>center</value>
-										<value>justify</value>
-										<value>char</value>
-									</choice>
-								</attribute>
+								<ref name="a.align"/>
 							</optional>
 							<optional>
 								<attribute name="char"/>
@@ -1879,15 +1863,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 						</attribute>
 					</optional>
 					<optional>
-						<attribute name="align">
-							<choice>
-								<value>left</value>
-								<value>right</value>
-								<value>center</value>
-								<value>justify</value>
-								<value>char</value>
-							</choice>
-						</attribute>
+						<ref name="a.align"/>
 					</optional>
 					<optional>
 						<attribute name="char"/>
