@@ -1810,13 +1810,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<element name="tbody">
 						<ref name="a.common"/>
 						<optional>
-							<attribute name="valign">
-								<choice>
-									<value>top</value>
-									<value>middle</value>
-									<value>bottom</value>
-								</choice>
-							</attribute>
+							<ref name="a.valign"/>
 						</optional>
 						<oneOrMore>
 							<ref name="e.row"/>
@@ -1836,14 +1830,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</attribute>
 			</optional>
 			<optional>
-				<attribute name="valign">
-					<choice>
-						<value>top</value>
-						<value>middle</value>
-						<value>bottom</value>
-						<value>baseline</value>
-					</choice>
-				</attribute>
+				<ref name="a.valign"/>
 			</optional>
 			<oneOrMore>
 				<!--<choice>
@@ -1911,14 +1898,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 						</attribute>
 					</optional>
 					<optional>
-						<attribute name="valign">
-							<choice>
-								<value>top</value>
-								<value>middle</value>
-								<value>bottom</value>
-								<!--<value>baseline</value>-->
-							</choice>
-						</attribute>
+						<ref name="a.valign"/>
 					</optional>
 					<ref name="m.para.content"/>
 				</element>
@@ -3200,6 +3180,17 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<choice>
 				<value>whole</value>
 				<value>part</value>
+			</choice>
+		</attribute>
+	</define>
+	
+	<define name="a.valign">
+		<attribute name="valign">
+			<choice>
+				<value>top</value>
+				<value>middle</value>
+				<value>bottom</value>
+				<!--<value>baseline</value>-->
 			</choice>
 		</attribute>
 	</define>
