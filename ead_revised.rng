@@ -1846,7 +1846,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</attribute>
 			</optional>
 			<oneOrMore>
-				<choice>
+				<!--<choice>
 					<element name="thentry">
 						<ref name="a.common"/>
 						<ref name="a.entry"/>
@@ -1857,7 +1857,71 @@ For these and/or other purposes and motivations, and without any expectation of 
 						<ref name="a.entry"/>
 						<ref name="m.para.content"/>
 					</element>
-				</choice>
+				</choice>-->
+				<element name="entry">
+					<ref name="a.common"/>
+					<!--<ref name="a.entry"/>-->
+					<optional>
+						<attribute name="colname">
+							<data type="NMTOKEN"/>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="namest">
+							<data type="NMTOKEN"/>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="nameend">
+							<data type="NMTOKEN"/>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="morerows">
+							<data type="NMTOKEN"/>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="colsep">
+							<ref name="av.yesorno"/>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="rowsep">
+							<ref name="av.yesorno"/>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="align">
+							<choice>
+								<value>left</value>
+								<value>right</value>
+								<value>center</value>
+								<value>justify</value>
+								<value>char</value>
+							</choice>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="char"/>
+					</optional>
+					<optional>
+						<attribute name="charoff">
+							<data type="NMTOKEN"/>
+						</attribute>
+					</optional>
+					<optional>
+						<attribute name="valign">
+							<choice>
+								<value>top</value>
+								<value>middle</value>
+								<value>bottom</value>
+								<!--<value>baseline</value>-->
+							</choice>
+						</attribute>
+					</optional>
+					<ref name="m.para.content"/>
+				</element>
 
 			</oneOrMore>
 
@@ -3140,7 +3204,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</attribute>
 	</define>
 	
-	<define name="a.entry">
+	<!--<define name="a.entry">
 		<optional>
 			<attribute name="colname">
 				<data type="NMTOKEN"/>
@@ -3191,7 +3255,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</choice>
 			</attribute>
 		</optional>
-	</define>
+	</define>-->
 	
 	<!-- ATTRIBUTE VALUE LISTS -->
 	
