@@ -3267,10 +3267,11 @@ For these and/or other purposes and motivations, and without any expectation of 
 	</define>
 	
 	<define name="av.zeroorone">
-		<choice>
+		<!--<choice>
 			<value>0</value>
 			<value>1</value>
-		</choice>
+		</choice>-->
+		<data type="NMTOKEN"/>
 	</define>
 	
 	<define name="av.yesorno">
