@@ -114,8 +114,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
 
     <!-- REMOVE COMPLETELY -->
-    <xsl:template
-        match="frontmatter | runner | accessrestrict/legalstatus | arcdesc/address | dsc/address | @linktype | arc | resource">
+ <xsl:template match="frontmatter | runner | accessrestrict/legalstatus| archdesc/address | dsc/address | @linktype | arc | resource">
         <xsl:comment>
             <xsl:call-template name="removedElement"/>
         </xsl:comment>
@@ -123,6 +122,8 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:call-template name="removedElement"/>
         </xsl:message>
     </xsl:template>
+    
+<xsl:template match="archdesc/@type"/>
 
     <!-- SKIP -->
     <xsl:template
@@ -751,7 +752,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
 
     <xsl:template
-        match="abstract/@type | accessrestrict/@type | altformavail/@type | archdesc/@type |container/@type |
+        match="abstract/@type | accessrestrict/@type | altformavail/@type |container/@type |
         phystech/@type | processinfo/@type | titleproper/@type | title/@type | unitid/@type |
         userestruct/@type | odd/@type | date/@type">
         <xsl:attribute name="localtype">
@@ -868,7 +869,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
 
     <xsl:template name="removedElement">
-        <xsl:text>DEPRECATED ELEMENT </xsl:text>
+        <xsl:text>DEPRECATED ELEMENT OR ATTRIBUTE </xsl:text>
         <xsl:value-of select="local-name()"/>
         <xsl:text>&#160;</xsl:text>
         <xsl:text>REMOVED</xsl:text>
