@@ -115,7 +115,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <!-- REMOVE COMPLETELY -->
     <xsl:template
-        match="frontmatter | runner | accessrestrict/legalstatus | arcdesc/address | dsc/address | @linktype">
+        match="frontmatter | runner | accessrestrict/legalstatus | arcdesc/address | dsc/address | @linktype | arc | resource">
         <xsl:comment>
             <xsl:call-template name="removedElement"/>
         </xsl:comment>
@@ -128,7 +128,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:template
         match="descgrp | admininfo | titleproper/date | titleproper/num | 
         accessrestrict/accessrestrict/legalstatus | archref/abstract | subtitle/date | 
-        subtitle/num | subarea | bibseries | imprint | bibref/edition | bibref/publisher | emph/* | abbr/* | expan/* | unittitle[parent::* except (did)]">
+        subtitle/num | subarea | bibseries | imprint | bibref/edition | bibref/publisher | emph/* | abbr/* | expan/* | unittitle[parent::* except (did)] | title[parent::descrules]">
         <xsl:comment>
             <xsl:call-template name="removedElement"/>
         </xsl:comment>
@@ -465,16 +465,32 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:apply-templates/>
             <xsl:apply-templates
                 select="parent::*/dao | parent::*/daogrp | child::dao | child::daogrp"
-                mode="daoIndid"/>
+                mode="daoIndid"></xsl:apply-templates>
         </did>
     </xsl:template>
 
-    <xsl:template match="dao | daogrp"> </xsl:template>
+    <xsl:template match="dao | daogrp">
+        <xsl:comment>dao* outside did moved into did</xsl:comment>
+    </xsl:template>
 
-    <xsl:template match="daogrp" mode="daoIndid">
+    <xsl:template match="daogrp[count(child::daoloc) &gt; 1]" mode="daoIndid">
+        <xsl:comment>daogrp now daoset</xsl:comment>
         <daoset>
-            <xsl:apply-templates/>
+            <xsl:apply-templates select="daoloc"/>
+            <xsl:apply-templates select="daodesc"/>
         </daoset>
+    </xsl:template>
+    
+    <xsl:template match="daogrp[count(child::daoloc) = 1]" mode="daoIndid">
+        <xsl:comment>moving dao* outside did into did</xsl:comment>
+        <xsl:comment>daogrp with single daoloc now dao</xsl:comment>
+        <xsl:comment>dao now requires attribute "daotype"; setting value to "unknown"</xsl:comment>
+        <dao>
+            <xsl:copy-of select="daoloc/@* except @linktype"/>
+            <xsl:attribute name="daotype"><xsl:text>unknown</xsl:text></xsl:attribute>
+            <xsl:attribute name="linktype"><xsl:text>simple</xsl:text></xsl:attribute>
+            <xsl:apply-templates select="daodesc"/>
+        </dao>
     </xsl:template>
 
     <xsl:template match="dao" mode="daoIndid">
@@ -483,11 +499,13 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:apply-templates/>
         </dao>
     </xsl:template>
-
-
-
-
-
+    
+    <xsl:template match="daoloc">
+        <dao>
+            <xsl:apply-templates/>            
+        </dao>
+    </xsl:template>   
+ 
     <xsl:template match="origination">
         <xsl:for-each select="corpname | name | persname | famname">
             <origination>
@@ -627,6 +645,19 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xsl:template>
 
     <xsl:template match="daodesc">
+        <xsl:comment>
+            <xsl:text>ELEMENT </xsl:text>
+            <xsl:value-of select="local-name()"/>
+            <xsl:text>&#160;</xsl:text>
+            <xsl:text>RENAMED as 'descriptivenote'</xsl:text>   
+            <xsl:text>&#10;</xsl:text>
+        </xsl:comment>
+        <xsl:message>
+            <xsl:text>ELEMENT </xsl:text>
+            <xsl:value-of select="local-name()"/>
+            <xsl:text>&#160;</xsl:text>
+            <xsl:text>RENAMED as 'descriptivenote'</xsl:text>
+        </xsl:message>
         <descriptivenote>
             <xsl:apply-templates select="@*"/>
             <xsl:apply-templates/>
