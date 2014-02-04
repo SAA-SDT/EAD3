@@ -42,7 +42,8 @@ version="1.0">
 <xsl:template match='xs:element[@ref]'>
 	<xsl:element name='xs:element'>
 		<xsl:attribute name='name'>
-			<xsl:value-of select='@ref'/> <!-- <xsl:value-of select='substring-after(string(@ref), "s:")'/> -->
+<!--			<xsl:value-of select='@ref'/> -->
+	    <xsl:value-of select='substring-after(string(@ref), ":")'/>
 		</xsl:attribute>
 		<xsl:attribute name='type'>
 			<xsl:value-of select='@ref'/>
