@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- 
+<?xml version="1.0" encoding="UTF-8"?><!-- 
 	
 Creative Commons Legal Code
 CC0 1.0 Universal
@@ -36,10 +35,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     Affirmer understands and acknowledges that Creative Commons is not a party to this document and has no duty or obligation with respect to this CC0 or use of the Work.
     
     
--->
-<grammar xmlns="http://relaxng.org/ns/structure/1.0" ns="http://ead3.archivists.org/schema/"
-	xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-	datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+--><grammar xmlns="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" ns="http://ead3.archivists.org/schema/" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
 	<start>
 		<ref name="e.ead"/>
 	</start>
@@ -701,11 +697,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</optional>
 			<ref name="am.dates.era"/>
 			<ref name="am.dates.calendar"/>
-			<choice>
-				<ref name="e.datesingle"/>
-				<ref name="e.daterange"/>
-				<ref name="e.dateset"/>
-			</choice>
+			<ref name="m.dates"/>
 		</element>
 	</define>
 
@@ -2363,70 +2355,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 
 	<!-- relations -->
 	
-	<define name="e.relations">
-		<element name="relations">
-			<ref name="a.common"/>
-			<ref name="a.encodinganalog"/>
-			<ref name="a.localtype"/>
-			<optional>
-				<attribute name="base">
-					<data type="anyURI"/>
-				</attribute>
-			</optional>
-			<oneOrMore>
-				<element name="relation">
-					<ref name="a.common"/>
-					<ref name="a.encodinganalog"/>
-					<attribute name="relationtype">
-						<choice>
-							<value>cpfrelation</value>
-							<value>resourcerelation</value>
-							<value>functionrelation</value>
-							<value>otherrelation</value>
-						</choice>
-					</attribute>
-					<optional>
-						<attribute name="otherrelationtype">
-							<data type="string"/>
-						</attribute>
-					</optional>
-					<optional>
-						<ref name="a.lastdatetimeverified"/>
-					</optional>
-					<ref name="am.simplelink"/>
-					<zeroOrMore>
-						<element name="relationentry">
-							<ref name="a.common"/>
-							<ref name="a.encodinganalog"/>
-							<ref name="a.localtype"/>
-							<optional>
-								<attribute name="transliteration">
-									<data type="NMTOKEN"/>
-								</attribute>
-							</optional>
-							<text/>
-						</element>
-					</zeroOrMore>
-					<optional>
-						<ref name="e.objectxmlwrap"/>
-					</optional>
-					<optional>
-						<choice>
-							<ref name="e.datesingle"/>
-							<ref name="e.daterange"/>
-							<ref name="e.dateset"/>
-						</choice>
-					</optional>
-					<optional>
-						<ref name="e.geogname"/>
-					</optional>
-					<optional>
-						<ref name="e.descriptivenote"/>
-					</optional>
-				</element>
-			</oneOrMore>
-		</element>
-	</define>
+	
 
 	<define name="e.objectxmlwrap">
 		<element name="objectxmlwrap">
@@ -2501,13 +2430,8 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<element name="chronitem">
 						<ref name="a.common"/>
 						<ref name="a.localtype"/>
-				<choice>
-					<ref name="e.datesingle"/>
-					<ref name="e.daterange"/>
-					<ref name="e.dateset"/>	
-				</choice>
+						<ref name="m.dates"/>
 						<choice>
-						
 							<group>
 								<optional>
 									<ref name="e.geogname"/>
@@ -2655,7 +2579,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="e.prefercite"/>
 			<ref name="e.processinfo"/>
 			<ref name="e.relatedmaterial"/>
-			<ref name="e.relations"/>
+			
 			<ref name="e.scopecontent"/>
 			<ref name="e.separatedmaterial"/>
 			<ref name="e.userestrict"/>
@@ -2668,7 +2592,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="e.dsc"/>
 		</choice>
 	</define>
-<!--	
+	
 	<define name="m.dates">
 		<choice>
 			<ref name="e.datesingle"/>
@@ -2676,7 +2600,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="e.dateset"/>
 		</choice>
 	</define>
--->	
+	
 	<define name="m.did">
 		<choice>
 			

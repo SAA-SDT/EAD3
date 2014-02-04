@@ -641,24 +641,25 @@
   </xs:element>
   <xs:element name="unitdatestructured" substitutionGroup="ead3:m.did">
     <xs:complexType>
-      <xs:sequence>
-        <xs:element ref="ead3:m.dates"/>
-      </xs:sequence>
-      <xs:attributeGroup ref="ead3:a.common"/>
-      <xs:attributeGroup ref="ead3:a.label"/>
-      <xs:attribute name="unitdatetype">
-        <xs:simpleType>
-          <xs:restriction base="xs:token">
-            <xs:enumeration value="bulk"/>
-            <xs:enumeration value="inclusive"/>
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:attribute>
-      <xs:attribute name="certainty"/>
-      <xs:attributeGroup ref="ead3:a.encodinganalog"/>
-      <xs:attribute name="datechar"/>
-      <xs:attributeGroup ref="ead3:am.dates.era"/>
-      <xs:attributeGroup ref="ead3:am.dates.calendar"/>
+      <xs:complexContent>
+        <xs:extension base="ead3:m.dates">
+          <xs:attributeGroup ref="ead3:a.common"/>
+          <xs:attributeGroup ref="ead3:a.label"/>
+          <xs:attribute name="unitdatetype">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="bulk"/>
+                <xs:enumeration value="inclusive"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="certainty"/>
+          <xs:attributeGroup ref="ead3:a.encodinganalog"/>
+          <xs:attribute name="datechar"/>
+          <xs:attributeGroup ref="ead3:am.dates.era"/>
+          <xs:attributeGroup ref="ead3:am.dates.calendar"/>
+        </xs:extension>
+      </xs:complexContent>
     </xs:complexType>
   </xs:element>
   <xs:element name="datesingle" substitutionGroup="ead3:m.dates">
@@ -2026,51 +2027,6 @@
     </xs:complexType>
   </xs:element>
   <!-- relations -->
-  <xs:element name="relations" substitutionGroup="ead3:m.desc.base">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element maxOccurs="unbounded" ref="ead3:relation"/>
-      </xs:sequence>
-      <xs:attributeGroup ref="ead3:a.common"/>
-      <xs:attributeGroup ref="ead3:a.encodinganalog"/>
-      <xs:attributeGroup ref="ead3:a.localtype"/>
-      <xs:attribute name="base" type="xs:anyURI"/>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="relation">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ead3:relationentry"/>
-        <xs:element minOccurs="0" ref="ead3:objectxmlwrap"/>
-        <xs:element minOccurs="0" ref="ead3:m.dates"/>
-        <xs:element minOccurs="0" ref="ead3:geogname"/>
-        <xs:element minOccurs="0" ref="ead3:descriptivenote"/>
-      </xs:sequence>
-      <xs:attributeGroup ref="ead3:a.common"/>
-      <xs:attributeGroup ref="ead3:a.encodinganalog"/>
-      <xs:attribute name="relationtype" use="required">
-        <xs:simpleType>
-          <xs:restriction base="xs:token">
-            <xs:enumeration value="cpfrelation"/>
-            <xs:enumeration value="resourcerelation"/>
-            <xs:enumeration value="functionrelation"/>
-            <xs:enumeration value="otherrelation"/>
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:attribute>
-      <xs:attribute name="otherrelationtype" type="xs:string"/>
-      <xs:attribute name="lastdatetimeverified" type="xs:token"/>
-      <xs:attributeGroup ref="ead3:am.simplelink"/>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="relationentry">
-    <xs:complexType mixed="true">
-      <xs:attributeGroup ref="ead3:a.common"/>
-      <xs:attributeGroup ref="ead3:a.encodinganalog"/>
-      <xs:attributeGroup ref="ead3:a.localtype"/>
-      <xs:attribute name="transliteration" type="xs:NMTOKEN"/>
-    </xs:complexType>
-  </xs:element>
   <xs:element name="objectxmlwrap">
     <xs:complexType>
       <xs:complexContent>
@@ -2082,8 +2038,8 @@
   </xs:element>
   <xs:complexType name="e.anyname">
     <xs:choice>
-      <xs:any namespace="##other" processContents="lax"/>
-      <xs:any namespace="##local" processContents="lax"/>
+      <xs:any namespace="##other" processContents="skip"/>
+      <xs:any namespace="##local" processContents="skip"/>
     </xs:choice>
   </xs:complexType>
   <!-- MODELS -->
@@ -2113,18 +2069,19 @@
   </xs:element>
   <xs:element name="chronitem">
     <xs:complexType>
-      <xs:sequence>
-        <xs:element ref="ead3:m.dates"/>
-        <xs:choice>
-          <xs:sequence>
-            <xs:element minOccurs="0" ref="ead3:geogname"/>
-            <xs:element ref="ead3:event"/>
-          </xs:sequence>
-          <xs:element maxOccurs="unbounded" ref="ead3:chronitemset"/>
-        </xs:choice>
-      </xs:sequence>
-      <xs:attributeGroup ref="ead3:a.common"/>
-      <xs:attributeGroup ref="ead3:a.localtype"/>
+      <xs:complexContent>
+        <xs:extension base="ead3:m.dates">
+          <xs:choice>
+            <xs:sequence>
+              <xs:element minOccurs="0" ref="ead3:geogname"/>
+              <xs:element ref="ead3:event"/>
+            </xs:sequence>
+            <xs:element maxOccurs="unbounded" ref="ead3:chronitemset"/>
+          </xs:choice>
+          <xs:attributeGroup ref="ead3:a.common"/>
+          <xs:attributeGroup ref="ead3:a.localtype"/>
+        </xs:extension>
+      </xs:complexContent>
     </xs:complexType>
   </xs:element>
   <xs:element name="chronitemset">
@@ -2199,6 +2156,11 @@
   <xs:element name="m.desc.base" abstract="true" substitutionGroup="ead3:m.desc.base.full"/>
   <xs:element name="m.desc.base.full" abstract="true"/>
   <xs:element name="m.dates" abstract="true"/>
+  <xs:complexType name="m.dates">
+    <xs:sequence>
+      <xs:element ref="ead3:m.dates"/>
+    </xs:sequence>
+  </xs:complexType>
   <xs:element name="m.did" abstract="true"/>
   <xs:element name="abstract" substitutionGroup="ead3:m.did">
     <xs:complexType mixed="true">
