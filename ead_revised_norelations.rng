@@ -68,9 +68,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 	</define>
 
 	<!-- ELEMENTS -->
-    <!-- Control -->
+	<!-- Control -->
 
-<define name="e.control">
+	<define name="e.control">
 		<element name="control">
 			<ref name="a.common"/>
 			<optional>
@@ -343,7 +343,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 							<ref name="a.encodinganalog"/>
 							<optional>
 								<attribute name="standarddatetime">
-									<!--<ref name="m.data.standardDateTime"/>-->
 									<data type="token"/>
 								</attribute>
 							</optional>
@@ -547,8 +546,8 @@ For these and/or other purposes and motivations, and without any expectation of 
 
 
 
-    <!-- did -->
-	
+	<!-- did -->
+
 	<define name="e.did">
 		<element name="did">
 			<ref name="a.common"/>
@@ -561,7 +560,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</oneOrMore>
 		</element>
 	</define>
-	
+
 	<define name="e.origination">
 		<element name="origination">
 			<ref name="a.common"/>
@@ -578,7 +577,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</oneOrMore>
 		</element>
 	</define>
-	
+
 	<define name="e.physdescstructured">
 		<element name="physdescstructured">
 			<ref name="a.common"/>
@@ -619,7 +618,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</optional>
 		</element>
 	</define>
-	
+
 	<define name="e.repository">
 		<element name="repository">
 			<ref name="a.common"/>
@@ -679,7 +678,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="m.mixed.basic"/>
 		</element>
 	</define>
-	
+
 	<define name="e.unitdatestructured">
 		<element name="unitdatestructured">
 			<ref name="a.common"/>
@@ -791,18 +790,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</element>
 	</define>
 
-	<!--<define name="e.daodesc">
-		<element name="daodesc">
-			<ref name="a.common"/>
-			<optional>
-				<ref name="e.head"/>
-			</optional>
-			<oneOrMore>
-				<ref name="m.blocks"/>
-			</oneOrMore>
-		</element>
-	</define>-->
-	
 	<define name="e.daoset">
 		<element name="daoset">
 			<ref name="a.common"/>
@@ -819,74 +806,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</optional>
 		</element>
 	</define>
-	
-	<!--<define name="e.daogrp">
-		<element name="daogrp">
-			<ref name="a.common"/>
-			<attribute a:defaultValue="extended" name="linktype">
-				<value>extended</value>
-			</attribute>
-			<optional>
-				<attribute name="role"/>
-			</optional>
-			<optional>
-				<attribute name="title"/>
-			</optional>
-			<optional>
-				<ref name="e.daodesc"/>
-			</optional>
-			<oneOrMore>
-				<choice>
-					<element name="daoloc">
-						<ref name="a.common"/>
-						<ref name="a.loc.external.ptr"/>
-						<optional>
-							<ref name="e.daodesc"/>
-						</optional>
-					</element>
-					<choice>
-						<element name="resource">
-							<ref name="a.common"/>
-							<ref name="a.resourceLink"/>
-							<zeroOrMore>
-								<choice>
-									<text/>
-									<ref name="e.emph"/>
-									<ref name="e.lb"/>
-								</choice>
-							</zeroOrMore>
-						</element>
-						<element name="arc">
-							<ref name="a.common.empty"/>
-							<ref name="a.arcLink"/>
-							<empty/>
-						</element>
-						<element name="ptrloc">
-							<ref name="a.common.empty"/>
-							<ref name="a.loc.internal.ptr"/>
-							<empty/>
-						</element>
-						<element name="extptrloc">
-							<ref name="a.common.empty"/>
-							<ref name="a.loc.external.ptr"/>
-							<empty/>
-						</element>
-						<element name="refloc">
-							<ref name="a.common"/>
-							<ref name="a.loc.internal.ptr"/>
-							<ref name="m.mixed.basic"/>
-						</element>
-						<element name="extrefloc">
-							<ref name="a.common"/>
-							<ref name="a.loc.external.ptr"/>
-							<ref name="m.mixed.basic"/>
-						</element>
-					</choice>
-				</choice>
-			</oneOrMore>
-		</element>
-	</define>-->
-	
+
+
+
 	<define name="e.materialspec">
 		<element name="materialspec">
 			<ref name="a.common"/>
@@ -895,10 +817,10 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.localtype"/>
 			<ref name="m.mixed.basic"/>
 		</element>
-	</define>	
-	
+	</define>
+
 	<!-- archdesc notes -->
-	
+
 	<define name="e.accessrestrict">
 		<element name="accessrestrict">
 			<ref name="a.common"/>
@@ -916,9 +838,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 
 		</element>
 	</define>
-	
-	
-	
+
+
+
 	<define name="e.accruals">
 		<element name="accruals">
 			<ref name="a.common"/>
@@ -936,7 +858,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 
 		</element>
 	</define>
-	
+
 	<define name="e.fileplan">
 		<element name="fileplan">
 			<ref name="a.common"/>
@@ -954,7 +876,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 
 		</element>
 	</define>
-	
+
 	<define name="e.acqinfo">
 		<element name="acqinfo">
 			<ref name="a.common"/>
@@ -972,7 +894,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 
 		</element>
 	</define>
-	
+
 	<define name="e.altformavail">
 		<element name="altformavail">
 			<ref name="a.common"/>
@@ -989,7 +911,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</oneOrMore>
 		</element>
 	</define>
-	
+
 	<define name="e.originalsloc">
 		<element name="originalsloc">
 			<ref name="a.common"/>
@@ -1006,7 +928,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</oneOrMore>
 		</element>
 	</define>
-	
+
 	<define name="e.phystech">
 		<element name="phystech">
 			<ref name="a.common"/>
@@ -1023,7 +945,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</oneOrMore>
 		</element>
 	</define>
-	
+
 	<define name="e.appraisal">
 		<element name="appraisal">
 			<ref name="a.common"/>
@@ -1040,7 +962,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</oneOrMore>
 		</element>
 	</define>
-	
+
 	<define name="e.custodhist">
 		<element name="custodhist">
 			<ref name="a.common"/>
@@ -1057,7 +979,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</oneOrMore>
 		</element>
 	</define>
-	
+
 	<define name="e.index">
 		<element name="index">
 			<ref name="a.common"/>
@@ -1084,7 +1006,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</choice>
 		</element>
 	</define>
-	
+
 	<define name="e.indexentry">
 		<element name="indexentry">
 			<ref name="a.common"/>
@@ -1113,7 +1035,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</zeroOrMore>
 		</element>
 	</define>
-	
+
 	<define name="e.legalstatus">
 		<element name="legalstatus">
 			<ref name="a.common"/>
@@ -1130,7 +1052,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</oneOrMore>
 		</element>
 	</define>
-	
+
 	<define name="e.prefercite">
 		<element name="prefercite">
 			<ref name="a.common"/>
@@ -1147,7 +1069,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</oneOrMore>
 		</element>
 	</define>
-	
+
 	<define name="e.processinfo">
 		<element name="processinfo">
 			<ref name="a.common"/>
@@ -1164,7 +1086,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</oneOrMore>
 		</element>
 	</define>
-	
+
 	<define name="e.userestrict">
 		<element name="userestrict">
 			<ref name="a.common"/>
@@ -1181,7 +1103,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</oneOrMore>
 		</element>
 	</define>
-	
+
 	<define name="e.bioghist">
 		<element name="bioghist">
 			<ref name="a.common"/>
@@ -1198,7 +1120,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</oneOrMore>
 		</element>
 	</define>
-	
+
 	<define name="e.controlaccess">
 		<element name="controlaccess">
 			<ref name="a.common"/>
@@ -1216,7 +1138,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</oneOrMore>
 		</element>
 	</define>
-	
+
 	<define name="e.odd">
 		<element name="odd">
 			<ref name="a.common"/>
@@ -1233,7 +1155,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</oneOrMore>
 		</element>
 	</define>
-	
+
 	<define name="e.scopecontent">
 		<element name="scopecontent">
 			<ref name="a.common"/>
@@ -1250,7 +1172,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</oneOrMore>
 		</element>
 	</define>
-	
+
 	<define name="e.arrangement">
 		<element name="arrangement">
 			<ref name="a.common"/>
@@ -1267,7 +1189,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</oneOrMore>
 		</element>
 	</define>
-	
+
 	<define name="e.bibliography">
 		<element name="bibliography">
 			<ref name="a.common"/>
@@ -1286,7 +1208,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</oneOrMore>
 		</element>
 	</define>
-	
+
 	<define name="e.relatedmaterial">
 		<element name="relatedmaterial">
 			<ref name="a.common"/>
@@ -1305,7 +1227,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</oneOrMore>
 		</element>
 	</define>
-	
+
 	<define name="e.separatedmaterial">
 		<element name="separatedmaterial">
 			<ref name="a.common"/>
@@ -1324,7 +1246,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</oneOrMore>
 		</element>
 	</define>
-	
+
 	<define name="e.otherfindaid">
 		<element name="otherfindaid">
 			<ref name="a.common"/>
@@ -1343,7 +1265,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</oneOrMore>
 		</element>
 	</define>
-	
+
 	<!-- controlaccess elements -->
 	<define name="e.corpname">
 		<element name="corpname">
@@ -1357,7 +1279,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</oneOrMore>
 		</element>
 	</define>
-	
+
 	<define name="e.famname">
 		<element name="famname">
 			<ref name="a.common"/>
@@ -1370,7 +1292,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</oneOrMore>
 		</element>
 	</define>
-	
+
 	<define name="e.geogname">
 		<element name="geogname">
 			<ref name="a.common"/>
@@ -1392,7 +1314,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</zeroOrMore>
 		</element>
 	</define>
-	
+
 	<define name="e.name">
 		<element name="name">
 			<ref name="a.common"/>
@@ -1405,7 +1327,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</oneOrMore>
 		</element>
 	</define>
-	
+
 	<define name="e.persname">
 		<element name="persname">
 			<ref name="a.common"/>
@@ -1418,7 +1340,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</oneOrMore>
 		</element>
 	</define>
-	
+
 	<define name="e.occupation">
 		<element name="occupation">
 			<ref name="a.common"/>
@@ -1431,7 +1353,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</oneOrMore>
 		</element>
 	</define>
-	
+
 	<define name="e.subject">
 		<element name="subject">
 			<ref name="a.common"/>
@@ -1444,7 +1366,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</oneOrMore>
 		</element>
 	</define>
-	
+
 	<define name="e.genreform">
 		<element name="genreform">
 			<ref name="a.common"/>
@@ -1457,7 +1379,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</oneOrMore>
 		</element>
 	</define>
-	
+
 	<define name="e.function">
 		<element name="function">
 			<ref name="a.common"/>
@@ -1470,7 +1392,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</oneOrMore>
 		</element>
 	</define>
-	
+
 	<define name="e.title">
 		<element name="title">
 			<ref name="a.common"/>
@@ -1488,7 +1410,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</oneOrMore>
 		</element>
 	</define>
-	
+
 	<define name="e.part">
 		<element name="part">
 			<ref name="a.common"/>
@@ -1498,9 +1420,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="m.mixed.basic"/>
 		</element>
 	</define>
-	
-	
-     <!-- list -->
+
+
+	<!-- list -->
 	<define name="e.list">
 		<element name="list">
 			<ref name="a.common"/>
@@ -1611,97 +1533,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</optional>
 		</element>
 	</define>
-    <!-- table -->
-	
-	<define name="e.table">
-		<!--<element name="table">
-			<ref name="a.common"/>
-			<optional>
-				<attribute name="frame">
-					<choice>
-						<value>top</value>
-						<value>bottom</value>
-						<value>topbot</value>
-						<value>all</value>
-						<value>sides</value>
-						<value>none</value>
-					</choice>
-				</attribute>
-			</optional>
-			<optional>
-				<attribute name="cols"/>
-			</optional>
-			<optional>
-				<attribute name="width"/>
-			</optional>
-			<optional>
-				<attribute name="colsep">
-					<ref name="av.yesorno"/>
-				</attribute>
-			</optional>
-			<optional>
-				<attribute name="rowsep">
-					<ref name="av.yesorno"/>
-				</attribute>
-			</optional>
-			<optional>
-				<ref name="e.head"/>
-			</optional>
-			<zeroOrMore>
-				<element name="colspec">
-					<ref name="a.common.empty"/>
-					<optional>
-						<attribute name="cols">
-							<data type="NMTOKEN"/>
-						</attribute>
-					</optional>
-					<optional>
-						<attribute name="colname">
-							<data type="NMTOKEN"/>
-						</attribute>
-					</optional>
-					<optional>
-						<attribute name="width"/>
-					</optional>
-					<optional>
-						<attribute name="colsep">
-							<ref name="av.yesorno"/>
-						</attribute>
-					</optional>
-					<optional>
-						<attribute name="rowsep">
-							<ref name="av.yesorno"/>
-						</attribute>
-					</optional>
-					<optional>
-						<attribute name="align">
-							<choice>
-								<value>left</value>
-								<value>right</value>
-								<value>center</value>
-								<value>justify</value>
-							</choice>
-						</attribute>
-					</optional>
-					<optional>
-						<attribute name="valign">
-							<choice>
-								<value>top</value>
-								<value>middle</value>
-								<value>bottom</value>
-								<value>baseline</value>
-							</choice>
-						</attribute>
-					</optional>
-					<empty/>
-				</element>
-			</zeroOrMore>
-			<oneOrMore>
+	<!-- table -->
 
-				<ref name="e.row"/>
-			</oneOrMore>
-		</element>-->
-		
+	<define name="e.table">
 		<element name="table">
 			<ref name="a.common"/>
 			<optional>
@@ -1808,7 +1642,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</oneOrMore>
 		</element>
 	</define>
-	
+
 	<define name="e.row">
 		<element name="row">
 			<ref name="a.common"/>
@@ -1821,21 +1655,8 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="a.valign"/>
 			</optional>
 			<oneOrMore>
-				<!--<choice>
-					<element name="thentry">
-						<ref name="a.common"/>
-						<ref name="a.entry"/>
-						<ref name="m.mixed.basic"/>
-					</element>
-					<element name="entry">
-						<ref name="a.common"/>
-						<ref name="a.entry"/>
-						<ref name="m.para.content"/>
-					</element>
-				</choice>-->
 				<element name="entry">
 					<ref name="a.common"/>
-					<!--<ref name="a.entry"/>-->
 					<optional>
 						<attribute name="colname">
 							<data type="NMTOKEN"/>
@@ -1896,7 +1717,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</oneOrMore>
 		</element>
 	</define>
-    <!-- phrase level -->
+	<!-- phrase level -->
 
 	<define name="e.abbr">
 		<element name="abbr">
@@ -1995,21 +1816,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 	</define>
 
 
-	<!--<define name="e.div">
-		<element name="div">
-			<ref name="a.common"/>
-			<optional>
-				<ref name="e.head"/>
-			</optional>
-			<zeroOrMore>
-				<ref name="m.blocks"/>
-			</zeroOrMore>
-			<zeroOrMore>
-				<ref name="e.div"/>
-			</zeroOrMore>
-		</element>
-	</define>-->
-     <!-- bibref and archref -->
+	<!-- bibref and archref -->
 	<define name="e.bibref">
 		<element name="bibref">
 			<ref name="a.common"/>
@@ -2025,8 +1832,8 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="m.mixed.basic.plus.access"/>
 		</element>
 	</define>
-	
-    <!-- dsc -->
+
+	<!-- dsc -->
 	<define name="e.dsc">
 		<element name="dsc">
 			<ref name="a.common"/>
@@ -2224,7 +2031,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</element>
 	</define>
 
-<!-- other phrase level -->
+	<!-- other phrase level -->
 
 	<define name="e.dimensions">
 		<element name="dimensions">
@@ -2275,7 +2082,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</element>
 	</define>
 
-<!-- blocks -->
+	<!-- blocks -->
 	<define name="e.languageset">
 		<element name="languageset">
 			<ref name="a.common"/>
@@ -2361,10 +2168,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</element>
 	</define>
 
-
-	
-	
-
 	<define name="e.objectxmlwrap">
 		<element name="objectxmlwrap">
 			<ref name="a.common"/>
@@ -2378,34 +2181,23 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<nsName ns="http://ead3.archivists.org/schema/"/>
 				</except>
 			</anyName>
-			<!--<zeroOrMore>
-				<attribute>
-					<anyName/>
-				</attribute>
-			</zeroOrMore>
-			
 			<zeroOrMore>
-				<choice>
-					<ref name="e.anyname"/>
-					<text/>
-				</choice>
+				<ref name="e.anyname"/>
 			</zeroOrMore>
-			-->
-			<zeroOrMore><ref name="e.anyname"/></zeroOrMore>
 		</element>
 	</define>
 
 
-	
+
 	<!-- MODELS -->
-	
+
 	<define name="m.blocks">
 		<choice>
 			<ref name="m.inter"/>
 			<ref name="e.p"/>
 		</choice>
 	</define>
-	
+
 	<define name="m.inter">
 		<choice>
 			<ref name="m.inter.noquote"/>
@@ -2418,10 +2210,10 @@ For these and/or other purposes and motivations, and without any expectation of 
 					</choice>
 				</oneOrMore>
 			</element>
-			
+
 		</choice>
 	</define>
-	
+
 	<define name="m.inter.noquote">
 		<choice>
 			<element name="chronlist">
@@ -2438,13 +2230,13 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<element name="chronitem">
 						<ref name="a.common"/>
 						<ref name="a.localtype"/>
-				<choice>
-					<ref name="e.datesingle"/>
-					<ref name="e.daterange"/>
-					<ref name="e.dateset"/>	
-				</choice>
 						<choice>
-						
+							<ref name="e.datesingle"/>
+							<ref name="e.daterange"/>
+							<ref name="e.dateset"/>
+						</choice>
+						<choice>
+
 							<group>
 								<optional>
 									<ref name="e.geogname"/>
@@ -2470,7 +2262,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="e.table"/>
 		</choice>
 	</define>
-	
+
 	<define name="m.cOrC01">
 		<choice>
 			<oneOrMore>
@@ -2481,7 +2273,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</oneOrMore>
 		</choice>
 	</define>
-	
+
 	<define name="m.c.base">
 		<ref name="a.desc.c"/>
 		<optional>
@@ -2492,7 +2284,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="m.desc.base"/>
 		</zeroOrMore>
 	</define>
-	
+
 	<define name="m.access">
 		<choice>
 			<ref name="e.persname"/>
@@ -2507,24 +2299,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="e.title"/>
 		</choice>
 	</define>
-	
-	<!--<define name="m.data.standardDateTime">
-		<choice>
-			<data type="date">
-				<param name="maxInclusive">2099-12-31</param>
-			</data>
-			<data type="gYear">
-				<param name="maxInclusive">2099</param>
-			</data>
-			<data type="gYearMonth">
-				<param name="maxInclusive">2099-12</param>
-			</data>
-			<data type="dateTime">
-				<param name="maxInclusive">2099-12-31T23:59:59</param>
-			</data>
-		</choice>
-	</define>-->
-	
+
+
+
 	<define name="m.para.content">
 		<zeroOrMore>
 			<choice>
@@ -2533,43 +2310,30 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</choice>
 		</zeroOrMore>
 	</define>
-	
-	<!--<define name="m.data.standarddate">
-		<choice>
-			<data type="date">
-				<param name="maxInclusive">2099-12-31</param>
-			</data>
-			<data type="gYear">
-				<param name="maxInclusive">2099</param>
-			</data>
-			<data type="gYearMonth">
-				<param name="maxInclusive">2099-12</param>
-			</data>
-		</choice>
-	</define>-->
-	
+
+
 	<define name="m.datesingle">
 		<optional>
 			<attribute name="standarddate">
-				<!--<ref name="m.data.standarddate"/>-->
+
 				<data type="token"/>
 			</attribute>
 		</optional>
 		<optional>
 			<attribute name="notbefore">
-				<!--<ref name="m.data.standarddate"/>-->
+
 				<data type="token"/>
 			</attribute>
 		</optional>
 		<optional>
 			<attribute name="notafter">
-				<!--<ref name="m.data.standarddate"/>-->
+
 				<data type="token"/>
 			</attribute>
 		</optional>
 		<ref name="m.mixed.basic"/>
 	</define>
-	
+
 	<define name="m.desc.base">
 		<choice>
 			<ref name="e.accessrestrict"/>
@@ -2597,25 +2361,16 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="e.userestrict"/>
 		</choice>
 	</define>
-	
+
 	<define name="m.desc.base.full">
 		<choice>
 			<ref name="m.desc.base"/>
 			<ref name="e.dsc"/>
 		</choice>
 	</define>
-<!--	
-	<define name="m.dates">
-		<choice>
-			<ref name="e.datesingle"/>
-			<ref name="e.daterange"/>
-			<ref name="e.dateset"/>
-		</choice>
-	</define>
--->	
 	<define name="m.did">
 		<choice>
-			
+
 			<element name="abstract">
 				<ref name="a.common"/>
 				<ref name="a.localtype"/>
@@ -2623,7 +2378,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="a.encodinganalog"/>
 				<ref name="m.mixed.basic.plus.access"/>
 			</element>
-			
+
 			<element name="langmaterial">
 				<ref name="a.common"/>
 				<ref name="a.label"/>
@@ -2638,7 +2393,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="e.descriptivenote"/>
 				</optional>
 			</element>
-			
+
 			<element name="didnote">
 				<ref name="a.common"/>
 				<ref name="a.localtype"/>
@@ -2646,9 +2401,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="a.encodinganalog"/>
 				<ref name="m.mixed.basic"/>
 			</element>
-			
+
 			<ref name="e.origination"/>
-			
+
 			<element name="physdesc">
 				<ref name="a.common"/>
 				<ref name="a.localtype"/>
@@ -2656,7 +2411,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="a.encodinganalog"/>
 				<ref name="m.mixed.basic"/>
 			</element>
-			
+
 			<element name="parallelphysdescset">
 				<ref name="a.common"/>
 				<ref name="a.label"/>
@@ -2666,9 +2421,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="e.physdescstructured"/>
 				</oneOrMore>
 			</element>
-			
+
 			<ref name="e.physdescstructured"/>
-			
+
 			<element name="physloc">
 				<ref name="a.common"/>
 				<ref name="a.localtype"/>
@@ -2681,13 +2436,13 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</optional>
 				<ref name="m.mixed.basic"/>
 			</element>
-			
+
 			<ref name="e.repository"/>
-			
+
 			<ref name="e.unitdate"/>
-			
+
 			<ref name="e.unitdatestructured"/>
-			
+
 			<element name="unitid">
 				<ref name="a.common"/>
 				<ref name="a.localtype"/>
@@ -2704,9 +2459,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="a.encodinganalog"/>
 				<ref name="m.mixed.basic"/>
 			</element>
-			
+
 			<ref name="e.unittitle"/>
-			
+
 			<element name="container">
 				<ref name="a.common"/>
 				<ref name="a.label"/>
@@ -2724,25 +2479,23 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</optional>
 				<ref name="m.mixed.basic"/>
 			</element>
-			
+
 			<ref name="e.materialspec"/>
-			
+
 			<ref name="e.dao"/>
-			
+
 			<ref name="e.daoset"/>
-			
-			<!--<ref name="e.daogrp"/>-->
-			
+
 		</choice>
 	</define>
-	
+
 	<define name="m.refs">
 		<choice>
 			<ref name="e.ref"/>
 			<ref name="e.ptr"/>
 		</choice>
 	</define>
-	
+
 	<define name="m.mixed.basic">
 		<zeroOrMore>
 			<choice>
@@ -2757,7 +2510,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</choice>
 		</zeroOrMore>
 	</define>
-	
+
 	<define name="m.mixed.basic.plus">
 		<zeroOrMore>
 			<choice>
@@ -2769,7 +2522,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</choice>
 		</zeroOrMore>
 	</define>
-	
+
 	<define name="m.mixed.basic.plus.access">
 		<zeroOrMore>
 			<choice>
@@ -2782,7 +2535,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</choice>
 		</zeroOrMore>
 	</define>
-	
+
 	<define name="a.internal.ptr">
 		<optional>
 			<attribute name="target">
@@ -2794,7 +2547,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</optional>
 		<ref name="am.simplelink"/>
 	</define>
-	
+
 	<define name="am.simplelink">
 		<optional>
 			<attribute name="linktype">
@@ -2839,15 +2592,8 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</choice>
 			</attribute>
 		</optional>
-		<!-- <oneOrMore>
-			<attribute>
-				<anyName/>
-			</attribute>
-		</oneOrMore>
-		
-		-->
 	</define>
-	
+
 	<define name="a.common">
 		<ref name="a.common.empty"/>
 		<optional>
@@ -2866,7 +2612,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</optional>
 		<ref name="a.encodinganalog"/>
 	</define>
-	
+
 	<define name="a.desc.c">
 		<ref name="a.common"/>
 		<optional>
@@ -2875,7 +2621,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</attribute>
 		</optional>
 		<ref name="a.desc.base"/>
-		<!--		<ref name="am.dsctab.tPattern"/> -->
 	</define>
 
 	<define name="a.access">
@@ -2884,7 +2629,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<attribute name="normal"/>
 		</optional>
 	</define>
-	
+
 	<define name="a.access.no.normal">
 		<optional>
 			<attribute name="source">
@@ -2900,13 +2645,13 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<attribute name="identifier"/>
 		</optional>
 	</define>
-	
+
 	<define name="a.relator">
 		<optional>
 			<attribute name="relator"/>
 		</optional>
 	</define>
-	
+
 	<define name="a.label">
 		<optional>
 			<attribute name="label"/>
@@ -2918,35 +2663,35 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<attribute name="localtype"/>
 		</optional>
 	</define>
-	
+
 	<define name="a.encodinganalog">
 		<optional>
 			<attribute name="encodinganalog"/>
 		</optional>
 	</define>
-	
+
 	<define name="a.link.href">
 		<attribute name="href">
 			<data type="anyURI"/>
 		</attribute>
 	</define>
-	
+
 	<define name="a.link.role">
 		<attribute name="linkrole">
 			<data type="anyURI"/>
 		</attribute>
 	</define>
-	
+
 	<define name="a.link.arcrole">
 		<attribute name="arcrole">
 			<data type="anyURI"/>
 		</attribute>
 	</define>
-	
+
 	<define name="a.link.title">
 		<attribute name="linktitle"/>
 	</define>
-	
+
 	<define name="a.link.show">
 		<attribute name="show">
 			<choice>
@@ -2958,7 +2703,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</choice>
 		</attribute>
 	</define>
-	
+
 	<define name="a.link.actuate">
 		<attribute name="actuate">
 			<choice>
@@ -2969,19 +2714,8 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</choice>
 		</attribute>
 	</define>
-	
-	<!--<define name="a.loc.external.ptr">
-		<ref name="a.locatorLink"/>
-		<optional>
-			<attribute name="entityref">
-				<data type="ENTITY"/>
-			</attribute>
-		</optional>
-		<optional>
-			<attribute name="xpointer"/>
-		</optional>
-	</define>-->
-	
+
+
 	<define name="a.locatorLink">
 		<attribute a:defaultValue="locator" name="linktype">
 			<value>locator</value>
@@ -2997,58 +2731,8 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<attribute name="label"/>
 		</optional>
 	</define>
-	
-	<!--<define name="a.loc.internal.ptr">
-		<ref name="a.locatorLink"/>
-		<optional>
-			<attribute name="target">
-				<data type="IDREF"/>
-			</attribute>
-		</optional>
-		<optional>
-			<attribute name="xpointer"/>
-		</optional>
-	</define>-->
-	
-	<!--<define name="a.arcLink">
-		<attribute a:defaultValue="arc" name="linktype">
-			<value>arc</value>
-		</attribute>
-		<optional>
-			<attribute name="arcrole"/>
-		</optional>
-		<optional>
-			<attribute name="title"/>
-		</optional>
-		<optional>
-			<attribute name="show"/>
-		</optional>
-		<optional>
-			<attribute name="actuate"/>
-		</optional>
-		<optional>
-			<attribute name="from"/>
-		</optional>
-		<optional>
-			<attribute name="to"/>
-		</optional>
-	</define>-->
-	
-	<!--<define name="a.resourceLink">
-		<attribute a:defaultValue="resource" name="type">
-			<value>resource</value>
-		</attribute>
-		<optional>
-			<attribute name="role"/>
-		</optional>
-		<optional>
-			<attribute name="title"/>
-		</optional>
-		<optional>
-			<attribute name="label"/>
-		</optional>
-	</define>-->
-	
+
+
 	<define name="am.dates.calendar">
 		<optional>
 			<attribute name="calendar">
@@ -3056,7 +2740,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</attribute>
 		</optional>
 	</define>
-	
+
 	<define name="am.dates.era">
 		<optional>
 			<attribute name="era">
@@ -3072,11 +2756,11 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</attribute>
 		</optional>
 	</define>
-	
+
 	<define name="data.repositorycode">
 		<data type="token"/>
 	</define>
-	
+
 	<define name="am.countrycode">
 		<optional>
 			<attribute name="countrycode">
@@ -3084,14 +2768,13 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</attribute>
 		</optional>
 	</define>
-	
+
 	<define name="a.lastdatetimeverified">
 		<attribute name="lastdatetimeverified">
-			<!--<ref name="m.data.standardDateTime"/>-->
 			<data type="token"/>
 		</attribute>
 	</define>
-	
+
 	<define name="a.coverage">
 		<attribute name="coverage">
 			<choice>
@@ -3100,7 +2783,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</choice>
 		</attribute>
 	</define>
-	
+
 	<define name="a.align">
 		<attribute name="align">
 			<choice>
@@ -3112,73 +2795,21 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</choice>
 		</attribute>
 	</define>
-	
+
 	<define name="a.valign">
 		<attribute name="valign">
 			<choice>
 				<value>top</value>
 				<value>middle</value>
 				<value>bottom</value>
-				<!--<value>baseline</value>-->
 			</choice>
 		</attribute>
 	</define>
-	
-	<!--<define name="a.entry">
-		<optional>
-			<attribute name="colname">
-				<data type="NMTOKEN"/>
-			</attribute>
-		</optional>
-		<optional>
-			<attribute name="namest">
-				<data type="NMTOKEN"/>
-			</attribute>
-		</optional>
-		<optional>
-			<attribute name="nameend">
-				<data type="NMTOKEN"/>
-			</attribute>
-		</optional>
-		<optional>
-			<attribute name="morerows">
-				<data type="NMTOKEN"/>
-			</attribute>
-		</optional>
-		<optional>
-			<attribute name="colsep">
-				<ref name="av.yesorno"/>
-			</attribute>
-		</optional>
-		<optional>
-			<attribute name="rowsep">
-				<ref name="av.yesorno"/>
-			</attribute>
-		</optional>
-		<optional>
-			<attribute name="align">
-				<choice>
-					<value>left</value>
-					<value>right</value>
-					<value>center</value>
-					<value>justify</value>
-				</choice>
-			</attribute>
-		</optional>
-		<optional>
-			<attribute name="valign">
-				<choice>
-					<value>top</value>
-					<value>middle</value>
-					<value>bottom</value>
-					<value>baseline</value>
-				</choice>
-			</attribute>
-		</optional>
-	</define>-->
-	
+
+
+
 	<!-- ATTRIBUTE VALUE LISTS -->
-	
+
 	<define name="av.level">
 		<choice>
 			<value>class</value>
@@ -3194,7 +2825,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<value>subseries</value>
 		</choice>
 	</define>
-	
+
 	<define name="av.render">
 		<choice>
 			<value>altrender</value>
@@ -3214,20 +2845,16 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<value>underline</value>
 		</choice>
 	</define>
-	
+
 	<define name="av.zeroorone">
-		<!--<choice>
-			<value>0</value>
-			<value>1</value>
-		</choice>-->
 		<data type="NMTOKEN"/>
 	</define>
-	
+
 	<define name="av.yesorno">
 		<choice>
 			<value>yes</value>
 			<value>no</value>
 		</choice>
 	</define>
-	
+
 </grammar>
