@@ -1,8 +1,0 @@
-* ead_revised.rng: Revised version of EAD 2002 RNG schema to test proposed changes to EAD for its upcoming release in early 2014
-
-* ead_revised_test_instance.xml: sample EAD for use in testing ead_revised.rng
-
-* ead_revised.xsd: W3C XML Schema version of ead_revised.rng
-
-
-
