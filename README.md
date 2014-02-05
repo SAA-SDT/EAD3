@@ -9,6 +9,6 @@ EAD-Revision
 
 * ead_revised_norelations.xsd: W3C XML Schema version of EAD3 (Gamma) schema without  <relations> element
 
-* schematron/ead.sch: Schematron schema with rules for checking of codelist values.
+* schematron/ead.sch: Schematron schema with rules for checking of codelist values, and use of "otherlevel" attribute.
 
 * doc/ : Contains automatically generated documentation for ead_revised.xsd 
