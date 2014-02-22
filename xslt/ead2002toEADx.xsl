@@ -201,6 +201,11 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:apply-templates select="filedesc"/>
             <maintenancestatus value="derived"/>
             <maintenanceagency>
+                <xsl:if test="eadid/@mainagencycode">
+                    <agencycode>
+                        <xsl:value-of select="eadid/@mainagencycode"/>
+                    </agencycode>
+                </xsl:if>
                 <agencyname>[agency name]</agencyname>
             </maintenanceagency>
             <xsl:apply-templates select="profiledesc/langusage/language"/>
