@@ -201,6 +201,9 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:apply-templates select="filedesc"/>
             <maintenancestatus value="derived"/>
             <maintenanceagency>
+                <xsl:if test="eadid/@countrycode">
+                    <xsl:copy-of select="eadid/@countrycode"/>
+                </xsl:if>
                 <xsl:if test="eadid/@mainagencycode">
                     <agencycode>
                         <xsl:value-of select="eadid/@mainagencycode"/>
