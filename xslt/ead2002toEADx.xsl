@@ -114,7 +114,8 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
 
     <!-- REMOVE COMPLETELY -->
- <xsl:template match="frontmatter | runner | accessrestrict/legalstatus| archdesc/address | dsc/address | @linktype | arc | resource">
+    <xsl:template
+        match="frontmatter | runner | accessrestrict/legalstatus| archdesc/address | dsc/address | @linktype | arc | resource">
         <xsl:comment>
             <xsl:call-template name="removedElement"/>
         </xsl:comment>
@@ -122,8 +123,8 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:call-template name="removedElement"/>
         </xsl:message>
     </xsl:template>
-    
-<xsl:template match="archdesc/@type"/>
+
+    <xsl:template match="archdesc/@type"/>
 
     <!-- SKIP -->
     <xsl:template
@@ -467,7 +468,7 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:apply-templates/>
             <xsl:apply-templates
                 select="parent::*/dao | parent::*/daogrp | child::dao | child::daogrp"
-                mode="daoIndid"></xsl:apply-templates>
+                mode="daoIndid"/>
         </did>
     </xsl:template>
 
@@ -482,32 +483,41 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:apply-templates select="daodesc"/>
         </daoset>
     </xsl:template>
-    
+
     <xsl:template match="daogrp[count(child::daoloc) = 1]" mode="daoIndid">
         <xsl:comment>moving dao* outside did into did</xsl:comment>
         <xsl:comment>daogrp with single daoloc now dao</xsl:comment>
         <xsl:comment>dao now requires attribute "daotype"; setting value to "unknown"</xsl:comment>
         <dao>
             <xsl:copy-of select="daoloc/@* except @linktype"/>
-            <xsl:attribute name="daotype"><xsl:text>unknown</xsl:text></xsl:attribute>
-            <xsl:attribute name="linktype"><xsl:text>simple</xsl:text></xsl:attribute>
+            <xsl:attribute name="daotype">
+                <xsl:text>unknown</xsl:text>
+            </xsl:attribute>
+            <xsl:attribute name="linktype">
+                <xsl:text>simple</xsl:text>
+            </xsl:attribute>
             <xsl:apply-templates select="daodesc"/>
         </dao>
     </xsl:template>
 
     <xsl:template match="dao" mode="daoIndid">
+        <xsl:message><xsl:text>added required attribute daotype with value "unknown"</xsl:text></xsl:message>
+        <xsl:comment><xsl:text>added required attribute daotype with value "unknown"</xsl:text></xsl:comment>
         <dao>
             <xsl:apply-templates select="@*"/>
+            <xsl:attribute name="daotype">
+                <xsl:text>unknown</xsl:text>
+            </xsl:attribute>
             <xsl:apply-templates/>
         </dao>
     </xsl:template>
-    
+
     <xsl:template match="daoloc">
         <dao>
-            <xsl:apply-templates/>            
+            <xsl:apply-templates/>
         </dao>
-    </xsl:template>   
- 
+    </xsl:template>
+
     <xsl:template match="origination">
         <xsl:for-each select="corpname | name | persname | famname">
             <origination>
@@ -554,8 +564,8 @@ For these and/or other purposes and motivations, and without any expectation of 
 
 
     <xsl:template match="repository">
-        
-        <repository>            
+
+        <repository>
             <xsl:if test="empty(corpname | name | persname | famname)">
                 <name>
                     <part>
@@ -575,7 +585,7 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:apply-templates select="./text() | abbr | emph | expan | lb | ref | ptr"/>
         </physdesc>
     </xsl:template>
-    
+
     <xsl:template match="langmaterial">
         <langmaterial>
             <xsl:choose>
@@ -590,13 +600,13 @@ For these and/or other purposes and motivations, and without any expectation of 
             </xsl:choose>
             <descriptivenote>
                 <p>
-                <xsl:apply-templates select="./text() | abbr | emph | expan | lb | ref | ptr"/>
+                    <xsl:apply-templates select="./text() | abbr | emph | expan | lb | ref | ptr"/>
                 </p>
             </descriptivenote>
         </langmaterial>
     </xsl:template>
-    
-    
+
+
 
 
     <!-- ############################################### -->
@@ -671,7 +681,8 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!--                  NOTES                          -->
     <!-- ############################################### -->
 
-    <xsl:template match="c/note | archdesc/note | descgrp/note | c01/note | c02/note | c03/note | c04/note | c05/note | c06/note | c07/note | c08/note | c09/note | c10/note | c11/note | c12/note">
+    <xsl:template
+        match="c/note | archdesc/note | descgrp/note | c01/note | c02/note | c03/note | c04/note | c05/note | c06/note | c07/note | c08/note | c09/note | c10/note | c11/note | c12/note">
         <xsl:comment>
             <xsl:text>ELEMENT </xsl:text>
             <xsl:value-of select="local-name()"/>
