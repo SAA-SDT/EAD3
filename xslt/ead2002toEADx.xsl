@@ -445,10 +445,11 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- TABLE                                           -->
     <!-- ############################################### -->
 
-    <xsl:template match="table">
+    <!--
+        <xsl:template match="table">
         <xsl:call-template name="gonna-deal-with-this-later"/>
     </xsl:template>
-
+    -->
     <!-- ############################################### -->
     <!-- DID ELEMENTS                                    -->
     <!-- ############################################### -->
