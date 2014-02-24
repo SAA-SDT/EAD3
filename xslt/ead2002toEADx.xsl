@@ -130,7 +130,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:template
         match="descgrp | admininfo | titleproper/date | titleproper/num | 
         accessrestrict/accessrestrict/legalstatus | archref/abstract | subtitle/date | 
-        subtitle/num | subarea | bibseries | imprint | bibref/edition | bibref/publisher | emph/* | abbr/* | expan/* | unittitle[parent::* except (did)] | title[parent::descrules]">
+        subtitle/num | subarea | bibseries | imprint | bibref/edition | bibref/publisher | emph/* | abbr/* | expan/* | unittitle[parent::* except (did)] | title[parent::descrules] | bibref[parent::* except (separatedmaterials, relatedmaterials, otherfindaid, bibliography)]">
         <xsl:comment>
             <xsl:call-template name="removedElement"/>
         </xsl:comment>
@@ -501,19 +501,24 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xsl:template>
 
     <xsl:template match="dao" mode="daoIndid">
-        <xsl:message><xsl:text>added required attribute daotype with value "unknown"</xsl:text></xsl:message>
+        <xsl:message>
+            <xsl:text>added required attribute daotype with value "unknown"</xsl:text>
+        </xsl:message>
         <xsl:comment><xsl:text>added required attribute daotype with value "unknown"</xsl:text></xsl:comment>
         <dao>
-            <xsl:apply-templates select="@*"/>
             <xsl:attribute name="daotype">
                 <xsl:text>unknown</xsl:text>
             </xsl:attribute>
+            <xsl:apply-templates select="@*"/>
             <xsl:apply-templates/>
         </dao>
     </xsl:template>
 
     <xsl:template match="daoloc">
         <dao>
+            <xsl:attribute name="daotype">
+                <xsl:text>unknown</xsl:text>
+            </xsl:attribute>
             <xsl:apply-templates/>
         </dao>
     </xsl:template>
@@ -675,6 +680,8 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:apply-templates/>
         </descriptivenote>
     </xsl:template>
+    
+
 
 
     <!-- ############################################### -->
@@ -765,8 +772,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <xsl:template
         match="abstract/@type | accessrestrict/@type | altformavail/@type |container/@type |
-        phystech/@type | processinfo/@type | titleproper/@type | title/@type | unitid/@type |
-        userestruct/@type | odd/@type | date/@type">
+        phystech/@type | processinfo/@type | titleproper/@type | title/@type | unitid/@type | unittitle/@type |
+        userestrict/@type | odd/@type | date/@type | name/@type |  persname/@type | famname/@type |
+        corpname/@type |  subject/@type |  occupation/@type | genreform/@type | function/@type">
         <xsl:attribute name="localtype">
             <xsl:value-of select="."/>
         </xsl:attribute>
