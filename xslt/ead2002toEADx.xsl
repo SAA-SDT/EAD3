@@ -386,7 +386,7 @@ For these and/or other purposes and motivations, and without any expectation of 
                 <xsl:value-of select="@scriptcode"/>
             </script>
             <descriptivenote>
-                <p>XYZ--<xsl:apply-templates
+                <p><xsl:apply-templates
                         select="parent::langusage/node()[not(self::*)] | text()"/></p>
             </descriptivenote>
         </languagedeclaration>
