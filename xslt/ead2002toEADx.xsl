@@ -212,6 +212,7 @@ For these and/or other purposes and motivations, and without any expectation of 
                 <agencyname>[agency name]</agencyname>
             </maintenanceagency>
             <xsl:apply-templates select="profiledesc/langusage/language"/>
+            <xsl:apply-templates select="profiledesc/langusage[not(language)]"/>
             <!--
             <xsl:choose>
                 <xsl:when test="profiledesc/langusage/language">
@@ -389,7 +390,16 @@ For these and/or other purposes and motivations, and without any expectation of 
                         select="parent::langusage/node()[not(self::*)] | text()"/></p>
             </descriptivenote>
         </languagedeclaration>
-
+    </xsl:template>
+    
+    <xsl:template match="langusage[not(language)]">
+        <languagedeclaration>
+            <language/>
+            <script/>
+            <descriptivenote>
+                <p><xsl:apply-templates/></p>
+            </descriptivenote>
+        </languagedeclaration>
     </xsl:template>
 
     <!-- descrules -->
