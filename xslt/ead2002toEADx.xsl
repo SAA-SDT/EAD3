@@ -380,11 +380,22 @@ For these and/or other purposes and motivations, and without any expectation of 
         <languagedeclaration>
             <xsl:apply-templates select="@* except (@langcode | @scriptcode)"/>
             <language>
-                <xsl:value-of select="@langcode"/>
+                <xsl:copy-of select="@langcode"/>
+                <xsl:choose>
+                    <xsl:when test="normalize-space(.)">
+                        <xsl:value-of select="."/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="@langcode"/>
+                    </xsl:otherwise>
+                </xsl:choose>
             </language>
-            <script>
-                <xsl:value-of select="@scriptcode"/>
-            </script>
+            <xsl:if test="@scriptcode">
+                <script>
+                    <xsl:copy-of select="@scriptcode"/>
+                    <xsl:value-of select="@scriptcode"/>
+                </script>
+            </xsl:if>
             <descriptivenote>
                 <p><xsl:apply-templates
                         select="parent::langusage/node()[not(self::*)] | text()"/></p>
