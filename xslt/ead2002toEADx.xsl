@@ -213,50 +213,7 @@ For these and/or other purposes and motivations, and without any expectation of 
             </maintenanceagency>
             <xsl:apply-templates select="profiledesc/langusage/language"/>
             <xsl:apply-templates select="profiledesc/langusage[not(language)]"/>
-            <!--
-            <xsl:choose>
-                <xsl:when test="profiledesc/langusage/language">
-                    <xsl:for-each select="profiledesc/langusage/language">
-                        <languagedeclaration>
-                            <xsl:if test="../langusage/@encodinganalog">
-                                <xsl:copy-of select="../langusage/@encodinganalog"/>
-                            </xsl:if>
-                            <language>
-                                <xsl:if test="@langcode">
-                                    <xsl:copy-of select="@langcode"/>
-                                </xsl:if>
-                                <xsl:value-of select="."/>
-                            </language>
-                            <script>
-                                <xsl:if test="@scriptcode">
-                                    <xsl:if test="@scriptcode">
-                                        <xsl:copy-of select="@scriptcode"/>
-                                    </xsl:if>
-                                </xsl:if>
-                            </script>
-                            <descriptivenote>
-                                <p><xsl:apply-templates select="parent::langusage/*"/></p>
-                            </descriptivenote>
-                        </languagedeclaration>
-                    </xsl:for-each>
-                </xsl:when>
-                <xsl:when test="profiledesc/langusage[not(language)]">
-                    <languagedeclaration>
-                        <xsl:if test="@encodinganalog">
-                            <xsl:copy-of select="@encodinganalog"/>
-                        </xsl:if>
-                        <language/>
-                        <script/>
-                        <descriptivenote>
-                            <p><xsl:apply-templates select="profiledesc/langusage/*"/></p>
-                        </descriptivenote>
-                    </languagedeclaration>
-                </xsl:when>
-                <xsl:otherwise/>
-            </xsl:choose>
-         -->
             <xsl:apply-templates select="profiledesc/descrules"/>
-
 
             <maintenancehistory>
                 <xsl:if test="revisiondesc/@encodinganalog">
