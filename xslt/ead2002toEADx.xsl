@@ -51,6 +51,9 @@ For these and/or other purposes and motivations, and without any expectation of 
         </xd:desc>
     </xd:doc>
     <xsl:output encoding="UTF-8" indent="yes" method="xml"/>
+    
+    <!-- user parameter for control//agent -->
+    <xsl:param name="agent" select="'ead2002toEAD3.xsl'"/>
 
     <!-- user parameter for control/eventType -->
     <!-- eventType enumeration '[created, revised, deleted, cancelled, derived, updated]'.  -->
