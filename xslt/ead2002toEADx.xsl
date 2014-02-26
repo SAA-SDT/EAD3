@@ -226,7 +226,9 @@ For these and/or other purposes and motivations, and without any expectation of 
                         <xsl:value-of select="current-dateTime()"/>
                     </eventdatetime>
                     <agenttype value="machine"/>
-                    <agent/>
+                    <agent>
+                        <xsl:value-of select="$agent"/>
+                    </agent>
                 </maintenanceevent>
                 <xsl:if test="profiledesc/creation">
                     <maintenanceevent>
