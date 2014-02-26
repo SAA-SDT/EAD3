@@ -479,6 +479,9 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:template match="daogrp[count(child::daoloc) &gt; 1]" mode="daoIndid">
         <xsl:comment>daogrp now daoset</xsl:comment>
         <daoset>
+            <xsl:attribute name="coverage">
+                <xsl:text>unknown</xsl:text>
+            </xsl:attribute>
             <xsl:apply-templates select="daoloc"/>
             <xsl:apply-templates select="daodesc"/>
         </daoset>
@@ -680,7 +683,7 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:apply-templates/>
         </descriptivenote>
     </xsl:template>
-    
+
 
 
 
@@ -882,6 +885,12 @@ For these and/or other purposes and motivations, and without any expectation of 
         <ptr>
             <xsl:value-of select="."/>
         </ptr>
+    </xsl:template>
+
+    <xsl:template match="@actuate">
+        <attribute name="actuate">
+            <xsl:value-of select="lower-case(.)"/>
+        </attribute>
     </xsl:template>
 
     <!-- ############################################### -->
