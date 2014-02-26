@@ -378,6 +378,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- langusage -->
     <xsl:template match="language[parent::langusage]">
         <languagedeclaration>
+            <xsl:copy-of select="parent::langusage/@encodinganalog"/>
             <xsl:apply-templates select="@* except (@langcode | @scriptcode)"/>
             <language>
                 <xsl:copy-of select="@langcode"/>
