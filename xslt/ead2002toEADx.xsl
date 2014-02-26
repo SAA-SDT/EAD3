@@ -130,7 +130,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:template
         match="descgrp | admininfo | titleproper/date | titleproper/num | 
         accessrestrict/accessrestrict/legalstatus | archref/abstract | subtitle/date | 
-        subtitle/num | subarea | bibseries | imprint | bibref/edition | bibref/publisher | emph/* | abbr/* | expan/* | unittitle[parent::* except (did)] | title[parent::descrules] | bibref[parent::* except (separatedmaterials, relatedmaterials, otherfindaid, bibliography)]">
+        subtitle/num | subarea | bibseries | imprint | bibref/edition | bibref/publisher | emph/* | abbr/* | expan/* | unittitle[parent::* except (did)] | title[parent::descrules]">
         <xsl:comment>
             <xsl:call-template name="removedElement"/>
         </xsl:comment>
@@ -138,6 +138,16 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:call-template name="removedElement"/>
         </xsl:message>
         <xsl:apply-templates/>
+    </xsl:template>
+
+
+    <!-- bibref -->
+
+    <xsl:template
+        match="bibref[parent::* except (separatedmaterials, relatedmaterials, otherfindaid, bibliography)]">
+        <ref>
+            <xsl:apply-templates/>
+        </ref>
     </xsl:template>
 
     <!-- dsc orphan elements -->
@@ -488,22 +498,27 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xsl:template>
 
     <xsl:template match="daogrp[count(child::daoloc) = 1]" mode="daoIndid">
+        <xsl:comment>daogrp[count(child::daoloc) = 1]</xsl:comment>
         <xsl:comment>moving dao* outside did into did</xsl:comment>
         <xsl:comment>daogrp with single daoloc now dao</xsl:comment>
         <xsl:comment>dao now requires attribute "daotype"; setting value to "unknown"</xsl:comment>
         <dao>
-            <xsl:copy-of select="daoloc/@* except @linktype"/>
+            <xsl:apply-templates select="daoloc/@* except @role"/>
             <xsl:attribute name="daotype">
                 <xsl:text>unknown</xsl:text>
             </xsl:attribute>
             <xsl:attribute name="linktype">
                 <xsl:text>simple</xsl:text>
             </xsl:attribute>
+            <xsl:attribute name="linkrole">
+                <xsl:value-of select="daoloc/@role"/>
+            </xsl:attribute>
             <xsl:apply-templates select="daodesc"/>
         </dao>
     </xsl:template>
 
     <xsl:template match="dao" mode="daoIndid">
+        <xsl:comment>dao</xsl:comment>
         <xsl:message>
             <xsl:text>added required attribute daotype with value "unknown"</xsl:text>
         </xsl:message>
@@ -512,19 +527,35 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:attribute name="daotype">
                 <xsl:text>unknown</xsl:text>
             </xsl:attribute>
-            <xsl:apply-templates select="@*"/>
-            <xsl:apply-templates/>
+            <xsl:apply-templates select="@* except (@role) "/>
+            <xsl:attribute name="linkrole">
+                <xsl:value-of select="daoloc/@role"/>
+            </xsl:attribute>
+            <xsl:apply-templates select="child::*"/>
         </dao>
     </xsl:template>
 
     <xsl:template match="daoloc">
+        <xsl:comment>daoloc</xsl:comment>
         <dao>
+            <xsl:copy-of select="daoloc/@* except (@title, @role)"/>
             <xsl:attribute name="daotype">
                 <xsl:text>unknown</xsl:text>
             </xsl:attribute>
-            <xsl:apply-templates/>
+            <xsl:attribute name="linkrole">
+                <xsl:value-of select="daoloc/@role"/>
+            </xsl:attribute>
+            <xsl:apply-templates select="child::*"/>
         </dao>
     </xsl:template>
+
+    <xsl:template match="dao/@role">
+        <xsl:attribute name="linkrole">
+            <xsl:apply-templates/>
+        </xsl:attribute>
+    </xsl:template>
+
+
 
     <xsl:template match="origination">
         <xsl:for-each select="corpname | name | persname | famname">
@@ -652,7 +683,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         <xsl:call-template name="nowOdd"/>
     </xsl:template>
 
-    <xsl:template match="*/@role">
+    <xsl:template match="*/@role[parent::* except (dao, ref, extref)]">
         <xsl:attribute name="relator">
             <xsl:value-of select="."/>
         </xsl:attribute>
@@ -888,9 +919,9 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xsl:template>
 
     <xsl:template match="@actuate">
-        <attribute name="actuate">
+        <xsl:attribute name="actuate">
             <xsl:value-of select="lower-case(.)"/>
-        </attribute>
+        </xsl:attribute>
     </xsl:template>
 
     <!-- ############################################### -->
