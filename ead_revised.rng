@@ -2192,7 +2192,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 							<value>cpfrelation</value>
 							<value>resourcerelation</value>
 							<value>functionrelation</value>
-							<value>otherrelation</value>
+							<value>otherrelationtype</value>
 						</choice>
 					</attribute>
 					<optional>
