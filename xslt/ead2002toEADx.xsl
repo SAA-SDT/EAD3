@@ -379,6 +379,9 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:template match="language[parent::langusage]">
         <languagedeclaration>
             <xsl:copy-of select="parent::langusage/@encodinganalog"/>
+            <xsl:copy-of select="parent::langusage/@id"/>
+            <xsl:copy-of select="parent::langusage/@altrender"/>
+            <xsl:copy-of select="parent::langusage/@audience"/>
             <xsl:apply-templates select="@* except (@langcode | @scriptcode)"/>
             <language>
                 <xsl:copy-of select="@langcode"/>
@@ -406,6 +409,10 @@ For these and/or other purposes and motivations, and without any expectation of 
     
     <xsl:template match="langusage[not(language)]">
         <languagedeclaration>
+            <xsl:copy-of select="@encodinganalog"/>
+            <xsl:copy-of select="@id"/>
+            <xsl:copy-of select="@altrender"/>
+            <xsl:copy-of select="@audience"/>
             <language/>
             <script/>
             <descriptivenote>
