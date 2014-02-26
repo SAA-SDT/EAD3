@@ -2778,8 +2778,8 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="a.link.actuate">
 		<attribute name="actuate">
 			<choice>
-				<value>onLoad</value>
-				<value>onRequest</value>
+				<value>onload</value>
+				<value>onrequest</value>
 				<value>other</value>
 				<value>none</value>
 			</choice>
