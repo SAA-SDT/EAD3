@@ -194,9 +194,7 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:text>Inserting minimal control element</xsl:text>
         </xsl:message>
         <control>
-            <xsl:if test="@encodinganalog">
-                <xsl:copy-of select="@encodinganalog"/>
-            </xsl:if>
+            <xsl:copy-of select="@* except (@findaidstatus)"/>
             <xsl:apply-templates select="eadid"/>
             <xsl:apply-templates select="filedesc"/>
             <maintenancestatus value="derived"/>
