@@ -503,7 +503,9 @@ For these and/or other purposes and motivations, and without any expectation of 
         <xsl:comment>daogrp with single daoloc now dao</xsl:comment>
         <xsl:comment>dao now requires attribute "daotype"; setting value to "unknown"</xsl:comment>
         <dao>
-            <xsl:apply-templates select="daoloc/@* except @role"/>
+            <!-- why does this not work? -->
+            <!--<xsl:copy-of select="daoloc/@* except (@role, @title)"/> -->
+            <xsl:copy-of select="daoloc/@*[name() != 'role' and name() != 'title']"/>
             <xsl:attribute name="daotype">
                 <xsl:text>unknown</xsl:text>
             </xsl:attribute>
