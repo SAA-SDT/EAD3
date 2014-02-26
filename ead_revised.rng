@@ -74,6 +74,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="control">
 			<ref name="a.common"/>
 			<optional>
+				<attribute name="encodinganalog"/>
+			</optional>
+			<optional>
 				<attribute name="base">
 					<data type="anyURI"/>
 				</attribute>
