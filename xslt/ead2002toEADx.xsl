@@ -381,6 +381,10 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- descrules -->
     <xsl:template match="descrules">
         <conventiondeclaration>
+            <xsl:copy-of select="@id"/>
+            <xsl:copy-of select="@altrender"/>
+            <xsl:copy-of select="@audience"/>
+            <xsl:copy-of select="@encodinganalog"/>
             <citation>
                 <xsl:apply-templates/>
             </citation>
