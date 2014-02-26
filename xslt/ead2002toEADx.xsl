@@ -52,6 +52,16 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xd:doc>
     <xsl:output encoding="UTF-8" indent="yes" method="xml"/>
     
+    <!-- user parameter for control/maintenanceagency/agencyname -->
+    <xsl:param name="agencyname">
+        <xsl:choose>
+            <xsl:when test="ead/eadheader/filedesc/publicationtmt/publisher">
+                <xsl:value-of select="ead/eadheader/filedesc/publicationstmt/publisher"/>
+            </xsl:when>
+            <xsl:otherwise/>
+        </xsl:choose>
+    </xsl:param>
+    
     <!-- user parameter for control//agent -->
     <xsl:param name="agent" select="'ead2002toEAD3.xsl'"/>
 
@@ -210,7 +220,9 @@ For these and/or other purposes and motivations, and without any expectation of 
                         <xsl:value-of select="eadid/@mainagencycode"/>
                     </agencycode>
                 </xsl:if>
-                <agencyname>[agency name]</agencyname>
+                <agencyname>
+                    <xsl:value-of select="$agencyname"/>
+                </agencyname>
             </maintenanceagency>
             <xsl:apply-templates select="profiledesc/langusage/language"/>
             <xsl:apply-templates select="profiledesc/langusage[not(language)]"/>
