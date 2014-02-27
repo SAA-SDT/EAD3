@@ -274,6 +274,7 @@ For these and/or other purposes and motivations, and without any expectation of 
                 </xsl:if>
                 <xsl:for-each select="revisiondesc/change">
                     <maintenanceevent>
+                        <xsl:copy-of select="@*"/>
                         <eventtype value="unknown"/>
                         <eventdatetime>
                             <xsl:if test="date/@normal[not(contains(.,'/'))]">
