@@ -59,7 +59,7 @@ For these and/or other purposes and motivations, and without any expectation of 
                 <xsl:value-of select="ead/eadheader/filedesc/publicationstmt/publisher"/>
             </xsl:when>
             <xsl:when test="ead/eadheader/eadid/@mainagencycode">
-                <xsl:value-of select="ead/eadheader/eadid/@mainagencycode"
+                <xsl:value-of select="ead/eadheader/eadid/@mainagencycode"/>
             </xsl:when>
             <xsl:otherwise/>
         </xsl:choose>
