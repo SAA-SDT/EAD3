@@ -211,6 +211,11 @@ For these and/or other purposes and motivations, and without any expectation of 
         </xsl:message>
         <control>
             <xsl:copy-of select="@* except (@findaidstatus)"/>
+            <xsl:if test="@findaidstatus">
+                <xsl:comment>
+                    @findaidstatus="<xsl:value-of select="@findaidstatus"/>"
+                </xsl:comment>
+            </xsl:if>
             <xsl:apply-templates select="eadid"/>
             <xsl:apply-templates select="filedesc"/>
             <maintenancestatus value="derived"/>
