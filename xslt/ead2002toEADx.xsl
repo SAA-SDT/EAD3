@@ -734,7 +734,7 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:text>RENAMED as 'controlnote'</xsl:text>
         </xsl:message>
         <controlnote>
-            <xsl:copy-of select="@* except (@actuate | @show)"/>
+            <xsl:copy-of select="@* except (@actuate | @show | @label)"/>
             <xsl:apply-templates/>
         </controlnote>
     </xsl:template>
