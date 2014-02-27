@@ -357,9 +357,8 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:template match="language[parent::langusage]">
         <languagedeclaration>
             <xsl:copy-of select="parent::langusage/@*"/>
-            <xsl:apply-templates select="@* except (@langcode | @scriptcode)"/>
             <language>
-                <xsl:copy-of select="@langcode"/>
+                <xsl:copy-of select="@* except (@scriptcode)"/>
                 <xsl:choose>
                     <xsl:when test="normalize-space(.)">
                         <xsl:value-of select="."/>
