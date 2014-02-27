@@ -287,6 +287,7 @@ For these and/or other purposes and motivations, and without any expectation of 
                         <agenttype value="unknown"/>
                         <agent/>
                         <eventdescription>
+                            <xsl:copy-of select="item/@*"/>
                             <xsl:value-of select="item"/>
                         </eventdescription>
                     </maintenanceevent>
