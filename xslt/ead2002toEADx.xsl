@@ -232,9 +232,7 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:apply-templates select="profiledesc/descrules"/>
 
             <maintenancehistory>
-                <xsl:if test="revisiondesc/@encodinganalog">
-                    <xsl:copy-of select="revisiondesc/@encodinganalog"/>
-                </xsl:if>
+                <xsl:copy-of select="revisiondesc/@*"/>
                 <maintenanceevent>
                     <eventtype value="derived"/>
                     <eventdatetime>
