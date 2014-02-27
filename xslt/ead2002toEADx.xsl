@@ -331,22 +331,22 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:value-of select="."/>
         </recordid>
         <xsl:if test="@publicid">
-            <otherrecordid localtype="eadidpublicid">
+            <otherrecordid localtype="publicid">
                 <xsl:value-of select="@publicid"/>
             </otherrecordid>
         </xsl:if>
         <xsl:if test="@identifier">
-            <otherrecordid localtype="eadididentifier">
+            <otherrecordid localtype="identifier">
                 <xsl:value-of select="@identifier"/>
             </otherrecordid>
         </xsl:if>
         <xsl:if test="@url">
-            <otherrecordid localtype="eadidurl">
+            <otherrecordid localtype="url">
                 <xsl:value-of select="@url"/>
             </otherrecordid>
         </xsl:if>
         <xsl:if test="@urn">
-            <otherrecordid localtype="eadidurn">
+            <otherrecordid localtype="urn">
                 <xsl:value-of select="@urn"/>
             </otherrecordid>
         </xsl:if>
