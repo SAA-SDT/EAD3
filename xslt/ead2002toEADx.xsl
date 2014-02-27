@@ -248,10 +248,7 @@ For these and/or other purposes and motivations, and without any expectation of 
                 </maintenanceevent>
                 <xsl:if test="profiledesc/creation">
                     <maintenanceevent>
-                        <xsl:copy-of select="@encodinganalog"/>
-                        <xsl:copy-of select="@id"/>
-                        <xsl:copy-of select="@altrender"/>
-                        <xsl:copy-of select="@audience"/>
+                        <xsl:copy-of select="profiledesc/creation/@*"/>
                         <eventtype value="created"/>
                         <eventdatetime>
                             <xsl:choose>
