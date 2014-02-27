@@ -236,6 +236,9 @@ For these and/or other purposes and motivations, and without any expectation of 
                 <maintenanceevent>
                     <eventtype value="derived"/>
                     <eventdatetime>
+                        <xsl:attribute name="standarddatetime">
+                            <xsl:value-of select="current-dateTime()"/>
+                        </xsl:attribute>
                         <xsl:value-of select="current-dateTime()"/>
                     </eventdatetime>
                     <agenttype value="machine"/>
