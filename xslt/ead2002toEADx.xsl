@@ -294,6 +294,7 @@ For these and/or other purposes and motivations, and without any expectation of 
                 </xsl:for-each>
                 <xsl:for-each select="revisiondesc/list/item">
                     <maintenanceevent>
+                        <xsl:copy-of select="@*"/>
                         <eventtype value="unknown"/>
                         <eventdatetime/>
                         <agenttype value="unknown"/>
@@ -305,6 +306,7 @@ For these and/or other purposes and motivations, and without any expectation of 
                 </xsl:for-each>
                 <xsl:for-each select="revisiondesc/list/defitem">
                     <maintenanceevent>
+                        <xsl:copy-of select="@*"/>
                         <eventtype value="unknown"/>
                         <eventdatetime/>
                         <agenttype value="unknown"/>
