@@ -55,6 +55,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<attribute name="level">
 					<ref name="av.level"/>
 				</attribute>
+				<optional>
+					<attribute name="localtype"/>
+				</optional>
 				<ref name="a.desc.base"/>
 				<optional>
 					<attribute name="relatedencoding"/>
