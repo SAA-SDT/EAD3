@@ -639,7 +639,7 @@ For these and/or other purposes and motivations, and without any expectation of 
             </xsl:for-each>
             <descriptivenote>
                 <p>
-                <xsl:apply-templates select="./text() | abbr | emph | expan | lb | ref | ptr"/>
+                <xsl:apply-templates select="./text() | emph | extptr | lb | ptr"/>
                 </p>
             </descriptivenote>
         </langmaterial>
