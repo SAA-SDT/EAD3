@@ -591,7 +591,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     
     <xsl:template match="langmaterial">
         <langmaterial>
-            <xsl:choose>
+            <!--<xsl:choose>
                 <xsl:when test="count(child::language) &gt; 1">
                     <languageset>
                         <xsl:apply-templates select="language"/>
@@ -600,7 +600,43 @@ For these and/or other purposes and motivations, and without any expectation of 
                 <xsl:otherwise>
                     <xsl:apply-templates select="language"/>
                 </xsl:otherwise>
-            </xsl:choose>
+            </xsl:choose>-->
+            <xsl:for-each select="language">
+                <xsl:choose>
+                    <xsl:when test="@scriptcode">
+                        <languageset>
+                            <language>
+                                <xsl:copy-of select="@* except (@scriptcode)"/>
+                                <xsl:choose>
+                                    <xsl:when test="normalize-space(.)">
+                                        <xsl:value-of select="."/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:value-of select="@langcode"/>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </language>
+                            <script>
+                                <xsl:copy-of select="@scriptcode"/>
+                                <xsl:value-of select="@scriptcode"/>
+                            </script>
+                        </languageset>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <language>
+                            <xsl:copy-of select="@* except (@scriptcode)"/>
+                            <xsl:choose>
+                                <xsl:when test="normalize-space(.)">
+                                    <xsl:value-of select="."/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:value-of select="@langcode"/>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </language>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:for-each>
             <descriptivenote>
                 <p>
                 <xsl:apply-templates select="./text() | abbr | emph | expan | lb | ref | ptr"/>
