@@ -51,6 +51,22 @@ For these and/or other purposes and motivations, and without any expectation of 
         </xd:desc>
     </xd:doc>
     <xsl:output encoding="UTF-8" indent="yes" method="xml"/>
+    
+    <!-- user parameter for control/maintenanceagency/agencyname -->
+    <xsl:param name="agencyname">
+        <xsl:choose>
+            <xsl:when test="ead/eadheader/filedesc/publicationtmt/publisher">
+                <xsl:value-of select="ead/eadheader/filedesc/publicationstmt/publisher"/>
+            </xsl:when>
+            <xsl:when test="ead/eadheader/eadid/@mainagencycode">
+                <xsl:value-of select="ead/eadheader/eadid/@mainagencycode"/>
+            </xsl:when>
+            <xsl:otherwise/>
+        </xsl:choose>
+    </xsl:param>
+    
+    <!-- user parameter for control//agent -->
+    <xsl:param name="agent" select="'ead2002toEAD3.xsl'"/>
 
     <!-- user parameter for control/eventType -->
     <!-- eventType enumeration '[created, revised, deleted, cancelled, derived, updated]'.  -->
@@ -153,7 +169,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- dsc orphan elements -->
 
     <xsl:template
-        match="descgrp/address | descgrp/blockquote | descgp/descgrp | descgrp/head | descgrp/index | descgrp/list | descgrp/p | descgrp/table">
+        match="descgrp/address | descgrp/blockquote | descgrp/chronlist | descgrp/descgrp | descgrp/head | descgrp/list | descgrp/p | descgrp/table">
         <xsl:comment>
             <xsl:call-template name="removedElement"/>
         </xsl:comment>
@@ -205,78 +221,50 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:text>Inserting minimal control element</xsl:text>
         </xsl:message>
         <control>
-            <xsl:if test="@encodinganalog">
-                <xsl:copy-of select="@encodinganalog"/>
+            <xsl:copy-of select="@* except (@findaidstatus)"/>
+            <xsl:if test="@findaidstatus">
+                <xsl:comment>
+                    @findaidstatus="<xsl:value-of select="@findaidstatus"/>"
+                </xsl:comment>
             </xsl:if>
             <xsl:apply-templates select="eadid"/>
             <xsl:apply-templates select="filedesc"/>
             <maintenancestatus value="derived"/>
             <maintenanceagency>
-                <agencyname>[agency name]</agencyname>
+                <xsl:if test="eadid/@countrycode">
+                    <xsl:copy-of select="eadid/@countrycode"/>
+                </xsl:if>
+                <xsl:if test="eadid/@mainagencycode">
+                    <agencycode>
+                        <xsl:value-of select="eadid/@mainagencycode"/>
+                    </agencycode>
+                </xsl:if>
+                <agencyname>
+                    <xsl:value-of select="$agencyname"/>
+                </agencyname>
             </maintenanceagency>
             <xsl:apply-templates select="profiledesc/langusage/language"/>
-            <!--
-            <xsl:choose>
-                <xsl:when test="profiledesc/langusage/language">
-                    <xsl:for-each select="profiledesc/langusage/language">
-                        <languagedeclaration>
-                            <xsl:if test="../langusage/@encodinganalog">
-                                <xsl:copy-of select="../langusage/@encodinganalog"/>
-                            </xsl:if>
-                            <language>
-                                <xsl:if test="@langcode">
-                                    <xsl:copy-of select="@langcode"/>
-                                </xsl:if>
-                                <xsl:value-of select="."/>
-                            </language>
-                            <script>
-                                <xsl:if test="@scriptcode">
-                                    <xsl:if test="@scriptcode">
-                                        <xsl:copy-of select="@scriptcode"/>
-                                    </xsl:if>
-                                </xsl:if>
-                            </script>
-                            <descriptivenote>
-                                <p><xsl:apply-templates select="parent::langusage/*"/></p>
-                            </descriptivenote>
-                        </languagedeclaration>
-                    </xsl:for-each>
-                </xsl:when>
-                <xsl:when test="profiledesc/langusage[not(language)]">
-                    <languagedeclaration>
-                        <xsl:if test="@encodinganalog">
-                            <xsl:copy-of select="@encodinganalog"/>
-                        </xsl:if>
-                        <language/>
-                        <script/>
-                        <descriptivenote>
-                            <p><xsl:apply-templates select="profiledesc/langusage/*"/></p>
-                        </descriptivenote>
-                    </languagedeclaration>
-                </xsl:when>
-                <xsl:otherwise/>
-            </xsl:choose>
-         -->
+            <xsl:apply-templates select="profiledesc/langusage[not(language)]"/>
             <xsl:apply-templates select="profiledesc/descrules"/>
 
-
             <maintenancehistory>
-                <xsl:if test="revisiondesc/@encodinganalog">
-                    <xsl:copy-of select="revisiondesc/@encodinganalog"/>
-                </xsl:if>
+                <xsl:copy-of select="revisiondesc/@*"/>
                 <maintenanceevent>
                     <eventtype value="derived"/>
                     <eventdatetime>
+                        <xsl:attribute name="standarddatetime">
+                            <xsl:value-of select="current-dateTime()"/>
+                        </xsl:attribute>
                         <xsl:value-of select="current-dateTime()"/>
                     </eventdatetime>
                     <agenttype value="machine"/>
-                    <agent/>
+                    <agent>
+                        <xsl:value-of select="$agent"/>
+                    </agent>
                 </maintenanceevent>
                 <xsl:if test="profiledesc/creation">
                     <maintenanceevent>
-                        <xsl:if test="@encodinganalog">
-                            <xsl:copy-of select="@encodinganalog"/>
-                        </xsl:if>
+                        <xsl:copy-of select="profiledesc/creation/@*"/>
                         <eventtype value="created"/>
                         <eventdatetime>
                             <xsl:choose>
@@ -303,6 +291,7 @@ For these and/or other purposes and motivations, and without any expectation of 
                 </xsl:if>
                 <xsl:for-each select="revisiondesc/change">
                     <maintenanceevent>
+                        <xsl:copy-of select="@*"/>
                         <eventtype value="unknown"/>
                         <eventdatetime>
                             <xsl:if test="date/@normal[not(contains(.,'/'))]">
@@ -315,12 +304,14 @@ For these and/or other purposes and motivations, and without any expectation of 
                         <agenttype value="unknown"/>
                         <agent/>
                         <eventdescription>
+                            <xsl:copy-of select="item/@*"/>
                             <xsl:value-of select="item"/>
                         </eventdescription>
                     </maintenanceevent>
                 </xsl:for-each>
                 <xsl:for-each select="revisiondesc/list/item">
                     <maintenanceevent>
+                        <xsl:copy-of select="@*"/>
                         <eventtype value="unknown"/>
                         <eventdatetime/>
                         <agenttype value="unknown"/>
@@ -332,6 +323,7 @@ For these and/or other purposes and motivations, and without any expectation of 
                 </xsl:for-each>
                 <xsl:for-each select="revisiondesc/list/defitem">
                     <maintenanceevent>
+                        <xsl:copy-of select="@*"/>
                         <eventtype value="unknown"/>
                         <eventdatetime/>
                         <agenttype value="unknown"/>
@@ -355,22 +347,22 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:value-of select="."/>
         </recordid>
         <xsl:if test="@publicid">
-            <otherrecordid localtype="eadidpublicid">
+            <otherrecordid localtype="publicid">
                 <xsl:value-of select="@publicid"/>
             </otherrecordid>
         </xsl:if>
         <xsl:if test="@identifier">
-            <otherrecordid localtype="eadididentifier">
+            <otherrecordid localtype="identifier">
                 <xsl:value-of select="@identifier"/>
             </otherrecordid>
         </xsl:if>
         <xsl:if test="@url">
-            <otherrecordid localtype="eadidurl">
+            <otherrecordid localtype="url">
                 <xsl:value-of select="@url"/>
             </otherrecordid>
         </xsl:if>
         <xsl:if test="@urn">
-            <otherrecordid localtype="eadidurn">
+            <otherrecordid localtype="urn">
                 <xsl:value-of select="@urn"/>
             </otherrecordid>
         </xsl:if>
@@ -380,24 +372,46 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- langusage -->
     <xsl:template match="language[parent::langusage]">
         <languagedeclaration>
-            <xsl:apply-templates select="@* except (@langcode | @scriptcode)"/>
+            <xsl:copy-of select="parent::langusage/@*"/>
             <language>
-                <xsl:value-of select="@langcode"/>
+                <xsl:copy-of select="@* except (@scriptcode)"/>
+                <xsl:choose>
+                    <xsl:when test="normalize-space(.)">
+                        <xsl:value-of select="."/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="@langcode"/>
+                    </xsl:otherwise>
+                </xsl:choose>
             </language>
-            <script>
-                <xsl:value-of select="@scriptcode"/>
-            </script>
+            <xsl:if test="@scriptcode">
+                <script>
+                    <xsl:copy-of select="@scriptcode"/>
+                    <xsl:value-of select="@scriptcode"/>
+                </script>
+            </xsl:if>
             <descriptivenote>
-                <p>XYZ--<xsl:apply-templates
+                <p><xsl:apply-templates
                         select="parent::langusage/node()[not(self::*)] | text()"/></p>
             </descriptivenote>
         </languagedeclaration>
-
+    </xsl:template>
+    
+    <xsl:template match="langusage[not(language)]">
+        <languagedeclaration>
+            <xsl:copy-of select="@*"/>
+            <language/>
+            <script/>
+            <descriptivenote>
+                <p><xsl:apply-templates/></p>
+            </descriptivenote>
+        </languagedeclaration>
     </xsl:template>
 
     <!-- descrules -->
     <xsl:template match="descrules">
         <conventiondeclaration>
+            <xsl:copy-of select="@*"/>
             <citation>
                 <xsl:apply-templates/>
             </citation>
@@ -629,7 +643,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <xsl:template match="langmaterial">
         <langmaterial>
-            <xsl:choose>
+            <!--<xsl:choose>
                 <xsl:when test="count(child::language) &gt; 1">
                     <languageset>
                         <xsl:apply-templates select="language"/>
@@ -638,7 +652,43 @@ For these and/or other purposes and motivations, and without any expectation of 
                 <xsl:otherwise>
                     <xsl:apply-templates select="language"/>
                 </xsl:otherwise>
-            </xsl:choose>
+            </xsl:choose>-->
+            <xsl:for-each select="language">
+                <xsl:choose>
+                    <xsl:when test="@scriptcode">
+                        <languageset>
+                            <language>
+                                <xsl:copy-of select="@* except (@scriptcode)"/>
+                                <xsl:choose>
+                                    <xsl:when test="normalize-space(.)">
+                                        <xsl:value-of select="."/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:value-of select="@langcode"/>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </language>
+                            <script>
+                                <xsl:copy-of select="@scriptcode"/>
+                                <xsl:value-of select="@scriptcode"/>
+                            </script>
+                        </languageset>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <language>
+                            <xsl:copy-of select="@* except (@scriptcode)"/>
+                            <xsl:choose>
+                                <xsl:when test="normalize-space(.)">
+                                    <xsl:value-of select="."/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:value-of select="@langcode"/>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </language>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:for-each>
             <descriptivenote>
                 <p>
                     <xsl:apply-templates select="./text() | abbr | emph | expan | lb | ref | ptr"/>
@@ -780,6 +830,7 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:text>RENAMED as 'controlnote'</xsl:text>
         </xsl:message>
         <controlnote>
+            <xsl:copy-of select="@* except (@actuate | @show | @label)"/>
             <xsl:apply-templates/>
         </controlnote>
     </xsl:template>

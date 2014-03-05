@@ -76,6 +76,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.control">
 		<element name="control">
 			<ref name="a.common"/>
+			<ref name="a.encodinganalog"/>
 			<optional>
 				<attribute name="encodinganalog"/>
 			</optional>
@@ -2452,6 +2453,36 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="a.encodinganalog"/>
 				<ref name="m.mixed.basic.plus.access"/>
 			</element>
+			
+			<element name="container">
+				<ref name="a.common"/>
+				<ref name="a.label"/>
+				<ref name="a.localtype"/>
+				<ref name="a.encodinganalog"/>
+				<optional>
+					<attribute name="parent">
+						<data type="IDREFS"/>
+					</attribute>
+				</optional>
+				<optional>
+					<attribute name="containerid">
+						<data type="NMTOKEN"/>
+					</attribute>
+				</optional>
+				<ref name="m.mixed.basic"/>
+			</element>
+			
+			<ref name="e.dao"/>
+			
+			<ref name="e.daoset"/>
+			
+			<element name="didnote">
+				<ref name="a.common"/>
+				<ref name="a.localtype"/>
+				<ref name="a.label"/>
+				<ref name="a.encodinganalog"/>
+				<ref name="m.mixed.basic"/>
+			</element>
 
 			<element name="langmaterial">
 				<ref name="a.common"/>
@@ -2467,25 +2498,11 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="e.descriptivenote"/>
 				</optional>
 			</element>
-
-			<element name="didnote">
-				<ref name="a.common"/>
-				<ref name="a.localtype"/>
-				<ref name="a.label"/>
-				<ref name="a.encodinganalog"/>
-				<ref name="m.mixed.basic"/>
-			</element>
+			
+			<ref name="e.materialspec"/>
 
 			<ref name="e.origination"/>
-
-			<element name="physdesc">
-				<ref name="a.common"/>
-				<ref name="a.localtype"/>
-				<ref name="a.label"/>
-				<ref name="a.encodinganalog"/>
-				<ref name="m.mixed.basic"/>
-			</element>
-
+			
 			<element name="parallelphysdescset">
 				<ref name="a.common"/>
 				<ref name="a.label"/>
@@ -2494,6 +2511,14 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<oneOrMore>
 					<ref name="e.physdescstructured"/>
 				</oneOrMore>
+			</element>
+
+			<element name="physdesc">
+				<ref name="a.common"/>
+				<ref name="a.localtype"/>
+				<ref name="a.label"/>
+				<ref name="a.encodinganalog"/>
+				<ref name="m.mixed.basic"/>
 			</element>
 
 			<ref name="e.physdescstructured"/>
@@ -2535,30 +2560,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</element>
 
 			<ref name="e.unittitle"/>
-
-			<element name="container">
-				<ref name="a.common"/>
-				<ref name="a.label"/>
-				<ref name="a.localtype"/>
-				<ref name="a.encodinganalog"/>
-				<optional>
-					<attribute name="parent">
-						<data type="IDREFS"/>
-					</attribute>
-				</optional>
-				<optional>
-					<attribute name="containerid">
-						<data type="NMTOKEN"/>
-					</attribute>
-				</optional>
-				<ref name="m.mixed.basic"/>
-			</element>
-
-			<ref name="e.materialspec"/>
-
-			<ref name="e.dao"/>
-
-			<ref name="e.daoset"/>
 
 		</choice>
 	</define>
