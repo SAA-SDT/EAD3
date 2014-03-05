@@ -158,7 +158,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- dsc orphan elements -->
 
     <xsl:template
-        match="descgrp/address | descgrp/blockquote | descgp/descgrp | descgrp/head | descgrp/index | descgrp/list | descgrp/p | descgrp/table">
+        match="descgrp/address | descgrp/blockquote | descgrp/descgrp | descgrp/head | descgrp/index | descgrp/list | descgrp/p | descgrp/table">
         <xsl:comment>
             <xsl:call-template name="removedElement"/>
         </xsl:comment>
