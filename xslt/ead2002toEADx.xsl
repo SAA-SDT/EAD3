@@ -184,6 +184,17 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:call-template name="removedElement"/>
         </xsl:message>
     </xsl:template>
+    
+    <!-- title from physdesc -->
+    <xsl:template
+        match="physdesc/title">
+        <xsl:comment>
+            <xsl:call-template name="removedElement"/>
+        </xsl:comment>
+        <xsl:message>
+            <xsl:call-template name="removedElement"/>
+        </xsl:message>
+    </xsl:template>
 
 
 
