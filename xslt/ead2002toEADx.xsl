@@ -522,15 +522,28 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xsl:template>   
  
     <xsl:template match="origination">
-        <xsl:for-each select="corpname | name | persname | famname">
-            <origination>
-                <xsl:apply-templates select="self::*"/>
-                <xsl:comment>
-                    <xsl:value-of select="parent::origination//text()"/>
-                </xsl:comment>
-            </origination>
-        </xsl:for-each>
-        <xsl:if test="empty(corpname | name | persname | famname)">
+        <origination>
+            <xsl:copy-of select="@*"/>
+            <xsl:choose>
+                <xsl:when test="corpname | name | persname | famname">
+                    <xsl:for-each select="corpname | name | persname | famname">
+                        <xsl:apply-templates select="self::*"/>
+                    </xsl:for-each>
+                    <xsl:comment>
+                        <xsl:value-of separator=" " select="node() except (corpname | name | persname | famname)"/>
+                    </xsl:comment>
+                </xsl:when>
+                <xsl:otherwise>
+                    <name>
+                        <part>
+                            <xsl:apply-templates/>
+                        </part>
+                    </name>
+                </xsl:otherwise>
+            </xsl:choose>
+        </origination>
+        
+        <!--<xsl:if test="empty(corpname | name | persname | famname)">
             <origination>
                 <xsl:copy-of select="@*"/>
                 <name>
@@ -539,11 +552,11 @@ For these and/or other purposes and motivations, and without any expectation of 
                     </part>
                 </name>
             </origination>
-            <!--    <descriptivenote>
+            <!-\-    <descriptivenote>
                 <xsl:value-of separator=" " select="node() except (corpname | name | persname | famname)"/>
             </descriptivenote>
-         -->
-        </xsl:if>
+         -\->
+        </xsl:if>-->
     </xsl:template>
 
 
