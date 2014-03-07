@@ -174,8 +174,8 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- REVISED CONTENT MODELS                          -->
     <!-- ############################################### -->
 
-    <!-- m.refs from container -->
-    <xsl:template
+    <!-- title from container -->
+    <!--<xsl:template
         match="container/ref | container/extref | container/linkgrp | container/bibref | container/title | container/archref">
         <xsl:comment>
             <xsl:call-template name="removedElement"/>
@@ -183,17 +183,16 @@ For these and/or other purposes and motivations, and without any expectation of 
         <xsl:message>
             <xsl:call-template name="removedElement"/>
         </xsl:message>
+    </xsl:template>-->
+    
+    <xsl:template match="container/title">
+        <xsl:value-of select="."/>
     </xsl:template>
     
-    <!-- title from physdesc -->
-    <xsl:template
-        match="physdesc/title">
-        <xsl:comment>
-            <xsl:call-template name="removedElement"/>
-        </xsl:comment>
-        <xsl:message>
-            <xsl:call-template name="removedElement"/>
-        </xsl:message>
+    <!-- title from physloc -->
+        
+    <xsl:template match="physloc/title">
+        <xsl:value-of select="."/>
     </xsl:template>
 
 
