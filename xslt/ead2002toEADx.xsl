@@ -221,11 +221,6 @@ For these and/or other purposes and motivations, and without any expectation of 
         </xsl:message>
         <control>
             <xsl:copy-of select="@* except (@findaidstatus)"/>
-            <xsl:if test="@findaidstatus">
-                <xsl:comment>
-                    @findaidstatus="<xsl:value-of select="@findaidstatus"/>"
-                </xsl:comment>
-            </xsl:if>
             <xsl:apply-templates select="eadid"/>
             <xsl:apply-templates select="filedesc"/>
             <maintenancestatus value="derived"/>
@@ -245,7 +240,15 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:apply-templates select="profiledesc/langusage/language"/>
             <xsl:apply-templates select="profiledesc/langusage[not(language)]"/>
             <xsl:apply-templates select="profiledesc/descrules"/>
-
+            
+            <xsl:if test="@findaidstatus">
+                <localcontrol localtype="findaidstatus">
+                    <term>
+                        <xsl:value-of select="@findaidstatus"/>
+                    </term>
+                </localcontrol>
+            </xsl:if>
+            
             <maintenancehistory>
                 <xsl:copy-of select="revisiondesc/@*"/>
                 <maintenanceevent>
