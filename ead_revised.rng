@@ -55,9 +55,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<attribute name="level">
 					<ref name="av.level"/>
 				</attribute>
-				<optional>
-					<attribute name="localtype"/>
-				</optional>
 				<ref name="a.desc.base"/>
 				<optional>
 					<attribute name="relatedencoding"/>
@@ -76,9 +73,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.control">
 		<element name="control">
 			<ref name="a.common"/>
-			<optional>
-				<attribute name="encodinganalog"/>
-			</optional>
+			<ref name="a.encodinganalog"/>
 			<optional>
 				<attribute name="base">
 					<data type="anyURI"/>
@@ -2195,7 +2190,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 							<value>cpfrelation</value>
 							<value>resourcerelation</value>
 							<value>functionrelation</value>
-							<value>otherrelationtype</value>
+							<value>otherrelation</value>
 						</choice>
 					</attribute>
 					<optional>
@@ -2452,6 +2447,36 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="a.encodinganalog"/>
 				<ref name="m.mixed.basic.plus.access"/>
 			</element>
+			
+			<element name="container">
+				<ref name="a.common"/>
+				<ref name="a.label"/>
+				<ref name="a.localtype"/>
+				<ref name="a.encodinganalog"/>
+				<optional>
+					<attribute name="parent">
+						<data type="IDREFS"/>
+					</attribute>
+				</optional>
+				<optional>
+					<attribute name="containerid">
+						<data type="NMTOKEN"/>
+					</attribute>
+				</optional>
+				<ref name="m.mixed.basic"/>
+			</element>
+			
+			<ref name="e.dao"/>
+			
+			<ref name="e.daoset"/>
+			
+			<element name="didnote">
+				<ref name="a.common"/>
+				<ref name="a.localtype"/>
+				<ref name="a.label"/>
+				<ref name="a.encodinganalog"/>
+				<ref name="m.mixed.basic"/>
+			</element>
 
 			<element name="langmaterial">
 				<ref name="a.common"/>
@@ -2467,25 +2492,11 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="e.descriptivenote"/>
 				</optional>
 			</element>
-
-			<element name="didnote">
-				<ref name="a.common"/>
-				<ref name="a.localtype"/>
-				<ref name="a.label"/>
-				<ref name="a.encodinganalog"/>
-				<ref name="m.mixed.basic"/>
-			</element>
+			
+			<ref name="e.materialspec"/>
 
 			<ref name="e.origination"/>
-
-			<element name="physdesc">
-				<ref name="a.common"/>
-				<ref name="a.localtype"/>
-				<ref name="a.label"/>
-				<ref name="a.encodinganalog"/>
-				<ref name="m.mixed.basic"/>
-			</element>
-
+			
 			<element name="parallelphysdescset">
 				<ref name="a.common"/>
 				<ref name="a.label"/>
@@ -2494,6 +2505,14 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<oneOrMore>
 					<ref name="e.physdescstructured"/>
 				</oneOrMore>
+			</element>
+
+			<element name="physdesc">
+				<ref name="a.common"/>
+				<ref name="a.localtype"/>
+				<ref name="a.label"/>
+				<ref name="a.encodinganalog"/>
+				<ref name="m.mixed.basic"/>
 			</element>
 
 			<ref name="e.physdescstructured"/>
@@ -2535,30 +2554,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</element>
 
 			<ref name="e.unittitle"/>
-
-			<element name="container">
-				<ref name="a.common"/>
-				<ref name="a.label"/>
-				<ref name="a.localtype"/>
-				<ref name="a.encodinganalog"/>
-				<optional>
-					<attribute name="parent">
-						<data type="IDREFS"/>
-					</attribute>
-				</optional>
-				<optional>
-					<attribute name="containerid">
-						<data type="NMTOKEN"/>
-					</attribute>
-				</optional>
-				<ref name="m.mixed.basic"/>
-			</element>
-
-			<ref name="e.materialspec"/>
-
-			<ref name="e.dao"/>
-
-			<ref name="e.daoset"/>
 
 		</choice>
 	</define>
@@ -2781,8 +2776,8 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="a.link.actuate">
 		<attribute name="actuate">
 			<choice>
-				<value>onload</value>
-				<value>onrequest</value>
+				<value>onLoad</value>
+				<value>onRequest</value>
 				<value>other</value>
 				<value>none</value>
 			</choice>
@@ -2854,7 +2849,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<choice>
 				<value>whole</value>
 				<value>part</value>
-				<value>unknown</value>
 			</choice>
 		</attribute>
 	</define>
@@ -2922,10 +2916,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 	</define>
 
 	<define name="av.zeroorone">
-		<choice>
-			<value>0</value>
-			<value>1</value>
-		</choice>
+		<data type="NMTOKEN"/>
 	</define>
 
 	<define name="av.yesorno">
