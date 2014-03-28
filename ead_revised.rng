@@ -2384,23 +2384,19 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</zeroOrMore>
 	</define>
 
-
 	<define name="m.datesingle">
 		<optional>
 			<attribute name="standarddate">
-
 				<data type="token"/>
 			</attribute>
 		</optional>
 		<optional>
 			<attribute name="notbefore">
-
 				<data type="token"/>
 			</attribute>
 		</optional>
 		<optional>
 			<attribute name="notafter">
-
 				<data type="token"/>
 			</attribute>
 		</optional>
