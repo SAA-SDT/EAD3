@@ -2788,23 +2788,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 	</define>
 
 
-	<define name="a.locatorLink">
-		<attribute a:defaultValue="locator" name="linktype">
-			<value>locator</value>
-		</attribute>
-		<attribute name="href"/>
-		<optional>
-			<attribute name="role"/>
-		</optional>
-		<optional>
-			<attribute name="title"/>
-		</optional>
-		<optional>
-			<attribute name="label"/>
-		</optional>
-	</define>
-
-
 	<define name="am.dates.calendar">
 		<optional>
 			<attribute name="calendar">
