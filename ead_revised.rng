@@ -83,7 +83,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<attribute name="langencoding">
 					<choice>
 						<value>iso639-2b</value>
-						<value>other</value>
+						<value>otherlangencoding</value>
 					</choice>
 				</attribute>
 			</optional>
@@ -91,7 +91,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<attribute name="scriptencoding">
 					<choice>
 						<value>iso15924</value>
-						<value>other</value>
+						<value>otherscriptencoding</value>
 					</choice>
 				</attribute>
 			</optional>
@@ -99,7 +99,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<attribute name="dateencoding">
 					<choice>
 						<value>iso8601</value>
-						<value>other</value>
+						<value>otherdateencoding</value>
 					</choice>
 				</attribute>
 			</optional>
@@ -107,7 +107,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<attribute name="countryencoding">
 					<choice>
 						<value>iso3166-1</value>
-						<value>other</value>
+						<value>othercountryencoding</value>
 					</choice>
 				</attribute>
 			</optional>
@@ -115,7 +115,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<attribute name="repositoryencoding">
 					<choice>
 						<value>iso15511</value>
-						<value>other</value>
+						<value>otherrepositoryencoding</value>
 					</choice>
 				</attribute>
 			</optional>
