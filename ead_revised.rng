@@ -2438,6 +2438,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="e.dsc"/>
 		</choice>
 	</define>
+	
 	<define name="m.did">
 		<choice>
 
@@ -2569,12 +2570,12 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<choice>
 				<text/>
 				<ref name="e.abbr"/>
-				<ref name="e.expan"/>
 				<ref name="e.emph"/>
-				<ref name="e.lb"/>
-				<ref name="e.ref"/>
-				<ref name="e.ptr"/>
+				<ref name="e.expan"/>
 				<ref name="e.foreign"/>
+				<ref name="e.lb"/>
+				<ref name="e.ptr"/>
+				<ref name="e.ref"/>
 			</choice>
 		</zeroOrMore>
 	</define>
