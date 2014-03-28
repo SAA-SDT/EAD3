@@ -83,6 +83,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<attribute name="langencoding">
 					<choice>
 						<value>iso639-2b</value>
+						<value>iso639-1</value>
 						<value>otherlangencoding</value>
 					</choice>
 				</attribute>
