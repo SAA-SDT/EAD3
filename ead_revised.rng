@@ -589,8 +589,12 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<value>carrier</value>
 					<value>materialtype</value>
 					<value>spaceoccupied</value>
+					<value>otherphysdescstructuredtype</value>
 				</choice>
 			</attribute>
+			<optional>
+				<attribute name="otherphysdescstructuredtype"/>
+			</optional>
 			<ref name="a.coverage"/>
 			<element name="quantity">
 				<ref name="a.common"/>
