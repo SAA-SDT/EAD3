@@ -777,7 +777,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<value>borndigital</value>
 					<value>derived</value>
 					<value>unknown</value>
-					<value>other</value>
+					<value>otherdaotype</value>
 				</choice>
 			</attribute>
 			<optional>
