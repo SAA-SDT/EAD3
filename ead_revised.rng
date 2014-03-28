@@ -763,6 +763,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.localtype"/>
 			<ref name="a.label"/>
 			<ref name="am.simplelink"/>
+			<ref name="a.identifier"/>
 			<optional>
 				<attribute name="entityref">
 					<data type="ENTITY"/>
@@ -2546,9 +2547,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 						<ref name="data.repositorycode"/>
 					</attribute>
 				</optional>
-				<optional>
-					<attribute name="identifier"/>
-				</optional>
+				<ref name="a.identifier"/>
 				<ref name="a.encodinganalog"/>
 				<ref name="m.mixed.basic"/>
 			</element>
@@ -2705,6 +2704,10 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<data type="NMTOKEN"/>
 			</attribute>
 		</optional>
+		<ref name="a.identifier"/>
+	</define>
+	
+	<define name="a.identifier">
 		<optional>
 			<attribute name="identifier"/>
 		</optional>
