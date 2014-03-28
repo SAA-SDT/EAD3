@@ -38,7 +38,6 @@ For these and/or other purposes and motivations, and without any expectation of 
     
 -->
 <grammar xmlns="http://relaxng.org/ns/structure/1.0" ns="http://ead3.archivists.org/schema/"
-	xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
 	datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
 	<start>
 		<ref name="e.ead"/>
@@ -362,13 +361,13 @@ For these and/or other purposes and motivations, and without any expectation of 
 							</attribute>
 							<text/>
 						</element>
-						<element a:id="agent" name="agent">
+						<element name="agent">
 							<ref name="a.common"/>
 							<ref name="a.encodinganalog"/>
 							<text/>
 						</element>
 						<zeroOrMore>
-							<element a:id="eventdesccription" name="eventdescription">
+							<element name="eventdescription">
 								<ref name="a.common"/>
 								<ref name="a.encodinganalog"/>
 								<ref name="a.localtype"/>
@@ -535,7 +534,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 	</define>
 
 	<define name="e.citation">
-		<element a:id="citation" name="citation">
+		<element name="citation">
 			<ref name="a.common"/>
 			<ref name="a.encodinganalog"/>
 			<ref name="am.simplelink"/>
