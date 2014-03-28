@@ -2619,11 +2619,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 
 	<define name="am.simplelink">
 		<optional>
-			<attribute name="linktype">
-				<value>simple</value>
-			</attribute>
-		</optional>
-		<optional>
 			<ref name="a.link.href"/>
 		</optional>
 		<optional>
