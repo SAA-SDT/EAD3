@@ -39,16 +39,20 @@ For these and/or other purposes and motivations, and without any expectation of 
 -->
 <grammar xmlns="http://relaxng.org/ns/structure/1.0" ns="http://ead3.archivists.org/schema/"
 	datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+	
 	<start>
 		<ref name="e.ead"/>
 	</start>
+	
 	<define name="e.ead">
 		<element name="ead">
 			<ref name="a.common"/>
 			<optional>
 				<attribute name="relatedencoding"/>
 			</optional>
+			
 			<ref name="e.control"/>
+			
 			<element name="archdesc">
 				<ref name="a.common"/>
 				<ref name="a.localtype"/>
@@ -123,6 +127,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<optional>
 				<attribute name="relatedencoding"/>
 			</optional>
+			
 			<element name="recordid">
 				<ref name="a.common"/>
 				<ref name="a.encodinganalog"/>
@@ -133,6 +138,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</optional>
 				<text/>
 			</element>
+			
 			<zeroOrMore>
 				<element name="otherrecordid">
 					<ref name="a.common"/>
@@ -141,6 +147,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<text/>
 				</element>
 			</zeroOrMore>
+			
 			<zeroOrMore>
 				<element name="representation">
 					<ref name="a.common"/>
@@ -150,9 +157,11 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<text/>
 				</element>
 			</zeroOrMore>
+			
 			<element name="filedesc">
 				<ref name="a.common"/>
 				<ref name="a.encodinganalog"/>
+				
 				<element name="titlestmt">
 					<ref name="a.common"/>
 					<ref name="a.encodinganalog"/>
@@ -169,6 +178,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 						<ref name="e.sponsor"/>
 					</zeroOrMore>
 				</element>
+				
 				<optional>
 					<element name="editionstmt">
 						<ref name="a.common"/>
@@ -181,6 +191,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 						</oneOrMore>
 					</element>
 				</optional>
+				
 				<optional>
 					<element name="publicationstmt">
 						<ref name="a.common"/>
@@ -196,6 +207,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 						</oneOrMore>
 					</element>
 				</optional>
+				
 				<optional>
 					<element name="seriesstmt">
 						<ref name="a.common"/>
@@ -209,6 +221,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 						</oneOrMore>
 					</element>
 				</optional>
+				
 				<optional>
 					<element name="notestmt">
 						<ref name="a.common"/>
@@ -219,6 +232,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 					</element>
 				</optional>
 			</element>
+			
 			<element name="maintenancestatus">
 				<ref name="a.common"/>
 				<ref name="a.encodinganalog"/>
@@ -236,6 +250,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</attribute>
 				<text/>
 			</element>
+			
 			<optional>
 				<element name="publicationstatus">
 					<ref name="a.common"/>
@@ -250,7 +265,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<text/>
 				</element>
 			</optional>
+			
 			<ref name="e.maintenanceagency"/>
+			
 			<zeroOrMore>
 				<element name="languagedeclaration">
 					<ref name="a.common"/>
@@ -262,8 +279,8 @@ For these and/or other purposes and motivations, and without any expectation of 
 					</optional>
 				</element>
 			</zeroOrMore>
+			
 			<zeroOrMore>
-
 				<element name="conventiondeclaration">
 					<ref name="a.common"/>
 					<ref name="a.encodinganalog"/>
@@ -275,8 +292,8 @@ For these and/or other purposes and motivations, and without any expectation of 
 						<ref name="e.descriptivenote"/>
 					</optional>
 				</element>
-
 			</zeroOrMore>
+			
 			<zeroOrMore>
 				<element name="localtypedeclaration">
 					<ref name="a.common"/>
@@ -290,6 +307,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 					</optional>
 				</element>
 			</zeroOrMore>
+			
 			<zeroOrMore>
 				<element name="localcontrol">
 					<ref name="a.common"/>
@@ -317,6 +335,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 					</optional>
 				</element>
 			</zeroOrMore>
+			
 			<element name="maintenancehistory">
 				<ref name="a.common"/>
 				<ref name="a.encodinganalog"/>
@@ -324,6 +343,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<element name="maintenanceevent">
 						<ref name="a.common"/>
 						<ref name="a.encodinganalog"/>
+						
 						<element name="eventtype">
 							<ref name="a.common"/>
 							<ref name="a.encodinganalog"/>
@@ -340,6 +360,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 							</attribute>
 							<text/>
 						</element>
+						
 						<element name="eventdatetime">
 							<ref name="a.common"/>
 							<ref name="a.encodinganalog"/>
@@ -350,6 +371,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 							</optional>
 							<text/>
 						</element>
+						
 						<element name="agenttype">
 							<ref name="a.common"/>
 							<ref name="a.encodinganalog"/>
@@ -362,11 +384,13 @@ For these and/or other purposes and motivations, and without any expectation of 
 							</attribute>
 							<text/>
 						</element>
+						
 						<element name="agent">
 							<ref name="a.common"/>
 							<ref name="a.encodinganalog"/>
 							<text/>
 						</element>
+						
 						<zeroOrMore>
 							<element name="eventdescription">
 								<ref name="a.common"/>
@@ -378,6 +402,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 					</element>
 				</oneOrMore>
 			</element>
+			
 			<optional>
 				<element name="sources">
 					<ref name="a.common"/>
@@ -388,6 +413,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 							<data type="anyURI"/>
 						</attribute>
 					</optional>
+					
 					<oneOrMore>
 						<element name="source">
 							<ref name="a.common"/>
@@ -432,6 +458,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="m.mixed.basic"/>
 		</element>
 	</define>
+	
 	<define name="e.subtitle">
 		<element name="subtitle">
 			<ref name="a.common"/>
@@ -440,6 +467,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="m.mixed.basic"/>
 		</element>
 	</define>
+	
 	<define name="e.author">
 		<element name="author">
 			<ref name="a.common"/>
@@ -448,6 +476,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="m.mixed.basic"/>
 		</element>
 	</define>
+	
 	<define name="e.sponsor">
 		<element name="sponsor">
 			<ref name="a.common"/>
@@ -456,6 +485,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="m.mixed.basic"/>
 		</element>
 	</define>
+	
 	<define name="e.edition">
 		<element name="edition">
 			<ref name="a.common"/>
@@ -464,6 +494,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="m.mixed.basic"/>
 		</element>
 	</define>
+	
 	<define name="e.date">
 		<element name="date">
 			<ref name="a.common"/>
@@ -487,6 +518,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="m.mixed.basic"/>
 		</element>
 	</define>
+	
 	<define name="e.controlnote">
 		<element name="controlnote">
 			<ref name="a.common"/>
@@ -498,12 +530,12 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</element>
 	</define>
 
-
 	<define name="e.maintenanceagency">
 		<element name="maintenanceagency">
 			<ref name="a.common"/>
 			<ref name="a.encodinganalog"/>
 			<ref name="am.countrycode"/>
+			
 			<optional>
 				<element name="agencycode">
 					<ref name="a.common"/>
@@ -512,6 +544,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<text/>
 				</element>
 			</optional>
+			
 			<zeroOrMore>
 				<element name="otheragencycode">
 					<ref name="a.common"/>
@@ -520,6 +553,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<text/>
 				</element>
 			</zeroOrMore>
+			
 			<oneOrMore>
 				<element name="agencyname">
 					<ref name="a.common"/>
@@ -528,6 +562,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<text/>
 				</element>
 			</oneOrMore>
+			
 			<optional>
 				<ref name="e.descriptivenote"/>
 			</optional>
@@ -658,7 +693,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</element>
 	</define>
 
-
 	<define name="e.unitdate">
 		<element name="unitdate">
 			<ref name="a.common"/>
@@ -721,7 +755,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="m.datesingle"/>
 		</element>
 	</define>
-
 
 	<define name="e.daterange">
 		<element name="daterange">
@@ -814,8 +847,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</element>
 	</define>
 
-
-
 	<define name="e.materialspec">
 		<element name="materialspec">
 			<ref name="a.common"/>
@@ -842,12 +873,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="e.accessrestrict"/>
 				</choice>
 			</oneOrMore>
-
 		</element>
 	</define>
-
-
-
+	
 	<define name="e.accruals">
 		<element name="accruals">
 			<ref name="a.common"/>
@@ -862,7 +890,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="e.accruals"/>
 				</choice>
 			</oneOrMore>
-
 		</element>
 	</define>
 
@@ -880,7 +907,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="e.fileplan"/>
 				</choice>
 			</oneOrMore>
-
 		</element>
 	</define>
 
@@ -898,7 +924,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="e.acqinfo"/>
 				</choice>
 			</oneOrMore>
-
 		</element>
 	</define>
 
@@ -1517,6 +1542,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="m.mixed.basic"/>
 		</element>
 	</define>
+	
 	<define name="e.listhead">
 		<element name="listhead">
 			<ref name="a.common"/>
@@ -1713,6 +1739,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</oneOrMore>
 		</element>
 	</define>
+	
 	<define name="e.thead">
 		<element name="thead">
 			<ref name="a.common"/>
@@ -1724,7 +1751,8 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</oneOrMore>
 		</element>
 	</define>
-	<!-- phrase level -->
+	
+	<!-- mixed content -->
 
 	<define name="e.abbr">
 		<element name="abbr">
@@ -1735,6 +1763,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<text/>
 		</element>
 	</define>
+	
 	<define name="e.expan">
 		<element name="expan">
 			<ref name="a.common"/>
@@ -1744,22 +1773,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<text/>
 		</element>
 	</define>
-	<define name="e.num">
-		<element name="num">
-			<ref name="a.common"/>
-			<ref name="a.localtype"/>
-			<ref name="a.encodinganalog"/>
-			<ref name="m.mixed.basic"/>
-		</element>
-	</define>
-	<define name="e.quote">
-		<element name="quote">
-			<ref name="a.common"/>
-			<ref name="a.localtype"/>
-			<ref name="m.mixed.basic"/>
-		</element>
-	</define>
-
 
 	<define name="e.emph">
 		<element name="emph">
@@ -1784,10 +1797,34 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<text/>
 		</element>
 	</define>
-
-
+	
 	<define name="e.lb">
 		<element name="lb">
+			<empty/>
+		</element>
+	</define>
+	
+	<define name="e.num">
+		<element name="num">
+			<ref name="a.common"/>
+			<ref name="a.localtype"/>
+			<ref name="a.encodinganalog"/>
+			<ref name="m.mixed.basic"/>
+		</element>
+	</define>
+	
+	<define name="e.quote">
+		<element name="quote">
+			<ref name="a.common"/>
+			<ref name="a.localtype"/>
+			<ref name="m.mixed.basic"/>
+		</element>
+	</define>
+	
+	<define name="e.ptr">
+		<element name="ptr">
+			<ref name="a.common.empty"/>
+			<ref name="a.internal.ptr"/>
 			<empty/>
 		</element>
 	</define>
@@ -1811,14 +1848,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="m.access"/>
 				</choice>
 			</zeroOrMore>
-		</element>
-	</define>
-
-	<define name="e.ptr">
-		<element name="ptr">
-			<ref name="a.common.empty"/>
-			<ref name="a.internal.ptr"/>
-			<empty/>
 		</element>
 	</define>
 
@@ -1876,6 +1905,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</optional>
 		</element>
 	</define>
+	
 	<define name="e.c">
 		<element name="c">
 			<ref name="m.c.base"/>
@@ -1889,6 +1919,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</zeroOrMore>
 		</element>
 	</define>
+	
 	<define name="e.c01">
 		<element name="c01">
 			<ref name="m.c.base"/>
@@ -1902,6 +1933,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</zeroOrMore>
 		</element>
 	</define>
+	
 	<define name="e.c02">
 		<element name="c02">
 			<ref name="m.c.base"/>
@@ -1915,6 +1947,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</zeroOrMore>
 		</element>
 	</define>
+	
 	<define name="e.c03">
 		<element name="c03">
 			<ref name="m.c.base"/>
@@ -1928,6 +1961,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</zeroOrMore>
 		</element>
 	</define>
+	
 	<define name="e.c04">
 		<element name="c04">
 			<ref name="m.c.base"/>
@@ -1941,6 +1975,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</zeroOrMore>
 		</element>
 	</define>
+	
 	<define name="e.c05">
 		<element name="c05">
 			<ref name="m.c.base"/>
@@ -1954,6 +1989,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</zeroOrMore>
 		</element>
 	</define>
+	
 	<define name="e.c06">
 		<element name="c06">
 			<ref name="m.c.base"/>
@@ -1967,6 +2003,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</zeroOrMore>
 		</element>
 	</define>
+	
 	<define name="e.c07">
 		<element name="c07">
 			<ref name="m.c.base"/>
@@ -1980,6 +2017,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</zeroOrMore>
 		</element>
 	</define>
+	
 	<define name="e.c08">
 		<element name="c08">
 			<ref name="m.c.base"/>
@@ -1993,6 +2031,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</zeroOrMore>
 		</element>
 	</define>
+	
 	<define name="e.c09">
 		<element name="c09">
 			<ref name="m.c.base"/>
@@ -2006,6 +2045,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</zeroOrMore>
 		</element>
 	</define>
+	
 	<define name="e.c10">
 		<element name="c10">
 			<ref name="m.c.base"/>
@@ -2019,6 +2059,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</zeroOrMore>
 		</element>
 	</define>
+	
 	<define name="e.c11">
 		<element name="c11">
 			<ref name="m.c.base"/>
@@ -2032,40 +2073,15 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</zeroOrMore>
 		</element>
 	</define>
+	
 	<define name="e.c12">
 		<element name="c12">
 			<ref name="m.c.base"/>
 		</element>
 	</define>
 
-	<!-- other phrase level -->
-
-	<define name="e.dimensions">
-		<element name="dimensions">
-			<ref name="a.common"/>
-			<ref name="a.encodinganalog"/>
-			<ref name="a.localtype"/>
-			<optional>
-				<attribute name="unit"/>
-			</optional>
-			<zeroOrMore>
-				<choice>
-					<ref name="m.mixed.basic"/>
-					<ref name="e.dimensions"/>
-				</choice>
-			</zeroOrMore>
-		</element>
-	</define>
-
-	<define name="e.physfacet">
-		<element name="physfacet">
-			<ref name="a.common"/>
-			<ref name="a.encodinganalog"/>
-			<ref name="a.access.no.normal"/>
-			<ref name="a.localtype"/>
-			<ref name="m.mixed.basic.plus.access"/>
-		</element>
-	</define>
+	<!-- blocks -->
+	
 	<define name="e.language">
 		<element name="language">
 			<ref name="a.common"/>
@@ -2077,6 +2093,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<text/>
 		</element>
 	</define>
+	
 	<define name="e.script">
 		<element name="script">
 			<ref name="a.common"/>
@@ -2088,8 +2105,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<text/>
 		</element>
 	</define>
-
-	<!-- blocks -->
+	
 	<define name="e.languageset">
 		<element name="languageset">
 			<ref name="a.common"/>
@@ -2120,8 +2136,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</element>
 	</define>
 
-
-
 	<define name="e.descriptivenote">
 		<element name="descriptivenote">
 			<ref name="a.common"/>
@@ -2132,14 +2146,12 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</element>
 	</define>
 
-
 	<define name="e.p">
 		<element name="p">
 			<ref name="a.common"/>
 			<ref name="m.para.content"/>
 		</element>
 	</define>
-
 
 	<define name="e.footnote">
 		<element name="footnote">
@@ -2172,6 +2184,35 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.common"/>
 			<ref name="a.localtype"/>
 			<ref name="m.para.content"/>
+		</element>
+	</define>
+	
+	<!-- physdescstructured elements -->
+	
+	<define name="e.dimensions">
+		<element name="dimensions">
+			<ref name="a.common"/>
+			<ref name="a.encodinganalog"/>
+			<ref name="a.localtype"/>
+			<optional>
+				<attribute name="unit"/>
+			</optional>
+			<zeroOrMore>
+				<choice>
+					<ref name="m.mixed.basic"/>
+					<ref name="e.dimensions"/>
+				</choice>
+			</zeroOrMore>
+		</element>
+	</define>
+	
+	<define name="e.physfacet">
+		<element name="physfacet">
+			<ref name="a.common"/>
+			<ref name="a.encodinganalog"/>
+			<ref name="a.access.no.normal"/>
+			<ref name="a.localtype"/>
+			<ref name="m.mixed.basic.plus.access"/>
 		</element>
 	</define>
 
@@ -2248,6 +2289,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="e.anyname"/>
 		</element>
 	</define>
+	
 	<define name="e.anyname">
 		<element>
 			<anyName>
@@ -2373,8 +2415,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="e.title"/>
 		</choice>
 	</define>
-
-
 
 	<define name="m.para.content">
 		<zeroOrMore>
@@ -2558,7 +2598,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 
 		</choice>
 	</define>
-
+	
 	<define name="m.refs">
 		<choice>
 			<ref name="e.ptr"/>
@@ -2857,8 +2897,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</choice>
 		</attribute>
 	</define>
-
-
 
 	<!-- ATTRIBUTE VALUE LISTS -->
 
