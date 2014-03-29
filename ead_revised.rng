@@ -1562,6 +1562,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</optional>
 		</element>
 	</define>
+	
 	<!-- table -->
 
 	<define name="e.table">
@@ -1849,6 +1850,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 
 
 	<!-- bibref and archref -->
+	
 	<define name="e.bibref">
 		<element name="bibref">
 			<ref name="a.common"/>
@@ -1866,6 +1868,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 	</define>
 
 	<!-- dsc -->
+	
 	<define name="e.dsc">
 		<element name="dsc">
 			<ref name="a.common"/>
@@ -2301,7 +2304,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 
 
 
-	<!-- MODELS -->
+	<!-- ELEMENT MODELS -->
 
 	<define name="m.blocks">
 		<choice>
@@ -2674,6 +2677,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 	</define>
 
 	<!-- ATTRIBUTE MODELS -->
+	
 	<define name="a.common.empty">
 		<optional>
 			<attribute name="id">
