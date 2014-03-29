@@ -2482,11 +2482,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="a.label"/>
 				<ref name="a.localtype"/>
 				<ref name="a.encodinganalog"/>
-				<optional>
-					<attribute name="parent">
-						<data type="IDREFS"/>
-					</attribute>
-				</optional>
+				<ref name="a.parent"/>
 				<optional>
 					<attribute name="containerid">
 						<data type="NMTOKEN"/>
@@ -2551,11 +2547,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="a.localtype"/>
 				<ref name="a.label"/>
 				<ref name="a.encodinganalog"/>
-				<optional>
-					<attribute name="parent">
-						<data type="IDREFS"/>
-					</attribute>
-				</optional>
+				<ref name="a.parent"/>
 				<ref name="m.mixed.basic"/>
 			</element>
 
@@ -2899,6 +2891,14 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="a.relatedencoding">
 		<optional>
 			<attribute name="relatedencoding"/>
+		</optional>
+	</define>
+	
+	<define name="a.parent">
+		<optional>
+			<attribute name="parent">
+				<data type="IDREFS"/>
+			</attribute>
 		</optional>
 	</define>
 
