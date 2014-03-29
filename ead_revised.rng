@@ -698,14 +698,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="unitdate">
 			<ref name="a.common"/>
 			<ref name="a.label"/>
-			<optional>
-				<attribute name="unitdatetype">
-					<choice>
-						<value>bulk</value>
-						<value>inclusive</value>
-					</choice>
-				</attribute>
-			</optional>
+			<ref name="a.unitdatetype"/>
 			<optional>
 				<attribute name="datechar"/>
 			</optional>
@@ -724,14 +717,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="unitdatestructured">
 			<ref name="a.common"/>
 			<ref name="a.label"/>
-			<optional>
-				<attribute name="unitdatetype">
-					<choice>
-						<value>bulk</value>
-						<value>inclusive</value>
-					</choice>
-				</attribute>
-			</optional>
+			<ref name="a.unitdatetype"/>
 			<optional>
 				<attribute name="certainty"/>
 			</optional>
@@ -747,6 +733,17 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="e.dateset"/>
 			</choice>
 		</element>
+	</define>
+	
+	<define name="a.unitdatetype">
+		<optional>
+			<attribute name="unitdatetype">
+				<choice>
+					<value>bulk</value>
+					<value>inclusive</value>
+				</choice>
+			</attribute>
+		</optional>
 	</define>
 
 	<define name="e.datesingle">
