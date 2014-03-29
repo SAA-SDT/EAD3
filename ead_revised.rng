@@ -803,13 +803,11 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.label"/>
 			<ref name="am.simplelink"/>
 			<ref name="a.identifier"/>
+			<ref name="a.link.xpointer"/>
 			<optional>
 				<attribute name="entityref">
 					<data type="ENTITY"/>
 				</attribute>
-			</optional>
-			<optional>
-				<attribute name="xpointer"/>
 			</optional>
 			<attribute name="daotype">
 				<choice>
@@ -2653,9 +2651,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<data type="IDREF"/>
 			</attribute>
 		</optional>
-		<optional>
-			<attribute name="xpointer"/>
-		</optional>
+		<ref name="a.link.xpointer"/>
 		<ref name="am.simplelink"/>
 	</define>
 
@@ -2824,7 +2820,12 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</choice>
 		</attribute>
 	</define>
-
+	
+	<define name="a.link.xpointer">
+		<optional>
+			<attribute name="xpointer"/>
+		</optional>
+	</define>
 
 	<define name="am.dates.calendar">
 		<optional>
