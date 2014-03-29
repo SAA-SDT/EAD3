@@ -318,9 +318,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 						<element name="term">
 							<ref name="a.common"/>
 							<ref name="a.encodinganalog"/>
-							<optional>
-								<attribute name="transliteration"/>
-							</optional>
+							<ref name="a.transliteration"/>
 							<optional>
 								<ref name="a.lastdatetimeverified"/>
 							</optional>
@@ -427,9 +425,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 								<element name="sourceentry">
 									<ref name="a.common"/>
 									<ref name="a.encodinganalog"/>
-									<optional>
-										<attribute name="transliteration"/>
-									</optional>
+									<ref name="a.transliteration"/>
 									<text/>
 								</element>
 							</zeroOrMore>
@@ -2253,11 +2249,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 							<ref name="a.common"/>
 							<ref name="a.encodinganalog"/>
 							<ref name="a.localtype"/>
-							<optional>
-								<attribute name="transliteration">
-									<data type="NMTOKEN"/>
-								</attribute>
-							</optional>
+							<ref name="a.transliteration"/>
 							<text/>
 						</element>
 					</zeroOrMore>
@@ -2899,6 +2891,14 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<value>bottom</value>
 			</choice>
 		</attribute>
+	</define>
+	
+	<define name="a.transliteration">
+		<optional>
+			<attribute name="transliteration">
+				<data type="NMTOKEN"/>
+			</attribute>
+		</optional>
 	</define>
 
 	<!-- ATTRIBUTE VALUE LISTS -->
