@@ -47,22 +47,18 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.ead">
 		<element name="ead">
 			<ref name="a.common"/>
-			<optional>
-				<attribute name="relatedencoding"/>
-			</optional>
+			<ref name="a.relatedencoding"/>
 			
 			<ref name="e.control"/>
 			
 			<element name="archdesc">
 				<ref name="a.common"/>
 				<ref name="a.localtype"/>
+				<ref name="a.relatedencoding"/>
+				<ref name="a.desc.base"/>
 				<attribute name="level">
 					<ref name="av.level"/>
 				</attribute>
-				<ref name="a.desc.base"/>
-				<optional>
-					<attribute name="relatedencoding"/>
-				</optional>
 				<ref name="e.did"/>
 				<zeroOrMore>
 					<ref name="m.desc.base.full"/>
@@ -72,12 +68,14 @@ For these and/or other purposes and motivations, and without any expectation of 
 	</define>
 
 	<!-- ELEMENTS -->
+	
 	<!-- Control -->
 
 	<define name="e.control">
 		<element name="control">
 			<ref name="a.common"/>
 			<ref name="a.encodinganalog"/>
+			<ref name="a.relatedencoding"/>
 			<optional>
 				<attribute name="base">
 					<data type="anyURI"/>
@@ -124,9 +122,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 						<value>otherrepositoryencoding</value>
 					</choice>
 				</attribute>
-			</optional>
-			<optional>
-				<attribute name="relatedencoding"/>
 			</optional>
 			
 			<element name="recordid">
@@ -2898,6 +2893,12 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<attribute name="transliteration">
 				<data type="NMTOKEN"/>
 			</attribute>
+		</optional>
+	</define>
+	
+	<define name="a.relatedencoding">
+		<optional>
+			<attribute name="relatedencoding"/>
 		</optional>
 	</define>
 
