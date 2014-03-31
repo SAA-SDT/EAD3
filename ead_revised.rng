@@ -67,7 +67,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</element>
 	</define>
 	
-	<!-- CONTROL -->
+	<!-- control -->
 
 	<define name="e.control">
 		<element name="control">
@@ -1398,6 +1398,20 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</element>
 	</define>
 	
+	<!-- blockquote -->
+	
+	<define name="e.blockquote">
+		<element name="blockquote">
+			<ref name="a.common"/>
+			<oneOrMore>
+				<choice>
+					<ref name="m.inter.noquote"/>
+					<ref name="e.p"/>
+				</choice>
+			</oneOrMore>
+		</element>
+	</define>
+	
 	<!-- chronlist -->
 	
 	<define name="e.chronlist">
@@ -2272,15 +2286,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="m.inter">
 		<choice>
 			<ref name="m.inter.noquote"/>
-			<element name="blockquote">
-				<ref name="a.common"/>
-				<oneOrMore>
-					<choice>
-						<ref name="m.inter.noquote"/>
-						<ref name="e.p"/>
-					</choice>
-				</oneOrMore>
-			</element>
+			<ref name="e.blockquote"/>
 		</choice>
 	</define>
 
