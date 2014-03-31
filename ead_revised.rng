@@ -2650,70 +2650,8 @@ For these and/or other purposes and motivations, and without any expectation of 
 	
 	<!-- ATTRIBUTE DEFINITIONS -->
 	
-	<define name="a.identifier">
-		<optional>
-			<attribute name="identifier"/>
-		</optional>
-	</define>
-
-	<define name="a.relator">
-		<optional>
-			<attribute name="relator"/>
-		</optional>
-	</define>
-
-	<define name="a.label">
-		<optional>
-			<attribute name="label"/>
-		</optional>
-	</define>
-
-	<define name="a.localtype">
-		<optional>
-			<attribute name="localtype"/>
-		</optional>
-	</define>
-
-	<define name="a.encodinganalog">
-		<optional>
-			<attribute name="encodinganalog"/>
-		</optional>
-	</define>
-
-	<define name="a.link.href">
-		<attribute name="href">
-			<data type="anyURI"/>
-		</attribute>
-	</define>
-
-	<define name="a.link.role">
-		<attribute name="linkrole">
-			<data type="anyURI"/>
-		</attribute>
-	</define>
-
-	<define name="a.link.arcrole">
-		<attribute name="arcrole">
-			<data type="anyURI"/>
-		</attribute>
-	</define>
-
-	<define name="a.link.title">
-		<attribute name="linktitle"/>
-	</define>
-
-	<define name="a.link.show">
-		<attribute name="show">
-			<choice>
-				<value>new</value>
-				<value>replace</value>
-				<value>embed</value>
-				<value>other</value>
-				<value>none</value>
-			</choice>
-		</attribute>
-	</define>
-
+	<!-- xlink-modelled attributes -->
+	
 	<define name="a.link.actuate">
 		<attribute name="actuate">
 			<choice>
@@ -2725,92 +2663,53 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</attribute>
 	</define>
 	
-	<define name="a.link.xpointer">
-		<optional>
-			<attribute name="xpointer"/>
-		</optional>
-	</define>
-
-	<define name="am.dates.calendar">
-		<optional>
-			<attribute name="calendar">
-				<data type="NMTOKEN"/>
-			</attribute>
-		</optional>
-	</define>
-
-	<define name="am.dates.era">
-		<optional>
-			<attribute name="era">
-				<data type="NMTOKEN"/>
-			</attribute>
-		</optional>
-	</define>
-
-	<define name="am.date.normal">
-		<optional>
-			<attribute name="normal">
-				<data type="token"/>
-			</attribute>
-		</optional>
-	</define>
-
-	<define name="am.countrycode">
-		<optional>
-			<attribute name="countrycode">
-				<data type="NMTOKEN"/>
-			</attribute>
-		</optional>
-	</define>
-
-	<define name="a.lastdatetimeverified">
-		<attribute name="lastdatetimeverified">
-			<data type="token"/>
+	<define name="a.link.arcrole">
+		<attribute name="arcrole">
+			<data type="anyURI"/>
 		</attribute>
 	</define>
-
-	<define name="a.coverage">
-		<attribute name="coverage">
-			<choice>
-				<value>whole</value>
-				<value>part</value>
-			</choice>
+	
+	<define name="a.link.href">
+		<attribute name="href">
+			<data type="anyURI"/>
 		</attribute>
 	</define>
-
-	<define name="a.align">
-		<attribute name="align">
-			<choice>
-				<value>left</value>
-				<value>right</value>
-				<value>center</value>
-				<value>justify</value>
-				<value>char</value>
-			</choice>
+	
+	<define name="a.link.role">
+		<attribute name="linkrole">
+			<data type="anyURI"/>
 		</attribute>
 	</define>
-
-	<define name="a.valign">
-		<attribute name="valign">
+	
+	<define name="a.link.show">
+		<attribute name="show">
 			<choice>
-				<value>top</value>
-				<value>middle</value>
-				<value>bottom</value>
+				<value>new</value>
+				<value>replace</value>
+				<value>embed</value>
+				<value>other</value>
+				<value>none</value>
 			</choice>
 		</attribute>
 	</define>
 	
-	<define name="a.transliteration">
+	<define name="a.link.title">
+		<attribute name="linktitle"/>
+	</define>
+	
+	<!-- other linking-related attributes-->
+	
+	<define name="a.base">
 		<optional>
-			<attribute name="transliteration">
-				<data type="NMTOKEN"/>
+			<attribute name="base">
+				<data type="anyURI"/>
 			</attribute>
 		</optional>
 	</define>
 	
-	<define name="a.relatedencoding">
+	<define name="a.identifier">
 		<optional>
-			<attribute name="relatedencoding"/>
+			<attribute name="identifier"/>
 		</optional>
 	</define>
 	
@@ -2822,24 +2721,40 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</optional>
 	</define>
 	
-	<define name="a.datechar">
+	<define name="a.relator">
 		<optional>
-			<attribute name="datechar"/>
+			<attribute name="relator"/>
 		</optional>
 	</define>
 	
-	<define name="a.certainty">
+	<define name="a.link.xpointer">
 		<optional>
-			<attribute name="certainty"/>
+			<attribute name="xpointer"/>
 		</optional>
 	</define>
 	
-	<define name="a.base">
-		<optional>
-			<attribute name="base">
-				<data type="anyURI"/>
-			</attribute>
-		</optional>
+	<!-- display attributes -->
+	
+	<define name="a.align">
+		<attribute name="align">
+			<choice>
+				<value>left</value>
+				<value>right</value>
+				<value>center</value>
+				<value>justify</value>
+				<value>char</value>
+			</choice>
+		</attribute>
+	</define>
+	
+	<define name="a.valign">
+		<attribute name="valign">
+			<choice>
+				<value>top</value>
+				<value>middle</value>
+				<value>bottom</value>
+			</choice>
+		</attribute>
 	</define>
 	
 	<define name="a.render">
@@ -2865,6 +2780,58 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</attribute>
 		</optional>
 	</define>
+	
+	<define name="a.label">
+		<optional>
+			<attribute name="label"/>
+		</optional>
+	</define>
+	
+	<!-- date attributes -->
+	
+	<define name="am.dates.calendar">
+		<optional>
+			<attribute name="calendar">
+				<data type="NMTOKEN"/>
+			</attribute>
+		</optional>
+	</define>
+	
+	<define name="am.dates.era">
+		<optional>
+			<attribute name="era">
+				<data type="NMTOKEN"/>
+			</attribute>
+		</optional>
+	</define>
+	
+	<define name="am.date.normal">
+		<optional>
+			<attribute name="normal">
+				<data type="token"/>
+			</attribute>
+		</optional>
+	</define>
+	
+	<define name="a.lastdatetimeverified">
+		<attribute name="lastdatetimeverified">
+			<data type="token"/>
+		</attribute>
+	</define>
+	
+	<define name="a.datechar">
+		<optional>
+			<attribute name="datechar"/>
+		</optional>
+	</define>
+	
+	<define name="a.certainty">
+		<optional>
+			<attribute name="certainty"/>
+		</optional>
+	</define>
+	
+	<!-- ennumerated typing attributes -->
 	
 	<define name="a.level">
 		<attribute name="level">
@@ -2892,6 +2859,26 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<value>inclusive</value>
 				</choice>
 			</attribute>
+		</optional>
+	</define>
+	
+	<!-- unennumerated typing attributes -->
+	
+	<define name="a.localtype">
+		<optional>
+			<attribute name="localtype"/>
+		</optional>
+	</define>
+
+	<define name="a.encodinganalog">
+		<optional>
+			<attribute name="encodinganalog"/>
+		</optional>
+	</define>
+	
+	<define name="a.relatedencoding">
+		<optional>
+			<attribute name="relatedencoding"/>
 		</optional>
 	</define>
 	
@@ -2923,6 +2910,33 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<attribute name="rowsep">
 			<ref name="av.zeroorone"/>
 		</attribute>
+	</define>
+	
+	<!-- other attributes -->
+	
+	<define name="a.coverage">
+		<attribute name="coverage">
+			<choice>
+				<value>whole</value>
+				<value>part</value>
+			</choice>
+		</attribute>
+	</define>
+	
+	<define name="am.countrycode">
+		<optional>
+			<attribute name="countrycode">
+				<data type="NMTOKEN"/>
+			</attribute>
+		</optional>
+	</define>
+	
+	<define name="a.transliteration">
+		<optional>
+			<attribute name="transliteration">
+				<data type="NMTOKEN"/>
+			</attribute>
+		</optional>
 	</define>
 
 	<!-- ATTRIBUTE VALUE LISTS -->
