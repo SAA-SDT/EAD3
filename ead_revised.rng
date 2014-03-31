@@ -76,11 +76,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.common"/>
 			<ref name="a.encodinganalog"/>
 			<ref name="a.relatedencoding"/>
-			<optional>
-				<attribute name="base">
-					<data type="anyURI"/>
-				</attribute>
-			</optional>
+			<ref name="a.base"/>
 			<optional>
 				<attribute name="langencoding">
 					<choice>
@@ -402,11 +398,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="a.common"/>
 					<ref name="a.encodinganalog"/>
 					<ref name="a.localtype"/>
-					<optional>
-						<attribute name="base">
-							<data type="anyURI"/>
-						</attribute>
-					</optional>
+					<ref name="a.base"/>
 					
 					<oneOrMore>
 						<element name="source">
@@ -441,11 +433,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="titleproper">
 			<ref name="a.common"/>
 			<ref name="a.localtype"/>
-			<optional>
-				<attribute name="render">
-					<ref name="av.render"/>
-				</attribute>
-			</optional>
+			<ref name="a.render"/>
 			<ref name="a.encodinganalog"/>
 			<ref name="m.mixed.basic"/>
 		</element>
@@ -1409,11 +1397,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.access"/>
 			<ref name="a.encodinganalog"/>
 			<ref name="a.relator"/>
-			<optional>
-				<attribute name="render">
-					<ref name="av.render"/>
-				</attribute>
-			</optional>
+			<ref name="a.render"/>
 			<oneOrMore>
 				<ref name="e.part"/>
 			</oneOrMore>
@@ -1755,11 +1739,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.emph">
 		<element name="emph">
 			<ref name="a.common"/>
-			<optional>
-				<attribute name="render">
-					<ref name="av.render"/>
-				</attribute>
-			</optional>
+			<ref name="a.render"/>
 			<ref name="m.mixed.basic"/>
 		</element>
 	</define>
@@ -1767,11 +1747,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.foreign">
 		<element name="foreign">
 			<ref name="a.common"/>
-			<optional>
-				<attribute name="render">
-					<ref name="av.render"/>
-				</attribute>
-			</optional>
+			<ref name="a.render"/>
 			<text/>
 		</element>
 	</define>
@@ -2203,11 +2179,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.common"/>
 			<ref name="a.encodinganalog"/>
 			<ref name="a.localtype"/>
-			<optional>
-				<attribute name="base">
-					<data type="anyURI"/>
-				</attribute>
-			</optional>
+			<ref name="a.base"/>
 			<oneOrMore>
 				<element name="relation">
 					<ref name="a.common"/>
@@ -2903,6 +2875,38 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<attribute name="certainty"/>
 		</optional>
 	</define>
+	
+	<define name="a.base">
+		<optional>
+			<attribute name="base">
+				<data type="anyURI"/>
+			</attribute>
+		</optional>
+	</define>
+	
+	<define name="a.render">
+		<optional>
+			<attribute name="render">
+				<choice>
+					<value>altrender</value>
+					<value>bold</value>
+					<value>bolddoublequote</value>
+					<value>bolditalic</value>
+					<value>boldsinglequote</value>
+					<value>boldsmcaps</value>
+					<value>boldunderline</value>
+					<value>doublequote</value>
+					<value>italic</value>
+					<value>nonproport</value>
+					<value>singlequote</value>
+					<value>smcaps</value>
+					<value>sub</value>
+					<value>super</value>
+					<value>underline</value>
+				</choice>
+			</attribute>
+		</optional>
+	</define>
 
 	<!-- ATTRIBUTE VALUE LISTS -->
 
@@ -2919,26 +2923,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<value>subfonds</value>
 			<value>subgrp</value>
 			<value>subseries</value>
-		</choice>
-	</define>
-
-	<define name="av.render">
-		<choice>
-			<value>altrender</value>
-			<value>bold</value>
-			<value>bolddoublequote</value>
-			<value>bolditalic</value>
-			<value>boldsinglequote</value>
-			<value>boldsmcaps</value>
-			<value>boldunderline</value>
-			<value>doublequote</value>
-			<value>italic</value>
-			<value>nonproport</value>
-			<value>singlequote</value>
-			<value>smcaps</value>
-			<value>sub</value>
-			<value>super</value>
-			<value>underline</value>
 		</choice>
 	</define>
 
