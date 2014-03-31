@@ -1678,7 +1678,25 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</element>
 	</define>
 	
-	<!-- mixed content -->
+	<!-- archref and bibref -->
+	
+	<define name="e.archref">
+		<element name="archref">
+			<ref name="a.common"/>
+			<ref name="a.encodinganalog"/>
+			<ref name="m.mixed.basic.plus.access"/>
+		</element>
+	</define>
+	
+	<define name="e.bibref">
+		<element name="bibref">
+			<ref name="a.common"/>
+			<ref name="a.encodinganalog"/>
+			<ref name="m.mixed.basic.plus.access"/>
+		</element>
+	</define>
+	
+	<!-- MIXED CONTENT -->
 
 	<define name="e.abbr">
 		<element name="abbr">
@@ -1690,6 +1708,14 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</element>
 	</define>
 	
+	<define name="e.emph">
+		<element name="emph">
+			<ref name="a.common"/>
+			<ref name="a.render"/>
+			<ref name="m.mixed.basic"/>
+		</element>
+	</define>
+	
 	<define name="e.expan">
 		<element name="expan">
 			<ref name="a.common"/>
@@ -1697,14 +1723,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<attribute name="abbr"/>
 			</optional>
 			<text/>
-		</element>
-	</define>
-
-	<define name="e.emph">
-		<element name="emph">
-			<ref name="a.common"/>
-			<ref name="a.render"/>
-			<ref name="m.mixed.basic"/>
 		</element>
 	</define>
 
@@ -1766,25 +1784,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="m.access"/>
 				</choice>
 			</zeroOrMore>
-		</element>
-	</define>
-
-
-	<!-- bibref and archref -->
-	
-	<define name="e.bibref">
-		<element name="bibref">
-			<ref name="a.common"/>
-			<ref name="a.encodinganalog"/>
-			<ref name="m.mixed.basic.plus.access"/>
-		</element>
-	</define>
-
-	<define name="e.archref">
-		<element name="archref">
-			<ref name="a.common"/>
-			<ref name="a.encodinganalog"/>
-			<ref name="m.mixed.basic.plus.access"/>
 		</element>
 	</define>
 
