@@ -56,9 +56,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="a.localtype"/>
 				<ref name="a.relatedencoding"/>
 				<ref name="a.desc.base"/>
-				<attribute name="level">
-					<ref name="av.level"/>
-				</attribute>
+				<ref name="a.level"/>
 				<ref name="e.did"/>
 				<zeroOrMore>
 					<ref name="m.desc.base.full"/>
@@ -2660,9 +2658,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="a.desc.c">
 		<ref name="a.common"/>
 		<optional>
-			<attribute name="level">
-				<ref name="av.level"/>
-			</attribute>
+			<ref name="a.level"/>
 		</optional>
 		<ref name="a.desc.base"/>
 	</define>
@@ -2903,24 +2899,26 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</attribute>
 		</optional>
 	</define>
+	
+	<define name="a.level">
+		<attribute name="level">
+			<choice>
+				<value>class</value>
+				<value>collection</value>
+				<value>file</value>
+				<value>fonds</value>
+				<value>item</value>
+				<value>otherlevel</value>
+				<value>recordgrp</value>
+				<value>series</value>
+				<value>subfonds</value>
+				<value>subgrp</value>
+				<value>subseries</value>
+			</choice>
+		</attribute>
+	</define>
 
 	<!-- ATTRIBUTE VALUE LISTS -->
-
-	<define name="av.level">
-		<choice>
-			<value>class</value>
-			<value>collection</value>
-			<value>file</value>
-			<value>fonds</value>
-			<value>item</value>
-			<value>otherlevel</value>
-			<value>recordgrp</value>
-			<value>series</value>
-			<value>subfonds</value>
-			<value>subgrp</value>
-			<value>subseries</value>
-		</choice>
-	</define>
 
 	<define name="av.zeroorone">
 		<choice>
