@@ -2831,7 +2831,19 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</optional>
 	</define>
 	
-	<!-- ennumerated typing attributes -->
+	<!-- typing attributes -->
+	
+	<define name="a.localtype">
+		<optional>
+			<attribute name="localtype"/>
+		</optional>
+	</define>
+
+	<define name="a.encodinganalog">
+		<optional>
+			<attribute name="encodinganalog"/>
+		</optional>
+	</define>
 	
 	<define name="a.level">
 		<attribute name="level">
@@ -2851,6 +2863,12 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</attribute>
 	</define>
 	
+	<define name="a.relatedencoding">
+		<optional>
+			<attribute name="relatedencoding"/>
+		</optional>
+	</define>
+	
 	<define name="a.unitdatetype">
 		<optional>
 			<attribute name="unitdatetype">
@@ -2859,26 +2877,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<value>inclusive</value>
 				</choice>
 			</attribute>
-		</optional>
-	</define>
-	
-	<!-- unennumerated typing attributes -->
-	
-	<define name="a.localtype">
-		<optional>
-			<attribute name="localtype"/>
-		</optional>
-	</define>
-
-	<define name="a.encodinganalog">
-		<optional>
-			<attribute name="encodinganalog"/>
-		</optional>
-	</define>
-	
-	<define name="a.relatedencoding">
-		<optional>
-			<attribute name="relatedencoding"/>
 		</optional>
 	</define>
 	
