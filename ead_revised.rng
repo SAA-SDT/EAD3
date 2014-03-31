@@ -2159,20 +2159,10 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.common"/>
 			<ref name="a.localtype"/>
 			<optional>
-				<attribute name="show">
-					<choice>
-						<value>embed</value>
-						<value>new</value>
-					</choice>
-				</attribute>
+				<ref name="a.link.show"/>				
 			</optional>
 			<optional>
-				<attribute name="actuate">
-					<choice>
-						<value>onload</value>
-						<value>onrequest</value>
-					</choice>
-				</attribute>
+				<ref name="a.link.actuate"/>				
 			</optional>
 			<oneOrMore>
 				<ref name="m.blocks"/>
