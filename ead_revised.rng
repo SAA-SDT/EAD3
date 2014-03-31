@@ -50,6 +50,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="ead">
 			<ref name="a.common"/>
 			<ref name="a.relatedencoding"/>
+			<ref name="a.base"/>
 			
 			<ref name="e.control"/>
 			
@@ -59,6 +60,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="a.relatedencoding"/>
 				<ref name="a.desc.base"/>
 				<ref name="a.level"/>
+				<ref name="a.base"/>
 				<ref name="e.did"/>
 				<zeroOrMore>
 					<ref name="m.desc.base.full"/>
