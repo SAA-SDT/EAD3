@@ -2832,12 +2832,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 	</define>
 	
 	<!-- typing attributes -->
-	
-	<define name="a.localtype">
-		<optional>
-			<attribute name="localtype"/>
-		</optional>
-	</define>
 
 	<define name="a.encodinganalog">
 		<optional>
@@ -2861,6 +2855,12 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<value>subseries</value>
 			</choice>
 		</attribute>
+	</define>
+	
+	<define name="a.localtype">
+		<optional>
+			<attribute name="localtype"/>
+		</optional>
 	</define>
 	
 	<define name="a.relatedencoding">
