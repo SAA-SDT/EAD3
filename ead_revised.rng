@@ -1544,14 +1544,10 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</attribute>
 			</optional>
 			<optional>
-				<attribute name="colsep">
-					<ref name="av.zeroorone"/>
-				</attribute>
+				<ref name="a.colsep"/>
 			</optional>
 			<optional>
-				<attribute name="rowsep">
-					<ref name="av.zeroorone"/>
-				</attribute>
+				<ref name="a.rowsep"/>
 			</optional>
 			<optional>
 				<attribute name="pgwide">
@@ -1568,14 +1564,10 @@ For these and/or other purposes and motivations, and without any expectation of 
 						<data type="NMTOKEN"/>
 					</attribute>
 					<optional>
-						<attribute name="colsep">
-							<ref name="av.zeroorone"/>
-						</attribute>
+						<ref name="a.colsep"/>
 					</optional>
 					<optional>
-						<attribute name="rowsep">
-							<ref name="av.zeroorone"/>
-						</attribute>
+						<ref name="a.rowsep"/>
 					</optional>
 					<optional>
 						<ref name="a.align"/>
@@ -1588,33 +1580,25 @@ For these and/or other purposes and motivations, and without any expectation of 
 								</attribute>
 							</optional>
 							<optional>
-								<attribute name="colname">
-									<data type="NMTOKEN"/>
-								</attribute>
+								<ref name="a.colname"/>
 							</optional>
 							<optional>
 								<attribute name="colwidth"/>
 							</optional>
 							<optional>
-								<attribute name="colsep">
-									<ref name="av.zeroorone"/>
-								</attribute>
+								<ref name="a.colsep"/>
 							</optional>
 							<optional>
-								<attribute name="rowsep">
-									<ref name="av.zeroorone"/>
-								</attribute>
+								<ref name="a.rowsep"/>
 							</optional>
 							<optional>
 								<ref name="a.align"/>
 							</optional>
 							<optional>
-								<attribute name="char"/>
+								<ref name="a.char"/>
 							</optional>
 							<optional>
-								<attribute name="charoff">
-									<data type="NMTOKEN"/>
-								</attribute>
+								<ref name="a.charoff"/>
 							</optional>
 							<empty/>
 						</element>
@@ -1640,9 +1624,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="row">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="rowsep">
-					<ref name="av.zeroorone"/>
-				</attribute>
+				<ref name="a.rowsep"/>
 			</optional>
 			<optional>
 				<ref name="a.valign"/>
@@ -1651,9 +1633,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<element name="entry">
 					<ref name="a.common"/>
 					<optional>
-						<attribute name="colname">
-							<data type="NMTOKEN"/>
-						</attribute>
+						<ref name="a.colname"/>
 					</optional>
 					<optional>
 						<attribute name="namest">
@@ -1671,25 +1651,19 @@ For these and/or other purposes and motivations, and without any expectation of 
 						</attribute>
 					</optional>
 					<optional>
-						<attribute name="colsep">
-							<ref name="av.zeroorone"/>
-						</attribute>
+						<ref name="a.colsep"/>
 					</optional>
 					<optional>
-						<attribute name="rowsep">
-							<ref name="av.zeroorone"/>
-						</attribute>
+						<ref name="a.rowsep"/>
 					</optional>
 					<optional>
 						<ref name="a.align"/>
 					</optional>
 					<optional>
-						<attribute name="char"/>
+						<ref name="a.char"/>
 					</optional>
 					<optional>
-						<attribute name="charoff">
-							<data type="NMTOKEN"/>
-						</attribute>
+						<ref name="a.charoff"/>
 					</optional>
 					<optional>
 						<ref name="a.valign"/>
@@ -2915,6 +2889,36 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<value>subgrp</value>
 				<value>subseries</value>
 			</choice>
+		</attribute>
+	</define>
+	
+	<!-- table attributes -->
+	
+	<define name="a.char">
+		<attribute name="char"/>
+	</define>
+	
+	<define name="a.charoff">
+		<attribute name="charoff">
+			<data type="NMTOKEN"/>
+		</attribute>
+	</define>
+	
+	<define name="a.colname">
+		<attribute name="colname">
+			<data type="NMTOKEN"/>
+		</attribute>
+	</define>
+	
+	<define name="a.colsep">
+		<attribute name="colsep">
+			<ref name="av.zeroorone"/>
+		</attribute>
+	</define>
+	
+	<define name="a.rowsep">
+		<attribute name="rowsep">
+			<ref name="av.zeroorone"/>
 		</attribute>
 	</define>
 
