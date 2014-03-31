@@ -701,17 +701,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</choice>
 		</element>
 	</define>
-	
-	<define name="a.unitdatetype">
-		<optional>
-			<attribute name="unitdatetype">
-				<choice>
-					<value>bulk</value>
-					<value>inclusive</value>
-				</choice>
-			</attribute>
-		</optional>
-	</define>
 
 	<define name="e.datesingle">
 		<element name="datesingle">
@@ -1750,7 +1739,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.ptr">
 		<element name="ptr">
 			<ref name="a.common.empty"/>
-			<ref name="a.internal.ptr"/>
+			<ref name="am.internal.ptr"/>
 			<empty/>
 		</element>
 	</define>
@@ -1758,7 +1747,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.ref">
 		<element name="ref">
 			<ref name="a.common"/>
-			<ref name="a.internal.ptr"/>
+			<ref name="am.internal.ptr"/>
 			<zeroOrMore>
 				<choice>
 					<text/>
@@ -2558,7 +2547,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</zeroOrMore>
 	</define>
 
-	<define name="a.internal.ptr">
+	<define name="am.internal.ptr">
 		<optional>
 			<attribute name="target">
 				<data type="IDREF"/>
@@ -2890,6 +2879,17 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<value>subseries</value>
 			</choice>
 		</attribute>
+	</define>
+	
+	<define name="a.unitdatetype">
+		<optional>
+			<attribute name="unitdatetype">
+				<choice>
+					<value>bulk</value>
+					<value>inclusive</value>
+				</choice>
+			</attribute>
+		</optional>
 	</define>
 	
 	<!-- table attributes -->
