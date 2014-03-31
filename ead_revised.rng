@@ -2648,6 +2648,8 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<ref name="a.identifier"/>
 	</define>
 	
+	<!-- ATTRIBUTE DEFINITIONS -->
+	
 	<define name="a.identifier">
 		<optional>
 			<attribute name="identifier"/>
