@@ -1275,6 +1275,32 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</oneOrMore>
 		</element>
 	</define>
+	
+	<define name="e.function">
+		<element name="function">
+			<ref name="a.common"/>
+			<ref name="a.access"/>
+			<ref name="a.encodinganalog"/>
+			<ref name="a.localtype"/>
+			<ref name="a.relator"/>
+			<oneOrMore>
+				<ref name="e.part"/>
+			</oneOrMore>
+		</element>
+	</define>
+	
+	<define name="e.genreform">
+		<element name="genreform">
+			<ref name="a.common"/>
+			<ref name="a.access"/>
+			<ref name="a.encodinganalog"/>
+			<ref name="a.localtype"/>
+			<ref name="a.relator"/>
+			<oneOrMore>
+				<ref name="e.part"/>
+			</oneOrMore>
+		</element>
+	</define>
 
 	<define name="e.geogname">
 		<element name="geogname">
@@ -1310,6 +1336,19 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</oneOrMore>
 		</element>
 	</define>
+	
+	<define name="e.occupation">
+		<element name="occupation">
+			<ref name="a.common"/>
+			<ref name="a.access"/>
+			<ref name="a.encodinganalog"/>
+			<ref name="a.localtype"/>
+			<ref name="a.relator"/>
+			<oneOrMore>
+				<ref name="e.part"/>
+			</oneOrMore>
+		</element>
+	</define>
 
 	<define name="e.persname">
 		<element name="persname">
@@ -1324,47 +1363,8 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</element>
 	</define>
 
-	<define name="e.occupation">
-		<element name="occupation">
-			<ref name="a.common"/>
-			<ref name="a.access"/>
-			<ref name="a.encodinganalog"/>
-			<ref name="a.localtype"/>
-			<ref name="a.relator"/>
-			<oneOrMore>
-				<ref name="e.part"/>
-			</oneOrMore>
-		</element>
-	</define>
-
 	<define name="e.subject">
 		<element name="subject">
-			<ref name="a.common"/>
-			<ref name="a.access"/>
-			<ref name="a.encodinganalog"/>
-			<ref name="a.localtype"/>
-			<ref name="a.relator"/>
-			<oneOrMore>
-				<ref name="e.part"/>
-			</oneOrMore>
-		</element>
-	</define>
-
-	<define name="e.genreform">
-		<element name="genreform">
-			<ref name="a.common"/>
-			<ref name="a.access"/>
-			<ref name="a.encodinganalog"/>
-			<ref name="a.localtype"/>
-			<ref name="a.relator"/>
-			<oneOrMore>
-				<ref name="e.part"/>
-			</oneOrMore>
-		</element>
-	</define>
-
-	<define name="e.function">
-		<element name="function">
 			<ref name="a.common"/>
 			<ref name="a.access"/>
 			<ref name="a.encodinganalog"/>
@@ -1399,7 +1399,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="m.mixed.basic"/>
 		</element>
 	</define>
-
 
 	<!-- list -->
 	<define name="e.list">
