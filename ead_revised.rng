@@ -67,7 +67,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</element>
 	</define>
 	
-	<!-- Control -->
+	<!-- CONTROL -->
 
 	<define name="e.control">
 		<element name="control">
@@ -468,19 +468,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="edition">
 			<ref name="a.common"/>
 			<ref name="a.localtype"/>
-			<ref name="a.encodinganalog"/>
-			<ref name="m.mixed.basic"/>
-		</element>
-	</define>
-	
-	<define name="e.date">
-		<element name="date">
-			<ref name="a.common"/>
-			<ref name="a.localtype"/>
-			<ref name="am.dates.era"/>
-			<ref name="am.dates.calendar"/>
-			<ref name="am.date.normal"/>
-			<ref name="a.certainty"/>
 			<ref name="a.encodinganalog"/>
 			<ref name="m.mixed.basic"/>
 		</element>
@@ -1843,6 +1830,19 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</element>
 	</define>
 	
+	<define name="e.date">
+		<element name="date">
+			<ref name="a.common"/>
+			<ref name="a.localtype"/>
+			<ref name="am.dates.era"/>
+			<ref name="am.dates.calendar"/>
+			<ref name="am.date.normal"/>
+			<ref name="a.certainty"/>
+			<ref name="a.encodinganalog"/>
+			<ref name="m.mixed.basic"/>
+		</element>
+	</define>
+	
 	<define name="e.emph">
 		<element name="emph">
 			<ref name="a.common"/>
@@ -2938,18 +2938,18 @@ For these and/or other purposes and motivations, and without any expectation of 
 	</define>
 
 	<!-- ATTRIBUTE VALUE LISTS -->
+	
+	<define name="av.yesorno">
+		<choice>
+			<value>yes</value>
+			<value>no</value>
+		</choice>
+	</define>
 
 	<define name="av.zeroorone">
 		<choice>
 			<value>0</value>
 			<value>1</value>
-		</choice>
-	</define>
-
-	<define name="av.yesorno">
-		<choice>
-			<value>yes</value>
-			<value>no</value>
 		</choice>
 	</define>
 
