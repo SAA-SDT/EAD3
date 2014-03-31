@@ -44,25 +44,21 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<ref name="e.ead"/>
 	</start>
 	
+	<!-- ELEMENTS -->
+	
 	<define name="e.ead">
 		<element name="ead">
 			<ref name="a.common"/>
-			<optional>
-				<attribute name="relatedencoding"/>
-			</optional>
+			<ref name="a.relatedencoding"/>
 			
 			<ref name="e.control"/>
 			
 			<element name="archdesc">
 				<ref name="a.common"/>
 				<ref name="a.localtype"/>
-				<attribute name="level">
-					<ref name="av.level"/>
-				</attribute>
+				<ref name="a.relatedencoding"/>
 				<ref name="a.desc.base"/>
-				<optional>
-					<attribute name="relatedencoding"/>
-				</optional>
+				<ref name="a.level"/>
 				<ref name="e.did"/>
 				<zeroOrMore>
 					<ref name="m.desc.base.full"/>
@@ -70,19 +66,15 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</element>
 		</element>
 	</define>
-
-	<!-- ELEMENTS -->
-	<!-- Control -->
+	
+	<!-- control -->
 
 	<define name="e.control">
 		<element name="control">
 			<ref name="a.common"/>
 			<ref name="a.encodinganalog"/>
-			<optional>
-				<attribute name="base">
-					<data type="anyURI"/>
-				</attribute>
-			</optional>
+			<ref name="a.relatedencoding"/>
+			<ref name="a.base"/>
 			<optional>
 				<attribute name="langencoding">
 					<choice>
@@ -124,9 +116,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 						<value>otherrepositoryencoding</value>
 					</choice>
 				</attribute>
-			</optional>
-			<optional>
-				<attribute name="relatedencoding"/>
 			</optional>
 			
 			<element name="recordid">
@@ -318,9 +307,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 						<element name="term">
 							<ref name="a.common"/>
 							<ref name="a.encodinganalog"/>
-							<optional>
-								<attribute name="transliteration"/>
-							</optional>
+							<ref name="a.transliteration"/>
 							<optional>
 								<ref name="a.lastdatetimeverified"/>
 							</optional>
@@ -409,11 +396,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<ref name="a.common"/>
 					<ref name="a.encodinganalog"/>
 					<ref name="a.localtype"/>
-					<optional>
-						<attribute name="base">
-							<data type="anyURI"/>
-						</attribute>
-					</optional>
+					<ref name="a.base"/>
 					
 					<oneOrMore>
 						<element name="source">
@@ -427,9 +410,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 								<element name="sourceentry">
 									<ref name="a.common"/>
 									<ref name="a.encodinganalog"/>
-									<optional>
-										<attribute name="transliteration"/>
-									</optional>
+									<ref name="a.transliteration"/>
 									<text/>
 								</element>
 							</zeroOrMore>
@@ -450,11 +431,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="titleproper">
 			<ref name="a.common"/>
 			<ref name="a.localtype"/>
-			<optional>
-				<attribute name="render">
-					<ref name="av.render"/>
-				</attribute>
-			</optional>
+			<ref name="a.render"/>
 			<ref name="a.encodinganalog"/>
 			<ref name="m.mixed.basic"/>
 		</element>
@@ -491,21 +468,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="edition">
 			<ref name="a.common"/>
 			<ref name="a.localtype"/>
-			<ref name="a.encodinganalog"/>
-			<ref name="m.mixed.basic"/>
-		</element>
-	</define>
-	
-	<define name="e.date">
-		<element name="date">
-			<ref name="a.common"/>
-			<ref name="a.localtype"/>
-			<ref name="am.dates.era"/>
-			<ref name="am.dates.calendar"/>
-			<ref name="am.date.normal"/>
-			<optional>
-				<attribute name="certainty"/>
-			</optional>
 			<ref name="a.encodinganalog"/>
 			<ref name="m.mixed.basic"/>
 		</element>
@@ -582,8 +544,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</element>
 	</define>
 
-
-
 	<!-- did -->
 
 	<define name="e.did">
@@ -596,6 +556,67 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<oneOrMore>
 				<ref name="m.did"/>
 			</oneOrMore>
+		</element>
+	</define>
+	
+	<define name="e.dao">
+		<element name="dao">
+			<ref name="a.common"/>
+			<ref name="a.encodinganalog"/>
+			<ref name="a.localtype"/>
+			<ref name="a.label"/>
+			<ref name="am.simplelink"/>
+			<ref name="a.identifier"/>
+			<ref name="a.link.xpointer"/>
+			<optional>
+				<attribute name="entityref">
+					<data type="ENTITY"/>
+				</attribute>
+			</optional>
+			<attribute name="daotype">
+				<choice>
+					<value>borndigital</value>
+					<value>derived</value>
+					<value>unknown</value>
+					<value>otherdaotype</value>
+				</choice>
+			</attribute>
+			<optional>
+				<attribute name="otherdaotype"/>
+			</optional>
+			<optional>
+				<ref name="a.coverage"/>
+			</optional>
+			<optional>
+				<ref name="e.descriptivenote"/>
+			</optional>
+		</element>
+	</define>
+	
+	<define name="e.daoset">
+		<element name="daoset">
+			<ref name="a.common"/>
+			<ref name="a.localtype"/>
+			<ref name="a.encodinganalog"/>
+			<ref name="a.label"/>
+			<ref name="a.coverage"/>
+			<ref name="e.dao"/>
+			<oneOrMore>
+				<ref name="e.dao"/>
+			</oneOrMore>
+			<optional>
+				<ref name="e.descriptivenote"/>
+			</optional>
+		</element>
+	</define>
+	
+	<define name="e.materialspec">
+		<element name="materialspec">
+			<ref name="a.common"/>
+			<ref name="a.label"/>
+			<ref name="a.encodinganalog"/>
+			<ref name="a.localtype"/>
+			<ref name="m.mixed.basic"/>
 		</element>
 	</define>
 
@@ -681,40 +702,16 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</element>
 	</define>
 
-	<define name="e.unittitle">
-		<element name="unittitle">
-			<ref name="a.common"/>
-			<ref name="a.label"/>
-			<ref name="a.encodinganalog"/>
-			<ref name="a.localtype"/>
-			<optional>
-				<attribute name="normal"/>
-			</optional>
-			<ref name="m.mixed.basic.plus.access"/>
-		</element>
-	</define>
-
 	<define name="e.unitdate">
 		<element name="unitdate">
 			<ref name="a.common"/>
 			<ref name="a.label"/>
-			<optional>
-				<attribute name="unitdatetype">
-					<choice>
-						<value>bulk</value>
-						<value>inclusive</value>
-					</choice>
-				</attribute>
-			</optional>
-			<optional>
-				<attribute name="datechar"/>
-			</optional>
+			<ref name="a.unitdatetype"/>
+			<ref name="a.datechar"/>
+			<ref name="a.certainty"/>
 			<ref name="am.dates.era"/>
 			<ref name="am.dates.calendar"/>
 			<ref name="am.date.normal"/>
-			<optional>
-				<attribute name="certainty"/>
-			</optional>
 			<ref name="a.encodinganalog"/>
 			<ref name="m.mixed.basic"/>
 		</element>
@@ -724,21 +721,10 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="unitdatestructured">
 			<ref name="a.common"/>
 			<ref name="a.label"/>
-			<optional>
-				<attribute name="unitdatetype">
-					<choice>
-						<value>bulk</value>
-						<value>inclusive</value>
-					</choice>
-				</attribute>
-			</optional>
-			<optional>
-				<attribute name="certainty"/>
-			</optional>
+			<ref name="a.unitdatetype"/>
+			<ref name="a.datechar"/>
+			<ref name="a.certainty"/>
 			<ref name="a.encodinganalog"/>
-			<optional>
-				<attribute name="datechar"/>
-			</optional>
 			<ref name="am.dates.era"/>
 			<ref name="am.dates.calendar"/>
 			<choice>
@@ -794,70 +780,20 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</oneOrMore>
 		</element>
 	</define>
-
-	<define name="e.dao">
-		<element name="dao">
-			<ref name="a.common"/>
-			<ref name="a.encodinganalog"/>
-			<ref name="a.localtype"/>
-			<ref name="a.label"/>
-			<ref name="am.simplelink"/>
-			<ref name="a.identifier"/>
-			<optional>
-				<attribute name="entityref">
-					<data type="ENTITY"/>
-				</attribute>
-			</optional>
-			<optional>
-				<attribute name="xpointer"/>
-			</optional>
-			<attribute name="daotype">
-				<choice>
-					<value>borndigital</value>
-					<value>derived</value>
-					<value>unknown</value>
-					<value>otherdaotype</value>
-				</choice>
-			</attribute>
-			<optional>
-				<attribute name="otherdaotype"/>
-			</optional>
-			<optional>
-				<ref name="a.coverage"/>
-			</optional>
-			<optional>
-				<ref name="e.descriptivenote"/>
-			</optional>
-		</element>
-	</define>
-
-	<define name="e.daoset">
-		<element name="daoset">
-			<ref name="a.common"/>
-			<ref name="a.localtype"/>
-			<ref name="a.encodinganalog"/>
-			<ref name="a.label"/>
-			<ref name="a.coverage"/>
-			<ref name="e.dao"/>
-			<oneOrMore>
-				<ref name="e.dao"/>
-			</oneOrMore>
-			<optional>
-				<ref name="e.descriptivenote"/>
-			</optional>
-		</element>
-	</define>
-
-	<define name="e.materialspec">
-		<element name="materialspec">
+	
+	<define name="e.unittitle">
+		<element name="unittitle">
 			<ref name="a.common"/>
 			<ref name="a.label"/>
 			<ref name="a.encodinganalog"/>
 			<ref name="a.localtype"/>
-			<ref name="m.mixed.basic"/>
+			<optional>
+				<attribute name="normal"/>
+			</optional>
+			<ref name="m.mixed.basic.plus.access"/>
 		</element>
 	</define>
-
+	
 	<!-- archdesc notes -->
 
 	<define name="e.accessrestrict">
@@ -889,23 +825,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<choice>
 					<ref name="m.blocks"/>
 					<ref name="e.accruals"/>
-				</choice>
-			</oneOrMore>
-		</element>
-	</define>
-
-	<define name="e.fileplan">
-		<element name="fileplan">
-			<ref name="a.common"/>
-			<ref name="a.localtype"/>
-			<ref name="a.encodinganalog"/>
-			<optional>
-				<ref name="e.head"/>
-			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<ref name="e.fileplan"/>
 				</choice>
 			</oneOrMore>
 		</element>
@@ -945,40 +864,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</element>
 	</define>
 
-	<define name="e.originalsloc">
-		<element name="originalsloc">
-			<ref name="a.common"/>
-			<ref name="a.encodinganalog"/>
-			<ref name="a.localtype"/>
-			<optional>
-				<ref name="e.head"/>
-			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<ref name="e.originalsloc"/>
-				</choice>
-			</oneOrMore>
-		</element>
-	</define>
-
-	<define name="e.phystech">
-		<element name="phystech">
-			<ref name="a.common"/>
-			<ref name="a.encodinganalog"/>
-			<ref name="a.localtype"/>
-			<optional>
-				<ref name="e.head"/>
-			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<ref name="e.phystech"/>
-				</choice>
-			</oneOrMore>
-		</element>
-	</define>
-
 	<define name="e.appraisal">
 		<element name="appraisal">
 			<ref name="a.common"/>
@@ -991,6 +876,77 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<choice>
 					<ref name="m.blocks"/>
 					<ref name="e.appraisal"/>
+				</choice>
+			</oneOrMore>
+		</element>
+	</define>
+	
+	<define name="e.arrangement">
+		<element name="arrangement">
+			<ref name="a.common"/>
+			<ref name="a.localtype"/>
+			<ref name="a.encodinganalog"/>
+			<optional>
+				<ref name="e.head"/>
+			</optional>
+			<oneOrMore>
+				<choice>
+					<ref name="m.blocks"/>
+					<ref name="e.arrangement"/>
+				</choice>
+			</oneOrMore>
+		</element>
+	</define>
+	
+	<define name="e.bibliography">
+		<element name="bibliography">
+			<ref name="a.common"/>
+			<ref name="a.localtype"/>
+			<ref name="a.encodinganalog"/>
+			<optional>
+				<ref name="e.head"/>
+			</optional>
+			<oneOrMore>
+				<choice>
+					<ref name="m.blocks"/>
+					<ref name="e.bibliography"/>
+					<ref name="e.archref"/>
+					<ref name="e.bibref"/>
+				</choice>
+			</oneOrMore>
+		</element>
+	</define>
+	
+	<define name="e.bioghist">
+		<element name="bioghist">
+			<ref name="a.common"/>
+			<ref name="a.localtype"/>
+			<ref name="a.encodinganalog"/>
+			<optional>
+				<ref name="e.head"/>
+			</optional>
+			<oneOrMore>
+				<choice>
+					<ref name="m.blocks"/>
+					<ref name="e.bioghist"/>
+				</choice>
+			</oneOrMore>
+		</element>
+	</define>
+	
+	<define name="e.controlaccess">
+		<element name="controlaccess">
+			<ref name="a.common"/>
+			<ref name="a.localtype"/>
+			<ref name="a.encodinganalog"/>
+			<optional>
+				<ref name="e.head"/>
+			</optional>
+			<oneOrMore>
+				<choice>
+					<ref name="m.blocks"/>
+					<ref name="m.access"/>
+					<ref name="e.controlaccess"/>
 				</choice>
 			</oneOrMore>
 		</element>
@@ -1008,6 +964,23 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<choice>
 					<ref name="m.blocks"/>
 					<ref name="e.custodhist"/>
+				</choice>
+			</oneOrMore>
+		</element>
+	</define>
+	
+	<define name="e.fileplan">
+		<element name="fileplan">
+			<ref name="a.common"/>
+			<ref name="a.localtype"/>
+			<ref name="a.encodinganalog"/>
+			<optional>
+				<ref name="e.head"/>
+			</optional>
+			<oneOrMore>
+				<choice>
+					<ref name="m.blocks"/>
+					<ref name="e.fileplan"/>
 				</choice>
 			</oneOrMore>
 		</element>
@@ -1085,6 +1058,76 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</oneOrMore>
 		</element>
 	</define>
+	
+	<define name="e.odd">
+		<element name="odd">
+			<ref name="a.common"/>
+			<ref name="a.localtype"/>
+			<ref name="a.encodinganalog"/>
+			<optional>
+				<ref name="e.head"/>
+			</optional>
+			<oneOrMore>
+				<choice>
+					<ref name="m.blocks"/>
+					<ref name="e.odd"/>
+				</choice>
+			</oneOrMore>
+		</element>
+	</define>
+	
+	<define name="e.originalsloc">
+		<element name="originalsloc">
+			<ref name="a.common"/>
+			<ref name="a.encodinganalog"/>
+			<ref name="a.localtype"/>
+			<optional>
+				<ref name="e.head"/>
+			</optional>
+			<oneOrMore>
+				<choice>
+					<ref name="m.blocks"/>
+					<ref name="e.originalsloc"/>
+				</choice>
+			</oneOrMore>
+		</element>
+	</define>
+	
+	<define name="e.otherfindaid">
+		<element name="otherfindaid">
+			<ref name="a.common"/>
+			<ref name="a.localtype"/>
+			<ref name="a.encodinganalog"/>
+			<optional>
+				<ref name="e.head"/>
+			</optional>
+			<oneOrMore>
+				<choice>
+					<ref name="m.blocks"/>
+					<ref name="e.otherfindaid"/>
+					<ref name="e.archref"/>
+					<ref name="e.bibref"/>
+				</choice>
+			</oneOrMore>
+		</element>
+	</define>
+	
+	<define name="e.phystech">
+		<element name="phystech">
+			<ref name="a.common"/>
+			<ref name="a.encodinganalog"/>
+			<ref name="a.localtype"/>
+			<optional>
+				<ref name="e.head"/>
+			</optional>
+			<oneOrMore>
+				<choice>
+					<ref name="m.blocks"/>
+					<ref name="e.phystech"/>
+				</choice>
+			</oneOrMore>
+		</element>
+	</define>
 
 	<define name="e.prefercite">
 		<element name="prefercite">
@@ -1119,129 +1162,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</oneOrMore>
 		</element>
 	</define>
-
-	<define name="e.userestrict">
-		<element name="userestrict">
-			<ref name="a.common"/>
-			<ref name="a.encodinganalog"/>
-			<ref name="a.localtype"/>
-			<optional>
-				<ref name="e.head"/>
-			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<ref name="e.userestrict"/>
-				</choice>
-			</oneOrMore>
-		</element>
-	</define>
-
-	<define name="e.bioghist">
-		<element name="bioghist">
-			<ref name="a.common"/>
-			<ref name="a.localtype"/>
-			<ref name="a.encodinganalog"/>
-			<optional>
-				<ref name="e.head"/>
-			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<ref name="e.bioghist"/>
-				</choice>
-			</oneOrMore>
-		</element>
-	</define>
-
-	<define name="e.controlaccess">
-		<element name="controlaccess">
-			<ref name="a.common"/>
-			<ref name="a.localtype"/>
-			<ref name="a.encodinganalog"/>
-			<optional>
-				<ref name="e.head"/>
-			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<ref name="m.access"/>
-					<ref name="e.controlaccess"/>
-				</choice>
-			</oneOrMore>
-		</element>
-	</define>
-
-	<define name="e.odd">
-		<element name="odd">
-			<ref name="a.common"/>
-			<ref name="a.localtype"/>
-			<ref name="a.encodinganalog"/>
-			<optional>
-				<ref name="e.head"/>
-			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<ref name="e.odd"/>
-				</choice>
-			</oneOrMore>
-		</element>
-	</define>
-
-	<define name="e.scopecontent">
-		<element name="scopecontent">
-			<ref name="a.common"/>
-			<ref name="a.localtype"/>
-			<ref name="a.encodinganalog"/>
-			<optional>
-				<ref name="e.head"/>
-			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<ref name="e.scopecontent"/>
-				</choice>
-			</oneOrMore>
-		</element>
-	</define>
-
-	<define name="e.arrangement">
-		<element name="arrangement">
-			<ref name="a.common"/>
-			<ref name="a.localtype"/>
-			<ref name="a.encodinganalog"/>
-			<optional>
-				<ref name="e.head"/>
-			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<ref name="e.arrangement"/>
-				</choice>
-			</oneOrMore>
-		</element>
-	</define>
-
-	<define name="e.bibliography">
-		<element name="bibliography">
-			<ref name="a.common"/>
-			<ref name="a.localtype"/>
-			<ref name="a.encodinganalog"/>
-			<optional>
-				<ref name="e.head"/>
-			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<ref name="e.bibliography"/>
-					<ref name="e.archref"/>
-					<ref name="e.bibref"/>
-				</choice>
-			</oneOrMore>
-		</element>
-	</define>
-
+	
 	<define name="e.relatedmaterial">
 		<element name="relatedmaterial">
 			<ref name="a.common"/>
@@ -1260,7 +1181,24 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</oneOrMore>
 		</element>
 	</define>
-
+	
+	<define name="e.scopecontent">
+		<element name="scopecontent">
+			<ref name="a.common"/>
+			<ref name="a.localtype"/>
+			<ref name="a.encodinganalog"/>
+			<optional>
+				<ref name="e.head"/>
+			</optional>
+			<oneOrMore>
+				<choice>
+					<ref name="m.blocks"/>
+					<ref name="e.scopecontent"/>
+				</choice>
+			</oneOrMore>
+		</element>
+	</define>
+	
 	<define name="e.separatedmaterial">
 		<element name="separatedmaterial">
 			<ref name="a.common"/>
@@ -1280,26 +1218,25 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</element>
 	</define>
 
-	<define name="e.otherfindaid">
-		<element name="otherfindaid">
+	<define name="e.userestrict">
+		<element name="userestrict">
 			<ref name="a.common"/>
-			<ref name="a.localtype"/>
 			<ref name="a.encodinganalog"/>
+			<ref name="a.localtype"/>
 			<optional>
 				<ref name="e.head"/>
 			</optional>
 			<oneOrMore>
 				<choice>
 					<ref name="m.blocks"/>
-					<ref name="e.otherfindaid"/>
-					<ref name="e.archref"/>
-					<ref name="e.bibref"/>
+					<ref name="e.userestrict"/>
 				</choice>
 			</oneOrMore>
 		</element>
 	</define>
 
 	<!-- controlaccess elements -->
+	
 	<define name="e.corpname">
 		<element name="corpname">
 			<ref name="a.common"/>
@@ -1319,6 +1256,32 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.access"/>
 			<ref name="a.localtype"/>
 			<ref name="a.encodinganalog"/>
+			<ref name="a.relator"/>
+			<oneOrMore>
+				<ref name="e.part"/>
+			</oneOrMore>
+		</element>
+	</define>
+	
+	<define name="e.function">
+		<element name="function">
+			<ref name="a.common"/>
+			<ref name="a.access"/>
+			<ref name="a.encodinganalog"/>
+			<ref name="a.localtype"/>
+			<ref name="a.relator"/>
+			<oneOrMore>
+				<ref name="e.part"/>
+			</oneOrMore>
+		</element>
+	</define>
+	
+	<define name="e.genreform">
+		<element name="genreform">
+			<ref name="a.common"/>
+			<ref name="a.access"/>
+			<ref name="a.encodinganalog"/>
+			<ref name="a.localtype"/>
 			<ref name="a.relator"/>
 			<oneOrMore>
 				<ref name="e.part"/>
@@ -1360,13 +1323,13 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</oneOrMore>
 		</element>
 	</define>
-
-	<define name="e.persname">
-		<element name="persname">
+	
+	<define name="e.occupation">
+		<element name="occupation">
 			<ref name="a.common"/>
 			<ref name="a.access"/>
-			<ref name="a.localtype"/>
 			<ref name="a.encodinganalog"/>
+			<ref name="a.localtype"/>
 			<ref name="a.relator"/>
 			<oneOrMore>
 				<ref name="e.part"/>
@@ -1374,12 +1337,12 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</element>
 	</define>
 
-	<define name="e.occupation">
-		<element name="occupation">
+	<define name="e.persname">
+		<element name="persname">
 			<ref name="a.common"/>
 			<ref name="a.access"/>
-			<ref name="a.encodinganalog"/>
 			<ref name="a.localtype"/>
+			<ref name="a.encodinganalog"/>
 			<ref name="a.relator"/>
 			<oneOrMore>
 				<ref name="e.part"/>
@@ -1400,32 +1363,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</element>
 	</define>
 
-	<define name="e.genreform">
-		<element name="genreform">
-			<ref name="a.common"/>
-			<ref name="a.access"/>
-			<ref name="a.encodinganalog"/>
-			<ref name="a.localtype"/>
-			<ref name="a.relator"/>
-			<oneOrMore>
-				<ref name="e.part"/>
-			</oneOrMore>
-		</element>
-	</define>
-
-	<define name="e.function">
-		<element name="function">
-			<ref name="a.common"/>
-			<ref name="a.access"/>
-			<ref name="a.encodinganalog"/>
-			<ref name="a.localtype"/>
-			<ref name="a.relator"/>
-			<oneOrMore>
-				<ref name="e.part"/>
-			</oneOrMore>
-		</element>
-	</define>
-
 	<define name="e.title">
 		<element name="title">
 			<ref name="a.common"/>
@@ -1433,11 +1370,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.access"/>
 			<ref name="a.encodinganalog"/>
 			<ref name="a.relator"/>
-			<optional>
-				<attribute name="render">
-					<ref name="av.render"/>
-				</attribute>
-			</optional>
+			<ref name="a.render"/>
 			<oneOrMore>
 				<ref name="e.part"/>
 			</oneOrMore>
@@ -1453,9 +1386,81 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="m.mixed.basic"/>
 		</element>
 	</define>
+	
+	<!-- BLOCKS -->
 
-
+	<!-- p -->
+	
+	<define name="e.p">
+		<element name="p">
+			<ref name="a.common"/>
+			<ref name="m.para.content"/>
+		</element>
+	</define>
+	
+	<!-- blockquote -->
+	
+	<define name="e.blockquote">
+		<element name="blockquote">
+			<ref name="a.common"/>
+			<oneOrMore>
+				<choice>
+					<ref name="m.inter.noquote"/>
+					<ref name="e.p"/>
+				</choice>
+			</oneOrMore>
+		</element>
+	</define>
+	
+	<!-- chronlist -->
+	
+	<define name="e.chronlist">
+		<element name="chronlist">
+			<ref name="a.common"/>
+			<ref name="a.localtype"/>
+			<ref name="a.encodinganalog"/>
+			<optional>
+				<ref name="e.head"/>
+			</optional>
+			<optional>
+				<ref name="e.listhead"/>
+			</optional>
+			<oneOrMore>
+				<element name="chronitem">
+					<ref name="a.common"/>
+					<ref name="a.localtype"/>
+					<choice>
+						<ref name="e.datesingle"/>
+						<ref name="e.daterange"/>
+						<ref name="e.dateset"/>
+					</choice>
+					<choice>
+						
+						<group>
+							<optional>
+								<ref name="e.geogname"/>
+							</optional>
+							<ref name="e.event"/>
+						</group>
+						<oneOrMore>
+							<element name="chronitemset">
+								<ref name="a.common"/>
+								<zeroOrMore>
+									<ref name="e.geogname"/>
+								</zeroOrMore>
+								<oneOrMore>
+									<ref name="e.event"/>
+								</oneOrMore>
+							</element>
+						</oneOrMore>
+					</choice>
+				</element>
+			</oneOrMore>
+		</element>
+	</define>
+	
 	<!-- list -->
+	
 	<define name="e.list">
 		<element name="list">
 			<ref name="a.common"/>
@@ -1533,16 +1538,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="m.para.content"/>
 		</element>
 	</define>
-
-	<define name="e.head">
-		<element name="head">
-			<ref name="a.common"/>
-			<optional>
-				<attribute name="althead"/>
-			</optional>
-			<ref name="m.mixed.basic"/>
-		</element>
-	</define>
 	
 	<define name="e.listhead">
 		<element name="listhead">
@@ -1567,6 +1562,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</optional>
 		</element>
 	</define>
+	
 	<!-- table -->
 
 	<define name="e.table">
@@ -1585,14 +1581,10 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</attribute>
 			</optional>
 			<optional>
-				<attribute name="colsep">
-					<ref name="av.zeroorone"/>
-				</attribute>
+				<ref name="a.colsep"/>
 			</optional>
 			<optional>
-				<attribute name="rowsep">
-					<ref name="av.zeroorone"/>
-				</attribute>
+				<ref name="a.rowsep"/>
 			</optional>
 			<optional>
 				<attribute name="pgwide">
@@ -1609,14 +1601,10 @@ For these and/or other purposes and motivations, and without any expectation of 
 						<data type="NMTOKEN"/>
 					</attribute>
 					<optional>
-						<attribute name="colsep">
-							<ref name="av.zeroorone"/>
-						</attribute>
+						<ref name="a.colsep"/>
 					</optional>
 					<optional>
-						<attribute name="rowsep">
-							<ref name="av.zeroorone"/>
-						</attribute>
+						<ref name="a.rowsep"/>
 					</optional>
 					<optional>
 						<ref name="a.align"/>
@@ -1629,33 +1617,25 @@ For these and/or other purposes and motivations, and without any expectation of 
 								</attribute>
 							</optional>
 							<optional>
-								<attribute name="colname">
-									<data type="NMTOKEN"/>
-								</attribute>
+								<ref name="a.colname"/>
 							</optional>
 							<optional>
 								<attribute name="colwidth"/>
 							</optional>
 							<optional>
-								<attribute name="colsep">
-									<ref name="av.zeroorone"/>
-								</attribute>
+								<ref name="a.colsep"/>
 							</optional>
 							<optional>
-								<attribute name="rowsep">
-									<ref name="av.zeroorone"/>
-								</attribute>
+								<ref name="a.rowsep"/>
 							</optional>
 							<optional>
 								<ref name="a.align"/>
 							</optional>
 							<optional>
-								<attribute name="char"/>
+								<ref name="a.char"/>
 							</optional>
 							<optional>
-								<attribute name="charoff">
-									<data type="NMTOKEN"/>
-								</attribute>
+								<ref name="a.charoff"/>
 							</optional>
 							<empty/>
 						</element>
@@ -1681,9 +1661,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="row">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="rowsep">
-					<ref name="av.zeroorone"/>
-				</attribute>
+				<ref name="a.rowsep"/>
 			</optional>
 			<optional>
 				<ref name="a.valign"/>
@@ -1692,9 +1670,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<element name="entry">
 					<ref name="a.common"/>
 					<optional>
-						<attribute name="colname">
-							<data type="NMTOKEN"/>
-						</attribute>
+						<ref name="a.colname"/>
 					</optional>
 					<optional>
 						<attribute name="namest">
@@ -1712,25 +1688,19 @@ For these and/or other purposes and motivations, and without any expectation of 
 						</attribute>
 					</optional>
 					<optional>
-						<attribute name="colsep">
-							<ref name="av.zeroorone"/>
-						</attribute>
+						<ref name="a.colsep"/>
 					</optional>
 					<optional>
-						<attribute name="rowsep">
-							<ref name="av.zeroorone"/>
-						</attribute>
+						<ref name="a.rowsep"/>
 					</optional>
 					<optional>
 						<ref name="a.align"/>
 					</optional>
 					<optional>
-						<attribute name="char"/>
+						<ref name="a.char"/>
 					</optional>
 					<optional>
-						<attribute name="charoff">
-							<data type="NMTOKEN"/>
-						</attribute>
+						<ref name="a.charoff"/>
 					</optional>
 					<optional>
 						<ref name="a.valign"/>
@@ -1753,7 +1723,163 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</element>
 	</define>
 	
-	<!-- mixed content -->
+	<!-- language blocks -->
+	
+	<define name="e.language">
+		<element name="language">
+			<ref name="a.common"/>
+			<ref name="a.encodinganalog"/>
+			<ref name="a.label"/>
+			<optional>
+				<attribute name="langcode"/>
+			</optional>
+			<text/>
+		</element>
+	</define>
+	
+	<define name="e.languageset">
+		<element name="languageset">
+			<ref name="a.common"/>
+			<ref name="a.encodinganalog"/>
+			<oneOrMore>
+				<ref name="e.language"/>
+			</oneOrMore>
+			<oneOrMore>
+				<ref name="e.script"/>
+			</oneOrMore>
+			<optional>
+				<ref name="e.descriptivenote"/>
+			</optional>
+		</element>
+	</define>
+	
+	<define name="e.script">
+		<element name="script">
+			<ref name="a.common"/>
+			<ref name="a.encodinganalog"/>
+			<ref name="a.label"/>
+			<optional>
+				<attribute name="scriptcode"/>
+			</optional>
+			<text/>
+		</element>
+	</define>
+	
+	<!-- physdescstructured blocks -->
+	
+	<define name="e.dimensions">
+		<element name="dimensions">
+			<ref name="a.common"/>
+			<ref name="a.encodinganalog"/>
+			<ref name="a.localtype"/>
+			<optional>
+				<attribute name="unit"/>
+			</optional>
+			<zeroOrMore>
+				<choice>
+					<ref name="m.mixed.basic"/>
+					<ref name="e.dimensions"/>
+				</choice>
+			</zeroOrMore>
+		</element>
+	</define>
+	
+	<define name="e.physfacet">
+		<element name="physfacet">
+			<ref name="a.common"/>
+			<ref name="a.encodinganalog"/>
+			<ref name="a.access.no.normal"/>
+			<ref name="a.localtype"/>
+			<ref name="m.mixed.basic.plus.access"/>
+		</element>
+	</define>
+	
+	<!-- other blocks -->
+	
+	<define name="e.address">
+		<element name="address">
+			<ref name="a.common"/>
+			<oneOrMore>
+				<element name="addressline">
+					<ref name="a.common"/>
+					<ref name="a.localtype"/>
+					<ref name="m.mixed.basic"/>
+				</element>
+			</oneOrMore>
+		</element>
+	</define>
+	
+	<define name="e.archref">
+		<element name="archref">
+			<ref name="a.common"/>
+			<ref name="a.encodinganalog"/>
+			<ref name="m.mixed.basic.plus.access"/>
+		</element>
+	</define>
+	
+	<define name="e.bibref">
+		<element name="bibref">
+			<ref name="a.common"/>
+			<ref name="a.encodinganalog"/>
+			<ref name="m.mixed.basic.plus.access"/>
+		</element>
+	</define>
+	
+	<define name="e.descriptivenote">
+		<element name="descriptivenote">
+			<ref name="a.common"/>
+			<ref name="a.encodinganalog"/>
+			<oneOrMore>
+				<ref name="e.p"/>
+			</oneOrMore>
+		</element>
+	</define>
+	
+	<define name="e.event">
+		<element name="event">
+			<ref name="a.common"/>
+			<ref name="a.localtype"/>
+			<ref name="m.para.content"/>
+		</element>
+	</define>
+	
+	<define name="e.footnote">
+		<element name="footnote">
+			<ref name="a.common"/>
+			<ref name="a.localtype"/>
+			<optional>
+				<attribute name="show">
+					<choice>
+						<value>embed</value>
+						<value>new</value>
+					</choice>
+				</attribute>
+			</optional>
+			<optional>
+				<attribute name="actuate">
+					<choice>
+						<value>onload</value>
+						<value>onrequest</value>
+					</choice>
+				</attribute>
+			</optional>
+			<oneOrMore>
+				<ref name="m.blocks"/>
+			</oneOrMore>
+		</element>
+	</define>
+	
+	<define name="e.head">
+		<element name="head">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="althead"/>
+			</optional>
+			<ref name="m.mixed.basic"/>
+		</element>
+	</define>
+	
+	<!-- MIXED CONTENT -->
 
 	<define name="e.abbr">
 		<element name="abbr">
@@ -1762,6 +1888,27 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<attribute name="expan"/>
 			</optional>
 			<text/>
+		</element>
+	</define>
+	
+	<define name="e.date">
+		<element name="date">
+			<ref name="a.common"/>
+			<ref name="a.localtype"/>
+			<ref name="am.dates.era"/>
+			<ref name="am.dates.calendar"/>
+			<ref name="am.date.normal"/>
+			<ref name="a.certainty"/>
+			<ref name="a.encodinganalog"/>
+			<ref name="m.mixed.basic"/>
+		</element>
+	</define>
+	
+	<define name="e.emph">
+		<element name="emph">
+			<ref name="a.common"/>
+			<ref name="a.render"/>
+			<ref name="m.mixed.basic"/>
 		</element>
 	</define>
 	
@@ -1775,26 +1922,10 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</element>
 	</define>
 
-	<define name="e.emph">
-		<element name="emph">
-			<ref name="a.common"/>
-			<optional>
-				<attribute name="render">
-					<ref name="av.render"/>
-				</attribute>
-			</optional>
-			<ref name="m.mixed.basic"/>
-		</element>
-	</define>
-
 	<define name="e.foreign">
 		<element name="foreign">
 			<ref name="a.common"/>
-			<optional>
-				<attribute name="render">
-					<ref name="av.render"/>
-				</attribute>
-			</optional>
+			<ref name="a.render"/>
 			<text/>
 		</element>
 	</define>
@@ -1825,7 +1956,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.ptr">
 		<element name="ptr">
 			<ref name="a.common.empty"/>
-			<ref name="a.internal.ptr"/>
+			<ref name="am.internal.ptr"/>
 			<empty/>
 		</element>
 	</define>
@@ -1833,7 +1964,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="e.ref">
 		<element name="ref">
 			<ref name="a.common"/>
-			<ref name="a.internal.ptr"/>
+			<ref name="am.internal.ptr"/>
 			<zeroOrMore>
 				<choice>
 					<text/>
@@ -1852,25 +1983,8 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</element>
 	</define>
 
-
-	<!-- bibref and archref -->
-	<define name="e.bibref">
-		<element name="bibref">
-			<ref name="a.common"/>
-			<ref name="a.encodinganalog"/>
-			<ref name="m.mixed.basic.plus.access"/>
-		</element>
-	</define>
-
-	<define name="e.archref">
-		<element name="archref">
-			<ref name="a.common"/>
-			<ref name="a.encodinganalog"/>
-			<ref name="m.mixed.basic.plus.access"/>
-		</element>
-	</define>
-
-	<!-- dsc -->
+	<!-- DSC -->
+	
 	<define name="e.dsc">
 		<element name="dsc">
 			<ref name="a.common"/>
@@ -2081,154 +2195,14 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</element>
 	</define>
 
-	<!-- blocks -->
-	
-	<define name="e.language">
-		<element name="language">
-			<ref name="a.common"/>
-			<ref name="a.encodinganalog"/>
-			<ref name="a.label"/>
-			<optional>
-				<attribute name="langcode"/>
-			</optional>
-			<text/>
-		</element>
-	</define>
-	
-	<define name="e.script">
-		<element name="script">
-			<ref name="a.common"/>
-			<ref name="a.encodinganalog"/>
-			<ref name="a.label"/>
-			<optional>
-				<attribute name="scriptcode"/>
-			</optional>
-			<text/>
-		</element>
-	</define>
-	
-	<define name="e.languageset">
-		<element name="languageset">
-			<ref name="a.common"/>
-			<ref name="a.encodinganalog"/>
-			<oneOrMore>
-				<ref name="e.language"/>
-			</oneOrMore>
-			<oneOrMore>
-				<ref name="e.script"/>
-			</oneOrMore>
-			<optional>
-				<ref name="e.descriptivenote"/>
-			</optional>
-		</element>
-
-	</define>
-
-	<define name="e.address">
-		<element name="address">
-			<ref name="a.common"/>
-			<oneOrMore>
-				<element name="addressline">
-					<ref name="a.common"/>
-					<ref name="a.localtype"/>
-					<ref name="m.mixed.basic"/>
-				</element>
-			</oneOrMore>
-		</element>
-	</define>
-
-	<define name="e.descriptivenote">
-		<element name="descriptivenote">
-			<ref name="a.common"/>
-			<ref name="a.encodinganalog"/>
-			<oneOrMore>
-				<ref name="e.p"/>
-			</oneOrMore>
-		</element>
-	</define>
-
-	<define name="e.p">
-		<element name="p">
-			<ref name="a.common"/>
-			<ref name="m.para.content"/>
-		</element>
-	</define>
-
-	<define name="e.footnote">
-		<element name="footnote">
-			<ref name="a.common"/>
-			<ref name="a.localtype"/>
-			<optional>
-				<attribute name="show">
-					<choice>
-						<value>embed</value>
-						<value>new</value>
-					</choice>
-				</attribute>
-			</optional>
-			<optional>
-				<attribute name="actuate">
-					<choice>
-						<value>onload</value>
-						<value>onrequest</value>
-					</choice>
-				</attribute>
-			</optional>
-			<oneOrMore>
-				<ref name="m.blocks"/>
-			</oneOrMore>
-		</element>
-	</define>
-
-	<define name="e.event">
-		<element name="event">
-			<ref name="a.common"/>
-			<ref name="a.localtype"/>
-			<ref name="m.para.content"/>
-		</element>
-	</define>
-	
-	<!-- physdescstructured elements -->
-	
-	<define name="e.dimensions">
-		<element name="dimensions">
-			<ref name="a.common"/>
-			<ref name="a.encodinganalog"/>
-			<ref name="a.localtype"/>
-			<optional>
-				<attribute name="unit"/>
-			</optional>
-			<zeroOrMore>
-				<choice>
-					<ref name="m.mixed.basic"/>
-					<ref name="e.dimensions"/>
-				</choice>
-			</zeroOrMore>
-		</element>
-	</define>
-	
-	<define name="e.physfacet">
-		<element name="physfacet">
-			<ref name="a.common"/>
-			<ref name="a.encodinganalog"/>
-			<ref name="a.access.no.normal"/>
-			<ref name="a.localtype"/>
-			<ref name="m.mixed.basic.plus.access"/>
-		</element>
-	</define>
-
-	<!-- relations -->
+	<!-- RELATIONS -->
 
 	<define name="e.relations">
 		<element name="relations">
 			<ref name="a.common"/>
 			<ref name="a.encodinganalog"/>
 			<ref name="a.localtype"/>
-			<optional>
-				<attribute name="base">
-					<data type="anyURI"/>
-				</attribute>
-			</optional>
+			<ref name="a.base"/>
 			<oneOrMore>
 				<element name="relation">
 					<ref name="a.common"/>
@@ -2255,11 +2229,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 							<ref name="a.common"/>
 							<ref name="a.encodinganalog"/>
 							<ref name="a.localtype"/>
-							<optional>
-								<attribute name="transliteration">
-									<data type="NMTOKEN"/>
-								</attribute>
-							</optional>
+							<ref name="a.transliteration"/>
 							<text/>
 						</element>
 					</zeroOrMore>
@@ -2304,9 +2274,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</element>
 	</define>
 
-
-
-	<!-- MODELS -->
+	<!-- ELEMENT MODELS -->
 
 	<define name="m.blocks">
 		<choice>
@@ -2318,63 +2286,13 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="m.inter">
 		<choice>
 			<ref name="m.inter.noquote"/>
-			<element name="blockquote">
-				<ref name="a.common"/>
-				<oneOrMore>
-					<choice>
-						<ref name="m.inter.noquote"/>
-						<ref name="e.p"/>
-					</choice>
-				</oneOrMore>
-			</element>
-
+			<ref name="e.blockquote"/>
 		</choice>
 	</define>
 
 	<define name="m.inter.noquote">
 		<choice>
-			<element name="chronlist">
-				<ref name="a.common"/>
-				<ref name="a.localtype"/>
-				<ref name="a.encodinganalog"/>
-				<optional>
-					<ref name="e.head"/>
-				</optional>
-				<optional>
-					<ref name="e.listhead"/>
-				</optional>
-				<oneOrMore>
-					<element name="chronitem">
-						<ref name="a.common"/>
-						<ref name="a.localtype"/>
-						<choice>
-							<ref name="e.datesingle"/>
-							<ref name="e.daterange"/>
-							<ref name="e.dateset"/>
-						</choice>
-						<choice>
-
-							<group>
-								<optional>
-									<ref name="e.geogname"/>
-								</optional>
-								<ref name="e.event"/>
-							</group>
-							<oneOrMore>
-								<element name="chronitemset">
-									<ref name="a.common"/>
-									<zeroOrMore>
-										<ref name="e.geogname"/>
-									</zeroOrMore>
-									<oneOrMore>
-										<ref name="e.event"/>
-									</oneOrMore>
-								</element>
-							</oneOrMore>
-						</choice>
-					</element>
-				</oneOrMore>
-			</element>
+			<ref name="e.chronlist"/>
 			<ref name="e.list"/>
 			<ref name="e.table"/>
 		</choice>
@@ -2415,15 +2333,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="e.function"/>
 			<ref name="e.title"/>
 		</choice>
-	</define>
-
-	<define name="m.para.content">
-		<zeroOrMore>
-			<choice>
-				<ref name="m.mixed.basic.plus.access"/>
-				<ref name="e.list"/>
-			</choice>
-		</zeroOrMore>
 	</define>
 
 	<define name="m.datesingle">
@@ -2497,11 +2406,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="a.label"/>
 				<ref name="a.localtype"/>
 				<ref name="a.encodinganalog"/>
-				<optional>
-					<attribute name="parent">
-						<data type="IDREFS"/>
-					</attribute>
-				</optional>
+				<ref name="a.parent"/>
 				<optional>
 					<attribute name="containerid">
 						<data type="NMTOKEN"/>
@@ -2566,11 +2471,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="a.localtype"/>
 				<ref name="a.label"/>
 				<ref name="a.encodinganalog"/>
-				<optional>
-					<attribute name="parent">
-						<data type="IDREFS"/>
-					</attribute>
-				</optional>
+				<ref name="a.parent"/>
 				<ref name="m.mixed.basic"/>
 			</element>
 
@@ -2587,7 +2488,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="am.countrycode"/>
 				<optional>
 					<attribute name="repositorycode">
-						<ref name="data.repositorycode"/>
+						<data type="token"/>
 					</attribute>
 				</optional>
 				<ref name="a.identifier"/>
@@ -2606,6 +2507,8 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="e.ref"/>
 		</choice>
 	</define>
+	
+	<!-- MIXED CONTENT MODELS -->
 
 	<define name="m.mixed.basic">
 		<zeroOrMore>
@@ -2646,16 +2549,25 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</choice>
 		</zeroOrMore>
 	</define>
+	
+	<define name="m.para.content">
+		<zeroOrMore>
+			<choice>
+				<ref name="m.mixed.basic.plus.access"/>
+				<ref name="e.list"/>
+			</choice>
+		</zeroOrMore>
+	</define>
+	
+	<!-- ATTRIBUTE MODELS -->
 
-	<define name="a.internal.ptr">
+	<define name="am.internal.ptr">
 		<optional>
 			<attribute name="target">
 				<data type="IDREF"/>
 			</attribute>
 		</optional>
-		<optional>
-			<attribute name="xpointer"/>
-		</optional>
+		<ref name="a.link.xpointer"/>
 		<ref name="am.simplelink"/>
 	</define>
 
@@ -2679,8 +2591,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.link.actuate"/>
 		</optional>
 	</define>
-
-	<!-- ATTRIBUTE MODELS -->
+	
 	<define name="a.common.empty">
 		<optional>
 			<attribute name="id">
@@ -2722,9 +2633,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="a.desc.c">
 		<ref name="a.common"/>
 		<optional>
-			<attribute name="level">
-				<ref name="av.level"/>
-			</attribute>
+			<ref name="a.level"/>
 		</optional>
 		<ref name="a.desc.base"/>
 	</define>
@@ -2750,58 +2659,39 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<ref name="a.identifier"/>
 	</define>
 	
-	<define name="a.identifier">
-		<optional>
-			<attribute name="identifier"/>
-		</optional>
-	</define>
-
-	<define name="a.relator">
-		<optional>
-			<attribute name="relator"/>
-		</optional>
-	</define>
-
-	<define name="a.label">
-		<optional>
-			<attribute name="label"/>
-		</optional>
-	</define>
-
-	<define name="a.localtype">
-		<optional>
-			<attribute name="localtype"/>
-		</optional>
-	</define>
-
-	<define name="a.encodinganalog">
-		<optional>
-			<attribute name="encodinganalog"/>
-		</optional>
-	</define>
-
-	<define name="a.link.href">
-		<attribute name="href">
-			<data type="anyURI"/>
+	<!-- ATTRIBUTE DEFINITIONS -->
+	
+	<!-- xlink-modelled attributes -->
+	
+	<define name="a.link.actuate">
+		<attribute name="actuate">
+			<choice>
+				<value>onload</value>
+				<value>onrequest</value>
+				<value>other</value>
+				<value>none</value>
+			</choice>
 		</attribute>
 	</define>
-
-	<define name="a.link.role">
-		<attribute name="linkrole">
-			<data type="anyURI"/>
-		</attribute>
-	</define>
-
+	
 	<define name="a.link.arcrole">
 		<attribute name="arcrole">
 			<data type="anyURI"/>
 		</attribute>
 	</define>
-
-	<define name="a.link.title">
-		<attribute name="linktitle"/>
+	
+	<define name="a.link.href">
+		<attribute name="href">
+			<data type="anyURI"/>
+		</attribute>
 	</define>
-
+	
+	<define name="a.link.role">
+		<attribute name="linkrole">
+			<data type="anyURI"/>
+		</attribute>
+	</define>
+	
 	<define name="a.link.show">
 		<attribute name="show">
 			<choice>
@@ -2813,70 +2703,49 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</choice>
 		</attribute>
 	</define>
-
-	<define name="a.link.actuate">
-		<attribute name="actuate">
-			<choice>
-				<value>onload</value>
-				<value>onrequest</value>
-				<value>other</value>
-				<value>none</value>
-			</choice>
-		</attribute>
+	
+	<define name="a.link.title">
+		<attribute name="linktitle"/>
 	</define>
-
-
-	<define name="am.dates.calendar">
+	
+	<!-- other linking-related attributes-->
+	
+	<define name="a.base">
 		<optional>
-			<attribute name="calendar">
-				<data type="NMTOKEN"/>
+			<attribute name="base">
+				<data type="anyURI"/>
 			</attribute>
 		</optional>
 	</define>
-
-	<define name="am.dates.era">
+	
+	<define name="a.identifier">
 		<optional>
-			<attribute name="era">
-				<data type="NMTOKEN"/>
+			<attribute name="identifier"/>
+		</optional>
+	</define>
+	
+	<define name="a.parent">
+		<optional>
+			<attribute name="parent">
+				<data type="IDREFS"/>
 			</attribute>
 		</optional>
 	</define>
-
-	<define name="am.date.normal">
+	
+	<define name="a.relator">
 		<optional>
-			<attribute name="normal">
-				<data type="token"/>
-			</attribute>
+			<attribute name="relator"/>
 		</optional>
 	</define>
-
-	<define name="data.repositorycode">
-		<data type="token"/>
-	</define>
-
-	<define name="am.countrycode">
+	
+	<define name="a.link.xpointer">
 		<optional>
-			<attribute name="countrycode">
-				<data type="NMTOKEN"/>
-			</attribute>
+			<attribute name="xpointer"/>
 		</optional>
 	</define>
-
-	<define name="a.lastdatetimeverified">
-		<attribute name="lastdatetimeverified">
-			<data type="token"/>
-		</attribute>
-	</define>
-
-	<define name="a.coverage">
-		<attribute name="coverage">
-			<choice>
-				<value>whole</value>
-				<value>part</value>
-			</choice>
-		</attribute>
-	</define>
-
+	
+	<!-- display attributes -->
+	
 	<define name="a.align">
 		<attribute name="align">
 			<choice>
@@ -2888,7 +2757,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</choice>
 		</attribute>
 	</define>
-
+	
 	<define name="a.valign">
 		<attribute name="valign">
 			<choice>
@@ -2898,42 +2767,193 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</choice>
 		</attribute>
 	</define>
+	
+	<define name="a.render">
+		<optional>
+			<attribute name="render">
+				<choice>
+					<value>altrender</value>
+					<value>bold</value>
+					<value>bolddoublequote</value>
+					<value>bolditalic</value>
+					<value>boldsinglequote</value>
+					<value>boldsmcaps</value>
+					<value>boldunderline</value>
+					<value>doublequote</value>
+					<value>italic</value>
+					<value>nonproport</value>
+					<value>singlequote</value>
+					<value>smcaps</value>
+					<value>sub</value>
+					<value>super</value>
+					<value>underline</value>
+				</choice>
+			</attribute>
+		</optional>
+	</define>
+	
+	<define name="a.label">
+		<optional>
+			<attribute name="label"/>
+		</optional>
+	</define>
+	
+	<!-- date attributes -->
+	
+	<define name="am.dates.calendar">
+		<optional>
+			<attribute name="calendar">
+				<data type="NMTOKEN"/>
+			</attribute>
+		</optional>
+	</define>
+	
+	<define name="am.dates.era">
+		<optional>
+			<attribute name="era">
+				<data type="NMTOKEN"/>
+			</attribute>
+		</optional>
+	</define>
+	
+	<define name="am.date.normal">
+		<optional>
+			<attribute name="normal">
+				<data type="token"/>
+			</attribute>
+		</optional>
+	</define>
+	
+	<define name="a.lastdatetimeverified">
+		<attribute name="lastdatetimeverified">
+			<data type="token"/>
+		</attribute>
+	</define>
+	
+	<define name="a.datechar">
+		<optional>
+			<attribute name="datechar"/>
+		</optional>
+	</define>
+	
+	<define name="a.certainty">
+		<optional>
+			<attribute name="certainty"/>
+		</optional>
+	</define>
+	
+	<!-- typing attributes -->
 
-	<!-- ATTRIBUTE VALUE LISTS -->
-
-	<define name="av.level">
-		<choice>
-			<value>class</value>
-			<value>collection</value>
-			<value>file</value>
-			<value>fonds</value>
-			<value>item</value>
-			<value>otherlevel</value>
-			<value>recordgrp</value>
-			<value>series</value>
-			<value>subfonds</value>
-			<value>subgrp</value>
-			<value>subseries</value>
-		</choice>
+	<define name="a.encodinganalog">
+		<optional>
+			<attribute name="encodinganalog"/>
+		</optional>
+	</define>
+	
+	<define name="a.level">
+		<attribute name="level">
+			<choice>
+				<value>class</value>
+				<value>collection</value>
+				<value>file</value>
+				<value>fonds</value>
+				<value>item</value>
+				<value>otherlevel</value>
+				<value>recordgrp</value>
+				<value>series</value>
+				<value>subfonds</value>
+				<value>subgrp</value>
+				<value>subseries</value>
+			</choice>
+		</attribute>
+	</define>
+	
+	<define name="a.localtype">
+		<optional>
+			<attribute name="localtype"/>
+		</optional>
+	</define>
+	
+	<define name="a.relatedencoding">
+		<optional>
+			<attribute name="relatedencoding"/>
+		</optional>
+	</define>
+	
+	<define name="a.unitdatetype">
+		<optional>
+			<attribute name="unitdatetype">
+				<choice>
+					<value>bulk</value>
+					<value>inclusive</value>
+				</choice>
+			</attribute>
+		</optional>
+	</define>
+	
+	<!-- table attributes -->
+	
+	<define name="a.char">
+		<attribute name="char"/>
+	</define>
+	
+	<define name="a.charoff">
+		<attribute name="charoff">
+			<data type="NMTOKEN"/>
+		</attribute>
+	</define>
+	
+	<define name="a.colname">
+		<attribute name="colname">
+			<data type="NMTOKEN"/>
+		</attribute>
+	</define>
+	
+	<define name="a.colsep">
+		<attribute name="colsep">
+			<ref name="av.zeroorone"/>
+		</attribute>
+	</define>
+	
+	<define name="a.rowsep">
+		<attribute name="rowsep">
+			<ref name="av.zeroorone"/>
+		</attribute>
+	</define>
+	
+	<!-- other attributes -->
+	
+	<define name="a.coverage">
+		<attribute name="coverage">
+			<choice>
+				<value>whole</value>
+				<value>part</value>
+			</choice>
+		</attribute>
+	</define>
+	
+	<define name="am.countrycode">
+		<optional>
+			<attribute name="countrycode">
+				<data type="NMTOKEN"/>
+			</attribute>
+		</optional>
+	</define>
+	
+	<define name="a.transliteration">
+		<optional>
+			<attribute name="transliteration">
+				<data type="NMTOKEN"/>
+			</attribute>
+		</optional>
 	</define>
 
-	<define name="av.render">
+	<!-- ATTRIBUTE VALUE LISTS -->
+	
+	<define name="av.yesorno">
 		<choice>
-			<value>altrender</value>
-			<value>bold</value>
-			<value>bolddoublequote</value>
-			<value>bolditalic</value>
-			<value>boldsinglequote</value>
-			<value>boldsmcaps</value>
-			<value>boldunderline</value>
-			<value>doublequote</value>
-			<value>italic</value>
-			<value>nonproport</value>
-			<value>singlequote</value>
-			<value>smcaps</value>
-			<value>sub</value>
-			<value>super</value>
-			<value>underline</value>
+			<value>yes</value>
+			<value>no</value>
 		</choice>
 	</define>
 
@@ -2941,13 +2961,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<choice>
 			<value>0</value>
 			<value>1</value>
-		</choice>
-	</define>
-
-	<define name="av.yesorno">
-		<choice>
-			<value>yes</value>
-			<value>no</value>
 		</choice>
 	</define>
 
