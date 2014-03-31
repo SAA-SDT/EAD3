@@ -1399,8 +1399,23 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="m.mixed.basic"/>
 		</element>
 	</define>
+	
+	<!-- BLOCKS -->
+	
+	<!-- head -->
+	
+	<define name="e.head">
+		<element name="head">
+			<ref name="a.common"/>
+			<optional>
+				<attribute name="althead"/>
+			</optional>
+			<ref name="m.mixed.basic"/>
+		</element>
+	</define>
 
 	<!-- list -->
+	
 	<define name="e.list">
 		<element name="list">
 			<ref name="a.common"/>
@@ -1476,16 +1491,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="item">
 			<ref name="a.common"/>
 			<ref name="m.para.content"/>
-		</element>
-	</define>
-
-	<define name="e.head">
-		<element name="head">
-			<ref name="a.common"/>
-			<optional>
-				<attribute name="althead"/>
-			</optional>
-			<ref name="m.mixed.basic"/>
 		</element>
 	</define>
 	
