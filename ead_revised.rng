@@ -1398,6 +1398,53 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</element>
 	</define>
 	
+	<!-- chronlist -->
+	
+	<define name="e.chronlist">
+		<element name="chronlist">
+			<ref name="a.common"/>
+			<ref name="a.localtype"/>
+			<ref name="a.encodinganalog"/>
+			<optional>
+				<ref name="e.head"/>
+			</optional>
+			<optional>
+				<ref name="e.listhead"/>
+			</optional>
+			<oneOrMore>
+				<element name="chronitem">
+					<ref name="a.common"/>
+					<ref name="a.localtype"/>
+					<choice>
+						<ref name="e.datesingle"/>
+						<ref name="e.daterange"/>
+						<ref name="e.dateset"/>
+					</choice>
+					<choice>
+						
+						<group>
+							<optional>
+								<ref name="e.geogname"/>
+							</optional>
+							<ref name="e.event"/>
+						</group>
+						<oneOrMore>
+							<element name="chronitemset">
+								<ref name="a.common"/>
+								<zeroOrMore>
+									<ref name="e.geogname"/>
+								</zeroOrMore>
+								<oneOrMore>
+									<ref name="e.event"/>
+								</oneOrMore>
+							</element>
+						</oneOrMore>
+					</choice>
+				</element>
+			</oneOrMore>
+		</element>
+	</define>
+	
 	<!-- list -->
 	
 	<define name="e.list">
@@ -2234,54 +2281,12 @@ For these and/or other purposes and motivations, and without any expectation of 
 					</choice>
 				</oneOrMore>
 			</element>
-
 		</choice>
 	</define>
 
 	<define name="m.inter.noquote">
 		<choice>
-			<element name="chronlist">
-				<ref name="a.common"/>
-				<ref name="a.localtype"/>
-				<ref name="a.encodinganalog"/>
-				<optional>
-					<ref name="e.head"/>
-				</optional>
-				<optional>
-					<ref name="e.listhead"/>
-				</optional>
-				<oneOrMore>
-					<element name="chronitem">
-						<ref name="a.common"/>
-						<ref name="a.localtype"/>
-						<choice>
-							<ref name="e.datesingle"/>
-							<ref name="e.daterange"/>
-							<ref name="e.dateset"/>
-						</choice>
-						<choice>
-
-							<group>
-								<optional>
-									<ref name="e.geogname"/>
-								</optional>
-								<ref name="e.event"/>
-							</group>
-							<oneOrMore>
-								<element name="chronitemset">
-									<ref name="a.common"/>
-									<zeroOrMore>
-										<ref name="e.geogname"/>
-									</zeroOrMore>
-									<oneOrMore>
-										<ref name="e.event"/>
-									</oneOrMore>
-								</element>
-							</oneOrMore>
-						</choice>
-					</element>
-				</oneOrMore>
-			</element>
+			<ref name="e.chronlist"/>
 			<ref name="e.list"/>
 			<ref name="e.table"/>
 		</choice>
