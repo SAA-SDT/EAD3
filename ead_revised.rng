@@ -2526,7 +2526,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="am.countrycode"/>
 				<optional>
 					<attribute name="repositorycode">
-						<ref name="data.repositorycode"/>
+						<data type="token"/>
 					</attribute>
 				</optional>
 				<ref name="a.identifier"/>
@@ -2791,10 +2791,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<data type="token"/>
 			</attribute>
 		</optional>
-	</define>
-
-	<define name="data.repositorycode">
-		<data type="token"/>
 	</define>
 
 	<define name="am.countrycode">
