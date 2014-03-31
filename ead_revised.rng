@@ -2506,6 +2506,8 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="e.ref"/>
 		</choice>
 	</define>
+	
+	<!-- mixed content models -->
 
 	<define name="m.mixed.basic">
 		<zeroOrMore>
@@ -2546,6 +2548,8 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</choice>
 		</zeroOrMore>
 	</define>
+	
+	<!-- ATTRIBUTE MODELS -->
 
 	<define name="am.internal.ptr">
 		<optional>
@@ -2577,8 +2581,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.link.actuate"/>
 		</optional>
 	</define>
-
-	<!-- ATTRIBUTE MODELS -->
 	
 	<define name="a.common.empty">
 		<optional>
