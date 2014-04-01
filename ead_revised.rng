@@ -2625,6 +2625,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 
 	<define name="a.desc.c">
 		<ref name="a.common"/>
+		<ref name="a.base"/>
 		<optional>
 			<ref name="a.level"/>
 		</optional>
