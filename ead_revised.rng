@@ -2196,6 +2196,67 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.encodinganalog"/>
 			<ref name="a.localtype"/>
 			<ref name="a.base"/>
+			<optional>
+				<ref name="a.link.show"/>				
+			</optional>
+			<optional>
+				<ref name="a.link.actuate"/>				
+			</optional>
+			<oneOrMore>
+				<ref name="m.blocks"/>
+			</oneOrMore>
+		</element>
+	</define>
+
+	<define name="e.event">
+		<element name="event">
+			<ref name="a.common"/>
+			<ref name="a.localtype"/>
+			<ref name="m.para.content"/>
+		</element>
+	</define>
+	
+	<!-- physdescstructured elements -->
+	
+	<define name="e.dimensions">
+		<element name="dimensions">
+			<ref name="a.common"/>
+			<ref name="a.encodinganalog"/>
+			<ref name="a.localtype"/>
+			<optional>
+				<attribute name="unit"/>
+			</optional>
+			<zeroOrMore>
+				<choice>
+					<ref name="m.mixed.basic"/>
+					<ref name="e.dimensions"/>
+				</choice>
+			</zeroOrMore>
+		</element>
+	</define>
+	
+	<define name="e.physfacet">
+		<element name="physfacet">
+			<ref name="a.common"/>
+			<ref name="a.encodinganalog"/>
+			<ref name="a.access.no.normal"/>
+			<ref name="a.localtype"/>
+			<ref name="m.mixed.basic.plus.access"/>
+		</element>
+	</define>
+
+	<!-- relations -->
+
+	<define name="e.relations">
+		<element name="relations">
+			<ref name="a.common"/>
+			<ref name="a.encodinganalog"/>
+			<ref name="a.localtype"/>
+			<optional>
+				<attribute name="base">
+					<data type="anyURI"/>
+				</attribute>
+			</optional>
 			<oneOrMore>
 				<element name="relation">
 					<ref name="a.common"/>
