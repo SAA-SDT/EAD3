@@ -1,0 +1,91 @@
+ abbr : token
+ actuate : onload | onrequest | other | none
+ align : left | right | center | justify | char
+ althead : token
+ altrender : token
+ approximate : av.yesorno
+ arcrole : anyURI
+ audience : external | internal
+ base : anyURI
+ base : anyURI
+ calendar : NMTOKEN
+ certainty : NMTOKEN
+ char : token
+ charoff : NMTOKEN
+ colname : NMTOKEN
+ colnum : NMTOKEN
+ cols : NMTOKEN
+ colsep : av.zeroorone
+ colwidth : token
+ containerid : NMTOKEN
+ coordinatesystem : token
+ countrycode : NMTOKEN
+ countryencoding : iso3166-1 | othercountryencoding
+ coverage : whole | part
+ daotype : borndigital | derived | unknown | otherdaotype
+ datechar : token
+ dateencoding : iso8601 | otherdateencoding
+ dsctype : analyticover | combined | in-depth | otherdsctype
+ encodinganalog : token
+ entityref : ENTITY
+ era : NMTOKEN
+ expan : string
+ frame : top | bottom | topbot | all | sides | none
+ href : token
+ id : ID
+ identifier : token
+ instanceurl : anyURI
+ label : string
+ lang : NMTOKEN
+ langcode : NMTOKEN
+ lastdatetimeverified : token
+ level : class | collection | file | fonds | item | otherlevel | recordgrp | series | subfonds | subgrp | subseries
+ linkrole : anyURI
+ linktitle : token
+ listtype : deflist | unordered | ordered
+ localtype : token
+ mark : disc | circle | square | decimal | decimal-leading-zero | lower-roman | upper-roman | lower-greek | lower-latin | upper-latin | armenian | georgian | lower-alpha | upper-alpha | none | inherit
+ morerows : NMTOKEN
+ nameend : NMTOKEN
+ namest : NMTOKEN
+ normal : token
+ normal : token
+ normal : token
+ notafter : token
+ notbefore : token
+ numeration : arabic | upperalpha | loweralpha | upperroman | lowerroman
+ otherdaotype : 
+ otherdsctype : NMTOKEN
+ otherlevel : NMTOKEN
+ otherphysdescstructuredtype : 
+ otherrelationtype : string
+ parent : IDREFS
+ pgwide : av.zeroorone
+ physdescstructuredtype : carrier | materialtype | spaceoccupied | otherphysdescstructuredtype
+ relatedencoding : token
+ relationtype : cpfrelation | resourcerelation | functionrelation | otherrelationtype
+ relator : token
+ render : altrender | bold | bolddoublequote | bolditalic | boldsinglequote | boldsmcaps | boldunderline | doublequote | italic | nonproport | singlequote | smcaps | sub | super | underline
+ repositorycode : token
+ repositoryencoding : iso15511 | otherrepositoryencoding
+ rowsep : av.zeroorone
+ rules : NMTOKEN
+ script : NMTOKEN
+ scriptcode : NMTOKEN
+ scriptencoding : iso15924 | otherscriptencoding
+ show : new | replace | embed | other | none
+ source : token
+ standarddate : token
+ standarddatetime : token
+ target : IDREF
+ transliteration : NMTOKEN
+ unit : token
+ unit : token
+ unitdatetype : bulk | inclusive
+ valign : top | middle | bottom
+ value : created | revised | deleted | cancelled | derived | updated | unknown
+ value : human | machine | unknown
+ value : inprocess | approved | published
+ value : revised | deleted | new | deletedsplit | deletedmerged | deletedreplaced | cancelled | derived
+ xpointer : token
+langencoding : iso639-1 | iso639-2b | iso639-3 | otherlangencoding
