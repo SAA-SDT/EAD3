@@ -80,7 +80,6 @@
  target : IDREF
  transliteration : NMTOKEN
  unit : token
- unit : token
  unitdatetype : bulk | inclusive
  valign : top | middle | bottom
  value : created | revised | deleted | cancelled | derived | updated | unknown
