@@ -791,7 +791,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.encodinganalog"/>
 			<ref name="a.localtype"/>
 			<optional>
-				<attribute name="normal"/>
+				<attribute name="normal">
+					<data type="token"/>
+				</attribute>
 			</optional>
 			<ref name="m.mixed.basic.plus.access"/>
 		</element>
@@ -1306,7 +1308,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<element name="geographiccoordinates">
 					<ref name="a.common"/>
 					<attribute name="coordinatesystem">
-						<text/>
+						<data type="token"/>
 					</attribute>
 					<text/>
 				</element>
@@ -1623,7 +1625,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 								<ref name="a.colname"/>
 							</optional>
 							<optional>
-								<attribute name="colwidth"/>
+								<attribute name="colwidth">
+									<data type="token"/>
+								</attribute>
 							</optional>
 							<optional>
 								<ref name="a.colsep"/>
@@ -1734,7 +1738,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.encodinganalog"/>
 			<ref name="a.label"/>
 			<optional>
-				<attribute name="langcode"/>
+				<attribute name="langcode">
+					<data type="NMTOKEN"/>
+				</attribute>
 			</optional>
 			<text/>
 		</element>
@@ -1762,7 +1768,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.encodinganalog"/>
 			<ref name="a.label"/>
 			<optional>
-				<attribute name="scriptcode"/>
+				<attribute name="scriptcode">
+					<data type="NMTOKEN"/>
+				</attribute>
 			</optional>
 			<text/>
 		</element>
@@ -1776,7 +1784,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.encodinganalog"/>
 			<ref name="a.localtype"/>
 			<optional>
-				<attribute name="unit"/>
+				<attribute name="unit">
+					<data type="token"/>
+				</attribute>
 			</optional>
 			<zeroOrMore>
 				<choice>
@@ -1866,7 +1876,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="head">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="althead"/>
+				<attribute name="althead">
+					<data type="token"/>
+				</attribute>
 			</optional>
 			<ref name="m.mixed.basic"/>
 		</element>
@@ -1878,7 +1890,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="abbr">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="expan"/>
+				<attribute name="expan">
+					<data type="string"/>
+				</attribute>
 			</optional>
 			<text/>
 		</element>
@@ -1909,7 +1923,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<element name="expan">
 			<ref name="a.common"/>
 			<optional>
-				<attribute name="abbr"/>
+				<attribute name="abbr">
+					<data type="token"/>
+				</attribute>
 			</optional>
 			<text/>
 		</element>
@@ -2224,7 +2240,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.encodinganalog"/>
 			<ref name="a.localtype"/>
 			<optional>
-				<attribute name="unit"/>
+				<attribute name="unit">
+					<data type="token"/>
+				</attribute>
 			</optional>
 			<zeroOrMore>
 				<choice>
@@ -2388,7 +2406,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="e.title"/>
 		</choice>
 	</define>
-
+<!-- date attrs token for now -->
 	<define name="m.datesingle">
 		<optional>
 			<attribute name="standarddate">
@@ -2653,7 +2671,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</attribute>
 		</optional>
 		<optional>
-			<attribute name="altrender"/>
+			<attribute name="altrender">
+				<data type="token"/>
+			</attribute>
 		</optional>
 		<optional>
 			<attribute name="audience">
@@ -2668,10 +2688,14 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="a.common">
 		<ref name="a.common.empty"/>
 		<optional>
-			<attribute name="lang"/>
+			<attribute name="lang">
+				<data type="NMTOKEN"/>
+			</attribute>
 		</optional>
 		<optional>
-			<attribute name="script"/>
+			<attribute name="script">
+				<data type="NMTOKEN"/>
+			</attribute>
 		</optional>
 	</define>
 
@@ -2696,7 +2720,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="a.access">
 		<ref name="a.access.no.normal"/>
 		<optional>
-			<attribute name="normal"/>
+			<attribute name="normal">
+				<data type="token"/>
+			</attribute>
 		</optional>
 	</define>
 
@@ -2737,7 +2763,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 	
 	<define name="a.link.href">
 		<attribute name="href">
-			<data type="anyURI"/>
+			<data type="token"/>
 		</attribute>
 	</define>
 	
@@ -2760,7 +2786,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 	</define>
 	
 	<define name="a.link.title">
-		<attribute name="linktitle"/>
+		<attribute name="linktitle">
+			<data type="token"/>
+		</attribute>
 	</define>
 	
 	<!-- other linking-related attributes-->
@@ -2775,7 +2803,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 	
 	<define name="a.identifier">
 		<optional>
-			<attribute name="identifier"/>
+			<attribute name="identifier">
+				<data type="token"/>
+			</attribute>
 		</optional>
 	</define>
 	
@@ -2789,13 +2819,17 @@ For these and/or other purposes and motivations, and without any expectation of 
 	
 	<define name="a.relator">
 		<optional>
-			<attribute name="relator"/>
+			<attribute name="relator">
+				<data type="token"/>
+			</attribute>
 		</optional>
 	</define>
 	
 	<define name="a.link.xpointer">
 		<optional>
-			<attribute name="xpointer"/>
+			<attribute name="xpointer">
+				<data type="token"/>
+			</attribute>
 		</optional>
 	</define>
 	
@@ -2849,7 +2883,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 	
 	<define name="a.label">
 		<optional>
-			<attribute name="label"/>
+			<attribute name="label">
+				<data type="string"/>
+			</attribute>
 		</optional>
 	</define>
 	
@@ -2887,13 +2923,17 @@ For these and/or other purposes and motivations, and without any expectation of 
 	
 	<define name="a.datechar">
 		<optional>
-			<attribute name="datechar"/>
+			<attribute name="datechar">
+				<data type="token"/>
+			</attribute>
 		</optional>
 	</define>
 	
 	<define name="a.certainty">
 		<optional>
-			<attribute name="certainty"/>
+			<attribute name="certainty">
+				<data type="NMTOKEN"/>
+			</attribute>
 		</optional>
 	</define>
 	
@@ -2901,7 +2941,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 
 	<define name="a.encodinganalog">
 		<optional>
-			<attribute name="encodinganalog"/>
+			<attribute name="encodinganalog">
+				<data type="token"/>
+			</attribute>
 		</optional>
 	</define>
 	
@@ -2925,13 +2967,17 @@ For these and/or other purposes and motivations, and without any expectation of 
 	
 	<define name="a.localtype">
 		<optional>
-			<attribute name="localtype"/>
+			<attribute name="localtype">
+				<data type="token"/>
+			</attribute>
 		</optional>
 	</define>
 	
 	<define name="a.relatedencoding">
 		<optional>
-			<attribute name="relatedencoding"/>
+			<attribute name="relatedencoding">
+				<data type="token"/>
+			</attribute>
 		</optional>
 	</define>
 	
@@ -2949,7 +2995,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<!-- table attributes -->
 	
 	<define name="a.char">
-		<attribute name="char"/>
+		<attribute name="char">
+			<data type="token"/>
+		</attribute>
 	</define>
 	
 	<define name="a.charoff">
