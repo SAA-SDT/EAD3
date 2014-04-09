@@ -39,7 +39,7 @@
                 test="every $l in (@lang | @langcode) satisfies normalize-space($l) = $language-code-lookup"
                 > The <name/> element's lang or langcode attribute should contain a value from the <value-of select="$active-language-code-key"/> codelist. </assert>
         </rule>
-
+<!--
         <let name="countrycodes"
             value="document('http://www.iso.org/iso/home/standards/country_codes/country_names_and_code_elements_xml')"/>
         <rule context="@countrycode">
@@ -48,7 +48,7 @@
                 > The <name/> attribute should contain a code from the ISO 3166-1 codelist.
             </assert>
         </rule>
-
+-->
         <let name="scriptcodes"
             value="document('http://anonscm.debian.org/gitweb/?p=iso-codes/iso-codes.git;a=blob_plain;f=iso_15924/iso_15924.xml;hb=HEAD')"/>
         <rule context="@scriptcode | @script">
@@ -65,4 +65,13 @@
             </assert>
         </rule>
     </pattern>
+    
+    <pattern id="dates">
+        <rule context="ead:unitdate[@normal] | ead:date[@normal]">
+            <assert test="matches(@normal, '(\-?(0|1|2)([0-9]{3})(((01|02|03|04|05|06|07|08|09|10|11|12)((0[1-9])|((1|2)[0-9])|(3[0-1])))|\-((01|02|03|04|05|06|07|08|09|10|11|12)(\-((0[1-9])|((1|2)[0-9])|(3[0-1])))?))?)(/\-?(0|1|2)([0-9]{3})(((01|02|03|04|05|06|07|08|09|10|11|12)((0[1-9])|((1|2)[0-9])|(3[0-1])))|\-((01|02|03|04|05|06|07|08|09|10|11|12)(\-((0[1-9])|((1|2)[0-9])|(3[0-1])))?))?)?')">
+                <name/> normal attribute must be iso8601 date
+            </assert>
+        </rule>
+    </pattern>
+    
 </schema>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ead>
+<?xml-model href="schematron/ead.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<ead  xmlns="http://ead3.archivists.org/schema/">
     <eadheader countryencoding="iso3166-1" dateencoding="iso8601"
         langencoding="iso639-2b" repositoryencoding="iso15511"
         scriptencoding="iso15924">
@@ -90,7 +91,7 @@
             <physloc>physloc ||| </physloc>
             <repository>
                 <corpname>corpname ||| </corpname> in repository ||| </repository>
-            <unitdate calendar="gregorian" era="ce">unitdate ||| </unitdate>
+            <unitdate calendar="gregorian" era="ce" normal="1982">unitdate ||| </unitdate>
             <unitid> unitid ||| </unitid>
             <unittitle> unittitle ||| </unittitle>
         </did>
