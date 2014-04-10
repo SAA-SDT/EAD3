@@ -60,8 +60,23 @@
 
     <pattern id="co-occurrence-constraints">
         <rule context="*[@level = 'otherlevel']">
-            <assert test="normalize-space(@otherlevel)"> If the value of a <emph>level</emph>
-                attribute is "otherlevel', then the <emph>otherlevel</emph> attribute must be used.
+            <assert test="normalize-space(@otherlevel)"> If the value of a <emph>level</emph> attribute is "otherlevel', then the <emph>otherlevel</emph> attribute must be used.
+            </assert>
+        </rule>
+        <rule context="*[@physdescstructuredtype = 'otherphysdescstructuredtype']">
+            <assert test="normalize-space(@otherphysdescstructuredtype)"> If the value of a <emph>physdescstructuredtype</emph> attribute is "otherphysdescstructuredtype', then the <emph>otherphysdescstructuredtype</emph> attribute must be used.
+            </assert>
+        </rule>
+        <rule context="*[@daotype = 'otherdaotype']">
+            <assert test="normalize-space(@otherdaotype)"> If the value of a <emph>daotype</emph> attribute is "otherdaotype', then the <emph>otherdaotype</emph> attribute must be used.
+            </assert>
+        </rule>
+        <rule context="*[@dsctype = 'otherdsctype']">
+            <assert test="normalize-space(@otherdsctype)"> If the value of a <emph>dsctype</emph> attribute is "otherdsctype', then the <emph>otherdsctype</emph> attribute must be used.
+            </assert>
+        </rule>
+        <rule context="*[@otherrelation = 'otherrelationtype']">
+            <assert test="normalize-space(@otherrelationtype)"> If the value of a <emph>otherrelation</emph> attribute is "otherrelationtype', then the <emph>otherrelationtype</emph> attribute must be used.
             </assert>
         </rule>
     </pattern>
@@ -69,7 +84,7 @@
     <pattern id="dates">
         <rule context="ead:unitdate[@normal] | ead:date[@normal]">
             <assert test="matches(@normal, '(\-?(0|1|2)([0-9]{3})(((01|02|03|04|05|06|07|08|09|10|11|12)((0[1-9])|((1|2)[0-9])|(3[0-1])))|\-((01|02|03|04|05|06|07|08|09|10|11|12)(\-((0[1-9])|((1|2)[0-9])|(3[0-1])))?))?)(/\-?(0|1|2)([0-9]{3})(((01|02|03|04|05|06|07|08|09|10|11|12)((0[1-9])|((1|2)[0-9])|(3[0-1])))|\-((01|02|03|04|05|06|07|08|09|10|11|12)(\-((0[1-9])|((1|2)[0-9])|(3[0-1])))?))?)?')">
-                <name/> normal attribute must be iso8601 date
+                The <emph>normal</emph> attribute of <name/> must be a iso8601 date.
             </assert>
         </rule>
     </pattern>

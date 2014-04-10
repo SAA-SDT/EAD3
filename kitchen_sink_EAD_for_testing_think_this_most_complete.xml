@@ -306,7 +306,7 @@
         <scopecontent>
             <p>p in scopecontent, no head||| </p>
         </scopecontent>
-        <dsc type="combined">
+        <dsc dsctype="otherdsctype">
             <c level="series">
                 <did>
                     <abstract>abstract in did in series level c ||| </abstract>
