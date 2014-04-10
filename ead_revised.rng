@@ -356,7 +356,20 @@ For these and/or other purposes and motivations, and without any expectation of 
 							<ref name="a.encodinganalog"/>
 							<optional>
 								<attribute name="standarddatetime">
-									<data type="token"/>
+										<choice>
+											<data type="date">
+												<param name="maxInclusive">2099-12-31</param>
+											</data>
+											<data type="gYear">
+												<param name="maxInclusive">2099</param>
+											</data>
+											<data type="gYearMonth">
+												<param name="maxInclusive">2099-12</param>
+											</data>
+											<data type="dateTime">
+												<param name="maxInclusive">2099-12-31T23:59:59</param>
+											</data>
+										</choice>
 								</attribute>
 							</optional>
 							<text/>
@@ -2361,17 +2374,47 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<define name="m.datesingle">
 		<optional>
 			<attribute name="standarddate">
-				<data type="token"/>
+				<choice>
+					<data type="date">
+						<param name="maxInclusive">2099-12-31</param>
+					</data>
+					<data type="gYear">
+						<param name="maxInclusive">2099</param>
+					</data>
+					<data type="gYearMonth">
+						<param name="maxInclusive">2099-12</param>
+					</data>
+				</choice>
 			</attribute>
 		</optional>
 		<optional>
 			<attribute name="notbefore">
-				<data type="token"/>
+				<choice>
+					<data type="date">
+						<param name="maxInclusive">2099-12-31</param>
+					</data>
+					<data type="gYear">
+						<param name="maxInclusive">2099</param>
+					</data>
+					<data type="gYearMonth">
+						<param name="maxInclusive">2099-12</param>
+					</data>
+				</choice>
 			</attribute>
 		</optional>
 		<optional>
 			<attribute name="notafter">
-				<data type="token"/>
+				<choice>
+					<data type="date">
+						<param name="maxInclusive">2099-12-31</param>
+					</data>
+					<data type="gYear">
+						<param name="maxInclusive">2099</param>
+					</data>
+					<data type="gYearMonth">
+						<param name="maxInclusive">2099-12</param>
+					</data>
+				</choice>
 			</attribute>
 		</optional>
 		<ref name="m.mixed.basic"/>
@@ -2868,7 +2911,20 @@ For these and/or other purposes and motivations, and without any expectation of 
 
 	<define name="a.lastdatetimeverified">
 		<attribute name="lastdatetimeverified">
-			<data type="token"/>
+			<choice>
+				<data type="date">
+					<param name="maxInclusive">2099-12-31</param>
+				</data>
+				<data type="gYear">
+					<param name="maxInclusive">2099</param>
+				</data>
+				<data type="gYearMonth">
+					<param name="maxInclusive">2099-12</param>
+				</data>
+				<data type="dateTime">
+					<param name="maxInclusive">2099-12-31T23:59:59</param>
+				</data>
+			</choice>
 		</attribute>
 	</define>
 
