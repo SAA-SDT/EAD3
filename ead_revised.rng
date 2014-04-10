@@ -1966,7 +1966,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 
 	<define name="e.ptr">
 		<element name="ptr">
-			<ref name="a.common.empty"/>
+			<ref name="am.common.empty"/>
 			<ref name="am.internal.ptr"/>
 			<empty/>
 		</element>
@@ -2615,7 +2615,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</optional>
 	</define>
 
-	<define name="a.common.empty">
+	<define name="am.common.empty">
 		<optional>
 			<attribute name="id">
 				<data type="ID"/>
@@ -2637,7 +2637,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 	</define>
 
 	<define name="am.common">
-		<ref name="a.common.empty"/>
+		<ref name="am.common.empty"/>
 		<optional>
 			<attribute name="lang">
 				<data type="NMTOKEN"/>
