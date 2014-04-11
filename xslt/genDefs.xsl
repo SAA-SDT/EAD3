@@ -66,7 +66,7 @@
             <xsl:text>|</xsl:text>
         </xsl:for-each>
         <!-- apply-templates on each define whose name matches the name of a descendant ref which starts with "m."-->
-        <xsl:for-each select=".//ref[starts-with(@name, 'm.')]">
+        <xsl:for-each select=".//ref[starts-with(@name, 'm.')][ancestor::element[1] = current()/element]">
             <xsl:variable name="modelName" select="@name"/>
             <xsl:message select="$modelName"/>
             <xsl:apply-templates select="//define[@name = $modelName]" mode="nested"/>
