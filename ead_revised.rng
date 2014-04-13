@@ -51,21 +51,8 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="am.common"/>
 			<ref name="a.relatedencoding"/>
 			<ref name="a.base"/>
-
 			<ref name="e.control"/>
-
-			<element name="archdesc">
-				<ref name="am.common"/>
-				<ref name="a.localtype"/>
-				<ref name="a.relatedencoding"/>
-				<ref name="am.desc.base"/>
-				<ref name="a.level"/>
-				<ref name="a.base"/>
-				<ref name="e.did"/>
-				<zeroOrMore>
-					<ref name="m.desc.base.full"/>
-				</zeroOrMore>
-			</element>
+			<ref name="e.archdesc"/>
 		</element>
 	</define>
 
@@ -558,6 +545,23 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="m.mixed.basic"/>
 		</element>
 	</define>
+
+<!-- ARCHDESC -->
+	
+	<define name="e.archdesc">
+		<element name="archdesc">
+		<ref name="am.common"/>
+		<ref name="a.localtype"/>
+		<ref name="a.relatedencoding"/>
+		<ref name="am.desc.base"/>
+		<ref name="a.level"/>
+		<ref name="a.base"/>
+		<ref name="e.did"/>
+		<zeroOrMore>
+			<ref name="m.desc.base.full"/>
+		</zeroOrMore>
+	</element></define>
+
 
 	<!-- did -->
 
