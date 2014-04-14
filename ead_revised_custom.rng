@@ -48,8 +48,6 @@
             </element>
         </define>
 
-
-
         <define name="e.custodhist">
             <element name="custodhist">
                 <ref name="m.base.content.bare"/>
