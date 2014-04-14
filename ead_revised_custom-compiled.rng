@@ -1,52 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- 
-	
-Creative Commons Legal Code
-CC0 1.0 Universal
+<?xml version="1.0" encoding="UTF-8"?><grammar xmlns="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <rng:div xmlns:rng="http://relaxng.org/ns/structure/1.0">
+<!--include "ead_revised_defs.rng"-->
 
-    CREATIVE COMMONS CORPORATION IS NOT A LAW FIRM AND DOES NOT PROVIDE LEGAL SERVICES. DISTRIBUTION OF THIS DOCUMENT DOES NOT CREATE AN ATTORNEY-CLIENT RELATIONSHIP. CREATIVE COMMONS PROVIDES THIS INFORMATION ON AN "AS-IS" BASIS. CREATIVE COMMONS MAKES NO WARRANTIES REGARDING THE USE OF THIS DOCUMENT OR THE INFORMATION OR WORKS PROVIDED HEREUNDER, AND DISCLAIMS LIABILITY FOR DAMAGES RESULTING FROM THE USE OF THIS DOCUMENT OR THE INFORMATION OR WORKS PROVIDED HEREUNDER. 
-    
-Statement of Purpose
-
-The laws of most jurisdictions throughout the world automatically confer exclusive Copyright and Related Rights (defined below) upon the creator and subsequent owner(s) (each and all, an "owner") of an original work of authorship and/or a database (each, a "Work").
-
-Certain owners wish to permanently relinquish those rights to a Work for the purpose of contributing to a commons of creative, cultural and scientific works ("Commons") that the public can reliably and without fear of later claims of infringement build upon, modify, incorporate in other works, reuse and redistribute as freely as possible in any form whatsoever and for any purposes, including without limitation commercial purposes. These owners may contribute to the Commons to promote the ideal of a free culture and the further production of creative, cultural and scientific works, or to gain reputation or greater distribution for their Work in part through the use and efforts of others.
-
-For these and/or other purposes and motivations, and without any expectation of additional consideration or compensation, the person associating CC0 with a Work (the "Affirmer"), to the extent that he or she is an owner of Copyright and Related Rights in the Work, voluntarily elects to apply CC0 to the Work and publicly distribute the Work under its terms, with knowledge of his or her Copyright and Related Rights in the Work and the meaning and intended legal effect of CC0 on those rights.
-
-1. Copyright and Related Rights. A Work made available under CC0 may be protected by copyright and related or neighboring rights ("Copyright and Related Rights"). Copyright and Related Rights include, but are not limited to, the following:
-
-    the right to reproduce, adapt, distribute, perform, display, communicate, and translate a Work;
-    moral rights retained by the original author(s) and/or performer(s);
-    publicity and privacy rights pertaining to a person's image or likeness depicted in a Work;
-    rights protecting against unfair competition in regards to a Work, subject to the limitations in paragraph 4(a), below;
-    rights protecting the extraction, dissemination, use and reuse of data in a Work;
-    database rights (such as those arising under Directive 96/9/EC of the European Parliament and of the Council of 11 March 1996 on the legal protection of databases, and under any national implementation thereof, including any amended or successor version of such directive); and
-    other similar, equivalent or corresponding rights throughout the world based on applicable law or treaty, and any national implementations thereof.
-    
-2. Waiver. To the greatest extent permitted by, but not in contravention of, applicable law, Affirmer hereby overtly, fully, permanently, irrevocably and unconditionally waives, abandons, and surrenders all of Affirmer's Copyright and Related Rights and associated claims and causes of action, whether now known or unknown (including existing as well as future claims and causes of action), in the Work (i) in all territories worldwide, (ii) for the maximum duration provided by applicable law or treaty (including future time extensions), (iii) in any current or future medium and for any number of copies, and (iv) for any purpose whatsoever, including without limitation commercial, advertising or promotional purposes (the "Waiver"). Affirmer makes the Waiver for the benefit of each member of the public at large and to the detriment of Affirmer's heirs and successors, fully intending that such Waiver shall not be subject to revocation, rescission, cancellation, termination, or any other legal or equitable action to disrupt the quiet enjoyment of the Work by the public as contemplated by Affirmer's express Statement of Purpose.
-
-3. Public License Fallback. Should any part of the Waiver for any reason be judged legally invalid or ineffective under applicable law, then the Waiver shall be preserved to the maximum extent permitted taking into account Affirmer's express Statement of Purpose. In addition, to the extent the Waiver is so judged Affirmer hereby grants to each affected person a royalty-free, non transferable, non sublicensable, non exclusive, irrevocable and unconditional license to exercise Affirmer's Copyright and Related Rights in the Work (i) in all territories worldwide, (ii) for the maximum duration provided by applicable law or treaty (including future time extensions), (iii) in any current or future medium and for any number of copies, and (iv) for any purpose whatsoever, including without limitation commercial, advertising or promotional purposes (the "License"). The License shall be deemed effective as of the date CC0 was applied by Affirmer to the Work. Should any part of the License for any reason be judged legally invalid or ineffective under applicable law, such partial invalidity or ineffectiveness shall not invalidate the remainder of the License, and in such case Affirmer hereby affirms that he or she will not (i) exercise any of his or her remaining Copyright and Related Rights in the Work or (ii) assert any associated claims and causes of action with respect to the Work, in either case contrary to Affirmer's express Statement of Purpose.
-
-4. Limitations and Disclaimers.
-
-    No trademark or patent rights held by Affirmer are waived, abandoned, surrendered, licensed or otherwise affected by this document.
-    Affirmer offers the Work as-is and makes no representations or warranties of any kind concerning the Work, express, implied, statutory or otherwise, including without limitation warranties of title, merchantability, fitness for a particular purpose, non infringement, or the absence of latent or other defects, accuracy, or the present or absence of errors, whether or not discoverable, all to the greatest extent permissible under applicable law.
-    Affirmer disclaims responsibility for clearing rights of other persons that may apply to the Work or any use thereof, including without limitation any person's Copyright and Related Rights in the Work. Further, Affirmer disclaims responsibility for obtaining any necessary consents, permissions or other rights required for any use of the Work.
-    Affirmer understands and acknowledges that Creative Commons is not a party to this document and has no duty or obligation with respect to this CC0 or use of the Work.
-    
-    
--->
-<grammar xmlns="http://relaxng.org/ns/structure/1.0" ns="http://ead3.archivists.org/schema/"
-	datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
-
-	<start>
-		<ref name="e.ead"/>
-	</start>
+        
+    <rng:div ns="http://ead3.archivists.org/schema/" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
 
 	<!-- ELEMENTS -->
 
-	<define name="e.ead">
+	<rng:define name="e.ead">
 		<element name="ead">
 			<ref name="am.common"/>
 			<ref name="a.relatedencoding"/>
@@ -54,11 +15,11 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="e.control"/>
 			<ref name="e.archdesc"/>
 		</element>
-	</define>
+	</rng:define>
 
 	<!-- control -->
 
-	<define name="e.control">
+	<rng:define name="e.control">
 		<element name="control">
 			<ref name="am.common"/>
 			<ref name="a.encodinganalog"/>
@@ -427,9 +388,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</element>
 			</optional>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.titleproper">
+	<rng:define name="e.titleproper">
 		<element name="titleproper">
 			<ref name="am.common"/>
 			<ref name="a.localtype"/>
@@ -437,54 +398,54 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.encodinganalog"/>
 			<ref name="m.mixed.basic"/>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.subtitle">
+	<rng:define name="e.subtitle">
 		<element name="subtitle">
 			<ref name="am.common"/>
 			<ref name="a.localtype"/>
 			<ref name="a.encodinganalog"/>
 			<ref name="m.mixed.basic"/>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.author">
+	<rng:define name="e.author">
 		<element name="author">
 			<ref name="am.common"/>
 			<ref name="a.localtype"/>
 			<ref name="a.encodinganalog"/>
 			<ref name="m.mixed.basic"/>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.sponsor">
+	<rng:define name="e.sponsor">
 		<element name="sponsor">
 			<ref name="am.common"/>
 			<ref name="a.localtype"/>
 			<ref name="a.encodinganalog"/>
 			<ref name="m.mixed.basic"/>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.edition">
+	<rng:define name="e.edition">
 		<element name="edition">
 			<ref name="am.common"/>
 			<ref name="a.localtype"/>
 			<ref name="a.encodinganalog"/>
 			<ref name="m.mixed.basic"/>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.publisher">
+	<rng:define name="e.publisher">
 		<element name="publisher">
 			<ref name="am.common"/>
 			<ref name="a.localtype"/>
 			<ref name="a.encodinganalog"/>
 			<ref name="m.mixed.basic"/>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.controlnote">
+	<rng:define name="e.controlnote">
 		<element name="controlnote">
 			<ref name="am.common"/>
 			<ref name="a.localtype"/>
@@ -493,9 +454,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="m.blocks"/>
 			</oneOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.maintenanceagency">
+	<rng:define name="e.maintenanceagency">
 		<element name="maintenanceagency">
 			<ref name="am.common"/>
 			<ref name="a.encodinganalog"/>
@@ -532,9 +493,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="e.descriptivenote"/>
 			</optional>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.citation">
+	<rng:define name="e.citation">
 		<element name="citation">
 			<ref name="am.common"/>
 			<ref name="a.encodinganalog"/>
@@ -544,11 +505,11 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</optional>
 			<ref name="m.mixed.basic"/>
 		</element>
-	</define>
+	</rng:define>
 
 <!-- ARCHDESC -->
 	
-	<define name="e.archdesc">
+	<rng:define name="e.archdesc">
 		<element name="archdesc">
 		<ref name="am.common"/>
 		<ref name="a.localtype"/>
@@ -563,12 +524,12 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="e.dsc"/>
 			</choice>
 		</zeroOrMore>
-	</element></define>
+	</element></rng:define>
 
 
 	<!-- did -->
 
-	<define name="e.did">
+	<rng:define name="e.did">
 		<element name="did">
 			<ref name="am.common"/>
 			<ref name="a.encodinganalog"/>
@@ -579,19 +540,19 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="m.did"/>
 			</oneOrMore>
 		</element>
-	</define>
+	</rng:define>
 	
 	
-	<define name="e.abstract">
+	<rng:define name="e.abstract">
      <element name="abstract">
 		<ref name="am.common"/>
 		<ref name="a.localtype"/>
 		<ref name="a.label"/>
 		<ref name="a.encodinganalog"/>
 		<ref name="m.mixed.basic.plus.access"/>
-	</element></define>
+	</element></rng:define>
 	
-	<define name="e.container">
+	<rng:define name="e.container">
 		<element name="container">
 		<ref name="am.common"/>
 		<ref name="a.label"/>
@@ -605,10 +566,10 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</optional>
 		<ref name="m.mixed.basic"/>
 	</element>
-	</define>
+	</rng:define>
 	
 
-	<define name="e.dao">
+	<rng:define name="e.dao">
 		<element name="dao">
 			<ref name="am.common"/>
 			<ref name="a.encodinganalog"/>
@@ -640,9 +601,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="e.descriptivenote"/>
 			</optional>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.daoset">
+	<rng:define name="e.daoset">
 		<element name="daoset">
 			<ref name="am.common"/>
 			<ref name="a.localtype"/>
@@ -658,9 +619,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="e.descriptivenote"/>
 			</optional>
 		</element>
-	</define>
+	</rng:define>
 	
-	<define name="e.didnote">
+	<rng:define name="e.didnote">
 		<element name="didnote">
 		<ref name="am.common"/>
 		<ref name="a.localtype"/>
@@ -668,9 +629,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<ref name="a.encodinganalog"/>
 		<ref name="m.mixed.basic"/>
 	</element>
-	</define>
+	</rng:define>
 	
-	<define name="e.langmaterial">
+	<rng:define name="e.langmaterial">
 		<element name="langmaterial">
 		<ref name="am.common"/>
 		<ref name="a.label"/>
@@ -684,10 +645,10 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<optional>
 			<ref name="e.descriptivenote"/>
 		</optional>
-	</element></define>
+	</element></rng:define>
 	
 
-	<define name="e.materialspec">
+	<rng:define name="e.materialspec">
 		<element name="materialspec">
 			<ref name="am.common"/>
 			<ref name="a.label"/>
@@ -695,9 +656,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.localtype"/>
 			<ref name="m.mixed.basic"/>
 		</element>
-	</define>
+	</rng:define>
 	
-	<define name="e.parallelphysdescset">
+	<rng:define name="e.parallelphysdescset">
 		<element name="parallelphysdescset">
 		<ref name="am.common"/>
 		<ref name="a.label"/>
@@ -706,18 +667,18 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<oneOrMore>
 			<ref name="e.physdescstructured"/>
 		</oneOrMore>
-	</element></define>
+	</element></rng:define>
 	
-	<define name="e.physdesc">
+	<rng:define name="e.physdesc">
 		<element name="physdesc">
 		<ref name="am.common"/>
 		<ref name="a.localtype"/>
 		<ref name="a.label"/>
 		<ref name="a.encodinganalog"/>
 		<ref name="m.mixed.basic"/>
-	</element></define>
+	</element></rng:define>
 	
-	<define name="e.physloc">
+	<rng:define name="e.physloc">
 		<element name="physloc">
 			<ref name="am.common"/>
 			<ref name="a.localtype"/>
@@ -726,9 +687,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.parent"/>
 			<ref name="m.mixed.basic"/>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.origination">
+	<rng:define name="e.origination">
 		<element name="origination">
 			<ref name="am.common"/>
 			<ref name="a.localtype"/>
@@ -743,9 +704,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</choice>
 			</oneOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.physdescstructured">
+	<rng:define name="e.physdescstructured">
 		<element name="physdescstructured">
 			<ref name="am.common"/>
 			<ref name="a.label"/>
@@ -788,9 +749,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="e.descriptivenote"/>
 			</optional>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.repository">
+	<rng:define name="e.repository">
 		<element name="repository">
 			<ref name="am.common"/>
 			<ref name="a.localtype"/>
@@ -808,9 +769,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="e.address"/>
 			</optional>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.unitdate">
+	<rng:define name="e.unitdate">
 		<element name="unitdate">
 			<ref name="am.common"/>
 			<ref name="a.label"/>
@@ -823,9 +784,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.encodinganalog"/>
 			<ref name="m.mixed.basic"/>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.unitdatestructured">
+	<rng:define name="e.unitdatestructured">
 		<element name="unitdatestructured">
 			<ref name="am.common"/>
 			<ref name="a.label"/>
@@ -841,11 +802,11 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="e.dateset"/>
 			</choice>
 		</element>
-	</define>
+	</rng:define>
 
 	
 
-	<define name="e.unittitle">
+	<rng:define name="e.unittitle">
 		<element name="unittitle">
 			<ref name="am.common"/>
 			<ref name="a.label"/>
@@ -858,9 +819,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</optional>
 			<ref name="m.mixed.basic.plus.access"/>
 		</element>
-	</define>
+	</rng:define>
 	
-	<define name="e.unitid">
+	<rng:define name="e.unitid">
 		<element name="unitid">
 			<ref name="am.common"/>
 			<ref name="a.localtype"/>
@@ -877,11 +838,11 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.encodinganalog"/>
 			<ref name="m.mixed.basic"/>
 		</element>
-	</define>
+	</rng:define>
 
 	<!-- archdesc notes -->
 
-	<define name="e.accessrestrict">
+	<rng:define name="e.accessrestrict">
 		<element name="accessrestrict">
 			<ref name="am.common"/>
 			<ref name="a.encodinganalog"/>
@@ -896,9 +857,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</choice>
 			</oneOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.accruals">
+	<rng:define name="e.accruals">
 		<element name="accruals">
 			<ref name="am.common"/>
 			<ref name="a.localtype"/>
@@ -913,9 +874,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</choice>
 			</oneOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.acqinfo">
+	<rng:define name="e.acqinfo">
 		<element name="acqinfo">
 			<ref name="am.common"/>
 			<ref name="a.localtype"/>
@@ -930,9 +891,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</choice>
 			</oneOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.altformavail">
+	<rng:define name="e.altformavail">
 		<element name="altformavail">
 			<ref name="am.common"/>
 			<ref name="a.encodinganalog"/>
@@ -947,9 +908,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</choice>
 			</oneOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.appraisal">
+	<rng:define name="e.appraisal">
 		<element name="appraisal">
 			<ref name="am.common"/>
 			<ref name="a.localtype"/>
@@ -964,9 +925,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</choice>
 			</oneOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.arrangement">
+	<rng:define name="e.arrangement">
 		<element name="arrangement">
 			<ref name="am.common"/>
 			<ref name="a.localtype"/>
@@ -981,9 +942,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</choice>
 			</oneOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.bibliography">
+	<rng:define name="e.bibliography">
 		<element name="bibliography">
 			<ref name="am.common"/>
 			<ref name="a.localtype"/>
@@ -1000,9 +961,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</choice>
 			</oneOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.bioghist">
+	<rng:define name="e.bioghist">
 		<element name="bioghist">
 			<ref name="am.common"/>
 			<ref name="a.localtype"/>
@@ -1017,27 +978,11 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</choice>
 			</oneOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.controlaccess">
-		<element name="controlaccess">
-			<ref name="am.common"/>
-			<ref name="a.localtype"/>
-			<ref name="a.encodinganalog"/>
-			<optional>
-				<ref name="e.head"/>
-			</optional>
-			<oneOrMore>
-				<choice>
-					<ref name="m.blocks"/>
-					<ref name="m.access"/>
-					<ref name="e.controlaccess"/>
-				</choice>
-			</oneOrMore>
-		</element>
-	</define>
+	
 
-	<define name="e.custodhist">
+	<rng:define name="e.custodhist">
 		<element name="custodhist">
 			<ref name="am.common"/>
 			<ref name="a.localtype"/>
@@ -1052,9 +997,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</choice>
 			</oneOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.fileplan">
+	<rng:define name="e.fileplan">
 		<element name="fileplan">
 			<ref name="am.common"/>
 			<ref name="a.localtype"/>
@@ -1069,9 +1014,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</choice>
 			</oneOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.index">
+	<rng:define name="e.index">
 		<element name="index">
 			<ref name="am.common"/>
 			<ref name="a.localtype"/>
@@ -1096,9 +1041,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</oneOrMore>
 			</choice>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.indexentry">
+	<rng:define name="e.indexentry">
 		<element name="indexentry">
 			<ref name="am.common"/>
 			<choice>
@@ -1125,9 +1070,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="e.indexentry"/>
 			</zeroOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.legalstatus">
+	<rng:define name="e.legalstatus">
 		<element name="legalstatus">
 			<ref name="am.common"/>
 			<ref name="a.encodinganalog"/>
@@ -1142,9 +1087,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</choice>
 			</oneOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.odd">
+	<rng:define name="e.odd">
 		<element name="odd">
 			<ref name="am.common"/>
 			<ref name="a.localtype"/>
@@ -1159,9 +1104,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</choice>
 			</oneOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.originalsloc">
+	<rng:define name="e.originalsloc">
 		<element name="originalsloc">
 			<ref name="am.common"/>
 			<ref name="a.encodinganalog"/>
@@ -1176,9 +1121,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</choice>
 			</oneOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.otherfindaid">
+	<rng:define name="e.otherfindaid">
 		<element name="otherfindaid">
 			<ref name="am.common"/>
 			<ref name="a.localtype"/>
@@ -1195,9 +1140,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</choice>
 			</oneOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.phystech">
+	<rng:define name="e.phystech">
 		<element name="phystech">
 			<ref name="am.common"/>
 			<ref name="a.encodinganalog"/>
@@ -1212,9 +1157,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</choice>
 			</oneOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.prefercite">
+	<rng:define name="e.prefercite">
 		<element name="prefercite">
 			<ref name="am.common"/>
 			<ref name="a.localtype"/>
@@ -1229,9 +1174,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</choice>
 			</oneOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.processinfo">
+	<rng:define name="e.processinfo">
 		<element name="processinfo">
 			<ref name="am.common"/>
 			<ref name="a.localtype"/>
@@ -1246,9 +1191,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</choice>
 			</oneOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.relatedmaterial">
+	<rng:define name="e.relatedmaterial">
 		<element name="relatedmaterial">
 			<ref name="am.common"/>
 			<ref name="a.localtype"/>
@@ -1265,9 +1210,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</choice>
 			</oneOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.scopecontent">
+	<rng:define name="e.scopecontent">
 		<element name="scopecontent">
 			<ref name="am.common"/>
 			<ref name="a.localtype"/>
@@ -1282,9 +1227,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</choice>
 			</oneOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.separatedmaterial">
+	<rng:define name="e.separatedmaterial">
 		<element name="separatedmaterial">
 			<ref name="am.common"/>
 			<ref name="a.localtype"/>
@@ -1301,9 +1246,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</choice>
 			</oneOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.userestrict">
+	<rng:define name="e.userestrict">
 		<element name="userestrict">
 			<ref name="am.common"/>
 			<ref name="a.encodinganalog"/>
@@ -1318,11 +1263,11 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</choice>
 			</oneOrMore>
 		</element>
-	</define>
+	</rng:define>
 
 	<!-- controlaccess elements -->
 
-	<define name="e.corpname">
+	<rng:define name="e.corpname">
 		<element name="corpname">
 			<ref name="am.common"/>
 			<ref name="am.access"/>
@@ -1333,9 +1278,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="e.part"/>
 			</oneOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.famname">
+	<rng:define name="e.famname">
 		<element name="famname">
 			<ref name="am.common"/>
 			<ref name="am.access"/>
@@ -1346,9 +1291,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="e.part"/>
 			</oneOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.function">
+	<rng:define name="e.function">
 		<element name="function">
 			<ref name="am.common"/>
 			<ref name="am.access"/>
@@ -1359,9 +1304,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="e.part"/>
 			</oneOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.genreform">
+	<rng:define name="e.genreform">
 		<element name="genreform">
 			<ref name="am.common"/>
 			<ref name="am.access"/>
@@ -1372,9 +1317,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="e.part"/>
 			</oneOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.geogname">
+	<rng:define name="e.geogname">
 		<element name="geogname">
 			<ref name="am.common"/>
 			<ref name="am.access"/>
@@ -1394,9 +1339,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</element>
 			</zeroOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.name">
+	<rng:define name="e.name">
 		<element name="name">
 			<ref name="am.common"/>
 			<ref name="am.access"/>
@@ -1407,9 +1352,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="e.part"/>
 			</oneOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.occupation">
+	<rng:define name="e.occupation">
 		<element name="occupation">
 			<ref name="am.common"/>
 			<ref name="am.access"/>
@@ -1420,9 +1365,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="e.part"/>
 			</oneOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.persname">
+	<rng:define name="e.persname">
 		<element name="persname">
 			<ref name="am.common"/>
 			<ref name="am.access"/>
@@ -1433,9 +1378,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="e.part"/>
 			</oneOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.subject">
+	<rng:define name="e.subject">
 		<element name="subject">
 			<ref name="am.common"/>
 			<ref name="am.access"/>
@@ -1446,9 +1391,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="e.part"/>
 			</oneOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.title">
+	<rng:define name="e.title">
 		<element name="title">
 			<ref name="am.common"/>
 			<ref name="a.localtype"/>
@@ -1460,9 +1405,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="e.part"/>
 			</oneOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.part">
+	<rng:define name="e.part">
 		<element name="part">
 			<ref name="am.common"/>
 			<ref name="a.encodinganalog"/>
@@ -1470,22 +1415,22 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="am.access.no.normal"/>
 			<ref name="m.mixed.basic"/>
 		</element>
-	</define>
+	</rng:define>
 
 	<!-- BLOCKS -->
 
 	<!-- p -->
 
-	<define name="e.p">
+	<rng:define name="e.p">
 		<element name="p">
 			<ref name="am.common"/>
 			<ref name="m.para.content"/>
 		</element>
-	</define>
+	</rng:define>
 
 	<!-- blockquote -->
 
-	<define name="e.blockquote">
+	<rng:define name="e.blockquote">
 		<element name="blockquote">
 			<ref name="am.common"/>
 			<oneOrMore>
@@ -1495,11 +1440,11 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</choice>
 			</oneOrMore>
 		</element>
-	</define>
+	</rng:define>
 
 	<!-- chronlist -->
 
-	<define name="e.chronlist">
+	<rng:define name="e.chronlist">
 		<element name="chronlist">
 			<ref name="am.common"/>
 			<ref name="a.localtype"/>
@@ -1542,19 +1487,19 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</element>
 			</oneOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.event">
+	<rng:define name="e.event">
 		<element name="event">
 			<ref name="am.common"/>
 			<ref name="a.localtype"/>
 			<ref name="m.para.content"/>
 		</element>
-	</define>
+	</rng:define>
 
 	<!-- list -->
 
-	<define name="e.list">
+	<rng:define name="e.list">
 		<element name="list">
 			<ref name="am.common"/>
 			<optional>
@@ -1623,16 +1568,16 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</group>
 			</choice>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.item">
+	<rng:define name="e.item">
 		<element name="item">
 			<ref name="am.common"/>
 			<ref name="m.para.content"/>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.listhead">
+	<rng:define name="e.listhead">
 		<element name="listhead">
 			<ref name="am.common"/>
 			<optional>
@@ -1654,11 +1599,11 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</element>
 			</optional>
 		</element>
-	</define>
+	</rng:define>
 
 	<!-- table -->
 
-	<define name="e.table">
+	<rng:define name="e.table">
 		<element name="table">
 			<ref name="am.common"/>
 			<optional>
@@ -1750,9 +1695,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</element>
 			</oneOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.row">
+	<rng:define name="e.row">
 		<element name="row">
 			<ref name="am.common"/>
 			<optional>
@@ -1804,9 +1749,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</element>
 			</oneOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.thead">
+	<rng:define name="e.thead">
 		<element name="thead">
 			<ref name="am.common"/>
 			<optional>
@@ -1816,11 +1761,11 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="e.row"/>
 			</oneOrMore>
 		</element>
-	</define>
+	</rng:define>
 
 	<!-- language blocks -->
 
-	<define name="e.language">
+	<rng:define name="e.language">
 		<element name="language">
 			<ref name="am.common"/>
 			<ref name="a.encodinganalog"/>
@@ -1832,9 +1777,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</optional>
 			<text/>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.languageset">
+	<rng:define name="e.languageset">
 		<element name="languageset">
 			<ref name="am.common"/>
 			<ref name="a.encodinganalog"/>
@@ -1848,9 +1793,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="e.descriptivenote"/>
 			</optional>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.script">
+	<rng:define name="e.script">
 		<element name="script">
 			<ref name="am.common"/>
 			<ref name="a.encodinganalog"/>
@@ -1862,11 +1807,11 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</optional>
 			<text/>
 		</element>
-	</define>
+	</rng:define>
 
 	<!-- physdescstructured blocks -->
 
-	<define name="e.dimensions">
+	<rng:define name="e.dimensions">
 		<element name="dimensions">
 			<ref name="am.common"/>
 			<ref name="a.encodinganalog"/>
@@ -1883,9 +1828,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</choice>
 			</zeroOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.physfacet">
+	<rng:define name="e.physfacet">
 		<element name="physfacet">
 			<ref name="am.common"/>
 			<ref name="a.encodinganalog"/>
@@ -1893,11 +1838,11 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.localtype"/>
 			<ref name="m.mixed.basic.plus.access"/>
 		</element>
-	</define>
+	</rng:define>
 
 	<!-- other blocks -->
 
-	<define name="e.address">
+	<rng:define name="e.address">
 		<element name="address">
 			<ref name="am.common"/>
 			<oneOrMore>
@@ -1908,25 +1853,25 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</element>
 			</oneOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.archref">
+	<rng:define name="e.archref">
 		<element name="archref">
 			<ref name="am.common"/>
 			<ref name="a.encodinganalog"/>
 			<ref name="m.mixed.basic.plus.access"/>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.bibref">
+	<rng:define name="e.bibref">
 		<element name="bibref">
 			<ref name="am.common"/>
 			<ref name="a.encodinganalog"/>
 			<ref name="m.mixed.basic.plus.access"/>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.descriptivenote">
+	<rng:define name="e.descriptivenote">
 		<element name="descriptivenote">
 			<ref name="am.common"/>
 			<ref name="a.encodinganalog"/>
@@ -1934,11 +1879,11 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="e.p"/>
 			</oneOrMore>
 		</element>
-	</define>
+	</rng:define>
 
 
 
-	<define name="e.footnote">
+	<rng:define name="e.footnote">
 		<element name="footnote">
 			<ref name="am.common"/>
 			<ref name="a.localtype"/>
@@ -1952,9 +1897,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="m.blocks"/>
 			</oneOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.head">
+	<rng:define name="e.head">
 		<element name="head">
 			<ref name="am.common"/>
 			<optional>
@@ -1964,19 +1909,19 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</optional>
 			<ref name="m.mixed.basic"/>
 		</element>
-	</define>
+	</rng:define>
 
 <!-- DATES -->
 	
-	<define name="e.datesingle">
+	<rng:define name="e.datesingle">
 		<element name="datesingle">
 			<ref name="am.common"/>
 			<ref name="a.localtype"/>
 			<ref name="m.datesingle"/>
 		</element>
-	</define>
+	</rng:define>
 	
-	<define name="e.daterange">
+	<rng:define name="e.daterange">
 		<element name="daterange">
 			<ref name="am.common"/>
 			<ref name="a.localtype"/>
@@ -1995,9 +1940,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</element>
 			</optional>
 		</element>
-	</define>
+	</rng:define>
 	
-	<define name="e.dateset">
+	<rng:define name="e.dateset">
 		<element name="dateset">
 			<ref name="am.common"/>
 			<ref name="a.localtype"/>
@@ -2012,11 +1957,11 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</choice>
 			</oneOrMore>
 		</element>
-	</define>
+	</rng:define>
 
 	<!-- MIXED CONTENT -->
 
-	<define name="e.abbr">
+	<rng:define name="e.abbr">
 		<element name="abbr">
 			<ref name="am.common"/>
 			<optional>
@@ -2026,9 +1971,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</optional>
 			<text/>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.date">
+	<rng:define name="e.date">
 		<element name="date">
 			<ref name="am.common"/>
 			<ref name="a.localtype"/>
@@ -2039,17 +1984,17 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="a.encodinganalog"/>
 			<ref name="m.mixed.basic"/>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.emph">
+	<rng:define name="e.emph">
 		<element name="emph">
 			<ref name="am.common"/>
 			<ref name="a.render"/>
 			<ref name="m.mixed.basic"/>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.expan">
+	<rng:define name="e.expan">
 		<element name="expan">
 			<ref name="am.common"/>
 			<optional>
@@ -2059,48 +2004,48 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</optional>
 			<text/>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.foreign">
+	<rng:define name="e.foreign">
 		<element name="foreign">
 			<ref name="am.common"/>
 			<ref name="a.render"/>
 			<text/>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.lb">
+	<rng:define name="e.lb">
 		<element name="lb">
 			<empty/>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.num">
+	<rng:define name="e.num">
 		<element name="num">
 			<ref name="am.common"/>
 			<ref name="a.localtype"/>
 			<ref name="a.encodinganalog"/>
 			<ref name="m.mixed.basic"/>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.quote">
+	<rng:define name="e.quote">
 		<element name="quote">
 			<ref name="am.common"/>
 			<ref name="a.localtype"/>
 			<ref name="m.mixed.basic"/>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.ptr">
+	<rng:define name="e.ptr">
 		<element name="ptr">
 			<ref name="am.common.empty"/>
 			<ref name="am.internal.ptr"/>
 			<empty/>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.ref">
+	<rng:define name="e.ref">
 		<element name="ref">
 			<ref name="am.common"/>
 			<ref name="am.internal.ptr"/>
@@ -2120,11 +2065,11 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</choice>
 			</zeroOrMore>
 		</element>
-	</define>
+	</rng:define>
 
 	<!-- DSC -->
 
-	<define name="e.dsc">
+	<rng:define name="e.dsc">
 		<element name="dsc">
 			<ref name="am.common"/>
 			<optional>
@@ -2158,9 +2103,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="m.cOrC01"/>
 			</optional>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.c">
+	<rng:define name="e.c">
 		<element name="c">
 			<ref name="m.c.base"/>
 			<zeroOrMore>
@@ -2172,9 +2117,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</oneOrMore>
 			</zeroOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.c01">
+	<rng:define name="e.c01">
 		<element name="c01">
 			<ref name="m.c.base"/>
 			<zeroOrMore>
@@ -2186,9 +2131,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</oneOrMore>
 			</zeroOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.c02">
+	<rng:define name="e.c02">
 		<element name="c02">
 			<ref name="m.c.base"/>
 			<zeroOrMore>
@@ -2200,9 +2145,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</oneOrMore>
 			</zeroOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.c03">
+	<rng:define name="e.c03">
 		<element name="c03">
 			<ref name="m.c.base"/>
 			<zeroOrMore>
@@ -2214,9 +2159,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</oneOrMore>
 			</zeroOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.c04">
+	<rng:define name="e.c04">
 		<element name="c04">
 			<ref name="m.c.base"/>
 			<zeroOrMore>
@@ -2228,9 +2173,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</oneOrMore>
 			</zeroOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.c05">
+	<rng:define name="e.c05">
 		<element name="c05">
 			<ref name="m.c.base"/>
 			<zeroOrMore>
@@ -2242,9 +2187,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</oneOrMore>
 			</zeroOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.c06">
+	<rng:define name="e.c06">
 		<element name="c06">
 			<ref name="m.c.base"/>
 			<zeroOrMore>
@@ -2256,9 +2201,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</oneOrMore>
 			</zeroOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.c07">
+	<rng:define name="e.c07">
 		<element name="c07">
 			<ref name="m.c.base"/>
 			<zeroOrMore>
@@ -2270,9 +2215,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</oneOrMore>
 			</zeroOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.c08">
+	<rng:define name="e.c08">
 		<element name="c08">
 			<ref name="m.c.base"/>
 			<zeroOrMore>
@@ -2284,9 +2229,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</zeroOrMore>
 			</zeroOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.c09">
+	<rng:define name="e.c09">
 		<element name="c09">
 			<ref name="m.c.base"/>
 			<zeroOrMore>
@@ -2298,9 +2243,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</oneOrMore>
 			</zeroOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.c10">
+	<rng:define name="e.c10">
 		<element name="c10">
 			<ref name="m.c.base"/>
 			<zeroOrMore>
@@ -2312,9 +2257,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</oneOrMore>
 			</zeroOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.c11">
+	<rng:define name="e.c11">
 		<element name="c11">
 			<ref name="m.c.base"/>
 			<zeroOrMore>
@@ -2326,13 +2271,13 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</oneOrMore>
 			</zeroOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.c12">
+	<rng:define name="e.c12">
 		<element name="c12">
 			<ref name="m.c.base"/>
 		</element>
-	</define>
+	</rng:define>
 
 
 
@@ -2341,7 +2286,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 	<!-- RELATIONS -->
 	
 
-	<define name="e.relations">
+	<rng:define name="e.relations">
 		<element name="relations">
 			<ref name="am.common"/>
 			<ref name="a.encodinganalog"/>
@@ -2400,16 +2345,16 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</element>
 			</oneOrMore>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.objectxmlwrap">
+	<rng:define name="e.objectxmlwrap">
 		<element name="objectxmlwrap">
 			<ref name="am.common"/>
 			<ref name="e.anyname"/>
 		</element>
-	</define>
+	</rng:define>
 
-	<define name="e.anyname">
+	<rng:define name="e.anyname">
 		<element>
 			<anyName>
 				<except>
@@ -2420,36 +2365,36 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="e.anyname"/>
 			</zeroOrMore>
 		</element>
-	</define>
+	</rng:define>
 	
 	
 
 
 	<!-- ELEMENT MODELS -->
 
-	<define name="m.blocks">
+	<rng:define name="m.blocks">
 		<choice>
 			<ref name="m.inter"/>
 			<ref name="e.p"/>
 		</choice>
-	</define>
+	</rng:define>
 
-	<define name="m.inter">
+	<rng:define name="m.inter">
 		<choice>
 			<ref name="m.inter.noquote"/>
 			<ref name="e.blockquote"/>
 		</choice>
-	</define>
+	</rng:define>
 
-	<define name="m.inter.noquote">
+	<rng:define name="m.inter.noquote">
 		<choice>
 			<ref name="e.chronlist"/>
 			<ref name="e.list"/>
 			<ref name="e.table"/>
 		</choice>
-	</define>
+	</rng:define>
 
-	<define name="m.cOrC01">
+	<rng:define name="m.cOrC01">
 		<choice>
 			<oneOrMore>
 				<ref name="e.c"/>
@@ -2458,9 +2403,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="e.c01"/>
 			</oneOrMore>
 		</choice>
-	</define>
+	</rng:define>
 
-	<define name="m.c.base">
+	<rng:define name="m.c.base">
 		<ref name="am.desc.c"/>
 		<optional>
 			<ref name="e.head"/>
@@ -2469,9 +2414,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<zeroOrMore>
 			<ref name="m.desc.base"/>
 		</zeroOrMore>
-	</define>
+	</rng:define>
 
-	<define name="m.access">
+	<rng:define name="m.access">
 		<choice>
 			<ref name="e.persname"/>
 			<ref name="e.corpname"/>
@@ -2484,8 +2429,8 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="e.function"/>
 			<ref name="e.title"/>
 		</choice>
-	</define>
-	<define name="m.datesingle">
+	</rng:define>
+	<rng:define name="m.datesingle">
 		<optional>
 			<attribute name="standarddate">
 				<choice>
@@ -2532,9 +2477,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</attribute>
 		</optional>
 		<ref name="m.mixed.basic"/>
-	</define>
+	</rng:define>
 
-	<define name="m.desc.base">
+	<rng:define name="m.desc.base">
 		<choice>
 			<ref name="e.accessrestrict"/>
 			<ref name="e.accruals"/>
@@ -2544,7 +2489,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="e.arrangement"/>
 			<ref name="e.bibliography"/>
 			<ref name="e.bioghist"/>
-			<ref name="e.controlaccess"/>
+			<empty/>
 			<ref name="e.custodhist"/>
 			<ref name="e.fileplan"/>
 			<ref name="e.index"/>
@@ -2561,9 +2506,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="e.separatedmaterial"/>
 			<ref name="e.userestrict"/>
 		</choice>
-	</define>
+	</rng:define>
 
-	<define name="m.did">
+	<rng:define name="m.did">
 		<choice>
 			<ref name="e.abstract"/>
             <ref name="e.container"/>
@@ -2583,18 +2528,18 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="e.unitid"/>
 			<ref name="e.unittitle"/>
 		</choice>
-	</define>
+	</rng:define>
 
-	<define name="m.refs">
+	<rng:define name="m.refs">
 		<choice>
 			<ref name="e.ptr"/>
 			<ref name="e.ref"/>
 		</choice>
-	</define>
+	</rng:define>
 
 	<!-- MIXED CONTENT MODELS -->
 
-	<define name="m.mixed.basic">
+	<rng:define name="m.mixed.basic">
 		<zeroOrMore>
 			<choice>
 				<text/>
@@ -2607,21 +2552,11 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="e.ref"/>
 			</choice>
 		</zeroOrMore>
-	</define>
+	</rng:define>
 
-	<define name="m.mixed.basic.plus">
-		<zeroOrMore>
-			<choice>
-				<ref name="m.mixed.basic"/>
-				<ref name="e.date"/>
-				<ref name="e.footnote"/>
-				<ref name="e.num"/>
-				<ref name="e.quote"/>
-			</choice>
-		</zeroOrMore>
-	</define>
+	
 
-	<define name="m.mixed.basic.plus.access">
+	<rng:define name="m.mixed.basic.plus.access">
 		<zeroOrMore>
 			<choice>
 				<ref name="m.access"/>
@@ -2632,20 +2567,20 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<ref name="e.quote"/>
 			</choice>
 		</zeroOrMore>
-	</define>
+	</rng:define>
 
-	<define name="m.para.content">
+	<rng:define name="m.para.content">
 		<zeroOrMore>
 			<choice>
 				<ref name="m.mixed.basic.plus.access"/>
 				<ref name="e.list"/>
 			</choice>
 		</zeroOrMore>
-	</define>
+	</rng:define>
 
 	<!-- ATTRIBUTE MODELS -->
 
-	<define name="am.internal.ptr">
+	<rng:define name="am.internal.ptr">
 		<optional>
 			<attribute name="target">
 				<data type="IDREF"/>
@@ -2653,9 +2588,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</optional>
 		<ref name="a.link.xpointer"/>
 		<ref name="am.simplelink"/>
-	</define>
+	</rng:define>
 
-	<define name="am.simplelink">
+	<rng:define name="am.simplelink">
 		<optional>
 			<ref name="a.link.href"/>
 		</optional>
@@ -2674,9 +2609,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 		<optional>
 			<ref name="a.link.actuate"/>
 		</optional>
-	</define>
+	</rng:define>
 
-	<define name="am.common.empty">
+	<rng:define name="am.common.empty">
 		<optional>
 			<attribute name="id">
 				<data type="ID"/>
@@ -2695,9 +2630,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</choice>
 			</attribute>
 		</optional>
-	</define>
+	</rng:define>
 
-	<define name="am.common">
+	<rng:define name="am.common">
 		<ref name="am.common.empty"/>
 		<optional>
 			<attribute name="lang">
@@ -2709,36 +2644,36 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<data type="NMTOKEN"/>
 			</attribute>
 		</optional>
-	</define>
+	</rng:define>
 
-	<define name="am.desc.base">
+	<rng:define name="am.desc.base">
 		<optional>
 			<attribute name="otherlevel">
 				<data type="NMTOKEN"/>
 			</attribute>
 		</optional>
 		<ref name="a.encodinganalog"/>
-	</define>
+	</rng:define>
 
-	<define name="am.desc.c">
+	<rng:define name="am.desc.c">
 		<ref name="am.common"/>
 		<ref name="a.base"/>
 		<optional>
 			<ref name="a.level"/>
 		</optional>
 		<ref name="am.desc.base"/>
-	</define>
+	</rng:define>
 
-	<define name="am.access">
+	<rng:define name="am.access">
 		<ref name="am.access.no.normal"/>
 		<optional>
 			<attribute name="normal">
 				<data type="token"/>
 			</attribute>
 		</optional>
-	</define>
+	</rng:define>
 
-	<define name="am.access.no.normal">
+	<rng:define name="am.access.no.normal">
 		<optional>
 			<attribute name="source">
 				<data type="token"/>
@@ -2750,13 +2685,13 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</attribute>
 		</optional>
 		<ref name="a.identifier"/>
-	</define>
+	</rng:define>
 
 	<!-- ATTRIBUTE DEFINITIONS -->
 
 	<!-- xlink-modelled attributes -->
 
-	<define name="a.link.actuate">
+	<rng:define name="a.link.actuate">
 		<attribute name="actuate">
 			<choice>
 				<value>onload</value>
@@ -2765,27 +2700,27 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<value>none</value>
 			</choice>
 		</attribute>
-	</define>
+	</rng:define>
 
-	<define name="a.link.arcrole">
+	<rng:define name="a.link.arcrole">
 		<attribute name="arcrole">
 			<data type="anyURI"/>
 		</attribute>
-	</define>
+	</rng:define>
 
-	<define name="a.link.href">
+	<rng:define name="a.link.href">
 		<attribute name="href">
 			<data type="token"/>
 		</attribute>
-	</define>
+	</rng:define>
 
-	<define name="a.link.role">
+	<rng:define name="a.link.role">
 		<attribute name="linkrole">
 			<data type="anyURI"/>
 		</attribute>
-	</define>
+	</rng:define>
 
-	<define name="a.link.show">
+	<rng:define name="a.link.show">
 		<attribute name="show">
 			<choice>
 				<value>new</value>
@@ -2795,59 +2730,59 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<value>none</value>
 			</choice>
 		</attribute>
-	</define>
+	</rng:define>
 
-	<define name="a.link.title">
+	<rng:define name="a.link.title">
 		<attribute name="linktitle">
 			<data type="token"/>
 		</attribute>
-	</define>
+	</rng:define>
 
 	<!-- other linking-related attributes-->
 
-	<define name="a.base">
+	<rng:define name="a.base">
 		<optional>
 			<attribute name="base">
 				<data type="anyURI"/>
 			</attribute>
 		</optional>
-	</define>
+	</rng:define>
 
-	<define name="a.identifier">
+	<rng:define name="a.identifier">
 		<optional>
 			<attribute name="identifier">
 				<data type="token"/>
 			</attribute>
 		</optional>
-	</define>
+	</rng:define>
 
-	<define name="a.parent">
+	<rng:define name="a.parent">
 		<optional>
 			<attribute name="parent">
 				<data type="IDREFS"/>
 			</attribute>
 		</optional>
-	</define>
+	</rng:define>
 
-	<define name="a.relator">
+	<rng:define name="a.relator">
 		<optional>
 			<attribute name="relator">
 				<data type="token"/>
 			</attribute>
 		</optional>
-	</define>
+	</rng:define>
 
-	<define name="a.link.xpointer">
+	<rng:define name="a.link.xpointer">
 		<optional>
 			<attribute name="xpointer">
 				<data type="token"/>
 			</attribute>
 		</optional>
-	</define>
+	</rng:define>
 
 	<!-- display attributes -->
 
-	<define name="a.align">
+	<rng:define name="a.align">
 		<attribute name="align">
 			<choice>
 				<value>left</value>
@@ -2857,9 +2792,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<value>char</value>
 			</choice>
 		</attribute>
-	</define>
+	</rng:define>
 
-	<define name="a.valign">
+	<rng:define name="a.valign">
 		<attribute name="valign">
 			<choice>
 				<value>top</value>
@@ -2867,9 +2802,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<value>bottom</value>
 			</choice>
 		</attribute>
-	</define>
+	</rng:define>
 
-	<define name="a.render">
+	<rng:define name="a.render">
 		<optional>
 			<attribute name="render">
 				<choice>
@@ -2891,43 +2826,43 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</choice>
 			</attribute>
 		</optional>
-	</define>
+	</rng:define>
 
-	<define name="a.label">
+	<rng:define name="a.label">
 		<optional>
 			<attribute name="label">
 				<data type="string"/>
 			</attribute>
 		</optional>
-	</define>
+	</rng:define>
 
 	<!-- date attributes -->
 
-	<define name="am.dates.calendar">
+	<rng:define name="am.dates.calendar">
 		<optional>
 			<attribute name="calendar">
 				<data type="NMTOKEN"/>
 			</attribute>
 		</optional>
-	</define>
+	</rng:define>
 
-	<define name="am.dates.era">
+	<rng:define name="am.dates.era">
 		<optional>
 			<attribute name="era">
 				<data type="NMTOKEN"/>
 			</attribute>
 		</optional>
-	</define>
+	</rng:define>
 
-	<define name="am.date.normal">
+	<rng:define name="am.date.normal">
 		<optional>
 			<attribute name="normal">
 				<data type="token"/>
 			</attribute>
 		</optional>
-	</define>
+	</rng:define>
 
-	<define name="a.lastdatetimeverified">
+	<rng:define name="a.lastdatetimeverified">
 		<attribute name="lastdatetimeverified">
 			<choice>
 				<data type="date">
@@ -2944,35 +2879,35 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</data>
 			</choice>
 		</attribute>
-	</define>
+	</rng:define>
 
-	<define name="a.datechar">
+	<rng:define name="a.datechar">
 		<optional>
 			<attribute name="datechar">
 				<data type="token"/>
 			</attribute>
 		</optional>
-	</define>
+	</rng:define>
 
-	<define name="a.certainty">
+	<rng:define name="a.certainty">
 		<optional>
 			<attribute name="certainty">
 				<data type="NMTOKEN"/>
 			</attribute>
 		</optional>
-	</define>
+	</rng:define>
 
 	<!-- typing attributes -->
 
-	<define name="a.encodinganalog">
+	<rng:define name="a.encodinganalog">
 		<optional>
 			<attribute name="encodinganalog">
 				<data type="token"/>
 			</attribute>
 		</optional>
-	</define>
+	</rng:define>
 
-	<define name="a.level">
+	<rng:define name="a.level">
 		<attribute name="level">
 			<choice>
 				<value>class</value>
@@ -2988,25 +2923,25 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<value>subseries</value>
 			</choice>
 		</attribute>
-	</define>
+	</rng:define>
 
-	<define name="a.localtype">
+	<rng:define name="a.localtype">
 		<optional>
 			<attribute name="localtype">
 				<data type="token"/>
 			</attribute>
 		</optional>
-	</define>
+	</rng:define>
 
-	<define name="a.relatedencoding">
+	<rng:define name="a.relatedencoding">
 		<optional>
 			<attribute name="relatedencoding">
 				<data type="token"/>
 			</attribute>
 		</optional>
-	</define>
+	</rng:define>
 
-	<define name="a.unitdatetype">
+	<rng:define name="a.unitdatetype">
 		<optional>
 			<attribute name="unitdatetype">
 				<choice>
@@ -3015,81 +2950,89 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</choice>
 			</attribute>
 		</optional>
-	</define>
+	</rng:define>
 
 	<!-- table attributes -->
 
-	<define name="a.char">
+	<rng:define name="a.char">
 		<attribute name="char">
 			<data type="token"/>
 		</attribute>
-	</define>
+	</rng:define>
 
-	<define name="a.charoff">
+	<rng:define name="a.charoff">
 		<attribute name="charoff">
 			<data type="NMTOKEN"/>
 		</attribute>
-	</define>
+	</rng:define>
 
-	<define name="a.colname">
+	<rng:define name="a.colname">
 		<attribute name="colname">
 			<data type="NMTOKEN"/>
 		</attribute>
-	</define>
+	</rng:define>
 
-	<define name="a.colsep">
+	<rng:define name="a.colsep">
 		<attribute name="colsep">
 			<ref name="av.zeroorone"/>
 		</attribute>
-	</define>
+	</rng:define>
 
-	<define name="a.rowsep">
+	<rng:define name="a.rowsep">
 		<attribute name="rowsep">
 			<ref name="av.zeroorone"/>
 		</attribute>
-	</define>
+	</rng:define>
 
 	<!-- other attributes -->
 
-	<define name="a.coverage">
+	<rng:define name="a.coverage">
 		<attribute name="coverage">
 			<choice>
 				<value>whole</value>
 				<value>part</value>
 			</choice>
 		</attribute>
-	</define>
+	</rng:define>
 
-	<define name="am.countrycode">
+	<rng:define name="am.countrycode">
 		<optional>
 			<attribute name="countrycode">
 				<data type="NMTOKEN"/>
 			</attribute>
 		</optional>
-	</define>
+	</rng:define>
 
-	<define name="a.transliteration">
+	<rng:define name="a.transliteration">
 		<optional>
 			<attribute name="transliteration">
 				<data type="NMTOKEN"/>
 			</attribute>
 		</optional>
-	</define>
+	</rng:define>
 
 	<!-- ATTRIBUTE VALUE LISTS -->
 
-	<define name="av.yesorno">
+	<rng:define name="av.yesorno">
 		<choice>
 			<value>yes</value>
 			<value>no</value>
 		</choice>
-	</define>
+	</rng:define>
 
-	<define name="av.zeroorone">
+	<rng:define name="av.zeroorone">
 		<choice>
 			<value>0</value>
 			<value>1</value>
 		</choice>
-	</define>
+	</rng:define>
 
+</rng:div></rng:div>
+    <start>
+        <ref name="e.ead"/>
+    </start>
+    
+
+    
+    
 </grammar>
