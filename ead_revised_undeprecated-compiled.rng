@@ -40,6 +40,51 @@
             <ref name="e.archdesc"/>
         </element>
     </rng:define>
+        
+        <!-- ARCHDESC -->
+        
+        <rng:define name="e.archdesc">
+            <element name="archdesc">
+                <ref name="am.common"/>
+                <ref name="a.localtype"/>
+                <ref name="a.relatedencoding"/>
+                <ref name="am.desc.base"/>
+                <ref name="a.level"/>
+                <ref name="a.base"/>
+                <zeroOrMore>
+                    <element name="runner">
+                        <ref name="am.common"/>
+                        <optional>
+                            <attribute name="placement">
+                                <choice>
+                                    <value>header</value>
+                                    <value>footer</value>
+                                    <value>watermark</value>
+                                </choice>
+                            </attribute>
+                        </optional>
+                        <optional>
+                            <attribute name="role"/>
+                        </optional>
+                        <zeroOrMore>
+                            <choice>
+                                <text/>
+                                <ref name="m.mixed.basic"/>
+                            </choice>
+                        </zeroOrMore>
+                    </element>
+                </zeroOrMore>
+                <ref name="e.did"/>
+                <zeroOrMore>
+                    <choice>
+                        <ref name="m.desc.base"/>
+                        <ref name="e.dsc"/>
+                    </choice>
+                </zeroOrMore>
+            </element>
+        </rng:define>
+        
+        
 
     <rng:div datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
 
@@ -539,22 +584,7 @@
 
 <!-- ARCHDESC -->
 	
-	<rng:define name="e.archdesc">
-		<element name="archdesc">
-		<ref name="am.common"/>
-		<ref name="a.localtype"/>
-		<ref name="a.relatedencoding"/>
-		<ref name="am.desc.base"/>
-		<ref name="a.level"/>
-		<ref name="a.base"/>
-		<ref name="e.did"/>
-		<zeroOrMore>
-			<choice>
-				<ref name="m.desc.base"/>
-				<ref name="e.dsc"/>
-			</choice>
-		</zeroOrMore>
-	</element></rng:define>
+	
 
 
 	<!-- did -->
@@ -3115,4 +3145,6 @@
             </zeroOrMore>
         </element>
     </rng:define>
+    
+  
 </grammar>
