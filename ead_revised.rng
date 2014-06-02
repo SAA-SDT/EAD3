@@ -2416,10 +2416,22 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<nsName ns="http://ead3.archivists.org/schema/"/>
 				</except>
 			</anyName>
-			<zeroOrMore>
-				<ref name="e.anyname"/>
-			</zeroOrMore>
+		     <ref name="m.anything"/>				
 		</element>
+	</define>
+	
+	<define name="m.anything">
+		<zeroOrMore>
+			<attribute>
+				<anyName/>
+			</attribute>
+		</zeroOrMore>
+		<zeroOrMore>
+			<choice>
+				<ref name="e.anyname"/>
+				<text/>
+			</choice>
+		</zeroOrMore>
 	</define>
 	
 	
