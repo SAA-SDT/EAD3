@@ -390,23 +390,8 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="am.common"/>
 			<ref name="a.encodinganalog"/>
 
-			<element name="titlestmt">
-				<ref name="am.common"/>
-				<ref name="a.encodinganalog"/>
-				<oneOrMore>
-					<ref name="e.titleproper"/>
-				</oneOrMore>
-				<zeroOrMore>
-					<ref name="e.subtitle"/>
-				</zeroOrMore>
-				<zeroOrMore>
-					<ref name="e.author"/>
-				</zeroOrMore>
-				<zeroOrMore>
-					<ref name="e.sponsor"/>
-				</zeroOrMore>
-			</element>
-
+			<ref name="titlestmt"/>
+			
 			<optional>
 				<element name="editionstmt">
 					<ref name="am.common"/>
@@ -461,6 +446,25 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</optional>
 		</element>
 	</define>
+	<define name="e.titlestmt">
+		<element name="titlestmt">
+			<ref name="am.common"/>
+			<ref name="a.encodinganalog"/>
+			<oneOrMore>
+				<ref name="e.titleproper"/>
+			</oneOrMore>
+			<zeroOrMore>
+				<ref name="e.subtitle"/>
+			</zeroOrMore>
+			<zeroOrMore>
+				<ref name="e.author"/>
+			</zeroOrMore>
+			<zeroOrMore>
+				<ref name="e.sponsor"/>
+			</zeroOrMore>
+		</element>
+	</define>
+	
 	<define name="e.maintenancestatus">
 		<element name="maintenancestatus">
 			<ref name="am.common"/>
