@@ -107,17 +107,8 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</attribute>
 			</optional>
 
-			<element name="recordid">
-				<ref name="am.common"/>
-				<ref name="a.encodinganalog"/>
-				<optional>
-					<attribute name="instanceurl">
-						<data type="anyURI"/>
-					</attribute>
-				</optional>
-				<text/>
-			</element>
-
+<ref name="e.recordid"/>
+			
 			<zeroOrMore>
 				<element name="otherrecordid">
 					<ref name="am.common"/>
@@ -137,98 +128,10 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</element>
 			</zeroOrMore>
 
-			<element name="filedesc">
-				<ref name="am.common"/>
-				<ref name="a.encodinganalog"/>
-
-				<element name="titlestmt">
-					<ref name="am.common"/>
-					<ref name="a.encodinganalog"/>
-					<oneOrMore>
-						<ref name="e.titleproper"/>
-					</oneOrMore>
-					<zeroOrMore>
-						<ref name="e.subtitle"/>
-					</zeroOrMore>
-					<zeroOrMore>
-						<ref name="e.author"/>
-					</zeroOrMore>
-					<zeroOrMore>
-						<ref name="e.sponsor"/>
-					</zeroOrMore>
-				</element>
-
-				<optional>
-					<element name="editionstmt">
-						<ref name="am.common"/>
-						<ref name="a.encodinganalog"/>
-						<oneOrMore>
-							<choice>
-								<ref name="e.edition"/>
-								<ref name="e.p"/>
-							</choice>
-						</oneOrMore>
-					</element>
-				</optional>
-
-				<optional>
-					<element name="publicationstmt">
-						<ref name="am.common"/>
-						<ref name="a.encodinganalog"/>
-						<oneOrMore>
-							<choice>
-								<ref name="e.publisher"/>
-								<ref name="e.date"/>
-								<ref name="e.address"/>
-								<ref name="e.num"/>
-								<ref name="e.p"/>
-							</choice>
-						</oneOrMore>
-					</element>
-				</optional>
-
-				<optional>
-					<element name="seriesstmt">
-						<ref name="am.common"/>
-						<ref name="a.encodinganalog"/>
-						<oneOrMore>
-							<choice>
-								<ref name="e.titleproper"/>
-								<ref name="e.num"/>
-								<ref name="e.p"/>
-							</choice>
-						</oneOrMore>
-					</element>
-				</optional>
-
-				<optional>
-					<element name="notestmt">
-						<ref name="am.common"/>
-						<ref name="a.encodinganalog"/>
-						<oneOrMore>
-							<ref name="e.controlnote"/>
-						</oneOrMore>
-					</element>
-				</optional>
-			</element>
-
-			<element name="maintenancestatus">
-				<ref name="am.common"/>
-				<ref name="a.encodinganalog"/>
-				<attribute name="value">
-					<choice>
-						<value>revised</value>
-						<value>deleted</value>
-						<value>new</value>
-						<value>deletedsplit</value>
-						<value>deletedmerged</value>
-						<value>deletedreplaced</value>
-						<value>cancelled</value>
-						<value>derived</value>
-					</choice>
-				</attribute>
-				<text/>
-			</element>
+			<ref name="e.filedesc"/>
+			
+<ref name="e.maintenancestatus"/>
+			
 
 			<optional>
 				<element name="publicationstatus">
@@ -313,86 +216,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</element>
 			</zeroOrMore>
 
-			<element name="maintenancehistory">
-				<ref name="am.common"/>
-				<ref name="a.encodinganalog"/>
-				<oneOrMore>
-					<element name="maintenanceevent">
-						<ref name="am.common"/>
-						<ref name="a.encodinganalog"/>
-
-						<element name="eventtype">
-							<ref name="am.common"/>
-							<ref name="a.encodinganalog"/>
-							<attribute name="value">
-								<choice>
-									<value>created</value>
-									<value>revised</value>
-									<value>deleted</value>
-									<value>cancelled</value>
-									<value>derived</value>
-									<value>updated</value>
-									<value>unknown</value>
-								</choice>
-							</attribute>
-							<text/>
-						</element>
-
-						<element name="eventdatetime">
-							<ref name="am.common"/>
-							<ref name="a.encodinganalog"/>
-							<optional>
-								<attribute name="standarddatetime">
-										<choice>
-											<data type="date">
-												<param name="maxInclusive">2099-12-31</param>
-											</data>
-											<data type="gYear">
-												<param name="maxInclusive">2099</param>
-											</data>
-											<data type="gYearMonth">
-												<param name="maxInclusive">2099-12</param>
-											</data>
-											<data type="dateTime">
-												<param name="maxInclusive">2099-12-31T23:59:59</param>
-											</data>
-										</choice>
-								</attribute>
-							</optional>
-							<text/>
-						</element>
-
-						<element name="agenttype">
-							<ref name="am.common"/>
-							<ref name="a.encodinganalog"/>
-							<attribute name="value">
-								<choice>
-									<value>human</value>
-									<value>machine</value>
-									<value>unknown</value>
-								</choice>
-							</attribute>
-							<text/>
-						</element>
-
-						<element name="agent">
-							<ref name="am.common"/>
-							<ref name="a.encodinganalog"/>
-							<text/>
-						</element>
-
-						<zeroOrMore>
-							<element name="eventdescription">
-								<ref name="am.common"/>
-								<ref name="a.encodinganalog"/>
-								<ref name="a.localtype"/>
-								<text/>
-							</element>
-						</zeroOrMore>
-					</element>
-				</oneOrMore>
-			</element>
-
+			<ref name="e.maintenancehistory"/>
+			
+			
 			<optional>
 				<element name="sources">
 					<ref name="am.common"/>
@@ -429,6 +255,19 @@ For these and/or other purposes and motivations, and without any expectation of 
 		</element>
 	</define>
 
+	<define name="e.recordid">
+		<element name="recordid">
+			<ref name="am.common"/>
+			<ref name="a.encodinganalog"/>
+			<optional>
+				<attribute name="instanceurl">
+					<data type="anyURI"/>
+				</attribute>
+			</optional>
+			<text/>
+		</element>
+	</define>
+	
 	<define name="e.titleproper">
 		<element name="titleproper">
 			<ref name="am.common"/>
@@ -545,7 +384,183 @@ For these and/or other purposes and motivations, and without any expectation of 
 			<ref name="m.mixed.basic"/>
 		</element>
 	</define>
-
+	
+	<define name="e.filedesc">
+		<element name="filedesc">
+			<ref name="am.common"/>
+			<ref name="a.encodinganalog"/>
+			
+			<element name="titlestmt">
+				<ref name="am.common"/>
+				<ref name="a.encodinganalog"/>
+				<oneOrMore>
+					<ref name="e.titleproper"/>
+				</oneOrMore>
+				<zeroOrMore>
+					<ref name="e.subtitle"/>
+				</zeroOrMore>
+				<zeroOrMore>
+					<ref name="e.author"/>
+				</zeroOrMore>
+				<zeroOrMore>
+					<ref name="e.sponsor"/>
+				</zeroOrMore>
+			</element>
+			
+			<optional>
+				<element name="editionstmt">
+					<ref name="am.common"/>
+					<ref name="a.encodinganalog"/>
+					<oneOrMore>
+						<choice>
+							<ref name="e.edition"/>
+							<ref name="e.p"/>
+						</choice>
+					</oneOrMore>
+				</element>
+			</optional>
+			
+			<optional>
+				<element name="publicationstmt">
+					<ref name="am.common"/>
+					<ref name="a.encodinganalog"/>
+					<oneOrMore>
+						<choice>
+							<ref name="e.publisher"/>
+							<ref name="e.date"/>
+							<ref name="e.address"/>
+							<ref name="e.num"/>
+							<ref name="e.p"/>
+						</choice>
+					</oneOrMore>
+				</element>
+			</optional>
+			
+			<optional>
+				<element name="seriesstmt">
+					<ref name="am.common"/>
+					<ref name="a.encodinganalog"/>
+					<oneOrMore>
+						<choice>
+							<ref name="e.titleproper"/>
+							<ref name="e.num"/>
+							<ref name="e.p"/>
+						</choice>
+					</oneOrMore>
+				</element>
+			</optional>
+			
+			<optional>
+				<element name="notestmt">
+					<ref name="am.common"/>
+					<ref name="a.encodinganalog"/>
+					<oneOrMore>
+						<ref name="e.controlnote"/>
+					</oneOrMore>
+				</element>
+			</optional>
+		</element>
+	</define>
+	<define name="e.maintenancestatus">
+		<element name="maintenancestatus">
+			<ref name="am.common"/>
+			<ref name="a.encodinganalog"/>
+			<attribute name="value">
+				<choice>
+					<value>revised</value>
+					<value>deleted</value>
+					<value>new</value>
+					<value>deletedsplit</value>
+					<value>deletedmerged</value>
+					<value>deletedreplaced</value>
+					<value>cancelled</value>
+					<value>derived</value>
+				</choice>
+			</attribute>
+			<text/>
+		</element>
+	</define>
+	<define name="e.maintenancehistory">
+		<element name="maintenancehistory">
+			<ref name="am.common"/>
+			<ref name="a.encodinganalog"/>
+			<oneOrMore>
+				<element name="maintenanceevent">
+					<ref name="am.common"/>
+					<ref name="a.encodinganalog"/>
+					
+					<element name="eventtype">
+						<ref name="am.common"/>
+						<ref name="a.encodinganalog"/>
+						<attribute name="value">
+							<choice>
+								<value>created</value>
+								<value>revised</value>
+								<value>deleted</value>
+								<value>cancelled</value>
+								<value>derived</value>
+								<value>updated</value>
+								<value>unknown</value>
+							</choice>
+						</attribute>
+						<text/>
+					</element>
+					
+					<element name="eventdatetime">
+						<ref name="am.common"/>
+						<ref name="a.encodinganalog"/>
+						<optional>
+							<attribute name="standarddatetime">
+								<choice>
+									<data type="date">
+										<param name="maxInclusive">2099-12-31</param>
+									</data>
+									<data type="gYear">
+										<param name="maxInclusive">2099</param>
+									</data>
+									<data type="gYearMonth">
+										<param name="maxInclusive">2099-12</param>
+									</data>
+									<data type="dateTime">
+										<param name="maxInclusive">2099-12-31T23:59:59</param>
+									</data>
+								</choice>
+							</attribute>
+						</optional>
+						<text/>
+					</element>
+					
+					<element name="agenttype">
+						<ref name="am.common"/>
+						<ref name="a.encodinganalog"/>
+						<attribute name="value">
+							<choice>
+								<value>human</value>
+								<value>machine</value>
+								<value>unknown</value>
+							</choice>
+						</attribute>
+						<text/>
+					</element>
+					
+					<element name="agent">
+						<ref name="am.common"/>
+						<ref name="a.encodinganalog"/>
+						<text/>
+					</element>
+					
+					<zeroOrMore>
+						<element name="eventdescription">
+							<ref name="am.common"/>
+							<ref name="a.encodinganalog"/>
+							<ref name="a.localtype"/>
+							<text/>
+						</element>
+					</zeroOrMore>
+				</element>
+			</oneOrMore>
+		</element>
+	</define>
 <!-- ARCHDESC -->
 	
 	<define name="e.archdesc">
