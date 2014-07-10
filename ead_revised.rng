@@ -777,22 +777,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 				<attribute name="otherphysdescstructuredtype"/>
 			</optional>
 			<ref name="a.coverage"/>
-			<element name="quantity">
-				<ref name="am.common"/>
-				<ref name="a.encodinganalog"/>
-				<optional>
-					<attribute name="approximate">
-						<ref name="av.yesorno"/>
-					</attribute>
-				</optional>
-				<text/>
-			</element>
-			<element name="unittype">
-				<ref name="am.common"/>
-				<ref name="a.encodinganalog"/>
-				<ref name="am.access.no.normal"/>
-				<text/>
-			</element>
+			<ref name="e.quantity"/>
+			<ref name="e.unittype"/>
+
 			<zeroOrMore>
 				<choice>
 					<ref name="e.physfacet"/>
@@ -804,7 +791,26 @@ For these and/or other purposes and motivations, and without any expectation of 
 			</optional>
 		</element>
 	</define>
-
+	<define name="e.quantity">
+		<element name="quantity">
+			<ref name="am.common"/>
+			<ref name="a.encodinganalog"/>
+			<optional>
+				<attribute name="approximate">
+					<ref name="av.yesorno"/>
+				</attribute>
+			</optional>
+			<text/>
+		</element>
+	</define>
+	<define name="e.unittype">
+		<element name="unittype">
+			<ref name="am.common"/>
+			<ref name="a.encodinganalog"/>
+			<ref name="am.access.no.normal"/>
+			<text/>
+		</element>
+	</define>
 	<define name="e.repository">
 		<element name="repository">
 			<ref name="am.common"/>
