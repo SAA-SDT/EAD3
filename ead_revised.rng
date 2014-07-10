@@ -1702,6 +1702,12 @@ For these and/or other purposes and motivations, and without any expectation of 
 					<optional>
 						<ref name="a.align"/>
 					</optional>
+					<optional>
+						<ref name="a.char"/>
+					</optional>
+					<optional>
+						<ref name="a.charoff"/>
+					</optional>
 					<zeroOrMore>
 						<element name="colspec">
 							<optional>
