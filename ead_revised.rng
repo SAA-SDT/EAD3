@@ -909,7 +909,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 				</attribute>
 			</optional>
 			<optional>
-				<attribute name="identifier"/>
+				<ref name="a.identifier"/>
 			</optional>
 			<ref name="a.encodinganalog"/>
 			<ref name="m.mixed.basic"/>
