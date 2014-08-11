@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?><grammar xmlns="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
     <rng:div xmlns:rng="http://relaxng.org/ns/structure/1.0">
 <!--include "ead_revised_defs.rng"-->
-<rng:div datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+
+        
+        
+    <rng:div datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
   <!-- ELEMENTS -->
   <rng:define name="e.ead">
     <element name="ead">
@@ -420,7 +423,7 @@
                 </element>
               </zeroOrMore>
               <optional>
-                <ref name="e.objectxmlwrap"/>
+                <empty/>
               </optional>
               <optional>
                 <ref name="e.descriptivenote"/>
@@ -2642,7 +2645,7 @@
             </element>
           </zeroOrMore>
           <optional>
-            <ref name="e.objectxmlwrap"/>
+            <empty/>
           </optional>
           <optional>
             <choice>
@@ -2661,24 +2664,8 @@
       </oneOrMore>
     </element>
   </rng:define>
-  <rng:define name="e.objectxmlwrap">
-    <element name="objectxmlwrap">
-      <ref name="am.common"/>
-      <ref name="e.anyname"/>
-    </element>
-  </rng:define>
-  <rng:define name="e.anyname">
-    <element>
-      <anyName>
-        <except>
-          <nsName ns="http://ead3.archivists.org/schema/"/>
-        </except>
-      </anyName>
-      <zeroOrMore>
-        <ref name="e.anyname"/>
-      </zeroOrMore>
-    </element>
-  </rng:define>
+  
+  
   <!-- ELEMENT MODELS -->
   <rng:define name="m.blocks">
     <choice>
