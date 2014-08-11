@@ -103,87 +103,8 @@
           <text/>
         </element>
       </zeroOrMore>
-      <element name="filedesc">
-        <ref name="am.common"/>
-        <optional>
-          <ref name="a.encodinganalog"/>
-        </optional>
-        <element name="titlestmt">
-          <ref name="am.common"/>
-          <optional>
-            <ref name="a.encodinganalog"/>
-          </optional>
-          <oneOrMore>
-            <ref name="e.titleproper"/>
-          </oneOrMore>
-          <zeroOrMore>
-            <ref name="e.subtitle"/>
-          </zeroOrMore>
-          <zeroOrMore>
-            <ref name="e.author"/>
-          </zeroOrMore>
-          <zeroOrMore>
-            <ref name="e.sponsor"/>
-          </zeroOrMore>
-        </element>
-        <optional>
-          <element name="editionstmt">
-            <ref name="am.common"/>
-            <optional>
-              <ref name="a.encodinganalog"/>
-            </optional>
-            <oneOrMore>
-              <choice>
-                <ref name="e.edition"/>
-                <ref name="e.p"/>
-              </choice>
-            </oneOrMore>
-          </element>
-        </optional>
-        <optional>
-          <element name="publicationstmt">
-            <ref name="am.common"/>
-            <optional>
-              <ref name="a.encodinganalog"/>
-            </optional>
-            <oneOrMore>
-              <choice>
-                <ref name="e.publisher"/>
-                <ref name="e.date"/>
-                <ref name="e.address"/>
-                <ref name="e.num"/>
-                <ref name="e.p"/>
-              </choice>
-            </oneOrMore>
-          </element>
-        </optional>
-        <optional>
-          <element name="seriesstmt">
-            <ref name="am.common"/>
-            <optional>
-              <ref name="a.encodinganalog"/>
-            </optional>
-            <oneOrMore>
-              <choice>
-                <ref name="e.titleproper"/>
-                <ref name="e.num"/>
-                <ref name="e.p"/>
-              </choice>
-            </oneOrMore>
-          </element>
-        </optional>
-        <optional>
-          <element name="notestmt">
-            <ref name="am.common"/>
-            <optional>
-              <ref name="a.encodinganalog"/>
-            </optional>
-            <oneOrMore>
-              <ref name="e.controlnote"/>
-            </oneOrMore>
-          </element>
-        </optional>
-      </element>
+      <ref name="e.filedesc"/>
+      
       <element name="maintenancestatus">
         <ref name="am.common"/>
         <optional>
@@ -578,6 +499,89 @@
         <ref name="a.lastdatetimeverified"/>
       </optional>
       <ref name="m.mixed.basic"/>
+    </element>
+  </define>
+  <define name="e.filedesc">
+    <element name="filedesc">
+      <ref name="am.common"/>
+      <optional>
+        <ref name="a.encodinganalog"/>
+      </optional>
+      <element name="titlestmt">
+        <ref name="am.common"/>
+        <optional>
+          <ref name="a.encodinganalog"/>
+        </optional>
+        <oneOrMore>
+          <ref name="e.titleproper"/>
+        </oneOrMore>
+        <zeroOrMore>
+          <ref name="e.subtitle"/>
+        </zeroOrMore>
+        <zeroOrMore>
+          <ref name="e.author"/>
+        </zeroOrMore>
+        <zeroOrMore>
+          <ref name="e.sponsor"/>
+        </zeroOrMore>
+      </element>
+      <optional>
+        <element name="editionstmt">
+          <ref name="am.common"/>
+          <optional>
+            <ref name="a.encodinganalog"/>
+          </optional>
+          <oneOrMore>
+            <choice>
+              <ref name="e.edition"/>
+              <ref name="e.p"/>
+            </choice>
+          </oneOrMore>
+        </element>
+      </optional>
+      <optional>
+        <element name="publicationstmt">
+          <ref name="am.common"/>
+          <optional>
+            <ref name="a.encodinganalog"/>
+          </optional>
+          <oneOrMore>
+            <choice>
+              <ref name="e.publisher"/>
+              <ref name="e.date"/>
+              <ref name="e.address"/>
+              <ref name="e.num"/>
+              <ref name="e.p"/>
+            </choice>
+          </oneOrMore>
+        </element>
+      </optional>
+      <optional>
+        <element name="seriesstmt">
+          <ref name="am.common"/>
+          <optional>
+            <ref name="a.encodinganalog"/>
+          </optional>
+          <oneOrMore>
+            <choice>
+              <ref name="e.titleproper"/>
+              <ref name="e.num"/>
+              <ref name="e.p"/>
+            </choice>
+          </oneOrMore>
+        </element>
+      </optional>
+      <optional>
+        <element name="notestmt">
+          <ref name="am.common"/>
+          <optional>
+            <ref name="a.encodinganalog"/>
+          </optional>
+          <oneOrMore>
+            <ref name="e.controlnote"/>
+          </oneOrMore>
+        </element>
+      </optional>
     </element>
   </define>
   <!-- ARCHDESC -->
