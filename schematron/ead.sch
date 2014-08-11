@@ -12,22 +12,12 @@
         <file key="iso639-2">http://id.loc.gov/vocabulary/iso639-2.rdf</file>
         <file key="iso639-3">http://anonscm.debian.org/gitweb/?p=iso-codes/pkg-iso-codes.git;a=blob_plain;f=iso_639_3/iso_639_3.xml</file>
     </xsl:variable>
-
-    <!-- $doc is root of instance being tested -->
-    <!--<let name="doc" value="/"/>-->
-    
-    <!-- active-language-code-key:
-    get the value of the first conventiondeclaration/abbr whose content matches
-    a @key in $language-code-lookups, with a fallback value of iso639-2 if 
-    no language code is declared in a conventiondeclaration/abbr in the EAD3 document
-    -->
     
     <let name="active-language-code-key" value="(/ead:ead/ead:control/@langencoding[.=$language-code-lookups/@key],'iso639-2')[1]"/>
     
     <!--$language-code-lookup:
      select <file> element from $language-code-lookups
-     whose @key value matches the EAD3 document's first <conventiondeclaration> child 
-     <abbr> element that declares the language codelist with any of the
+     whose @key value matches the EAD3 document's /ead:ead/ead:control/@langencoding that declares the language codelist with any of the
      values of $language-code-lookups' @key attribute, with a fall-back of 'iso639-2'-->
 
     <let name="language-code-lookup"
