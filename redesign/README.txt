@@ -1,6 +1,6 @@
 ead3-compiled.rng: single file EAD3 RelaxNG schema 
 
-ead3_dtd-compiled.rng: single file EAD3 DTD
+ead3_dtd-compiled.dtd: single file EAD3 DTD
 
 ead3_dtd.rng: wrapper file with definition overrides used to create DTD friendly version of EAD3 schema
 
