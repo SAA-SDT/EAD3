@@ -118,18 +118,7 @@
         <define name="e.repository">
             <notAllowed/>
         </define>
-        
-        
-        
-        <!-- ONLY ACCESS ELEMENTS IN CONTROLACCESS
-        <define name="e.controlaccess">
-            <element name="controlaccess">
-                <oneOrMore>
-                    <ref name="m.access"/>
-                </oneOrMore>
-            </element>
-        </define>
- -->
+                
         <!-- NO HEAD  -->
         
         <define name="e.head">

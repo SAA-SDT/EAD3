@@ -4,14 +4,6 @@
     datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" ns="http://ead3.archivists.org/schema/">
     <include href="ead_revised_defs.rng"/>
     <start>
-            <element name="ead">
-                <ref name="am.common"/>
-                <optional>
-                    <ref name="a.relatedencoding"/>
-                </optional>
-                <ref name="a.base"/>
-                <ref name="e.control"/>
-                <ref name="e.archdesc"/>
-            </element>
+        <ref name="e.ead"/>
     </start>
 </grammar>

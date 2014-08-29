@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+    xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
+    ns="http://ead3.archivists.org/schema/undeprecated/">
+    <include href="ead_revised_defs.rng">
+
+    <define name="e.ead">
+        <element name="ead">
+            <ref name="am.common"/>
+            <ref name="a.relatedencoding"/>
+            <ref name="a.base"/>
+            <ref name="e.control"/>
+    <!-- OPTIONAL FRONTMATTER -->        
+            <optional>
+                <element name="frontmatter">
+                    <ref name="am.common"/>
+                    <optional>
+                        <element name="titlepage">
+                            <ref name="am.common"/>
+                            <oneOrMore>
+                                <choice>
+                                    <ref name="m.blocks"/>
+                                    <ref name="e.author"/>
+                                    <ref name="e.date"/>
+                                    <ref name="e.edition"/>
+                                    <ref name="e.num"/>
+                                    <ref name="e.publisher"/>
+                                    <ref name="e.bibseries"/>
+                                    <ref name="e.sponsor"/>
+                                    <ref name="e.titleproper"/>
+                                    <ref name="e.subtitle"/>
+                                </choice>
+                            </oneOrMore>
+                        </element>
+                    </optional>
+                    <zeroOrMore>
+                        <ref name="e.div"/>
+                    </zeroOrMore>
+                </element>
+            </optional>
+            <ref name="e.archdesc"/>
+        </element>
+    </define>
+        
+        <!-- ARCHDESC -->
+        
+        <define name="e.archdesc">
+            <element name="archdesc">
+                <ref name="am.common"/>
+                <ref name="a.localtype"/>
+                <ref name="a.relatedencoding"/>
+                <ref name="am.desc.base"/>
+                <ref name="a.level"/>
+                <ref name="a.base"/>
+                <zeroOrMore>
+                    <element name="runner">
+                        <ref name="am.common"/>
+                        <optional>
+                            <attribute name="placement">
+                                <choice>
+                                    <value>header</value>
+                                    <value>footer</value>
+                                    <value>watermark</value>
+                                </choice>
+                            </attribute>
+                        </optional>
+                        <optional>
+                            <attribute name="role"/>
+                        </optional>
+                        <zeroOrMore>
+                            <choice>
+                                <text/>
+                                <ref name="m.mixed.basic"/>
+                            </choice>
+                        </zeroOrMore>
+                    </element>
+                </zeroOrMore>
+                <ref name="e.did"/>
+                <zeroOrMore>
+                    <choice>
+                        <ref name="m.desc.base"/>
+                        <ref name="e.dsc"/>
+                    </choice>
+                </zeroOrMore>
+            </element>
+        </define>
+        
+        
+
+    </include>
+    <start>
+        <ref name="e.ead"/>
+    </start>
+    
+<!-- DEFINES FOR FRONTMATTER -->
+    <define name="e.bibseries">
+        <element name="bibseries">
+            <ref name="am.common"/>
+            <optional>
+                <attribute name="encodinganalog"/>
+            </optional>
+            <zeroOrMore>
+                <choice>
+                    <text/>
+                    <ref name="e.abbr"/>
+                    <ref name="e.emph"/>
+                    <ref name="e.expan"/>
+                    <ref name="e.foreign"/>
+                    <ref name="e.lb"/>
+                    <ref name="e.ptr"/>
+                    <ref name="e.ref"/>
+                    <ref name="e.title"/>
+                    <ref name="e.num"/>
+                </choice>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="e.div">
+        <element name="div">
+            <ref name="am.common"/>
+            <optional>
+                <ref name="e.head"/>
+            </optional>
+            <zeroOrMore>
+                <ref name="m.blocks"/>
+            </zeroOrMore>
+            <zeroOrMore>
+                <ref name="e.div"/>
+            </zeroOrMore>
+        </element>
+    </define>
+    
+  
+</grammar>

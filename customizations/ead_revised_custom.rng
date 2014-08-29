@@ -39,7 +39,7 @@
                 </zeroOrMore>
             </element></define>
         
-       <!-- 
+        
         <define name="m.desc.base">
             <choice>
                 <ref name="e.accessrestrict"/>
@@ -67,17 +67,8 @@
                 <ref name="e.userestrict"/>
             </choice>
         </define>
-        -->
     </include>
     <start>
-        <element name="ead">
-            <ref name="am.common"/>
-            <optional>
-                <ref name="a.relatedencoding"/>
-            </optional>
-            <ref name="a.base"/>
-            <ref name="e.control"/>
-            <ref name="e.archdesc"/>
-        </element>
+        <ref name="e.ead"/>
     </start>
 </grammar>

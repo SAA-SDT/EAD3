@@ -1,22 +1,588 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<grammar xmlns="http://relaxng.org/ns/structure/1.0"
-  datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
-  <include href="control_defs.rng"/>
+<?xml version="1.0" encoding="UTF-8"?><grammar xmlns="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" ns="http://ead3.archivists.org/schema/">
+    <rng:div xmlns:rng="http://relaxng.org/ns/structure/1.0">
+<!--include "ead_revised_defs.rng"-->
+<rng:div datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
   <!-- ELEMENTS -->
-  <define name="e.ead">
+  <rng:define name="e.ead">
     <element name="ead">
       <ref name="am.common"/>
       <optional>
         <ref name="a.relatedencoding"/>
       </optional>
-      <ref name="a.base"/>
+      <optional><ref name="a.base"/></optional>
       <ref name="e.control"/>
       <ref name="e.archdesc"/>
     </element>
-  </define>
- 
+  </rng:define>
+  <!-- control -->
+  <rng:define name="e.control">
+    <element name="control">
+      <ref name="am.common"/>
+      <optional>
+        <ref name="a.encodinganalog"/>
+      </optional>
+      <optional>
+        <ref name="a.relatedencoding"/>
+      </optional>
+      <optional><ref name="a.base"/></optional>
+      <optional>
+        <attribute name="langencoding">
+          <choice>
+            <value>iso639-1</value>
+            <value>iso639-2b</value>
+            <value>iso639-3</value>
+            <value>otherlangencoding</value>
+          </choice>
+        </attribute>
+      </optional>
+      <optional>
+        <attribute name="scriptencoding">
+          <choice>
+            <value>iso15924</value>
+            <value>otherscriptencoding</value>
+          </choice>
+        </attribute>
+      </optional>
+      <optional>
+        <attribute name="dateencoding">
+          <choice>
+            <value>iso8601</value>
+            <value>otherdateencoding</value>
+          </choice>
+        </attribute>
+      </optional>
+      <optional>
+        <attribute name="countryencoding">
+          <choice>
+            <value>iso3166-1</value>
+            <value>othercountryencoding</value>
+          </choice>
+        </attribute>
+      </optional>
+      <optional>
+        <attribute name="repositoryencoding">
+          <choice>
+            <value>iso15511</value>
+            <value>otherrepositoryencoding</value>
+          </choice>
+        </attribute>
+      </optional>
+      <element name="recordid">
+        <ref name="am.common"/>
+        <optional>
+          <ref name="a.encodinganalog"/>
+        </optional>
+        <optional>
+          <attribute name="instanceurl">
+            <data type="anyURI"/>
+          </attribute>
+        </optional>
+        <text/>
+      </element>
+      <zeroOrMore>
+        <element name="otherrecordid">
+          <ref name="am.common"/>
+          <optional>
+            <ref name="a.encodinganalog"/>
+          </optional>
+          <optional>
+            <ref name="a.localtype"/>
+          </optional>
+          <text/>
+        </element>
+      </zeroOrMore>
+      <zeroOrMore>
+        <element name="representation">
+          <ref name="am.common"/>
+          <optional>
+            <ref name="a.encodinganalog"/>
+          </optional>
+          <ref name="am.simplelink"/>
+          <optional>
+            <ref name="a.localtype"/>
+          </optional>
+          <text/>
+        </element>
+      </zeroOrMore>
+      <element name="filedesc">
+        <ref name="am.common"/>
+        <optional>
+          <ref name="a.encodinganalog"/>
+        </optional>
+        <element name="titlestmt">
+          <ref name="am.common"/>
+          <optional>
+            <ref name="a.encodinganalog"/>
+          </optional>
+          <oneOrMore>
+            <ref name="e.titleproper"/>
+          </oneOrMore>
+          <zeroOrMore>
+            <ref name="e.subtitle"/>
+          </zeroOrMore>
+          <zeroOrMore>
+            <ref name="e.author"/>
+          </zeroOrMore>
+          <zeroOrMore>
+            <ref name="e.sponsor"/>
+          </zeroOrMore>
+        </element>
+        <optional>
+          <element name="editionstmt">
+            <ref name="am.common"/>
+            <optional>
+              <ref name="a.encodinganalog"/>
+            </optional>
+            <oneOrMore>
+              <choice>
+                <ref name="e.edition"/>
+                <ref name="e.p"/>
+              </choice>
+            </oneOrMore>
+          </element>
+        </optional>
+        <optional>
+          <element name="publicationstmt">
+            <ref name="am.common"/>
+            <optional>
+              <ref name="a.encodinganalog"/>
+            </optional>
+            <oneOrMore>
+              <choice>
+                <ref name="e.publisher"/>
+                <ref name="e.date"/>
+                <ref name="e.address"/>
+                <ref name="e.num"/>
+                <ref name="e.p"/>
+              </choice>
+            </oneOrMore>
+          </element>
+        </optional>
+        <optional>
+          <element name="seriesstmt">
+            <ref name="am.common"/>
+            <optional>
+              <ref name="a.encodinganalog"/>
+            </optional>
+            <oneOrMore>
+              <choice>
+                <ref name="e.titleproper"/>
+                <ref name="e.num"/>
+                <ref name="e.p"/>
+              </choice>
+            </oneOrMore>
+          </element>
+        </optional>
+        <optional>
+          <element name="notestmt">
+            <ref name="am.common"/>
+            <optional>
+              <ref name="a.encodinganalog"/>
+            </optional>
+            <oneOrMore>
+              <ref name="e.controlnote"/>
+            </oneOrMore>
+          </element>
+        </optional>
+      </element>
+      <element name="maintenancestatus">
+        <ref name="am.common"/>
+        <optional>
+          <ref name="a.encodinganalog"/>
+        </optional>
+        <attribute name="value">
+          <choice>
+            <value>revised</value>
+            <value>deleted</value>
+            <value>new</value>
+            <value>deletedsplit</value>
+            <value>deletedmerged</value>
+            <value>deletedreplaced</value>
+            <value>cancelled</value>
+            <value>derived</value>
+          </choice>
+        </attribute>
+        <text/>
+      </element>
+      <optional>
+        <element name="publicationstatus">
+          <ref name="am.common"/>
+          <optional>
+            <ref name="a.encodinganalog"/>
+          </optional>
+          <attribute name="value">
+            <choice>
+              <value>inprocess</value>
+              <value>approved</value>
+              <value>published</value>
+            </choice>
+          </attribute>
+          <text/>
+        </element>
+      </optional>
+      <ref name="e.maintenanceagency"/>
+      <zeroOrMore>
+        <element name="languagedeclaration">
+          <ref name="am.common"/>
+          <optional>
+            <ref name="a.encodinganalog"/>
+          </optional>
+          <ref name="e.language"/>
+          <ref name="e.script"/>
+          <optional>
+            <ref name="e.descriptivenote"/>
+          </optional>
+        </element>
+      </zeroOrMore>
+      <zeroOrMore>
+        <element name="conventiondeclaration">
+          <ref name="am.common"/>
+          <optional>
+            <ref name="a.encodinganalog"/>
+          </optional>
+          <optional>
+            <ref name="e.abbr"/>
+          </optional>
+          <ref name="e.citation"/>
+          <optional>
+            <ref name="e.descriptivenote"/>
+          </optional>
+        </element>
+      </zeroOrMore>
+      <zeroOrMore>
+        <element name="localtypedeclaration">
+          <ref name="am.common"/>
+          <optional>
+            <ref name="a.encodinganalog"/>
+          </optional>
+          <optional>
+            <ref name="e.abbr"/>
+          </optional>
+          <ref name="e.citation"/>
+          <optional>
+            <ref name="e.descriptivenote"/>
+          </optional>
+        </element>
+      </zeroOrMore>
+      <zeroOrMore>
+        <element name="localcontrol">
+          <ref name="am.common"/>
+          <optional>
+            <ref name="a.encodinganalog"/>
+          </optional>
+          <optional>
+            <ref name="a.localtype"/>
+          </optional>
+          <optional>
+            <element name="term">
+              <ref name="am.common"/>
+              <optional>
+                <ref name="a.encodinganalog"/>
+              </optional>
+              <optional>
+                <ref name="a.transliteration"/>
+              </optional>
+              <optional>
+                <ref name="a.lastdatetimeverified"/>
+              </optional>
+              <ref name="am.access.no.normal"/>
+              <text/>
+            </element>
+          </optional>
+          <optional>
+            <choice>
+              <ref name="e.datesingle"/>
+              <ref name="e.daterange"/>
+            </choice>
+          </optional>
+        </element>
+      </zeroOrMore>
+      <element name="maintenancehistory">
+        <ref name="am.common"/>
+        <optional>
+          <ref name="a.encodinganalog"/>
+        </optional>
+        <oneOrMore>
+          <element name="maintenanceevent">
+            <ref name="am.common"/>
+            <optional>
+              <ref name="a.encodinganalog"/>
+            </optional>
+            <element name="eventtype">
+              <ref name="am.common"/>
+              <optional>
+                <ref name="a.encodinganalog"/>
+              </optional>
+              <attribute name="value">
+                <choice>
+                  <value>created</value>
+                  <value>revised</value>
+                  <value>deleted</value>
+                  <value>cancelled</value>
+                  <value>derived</value>
+                  <value>updated</value>
+                  <value>unknown</value>
+                </choice>
+              </attribute>
+              <text/>
+            </element>
+            <element name="eventdatetime">
+              <ref name="am.common"/>
+              <optional>
+                <ref name="a.encodinganalog"/>
+              </optional>
+              <optional>
+                <attribute name="standarddatetime">
+                  <choice>
+                    <data type="date">
+                      <param name="maxInclusive">2099-12-31</param>
+                    </data>
+                    <data type="gYear">
+                      <param name="maxInclusive">2099</param>
+                    </data>
+                    <data type="gYearMonth">
+                      <param name="maxInclusive">2099-12</param>
+                    </data>
+                    <data type="dateTime">
+                      <param name="maxInclusive">2099-12-31T23:59:59</param>
+                    </data>
+                  </choice>
+                </attribute>
+              </optional>
+              <text/>
+            </element>
+            <element name="agenttype">
+              <ref name="am.common"/>
+              <optional>
+                <ref name="a.encodinganalog"/>
+              </optional>
+              <attribute name="value">
+                <choice>
+                  <value>human</value>
+                  <value>machine</value>
+                  <value>unknown</value>
+                </choice>
+              </attribute>
+              <text/>
+            </element>
+            <element name="agent">
+              <ref name="am.common"/>
+              <optional>
+                <ref name="a.encodinganalog"/>
+              </optional>
+              <text/>
+            </element>
+            <zeroOrMore>
+              <element name="eventdescription">
+                <ref name="am.common"/>
+                <optional>
+                  <ref name="a.encodinganalog"/>
+                </optional>
+                <optional>
+                  <ref name="a.localtype"/>
+                </optional>
+                <text/>
+              </element>
+            </zeroOrMore>
+          </element>
+        </oneOrMore>
+      </element>
+      <optional>
+        <element name="sources">
+          <ref name="am.common"/>
+          <optional>
+            <ref name="a.encodinganalog"/>
+          </optional>
+          <optional>
+            <ref name="a.localtype"/>
+          </optional>
+          <optional><ref name="a.base"/></optional>
+          <oneOrMore>
+            <element name="source">
+              <ref name="am.common"/>
+              <optional>
+                <ref name="a.encodinganalog"/>
+              </optional>
+              <optional>
+                <ref name="a.lastdatetimeverified"/>
+              </optional>
+              <ref name="am.simplelink"/>
+              <zeroOrMore>
+                <element name="sourceentry">
+                  <ref name="am.common"/>
+                  <optional>
+                    <ref name="a.encodinganalog"/>
+                  </optional>
+                  <optional>
+                    <ref name="a.transliteration"/>
+                  </optional>
+                  <text/>
+                </element>
+              </zeroOrMore>
+              <optional>
+                <ref name="e.objectxmlwrap"/>
+              </optional>
+              <optional>
+                <ref name="e.descriptivenote"/>
+              </optional>
+            </element>
+          </oneOrMore>
+        </element>
+      </optional>
+    </element>
+  </rng:define>
+  <rng:define name="e.titleproper">
+    <element name="titleproper">
+      <ref name="am.common"/>
+      <optional>
+        <ref name="a.localtype"/>
+      </optional>
+      <optional>
+        <ref name="a.render"/>
+      </optional>
+      <optional>
+        <ref name="a.encodinganalog"/>
+      </optional>
+      <ref name="m.mixed.basic"/>
+    </element>
+  </rng:define>
+  <rng:define name="e.subtitle">
+    <element name="subtitle">
+      <ref name="am.common"/>
+      <optional>
+        <ref name="a.localtype"/>
+      </optional>
+      <optional>
+        <ref name="a.encodinganalog"/>
+      </optional>
+      <ref name="m.mixed.basic"/>
+    </element>
+  </rng:define>
+  <rng:define name="e.author">
+    <element name="author">
+      <ref name="am.common"/>
+      <optional>
+        <ref name="a.localtype"/>
+      </optional>
+      <optional>
+        <ref name="a.encodinganalog"/>
+      </optional>
+      <ref name="m.mixed.basic"/>
+    </element>
+  </rng:define>
+  <rng:define name="e.sponsor">
+    <element name="sponsor">
+      <ref name="am.common"/>
+      <optional>
+        <ref name="a.localtype"/>
+      </optional>
+      <optional>
+        <ref name="a.encodinganalog"/>
+      </optional>
+      <ref name="m.mixed.basic"/>
+    </element>
+  </rng:define>
+  <rng:define name="e.edition">
+    <element name="edition">
+      <ref name="am.common"/>
+      <optional>
+        <ref name="a.localtype"/>
+      </optional>
+      <optional>
+        <ref name="a.encodinganalog"/>
+      </optional>
+      <ref name="m.mixed.basic"/>
+    </element>
+  </rng:define>
+  <rng:define name="e.publisher">
+    <element name="publisher">
+      <ref name="am.common"/>
+      <optional>
+        <ref name="a.localtype"/>
+      </optional>
+      <optional>
+        <ref name="a.encodinganalog"/>
+      </optional>
+      <ref name="m.mixed.basic"/>
+    </element>
+  </rng:define>
+  <rng:define name="e.controlnote">
+    <element name="controlnote">
+      <ref name="am.common"/>
+      <optional>
+        <ref name="a.localtype"/>
+      </optional>
+      <optional>
+        <ref name="a.encodinganalog"/>
+      </optional>
+      <oneOrMore>
+        <ref name="m.blocks"/>
+      </oneOrMore>
+    </element>
+  </rng:define>
+  <rng:define name="e.maintenanceagency">
+    <element name="maintenanceagency">
+      <ref name="am.common"/>
+      <optional>
+        <ref name="a.encodinganalog"/>
+      </optional>
+      <ref name="am.countrycode"/>
+      <optional>
+        <element name="agencycode">
+          <ref name="am.common"/>
+          <optional>
+            <ref name="a.encodinganalog"/>
+          </optional>
+          <optional>
+            <ref name="a.localtype"/>
+          </optional>
+          <text/>
+        </element>
+      </optional>
+      <zeroOrMore>
+        <element name="otheragencycode">
+          <ref name="am.common"/>
+          <optional>
+            <ref name="a.encodinganalog"/>
+          </optional>
+          <optional>
+            <ref name="a.localtype"/>
+          </optional>
+          <text/>
+        </element>
+      </zeroOrMore>
+      <oneOrMore>
+        <element name="agencyname">
+          <ref name="am.common"/>
+          <optional>
+            <ref name="a.encodinganalog"/>
+          </optional>
+          <optional>
+            <ref name="a.localtype"/>
+          </optional>
+          <text/>
+        </element>
+      </oneOrMore>
+      <optional>
+        <ref name="e.descriptivenote"/>
+      </optional>
+    </element>
+  </rng:define>
+  <rng:define name="e.citation">
+    <element name="citation">
+      <ref name="am.common"/>
+      <optional>
+        <ref name="a.encodinganalog"/>
+      </optional>
+      <ref name="am.simplelink"/>
+      <optional>
+        <ref name="a.lastdatetimeverified"/>
+      </optional>
+      <ref name="m.mixed.basic"/>
+    </element>
+  </rng:define>
   <!-- ARCHDESC -->
-  <define name="e.archdesc">
+  <rng:define name="e.archdesc">
     <element name="archdesc">
       <ref name="am.common"/>
       <optional>
@@ -27,7 +593,7 @@
       </optional>
       <ref name="am.desc.base"/>
       <ref name="a.level"/>
-      <ref name="a.base"/>
+      <optional><ref name="a.base"/></optional>
       <ref name="e.did"/>
       <zeroOrMore>
         <choice>
@@ -36,9 +602,9 @@
         </choice>
       </zeroOrMore>
     </element>
-  </define>
+  </rng:define>
   <!-- did -->
-  <define name="e.did">
+  <rng:define name="e.did">
     <element name="did">
       <ref name="am.common"/>
       <optional>
@@ -51,8 +617,8 @@
         <ref name="m.did"/>
       </oneOrMore>
     </element>
-  </define>
-  <define name="e.abstract">
+  </rng:define>
+  <rng:define name="e.abstract">
     <element name="abstract">
       <ref name="am.common"/>
       <optional>
@@ -66,8 +632,8 @@
       </optional>
       <ref name="m.mixed.basic.plus.access"/>
     </element>
-  </define>
-  <define name="e.container">
+  </rng:define>
+  <rng:define name="e.container">
     <element name="container">
       <ref name="am.common"/>
       <optional>
@@ -89,8 +655,8 @@
       </optional>
       <ref name="m.mixed.basic"/>
     </element>
-  </define>
-  <define name="e.dao">
+  </rng:define>
+  <rng:define name="e.dao">
     <element name="dao">
       <ref name="am.common"/>
       <optional>
@@ -105,7 +671,6 @@
       <ref name="am.simplelink"/>
       <optional>
         <ref name="a.identifier"/>
-
       </optional>
       <optional>
         <ref name="a.link.xpointer"/>
@@ -133,8 +698,8 @@
         <ref name="e.descriptivenote"/>
       </optional>
     </element>
-  </define>
-  <define name="e.daoset">
+  </rng:define>
+  <rng:define name="e.daoset">
     <element name="daoset">
       <ref name="am.common"/>
       <optional>
@@ -146,8 +711,8 @@
       <optional>
         <ref name="a.label"/>
       </optional>
-      <ref name="a.coverage"/>
-      <ref name="a.base"/>
+      <optional><ref name="a.coverage"/></optional>
+      <optional><ref name="a.base"/></optional>
       <ref name="e.dao"/>
       <oneOrMore>
         <ref name="e.dao"/>
@@ -156,8 +721,8 @@
         <ref name="e.descriptivenote"/>
       </optional>
     </element>
-  </define>
-  <define name="e.didnote">
+  </rng:define>
+  <rng:define name="e.didnote">
     <element name="didnote">
       <ref name="am.common"/>
       <optional>
@@ -171,8 +736,8 @@
       </optional>
       <ref name="m.mixed.basic"/>
     </element>
-  </define>
-  <define name="e.langmaterial">
+  </rng:define>
+  <rng:define name="e.langmaterial">
     <element name="langmaterial">
       <ref name="am.common"/>
       <optional>
@@ -191,8 +756,8 @@
         <ref name="e.descriptivenote"/>
       </optional>
     </element>
-  </define>
-  <define name="e.materialspec">
+  </rng:define>
+  <rng:define name="e.materialspec">
     <element name="materialspec">
       <ref name="am.common"/>
       <optional>
@@ -206,8 +771,8 @@
       </optional>
       <ref name="m.mixed.basic"/>
     </element>
-  </define>
-  <define name="e.parallelphysdescset">
+  </rng:define>
+  <rng:define name="e.parallelphysdescset">
     <element name="parallelphysdescset">
       <ref name="am.common"/>
       <optional>
@@ -221,8 +786,8 @@
         <ref name="e.physdescstructured"/>
       </oneOrMore>
     </element>
-  </define>
-  <define name="e.physdesc">
+  </rng:define>
+  <rng:define name="e.physdesc">
     <element name="physdesc">
       <ref name="am.common"/>
       <optional>
@@ -236,8 +801,8 @@
       </optional>
       <ref name="m.mixed.basic"/>
     </element>
-  </define>
-  <define name="e.physloc">
+  </rng:define>
+  <rng:define name="e.physloc">
     <element name="physloc">
       <ref name="am.common"/>
       <optional>
@@ -254,8 +819,8 @@
       </optional>
       <ref name="m.mixed.basic"/>
     </element>
-  </define>
-  <define name="e.origination">
+  </rng:define>
+  <rng:define name="e.origination">
     <element name="origination">
       <ref name="am.common"/>
       <optional>
@@ -276,8 +841,8 @@
         </choice>
       </oneOrMore>
     </element>
-  </define>
-  <define name="e.physdescstructured">
+  </rng:define>
+  <rng:define name="e.physdescstructured">
     <element name="physdescstructured">
       <ref name="am.common"/>
       <optional>
@@ -328,8 +893,8 @@
         <ref name="e.descriptivenote"/>
       </optional>
     </element>
-  </define>
-  <define name="e.repository">
+  </rng:define>
+  <rng:define name="e.repository">
     <element name="repository">
       <ref name="am.common"/>
       <optional>
@@ -353,8 +918,8 @@
         <ref name="e.address"/>
       </optional>
     </element>
-  </define>
-  <define name="e.unitdate">
+  </rng:define>
+  <rng:define name="e.unitdate">
     <element name="unitdate">
       <ref name="am.common"/>
       <optional>
@@ -375,8 +940,8 @@
       </optional>
       <ref name="m.mixed.basic"/>
     </element>
-  </define>
-  <define name="e.unitdatestructured">
+  </rng:define>
+  <rng:define name="e.unitdatestructured">
     <element name="unitdatestructured">
       <ref name="am.common"/>
       <optional>
@@ -400,8 +965,8 @@
         <ref name="e.dateset"/>
       </choice>
     </element>
-  </define>
-  <define name="e.unittitle">
+  </rng:define>
+  <rng:define name="e.unittitle">
     <element name="unittitle">
       <ref name="am.common"/>
       <optional>
@@ -420,8 +985,8 @@
       </optional>
       <ref name="m.mixed.basic.plus.access"/>
     </element>
-  </define>
-  <define name="e.unitid">
+  </rng:define>
+  <rng:define name="e.unitid">
     <element name="unitid">
       <ref name="am.common"/>
       <optional>
@@ -444,9 +1009,9 @@
       </optional>
       <ref name="m.mixed.basic"/>
     </element>
-  </define>
+  </rng:define>
   <!-- archdesc notes -->
-  <define name="e.accessrestrict">
+  <rng:define name="e.accessrestrict">
     <element name="accessrestrict">
       <ref name="am.common"/>
       <optional>
@@ -465,8 +1030,8 @@
         </choice>
       </oneOrMore>
     </element>
-  </define>
-  <define name="e.accruals">
+  </rng:define>
+  <rng:define name="e.accruals">
     <element name="accruals">
       <ref name="am.common"/>
       <optional>
@@ -485,8 +1050,8 @@
         </choice>
       </oneOrMore>
     </element>
-  </define>
-  <define name="e.acqinfo">
+  </rng:define>
+  <rng:define name="e.acqinfo">
     <element name="acqinfo">
       <ref name="am.common"/>
       <optional>
@@ -505,8 +1070,8 @@
         </choice>
       </oneOrMore>
     </element>
-  </define>
-  <define name="e.altformavail">
+  </rng:define>
+  <rng:define name="e.altformavail">
     <element name="altformavail">
       <ref name="am.common"/>
       <optional>
@@ -525,8 +1090,8 @@
         </choice>
       </oneOrMore>
     </element>
-  </define>
-  <define name="e.appraisal">
+  </rng:define>
+  <rng:define name="e.appraisal">
     <element name="appraisal">
       <ref name="am.common"/>
       <optional>
@@ -545,8 +1110,8 @@
         </choice>
       </oneOrMore>
     </element>
-  </define>
-  <define name="e.arrangement">
+  </rng:define>
+  <rng:define name="e.arrangement">
     <element name="arrangement">
       <ref name="am.common"/>
       <optional>
@@ -565,8 +1130,8 @@
         </choice>
       </oneOrMore>
     </element>
-  </define>
-  <define name="e.bibliography">
+  </rng:define>
+  <rng:define name="e.bibliography">
     <element name="bibliography">
       <ref name="am.common"/>
       <optional>
@@ -587,8 +1152,8 @@
         </choice>
       </oneOrMore>
     </element>
-  </define>
-  <define name="e.bioghist">
+  </rng:define>
+  <rng:define name="e.bioghist">
     <element name="bioghist">
       <ref name="am.common"/>
       <optional>
@@ -607,8 +1172,8 @@
         </choice>
       </oneOrMore>
     </element>
-  </define>
-  <define name="e.controlaccess">
+  </rng:define>
+  <rng:define name="e.controlaccess">
     <element name="controlaccess">
       <ref name="am.common"/>
       <optional>
@@ -628,8 +1193,8 @@
         </choice>
       </oneOrMore>
     </element>
-  </define>
-  <define name="e.custodhist">
+  </rng:define>
+  <rng:define name="e.custodhist">
     <element name="custodhist">
       <ref name="am.common"/>
       <optional>
@@ -648,8 +1213,8 @@
         </choice>
       </oneOrMore>
     </element>
-  </define>
-  <define name="e.fileplan">
+  </rng:define>
+  <rng:define name="e.fileplan">
     <element name="fileplan">
       <ref name="am.common"/>
       <optional>
@@ -668,8 +1233,8 @@
         </choice>
       </oneOrMore>
     </element>
-  </define>
-  <define name="e.index">
+  </rng:define>
+  <rng:define name="e.index">
     <element name="index">
       <ref name="am.common"/>
       <optional>
@@ -698,8 +1263,8 @@
         </oneOrMore>
       </choice>
     </element>
-  </define>
-  <define name="e.indexentry">
+  </rng:define>
+  <rng:define name="e.indexentry">
     <element name="indexentry">
       <ref name="am.common"/>
       <choice>
@@ -726,8 +1291,8 @@
         <ref name="e.indexentry"/>
       </zeroOrMore>
     </element>
-  </define>
-  <define name="e.legalstatus">
+  </rng:define>
+  <rng:define name="e.legalstatus">
     <element name="legalstatus">
       <ref name="am.common"/>
       <optional>
@@ -746,8 +1311,8 @@
         </choice>
       </oneOrMore>
     </element>
-  </define>
-  <define name="e.odd">
+  </rng:define>
+  <rng:define name="e.odd">
     <element name="odd">
       <ref name="am.common"/>
       <optional>
@@ -766,8 +1331,8 @@
         </choice>
       </oneOrMore>
     </element>
-  </define>
-  <define name="e.originalsloc">
+  </rng:define>
+  <rng:define name="e.originalsloc">
     <element name="originalsloc">
       <ref name="am.common"/>
       <optional>
@@ -786,8 +1351,8 @@
         </choice>
       </oneOrMore>
     </element>
-  </define>
-  <define name="e.otherfindaid">
+  </rng:define>
+  <rng:define name="e.otherfindaid">
     <element name="otherfindaid">
       <ref name="am.common"/>
       <optional>
@@ -808,8 +1373,8 @@
         </choice>
       </oneOrMore>
     </element>
-  </define>
-  <define name="e.phystech">
+  </rng:define>
+  <rng:define name="e.phystech">
     <element name="phystech">
       <ref name="am.common"/>
       <optional>
@@ -828,8 +1393,8 @@
         </choice>
       </oneOrMore>
     </element>
-  </define>
-  <define name="e.prefercite">
+  </rng:define>
+  <rng:define name="e.prefercite">
     <element name="prefercite">
       <ref name="am.common"/>
       <optional>
@@ -848,8 +1413,8 @@
         </choice>
       </oneOrMore>
     </element>
-  </define>
-  <define name="e.processinfo">
+  </rng:define>
+  <rng:define name="e.processinfo">
     <element name="processinfo">
       <ref name="am.common"/>
       <optional>
@@ -868,8 +1433,8 @@
         </choice>
       </oneOrMore>
     </element>
-  </define>
-  <define name="e.relatedmaterial">
+  </rng:define>
+  <rng:define name="e.relatedmaterial">
     <element name="relatedmaterial">
       <ref name="am.common"/>
       <optional>
@@ -890,8 +1455,8 @@
         </choice>
       </oneOrMore>
     </element>
-  </define>
-  <define name="e.scopecontent">
+  </rng:define>
+  <rng:define name="e.scopecontent">
     <element name="scopecontent">
       <ref name="am.common"/>
       <optional>
@@ -910,8 +1475,8 @@
         </choice>
       </oneOrMore>
     </element>
-  </define>
-  <define name="e.separatedmaterial">
+  </rng:define>
+  <rng:define name="e.separatedmaterial">
     <element name="separatedmaterial">
       <ref name="am.common"/>
       <optional>
@@ -932,8 +1497,8 @@
         </choice>
       </oneOrMore>
     </element>
-  </define>
-  <define name="e.userestrict">
+  </rng:define>
+  <rng:define name="e.userestrict">
     <element name="userestrict">
       <ref name="am.common"/>
       <optional>
@@ -952,9 +1517,9 @@
         </choice>
       </oneOrMore>
     </element>
-  </define>
+  </rng:define>
   <!-- controlaccess elements -->
-  <define name="e.corpname">
+  <rng:define name="e.corpname">
     <element name="corpname">
       <ref name="am.common"/>
       <ref name="am.access"/>
@@ -971,8 +1536,8 @@
         <ref name="e.part"/>
       </oneOrMore>
     </element>
-  </define>
-  <define name="e.famname">
+  </rng:define>
+  <rng:define name="e.famname">
     <element name="famname">
       <ref name="am.common"/>
       <ref name="am.access"/>
@@ -989,8 +1554,8 @@
         <ref name="e.part"/>
       </oneOrMore>
     </element>
-  </define>
-  <define name="e.function">
+  </rng:define>
+  <rng:define name="e.function">
     <element name="function">
       <ref name="am.common"/>
       <ref name="am.access"/>
@@ -1007,8 +1572,8 @@
         <ref name="e.part"/>
       </oneOrMore>
     </element>
-  </define>
-  <define name="e.genreform">
+  </rng:define>
+  <rng:define name="e.genreform">
     <element name="genreform">
       <ref name="am.common"/>
       <ref name="am.access"/>
@@ -1025,8 +1590,8 @@
         <ref name="e.part"/>
       </oneOrMore>
     </element>
-  </define>
-  <define name="e.geogname">
+  </rng:define>
+  <rng:define name="e.geogname">
     <element name="geogname">
       <ref name="am.common"/>
       <ref name="am.access"/>
@@ -1052,8 +1617,8 @@
         </element>
       </zeroOrMore>
     </element>
-  </define>
-  <define name="e.name">
+  </rng:define>
+  <rng:define name="e.name">
     <element name="name">
       <ref name="am.common"/>
       <ref name="am.access"/>
@@ -1070,8 +1635,8 @@
         <ref name="e.part"/>
       </oneOrMore>
     </element>
-  </define>
-  <define name="e.occupation">
+  </rng:define>
+  <rng:define name="e.occupation">
     <element name="occupation">
       <ref name="am.common"/>
       <ref name="am.access"/>
@@ -1088,8 +1653,8 @@
         <ref name="e.part"/>
       </oneOrMore>
     </element>
-  </define>
-  <define name="e.persname">
+  </rng:define>
+  <rng:define name="e.persname">
     <element name="persname">
       <ref name="am.common"/>
       <ref name="am.access"/>
@@ -1106,8 +1671,8 @@
         <ref name="e.part"/>
       </oneOrMore>
     </element>
-  </define>
-  <define name="e.subject">
+  </rng:define>
+  <rng:define name="e.subject">
     <element name="subject">
       <ref name="am.common"/>
       <ref name="am.access"/>
@@ -1124,8 +1689,8 @@
         <ref name="e.part"/>
       </oneOrMore>
     </element>
-  </define>
-  <define name="e.title">
+  </rng:define>
+  <rng:define name="e.title">
     <element name="title">
       <ref name="am.common"/>
       <optional>
@@ -1145,8 +1710,8 @@
         <ref name="e.part"/>
       </oneOrMore>
     </element>
-  </define>
-  <define name="e.part">
+  </rng:define>
+  <rng:define name="e.part">
     <element name="part">
       <ref name="am.common"/>
       <optional>
@@ -1158,17 +1723,17 @@
       <ref name="am.access.no.normal"/>
       <ref name="m.mixed.basic"/>
     </element>
-  </define>
+  </rng:define>
   <!-- BLOCKS -->
   <!-- p -->
-  <define name="e.p">
+  <rng:define name="e.p">
     <element name="p">
       <ref name="am.common"/>
       <ref name="m.para.content"/>
     </element>
-  </define>
+  </rng:define>
   <!-- blockquote -->
-  <define name="e.blockquote">
+  <rng:define name="e.blockquote">
     <element name="blockquote">
       <ref name="am.common"/>
       <oneOrMore>
@@ -1178,9 +1743,9 @@
         </choice>
       </oneOrMore>
     </element>
-  </define>
+  </rng:define>
   <!-- chronlist -->
-  <define name="e.chronlist">
+  <rng:define name="e.chronlist">
     <element name="chronlist">
       <ref name="am.common"/>
       <optional>
@@ -1228,8 +1793,8 @@
         </element>
       </oneOrMore>
     </element>
-  </define>
-  <define name="e.event">
+  </rng:define>
+  <rng:define name="e.event">
     <element name="event">
       <ref name="am.common"/>
       <optional>
@@ -1237,9 +1802,9 @@
       </optional>
       <ref name="m.para.content"/>
     </element>
-  </define>
+  </rng:define>
   <!-- list -->
-  <define name="e.list">
+  <rng:define name="e.list">
     <element name="list">
       <ref name="am.common"/>
       <optional>
@@ -1308,14 +1873,14 @@
         </group>
       </choice>
     </element>
-  </define>
-  <define name="e.item">
+  </rng:define>
+  <rng:define name="e.item">
     <element name="item">
       <ref name="am.common"/>
       <ref name="m.para.content"/>
     </element>
-  </define>
-  <define name="e.listhead">
+  </rng:define>
+  <rng:define name="e.listhead">
     <element name="listhead">
       <ref name="am.common"/>
       <optional>
@@ -1337,9 +1902,9 @@
         </element>
       </optional>
     </element>
-  </define>
+  </rng:define>
   <!-- table -->
-  <define name="e.table">
+  <rng:define name="e.table">
     <element name="table">
       <ref name="am.common"/>
       <optional>
@@ -1431,8 +1996,8 @@
         </element>
       </oneOrMore>
     </element>
-  </define>
-  <define name="e.row">
+  </rng:define>
+  <rng:define name="e.row">
     <element name="row">
       <ref name="am.common"/>
       <optional>
@@ -1484,8 +2049,8 @@
         </element>
       </oneOrMore>
     </element>
-  </define>
-  <define name="e.thead">
+  </rng:define>
+  <rng:define name="e.thead">
     <element name="thead">
       <ref name="am.common"/>
       <optional>
@@ -1495,9 +2060,9 @@
         <ref name="e.row"/>
       </oneOrMore>
     </element>
-  </define>
+  </rng:define>
   <!-- language blocks -->
-  <define name="e.language">
+  <rng:define name="e.language">
     <element name="language">
       <ref name="am.common"/>
       <optional>
@@ -1513,8 +2078,8 @@
       </optional>
       <text/>
     </element>
-  </define>
-  <define name="e.languageset">
+  </rng:define>
+  <rng:define name="e.languageset">
     <element name="languageset">
       <ref name="am.common"/>
       <optional>
@@ -1530,8 +2095,8 @@
         <ref name="e.descriptivenote"/>
       </optional>
     </element>
-  </define>
-  <define name="e.script">
+  </rng:define>
+  <rng:define name="e.script">
     <element name="script">
       <ref name="am.common"/>
       <optional>
@@ -1548,9 +2113,9 @@
       </optional>
       <text/>
     </element>
-  </define>
+  </rng:define>
   <!-- physdescstructured blocks -->
-  <define name="e.dimensions">
+  <rng:define name="e.dimensions">
     <element name="dimensions">
       <ref name="am.common"/>
       <optional>
@@ -1572,8 +2137,8 @@
         </choice>
       </zeroOrMore>
     </element>
-  </define>
-  <define name="e.physfacet">
+  </rng:define>
+  <rng:define name="e.physfacet">
     <element name="physfacet">
       <ref name="am.common"/>
       <optional>
@@ -1585,9 +2150,9 @@
       </optional>
       <ref name="m.mixed.basic.plus.access"/>
     </element>
-  </define>
+  </rng:define>
   <!-- other blocks -->
-  <define name="e.address">
+  <rng:define name="e.address">
     <element name="address">
       <ref name="am.common"/>
       <oneOrMore>
@@ -1600,8 +2165,8 @@
         </element>
       </oneOrMore>
     </element>
-  </define>
-  <define name="e.archref">
+  </rng:define>
+  <rng:define name="e.archref">
     <element name="archref">
       <ref name="am.common"/>
       <optional>
@@ -1609,8 +2174,8 @@
       </optional>
       <ref name="m.mixed.basic.plus.access"/>
     </element>
-  </define>
-  <define name="e.bibref">
+  </rng:define>
+  <rng:define name="e.bibref">
     <element name="bibref">
       <ref name="am.common"/>
       <optional>
@@ -1618,8 +2183,8 @@
       </optional>
       <ref name="m.mixed.basic.plus.access"/>
     </element>
-  </define>
-  <define name="e.descriptivenote">
+  </rng:define>
+  <rng:define name="e.descriptivenote">
     <element name="descriptivenote">
       <ref name="am.common"/>
       <optional>
@@ -1629,8 +2194,8 @@
         <ref name="e.p"/>
       </oneOrMore>
     </element>
-  </define>
-  <define name="e.footnote">
+  </rng:define>
+  <rng:define name="e.footnote">
     <element name="footnote">
       <ref name="am.common"/>
       <optional>
@@ -1646,8 +2211,8 @@
         <ref name="m.blocks"/>
       </oneOrMore>
     </element>
-  </define>
-  <define name="e.head">
+  </rng:define>
+  <rng:define name="e.head">
     <element name="head">
       <ref name="am.common"/>
       <optional>
@@ -1657,9 +2222,9 @@
       </optional>
       <ref name="m.mixed.basic"/>
     </element>
-  </define>
+  </rng:define>
   <!-- DATES -->
-  <define name="e.datesingle">
+  <rng:define name="e.datesingle">
     <element name="datesingle">
       <ref name="am.common"/>
       <optional>
@@ -1667,8 +2232,8 @@
       </optional>
       <ref name="m.datesingle"/>
     </element>
-  </define>
-  <define name="e.daterange">
+  </rng:define>
+  <rng:define name="e.daterange">
     <element name="daterange">
       <ref name="am.common"/>
       <optional>
@@ -1693,8 +2258,8 @@
         </element>
       </optional>
     </element>
-  </define>
-  <define name="e.dateset">
+  </rng:define>
+  <rng:define name="e.dateset">
     <element name="dateset">
       <ref name="am.common"/>
       <optional>
@@ -1711,9 +2276,9 @@
         </choice>
       </oneOrMore>
     </element>
-  </define>
+  </rng:define>
   <!-- MIXED CONTENT -->
-  <define name="e.abbr">
+  <rng:define name="e.abbr">
     <element name="abbr">
       <ref name="am.common"/>
       <optional>
@@ -1723,8 +2288,8 @@
       </optional>
       <text/>
     </element>
-  </define>
-  <define name="e.date">
+  </rng:define>
+  <rng:define name="e.date">
     <element name="date">
       <ref name="am.common"/>
       <optional>
@@ -1741,8 +2306,8 @@
       </optional>
       <ref name="m.mixed.basic"/>
     </element>
-  </define>
-  <define name="e.emph">
+  </rng:define>
+  <rng:define name="e.emph">
     <element name="emph">
       <ref name="am.common"/>
       <optional>
@@ -1750,8 +2315,8 @@
       </optional>
       <ref name="m.mixed.basic"/>
     </element>
-  </define>
-  <define name="e.expan">
+  </rng:define>
+  <rng:define name="e.expan">
     <element name="expan">
       <ref name="am.common"/>
       <optional>
@@ -1761,8 +2326,8 @@
       </optional>
       <text/>
     </element>
-  </define>
-  <define name="e.foreign">
+  </rng:define>
+  <rng:define name="e.foreign">
     <element name="foreign">
       <ref name="am.common"/>
       <optional>
@@ -1770,13 +2335,13 @@
       </optional>
       <text/>
     </element>
-  </define>
-  <define name="e.lb">
+  </rng:define>
+  <rng:define name="e.lb">
     <element name="lb">
       <empty/>
     </element>
-  </define>
-  <define name="e.num">
+  </rng:define>
+  <rng:define name="e.num">
     <element name="num">
       <ref name="am.common"/>
       <optional>
@@ -1787,8 +2352,8 @@
       </optional>
       <ref name="m.mixed.basic"/>
     </element>
-  </define>
-  <define name="e.quote">
+  </rng:define>
+  <rng:define name="e.quote">
     <element name="quote">
       <ref name="am.common"/>
       <optional>
@@ -1796,15 +2361,15 @@
       </optional>
       <ref name="m.mixed.basic"/>
     </element>
-  </define>
-  <define name="e.ptr">
+  </rng:define>
+  <rng:define name="e.ptr">
     <element name="ptr">
       <ref name="am.common.empty"/>
       <ref name="am.internal.ptr"/>
       <empty/>
     </element>
-  </define>
-  <define name="e.ref">
+  </rng:define>
+  <rng:define name="e.ref">
     <element name="ref">
       <ref name="am.common"/>
       <ref name="am.internal.ptr"/>
@@ -1824,9 +2389,9 @@
         </choice>
       </zeroOrMore>
     </element>
-  </define>
+  </rng:define>
   <!-- DSC -->
-  <define name="e.dsc">
+  <rng:define name="e.dsc">
     <element name="dsc">
       <ref name="am.common"/>
       <optional>
@@ -1862,8 +2427,8 @@
         <ref name="m.cOrC01"/>
       </optional>
     </element>
-  </define>
-  <define name="e.c">
+  </rng:define>
+  <rng:define name="e.c">
     <element name="c">
       <ref name="m.c.base"/>
       <zeroOrMore>
@@ -1875,8 +2440,8 @@
         </oneOrMore>
       </zeroOrMore>
     </element>
-  </define>
-  <define name="e.c01">
+  </rng:define>
+  <rng:define name="e.c01">
     <element name="c01">
       <ref name="m.c.base"/>
       <zeroOrMore>
@@ -1888,8 +2453,8 @@
         </oneOrMore>
       </zeroOrMore>
     </element>
-  </define>
-  <define name="e.c02">
+  </rng:define>
+  <rng:define name="e.c02">
     <element name="c02">
       <ref name="m.c.base"/>
       <zeroOrMore>
@@ -1901,8 +2466,8 @@
         </oneOrMore>
       </zeroOrMore>
     </element>
-  </define>
-  <define name="e.c03">
+  </rng:define>
+  <rng:define name="e.c03">
     <element name="c03">
       <ref name="m.c.base"/>
       <zeroOrMore>
@@ -1914,8 +2479,8 @@
         </oneOrMore>
       </zeroOrMore>
     </element>
-  </define>
-  <define name="e.c04">
+  </rng:define>
+  <rng:define name="e.c04">
     <element name="c04">
       <ref name="m.c.base"/>
       <zeroOrMore>
@@ -1927,8 +2492,8 @@
         </oneOrMore>
       </zeroOrMore>
     </element>
-  </define>
-  <define name="e.c05">
+  </rng:define>
+  <rng:define name="e.c05">
     <element name="c05">
       <ref name="m.c.base"/>
       <zeroOrMore>
@@ -1940,8 +2505,8 @@
         </oneOrMore>
       </zeroOrMore>
     </element>
-  </define>
-  <define name="e.c06">
+  </rng:define>
+  <rng:define name="e.c06">
     <element name="c06">
       <ref name="m.c.base"/>
       <zeroOrMore>
@@ -1953,8 +2518,8 @@
         </oneOrMore>
       </zeroOrMore>
     </element>
-  </define>
-  <define name="e.c07">
+  </rng:define>
+  <rng:define name="e.c07">
     <element name="c07">
       <ref name="m.c.base"/>
       <zeroOrMore>
@@ -1966,8 +2531,8 @@
         </oneOrMore>
       </zeroOrMore>
     </element>
-  </define>
-  <define name="e.c08">
+  </rng:define>
+  <rng:define name="e.c08">
     <element name="c08">
       <ref name="m.c.base"/>
       <zeroOrMore>
@@ -1979,8 +2544,8 @@
         </zeroOrMore>
       </zeroOrMore>
     </element>
-  </define>
-  <define name="e.c09">
+  </rng:define>
+  <rng:define name="e.c09">
     <element name="c09">
       <ref name="m.c.base"/>
       <zeroOrMore>
@@ -1992,8 +2557,8 @@
         </oneOrMore>
       </zeroOrMore>
     </element>
-  </define>
-  <define name="e.c10">
+  </rng:define>
+  <rng:define name="e.c10">
     <element name="c10">
       <ref name="m.c.base"/>
       <zeroOrMore>
@@ -2005,8 +2570,8 @@
         </oneOrMore>
       </zeroOrMore>
     </element>
-  </define>
-  <define name="e.c11">
+  </rng:define>
+  <rng:define name="e.c11">
     <element name="c11">
       <ref name="m.c.base"/>
       <zeroOrMore>
@@ -2018,14 +2583,14 @@
         </oneOrMore>
       </zeroOrMore>
     </element>
-  </define>
-  <define name="e.c12">
+  </rng:define>
+  <rng:define name="e.c12">
     <element name="c12">
       <ref name="m.c.base"/>
     </element>
-  </define>
+  </rng:define>
   <!-- RELATIONS -->
-  <define name="e.relations">
+  <rng:define name="e.relations">
     <element name="relations">
       <ref name="am.common"/>
       <optional>
@@ -2094,14 +2659,14 @@
         </element>
       </oneOrMore>
     </element>
-  </define>
-  <define name="e.objectxmlwrap">
+  </rng:define>
+  <rng:define name="e.objectxmlwrap">
     <element name="objectxmlwrap">
       <ref name="am.common"/>
       <ref name="e.anyname"/>
     </element>
-  </define>
-  <define name="e.anyname">
+  </rng:define>
+  <rng:define name="e.anyname">
     <element>
       <anyName>
         <except>
@@ -2112,28 +2677,28 @@
         <ref name="e.anyname"/>
       </zeroOrMore>
     </element>
-  </define>
+  </rng:define>
   <!-- ELEMENT MODELS -->
-  <define name="m.blocks">
+  <rng:define name="m.blocks">
     <choice>
       <ref name="m.inter"/>
       <ref name="e.p"/>
     </choice>
-  </define>
-  <define name="m.inter">
+  </rng:define>
+  <rng:define name="m.inter">
     <choice>
       <ref name="m.inter.noquote"/>
       <ref name="e.blockquote"/>
     </choice>
-  </define>
-  <define name="m.inter.noquote">
+  </rng:define>
+  <rng:define name="m.inter.noquote">
     <choice>
       <ref name="e.chronlist"/>
       <ref name="e.list"/>
       <ref name="e.table"/>
     </choice>
-  </define>
-  <define name="m.cOrC01">
+  </rng:define>
+  <rng:define name="m.cOrC01">
     <choice>
       <oneOrMore>
         <ref name="e.c"/>
@@ -2142,8 +2707,8 @@
         <ref name="e.c01"/>
       </oneOrMore>
     </choice>
-  </define>
-  <define name="m.c.base">
+  </rng:define>
+  <rng:define name="m.c.base">
     <ref name="am.desc.c"/>
     <optional>
       <ref name="e.head"/>
@@ -2152,8 +2717,8 @@
     <zeroOrMore>
       <ref name="m.desc.base"/>
     </zeroOrMore>
-  </define>
-  <define name="m.access">
+  </rng:define>
+  <rng:define name="m.access">
     <choice>
       <ref name="e.persname"/>
       <ref name="e.corpname"/>
@@ -2166,8 +2731,8 @@
       <ref name="e.function"/>
       <ref name="e.title"/>
     </choice>
-  </define>
-  <define name="m.datesingle">
+  </rng:define>
+  <rng:define name="m.datesingle">
     <optional>
       <attribute name="standarddate">
         <choice>
@@ -2214,8 +2779,8 @@
       </attribute>
     </optional>
     <ref name="m.mixed.basic"/>
-  </define>
-  <define name="m.desc.base">
+  </rng:define>
+  <rng:define name="m.desc.base">
     <choice>
       <ref name="e.accessrestrict"/>
       <ref name="e.accruals"/>
@@ -2242,8 +2807,8 @@
       <ref name="e.separatedmaterial"/>
       <ref name="e.userestrict"/>
     </choice>
-  </define>
-  <define name="m.did">
+  </rng:define>
+  <rng:define name="m.did">
     <choice>
       <ref name="e.abstract"/>
       <ref name="e.container"/>
@@ -2263,15 +2828,15 @@
       <ref name="e.unitid"/>
       <ref name="e.unittitle"/>
     </choice>
-  </define>
-  <define name="m.refs">
+  </rng:define>
+  <rng:define name="m.refs">
     <choice>
       <ref name="e.ptr"/>
       <ref name="e.ref"/>
     </choice>
-  </define>
+  </rng:define>
   <!-- MIXED CONTENT MODELS -->
-  <define name="m.mixed.basic.elements">
+  <rng:define name="m.mixed.basic.elements">
     <choice>
       <ref name="e.abbr"/>
       <ref name="e.emph"/>
@@ -2281,15 +2846,15 @@
       <ref name="e.ptr"/>
       <ref name="e.ref"/>
     </choice>
-  </define>
- <define name="m.mixed.basic">
+  </rng:define>
+ <rng:define name="m.mixed.basic">
     <zeroOrMore>
       <choice>
         <text/>
         <ref name="m.mixed.basic.elements"/>
       </choice>
     </zeroOrMore>
-  </define>
+  </rng:define>
  <!-- NO LONGER USED
    <define name="m.mixed.basic.plus">
     <zeroOrMore>
@@ -2303,7 +2868,7 @@
     </zeroOrMore>
   </define>
   -->
-  <define name="m.mixed.basic.plus.access">
+  <rng:define name="m.mixed.basic.plus.access">
     <zeroOrMore>
       <choice>
         <text/>
@@ -2315,8 +2880,8 @@
         <ref name="e.quote"/>
       </choice>
     </zeroOrMore>
-  </define>
-  <define name="m.para.content">
+  </rng:define>
+  <rng:define name="m.para.content">
     <zeroOrMore>
       <choice>
         <text/>
@@ -2325,18 +2890,18 @@
         <ref name="e.list"/>
       </choice>
     </zeroOrMore>
-  </define>
+  </rng:define>
   <!-- ATTRIBUTE MODELS -->
-  <define name="am.internal.ptr">
+  <rng:define name="am.internal.ptr">
     <optional>
       <attribute name="target">
         <data type="IDREF"/>
       </attribute>
     </optional>
-    <ref name="a.link.xpointer"/>
+    <optional><ref name="a.link.xpointer"/></optional>
     <ref name="am.simplelink"/>
-  </define>
-  <define name="am.simplelink">
+  </rng:define>
+  <rng:define name="am.simplelink">
     <optional>
       <ref name="a.link.href"/>
     </optional>
@@ -2355,8 +2920,8 @@
     <optional>
       <ref name="a.link.actuate"/>
     </optional>
-  </define>
-  <define name="am.common.empty">
+  </rng:define>
+  <rng:define name="am.common.empty">
     <optional>
       <attribute name="id">
         <data type="ID"/>
@@ -2375,8 +2940,8 @@
         </choice>
       </attribute>
     </optional>
-  </define>
-  <define name="am.common">
+  </rng:define>
+  <rng:define name="am.common">
     <ref name="am.common.empty"/>
     <optional>
       <attribute name="lang">
@@ -2388,8 +2953,8 @@
         <data type="NMTOKEN"/>
       </attribute>
     </optional>
-  </define>
-  <define name="am.desc.base">
+  </rng:define>
+  <rng:define name="am.desc.base">
     <optional>
       <attribute name="otherlevel">
         <data type="NMTOKEN"/>
@@ -2398,22 +2963,22 @@
     <optional>
       <ref name="a.encodinganalog"/>
     </optional>
-  </define>
-  <define name="am.desc.c">
+  </rng:define>
+  <rng:define name="am.desc.c">
     <ref name="am.common"/>
-    <ref name="a.base"/>
+    <optional><ref name="a.base"/></optional>
     <optional>
       <ref name="a.level"/>
     </optional>
     <ref name="am.desc.base"/>
-  </define>
-  <define name="am.access">
+  </rng:define>
+  <rng:define name="am.access">
     <ref name="am.access.no.normal"/>
     <optional>
       <ref name="a.normal"/>
     </optional>
-  </define>
-  <define name="am.access.no.normal">
+  </rng:define>
+  <rng:define name="am.access.no.normal">
     <optional>
       <attribute name="source">
         <data type="token"/>
@@ -2424,11 +2989,11 @@
         <data type="NMTOKEN"/>
       </attribute>
     </optional>
-    <ref name="a.identifier"/>
-  </define>
+    <optional><ref name="a.identifier"/></optional>
+  </rng:define>
   <!-- ATTRIBUTE DEFINITIONS -->
   <!-- xlink-modelled attributes -->
-  <define name="a.link.actuate">
+  <rng:define name="a.link.actuate">
     <attribute name="actuate">
       <choice>
         <value>onload</value>
@@ -2437,23 +3002,23 @@
         <value>none</value>
       </choice>
     </attribute>
-  </define>
-  <define name="a.link.arcrole">
+  </rng:define>
+  <rng:define name="a.link.arcrole">
     <attribute name="arcrole">
       <data type="anyURI"/>
     </attribute>
-  </define>
-  <define name="a.link.href">
+  </rng:define>
+  <rng:define name="a.link.href">
     <attribute name="href">
       <data type="token"/>
     </attribute>
-  </define>
-  <define name="a.link.role">
+  </rng:define>
+  <rng:define name="a.link.role">
     <attribute name="linkrole">
       <data type="anyURI"/>
     </attribute>
-  </define>
-  <define name="a.link.show">
+  </rng:define>
+  <rng:define name="a.link.show">
     <attribute name="show">
       <choice>
         <value>new</value>
@@ -2463,40 +3028,40 @@
         <value>none</value>
       </choice>
     </attribute>
-  </define>
-  <define name="a.link.title">
+  </rng:define>
+  <rng:define name="a.link.title">
     <attribute name="linktitle">
       <data type="token"/>
     </attribute>
-  </define>
+  </rng:define>
   <!--  other linking-related attributes -->
-  <define name="a.base">
+  <rng:define name="a.base">
     <attribute name="base">
       <data type="anyURI"/>
     </attribute>
-  </define>
-  <define name="a.identifier">
+  </rng:define>
+  <rng:define name="a.identifier">
     <attribute name="identifier">
       <data type="token"/>
     </attribute>
-  </define>
-  <define name="a.parent">
+  </rng:define>
+  <rng:define name="a.parent">
     <attribute name="parent">
       <data type="IDREFS"/>
     </attribute>
-  </define>
-  <define name="a.relator">
+  </rng:define>
+  <rng:define name="a.relator">
     <attribute name="relator">
       <data type="token"/>
     </attribute>
-  </define>
-  <define name="a.link.xpointer">
+  </rng:define>
+  <rng:define name="a.link.xpointer">
     <attribute name="xpointer">
       <data type="token"/>
     </attribute>
-  </define>
+  </rng:define>
   <!-- display attributes -->
-  <define name="a.align">
+  <rng:define name="a.align">
     <attribute name="align">
       <choice>
         <value>left</value>
@@ -2506,8 +3071,8 @@
         <value>char</value>
       </choice>
     </attribute>
-  </define>
-  <define name="a.valign">
+  </rng:define>
+  <rng:define name="a.valign">
     <attribute name="valign">
       <choice>
         <value>top</value>
@@ -2515,8 +3080,8 @@
         <value>bottom</value>
       </choice>
     </attribute>
-  </define>
-  <define name="a.render">
+  </rng:define>
+  <rng:define name="a.render">
     <attribute name="render">
       <choice>
         <value>altrender</value>
@@ -2536,35 +3101,35 @@
         <value>underline</value>
       </choice>
     </attribute>
-  </define>
-  <define name="a.label">
+  </rng:define>
+  <rng:define name="a.label">
 
     <attribute name="label">
       <data type="string"/>
     </attribute>
 
-  </define>
+  </rng:define>
   <!-- date attributes -->
-  <define name="am.dates.calendar">
+  <rng:define name="am.dates.calendar">
     <optional>
       <attribute name="calendar">
         <data type="NMTOKEN"/>
       </attribute>
     </optional>
-  </define>
-  <define name="am.dates.era">
+  </rng:define>
+  <rng:define name="am.dates.era">
     <optional>
       <attribute name="era">
         <data type="NMTOKEN"/>
       </attribute>
     </optional>
-  </define>
-  <define name="am.date.normal">
+  </rng:define>
+  <rng:define name="am.date.normal">
     <optional>
       <ref name="a.normal"/>
     </optional>
-  </define>
-  <define name="a.lastdatetimeverified">
+  </rng:define>
+  <rng:define name="a.lastdatetimeverified">
     <attribute name="lastdatetimeverified">
       <choice>
         <data type="date">
@@ -2581,30 +3146,30 @@
         </data>
       </choice>
     </attribute>
-  </define>
-  <define name="a.datechar">
+  </rng:define>
+  <rng:define name="a.datechar">
     <attribute name="datechar">
       <data type="token"/>
     </attribute>
-  </define>
-  <define name="a.certainty">
+  </rng:define>
+  <rng:define name="a.certainty">
     <attribute name="certainty">
       <data type="NMTOKEN"/>
     </attribute>
-  </define>
-  <define name="a.normal">
+  </rng:define>
+  <rng:define name="a.normal">
     <attribute name="normal">
       <data type="token"/>
     </attribute>
-  </define>
+  </rng:define>
 
   <!-- typing attributes -->
-  <define name="a.encodinganalog">
+  <rng:define name="a.encodinganalog">
     <attribute name="encodinganalog">
       <data type="token"/>
     </attribute>
-  </define>
-  <define name="a.level">
+  </rng:define>
+  <rng:define name="a.level">
     <attribute name="level">
       <choice>
         <value>class</value>
@@ -2620,18 +3185,18 @@
         <value>subseries</value>
       </choice>
     </attribute>
-  </define>
-  <define name="a.localtype">
+  </rng:define>
+  <rng:define name="a.localtype">
     <attribute name="localtype">
       <data type="token"/>
     </attribute>
-  </define>
-  <define name="a.relatedencoding">
+  </rng:define>
+  <rng:define name="a.relatedencoding">
     <attribute name="relatedencoding">
       <data type="token"/>
     </attribute>
-  </define>
-  <define name="a.unitdatetype">
+  </rng:define>
+  <rng:define name="a.unitdatetype">
     <optional>
       <attribute name="unitdatetype">
         <choice>
@@ -2640,65 +3205,69 @@
         </choice>
       </attribute>
     </optional>
-  </define>
+  </rng:define>
   <!-- table attributes -->
-  <define name="a.char">
+  <rng:define name="a.char">
     <attribute name="char">
       <data type="token"/>
     </attribute>
-  </define>
-  <define name="a.charoff">
+  </rng:define>
+  <rng:define name="a.charoff">
     <attribute name="charoff">
       <data type="NMTOKEN"/>
     </attribute>
-  </define>
-  <define name="a.colname">
+  </rng:define>
+  <rng:define name="a.colname">
     <attribute name="colname">
       <data type="NMTOKEN"/>
     </attribute>
-  </define>
-  <define name="a.colsep">
+  </rng:define>
+  <rng:define name="a.colsep">
     <attribute name="colsep">
       <ref name="av.zeroorone"/>
     </attribute>
-  </define>
-  <define name="a.rowsep">
+  </rng:define>
+  <rng:define name="a.rowsep">
     <attribute name="rowsep">
       <ref name="av.zeroorone"/>
     </attribute>
-  </define>
+  </rng:define>
   <!-- other attributes -->
-  <define name="a.coverage">
+  <rng:define name="a.coverage">
     <attribute name="coverage">
       <choice>
         <value>whole</value>
         <value>part</value>
       </choice>
     </attribute>
-  </define>
-  <define name="am.countrycode">
+  </rng:define>
+  <rng:define name="am.countrycode">
     <optional>
       <attribute name="countrycode">
         <data type="NMTOKEN"/>
       </attribute>
     </optional>
-  </define>
-  <define name="a.transliteration">
+  </rng:define>
+  <rng:define name="a.transliteration">
     <attribute name="transliteration">
       <data type="NMTOKEN"/>
     </attribute>
-  </define>
+  </rng:define>
   <!-- ATTRIBUTE VALUE LISTS -->
-  <define name="av.yesorno">
+  <rng:define name="av.yesorno">
     <choice>
       <value>yes</value>
       <value>no</value>
     </choice>
-  </define>
-  <define name="av.zeroorone">
+  </rng:define>
+  <rng:define name="av.zeroorone">
     <choice>
       <value>0</value>
       <value>1</value>
     </choice>
-  </define>
+  </rng:define>
+</rng:div></rng:div>
+    <start>
+        <ref name="e.ead"/>
+    </start>
 </grammar>

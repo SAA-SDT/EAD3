@@ -11,3 +11,7 @@
 *.xpr
 
 ead_revision.xpr
+
+*~
+
+*.sh
