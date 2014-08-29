@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://ead3.archivists.org/schema/" xmlns:schema="http://ead3.archivists.org/schema/">
+  <xs:import schemaLocation="ead3-compiled.xsd"/>
+  <xs:group name="local">
+    <xs:sequence>
+      <xs:any namespace="##other" processContents="skip"/>
+    </xs:sequence>
+  </xs:group>
+</xs:schema>

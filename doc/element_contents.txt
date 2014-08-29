@@ -1,0 +1,164 @@
+<abbr> ( #PCDATA )
+<abstract> ( #PCDATA | abbr | emph | expan | foreign | lb | ptr | ref | persname | corpname | famname | geogname | name | occupation | subject | genreform | function | title | date | footnote | num | quote )*
+<accessrestrict> ( head?, ( chronlist | list | table | blockquote | p | accessrestrict )+ )
+<accruals> ( head?, ( chronlist | list | table | blockquote | p | accruals )+ )
+<acqinfo> ( head?, ( chronlist | list | table | blockquote | p | acqinfo )+ )
+<address> ( addressline )+
+<addressline> ( #PCDATA | abbr | emph | expan | foreign | lb | ptr | ref )*
+<agencycode> ( #PCDATA )
+<agencyname> ( #PCDATA )
+<agent> ( #PCDATA )
+<agenttype> ( #PCDATA )
+<altformavail> ( head?, ( chronlist | list | table | blockquote | p | altformavail )+ )
+<appraisal> ( head?, ( chronlist | list | table | blockquote | p | appraisal )+ )
+<archdesc> ( did, ( accessrestrict | accruals | acqinfo | altformavail | appraisal | arrangement | bibliography | bioghist | controlaccess | custodhist | fileplan | index | legalstatus | odd | originalsloc | otherfindaid | phystech | prefercite | processinfo | relatedmaterial | relations | scopecontent | separatedmaterial | userestrict | dsc )* )
+<archref> ( #PCDATA | abbr | emph | expan | foreign | lb | ptr | ref | persname | corpname | famname | geogname | name | occupation | subject | genreform | function | title | date | footnote | num | quote )*
+<arrangement> ( head?, ( chronlist | list | table | blockquote | p | arrangement )+ )
+<author> ( #PCDATA | abbr | emph | expan | foreign | lb | ptr | ref )*
+<bibliography> ( head?, ( chronlist | list | table | blockquote | p | bibliography | archref | bibref )+ )
+<bibref> ( #PCDATA | abbr | emph | expan | foreign | lb | ptr | ref | persname | corpname | famname | geogname | name | occupation | subject | genreform | function | title | date | footnote | num | quote )*
+<bioghist> ( head?, ( chronlist | list | table | blockquote | p | bioghist )+ )
+<blockquote> ( chronlist | list | table | p )+
+<c01> ( ( head?, did, ( accessrestrict | accruals | acqinfo | altformavail | appraisal | arrangement | bibliography | bioghist | controlaccess | custodhist | fileplan | index | legalstatus | odd | originalsloc | otherfindaid | phystech | prefercite | processinfo | relatedmaterial | relations | scopecontent | separatedmaterial | userestrict )* ), ( thead?, c02+ )* )
+<c02> ( ( head?, did, ( accessrestrict | accruals | acqinfo | altformavail | appraisal | arrangement | bibliography | bioghist | controlaccess | custodhist | fileplan | index | legalstatus | odd | originalsloc | otherfindaid | phystech | prefercite | processinfo | relatedmaterial | relations | scopecontent | separatedmaterial | userestrict )* ), ( thead?, c03+ )* )
+<c03> ( ( head?, did, ( accessrestrict | accruals | acqinfo | altformavail | appraisal | arrangement | bibliography | bioghist | controlaccess | custodhist | fileplan | index | legalstatus | odd | originalsloc | otherfindaid | phystech | prefercite | processinfo | relatedmaterial | relations | scopecontent | separatedmaterial | userestrict )* ), ( thead?, c04+ )* )
+<c04> ( ( head?, did, ( accessrestrict | accruals | acqinfo | altformavail | appraisal | arrangement | bibliography | bioghist | controlaccess | custodhist | fileplan | index | legalstatus | odd | originalsloc | otherfindaid | phystech | prefercite | processinfo | relatedmaterial | relations | scopecontent | separatedmaterial | userestrict )* ), ( thead?, c05+ )* )
+<c05> ( ( head?, did, ( accessrestrict | accruals | acqinfo | altformavail | appraisal | arrangement | bibliography | bioghist | controlaccess | custodhist | fileplan | index | legalstatus | odd | originalsloc | otherfindaid | phystech | prefercite | processinfo | relatedmaterial | relations | scopecontent | separatedmaterial | userestrict )* ), ( thead?, c06+ )* )
+<c06> ( ( head?, did, ( accessrestrict | accruals | acqinfo | altformavail | appraisal | arrangement | bibliography | bioghist | controlaccess | custodhist | fileplan | index | legalstatus | odd | originalsloc | otherfindaid | phystech | prefercite | processinfo | relatedmaterial | relations | scopecontent | separatedmaterial | userestrict )* ), ( thead?, c07+ )* )
+<c07> ( ( head?, did, ( accessrestrict | accruals | acqinfo | altformavail | appraisal | arrangement | bibliography | bioghist | controlaccess | custodhist | fileplan | index | legalstatus | odd | originalsloc | otherfindaid | phystech | prefercite | processinfo | relatedmaterial | relations | scopecontent | separatedmaterial | userestrict )* ), ( thead?, c08+ )* )
+<c08> ( ( head?, did, ( accessrestrict | accruals | acqinfo | altformavail | appraisal | arrangement | bibliography | bioghist | controlaccess | custodhist | fileplan | index | legalstatus | odd | originalsloc | otherfindaid | phystech | prefercite | processinfo | relatedmaterial | relations | scopecontent | separatedmaterial | userestrict )* ), ( thead?, c09* )* )
+<c09> ( ( head?, did, ( accessrestrict | accruals | acqinfo | altformavail | appraisal | arrangement | bibliography | bioghist | controlaccess | custodhist | fileplan | index | legalstatus | odd | originalsloc | otherfindaid | phystech | prefercite | processinfo | relatedmaterial | relations | scopecontent | separatedmaterial | userestrict )* ), ( thead?, c10+ )* )
+<c10> ( ( head?, did, ( accessrestrict | accruals | acqinfo | altformavail | appraisal | arrangement | bibliography | bioghist | controlaccess | custodhist | fileplan | index | legalstatus | odd | originalsloc | otherfindaid | phystech | prefercite | processinfo | relatedmaterial | relations | scopecontent | separatedmaterial | userestrict )* ), ( thead?, c11+ )* )
+<c11> ( ( head?, did, ( accessrestrict | accruals | acqinfo | altformavail | appraisal | arrangement | bibliography | bioghist | controlaccess | custodhist | fileplan | index | legalstatus | odd | originalsloc | otherfindaid | phystech | prefercite | processinfo | relatedmaterial | relations | scopecontent | separatedmaterial | userestrict )* ), ( thead?, c12+ )* )
+<c12> ( head?, did, ( accessrestrict | accruals | acqinfo | altformavail | appraisal | arrangement | bibliography | bioghist | controlaccess | custodhist | fileplan | index | legalstatus | odd | originalsloc | otherfindaid | phystech | prefercite | processinfo | relatedmaterial | relations | scopecontent | separatedmaterial | userestrict )* )
+<chronitem> ( ( datesingle | daterange | dateset ), ( ( geogname?, event ) | chronitemset+ ) )
+<chronitemset> ( geogname*, event+ )
+<chronlist> ( head?, listhead?, chronitem+ )
+<c> ( ( head?, did, ( accessrestrict | accruals | acqinfo | altformavail | appraisal | arrangement | bibliography | bioghist | controlaccess | custodhist | fileplan | index | legalstatus | odd | originalsloc | otherfindaid | phystech | prefercite | processinfo | relatedmaterial | relations | scopecontent | separatedmaterial | userestrict )* ), ( thead?, c+ )* )
+<citation> ( #PCDATA | abbr | emph | expan | foreign | lb | ptr | ref )*
+<colspec> 
+<container> ( #PCDATA | abbr | emph | expan | foreign | lb | ptr | ref )*
+<controlaccess> ( head?, ( chronlist | list | table | blockquote | p | persname | corpname | famname | geogname | name | occupation | subject | genreform | function | title | controlaccess )+ )
+<control> ( recordid, otherrecordid*, representation*, filedesc, maintenancestatus, publicationstatus?, maintenanceagency, languagedeclaration*, conventiondeclaration*, localtypedeclaration*, localcontrol*, maintenancehistory, sources? )
+<controlnote> ( chronlist | list | table | blockquote | p )+
+<conventiondeclaration> ( abbr?, citation, descriptivenote? )
+<corpname> ( part )+
+<custodhist> ( head?, ( chronlist | list | table | blockquote | p | custodhist )+ )
+<dao> ( descriptivenote )?
+<daoset> ( dao, dao+, descriptivenote? )
+<date> ( #PCDATA | abbr | emph | expan | foreign | lb | ptr | ref )*
+<daterange> ( fromdate?, todate? )
+<dateset> ( ( datesingle | daterange ), ( datesingle | daterange )+ )
+<datesingle> ( #PCDATA | abbr | emph | expan | foreign | lb | ptr | ref )*
+<defitem> ( label, item )
+<descriptivenote> ( p )+
+<did> ( head?, ( abstract | container | dao | daoset | didnote | langmaterial | materialspec | origination | parallelphysdescset | physdesc | physdescstructured | physloc | repository | unitdate | unitdatestructured | unitid | unittitle )+ )
+<didnote> ( #PCDATA | abbr | emph | expan | foreign | lb | ptr | ref )*
+<dimensions> ( #PCDATA | abbr | emph | expan | foreign | lb | ptr | ref | dimensions )*
+<dsc> ( head?, ( chronlist | list | table | blockquote | p )*, thead?, ( c+ | c01+ )? )
+<ead> ( control, archdesc )
+<edition> ( #PCDATA | abbr | emph | expan | foreign | lb | ptr | ref )*
+<editionstmt> ( edition | p )+
+<emph> ( #PCDATA | abbr | emph | expan | foreign | lb | ptr | ref )*
+<entry> ( #PCDATA | abbr | emph | expan | foreign | lb | ptr | ref | persname | corpname | famname | geogname | name | occupation | subject | genreform | function | title | list )*
+<eventdatetime> ( #PCDATA )
+<eventdescription> ( #PCDATA )
+<event> ( #PCDATA | abbr | emph | expan | foreign | lb | ptr | ref | persname | corpname | famname | geogname | name | occupation | subject | genreform | function | title | list )*
+<eventtype> ( #PCDATA )
+<expan> ( #PCDATA )
+<famname> ( part )+
+<filedesc> ( titlestmt, editionstmt?, publicationstmt?, seriesstmt?, notestmt? )
+<fileplan> ( head?, ( chronlist | list | table | blockquote | p | fileplan )+ )
+<footnote> ( chronlist | list | table | blockquote | p )+
+<foreign> ( #PCDATA )
+<fromdate> ( #PCDATA | abbr | emph | expan | foreign | lb | ptr | ref )*
+<function> ( part )+
+<genreform> ( part )+
+<geogname> ( part+, geographiccoordinates* )
+<geographiccoordinates> ( #PCDATA )
+<head01> ( #PCDATA | abbr | emph | expan | foreign | lb | ptr | ref )*
+<head02> ( #PCDATA | abbr | emph | expan | foreign | lb | ptr | ref )*
+<head03> ( #PCDATA | abbr | emph | expan | foreign | lb | ptr | ref )*
+<head> ( #PCDATA | abbr | emph | expan | foreign | lb | ptr | ref )*
+<indexentry> ( ( namegrp | persname | corpname | famname | geogname | name | occupation | subject | genreform | function | title ), ( ptrgrp | ptr | ref )?, indexentry* )
+<index> ( head?, ( chronlist | list | table | blockquote | p )*, ( ( listhead?, indexentry+ ) | index+ ) )
+<item> ( #PCDATA | abbr | emph | expan | foreign | lb | ptr | ref | persname | corpname | famname | geogname | name | occupation | subject | genreform | function | title | list )*
+<label> ( #PCDATA | abbr | emph | expan | foreign | lb | ptr | ref )*
+<langmaterial> ( ( language | languageset )+, descriptivenote? )
+<languagedeclaration> ( language, script, descriptivenote? )
+<language> ( #PCDATA )
+<languageset> ( language+, script+, descriptivenote? )
+<lb> 
+<legalstatus> ( head?, ( chronlist | list | table | blockquote | p | legalstatus )+ )
+<listhead> ( head01?, head02?, head03? )
+<list> ( head?, ( item+ | ( listhead?, defitem+ ) ) )
+<localcontrol> ( term?, ( datesingle | daterange )? )
+<localtypedeclaration> ( abbr?, citation, descriptivenote? )
+<maintenanceagency> ( agencycode?, otheragencycode*, agencyname+, descriptivenote? )
+<maintenanceevent> ( eventtype, eventdatetime, agenttype, agent, eventdescription* )
+<maintenancehistory> ( maintenanceevent )+
+<maintenancestatus> ( #PCDATA )
+<materialspec> ( #PCDATA | abbr | emph | expan | foreign | lb | ptr | ref )*
+<namegrp> ( persname | corpname | famname | geogname | name | occupation | subject | genreform | function | title )+
+<name> ( part )+
+<notestmt> ( controlnote )+
+<num> ( #PCDATA | abbr | emph | expan | foreign | lb | ptr | ref )*
+<occupation> ( part )+
+<odd> ( head?, ( chronlist | list | table | blockquote | p | odd )+ )
+<originalsloc> ( head?, ( chronlist | list | table | blockquote | p | originalsloc )+ )
+<origination> ( corpname | famname | name | persname )+
+<otheragencycode> ( #PCDATA )
+<otherfindaid> ( head?, ( chronlist | list | table | blockquote | p | otherfindaid | archref | bibref )+ )
+<otherrecordid> ( #PCDATA )
+<parallelphysdescset> ( physdescstructured, physdescstructured+ )
+<part> ( #PCDATA | abbr | emph | expan | foreign | lb | ptr | ref )*
+<persname> ( part )+
+<p> ( #PCDATA | abbr | emph | expan | foreign | lb | ptr | ref | persname | corpname | famname | geogname | name | occupation | subject | genreform | function | title | list )*
+<physdesc> ( #PCDATA | abbr | emph | expan | foreign | lb | ptr | ref )*
+<physdescstructured> ( quantity, unittype, ( physfacet | dimensions )*, descriptivenote? )
+<physfacet> ( #PCDATA | abbr | emph | expan | foreign | lb | ptr | ref | persname | corpname | famname | geogname | name | occupation | subject | genreform | function | title | date | footnote | num | quote )*
+<physloc> ( #PCDATA | abbr | emph | expan | foreign | lb | ptr | ref )*
+<phystech> ( head?, ( chronlist | list | table | blockquote | p | phystech )+ )
+<prefercite> ( head?, ( chronlist | list | table | blockquote | p | prefercite )+ )
+<processinfo> ( head?, ( chronlist | list | table | blockquote | p | processinfo )+ )
+<ptrgrp> ( ptr | ref )+
+<ptr> 
+<publicationstatus> ( #PCDATA )
+<publicationstmt> ( publisher | date | address | num | p )+
+<publisher> ( #PCDATA | abbr | emph | expan | foreign | lb | ptr | ref )*
+<quantity> ( #PCDATA )
+<quote> ( #PCDATA | abbr | emph | expan | foreign | lb | ptr | ref )*
+<recordid> ( #PCDATA )
+<ref> ( #PCDATA | abbr | expan | emph | lb | ptr | quote | num | footnote | date | persname | corpname | famname | geogname | name | occupation | subject | genreform | function | title )*
+<relatedmaterial> ( head?, ( chronlist | list | table | blockquote | p | relatedmaterial | archref | bibref )+ )
+<relationentry> ( #PCDATA )
+<relation> ( relationentry*, ( datesingle | daterange | dateset )?, geogname?, descriptivenote? )
+<relations> ( relation )+
+<repository> ( ( corpname | famname | name | persname )+, address? )
+<representation> ( #PCDATA )
+<row> ( entry )+
+<scopecontent> ( head?, ( chronlist | list | table | blockquote | p | scopecontent )+ )
+<script> ( #PCDATA )
+<separatedmaterial> ( head?, ( chronlist | list | table | blockquote | p | separatedmaterial | archref | bibref )+ )
+<seriesstmt> ( titleproper | num | p )+
+<sourceentry> ( #PCDATA )
+<source> ( sourceentry*, descriptivenote? )
+<sources> ( source )+
+<sponsor> ( #PCDATA | abbr | emph | expan | foreign | lb | ptr | ref )*
+<subject> ( part )+
+<subtitle> ( #PCDATA | abbr | emph | expan | foreign | lb | ptr | ref )*
+<table> ( head?, tgroup+ )
+<tbody> ( row )+
+<term> ( #PCDATA )
+<tgroup> ( colspec*, thead?, tbody )
+<thead> ( row )+
+<title> ( part )+
+<titleproper> ( #PCDATA | abbr | emph | expan | foreign | lb | ptr | ref )*
+<titlestmt> ( titleproper+, subtitle*, author*, sponsor* )
+<todate> ( #PCDATA | abbr | emph | expan | foreign | lb | ptr | ref )*
+<unitdate> ( #PCDATA | abbr | emph | expan | foreign | lb | ptr | ref )*
+<unitdatestructured> ( datesingle | daterange | dateset )
+<unitid> ( #PCDATA | abbr | emph | expan | foreign | lb | ptr | ref )*
+<unittitle> ( #PCDATA | abbr | emph | expan | foreign | lb | ptr | ref | persname | corpname | famname | geogname | name | occupation | subject | genreform | function | title | date | footnote | num | quote )*
+<unittype> ( #PCDATA )
+<userestrict> ( head?, ( chronlist | list | table | blockquote | p | userestrict )+ )
