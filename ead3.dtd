@@ -1,8 +1,6 @@
 
 <!-- include "ead_revised_defs.rng" -->
 
-<!-- other linking-related attributes -->
-
 <!-- ELEMENTS -->
 
 <!ELEMENT ead (control,archdesc)>
@@ -14,8 +12,7 @@
   lang NMTOKEN #IMPLIED
   script NMTOKEN #IMPLIED
   relatedencoding CDATA #IMPLIED
-
-  base CDATA #REQUIRED>
+  base CDATA #IMPLIED>
 
 <!-- control -->
 
@@ -33,8 +30,7 @@
   script NMTOKEN #IMPLIED
   encodinganalog CDATA #IMPLIED
   relatedencoding CDATA #IMPLIED
-
-  base CDATA #REQUIRED
+  base CDATA #IMPLIED
   langencoding (iso639-1|iso639-2b|iso639-3|otherlangencoding) #IMPLIED
   scriptencoding (iso15924|otherscriptencoding) #IMPLIED
   dateencoding (iso8601|otherdateencoding) #IMPLIED
@@ -176,8 +172,7 @@
   script NMTOKEN #IMPLIED
   encodinganalog CDATA #IMPLIED
   localtype CDATA #IMPLIED
-
-  base CDATA #REQUIRED>
+  base CDATA #IMPLIED>
 
 <!ELEMENT titlestmt (titleproper+,subtitle*,author*,sponsor*)>
 <!ATTLIST titlestmt
@@ -243,8 +238,7 @@
 
   source CDATA #IMPLIED
   rules NMTOKEN #IMPLIED
-
-  identifier CDATA #REQUIRED>
+  identifier CDATA #IMPLIED>
 
 <!ELEMENT maintenanceevent (eventtype,eventdatetime,agenttype,agent,
                             eventdescription*)>
@@ -513,8 +507,7 @@
 
   level (class|collection|file|fonds|item|otherlevel|recordgrp|series
          |subfonds|subgrp|subseries) #REQUIRED
-
-  base CDATA #REQUIRED>
+  base CDATA #IMPLIED>
 
 <!-- did -->
 
@@ -600,8 +593,6 @@ NO LONGER USED
   otherdaotype CDATA #IMPLIED
   coverage (whole|part) #IMPLIED>
 
-<!-- other attributes -->
-
 <!ELEMENT daoset (dao,dao+,descriptivenote?)>
 <!ATTLIST daoset
 
@@ -613,10 +604,8 @@ NO LONGER USED
   localtype CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED
   label CDATA #IMPLIED
-
-  coverage (whole|part) #REQUIRED
-
-  base CDATA #REQUIRED>
+  coverage (whole|part) #IMPLIED
+  base CDATA #IMPLIED>
 
 <!ELEMENT didnote (#PCDATA|abbr|emph|expan|foreign|lb|ptr|ref)*>
 <!ATTLIST didnote
@@ -701,6 +690,8 @@ NO LONGER USED
   label CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED>
 
+<!-- other attributes -->
+
 <!ELEMENT physdescstructured (quantity,unittype,(physfacet|dimensions)*,
                               descriptivenote?)>
 <!ATTLIST physdescstructured
@@ -743,8 +734,7 @@ NO LONGER USED
 
   source CDATA #IMPLIED
   rules NMTOKEN #IMPLIED
-
-  identifier CDATA #REQUIRED>
+  identifier CDATA #IMPLIED>
 
 <!ELEMENT repository ((corpname|famname|name|persname)+,address?)>
 <!ATTLIST repository
@@ -1137,8 +1127,7 @@ NO LONGER USED
 
   source CDATA #IMPLIED
   rules NMTOKEN #IMPLIED
-
-  identifier CDATA #REQUIRED
+  identifier CDATA #IMPLIED
   normal CDATA #IMPLIED
   localtype CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED
@@ -1155,8 +1144,7 @@ NO LONGER USED
 
   source CDATA #IMPLIED
   rules NMTOKEN #IMPLIED
-
-  identifier CDATA #REQUIRED
+  identifier CDATA #IMPLIED
   normal CDATA #IMPLIED
   localtype CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED
@@ -1173,8 +1161,7 @@ NO LONGER USED
 
   source CDATA #IMPLIED
   rules NMTOKEN #IMPLIED
-
-  identifier CDATA #REQUIRED
+  identifier CDATA #IMPLIED
   normal CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED
   localtype CDATA #IMPLIED
@@ -1191,8 +1178,7 @@ NO LONGER USED
 
   source CDATA #IMPLIED
   rules NMTOKEN #IMPLIED
-
-  identifier CDATA #REQUIRED
+  identifier CDATA #IMPLIED
   normal CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED
   localtype CDATA #IMPLIED
@@ -1209,8 +1195,7 @@ NO LONGER USED
 
   source CDATA #IMPLIED
   rules NMTOKEN #IMPLIED
-
-  identifier CDATA #REQUIRED
+  identifier CDATA #IMPLIED
   normal CDATA #IMPLIED
   localtype CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED
@@ -1237,8 +1222,7 @@ NO LONGER USED
 
   source CDATA #IMPLIED
   rules NMTOKEN #IMPLIED
-
-  identifier CDATA #REQUIRED
+  identifier CDATA #IMPLIED
   normal CDATA #IMPLIED
   localtype CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED
@@ -1255,8 +1239,7 @@ NO LONGER USED
 
   source CDATA #IMPLIED
   rules NMTOKEN #IMPLIED
-
-  identifier CDATA #REQUIRED
+  identifier CDATA #IMPLIED
   normal CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED
   localtype CDATA #IMPLIED
@@ -1273,8 +1256,7 @@ NO LONGER USED
 
   source CDATA #IMPLIED
   rules NMTOKEN #IMPLIED
-
-  identifier CDATA #REQUIRED
+  identifier CDATA #IMPLIED
   normal CDATA #IMPLIED
   localtype CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED
@@ -1291,8 +1273,7 @@ NO LONGER USED
 
   source CDATA #IMPLIED
   rules NMTOKEN #IMPLIED
-
-  identifier CDATA #REQUIRED
+  identifier CDATA #IMPLIED
   normal CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED
   localtype CDATA #IMPLIED
@@ -1310,8 +1291,7 @@ NO LONGER USED
 
   source CDATA #IMPLIED
   rules NMTOKEN #IMPLIED
-
-  identifier CDATA #REQUIRED
+  identifier CDATA #IMPLIED
   normal CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED
   relator CDATA #IMPLIED
@@ -1332,8 +1312,7 @@ NO LONGER USED
 
   source CDATA #IMPLIED
   rules NMTOKEN #IMPLIED
-
-  identifier CDATA #REQUIRED>
+  identifier CDATA #IMPLIED>
 
 <!-- BLOCKS -->
 
@@ -1644,8 +1623,7 @@ NO LONGER USED
 
   source CDATA #IMPLIED
   rules NMTOKEN #IMPLIED
-
-  identifier CDATA #REQUIRED
+  identifier CDATA #IMPLIED
   localtype CDATA #IMPLIED>
 
 <!-- other blocks -->
@@ -1885,8 +1863,7 @@ NO LONGER USED
   audience (external|internal) #IMPLIED
 
   target IDREF #IMPLIED
-
-  xpointer CDATA #REQUIRED
+  xpointer CDATA #IMPLIED
 
   href CDATA #IMPLIED
   linkrole CDATA #IMPLIED
@@ -1907,8 +1884,7 @@ NO LONGER USED
   script NMTOKEN #IMPLIED
 
   target IDREF #IMPLIED
-
-  xpointer CDATA #REQUIRED
+  xpointer CDATA #IMPLIED
 
   href CDATA #IMPLIED
   linkrole CDATA #IMPLIED
@@ -1945,8 +1921,7 @@ NO LONGER USED
   audience (external|internal) #IMPLIED
   lang NMTOKEN #IMPLIED
   script NMTOKEN #IMPLIED
-
-  base CDATA #REQUIRED
+  base CDATA #IMPLIED
   level (class|collection|file|fonds|item|otherlevel|recordgrp|series
          |subfonds|subgrp|subseries) #IMPLIED
 
@@ -1967,8 +1942,7 @@ NO LONGER USED
   audience (external|internal) #IMPLIED
   lang NMTOKEN #IMPLIED
   script NMTOKEN #IMPLIED
-
-  base CDATA #REQUIRED
+  base CDATA #IMPLIED
   level (class|collection|file|fonds|item|otherlevel|recordgrp|series
          |subfonds|subgrp|subseries) #IMPLIED
 
@@ -1989,8 +1963,7 @@ NO LONGER USED
   audience (external|internal) #IMPLIED
   lang NMTOKEN #IMPLIED
   script NMTOKEN #IMPLIED
-
-  base CDATA #REQUIRED
+  base CDATA #IMPLIED
   level (class|collection|file|fonds|item|otherlevel|recordgrp|series
          |subfonds|subgrp|subseries) #IMPLIED
 
@@ -2011,8 +1984,7 @@ NO LONGER USED
   audience (external|internal) #IMPLIED
   lang NMTOKEN #IMPLIED
   script NMTOKEN #IMPLIED
-
-  base CDATA #REQUIRED
+  base CDATA #IMPLIED
   level (class|collection|file|fonds|item|otherlevel|recordgrp|series
          |subfonds|subgrp|subseries) #IMPLIED
 
@@ -2033,8 +2005,7 @@ NO LONGER USED
   audience (external|internal) #IMPLIED
   lang NMTOKEN #IMPLIED
   script NMTOKEN #IMPLIED
-
-  base CDATA #REQUIRED
+  base CDATA #IMPLIED
   level (class|collection|file|fonds|item|otherlevel|recordgrp|series
          |subfonds|subgrp|subseries) #IMPLIED
 
@@ -2055,8 +2026,7 @@ NO LONGER USED
   audience (external|internal) #IMPLIED
   lang NMTOKEN #IMPLIED
   script NMTOKEN #IMPLIED
-
-  base CDATA #REQUIRED
+  base CDATA #IMPLIED
   level (class|collection|file|fonds|item|otherlevel|recordgrp|series
          |subfonds|subgrp|subseries) #IMPLIED
 
@@ -2077,8 +2047,7 @@ NO LONGER USED
   audience (external|internal) #IMPLIED
   lang NMTOKEN #IMPLIED
   script NMTOKEN #IMPLIED
-
-  base CDATA #REQUIRED
+  base CDATA #IMPLIED
   level (class|collection|file|fonds|item|otherlevel|recordgrp|series
          |subfonds|subgrp|subseries) #IMPLIED
 
@@ -2099,8 +2068,7 @@ NO LONGER USED
   audience (external|internal) #IMPLIED
   lang NMTOKEN #IMPLIED
   script NMTOKEN #IMPLIED
-
-  base CDATA #REQUIRED
+  base CDATA #IMPLIED
   level (class|collection|file|fonds|item|otherlevel|recordgrp|series
          |subfonds|subgrp|subseries) #IMPLIED
 
@@ -2121,8 +2089,7 @@ NO LONGER USED
   audience (external|internal) #IMPLIED
   lang NMTOKEN #IMPLIED
   script NMTOKEN #IMPLIED
-
-  base CDATA #REQUIRED
+  base CDATA #IMPLIED
   level (class|collection|file|fonds|item|otherlevel|recordgrp|series
          |subfonds|subgrp|subseries) #IMPLIED
 
@@ -2143,8 +2110,7 @@ NO LONGER USED
   audience (external|internal) #IMPLIED
   lang NMTOKEN #IMPLIED
   script NMTOKEN #IMPLIED
-
-  base CDATA #REQUIRED
+  base CDATA #IMPLIED
   level (class|collection|file|fonds|item|otherlevel|recordgrp|series
          |subfonds|subgrp|subseries) #IMPLIED
 
@@ -2165,8 +2131,7 @@ NO LONGER USED
   audience (external|internal) #IMPLIED
   lang NMTOKEN #IMPLIED
   script NMTOKEN #IMPLIED
-
-  base CDATA #REQUIRED
+  base CDATA #IMPLIED
   level (class|collection|file|fonds|item|otherlevel|recordgrp|series
          |subfonds|subgrp|subseries) #IMPLIED
 
@@ -2187,8 +2152,7 @@ NO LONGER USED
   audience (external|internal) #IMPLIED
   lang NMTOKEN #IMPLIED
   script NMTOKEN #IMPLIED
-
-  base CDATA #REQUIRED
+  base CDATA #IMPLIED
   level (class|collection|file|fonds|item|otherlevel|recordgrp|series
          |subfonds|subgrp|subseries) #IMPLIED
 
@@ -2209,8 +2173,7 @@ NO LONGER USED
   audience (external|internal) #IMPLIED
   lang NMTOKEN #IMPLIED
   script NMTOKEN #IMPLIED
-
-  base CDATA #REQUIRED
+  base CDATA #IMPLIED
   level (class|collection|file|fonds|item|otherlevel|recordgrp|series
          |subfonds|subgrp|subseries) #IMPLIED
 
@@ -2268,6 +2231,8 @@ NO LONGER USED
 <!-- ATTRIBUTE DEFINITIONS -->
 
 <!-- xlink-modelled attributes -->
+
+<!-- other linking-related attributes -->
 
 <!-- display attributes -->
 

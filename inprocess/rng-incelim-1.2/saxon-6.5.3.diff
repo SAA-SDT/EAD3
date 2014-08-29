@@ -1,0 +1,11 @@
+--- com/icl/saxon/expr/FragmentValue.java.orig	Sun Jan 18 19:33:32 2004
++++ com/icl/saxon/expr/FragmentValue.java	Sun Jan 18 19:34:39 2004
+@@ -20,7 +20,7 @@
+ 
+     private char[] buffer = new char[4096];
+     private int used = 0;
+-    private Vector events = new Vector(20, 20);
++    private Vector events = new Vector(20/*, 20*/); /* events must expand exponentially, not linearly, otherwise exsl:node-set() cannot be used efficiently */
+     private String baseURI = null;
+     private FragmentEmitter emitter = new FragmentEmitter();
+     private Controller controller;

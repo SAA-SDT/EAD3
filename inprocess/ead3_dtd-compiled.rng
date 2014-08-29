@@ -12,7 +12,7 @@
       <optional>
         <ref name="a.relatedencoding"/>
       </optional>
-      <ref name="a.base"/>
+      <optional><ref name="a.base"/></optional>
       <ref name="e.control"/>
       <ref name="e.archdesc"/>
     </element>
@@ -27,7 +27,7 @@
       <optional>
         <ref name="a.relatedencoding"/>
       </optional>
-      <ref name="a.base"/>
+      <optional><ref name="a.base"/></optional>
       <optional>
         <attribute name="langencoding">
           <choice>
@@ -399,7 +399,7 @@
           <optional>
             <ref name="a.localtype"/>
           </optional>
-          <ref name="a.base"/>
+          <optional><ref name="a.base"/></optional>
           <oneOrMore>
             <element name="source">
               <ref name="am.common"/>
@@ -596,7 +596,7 @@
       </optional>
       <ref name="am.desc.base"/>
       <ref name="a.level"/>
-      <ref name="a.base"/>
+      <optional><ref name="a.base"/></optional>
       <ref name="e.did"/>
       <zeroOrMore>
         <choice>
@@ -674,7 +674,6 @@
       <ref name="am.simplelink"/>
       <optional>
         <ref name="a.identifier"/>
-
       </optional>
       <optional>
         <ref name="a.link.xpointer"/>
@@ -715,8 +714,8 @@
       <optional>
         <ref name="a.label"/>
       </optional>
-      <ref name="a.coverage"/>
-      <ref name="a.base"/>
+      <optional><ref name="a.coverage"/></optional>
+      <optional><ref name="a.base"/></optional>
       <ref name="e.dao"/>
       <oneOrMore>
         <ref name="e.dao"/>
@@ -2886,7 +2885,7 @@
         <data type="IDREF"/>
       </attribute>
     </optional>
-    <ref name="a.link.xpointer"/>
+    <optional><ref name="a.link.xpointer"/></optional>
     <ref name="am.simplelink"/>
   </rng:define>
   <rng:define name="am.simplelink">
@@ -2954,7 +2953,7 @@
   </rng:define>
   <rng:define name="am.desc.c">
     <ref name="am.common"/>
-    <ref name="a.base"/>
+    <optional><ref name="a.base"/></optional>
     <optional>
       <ref name="a.level"/>
     </optional>
@@ -2977,7 +2976,7 @@
         <data type="NMTOKEN"/>
       </attribute>
     </optional>
-    <ref name="a.identifier"/>
+    <optional><ref name="a.identifier"/></optional>
   </rng:define>
   <!-- ATTRIBUTE DEFINITIONS -->
   <!-- xlink-modelled attributes -->
