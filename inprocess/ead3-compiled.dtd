@@ -422,7 +422,8 @@ NO LONGER USED
 <!ATTLIST parallelphysdescset
   %am.common;
   label CDATA #IMPLIED
-  encodinganalog CDATA #IMPLIED>
+  encodinganalog CDATA #IMPLIED
+  coverage (whole|part) #IMPLIED>
 
 <!ELEMENT physdesc %m.mixed.basic;>
 <!ATTLIST physdesc

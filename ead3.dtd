@@ -651,7 +651,8 @@ NO LONGER USED
   lang NMTOKEN #IMPLIED
   script NMTOKEN #IMPLIED
   label CDATA #IMPLIED
-  encodinganalog CDATA #IMPLIED>
+  encodinganalog CDATA #IMPLIED
+  coverage (whole|part) #IMPLIED>
 
 <!ELEMENT physdesc (#PCDATA|abbr|emph|expan|foreign|lb|ptr|ref)*>
 <!ATTLIST physdesc
