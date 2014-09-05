@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-model href="../../../../../Downloads/EADfilm2.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <ead xsi:schemaLocation="urn:isbn:1-931666-22-9 http://www.loc.gov/ead/ead.xsd"
-    xmlns:ns2="http://www.w3.org/1999/xlink" xmlns="urn:isbn:1-931666-22-9"
+    xmlns:ns2="http://www.w3.org/1999/xlink"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <!--  xmlns="urn:isbn:1-931666-22-9" -->
     <eadheader findaidstatus="Completed" repositoryencoding="iso15511" countryencoding="iso3166-1"
         dateencoding="iso8601" langencoding="iso639-2b">
         <eadid countrycode="US" mainagencycode="US-MH-Ar">hua88888:HOLLISnumber|||</eadid>
@@ -577,7 +579,7 @@
                     <head>Separated Materials note</head>
                     <p>separated materials, series-level text, no label |||</p>
                 </separatedmaterial>
-                <c02 id="ref59" level="item">
+                <c02 id="ref59">
                     <did>
                         <unittitle>Item title of item with Item-level notes, labled and unlabeled
                             |||</unittitle>
@@ -834,7 +836,7 @@
                         <unitdate normal="1880/1880">1880</unitdate>
                     </did>
                 </c02>
-                <c02 id="ref71" level="item">
+                <c02 id="ref71"  level="item">
                     <did>
                         <unittitle>Folder title of Folder 5 |||</unittitle>
                         <unitid>UniqueID5|||</unitid>
