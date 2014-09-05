@@ -780,6 +780,9 @@
       <optional>
         <ref name="a.encodinganalog"/>
       </optional>
+      <optional>
+        <ref name="a.coverage"/>
+      </optional>
       <ref name="e.physdescstructured"/>
       <oneOrMore>
         <ref name="e.physdescstructured"/>
