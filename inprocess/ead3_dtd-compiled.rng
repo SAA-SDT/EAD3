@@ -2842,19 +2842,15 @@
       </choice>
     </zeroOrMore>
   </rng:define>
- <!-- NO LONGER USED
-   <define name="m.mixed.basic.plus">
-    <zeroOrMore>
+   <rng:define name="m.mixed.basic.plus.elements">
       <choice>
-        <ref name="m.mixed.basic"/>
+        <ref name="m.mixed.basic.elements"/>
         <ref name="e.date"/>
         <ref name="e.footnote"/>
         <ref name="e.num"/>
         <ref name="e.quote"/>
       </choice>
-    </zeroOrMore>
-  </define>
-  -->
+  </rng:define>
   <rng:define name="m.mixed.basic.plus.access">
     <zeroOrMore>
       <choice>
@@ -2872,7 +2868,7 @@
     <zeroOrMore>
       <choice>
         <text/>
-        <ref name="m.mixed.basic.elements"/>
+        <ref name="m.mixed.basic.plus.elements"/>
         <ref name="m.access"/>
         <ref name="e.list"/>
       </choice>

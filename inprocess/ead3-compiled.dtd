@@ -340,21 +340,6 @@
 <!ENTITY % m.access "persname|corpname|famname|geogname|name|occupation
                      |subject|genreform|function|title">
 
-<!--
-NO LONGER USED
- <define name="m.mixed.basic.plus">
-  <zeroOrMore>
-    <choice>
-      <ref name="m.mixed.basic"/>
-      <ref name="e.date"/>
-      <ref name="e.footnote"/>
-      <ref name="e.num"/>
-      <ref name="e.quote"/>
-    </choice>
-  </zeroOrMore>
-</define>
--->
-
 <!ENTITY % m.mixed.basic.plus.access "(#PCDATA|%m.mixed.basic.elements;
                                        |%m.access;|date|footnote|num
                                        |quote)*">
@@ -802,8 +787,11 @@ NO LONGER USED
   localtype CDATA #IMPLIED
   %am.access.no.normal;>
 
-<!ENTITY % m.para.content "(#PCDATA|%m.mixed.basic.elements;|%m.access;
-                            |list)*">
+<!ENTITY % m.mixed.basic.plus.elements "%m.mixed.basic.elements;|date
+                                        |footnote|num|quote">
+
+<!ENTITY % m.para.content "(#PCDATA|%m.mixed.basic.plus.elements;
+                            |%m.access;|list)*">
 
 <!-- BLOCKS -->
 
