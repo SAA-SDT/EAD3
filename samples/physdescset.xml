@@ -23,6 +23,35 @@
     </control>
     <archdesc level="collection">
         <did>
+            <!-- DACS 2.5.6 -->
+            <!-- 45 linear feet, including 200 photographs and 16 maps
+                
+                 3 boxes, including photographs and audiocassettes
+            -->
+            <physdescstructured physdescstructuredtype="spaceoccupied" coverage="whole">
+            <quantity>45</quantity>
+            <unittype>linear feet</unittype>
+            </physdescstructured>
+            <!-- physdescset coverage = part unnecessary because the previous and next two together
+                are not parallel statments; i.e, if the part descriptions taken together described 
+                the whole, then they should be grouped together in a physdescset coverage = whole
+            -->
+            <physdescstructured coverage="part" physdescstructuredtype="materialtype">
+                <quantity>200</quantity>
+                <unittype>photographs</unittype>
+            </physdescstructured>
+            <physdescstructured coverage="part" physdescstructuredtype="materialtype">
+                <quantity>16</quantity>
+                <unittype>maps</unittype>
+            </physdescstructured>
+
+            <physdescstructured physdescstructuredtype="carrier" coverage="whole">
+                <quantity>3</quantity>
+                <unittype>boxes</unittype>
+            </physdescstructured>
+            <physdesc>including photographs and audiocassettes</physdesc>
+            
+            
             <!-- DACS 2.5.7 -->
             <!-- 2,400 photographs (12 linear feet)
                 
@@ -35,10 +64,11 @@
                  52 megabytes (1,180 computer files) 
 
                  0.5 linear feet (51 floppy discs, 5 Zip discs, 3 CD-ROMs) -->
-            <!-- coverage seems redundant most of the time -->
-            <!-- nesting seems to be necessary in order to multiple statements in a parallel statements -->
             <!-- Taking as multiple examples of individual statements -->
-            <physdescset localtype="parallel" coverage="whole">
+            <!-- phydescset "parallel" not necessary in most cases 
+                 (e.g., when all physdescstructs have coverage="whole"
+             -->
+
                 <physdescstructured physdescstructuredtype="materialtype" coverage="whole">
                     <quantity>2400</quantity>
                     <unittype>photographs</unittype>
@@ -47,7 +77,7 @@
                     <quantity>12</quantity>
                     <unittype> linear feet</unittype>
                 </physdescstructured>
-            </physdescset>
+
             <!-- understand these as children of did -->
                 <physdescstructured physdescstructuredtype="spaceoccupied" coverage="whole">
                     <quantity>89.3</quantity>
@@ -63,7 +93,7 @@
                     <unittype>oversize folders</unittype>
                 </physdescstructured>
                 </physdescset>           
-            <physdescset localtype="parallel" coverage="whole">
+
                 <physdescstructured physdescstructuredtype="materialtype" coverage="whole">
                     <quantity>71</quantity>
                     <unittype>maps</unittype>
@@ -72,8 +102,8 @@
                     <quantity>3.5</quantity>
                     <unittype>cubic feet</unittype>
                 </physdescstructured>
-            </physdescset>
-            <physdescset localtype="parallel" coverage="whole">
+
+
                 <physdescstructured physdescstructuredtype="materialtype" coverage="whole">
                     <quantity>1</quantity>
                     <unittype>diary</unittype>
@@ -82,8 +112,8 @@
                     <quantity>352</quantity>
                     <unittype>pages</unittype>
                 </physdescstructured>
-            </physdescset>
-            <physdescset localtype="parallel" coverage="whole">
+
+
                 <physdescstructured physdescstructuredtype="spaceoccupied" coverage="whole">
                     <quantity>52</quantity>
                     <unittype>megabytes</unittype>
@@ -93,9 +123,9 @@
                     <quantity>1180</quantity>
                     <unittype>computer files</unittype>
                 </physdescstructured>
-            </physdescset>
+
             <!-- understand these to be children of did -->
-                <physdescstructured physdescstructuredtype="spaceoccupied" coverage="part">
+                <physdescstructured physdescstructuredtype="spaceoccupied" coverage="whole">
                     <quantity>.5</quantity>
                     <unittype>linear feet</unittype>
                 </physdescstructured>
@@ -191,6 +221,18 @@
                     <unittype>CD-ROMs</unittype>
                 </physdescstructured>
             </physdescset>
+            
+            <!-- DACS 2.5.8 -->
+            <!-- 12 linear feet of textual materials, 68 photographs, 
+                 16 architectural drawings
+
+                 107 boxes, 4 oversize boxes, 575 oversize folders, 225 rolled drawings
+
+                Approximately 390 linear feet
+
+               Two expressions of the extent from the same collection
+            -->
+
 
         </did>
     </archdesc>
