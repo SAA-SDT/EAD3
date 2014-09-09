@@ -23,102 +23,174 @@
     </control>
     <archdesc level="collection">
         <did>
-            <!-- DACS 2.5.4 -->
-            <!-- Total: 5321 items -->
-            <physdescstructured coverage="whole" physdescstructuredtype="otherphysdescstructuredtype" otherphysdescstructuredtype="generic-unit">
-                <quantity>5321</quantity>
-                <unittype>items</unittype>
-            </physdescstructured>
-            <!-- DACS 2.5.5 -->
-            <!-- Total: 1000 photographs -->
-            <physdescstructured coverage="whole" physdescstructuredtype="materialtype">
-                <quantity>1000</quantity>
-                <unittype>photographs</unittype>
-            </physdescstructured>
-            <!-- DACS 2.5.6 -->
-            <!-- Total: 3 boxes -->
-            <physdescstructured coverage="whole" physdescstructuredtype="carrier">
-                <quantity>3</quantity>
-                <unittype identifier="http://www.paigecompany.com/18-miracle-box-15.html">boxes</unittype>
-            </physdescstructured>
-            <physdesc>including photographs and audiocassettes</physdesc>
-            <!-- DACS 2.5.7 -->
-            <!-- Total: 89.3 linear feet = (150 boxes = 109 oversized folders) -->
-            <physdescstructured coverage="whole" physdescstructuredtype="spaceoccupied">
-                <quantity>89.3</quantity>
-                <unittype>linear feet</unittype>
-            </physdescstructured>
-            <physdescset localtype="parallel"  coverage="whole">
+            <!-- DACS 2.5.8 -->
+            <!-- 2,400 photographs (12 linear feet)
+                
+                 89.3 linear feet (150 boxes and 109 oversize folders)
+
+                 71 maps (3.5 cubic feet)
+
+                  1 diary (352 pages)
+
+                 52 megabytes (1,180 computer files) 
+
+                 0.5 linear feet (51 floppy discs, 5 Zip discs, 3 CD-ROMs) -->
+            <!-- coverage seems redundant most of the time -->
+            <!-- nesting seems to be necessary in order to multiple statements in a parallel statements -->
+            <!-- Taking as multiple examples of individual statements -->
+            <physdescset localtype="parallel" coverage="whole">
+                <physdescstructured physdescstructuredtype="materialtype" coverage="whole">
+                    <quantity>2400</quantity>
+                    <unittype>photographs</unittype>
+                </physdescstructured>
+                <physdescstructured physdescstructuredtype="spaceoccupied" coverage="whole">
+                    <quantity>12</quantity>
+                    <unittype> linear feet</unittype>
+                </physdescstructured>
+            </physdescset>
+            <physdescset localtype="parallel" coverage="whole">
+                <physdescstructured physdescstructuredtype="spaceoccupied" coverage="whole">
+                    <quantity>89.3</quantity>
+                    <unittype>linear feet</unittype>
+                </physdescstructured>
+                <!-- need nested physdescset to express these 2 together are parallel to previous-->
                 <physdescstructured physdescstructuredtype="carrier" coverage="part">
                     <quantity>150</quantity>
-                    <unittype>boxes</unittype>
+                    <unittype> boxes</unittype>
                 </physdescstructured>
                 <physdescstructured physdescstructuredtype="carrier" coverage="part">
                     <quantity>109</quantity>
                     <unittype>oversize folders</unittype>
                 </physdescstructured>
             </physdescset>
-            <!-- DACS 2.5.8 -->
-            <!-- These are not parallel statements; i.e., describing the same part. 
-                 They are describing different parts of the whole, taken together
-                 is parallel to the preceding statement
-            -->
-            <!-- Total: (107 boxes = 4 oversize boxes = 575 oversize boxes = 225 rolled drawings) = 390 linear feet -->
-            <physdescset localtype="parallel"  coverage="whole">
-                <physdescstructured physdescstructuredtype="carrier" coverage="part">
-                    <quantity>107</quantity>
-                    <unittype>boxes</unittype>
+            <physdescset localtype="parallel" coverage="whole">
+                <physdescstructured physdescstructuredtype="materialtype" coverage="whole">
+                    <quantity>71</quantity>
+                    <unittype>maps</unittype>
                 </physdescstructured>
-                <physdescstructured physdescstructuredtype="carrier" coverage="part">
-                    <quantity>4</quantity>
-                    <unittype>oversize boxes</unittype>
-                </physdescstructured>
-                <physdescstructured physdescstructuredtype="carrier" coverage="part">
-                    <quantity>575</quantity>
-                    <unittype>oversize folders</unittype>
-                </physdescstructured>
-                <physdescstructured physdescstructuredtype="carrier" coverage="part">
-                    <quantity>225</quantity>
-                    <unittype>rolled drawings</unittype>
+                <physdescstructured physdescstructuredtype="spaceoccupied" coverage="whole">
+                    <quantity>3.5</quantity>
+                    <unittype>cubic feet</unittype>
                 </physdescstructured>
             </physdescset>
-            <physdescstructured coverage="whole" physdescstructuredtype="spaceoccupied">
-                <quantity approximate="yes">390</quantity>
-                <unittype>linear feet</unittype>
-            </physdescstructured>
-            <!-- DACS 2.5.9 -->
-            <!-- Total: 24000 maps -->
-            <physdescstructured coverage="whole" physdescstructuredtype="materialtype">
-                <quantity approximate="yes">24000</quantity>
-                <unittype>maps</unittype>
-            </physdescstructured>
-            <!-- DACS 2.5.10 -->
-            <!-- 23 digital files.
-                 Total: 1 gigabytes
-            -->
-            <physdesc>23 digital files</physdesc>
-            <physdescstructured coverage="whole" physdescstructuredtype="spaceoccupied">
-                <quantity>1</quantity>
-                <unittype>gigabytes</unittype>
-            </physdescstructured>
-            <!-- DACS 2.5.10 (Alternative)-->
-            <!-- Total: 23 digital files = 1 gigabytes --> 
-            <!-- Are these supposed to be parallel statements? -->
-            <physdescstructured coverage="whole" physdescstructuredtype="otherphysdescstructuredtype" otherphysdescstructuredtype="generic-unit">
-                <quantity>23</quantity>
-                <unittype>digital files</unittype>
-            </physdescstructured>
-            <physdescstructured coverage="whole" physdescstructuredtype="spaceoccupied">
-                <quantity>1</quantity>
-                <unittype>gigabytes</unittype>
-            </physdescstructured>
-            <!-- DACS 2.5.11 -->
-            <!-- Total: 88 Kilobytes -->
-            <physdescstructured coverage="whole" physdescstructuredtype="spaceoccupied" label="PDF">
-                <quantity>88</quantity>
-                <unittype>Kilobytes</unittype>
-            </physdescstructured>
-            
+            <physdescset localtype="parallel" coverage="whole">
+                <physdescstructured physdescstructuredtype="materialtype" coverage="whole">
+                    <quantity>1</quantity>
+                    <unittype>diary</unittype>
+                </physdescstructured>
+                <physdescstructured physdescstructuredtype="carrier" coverage="whole">
+                    <quantity>352</quantity>
+                    <unittype>pages</unittype>
+                </physdescstructured>
+            </physdescset>
+            <physdescset localtype="parallel" coverage="whole">
+                <physdescstructured physdescstructuredtype="spaceoccupied" coverage="whole">
+                    <quantity>52</quantity>
+                    <unittype>megabytes</unittype>
+                </physdescstructured>
+                <physdescstructured physdescstructuredtype="otherphysdescstructuredtype"
+                    otherphysdescstructuredtype="generic-unit" coverage="whole">
+                    <quantity>1180</quantity>
+                    <unittype>computer files</unittype>
+                </physdescstructured>
+            </physdescset>
+            <physdescset localtype="parallel" coverage="whole">
+                <physdescstructured physdescstructuredtype="spaceoccupied" coverage="part">
+                    <quantity>.5</quantity>
+                    <unittype>linear feet</unittype>
+                </physdescstructured>
+                <!-- need nested physdescset to express these 3 together are parallel to previous-->
+                <physdescstructured physdescstructuredtype="carrier" coverage="part">
+                    <quantity>51</quantity>
+                    <unittype>floppy disks</unittype>
+                </physdescstructured>
+                <physdescstructured physdescstructuredtype="carrier" coverage="part">
+                    <quantity>5</quantity>
+                    <unittype>zip disks</unittype>
+                </physdescstructured>
+                <physdescstructured physdescstructuredtype="carrier" coverage="part">
+                    <quantity>3</quantity>
+                    <unittype>CD-ROMs</unittype>
+                </physdescstructured>
+            </physdescset>
+
+             <!-- Taking examples to be multiple statements together describing a single component -->
+            <physdescset localtype="parallel" coverage="part">
+                <physdescstructured physdescstructuredtype="materialtype" coverage="part">
+                    <quantity>2400</quantity>
+                    <unittype>photographs</unittype>
+                </physdescstructured>
+                <physdescstructured physdescstructuredtype="spaceoccupied" coverage="part">
+                    <quantity>12</quantity>
+                    <unittype> linear feet</unittype>
+                </physdescstructured>
+            </physdescset>
+            <physdescset localtype="parallel" coverage="part">
+                <physdescstructured physdescstructuredtype="spaceoccupied" coverage="part">
+                    <quantity>89.3</quantity>
+                    <unittype>linear feet</unittype>
+                </physdescstructured>
+                <!-- need nested physdescset to express these 2 together are parallel to previous-->
+                <physdescstructured physdescstructuredtype="carrier" coverage="part">
+                    <quantity>150</quantity>
+                    <unittype> boxes</unittype>
+                </physdescstructured>
+                <physdescstructured physdescstructuredtype="carrier" coverage="part">
+                    <quantity>109</quantity>
+                    <unittype>oversize folders</unittype>
+                </physdescstructured>
+            </physdescset>
+            <physdescset localtype="parallel" coverage="whole">
+                <physdescstructured physdescstructuredtype="materialtype" coverage="part">
+                    <quantity>71</quantity>
+                    <unittype>maps</unittype>
+                </physdescstructured>
+                <physdescstructured physdescstructuredtype="spaceoccupied" coverage="part">
+                    <quantity>3.5</quantity>
+                    <unittype>cubic feet</unittype>
+                </physdescstructured>
+            </physdescset>
+            <physdescset localtype="parallel" coverage="part">
+                <physdescstructured physdescstructuredtype="materialtype" coverage="part">
+                    <quantity>1</quantity>
+                    <unittype>diary</unittype>
+                </physdescstructured>
+                <physdescstructured physdescstructuredtype="carrier" coverage="part">
+                    <quantity>352</quantity>
+                    <unittype>pages</unittype>
+                </physdescstructured>
+            </physdescset>
+            <physdescset localtype="parallel" coverage="part">
+                <physdescstructured physdescstructuredtype="spaceoccupied" coverage="part">
+                    <quantity>52</quantity>
+                    <unittype>megabytes</unittype>
+                </physdescstructured>
+                <physdescstructured physdescstructuredtype="otherphysdescstructuredtype"
+                    otherphysdescstructuredtype="generic-unit" coverage="part">
+                    <quantity>1180</quantity>
+                    <unittype>computer files</unittype>
+                </physdescstructured>
+            </physdescset>
+            <physdescset localtype="parallel" coverage="part">
+                <physdescstructured physdescstructuredtype="spaceoccupied" coverage="part">
+                    <quantity>.5</quantity>
+                    <unittype>linear feet</unittype>
+                </physdescstructured>
+                <!-- need nested physdescset to express these 3 together are parallel to previous-->
+                <physdescstructured physdescstructuredtype="carrier" coverage="part">
+                    <quantity>51</quantity>
+                    <unittype>floppy disks</unittype>
+                </physdescstructured>
+                <physdescstructured physdescstructuredtype="carrier" coverage="part">
+                    <quantity>5</quantity>
+                    <unittype>zip disks</unittype>
+                </physdescstructured>
+                <physdescstructured physdescstructuredtype="carrier" coverage="part">
+                    <quantity>3</quantity>
+                    <unittype>CD-ROMs</unittype>
+                </physdescstructured>
+            </physdescset>
+
         </did>
     </archdesc>
 </ead>
