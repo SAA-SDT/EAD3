@@ -48,12 +48,12 @@
                     <unittype> linear feet</unittype>
                 </physdescstructured>
             </physdescset>
-            <physdescset localtype="parallel" coverage="whole">
+            <!-- understand these as children of did -->
                 <physdescstructured physdescstructuredtype="spaceoccupied" coverage="whole">
                     <quantity>89.3</quantity>
                     <unittype>linear feet</unittype>
                 </physdescstructured>
-                <!-- need nested physdescset to express these 2 together are parallel to previous-->
+                <physdescset coverage="whole">
                 <physdescstructured physdescstructuredtype="carrier" coverage="part">
                     <quantity>150</quantity>
                     <unittype> boxes</unittype>
@@ -62,7 +62,7 @@
                     <quantity>109</quantity>
                     <unittype>oversize folders</unittype>
                 </physdescstructured>
-            </physdescset>
+                </physdescset>           
             <physdescset localtype="parallel" coverage="whole">
                 <physdescstructured physdescstructuredtype="materialtype" coverage="whole">
                     <quantity>71</quantity>
@@ -94,12 +94,12 @@
                     <unittype>computer files</unittype>
                 </physdescstructured>
             </physdescset>
-            <physdescset localtype="parallel" coverage="whole">
+            <!-- understand these to be children of did -->
                 <physdescstructured physdescstructuredtype="spaceoccupied" coverage="part">
                     <quantity>.5</quantity>
                     <unittype>linear feet</unittype>
                 </physdescstructured>
-                <!-- need nested physdescset to express these 3 together are parallel to previous-->
+               <physdescset coverage="whole">
                 <physdescstructured physdescstructuredtype="carrier" coverage="part">
                     <quantity>51</quantity>
                     <unittype>floppy disks</unittype>
@@ -112,7 +112,8 @@
                     <quantity>3</quantity>
                     <unittype>CD-ROMs</unittype>
                 </physdescstructured>
-            </physdescset>
+               </physdescset>
+            
 
              <!-- Taking examples to be multiple statements together describing a single component -->
             <physdescset localtype="parallel" coverage="part">
