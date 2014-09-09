@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:/Users/terry/working/Github/SAA-SDT/EAD-Revision/ead3.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<ead xmlns="http://ead3.archivists.org/schema/">
+    <control>
+        <recordid/>
+        <filedesc>
+            <titlestmt>
+                <titleproper/>
+            </titlestmt>
+        </filedesc>
+        <maintenancestatus value="new"/>
+        <maintenanceagency>
+            <agencyname/>
+        </maintenanceagency>
+        <maintenancehistory>
+            <maintenanceevent>
+                <eventtype value="created"/>
+                <eventdatetime/>
+                <agenttype value="human"/>
+                <agent/>
+            </maintenanceevent>
+        </maintenancehistory>
+    </control>
+    <archdesc level="collection">
+        <did>
+            <!-- DACS 2.5.4 -->
+            <!-- Total: 5321 items -->
+            <physdescstructured coverage="whole" physdescstructuredtype="otherphysdescstructuredtype" otherphysdescstructuredtype="generic-unit">
+                <quantity>5321</quantity>
+                <unittype>items</unittype>
+            </physdescstructured>
+            <!-- DACS 2.5.5 -->
+            <!-- Total: 1000 photographs -->
+            <physdescstructured coverage="whole" physdescstructuredtype="materialtype">
+                <quantity>1000</quantity>
+                <unittype>photographs</unittype>
+            </physdescstructured>
+            <!-- DACS 2.5.6 -->
+            <!-- Total: 3 boxes -->
+            <physdescstructured coverage="whole" physdescstructuredtype="carrier">
+                <quantity>3</quantity>
+                <unittype identifier="http://www.paigecompany.com/18-miracle-box-15.html">boxes</unittype>
+            </physdescstructured>
+            <physdesc>including photographs and audiocassettes</physdesc>
+            <!-- DACS 2.5.7 -->
+            <!-- Total: 89.3 linear feet = (150 boxes = 109 oversized folders) -->
+            <physdescstructured coverage="whole" physdescstructuredtype="spaceoccupied">
+                <quantity>89.3</quantity>
+                <unittype>linear feet</unittype>
+            </physdescstructured>
+            <physdescset localtype="parallel"  coverage="whole">
+                <physdescstructured physdescstructuredtype="carrier" coverage="part">
+                    <quantity>150</quantity>
+                    <unittype>boxes</unittype>
+                </physdescstructured>
+                <physdescstructured physdescstructuredtype="carrier" coverage="part">
+                    <quantity>109</quantity>
+                    <unittype>oversize folders</unittype>
+                </physdescstructured>
+            </physdescset>
+            <!-- DACS 2.5.8 -->
+            <!-- These are not parallel statements; i.e., describing the same part. 
+                 They are describing different parts of the whole, taken together
+                 is parallel to the preceding statement
+            -->
+            <!-- Total: (107 boxes = 4 oversize boxes = 575 oversize boxes = 225 rolled drawings) = 390 linear feet -->
+            <physdescset localtype="parallel"  coverage="whole">
+                <physdescstructured physdescstructuredtype="carrier" coverage="part">
+                    <quantity>107</quantity>
+                    <unittype>boxes</unittype>
+                </physdescstructured>
+                <physdescstructured physdescstructuredtype="carrier" coverage="part">
+                    <quantity>4</quantity>
+                    <unittype>oversize boxes</unittype>
+                </physdescstructured>
+                <physdescstructured physdescstructuredtype="carrier" coverage="part">
+                    <quantity>575</quantity>
+                    <unittype>oversize folders</unittype>
+                </physdescstructured>
+                <physdescstructured physdescstructuredtype="carrier" coverage="part">
+                    <quantity>225</quantity>
+                    <unittype>rolled drawings</unittype>
+                </physdescstructured>
+            </physdescset>
+            <physdescstructured coverage="whole" physdescstructuredtype="spaceoccupied">
+                <quantity approximate="yes">390</quantity>
+                <unittype>linear feet</unittype>
+            </physdescstructured>
+            <!-- DACS 2.5.9 -->
+            <!-- Total: 24000 maps -->
+            <physdescstructured coverage="whole" physdescstructuredtype="materialtype">
+                <quantity approximate="yes">24000</quantity>
+                <unittype>maps</unittype>
+            </physdescstructured>
+            <!-- DACS 2.5.10 -->
+            <!-- 23 digital files.
+                 Total: 1 gigabytes
+            -->
+            <physdesc>23 digital files</physdesc>
+            <physdescstructured coverage="whole" physdescstructuredtype="spaceoccupied">
+                <quantity>1</quantity>
+                <unittype>gigabytes</unittype>
+            </physdescstructured>
+            <!-- DACS 2.5.10 (Alternative)-->
+            <!-- Total: 23 digital files = 1 gigabytes --> 
+            <!-- Are these supposed to be parallel statements? -->
+            <physdescstructured coverage="whole" physdescstructuredtype="otherphysdescstructuredtype" otherphysdescstructuredtype="generic-unit">
+                <quantity>23</quantity>
+                <unittype>digital files</unittype>
+            </physdescstructured>
+            <physdescstructured coverage="whole" physdescstructuredtype="spaceoccupied">
+                <quantity>1</quantity>
+                <unittype>gigabytes</unittype>
+            </physdescstructured>
+            <!-- DACS 2.5.11 -->
+            <!-- Total: 88 Kilobytes -->
+            <physdescstructured coverage="whole" physdescstructuredtype="spaceoccupied" label="PDF">
+                <quantity>88</quantity>
+                <unittype>Kilobytes</unittype>
+            </physdescstructured>
+            
+        </did>
+    </archdesc>
+</ead>

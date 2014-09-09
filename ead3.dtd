@@ -512,7 +512,7 @@
 <!-- did -->
 
 <!ELEMENT did (head?,(abstract|container|dao|daoset|didnote|langmaterial
-                  |materialspec|origination|parallelphysdescset|physdesc
+                  |materialspec|origination|physdescset|physdesc
                   |physdescstructured|physloc|repository|unitdate
                   |unitdatestructured|unitid|unittitle)+)>
 <!ATTLIST did
@@ -523,21 +523,6 @@
   lang NMTOKEN #IMPLIED
   script NMTOKEN #IMPLIED
   encodinganalog CDATA #IMPLIED>
-
-<!--
-NO LONGER USED
- <define name="m.mixed.basic.plus">
-  <zeroOrMore>
-    <choice>
-      <ref name="m.mixed.basic"/>
-      <ref name="e.date"/>
-      <ref name="e.footnote"/>
-      <ref name="e.num"/>
-      <ref name="e.quote"/>
-    </choice>
-  </zeroOrMore>
-</define>
--->
 
 <!ELEMENT abstract (#PCDATA|abbr|emph|expan|foreign|lb|ptr|ref
                                        |persname|corpname|famname|geogname|name|occupation
@@ -642,8 +627,29 @@ NO LONGER USED
   encodinganalog CDATA #IMPLIED
   localtype CDATA #IMPLIED>
 
-<!ELEMENT parallelphysdescset (physdescstructured,physdescstructured+)>
-<!ATTLIST parallelphysdescset
+<!--
+<define name="e.parallelphysdescset">
+  <element name="parallelphysdescset">
+    <ref name="am.common"/>
+    <optional>
+      <ref name="a.label"/>
+    </optional>
+    <optional>
+      <ref name="a.encodinganalog"/>
+    </optional>
+    <optional>
+      <ref name="a.coverage"/>
+    </optional>
+    <ref name="e.physdescstructured"/>
+    <oneOrMore>
+      <ref name="e.physdescstructured"/>
+    </oneOrMore>
+  </element>
+</define>
+-->
+
+<!ELEMENT physdescset (physdescstructured|physdesc)+>
+<!ATTLIST physdescset
 
   id ID #IMPLIED
   altrender CDATA #IMPLIED
@@ -652,7 +658,8 @@ NO LONGER USED
   script NMTOKEN #IMPLIED
   label CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED
-  coverage (whole|part) #IMPLIED>
+  coverage (whole|part) #IMPLIED
+  localtype CDATA #IMPLIED>
 
 <!ELEMENT physdesc (#PCDATA|abbr|emph|expan|foreign|lb|ptr|ref)*>
 <!ATTLIST physdesc
@@ -1319,9 +1326,10 @@ NO LONGER USED
 
 <!-- p -->
 
-<!ELEMENT p (#PCDATA|abbr|emph|expan|foreign|lb|ptr|ref|persname|corpname|famname|geogname|name|occupation
-                     |subject|genreform|function|title
-                            |list)*>
+<!ELEMENT p (#PCDATA|abbr|emph|expan|foreign|lb|ptr|ref|date
+                                        |footnote|num|quote
+                            |persname|corpname|famname|geogname|name|occupation
+                     |subject|genreform|function|title|list)*>
 <!ATTLIST p
 
   id ID #IMPLIED
@@ -1374,9 +1382,10 @@ NO LONGER USED
   lang NMTOKEN #IMPLIED
   script NMTOKEN #IMPLIED>
 
-<!ELEMENT event (#PCDATA|abbr|emph|expan|foreign|lb|ptr|ref|persname|corpname|famname|geogname|name|occupation
-                     |subject|genreform|function|title
-                            |list)*>
+<!ELEMENT event (#PCDATA|abbr|emph|expan|foreign|lb|ptr|ref|date
+                                        |footnote|num|quote
+                            |persname|corpname|famname|geogname|name|occupation
+                     |subject|genreform|function|title|list)*>
 <!ATTLIST event
 
   id ID #IMPLIED
@@ -1421,9 +1430,10 @@ NO LONGER USED
   lang NMTOKEN #IMPLIED
   script NMTOKEN #IMPLIED>
 
-<!ELEMENT item (#PCDATA|abbr|emph|expan|foreign|lb|ptr|ref|persname|corpname|famname|geogname|name|occupation
-                     |subject|genreform|function|title
-                            |list)*>
+<!ELEMENT item (#PCDATA|abbr|emph|expan|foreign|lb|ptr|ref|date
+                                        |footnote|num|quote
+                            |persname|corpname|famname|geogname|name|occupation
+                     |subject|genreform|function|title|list)*>
 <!ATTLIST item
 
   id ID #IMPLIED
@@ -1528,9 +1538,10 @@ NO LONGER USED
   rowsep (0|1) #IMPLIED
   valign (top|middle|bottom) #IMPLIED>
 
-<!ELEMENT entry (#PCDATA|abbr|emph|expan|foreign|lb|ptr|ref|persname|corpname|famname|geogname|name|occupation
-                     |subject|genreform|function|title
-                            |list)*>
+<!ELEMENT entry (#PCDATA|abbr|emph|expan|foreign|lb|ptr|ref|date
+                                        |footnote|num|quote
+                            |persname|corpname|famname|geogname|name|occupation
+                     |subject|genreform|function|title|list)*>
 <!ATTLIST entry
 
   id ID #IMPLIED

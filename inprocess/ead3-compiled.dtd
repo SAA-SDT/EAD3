@@ -326,7 +326,7 @@
   base CDATA #IMPLIED>
 
 <!ENTITY % m.did "abstract|container|dao|daoset|didnote|langmaterial
-                  |materialspec|origination|parallelphysdescset|physdesc
+                  |materialspec|origination|physdescset|physdesc
                   |physdescstructured|physloc|repository|unitdate
                   |unitdatestructured|unitid|unittitle">
 
@@ -339,21 +339,6 @@
 
 <!ENTITY % m.access "persname|corpname|famname|geogname|name|occupation
                      |subject|genreform|function|title">
-
-<!--
-NO LONGER USED
- <define name="m.mixed.basic.plus">
-  <zeroOrMore>
-    <choice>
-      <ref name="m.mixed.basic"/>
-      <ref name="e.date"/>
-      <ref name="e.footnote"/>
-      <ref name="e.num"/>
-      <ref name="e.quote"/>
-    </choice>
-  </zeroOrMore>
-</define>
--->
 
 <!ENTITY % m.mixed.basic.plus.access "(#PCDATA|%m.mixed.basic.elements;
                                        |%m.access;|date|footnote|num
@@ -418,12 +403,34 @@ NO LONGER USED
   encodinganalog CDATA #IMPLIED
   localtype CDATA #IMPLIED>
 
-<!ELEMENT parallelphysdescset (physdescstructured,physdescstructured+)>
-<!ATTLIST parallelphysdescset
+<!--
+<define name="e.parallelphysdescset">
+  <element name="parallelphysdescset">
+    <ref name="am.common"/>
+    <optional>
+      <ref name="a.label"/>
+    </optional>
+    <optional>
+      <ref name="a.encodinganalog"/>
+    </optional>
+    <optional>
+      <ref name="a.coverage"/>
+    </optional>
+    <ref name="e.physdescstructured"/>
+    <oneOrMore>
+      <ref name="e.physdescstructured"/>
+    </oneOrMore>
+  </element>
+</define>
+-->
+
+<!ELEMENT physdescset (physdescstructured|physdesc)+>
+<!ATTLIST physdescset
   %am.common;
   label CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED
-  coverage (whole|part) #IMPLIED>
+  coverage (whole|part) #IMPLIED
+  localtype CDATA #IMPLIED>
 
 <!ELEMENT physdesc %m.mixed.basic;>
 <!ATTLIST physdesc
@@ -803,8 +810,11 @@ NO LONGER USED
   localtype CDATA #IMPLIED
   %am.access.no.normal;>
 
-<!ENTITY % m.para.content "(#PCDATA|%m.mixed.basic.elements;|%m.access;
-                            |list)*">
+<!ENTITY % m.mixed.basic.plus.elements "%m.mixed.basic.elements;|date
+                                        |footnote|num|quote">
+
+<!ENTITY % m.para.content "(#PCDATA|%m.mixed.basic.plus.elements;
+                            |%m.access;|list)*">
 
 <!-- BLOCKS -->
 

@@ -775,7 +775,7 @@
       <ref name="m.mixed.basic"/>
     </element>
   </rng:define>
-  <rng:define name="e.parallelphysdescset">
+<!--  <define name="e.parallelphysdescset">
     <element name="parallelphysdescset">
       <ref name="am.common"/>
       <optional>
@@ -791,6 +791,30 @@
       <oneOrMore>
         <ref name="e.physdescstructured"/>
       </oneOrMore>
+    </element>
+  </define>
+-->
+  <rng:define name="e.physdescset">
+    <element name="physdescset">
+      <ref name="am.common"/>
+      <optional>
+        <ref name="a.label"/>
+      </optional>
+      <optional>
+        <ref name="a.encodinganalog"/>
+      </optional>
+      <optional>
+        <ref name="a.coverage"/>
+      </optional>
+      <optional>
+        <ref name="a.localtype"/>
+      </optional>
+      <oneOrMore>
+        <choice>
+          <ref name="e.physdescstructured"/>
+          <ref name="e.physdesc"/>
+        </choice>
+      </oneOrMore>      
     </element>
   </rng:define>
   <rng:define name="e.physdesc">
@@ -2808,7 +2832,7 @@
       <ref name="e.langmaterial"/>
       <ref name="e.materialspec"/>
       <ref name="e.origination"/>
-      <ref name="e.parallelphysdescset"/>
+      <ref name="e.physdescset"/>
       <ref name="e.physdesc"/>
       <ref name="e.physdescstructured"/>
       <ref name="e.physloc"/>
@@ -2845,19 +2869,15 @@
       </choice>
     </zeroOrMore>
   </rng:define>
- <!-- NO LONGER USED
-   <define name="m.mixed.basic.plus">
-    <zeroOrMore>
+   <rng:define name="m.mixed.basic.plus.elements">
       <choice>
-        <ref name="m.mixed.basic"/>
+        <ref name="m.mixed.basic.elements"/>
         <ref name="e.date"/>
         <ref name="e.footnote"/>
         <ref name="e.num"/>
         <ref name="e.quote"/>
-      </choice>
-    </zeroOrMore>
-  </define>
-  -->
+      </choice>    
+  </rng:define>
   <rng:define name="m.mixed.basic.plus.access">
     <zeroOrMore>
       <choice>
@@ -2875,7 +2895,7 @@
     <zeroOrMore>
       <choice>
         <text/>
-        <ref name="m.mixed.basic.elements"/>
+        <ref name="m.mixed.basic.plus.elements"/>
         <ref name="m.access"/>
         <ref name="e.list"/>
       </choice>
