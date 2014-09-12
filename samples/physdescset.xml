@@ -65,6 +65,7 @@
                     <!-- phydescset "parallel" not necessary
                         when all physdescstructs have coverage="whole")
                      -->
+                    <!-- inherently parallel because @coverage = "whole" for both -->
                     <physdescstructured physdescstructuredtype="materialtype" coverage="whole">
                         <quantity>2400</quantity>
                         <unittype>photographs</unittype>
@@ -84,6 +85,7 @@
                         <quantity>89.3</quantity>
                         <unittype>linear feet</unittype>
                     </physdescstructured>
+                    <!-- cannot be parallel statements because @coverage = "whole" -->
                     <physdescset coverage="whole">
                         <physdescstructured physdescstructuredtype="carrier" coverage="part">
                             <quantity>150</quantity>
@@ -100,6 +102,7 @@
                 <did>
                     <!-- DACS 2.5.7.c 
                  71 maps (3.5 cubic feet) -->
+                    <!-- inherently parallel because @coverage = "whole" for both -->
                     <physdescstructured physdescstructuredtype="materialtype" coverage="whole">
                         <quantity>71</quantity>
                         <unittype>maps</unittype>
@@ -115,6 +118,7 @@
                     <!-- DACS 2.5.7.d 
                 1 diary (352 pages) 
                 -->
+                    <!-- inherently parallel because @coverage = "whole" for both -->
                     <physdescstructured physdescstructuredtype="materialtype" coverage="whole">
                         <quantity>1</quantity>
                         <unittype>diary</unittype>
@@ -130,6 +134,7 @@
                     <!-- DACS 2.5.7.e 
                 52 megabytes (1,180 computer files)
                 -->
+                    <!-- inherently parallel because @coverage = "whole" for both -->
                     <physdescstructured physdescstructuredtype="spaceoccupied" coverage="whole">
                         <quantity>52</quantity>
                         <unittype>megabytes</unittype>
@@ -149,6 +154,7 @@
                         <quantity>.5</quantity>
                         <unittype>linear feet</unittype>
                     </physdescstructured>
+                    <!-- cannot be parallel statements because @coverage = whole -->
                     <physdescset coverage="whole">
                         <physdescstructured physdescstructuredtype="carrier" coverage="part">
                             <quantity>51</quantity>
@@ -157,10 +163,6 @@
                         <physdescstructured physdescstructuredtype="carrier" coverage="part">
                             <quantity>5</quantity>
                             <unittype>zip disks</unittype>
-                        </physdescstructured>
-                        <physdescstructured physdescstructuredtype="spaceoccupied" coverage="whole">
-                            <quantity>.5</quantity>
-                            <unittype>linear feet</unittype>
                         </physdescstructured>
                         <physdescstructured physdescstructuredtype="carrier" coverage="part">
                             <quantity>3</quantity>
@@ -181,7 +183,6 @@
                 
                Two expressions of the extent from the same collection
             -->
-                    <physdescset coverage="part">
                         <physdesc>12 linear feet of textual materials</physdesc>
                         <physdescstructured coverage="part" physdescstructuredtype="materialtype">
                             <quantity>68</quantity>
@@ -191,8 +192,8 @@
                             <quantity>16</quantity>
                             <unittype>architectural drawings</unittype>
                         </physdescstructured>
-                    </physdescset>
-
+                    
+                    <!-- cannot be parallel statements because @coverage = whole -->
                     <physdescset coverage="whole">
                         <physdescstructured coverage="part" physdescstructuredtype="carrier">
                             <quantity>107</quantity>
@@ -209,12 +210,12 @@
                         <physdescstructured coverage="part" physdescstructuredtype="materialtype">
                             <quantity>225</quantity>
                             <unittype>rolled drawings</unittype>
-                        </physdescstructured>
-                        <physdescstructured coverage="whole" physdescstructuredtype="spaceoccupied">
-                            <quantity approximate="yes">390</quantity>
-                            <unittype>linear feet</unittype>
-                        </physdescstructured>
+                        </physdescstructured>                       
                     </physdescset>
+                    <physdescstructured coverage="whole" physdescstructuredtype="spaceoccupied">
+                        <quantity approximate="yes">390</quantity>
+                        <unittype>linear feet</unittype>
+                    </physdescstructured>
 
                 </did>
             </c>
