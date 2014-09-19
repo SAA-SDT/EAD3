@@ -16,27 +16,6 @@
 
   base CDATA #REQUIRED>
 
-<!ELEMENT frontmatter (titlepage?,div*)>
-<!ATTLIST frontmatter
-
-  id ID #IMPLIED
-  altrender CDATA #IMPLIED
-  audience (external|internal) #IMPLIED
-  lang NMTOKEN #IMPLIED
-  script NMTOKEN #IMPLIED>
-
-<!-- ELEMENT MODELS -->
-
-<!ELEMENT titlepage (chronlist|list|table|blockquote|p|author|date|edition|num|publisher
-                     |bibseries|sponsor|titleproper|subtitle)+>
-<!ATTLIST titlepage
-
-  id ID #IMPLIED
-  altrender CDATA #IMPLIED
-  audience (external|internal) #IMPLIED
-  lang NMTOKEN #IMPLIED
-  script NMTOKEN #IMPLIED>
-
 <!-- ARCHDESC -->
 
 <!ELEMENT archdesc (runner*,did,(accessrestrict|accruals|acqinfo
@@ -369,6 +348,42 @@
   otherlevel NMTOKEN #IMPLIED
   encodinganalog CDATA #IMPLIED>
 
+<!-- MIXED CONTENT MODELS -->
+
+<!-- unittitle -->
+
+<!ELEMENT unittitle (#PCDATA|abbr|emph|expan|foreign|lb|ptr|ref|persname|corpname|famname|geogname|name|occupation
+                     |subject|genreform|function|title|date
+                     |footnote|num|quote|imprint|bibseries|edition
+                     |unitdate)*>
+<!ATTLIST unittitle
+
+  id ID #IMPLIED
+  altrender CDATA #IMPLIED
+  audience (external|internal) #IMPLIED
+  lang NMTOKEN #IMPLIED
+  script NMTOKEN #IMPLIED
+  label CDATA #IMPLIED
+  encodinganalog CDATA #IMPLIED
+  localtype CDATA #IMPLIED
+  normal CDATA #IMPLIED>
+
+<!ELEMENT physdesc (#PCDATA|abbr|emph|expan|foreign|lb|ptr|ref|persname|corpname|famname|geogname|name|occupation
+                     |subject|genreform|function|title|date
+                    |footnote|num|quote|extent|physfacet|dimensions)*>
+<!ATTLIST physdesc
+
+  id ID #IMPLIED
+  altrender CDATA #IMPLIED
+  audience (external|internal) #IMPLIED
+  lang NMTOKEN #IMPLIED
+  script NMTOKEN #IMPLIED
+  localtype CDATA #IMPLIED
+  label CDATA #IMPLIED
+  encodinganalog CDATA #IMPLIED>
+
+<!ELEMENT extent (#PCDATA|abbr|emph|expan|foreign|lb|ptr|ref)*>
+
 <!-- ELEMENTS -->
 
 <!-- control -->
@@ -692,8 +707,6 @@
   encodinganalog CDATA #IMPLIED
   transliteration NMTOKEN #IMPLIED>
 
-<!-- MIXED CONTENT MODELS -->
-
 <!ELEMENT titleproper (#PCDATA|abbr|emph|expan|foreign|lb|ptr|ref)*>
 <!ATTLIST titleproper
 
@@ -762,6 +775,8 @@
   script NMTOKEN #IMPLIED
   localtype CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED>
+
+<!-- ELEMENT MODELS -->
 
 <!ELEMENT controlnote (chronlist|list|table|blockquote|p)+>
 <!ATTLIST controlnote
@@ -969,18 +984,6 @@
   label CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED>
 
-<!ELEMENT physdesc (#PCDATA|abbr|emph|expan|foreign|lb|ptr|ref)*>
-<!ATTLIST physdesc
-
-  id ID #IMPLIED
-  altrender CDATA #IMPLIED
-  audience (external|internal) #IMPLIED
-  lang NMTOKEN #IMPLIED
-  script NMTOKEN #IMPLIED
-  localtype CDATA #IMPLIED
-  label CDATA #IMPLIED
-  encodinganalog CDATA #IMPLIED>
-
 <!ELEMENT physloc (#PCDATA|abbr|emph|expan|foreign|lb|ptr|ref)*>
 <!ATTLIST physloc
 
@@ -1105,22 +1108,6 @@
   era NMTOKEN #IMPLIED
 
   calendar NMTOKEN #IMPLIED>
-
-<!ELEMENT unittitle (#PCDATA|abbr|emph|expan|foreign|lb|ptr|ref
-                                       |persname|corpname|famname|geogname|name|occupation
-                     |subject|genreform|function|title|date|footnote|num
-                                       |quote)*>
-<!ATTLIST unittitle
-
-  id ID #IMPLIED
-  altrender CDATA #IMPLIED
-  audience (external|internal) #IMPLIED
-  lang NMTOKEN #IMPLIED
-  script NMTOKEN #IMPLIED
-  label CDATA #IMPLIED
-  encodinganalog CDATA #IMPLIED
-  localtype CDATA #IMPLIED
-  normal CDATA #IMPLIED>
 
 <!ELEMENT unitid (#PCDATA|abbr|emph|expan|foreign|lb|ptr|ref)*>
 <!ATTLIST unitid
@@ -2287,8 +2274,7 @@
 
 <!-- DEFINES FOR FRONTMATTER -->
 
-<!ELEMENT bibseries (#PCDATA|abbr|emph|expan|foreign|lb|ptr|ref|title
-                     |num)*>
+<!ELEMENT bibseries (#PCDATA|emph|lb|ptr|ref|title|num)*>
 <!ATTLIST bibseries
 
   id ID #IMPLIED
@@ -2307,7 +2293,7 @@
   lang NMTOKEN #IMPLIED
   script NMTOKEN #IMPLIED>
 
-<!ELEMENT runner (#PCDATA|abbr|emph|expan|foreign|lb|ptr|ref)*>
+<!ELEMENT runner (#PCDATA|emph|lb|ptr)*>
 <!ATTLIST runner
 
   id ID #IMPLIED
@@ -2336,3 +2322,32 @@
   script NMTOKEN #IMPLIED
   localtype CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED>
+
+<!ELEMENT imprint (#PCDATA|publisher|geogname|date|emph|lb|ptr)*>
+<!ATTLIST imprint
+
+  id ID #IMPLIED
+  altrender CDATA #IMPLIED
+  audience (external|internal) #IMPLIED
+  lang NMTOKEN #IMPLIED
+  script NMTOKEN #IMPLIED
+  encodinganalog CDATA #IMPLIED>
+
+<!ELEMENT frontmatter (titlepage?,div*)>
+<!ATTLIST frontmatter
+
+  id ID #IMPLIED
+  altrender CDATA #IMPLIED
+  audience (external|internal) #IMPLIED
+  lang NMTOKEN #IMPLIED
+  script NMTOKEN #IMPLIED>
+
+<!ELEMENT titlepage (chronlist|list|table|blockquote|p|author|date|edition|num|publisher
+                     |bibseries|sponsor|titleproper|subtitle)+>
+<!ATTLIST titlepage
+
+  id ID #IMPLIED
+  altrender CDATA #IMPLIED
+  audience (external|internal) #IMPLIED
+  lang NMTOKEN #IMPLIED
+  script NMTOKEN #IMPLIED>

@@ -10,7 +10,7 @@
             <notAllowed/>
         </define>
 
-        <define name="e.ead">
+         <define name="e.ead">
             <element name="ead">
                 <ref name="am.common"/>
                 <ref name="a.relatedencoding"/>
@@ -233,11 +233,10 @@
                         <ref name="e.footnote"/>
                         <ref name="e.num"/>
                         <ref name="e.quote"/>
-                        <!--       <ref name="e.imprint"/>
+                        <ref name="e.imprint"/>
                         <ref name="e.bibseries"/>
                         <ref name="e.edition"/>
                         <ref name="e.unitdate"/>
-                        -->
                     </choice>
                 </zeroOrMore>
             </element>

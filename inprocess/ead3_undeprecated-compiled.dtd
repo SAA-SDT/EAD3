@@ -26,23 +26,6 @@
   %a.relatedencoding;
   %a.base;>
 
-<!ELEMENT frontmatter (titlepage?,div*)>
-<!ATTLIST frontmatter
-  %am.common;>
-
-<!ENTITY % m.inter.noquote "chronlist|list|table">
-
-<!ENTITY % m.inter "%m.inter.noquote;|blockquote">
-
-<!-- ELEMENT MODELS -->
-
-<!ENTITY % m.blocks "%m.inter;|p">
-
-<!ELEMENT titlepage (%m.blocks;|author|date|edition|num|publisher
-                     |bibseries|sponsor|titleproper|subtitle)+>
-<!ATTLIST titlepage
-  %am.common;>
-
 <!ENTITY % a.level "
   level (class|collection|file|fonds|item|otherlevel|recordgrp|series
          |subfonds|subgrp|subseries) #REQUIRED">
@@ -137,6 +120,37 @@
 <!ELEMENT c12 (%m.c.base.descgrp;)>
 <!ATTLIST c12
   %am.desc.c;>
+
+<!ENTITY % m.access "persname|corpname|famname|geogname|name|occupation
+                     |subject|genreform|function|title">
+
+<!-- MIXED CONTENT MODELS -->
+
+<!ENTITY % m.mixed.basic.elements "abbr|emph|expan|foreign|lb|ptr|ref">
+
+<!-- unittitle -->
+
+<!ELEMENT unittitle (#PCDATA|%m.mixed.basic.elements;|%m.access;|date
+                     |footnote|num|quote|imprint|bibseries|edition
+                     |unitdate)*>
+<!ATTLIST unittitle
+  %am.common;
+  label CDATA #IMPLIED
+  encodinganalog CDATA #IMPLIED
+  localtype CDATA #IMPLIED
+  normal CDATA #IMPLIED>
+
+<!ELEMENT physdesc (#PCDATA|%m.mixed.basic.elements;|%m.access;|date
+                    |footnote|num|quote|extent|physfacet|dimensions)*>
+<!ATTLIST physdesc
+  %am.common;
+  localtype CDATA #IMPLIED
+  label CDATA #IMPLIED
+  encodinganalog CDATA #IMPLIED>
+
+<!ENTITY % m.mixed.basic "(#PCDATA|%m.mixed.basic.elements;)*">
+
+<!ELEMENT extent %m.mixed.basic;>
 
 <!-- ELEMENTS -->
 
@@ -324,12 +338,6 @@
   encodinganalog CDATA #IMPLIED
   transliteration NMTOKEN #IMPLIED>
 
-<!-- MIXED CONTENT MODELS -->
-
-<!ENTITY % m.mixed.basic.elements "abbr|emph|expan|foreign|lb|ptr|ref">
-
-<!ENTITY % m.mixed.basic "(#PCDATA|%m.mixed.basic.elements;)*">
-
 <!ELEMENT titleproper %m.mixed.basic;>
 <!ATTLIST titleproper
   %am.common;
@@ -368,6 +376,14 @@
   %am.common;
   localtype CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED>
+
+<!ENTITY % m.inter.noquote "chronlist|list|table">
+
+<!ENTITY % m.inter "%m.inter.noquote;|blockquote">
+
+<!-- ELEMENT MODELS -->
+
+<!ENTITY % m.blocks "%m.inter;|p">
 
 <!ELEMENT controlnote (%m.blocks;)+>
 <!ATTLIST controlnote
@@ -423,9 +439,6 @@
 <!ATTLIST did
   %am.common;
   encodinganalog CDATA #IMPLIED>
-
-<!ENTITY % m.access "persname|corpname|famname|geogname|name|occupation
-                     |subject|genreform|function|title">
 
 <!ENTITY % m.mixed.basic.plus.access "(#PCDATA|%m.mixed.basic.elements;
                                        |%m.access;|date|footnote|num
@@ -493,13 +506,6 @@
 <!ELEMENT parallelphysdescset (physdescstructured,physdescstructured+)>
 <!ATTLIST parallelphysdescset
   %am.common;
-  label CDATA #IMPLIED
-  encodinganalog CDATA #IMPLIED>
-
-<!ELEMENT physdesc %m.mixed.basic;>
-<!ATTLIST physdesc
-  %am.common;
-  localtype CDATA #IMPLIED
   label CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED>
 
@@ -593,14 +599,6 @@
   encodinganalog CDATA #IMPLIED
   %am.dates.era;
   %am.dates.calendar;>
-
-<!ELEMENT unittitle %m.mixed.basic.plus.access;>
-<!ATTLIST unittitle
-  %am.common;
-  label CDATA #IMPLIED
-  encodinganalog CDATA #IMPLIED
-  localtype CDATA #IMPLIED
-  normal CDATA #IMPLIED>
 
 <!ELEMENT unitid %m.mixed.basic;>
 <!ATTLIST unitid
@@ -1333,8 +1331,7 @@
 
 <!-- DEFINES FOR FRONTMATTER -->
 
-<!ELEMENT bibseries (#PCDATA|abbr|emph|expan|foreign|lb|ptr|ref|title
-                     |num)*>
+<!ELEMENT bibseries (#PCDATA|emph|lb|ptr|ref|title|num)*>
 <!ATTLIST bibseries
   %am.common;
   encodinganalog CDATA #IMPLIED>
@@ -1343,7 +1340,7 @@
 <!ATTLIST div
   %am.common;>
 
-<!ELEMENT runner (#PCDATA|%m.mixed.basic.elements;)*>
+<!ELEMENT runner (#PCDATA|emph|lb|ptr)*>
 <!ATTLIST runner
   %am.common;
   placement (header|footer|watermark) #IMPLIED
@@ -1354,3 +1351,17 @@
   %am.common;
   localtype CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED>
+
+<!ELEMENT imprint (#PCDATA|publisher|geogname|date|emph|lb|ptr)*>
+<!ATTLIST imprint
+  %am.common;
+  encodinganalog CDATA #IMPLIED>
+
+<!ELEMENT frontmatter (titlepage?,div*)>
+<!ATTLIST frontmatter
+  %am.common;>
+
+<!ELEMENT titlepage (%m.blocks;|author|date|edition|num|publisher
+                     |bibseries|sponsor|titleproper|subtitle)+>
+<!ATTLIST titlepage
+  %am.common;>

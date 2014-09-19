@@ -10,33 +10,7 @@
                 <ref name="a.base"/>
                 <ref name="e.control"/>
                 <!-- OPTIONAL FRONTMATTER -->
-                <optional>
-                    <element name="frontmatter">
-                        <ref name="am.common"/>
-                        <optional>
-                            <element name="titlepage">
-                                <ref name="am.common"/>
-                                <oneOrMore>
-                                    <choice>
-                                        <ref name="m.blocks"/>
-                                        <ref name="e.author"/>
-                                        <ref name="e.date"/>
-                                        <ref name="e.edition"/>
-                                        <ref name="e.num"/>
-                                        <ref name="e.publisher"/>
-                                        <ref name="e.bibseries"/>
-                                        <ref name="e.sponsor"/>
-                                        <ref name="e.titleproper"/>
-                                        <ref name="e.subtitle"/>
-                                    </choice>
-                                </oneOrMore>
-                            </element>
-                        </optional>
-                        <zeroOrMore>
-                            <ref name="e.div"/>
-                        </zeroOrMore>
-                    </element>
-                </optional>
+                <optional><ref name="e.frontmatter"/></optional>
                 <ref name="e.archdesc"/>
             </element>
         </rng:define>
@@ -63,7 +37,7 @@
                 </zeroOrMore>
             </element>
         </rng:define>
- <!-- Components -->
+        <!-- Components -->
         <rng:define name="e.c">
             <element name="c">
                 <ref name="m.c.base.descgrp"/>
@@ -225,7 +199,72 @@
                 <ref name="m.c.base.descgrp"/>
             </element>
         </rng:define>
+        <!-- unittitle -->
+        <rng:define name="e.unittitle">
+            <element name="unittitle">
+                <ref name="am.common"/>
+                <optional>
+                    <ref name="a.label"/>
+                </optional>
+                <optional>
+                    <ref name="a.encodinganalog"/>
+                </optional>
+                <optional>
+                    <ref name="a.localtype"/>
+                </optional>
+                <optional>
+                    <attribute name="normal">
+                        <data type="token"/>
+                    </attribute>
+                </optional>
+                <zeroOrMore>
+                    <choice>
+                        <text/>
+                        <ref name="m.mixed.basic.elements"/>
+                        <ref name="m.access"/>
+                        <ref name="e.date"/>
+                        <ref name="e.footnote"/>
+                        <ref name="e.num"/>
+                        <ref name="e.quote"/>
+                        <ref name="e.imprint"/>
+                        <ref name="e.bibseries"/>
+                        <ref name="e.edition"/>
+                        <ref name="e.unitdate"/>
+                    </choice>
+                </zeroOrMore>
+            </element>
+        </rng:define>
+        <rng:define name="e.physdesc">
+            <element name="physdesc">
+                <ref name="am.common"/>
+                <optional>
+                    <ref name="a.localtype"/>
+                </optional>
+                <optional>
+                    <ref name="a.label"/>
+                </optional>
+                <optional>
+                    <ref name="a.encodinganalog"/>
+                </optional>
+                <zeroOrMore>
+                    <choice>
+                        <text/>
+                        <ref name="m.mixed.basic.elements"/>
+                        <ref name="m.access"/>
+                        <ref name="e.date"/>
+                        <ref name="e.footnote"/>
+                        <ref name="e.num"/>
+                        <ref name="e.quote"/>
+                        <element name="extent">
+                            <ref name="m.mixed.basic"/>
+                        </element>
+                        <ref name="e.physfacet"/>
+                        <ref name="e.dimensions"/>
+                    </choice>
+                </zeroOrMore>
 
+            </element>
+        </rng:define>
 
     <rng:div datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
   <!-- ELEMENTS -->
@@ -983,21 +1022,7 @@
       </oneOrMore>
     </element>
   </rng:define>
-  <rng:define name="e.physdesc">
-    <element name="physdesc">
-      <ref name="am.common"/>
-      <optional>
-        <ref name="a.localtype"/>
-      </optional>
-      <optional>
-        <ref name="a.label"/>
-      </optional>
-      <optional>
-        <ref name="a.encodinganalog"/>
-      </optional>
-      <ref name="m.mixed.basic"/>
-    </element>
-  </rng:define>
+  
   <rng:define name="e.physloc">
     <element name="physloc">
       <ref name="am.common"/>
@@ -1162,26 +1187,7 @@
       </choice>
     </element>
   </rng:define>
-  <rng:define name="e.unittitle">
-    <element name="unittitle">
-      <ref name="am.common"/>
-      <optional>
-        <ref name="a.label"/>
-      </optional>
-      <optional>
-        <ref name="a.encodinganalog"/>
-      </optional>
-      <optional>
-        <ref name="a.localtype"/>
-      </optional>
-      <optional>
-        <attribute name="normal">
-          <data type="token"/>
-        </attribute>
-      </optional>
-      <ref name="m.mixed.basic.plus.access"/>
-    </element>
-  </rng:define>
+  
   <rng:define name="e.unitid">
     <element name="unitid">
       <ref name="am.common"/>
@@ -3316,10 +3322,7 @@
             <zeroOrMore>
                 <choice>
                     <text/>
-                    <ref name="e.abbr"/>
                     <ref name="e.emph"/>
-                    <ref name="e.expan"/>
-                    <ref name="e.foreign"/>
                     <ref name="e.lb"/>
                     <ref name="e.ptr"/>
                     <ref name="e.ref"/>
@@ -3361,7 +3364,9 @@
             <zeroOrMore>
                 <choice>
                     <text/>
-                    <ref name="m.mixed.basic"/>
+                    <ref name="e.emph"/>
+                    <ref name="e.lb"/>
+                    <ref name="e.ptr"/>
                 </choice>
             </zeroOrMore>
         </element>
@@ -3423,5 +3428,57 @@
             <ref name="m.desc.base.descgrp"/>
         </zeroOrMore>
     </rng:define>
-    
+    <rng:define xmlns:rng="http://relaxng.org/ns/structure/1.0" name="e.imprint">
+        <element name="imprint">
+            <ref name="am.common"/>
+            <optional>
+                <ref name="a.encodinganalog"/>
+            </optional>
+            <zeroOrMore>
+                <choice>
+                    <text/>
+                    <ref name="e.publisher"/>
+                    <ref name="e.geogname"/>
+                    <ref name="e.date"/>
+                    <ref name="e.emph"/>
+                    <ref name="e.lb"/>
+                    <ref name="e.ptr"/>
+                </choice>
+            </zeroOrMore>
+        </element>
+      
+
+    </rng:define>
+    <rng:define xmlns:rng="http://relaxng.org/ns/structure/1.0" name="e.frontmatter">
+
+            <element name="frontmatter">
+                <ref name="am.common"/>
+                <optional>
+                    <ref name="e.titlepage"/>
+                    
+                </optional>
+                <zeroOrMore>
+                    <ref name="e.div"/>
+                </zeroOrMore>
+            </element>
+    </rng:define>
+    <rng:define xmlns:rng="http://relaxng.org/ns/structure/1.0" name="e.titlepage">
+        <element name="titlepage">
+            <ref name="am.common"/>
+            <oneOrMore>
+                <choice>
+                    <ref name="m.blocks"/>
+                    <ref name="e.author"/>
+                    <ref name="e.date"/>
+                    <ref name="e.edition"/>
+                    <ref name="e.num"/>
+                    <ref name="e.publisher"/>
+                    <ref name="e.bibseries"/>
+                    <ref name="e.sponsor"/>
+                    <ref name="e.titleproper"/>
+                    <ref name="e.subtitle"/>
+                </choice>
+            </oneOrMore>
+        </element>
+    </rng:define>
 </grammar>

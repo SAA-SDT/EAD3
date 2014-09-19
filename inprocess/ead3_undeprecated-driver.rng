@@ -228,11 +228,10 @@
                         <ref name="e.footnote"/>
                         <ref name="e.num"/>
                         <ref name="e.quote"/>
-                        <!--       <ref name="e.imprint"/>
+                        <ref name="e.imprint"/>
                         <ref name="e.bibseries"/>
                         <ref name="e.edition"/>
                         <ref name="e.unitdate"/>
-                        -->
                     </choice>
                 </zeroOrMore>
             </element>
