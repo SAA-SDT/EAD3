@@ -68,7 +68,7 @@
  <!-- Components -->
         <define name="e.c">
             <element name="c">
-                <ref name="m.c.base"/>
+                <ref name="m.c.base.descgrp"/>
                 <zeroOrMore>
                     <optional>
                         <ref name="e.thead"/>
@@ -81,7 +81,7 @@
         </define>
         <define name="e.c01">
             <element name="c01">
-                <ref name="m.c.base"/>
+                <ref name="m.c.base.descgrp"/>
                 <zeroOrMore>
                     <optional>
                         <ref name="e.thead"/>
@@ -94,7 +94,7 @@
         </define>
         <define name="e.c02">
             <element name="c02">
-                <ref name="m.c.base"/>
+                <ref name="m.c.base.descgrp"/>
                 <zeroOrMore>
                     <optional>
                         <ref name="e.thead"/>
@@ -107,7 +107,7 @@
         </define>
         <define name="e.c03">
             <element name="c03">
-                <ref name="m.c.base"/>
+                <ref name="m.c.base.descgrp"/>
                 <zeroOrMore>
                     <optional>
                         <ref name="e.thead"/>
@@ -120,7 +120,7 @@
         </define>
         <define name="e.c04">
             <element name="c04">
-                <ref name="m.c.base"/>
+                <ref name="m.c.base.descgrp"/>
                 <zeroOrMore>
                     <optional>
                         <ref name="e.thead"/>
@@ -133,7 +133,7 @@
         </define>
         <define name="e.c05">
             <element name="c05">
-                <ref name="m.c.base"/>
+                <ref name="m.c.base.descgrp"/>
                 <zeroOrMore>
                     <optional>
                         <ref name="e.thead"/>
@@ -146,7 +146,7 @@
         </define>
         <define name="e.c06">
             <element name="c06">
-                <ref name="m.c.base"/>
+                <ref name="m.c.base.descgrp"/>
                 <zeroOrMore>
                     <optional>
                         <ref name="e.thead"/>
@@ -159,7 +159,7 @@
         </define>
         <define name="e.c07">
             <element name="c07">
-                <ref name="m.c.base"/>
+                <ref name="m.c.base.descgrp"/>
                 <zeroOrMore>
                     <optional>
                         <ref name="e.thead"/>
@@ -172,7 +172,7 @@
         </define>
         <define name="e.c08">
             <element name="c08">
-                <ref name="m.c.base"/>
+                <ref name="m.c.base.descgrp"/>
                 <zeroOrMore>
                     <optional>
                         <ref name="e.thead"/>
@@ -185,7 +185,7 @@
         </define>
         <define name="e.c09">
             <element name="c09">
-                <ref name="m.c.base"/>
+                <ref name="m.c.base.descgrp"/>
                 <zeroOrMore>
                     <optional>
                         <ref name="e.thead"/>
@@ -198,7 +198,7 @@
         </define>
         <define name="e.c10">
             <element name="c10">
-                <ref name="m.c.base"/>
+                <ref name="m.c.base.descgrp"/>
                 <zeroOrMore>
                     <optional>
                         <ref name="e.thead"/>
@@ -211,7 +211,7 @@
         </define>
         <define name="e.c11">
             <element name="c11">
-                <ref name="m.c.base"/>
+                <ref name="m.c.base.descgrp"/>
                 <zeroOrMore>
                     <optional>
                         <ref name="e.thead"/>
@@ -224,7 +224,7 @@
         </define>
         <define name="e.c12">
             <element name="c12">
-                <ref name="m.c.base"/>
+                <ref name="m.c.base.descgrp"/>
             </element>
         </define>
 
@@ -341,6 +341,15 @@
             </oneOrMore>
         </element>
     </define>
-
+    <define name="m.c.base.descgrp">
+        <ref name="am.desc.c"/>
+        <optional>
+            <ref name="e.head"/>
+        </optional>
+        <ref name="e.did"/>
+        <zeroOrMore>
+            <ref name="m.desc.base.descgrp"/>
+        </zeroOrMore>
+    </define>
     
 </grammar>
