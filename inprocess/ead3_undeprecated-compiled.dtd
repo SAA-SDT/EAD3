@@ -75,6 +75,69 @@
   %a.level;
   %a.base;>
 
+<!ENTITY % am.desc.c "
+  %am.common;
+  base CDATA #IMPLIED
+  level (class|collection|file|fonds|item|otherlevel|recordgrp|series
+         |subfonds|subgrp|subseries) #IMPLIED
+  %am.desc.base;">
+
+<!ENTITY % m.c.base.descgrp "head?,did,(%m.desc.base.descgrp;)*">
+
+<!-- Components -->
+
+<!ELEMENT c ((%m.c.base.descgrp;),(thead?,c+)*)>
+<!ATTLIST c
+  %am.desc.c;>
+
+<!ELEMENT c01 ((%m.c.base.descgrp;),(thead?,c02+)*)>
+<!ATTLIST c01
+  %am.desc.c;>
+
+<!ELEMENT c02 ((%m.c.base.descgrp;),(thead?,c03+)*)>
+<!ATTLIST c02
+  %am.desc.c;>
+
+<!ELEMENT c03 ((%m.c.base.descgrp;),(thead?,c04+)*)>
+<!ATTLIST c03
+  %am.desc.c;>
+
+<!ELEMENT c04 ((%m.c.base.descgrp;),(thead?,c05+)*)>
+<!ATTLIST c04
+  %am.desc.c;>
+
+<!ELEMENT c05 ((%m.c.base.descgrp;),(thead?,c06+)*)>
+<!ATTLIST c05
+  %am.desc.c;>
+
+<!ELEMENT c06 ((%m.c.base.descgrp;),(thead?,c07+)*)>
+<!ATTLIST c06
+  %am.desc.c;>
+
+<!ELEMENT c07 ((%m.c.base.descgrp;),(thead?,c08+)*)>
+<!ATTLIST c07
+  %am.desc.c;>
+
+<!ELEMENT c08 ((%m.c.base.descgrp;),(thead?,c09*)*)>
+<!ATTLIST c08
+  %am.desc.c;>
+
+<!ELEMENT c09 ((%m.c.base.descgrp;),(thead?,c10+)*)>
+<!ATTLIST c09
+  %am.desc.c;>
+
+<!ELEMENT c10 ((%m.c.base.descgrp;),(thead?,c11+)*)>
+<!ATTLIST c10
+  %am.desc.c;>
+
+<!ELEMENT c11 ((%m.c.base.descgrp;),(thead?,c12+)*)>
+<!ATTLIST c11
+  %am.desc.c;>
+
+<!ELEMENT c12 (%m.c.base.descgrp;)>
+<!ATTLIST c12
+  %am.desc.c;>
+
 <!-- ELEMENTS -->
 
 <!-- control -->
@@ -1146,75 +1209,6 @@
   otherdsctype NMTOKEN #IMPLIED
   encodinganalog CDATA #IMPLIED>
 
-<!ENTITY % m.desc.base "accessrestrict|accruals|acqinfo|altformavail
-                        |appraisal|arrangement|bibliography|bioghist
-                        |controlaccess|custodhist|fileplan|index
-                        |legalstatus|odd|originalsloc|otherfindaid
-                        |phystech|prefercite|processinfo|relatedmaterial
-                        |relations|scopecontent|separatedmaterial
-                        |userestrict">
-
-<!ENTITY % am.desc.c "
-  %am.common;
-  base CDATA #IMPLIED
-  level (class|collection|file|fonds|item|otherlevel|recordgrp|series
-         |subfonds|subgrp|subseries) #IMPLIED
-  %am.desc.base;">
-
-<!ENTITY % m.c.base "head?,did,(%m.desc.base;)*">
-
-<!ELEMENT c ((%m.c.base;),(thead?,c+)*)>
-<!ATTLIST c
-  %am.desc.c;>
-
-<!ELEMENT c01 ((%m.c.base;),(thead?,c02+)*)>
-<!ATTLIST c01
-  %am.desc.c;>
-
-<!ELEMENT c02 ((%m.c.base;),(thead?,c03+)*)>
-<!ATTLIST c02
-  %am.desc.c;>
-
-<!ELEMENT c03 ((%m.c.base;),(thead?,c04+)*)>
-<!ATTLIST c03
-  %am.desc.c;>
-
-<!ELEMENT c04 ((%m.c.base;),(thead?,c05+)*)>
-<!ATTLIST c04
-  %am.desc.c;>
-
-<!ELEMENT c05 ((%m.c.base;),(thead?,c06+)*)>
-<!ATTLIST c05
-  %am.desc.c;>
-
-<!ELEMENT c06 ((%m.c.base;),(thead?,c07+)*)>
-<!ATTLIST c06
-  %am.desc.c;>
-
-<!ELEMENT c07 ((%m.c.base;),(thead?,c08+)*)>
-<!ATTLIST c07
-  %am.desc.c;>
-
-<!ELEMENT c08 ((%m.c.base;),(thead?,c09*)*)>
-<!ATTLIST c08
-  %am.desc.c;>
-
-<!ELEMENT c09 ((%m.c.base;),(thead?,c10+)*)>
-<!ATTLIST c09
-  %am.desc.c;>
-
-<!ELEMENT c10 ((%m.c.base;),(thead?,c11+)*)>
-<!ATTLIST c10
-  %am.desc.c;>
-
-<!ELEMENT c11 ((%m.c.base;),(thead?,c12+)*)>
-<!ATTLIST c11
-  %am.desc.c;>
-
-<!ELEMENT c12 (%m.c.base;)>
-<!ATTLIST c12
-  %am.desc.c;>
-
 <!-- RELATIONS -->
 
 <!ELEMENT relations (relation)+>
@@ -1241,6 +1235,14 @@
   encodinganalog CDATA #IMPLIED
   localtype CDATA #IMPLIED
   transliteration NMTOKEN #IMPLIED>
+
+<!ENTITY % m.desc.base "accessrestrict|accruals|acqinfo|altformavail
+                        |appraisal|arrangement|bibliography|bioghist
+                        |controlaccess|custodhist|fileplan|index
+                        |legalstatus|odd|originalsloc|otherfindaid
+                        |phystech|prefercite|processinfo|relatedmaterial
+                        |relations|scopecontent|separatedmaterial
+                        |userestrict">
 
 <!-- ATTRIBUTE DEFINITIONS -->
 
