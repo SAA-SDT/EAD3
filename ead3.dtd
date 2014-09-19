@@ -627,28 +627,7 @@
   encodinganalog CDATA #IMPLIED
   localtype CDATA #IMPLIED>
 
-<!--
-<define name="e.parallelphysdescset">
-  <element name="parallelphysdescset">
-    <ref name="am.common"/>
-    <optional>
-      <ref name="a.label"/>
-    </optional>
-    <optional>
-      <ref name="a.encodinganalog"/>
-    </optional>
-    <optional>
-      <ref name="a.coverage"/>
-    </optional>
-    <ref name="e.physdescstructured"/>
-    <oneOrMore>
-      <ref name="e.physdescstructured"/>
-    </oneOrMore>
-  </element>
-</define>
--->
-
-<!ELEMENT physdescset (physdescstructured|physdesc)+>
+<!ELEMENT physdescset (physdescstructured,physdescstructured+)>
 <!ATTLIST physdescset
 
   id ID #IMPLIED
@@ -658,8 +637,7 @@
   script NMTOKEN #IMPLIED
   label CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED
-  coverage (whole|part) #IMPLIED
-  localtype CDATA #IMPLIED>
+  coverage (whole|part) #IMPLIED>
 
 <!ELEMENT physdesc (#PCDATA|abbr|emph|expan|foreign|lb|ptr|ref)*>
 <!ATTLIST physdesc

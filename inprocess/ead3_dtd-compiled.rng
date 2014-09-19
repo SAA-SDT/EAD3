@@ -775,25 +775,6 @@
       <ref name="m.mixed.basic"/>
     </element>
   </rng:define>
-<!--  <define name="e.parallelphysdescset">
-    <element name="parallelphysdescset">
-      <ref name="am.common"/>
-      <optional>
-        <ref name="a.label"/>
-      </optional>
-      <optional>
-        <ref name="a.encodinganalog"/>
-      </optional>
-      <optional>
-        <ref name="a.coverage"/>
-      </optional>
-      <ref name="e.physdescstructured"/>
-      <oneOrMore>
-        <ref name="e.physdescstructured"/>
-      </oneOrMore>
-    </element>
-  </define>
--->
   <rng:define name="e.physdescset">
     <element name="physdescset">
       <ref name="am.common"/>
@@ -806,15 +787,10 @@
       <optional>
         <ref name="a.coverage"/>
       </optional>
-      <optional>
-        <ref name="a.localtype"/>
-      </optional>
+      <ref name="e.physdescstructured"/>
       <oneOrMore>
-        <choice>
           <ref name="e.physdescstructured"/>
-          <ref name="e.physdesc"/>
-        </choice>
-      </oneOrMore>      
+       </oneOrMore>      
     </element>
   </rng:define>
   <rng:define name="e.physdesc">
