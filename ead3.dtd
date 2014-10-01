@@ -627,6 +627,8 @@
   encodinganalog CDATA #IMPLIED
   localtype CDATA #IMPLIED>
 
+<!-- ATTRIBUTE VALUE LISTS -->
+
 <!ELEMENT physdescset (physdescstructured,physdescstructured+)>
 <!ATTLIST physdescset
 
@@ -637,6 +639,7 @@
   script NMTOKEN #IMPLIED
   label CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED
+  parallel (yes|no) #IMPLIED
   coverage (whole|part) #IMPLIED>
 
 <!ELEMENT physdesc (#PCDATA|abbr|emph|expan|foreign|lb|ptr|ref)*>
@@ -694,8 +697,6 @@
   otherphysdescstructuredtype CDATA #IMPLIED
 
   coverage (whole|part) #REQUIRED>
-
-<!-- ATTRIBUTE VALUE LISTS -->
 
 <!ELEMENT quantity (#PCDATA)>
 <!ATTLIST quantity
