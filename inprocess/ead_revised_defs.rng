@@ -781,6 +781,11 @@
         <ref name="a.encodinganalog"/>
       </optional>
       <optional>
+        <attribute name="parallel">
+          <ref name="av.yesorno"/>
+        </attribute>
+      </optional>
+      <optional>
         <ref name="a.coverage"/>
       </optional>
       <ref name="e.physdescstructured"/>
