@@ -403,11 +403,16 @@
   encodinganalog CDATA #IMPLIED
   localtype CDATA #IMPLIED>
 
+<!-- ATTRIBUTE VALUE LISTS -->
+
+<!ENTITY % av.yesorno "yes|no">
+
 <!ELEMENT physdescset (physdescstructured,physdescstructured+)>
 <!ATTLIST physdescset
   %am.common;
   label CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED
+  parallel (%av.yesorno;) #IMPLIED
   coverage (whole|part) #IMPLIED>
 
 <!ELEMENT physdesc %m.mixed.basic;>
@@ -447,10 +452,6 @@
                           |otherphysdescstructuredtype) #REQUIRED
   otherphysdescstructuredtype CDATA #IMPLIED
   %a.coverage;>
-
-<!-- ATTRIBUTE VALUE LISTS -->
-
-<!ENTITY % av.yesorno "yes|no">
 
 <!ELEMENT quantity (#PCDATA)>
 <!ATTLIST quantity
