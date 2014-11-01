@@ -2857,11 +2857,7 @@
         <ref name="e.footnote"/>
         <ref name="e.num"/>
         <ref name="e.quote"/>
-<<<<<<< HEAD
       </choice>
-=======
-      </choice>    
->>>>>>> parallelphysdescset
   </rng:define>
   <rng:define name="m.mixed.basic.plus.access">
     <zeroOrMore>
