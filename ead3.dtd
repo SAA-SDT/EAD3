@@ -512,7 +512,7 @@
 <!-- did -->
 
 <!ELEMENT did (head?,(abstract|container|dao|daoset|didnote|langmaterial
-                  |materialspec|origination|parallelphysdescset|physdesc
+                  |materialspec|origination|physdescset|physdesc
                   |physdescstructured|physloc|repository|unitdate
                   |unitdatestructured|unitid|unittitle)+)>
 <!ATTLIST did
@@ -627,8 +627,10 @@
   encodinganalog CDATA #IMPLIED
   localtype CDATA #IMPLIED>
 
-<!ELEMENT parallelphysdescset (physdescstructured,physdescstructured+)>
-<!ATTLIST parallelphysdescset
+<!-- ATTRIBUTE VALUE LISTS -->
+
+<!ELEMENT physdescset (physdescstructured,physdescstructured+)>
+<!ATTLIST physdescset
 
   id ID #IMPLIED
   altrender CDATA #IMPLIED
@@ -636,7 +638,9 @@
   lang NMTOKEN #IMPLIED
   script NMTOKEN #IMPLIED
   label CDATA #IMPLIED
-  encodinganalog CDATA #IMPLIED>
+  encodinganalog CDATA #IMPLIED
+  parallel (yes|no) #IMPLIED
+  coverage (whole|part) #IMPLIED>
 
 <!ELEMENT physdesc (#PCDATA|abbr|emph|expan|foreign|lb|ptr|ref)*>
 <!ATTLIST physdesc
@@ -693,8 +697,6 @@
   otherphysdescstructuredtype CDATA #IMPLIED
 
   coverage (whole|part) #REQUIRED>
-
-<!-- ATTRIBUTE VALUE LISTS -->
 
 <!ELEMENT quantity (#PCDATA)>
 <!ATTLIST quantity

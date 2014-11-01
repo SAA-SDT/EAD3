@@ -326,7 +326,7 @@
   base CDATA #IMPLIED>
 
 <!ENTITY % m.did "abstract|container|dao|daoset|didnote|langmaterial
-                  |materialspec|origination|parallelphysdescset|physdesc
+                  |materialspec|origination|physdescset|physdesc
                   |physdescstructured|physloc|repository|unitdate
                   |unitdatestructured|unitid|unittitle">
 
@@ -403,11 +403,17 @@
   encodinganalog CDATA #IMPLIED
   localtype CDATA #IMPLIED>
 
-<!ELEMENT parallelphysdescset (physdescstructured,physdescstructured+)>
-<!ATTLIST parallelphysdescset
+<!-- ATTRIBUTE VALUE LISTS -->
+
+<!ENTITY % av.yesorno "yes|no">
+
+<!ELEMENT physdescset (physdescstructured,physdescstructured+)>
+<!ATTLIST physdescset
   %am.common;
   label CDATA #IMPLIED
-  encodinganalog CDATA #IMPLIED>
+  encodinganalog CDATA #IMPLIED
+  parallel (%av.yesorno;) #IMPLIED
+  coverage (whole|part) #IMPLIED>
 
 <!ELEMENT physdesc %m.mixed.basic;>
 <!ATTLIST physdesc
@@ -446,10 +452,6 @@
                           |otherphysdescstructuredtype) #REQUIRED
   otherphysdescstructuredtype CDATA #IMPLIED
   %a.coverage;>
-
-<!-- ATTRIBUTE VALUE LISTS -->
-
-<!ENTITY % av.yesorno "yes|no">
 
 <!ELEMENT quantity (#PCDATA)>
 <!ATTLIST quantity

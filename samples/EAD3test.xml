@@ -61,7 +61,7 @@
 
 			<!-- <physdesc label="Quantity:">1.2 cubic ft. (3 boxes) </physdesc>-->
 
-			<parallelphysdescset>
+			<physdescset>
 				<physdescstructured label="Quantity: " physdescstructuredtype="carrier" coverage="whole"
 					encodinganalog="300">
 					<quantity>3</quantity>
@@ -77,7 +77,7 @@
 					<quantity>50</quantity>
 					<unittype>diaries</unittype>
 				</physdescstructured>
-			</parallelphysdescset>
+			</physdescset>
 
 			<unitid label="Collection Number:">Mss 2 A</unitid>
 

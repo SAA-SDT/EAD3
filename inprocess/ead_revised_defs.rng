@@ -771,8 +771,8 @@
       <ref name="m.mixed.basic"/>
     </element>
   </define>
-  <define name="e.parallelphysdescset">
-    <element name="parallelphysdescset">
+  <define name="e.physdescset">
+    <element name="physdescset">
       <ref name="am.common"/>
       <optional>
         <ref name="a.label"/>
@@ -780,10 +780,18 @@
       <optional>
         <ref name="a.encodinganalog"/>
       </optional>
+      <optional>
+        <attribute name="parallel">
+          <ref name="av.yesorno"/>
+        </attribute>
+      </optional>
+      <optional>
+        <ref name="a.coverage"/>
+      </optional>
       <ref name="e.physdescstructured"/>
       <oneOrMore>
-        <ref name="e.physdescstructured"/>
-      </oneOrMore>
+          <ref name="e.physdescstructured"/>
+       </oneOrMore>      
     </element>
   </define>
   <define name="e.physdesc">
@@ -2817,7 +2825,7 @@
       <ref name="e.langmaterial"/>
       <ref name="e.materialspec"/>
       <ref name="e.origination"/>
-      <ref name="e.parallelphysdescset"/>
+      <ref name="e.physdescset"/>
       <ref name="e.physdesc"/>
       <ref name="e.physdescstructured"/>
       <ref name="e.physloc"/>
@@ -2861,7 +2869,11 @@
         <ref name="e.footnote"/>
         <ref name="e.num"/>
         <ref name="e.quote"/>
+<<<<<<< HEAD
       </choice>
+=======
+      </choice>    
+>>>>>>> parallelphysdescset
   </define>
   <define name="m.mixed.basic.plus.access">
     <zeroOrMore>
