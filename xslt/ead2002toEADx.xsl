@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 
+
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs xsi xd"
+    xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ead3.archivists.org/schema/"
+    version="2.0">
+    <xd:doc scope="stylesheet">
+        <xd:desc>
+            <xd:p><xd:b>Created on:</xd:b> Feb 27, 2012</xd:p>
+            <xd:p><xd:b>Last Updated: 2014-04-14</xd:b></xd:p>
+            <xd:p><xd:b>Author:</xd:b> Terry Catapano</xd:p>
+            <xd:p>Convert EAD2002 instance to EAD3</xd:p>
+            <xd:p>To do: Add parameter to control inclusion of comments in output.</xd:p>
+            <xd:p><!-- 
 	
 Creative Commons Legal Code
 CC0 1.0 Universal
@@ -36,19 +49,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     Affirmer understands and acknowledges that Creative Commons is not a party to this document and has no duty or obligation with respect to this CC0 or use of the Work.
     
     
--->
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs xsi xd"
-    xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ead3.archivists.org/schema/"
-    version="2.0">
-    <xd:doc scope="stylesheet">
-        <xd:desc>
-            <xd:p><xd:b>Created on:</xd:b> Feb 27, 2012</xd:p>
-            <xd:p><xd:b>Last Updated: 2014-04-14</xd:b></xd:p>
-            <xd:p><xd:b>Author:</xd:b> Terry Catapano</xd:p>
-            <xd:p>Convert EAD2002 instance to EAD3</xd:p>
-            <xd:p>To do: Add parameter to control inclusion of comments in output.</xd:p>
+--></xd:p>
         </xd:desc>
     </xd:doc>
     <xsl:output encoding="UTF-8" indent="yes" method="xml"/>
