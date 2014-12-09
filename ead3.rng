@@ -2684,7 +2684,15 @@
         </except>
       </anyName>
       <zeroOrMore>
-        <ref name="e.anyname"/>
+        <attribute>
+          <anyName/>
+        </attribute>
+      </zeroOrMore>
+      <zeroOrMore>
+        <choice>
+          <text/>
+          <ref name="e.anyname"/>
+        </choice>
       </zeroOrMore>
     </element>
   </rng:define>

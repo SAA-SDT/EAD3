@@ -2373,7 +2373,7 @@
     <element name="ptr">
       <ref name="am.common.empty"/>
       <ref name="am.internal.ptr"/>
-      <ref name="a.entityref"/>
+      <optional><ref name="a.entityref"/></optional>
       <empty/>
     </element>
   </define>
@@ -2381,7 +2381,7 @@
     <element name="ref">
       <ref name="am.common"/>
       <ref name="am.internal.ptr"/>
-      <ref name="a.entityref"/>
+      <optional><ref name="a.entityref"/></optional>
       <zeroOrMore>
         <choice>
           <text/>
@@ -2677,7 +2677,11 @@
   </define>
   <define name="e.anyname">
     <element>
-      <anyName/>
+      <anyName>
+        <except>
+          <nsName ns="http://ead3.archivists.org/schema/"/>
+        </except>
+      </anyName>
       <zeroOrMore>
         <attribute>
           <anyName/>
