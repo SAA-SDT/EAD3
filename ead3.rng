@@ -783,7 +783,7 @@
       </optional>
       <optional>
         <attribute name="parallel">
-          <ref name="av.yesorno"/>
+          <ref name="av.boolean"/>
         </attribute>
       </optional>
       <optional>
@@ -878,7 +878,7 @@
         </optional>
         <optional>
           <attribute name="approximate">
-            <ref name="av.yesorno"/>
+            <ref name="av.boolean"/>
           </attribute>
         </optional>
         <text/>
@@ -1935,7 +1935,7 @@
       </optional>
       <optional>
         <attribute name="pgwide">
-          <ref name="av.zeroorone"/>
+          <ref name="av.boolean"/>
         </attribute>
       </optional>
       <optional>
@@ -2374,6 +2374,7 @@
     <element name="ptr">
       <ref name="am.common.empty"/>
       <ref name="am.internal.ptr"/>
+      <ref name="a.entityref"/>
       <empty/>
     </element>
   </rng:define>
@@ -2381,6 +2382,7 @@
     <element name="ref">
       <ref name="am.common"/>
       <ref name="am.internal.ptr"/>
+      <ref name="a.entityref"/>
       <zeroOrMore>
         <choice>
           <text/>
@@ -3064,6 +3066,11 @@
       <data type="token"/>
     </attribute>
   </rng:define>
+  <rng:define name="a.entityref">
+    <attribute name="entityref">
+      <data type="ENTITY"/>
+    </attribute>
+  </rng:define>
   <!-- display attributes -->
   <rng:define name="a.align">
     <attribute name="align">
@@ -3228,12 +3235,12 @@
   </rng:define>
   <rng:define name="a.colsep">
     <attribute name="colsep">
-      <ref name="av.zeroorone"/>
+      <ref name="av.boolean"/>
     </attribute>
   </rng:define>
   <rng:define name="a.rowsep">
     <attribute name="rowsep">
-      <ref name="av.zeroorone"/>
+      <ref name="av.boolean"/>
     </attribute>
   </rng:define>
   <!-- other attributes -->
@@ -3257,19 +3264,12 @@
       <data type="NMTOKEN"/>
     </attribute>
   </rng:define>
+
   <!-- ATTRIBUTE VALUE LISTS -->
-  <rng:define name="av.yesorno">
-    <choice>
-      <value>yes</value>
-      <value>no</value>
-    </choice>
+  <rng:define name="av.boolean">
+          <data type="boolean"/>
   </rng:define>
-  <rng:define name="av.zeroorone">
-    <choice>
-      <value>0</value>
-      <value>1</value>
-    </choice>
-  </rng:define>
+ 
 </rng:div></rng:div>
     <start>
         <ref name="e.ead"/>

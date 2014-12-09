@@ -1,22 +1,274 @@
-<?xml version="1.0" encoding="UTF-8"?><grammar xmlns="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+<?xml version="1.0" encoding="UTF-8"?><grammar xmlns="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" ns="http://ead3.archivists.org/schema/undeprecated/">
     <rng:div xmlns:rng="http://relaxng.org/ns/structure/1.0">
 <!--include "ead_revised_defs.rng"-->
 
-        
-        
+
+        <rng:define name="e.ead">
+            <element name="ead">
+                <ref name="am.common"/>
+                <ref name="a.relatedencoding"/>
+                <ref name="a.base"/>
+                <ref name="e.control"/>
+                <!-- OPTIONAL FRONTMATTER -->
+                <optional><ref name="e.frontmatter"/></optional>
+                <ref name="e.archdesc"/>
+            </element>
+        </rng:define>
+
+        <!-- ARCHDESC -->
+
+        <rng:define name="e.archdesc">
+            <element name="archdesc">
+                <ref name="am.common"/>
+                <ref name="a.localtype"/>
+                <ref name="a.relatedencoding"/>
+                <ref name="am.desc.base"/>
+                <ref name="a.level"/>
+                <ref name="a.base"/>
+                <zeroOrMore>
+                    <ref name="e.runner"/>
+                </zeroOrMore>
+                <ref name="e.did"/>
+                <zeroOrMore>
+                    <choice>
+                        <ref name="m.desc.base.descgrp"/>
+                        <ref name="e.dsc"/>
+                    </choice>
+                </zeroOrMore>
+            </element>
+        </rng:define>
+        <!-- Components -->
+        <rng:define name="e.c">
+            <element name="c">
+                <ref name="m.c.base.descgrp"/>
+                <zeroOrMore>
+                    <optional>
+                        <ref name="e.thead"/>
+                    </optional>
+                    <oneOrMore>
+                        <ref name="e.c"/>
+                    </oneOrMore>
+                </zeroOrMore>
+            </element>
+        </rng:define>
+        <rng:define name="e.c01">
+            <element name="c01">
+                <ref name="m.c.base.descgrp"/>
+                <zeroOrMore>
+                    <optional>
+                        <ref name="e.thead"/>
+                    </optional>
+                    <oneOrMore>
+                        <ref name="e.c02"/>
+                    </oneOrMore>
+                </zeroOrMore>
+            </element>
+        </rng:define>
+        <rng:define name="e.c02">
+            <element name="c02">
+                <ref name="m.c.base.descgrp"/>
+                <zeroOrMore>
+                    <optional>
+                        <ref name="e.thead"/>
+                    </optional>
+                    <oneOrMore>
+                        <ref name="e.c03"/>
+                    </oneOrMore>
+                </zeroOrMore>
+            </element>
+        </rng:define>
+        <rng:define name="e.c03">
+            <element name="c03">
+                <ref name="m.c.base.descgrp"/>
+                <zeroOrMore>
+                    <optional>
+                        <ref name="e.thead"/>
+                    </optional>
+                    <oneOrMore>
+                        <ref name="e.c04"/>
+                    </oneOrMore>
+                </zeroOrMore>
+            </element>
+        </rng:define>
+        <rng:define name="e.c04">
+            <element name="c04">
+                <ref name="m.c.base.descgrp"/>
+                <zeroOrMore>
+                    <optional>
+                        <ref name="e.thead"/>
+                    </optional>
+                    <oneOrMore>
+                        <ref name="e.c05"/>
+                    </oneOrMore>
+                </zeroOrMore>
+            </element>
+        </rng:define>
+        <rng:define name="e.c05">
+            <element name="c05">
+                <ref name="m.c.base.descgrp"/>
+                <zeroOrMore>
+                    <optional>
+                        <ref name="e.thead"/>
+                    </optional>
+                    <oneOrMore>
+                        <ref name="e.c06"/>
+                    </oneOrMore>
+                </zeroOrMore>
+            </element>
+        </rng:define>
+        <rng:define name="e.c06">
+            <element name="c06">
+                <ref name="m.c.base.descgrp"/>
+                <zeroOrMore>
+                    <optional>
+                        <ref name="e.thead"/>
+                    </optional>
+                    <oneOrMore>
+                        <ref name="e.c07"/>
+                    </oneOrMore>
+                </zeroOrMore>
+            </element>
+        </rng:define>
+        <rng:define name="e.c07">
+            <element name="c07">
+                <ref name="m.c.base.descgrp"/>
+                <zeroOrMore>
+                    <optional>
+                        <ref name="e.thead"/>
+                    </optional>
+                    <oneOrMore>
+                        <ref name="e.c08"/>
+                    </oneOrMore>
+                </zeroOrMore>
+            </element>
+        </rng:define>
+        <rng:define name="e.c08">
+            <element name="c08">
+                <ref name="m.c.base.descgrp"/>
+                <zeroOrMore>
+                    <optional>
+                        <ref name="e.thead"/>
+                    </optional>
+                    <zeroOrMore>
+                        <ref name="e.c09"/>
+                    </zeroOrMore>
+                </zeroOrMore>
+            </element>
+        </rng:define>
+        <rng:define name="e.c09">
+            <element name="c09">
+                <ref name="m.c.base.descgrp"/>
+                <zeroOrMore>
+                    <optional>
+                        <ref name="e.thead"/>
+                    </optional>
+                    <oneOrMore>
+                        <ref name="e.c10"/>
+                    </oneOrMore>
+                </zeroOrMore>
+            </element>
+        </rng:define>
+        <rng:define name="e.c10">
+            <element name="c10">
+                <ref name="m.c.base.descgrp"/>
+                <zeroOrMore>
+                    <optional>
+                        <ref name="e.thead"/>
+                    </optional>
+                    <oneOrMore>
+                        <ref name="e.c11"/>
+                    </oneOrMore>
+                </zeroOrMore>
+            </element>
+        </rng:define>
+        <rng:define name="e.c11">
+            <element name="c11">
+                <ref name="m.c.base.descgrp"/>
+                <zeroOrMore>
+                    <optional>
+                        <ref name="e.thead"/>
+                    </optional>
+                    <oneOrMore>
+                        <ref name="e.c12"/>
+                    </oneOrMore>
+                </zeroOrMore>
+            </element>
+        </rng:define>
+        <rng:define name="e.c12">
+            <element name="c12">
+                <ref name="m.c.base.descgrp"/>
+            </element>
+        </rng:define>
+        <!-- unittitle -->
+        <rng:define name="e.unittitle">
+            <element name="unittitle">
+                <ref name="am.common"/>
+                <optional>
+                    <ref name="a.label"/>
+                </optional>
+                <optional>
+                    <ref name="a.encodinganalog"/>
+                </optional>
+                <optional>
+                    <ref name="a.localtype"/>
+                </optional>
+                <optional>
+                    <attribute name="normal">
+                        <data type="token"/>
+                    </attribute>
+                </optional>
+                <zeroOrMore>
+                    <choice>
+                        <text/>
+                        <ref name="m.mixed.basic.elements"/>
+                        <ref name="m.access"/>
+                        <ref name="e.date"/>
+                        <ref name="e.footnote"/>
+                        <ref name="e.num"/>
+                        <ref name="e.quote"/>
+                        <ref name="e.imprint"/>
+                        <ref name="e.bibseries"/>
+                        <ref name="e.edition"/>
+                        <ref name="e.unitdate"/>
+                    </choice>
+                </zeroOrMore>
+            </element>
+        </rng:define>
+        <rng:define name="e.physdesc">
+            <element name="physdesc">
+                <ref name="am.common"/>
+                <optional>
+                    <ref name="a.localtype"/>
+                </optional>
+                <optional>
+                    <ref name="a.label"/>
+                </optional>
+                <optional>
+                    <ref name="a.encodinganalog"/>
+                </optional>
+                <zeroOrMore>
+                    <choice>
+                        <text/>
+                        <ref name="m.mixed.basic.elements"/>
+                        <ref name="m.access"/>
+                        <ref name="e.date"/>
+                        <ref name="e.footnote"/>
+                        <ref name="e.num"/>
+                        <ref name="e.quote"/>
+                        <element name="extent">
+                            <ref name="m.mixed.basic"/>
+                        </element>
+                        <ref name="e.physfacet"/>
+                        <ref name="e.dimensions"/>
+                    </choice>
+                </zeroOrMore>
+
+            </element>
+        </rng:define>
+
     <rng:div datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
   <!-- ELEMENTS -->
-  <rng:define name="e.ead">
-    <element name="ead">
-      <ref name="am.common"/>
-      <optional>
-        <ref name="a.relatedencoding"/>
-      </optional>
-      <optional><ref name="a.base"/></optional>
-      <ref name="e.control"/>
-      <ref name="e.archdesc"/>
-    </element>
-  </rng:define>
+  
   <!-- control -->
   <rng:define name="e.control">
     <element name="control">
@@ -423,7 +675,7 @@
                 </element>
               </zeroOrMore>
               <optional>
-                <empty/>
+                <ref name="e.objectxmlwrap"/>
               </optional>
               <optional>
                 <ref name="e.descriptivenote"/>
@@ -585,27 +837,7 @@
     </element>
   </rng:define>
   <!-- ARCHDESC -->
-  <rng:define name="e.archdesc">
-    <element name="archdesc">
-      <ref name="am.common"/>
-      <optional>
-        <ref name="a.localtype"/>
-      </optional>
-      <optional>
-        <ref name="a.relatedencoding"/>
-      </optional>
-      <ref name="am.desc.base"/>
-      <ref name="a.level"/>
-      <optional><ref name="a.base"/></optional>
-      <ref name="e.did"/>
-      <zeroOrMore>
-        <choice>
-          <ref name="m.desc.base"/>
-          <ref name="e.dsc"/>
-        </choice>
-      </zeroOrMore>
-    </element>
-  </rng:define>
+  
   <!-- did -->
   <rng:define name="e.did">
     <element name="did">
@@ -798,21 +1030,7 @@
        </oneOrMore>      
     </element>
   </rng:define>
-  <rng:define name="e.physdesc">
-    <element name="physdesc">
-      <ref name="am.common"/>
-      <optional>
-        <ref name="a.localtype"/>
-      </optional>
-      <optional>
-        <ref name="a.label"/>
-      </optional>
-      <optional>
-        <ref name="a.encodinganalog"/>
-      </optional>
-      <ref name="m.mixed.basic"/>
-    </element>
-  </rng:define>
+  
   <rng:define name="e.physloc">
     <element name="physloc">
       <ref name="am.common"/>
@@ -977,26 +1195,7 @@
       </choice>
     </element>
   </rng:define>
-  <rng:define name="e.unittitle">
-    <element name="unittitle">
-      <ref name="am.common"/>
-      <optional>
-        <ref name="a.label"/>
-      </optional>
-      <optional>
-        <ref name="a.encodinganalog"/>
-      </optional>
-      <optional>
-        <ref name="a.localtype"/>
-      </optional>
-      <optional>
-        <attribute name="normal">
-          <data type="token"/>
-        </attribute>
-      </optional>
-      <ref name="m.mixed.basic.plus.access"/>
-    </element>
-  </rng:define>
+  
   <rng:define name="e.unitid">
     <element name="unitid">
       <ref name="am.common"/>
@@ -2441,167 +2640,19 @@
       </optional>
     </element>
   </rng:define>
-  <rng:define name="e.c">
-    <element name="c">
-      <ref name="m.c.base"/>
-      <zeroOrMore>
-        <optional>
-          <ref name="e.thead"/>
-        </optional>
-        <oneOrMore>
-          <ref name="e.c"/>
-        </oneOrMore>
-      </zeroOrMore>
-    </element>
-  </rng:define>
-  <rng:define name="e.c01">
-    <element name="c01">
-      <ref name="m.c.base"/>
-      <zeroOrMore>
-        <optional>
-          <ref name="e.thead"/>
-        </optional>
-        <oneOrMore>
-          <ref name="e.c02"/>
-        </oneOrMore>
-      </zeroOrMore>
-    </element>
-  </rng:define>
-  <rng:define name="e.c02">
-    <element name="c02">
-      <ref name="m.c.base"/>
-      <zeroOrMore>
-        <optional>
-          <ref name="e.thead"/>
-        </optional>
-        <oneOrMore>
-          <ref name="e.c03"/>
-        </oneOrMore>
-      </zeroOrMore>
-    </element>
-  </rng:define>
-  <rng:define name="e.c03">
-    <element name="c03">
-      <ref name="m.c.base"/>
-      <zeroOrMore>
-        <optional>
-          <ref name="e.thead"/>
-        </optional>
-        <oneOrMore>
-          <ref name="e.c04"/>
-        </oneOrMore>
-      </zeroOrMore>
-    </element>
-  </rng:define>
-  <rng:define name="e.c04">
-    <element name="c04">
-      <ref name="m.c.base"/>
-      <zeroOrMore>
-        <optional>
-          <ref name="e.thead"/>
-        </optional>
-        <oneOrMore>
-          <ref name="e.c05"/>
-        </oneOrMore>
-      </zeroOrMore>
-    </element>
-  </rng:define>
-  <rng:define name="e.c05">
-    <element name="c05">
-      <ref name="m.c.base"/>
-      <zeroOrMore>
-        <optional>
-          <ref name="e.thead"/>
-        </optional>
-        <oneOrMore>
-          <ref name="e.c06"/>
-        </oneOrMore>
-      </zeroOrMore>
-    </element>
-  </rng:define>
-  <rng:define name="e.c06">
-    <element name="c06">
-      <ref name="m.c.base"/>
-      <zeroOrMore>
-        <optional>
-          <ref name="e.thead"/>
-        </optional>
-        <oneOrMore>
-          <ref name="e.c07"/>
-        </oneOrMore>
-      </zeroOrMore>
-    </element>
-  </rng:define>
-  <rng:define name="e.c07">
-    <element name="c07">
-      <ref name="m.c.base"/>
-      <zeroOrMore>
-        <optional>
-          <ref name="e.thead"/>
-        </optional>
-        <oneOrMore>
-          <ref name="e.c08"/>
-        </oneOrMore>
-      </zeroOrMore>
-    </element>
-  </rng:define>
-  <rng:define name="e.c08">
-    <element name="c08">
-      <ref name="m.c.base"/>
-      <zeroOrMore>
-        <optional>
-          <ref name="e.thead"/>
-        </optional>
-        <zeroOrMore>
-          <ref name="e.c09"/>
-        </zeroOrMore>
-      </zeroOrMore>
-    </element>
-  </rng:define>
-  <rng:define name="e.c09">
-    <element name="c09">
-      <ref name="m.c.base"/>
-      <zeroOrMore>
-        <optional>
-          <ref name="e.thead"/>
-        </optional>
-        <oneOrMore>
-          <ref name="e.c10"/>
-        </oneOrMore>
-      </zeroOrMore>
-    </element>
-  </rng:define>
-  <rng:define name="e.c10">
-    <element name="c10">
-      <ref name="m.c.base"/>
-      <zeroOrMore>
-        <optional>
-          <ref name="e.thead"/>
-        </optional>
-        <oneOrMore>
-          <ref name="e.c11"/>
-        </oneOrMore>
-      </zeroOrMore>
-    </element>
-  </rng:define>
-  <rng:define name="e.c11">
-    <element name="c11">
-      <ref name="m.c.base"/>
-      <zeroOrMore>
-        <optional>
-          <ref name="e.thead"/>
-        </optional>
-        <oneOrMore>
-          <ref name="e.c12"/>
-        </oneOrMore>
-      </zeroOrMore>
-    </element>
-  </rng:define>
-  <rng:define name="e.c12">
-    <element name="c12">
-      <ref name="m.c.base"/>
-    </element>
-  </rng:define>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   <!-- RELATIONS -->
   <rng:define name="e.relations">
     <element name="relations">
@@ -2654,7 +2705,7 @@
             </element>
           </zeroOrMore>
           <optional>
-            <empty/>
+            <ref name="e.objectxmlwrap"/>
           </optional>
           <optional>
             <choice>
@@ -2673,8 +2724,24 @@
       </oneOrMore>
     </element>
   </rng:define>
-  
-  
+  <rng:define name="e.objectxmlwrap">
+    <element name="objectxmlwrap">
+      <ref name="am.common"/>
+      <ref name="e.anyname"/>
+    </element>
+  </rng:define>
+  <rng:define name="e.anyname">
+    <element>
+      <anyName>
+        <except>
+          <nsName ns="http://ead3.archivists.org/schema/"/>
+        </except>
+      </anyName>
+      <zeroOrMore>
+        <ref name="e.anyname"/>
+      </zeroOrMore>
+    </element>
+  </rng:define>
   <!-- ELEMENT MODELS -->
   <rng:define name="m.blocks">
     <choice>
@@ -2705,16 +2772,7 @@
       </oneOrMore>
     </choice>
   </rng:define>
-  <rng:define name="m.c.base">
-    <ref name="am.desc.c"/>
-    <optional>
-      <ref name="e.head"/>
-    </optional>
-    <ref name="e.did"/>
-    <zeroOrMore>
-      <ref name="m.desc.base"/>
-    </zeroOrMore>
-  </rng:define>
+  
   <rng:define name="m.access">
     <choice>
       <ref name="e.persname"/>
@@ -3261,4 +3319,174 @@
     <start>
         <ref name="e.ead"/>
     </start>
+
+    <!-- DEFINES FOR FRONTMATTER -->
+    <rng:define xmlns:rng="http://relaxng.org/ns/structure/1.0" name="e.bibseries">
+        <element name="bibseries">
+            <ref name="am.common"/>
+            <optional>
+                <attribute name="encodinganalog"/>
+            </optional>
+            <zeroOrMore>
+                <choice>
+                    <text/>
+                    <ref name="e.emph"/>
+                    <ref name="e.lb"/>
+                    <ref name="e.ptr"/>
+                    <ref name="e.ref"/>
+                    <ref name="e.title"/>
+                    <ref name="e.num"/>
+                </choice>
+            </zeroOrMore>
+        </element>
+    </rng:define>
+    <rng:define xmlns:rng="http://relaxng.org/ns/structure/1.0" name="e.div">
+        <element name="div">
+            <ref name="am.common"/>
+            <optional>
+                <ref name="e.head"/>
+            </optional>
+            <zeroOrMore>
+                <ref name="m.blocks"/>
+            </zeroOrMore>
+            <zeroOrMore>
+                <ref name="e.div"/>
+            </zeroOrMore>
+        </element>
+    </rng:define>
+    <rng:define xmlns:rng="http://relaxng.org/ns/structure/1.0" name="e.runner">
+        <element name="runner">
+            <ref name="am.common"/>
+            <optional>
+                <attribute name="placement">
+                    <choice>
+                        <value>header</value>
+                        <value>footer</value>
+                        <value>watermark</value>
+                    </choice>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="role"/>
+            </optional>
+            <zeroOrMore>
+                <choice>
+                    <text/>
+                    <ref name="e.emph"/>
+                    <ref name="e.lb"/>
+                    <ref name="e.ptr"/>
+                </choice>
+            </zeroOrMore>
+        </element>
+    </rng:define>
+    <rng:define xmlns:rng="http://relaxng.org/ns/structure/1.0" name="m.desc.base.descgrp">
+        <choice>
+            <ref name="e.accessrestrict"/>
+            <ref name="e.accruals"/>
+            <ref name="e.acqinfo"/>
+            <ref name="e.altformavail"/>
+            <ref name="e.appraisal"/>
+            <ref name="e.arrangement"/>
+            <ref name="e.bibliography"/>
+            <ref name="e.bioghist"/>
+            <ref name="e.controlaccess"/>
+            <ref name="e.custodhist"/>
+            <ref name="e.descgrp"/>
+            <ref name="e.fileplan"/>
+            <ref name="e.index"/>
+            <ref name="e.legalstatus"/>
+            <ref name="e.odd"/>
+            <ref name="e.originalsloc"/>
+            <ref name="e.otherfindaid"/>
+            <ref name="e.phystech"/>
+            <ref name="e.prefercite"/>
+            <ref name="e.processinfo"/>
+            <ref name="e.relatedmaterial"/>
+            <ref name="e.relations"/>
+            <ref name="e.scopecontent"/>
+            <ref name="e.separatedmaterial"/>
+            <ref name="e.userestrict"/>
+        </choice>
+    </rng:define>
+    <rng:define xmlns:rng="http://relaxng.org/ns/structure/1.0" name="e.descgrp">
+        <element name="descgrp">
+            <ref name="am.common"/>
+            <optional>
+                <ref name="a.localtype"/>
+            </optional>
+            <optional>
+                <ref name="a.encodinganalog"/>
+            </optional>
+            <optional>
+                <ref name="e.head"/>
+            </optional>
+            <oneOrMore>
+                <ref name="m.blocks"/>
+                <ref name="m.desc.base.descgrp"/>
+            </oneOrMore>
+        </element>
+    </rng:define>
+    <rng:define xmlns:rng="http://relaxng.org/ns/structure/1.0" name="m.c.base.descgrp">
+        <ref name="am.desc.c"/>
+        <optional>
+            <ref name="e.head"/>
+        </optional>
+        <ref name="e.did"/>
+        <zeroOrMore>
+            <ref name="m.desc.base.descgrp"/>
+        </zeroOrMore>
+    </rng:define>
+    <rng:define xmlns:rng="http://relaxng.org/ns/structure/1.0" name="e.imprint">
+        <element name="imprint">
+            <ref name="am.common"/>
+            <optional>
+                <ref name="a.encodinganalog"/>
+            </optional>
+            <zeroOrMore>
+                <choice>
+                    <text/>
+                    <ref name="e.publisher"/>
+                    <ref name="e.geogname"/>
+                    <ref name="e.date"/>
+                    <ref name="e.emph"/>
+                    <ref name="e.lb"/>
+                    <ref name="e.ptr"/>
+                </choice>
+            </zeroOrMore>
+        </element>
+      
+
+    </rng:define>
+    <rng:define xmlns:rng="http://relaxng.org/ns/structure/1.0" name="e.frontmatter">
+
+            <element name="frontmatter">
+                <ref name="am.common"/>
+                <optional>
+                    <ref name="e.titlepage"/>
+                    
+                </optional>
+                <zeroOrMore>
+                    <ref name="e.div"/>
+                </zeroOrMore>
+            </element>
+    </rng:define>
+    <rng:define xmlns:rng="http://relaxng.org/ns/structure/1.0" name="e.titlepage">
+        <element name="titlepage">
+            <ref name="am.common"/>
+            <oneOrMore>
+                <choice>
+                    <ref name="m.blocks"/>
+                    <ref name="e.author"/>
+                    <ref name="e.date"/>
+                    <ref name="e.edition"/>
+                    <ref name="e.num"/>
+                    <ref name="e.publisher"/>
+                    <ref name="e.bibseries"/>
+                    <ref name="e.sponsor"/>
+                    <ref name="e.titleproper"/>
+                    <ref name="e.subtitle"/>
+                </choice>
+            </oneOrMore>
+        </element>
+    </rng:define>
 </grammar>
