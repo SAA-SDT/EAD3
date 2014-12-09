@@ -2576,7 +2576,7 @@
     <element name="ptr">
       <ref name="am.common.empty"/>
       <ref name="am.internal.ptr"/>
-      <ref name="a.entityref"/>
+      <optional><ref name="a.entityref"/></optional>
       <empty/>
     </element>
   </rng:define>
@@ -2584,7 +2584,7 @@
     <element name="ref">
       <ref name="am.common"/>
       <ref name="am.internal.ptr"/>
-      <ref name="a.entityref"/>
+      <optional><ref name="a.entityref"/></optional>
       <zeroOrMore>
         <choice>
           <text/>
@@ -2738,7 +2738,15 @@
         </except>
       </anyName>
       <zeroOrMore>
-        <ref name="e.anyname"/>
+        <attribute>
+          <anyName/>
+        </attribute>
+      </zeroOrMore>
+      <zeroOrMore>
+        <choice>
+          <text/>
+          <ref name="e.anyname"/>
+        </choice>
       </zeroOrMore>
     </element>
   </rng:define>

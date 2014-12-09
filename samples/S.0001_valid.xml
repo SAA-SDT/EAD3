@@ -1,5 +1,5 @@
-<?xml-model href="../ead3.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../schematron/ead.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../ead3.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <ead xmlns="http://ead3.archivists.org/schema/" relatedencoding="MARC">
 	<control countryencoding="iso3166-1" dateencoding="iso8601" langencoding="iso639-2b"
 		relatedencoding="iso15511" scriptencoding="iso15924">
@@ -113,7 +113,12 @@
 				<sourceentry>Hogwarts: a History</sourceentry>
 				<objectxmlwrap>
 					<oai_dc:dc xmlns:dc="http://purl.org/DC/elements/1.0/"
-						xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"></oai_dc:dc>
+						xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/">
+						<dc:title>Hogwarts: a History</dc:title>
+						<dc:creator>Bathilda Bagshot</dc:creator>
+						<dc:date>1968</dc:date>
+						<dc:identifier>DA880.B34 1968</dc:identifier>
+					</oai_dc:dc>
 					<!--
 					<oai_dc:dc xmlns:dc="http://purl.org/DC/elements/1.0/"
 						xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/">
@@ -159,13 +164,13 @@
 			</physdescstructured>
 			<physdescset>
 				<physdescstructured coverage="part" physdescstructuredtype="materialtype">
-					<quantity approximate="no">38</quantity>
+					<quantity approximate="false">38</quantity>
 					<unittype>scrolls</unittype>
 					<physfacet>Original scrolls are written in iron gall ink.</physfacet>
 					<dimensions localtype="width" unit="inches">18</dimensions>
 				</physdescstructured>
 				<physdescstructured coverage="part" physdescstructuredtype="materialtype">
-					<quantity approximate="no">4</quantity>
+					<quantity approximate="false">4</quantity>
 					<unittype>journals</unittype>
 					<physfacet localtype="binding">Rough, amateur binding. Delicate.</physfacet>
 					<descriptivenote>
@@ -175,11 +180,11 @@
 					</descriptivenote>
 				</physdescstructured>
 				<physdescstructured coverage="part" physdescstructuredtype="materialtype">
-					<quantity approximate="no">139</quantity>
+					<quantity approximate="false">139</quantity>
 					<unittype>letters</unittype>
 				</physdescstructured>
 				<physdescstructured coverage="part" physdescstructuredtype="materialtype">
-					<quantity approximate="no">5</quantity>
+					<quantity approximate="false">5</quantity>
 					<unittype source="wizlib">spell books</unittype>
 					<physfacet localtype="binding">Original spell books are hand-stitched in common
 						leather with raised bands.</physfacet>

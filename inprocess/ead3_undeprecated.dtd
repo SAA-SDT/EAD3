@@ -2180,8 +2180,7 @@
   linktitle CDATA #IMPLIED
   show (new|replace|embed|other|none) #IMPLIED
   actuate (onload|onrequest|other|none) #IMPLIED
-
-  entityref ENTITY #REQUIRED>
+  entityref ENTITY #IMPLIED>
 
 <!ELEMENT ref (#PCDATA|abbr|expan|emph|lb|ptr|quote|num|footnote|date
                |persname|corpname|famname|geogname|name|occupation
@@ -2203,8 +2202,7 @@
   linktitle CDATA #IMPLIED
   show (new|replace|embed|other|none) #IMPLIED
   actuate (onload|onrequest|other|none) #IMPLIED
-
-  entityref ENTITY #REQUIRED>
+  entityref ENTITY #IMPLIED>
 
 <!-- DSC -->
 

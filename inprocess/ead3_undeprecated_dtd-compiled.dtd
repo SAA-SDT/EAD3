@@ -1178,9 +1178,6 @@
   %am.common;
   localtype CDATA #IMPLIED>
 
-<!ENTITY % a.entityref "
-  entityref ENTITY #REQUIRED">
-
 <!-- ATTRIBUTE MODELS -->
 
 <!ENTITY % am.internal.ptr "
@@ -1192,14 +1189,14 @@
 <!ATTLIST ptr
   %am.common.empty;
   %am.internal.ptr;
-  %a.entityref;>
+  entityref ENTITY #IMPLIED>
 
 <!ELEMENT ref (#PCDATA|abbr|expan|emph|lb|ptr|quote|num|footnote|date
                |%m.access;)*>
 <!ATTLIST ref
   %am.common;
   %am.internal.ptr;
-  %a.entityref;>
+  entityref ENTITY #IMPLIED>
 
 <!ENTITY % m.cOrC01 "c+|c01+">
 
@@ -1280,6 +1277,9 @@
 
 <!ENTITY % a.link.xpointer "
   xpointer CDATA #REQUIRED">
+
+<!ENTITY % a.entityref "
+  entityref ENTITY #REQUIRED">
 
 <!-- display attributes -->
 
