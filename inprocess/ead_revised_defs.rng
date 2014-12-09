@@ -2373,6 +2373,7 @@
     <element name="ptr">
       <ref name="am.common.empty"/>
       <ref name="am.internal.ptr"/>
+      <ref name="a.entityref"/>
       <empty/>
     </element>
   </define>
@@ -2380,6 +2381,7 @@
     <element name="ref">
       <ref name="am.common"/>
       <ref name="am.internal.ptr"/>
+      <ref name="a.entityref"/>
       <zeroOrMore>
         <choice>
           <text/>
@@ -3063,6 +3065,11 @@
       <data type="token"/>
     </attribute>
   </define>
+  <define name="a.entityref">
+    <attribute name="entityref">
+      <data type="ENTITY"/>
+    </attribute>
+  </define>
   <!-- display attributes -->
   <define name="a.align">
     <attribute name="align">
@@ -3256,6 +3263,7 @@
       <data type="NMTOKEN"/>
     </attribute>
   </define>
+
   <!-- ATTRIBUTE VALUE LISTS -->
   <define name="av.boolean">
           <data type="boolean"/>
