@@ -858,7 +858,7 @@
 <!-- did -->
 
 <!ELEMENT did (head?,(abstract|container|dao|daoset|didnote|langmaterial
-                  |materialspec|origination|parallelphysdescset|physdesc
+                  |materialspec|origination|physdescset|physdesc
                   |physdescstructured|physloc|repository|unitdate
                   |unitdatestructured|unitid|unittitle)+)>
 <!ATTLIST did
@@ -973,8 +973,10 @@
   encodinganalog CDATA #IMPLIED
   localtype CDATA #IMPLIED>
 
-<!ELEMENT parallelphysdescset (physdescstructured,physdescstructured+)>
-<!ATTLIST parallelphysdescset
+<!-- ATTRIBUTE VALUE LISTS -->
+
+<!ELEMENT physdescset (physdescstructured,physdescstructured+)>
+<!ATTLIST physdescset
 
   id ID #IMPLIED
   altrender CDATA #IMPLIED
@@ -982,7 +984,9 @@
   lang NMTOKEN #IMPLIED
   script NMTOKEN #IMPLIED
   label CDATA #IMPLIED
-  encodinganalog CDATA #IMPLIED>
+  encodinganalog CDATA #IMPLIED
+  parallel NMTOKEN #IMPLIED
+  coverage (whole|part) #IMPLIED>
 
 <!ELEMENT physloc (#PCDATA|abbr|emph|expan|foreign|lb|ptr|ref)*>
 <!ATTLIST physloc
@@ -1028,8 +1032,6 @@
 
   coverage (whole|part) #REQUIRED>
 
-<!-- ATTRIBUTE VALUE LISTS -->
-
 <!ELEMENT quantity (#PCDATA)>
 <!ATTLIST quantity
 
@@ -1039,7 +1041,7 @@
   lang NMTOKEN #IMPLIED
   script NMTOKEN #IMPLIED
   encodinganalog CDATA #IMPLIED
-  approximate (yes|no) #IMPLIED>
+  approximate NMTOKEN #IMPLIED>
 
 <!ELEMENT unittype (#PCDATA)>
 <!ATTLIST unittype
@@ -1784,9 +1786,9 @@
   lang NMTOKEN #IMPLIED
   script NMTOKEN #IMPLIED
   frame (top|bottom|topbot|all|sides|none) #IMPLIED
-  colsep (0|1) #IMPLIED
-  rowsep (0|1) #IMPLIED
-  pgwide (0|1) #IMPLIED>
+  colsep NMTOKEN #IMPLIED
+  rowsep NMTOKEN #IMPLIED
+  pgwide NMTOKEN #IMPLIED>
 
 <!ELEMENT tgroup (colspec*,thead?,tbody)>
 <!ATTLIST tgroup
@@ -1797,8 +1799,8 @@
   lang NMTOKEN #IMPLIED
   script NMTOKEN #IMPLIED
   cols NMTOKEN #REQUIRED
-  colsep (0|1) #IMPLIED
-  rowsep (0|1) #IMPLIED
+  colsep NMTOKEN #IMPLIED
+  rowsep NMTOKEN #IMPLIED
   align (left|right|center|justify|char) #IMPLIED>
 
 <!ELEMENT colspec EMPTY>
@@ -1806,8 +1808,8 @@
   colnum NMTOKEN #IMPLIED
   colname NMTOKEN #IMPLIED
   colwidth CDATA #IMPLIED
-  colsep (0|1) #IMPLIED
-  rowsep (0|1) #IMPLIED
+  colsep NMTOKEN #IMPLIED
+  rowsep NMTOKEN #IMPLIED
   align (left|right|center|justify|char) #IMPLIED
   char CDATA #IMPLIED
   charoff NMTOKEN #IMPLIED>
@@ -1830,7 +1832,7 @@
   audience (external|internal) #IMPLIED
   lang NMTOKEN #IMPLIED
   script NMTOKEN #IMPLIED
-  rowsep (0|1) #IMPLIED
+  rowsep NMTOKEN #IMPLIED
   valign (top|middle|bottom) #IMPLIED>
 
 <!ELEMENT entry (#PCDATA|abbr|emph|expan|foreign|lb|ptr|ref|date
@@ -1848,8 +1850,8 @@
   namest NMTOKEN #IMPLIED
   nameend NMTOKEN #IMPLIED
   morerows NMTOKEN #IMPLIED
-  colsep (0|1) #IMPLIED
-  rowsep (0|1) #IMPLIED
+  colsep NMTOKEN #IMPLIED
+  rowsep NMTOKEN #IMPLIED
   align (left|right|center|justify|char) #IMPLIED
   char CDATA #IMPLIED
   charoff NMTOKEN #IMPLIED
@@ -2177,7 +2179,9 @@
   arcrole CDATA #IMPLIED
   linktitle CDATA #IMPLIED
   show (new|replace|embed|other|none) #IMPLIED
-  actuate (onload|onrequest|other|none) #IMPLIED>
+  actuate (onload|onrequest|other|none) #IMPLIED
+
+  entityref ENTITY #REQUIRED>
 
 <!ELEMENT ref (#PCDATA|abbr|expan|emph|lb|ptr|quote|num|footnote|date
                |persname|corpname|famname|geogname|name|occupation
@@ -2198,7 +2202,9 @@
   arcrole CDATA #IMPLIED
   linktitle CDATA #IMPLIED
   show (new|replace|embed|other|none) #IMPLIED
-  actuate (onload|onrequest|other|none) #IMPLIED>
+  actuate (onload|onrequest|other|none) #IMPLIED
+
+  entityref ENTITY #REQUIRED>
 
 <!-- DSC -->
 
