@@ -782,7 +782,7 @@
       </optional>
       <optional>
         <attribute name="parallel">
-          <ref name="av.yesorno"/>
+          <ref name="av.boolean"/>
         </attribute>
       </optional>
       <optional>
@@ -877,7 +877,7 @@
         </optional>
         <optional>
           <attribute name="approximate">
-            <ref name="av.yesorno"/>
+            <ref name="av.boolean"/>
           </attribute>
         </optional>
         <text/>
@@ -1934,7 +1934,7 @@
       </optional>
       <optional>
         <attribute name="pgwide">
-          <ref name="av.zeroorone"/>
+          <ref name="av.boolean"/>
         </attribute>
       </optional>
       <optional>
@@ -3227,12 +3227,12 @@
   </define>
   <define name="a.colsep">
     <attribute name="colsep">
-      <ref name="av.zeroorone"/>
+      <ref name="av.boolean"/>
     </attribute>
   </define>
   <define name="a.rowsep">
     <attribute name="rowsep">
-      <ref name="av.zeroorone"/>
+      <ref name="av.boolean"/>
     </attribute>
   </define>
   <!-- other attributes -->
@@ -3257,16 +3257,8 @@
     </attribute>
   </define>
   <!-- ATTRIBUTE VALUE LISTS -->
-  <define name="av.yesorno">
-    <choice>
-      <value>yes</value>
-      <value>no</value>
-    </choice>
+  <define name="av.boolean">
+          <data type="boolean"/>
   </define>
-  <define name="av.zeroorone">
-    <choice>
-      <value>0</value>
-      <value>1</value>
-    </choice>
-  </define>
+ 
 </grammar>
