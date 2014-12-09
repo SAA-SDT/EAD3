@@ -2677,13 +2677,17 @@
   </define>
   <define name="e.anyname">
     <element>
-      <anyName>
-        <except>
-          <nsName ns="http://ead3.archivists.org/schema/"/>
-        </except>
-      </anyName>
+      <anyName/>
       <zeroOrMore>
-        <ref name="e.anyname"/>
+        <attribute>
+          <anyName/>
+        </attribute>
+      </zeroOrMore>
+      <zeroOrMore>
+        <choice>
+          <text/>
+          <ref name="e.anyname"/>
+        </choice>
       </zeroOrMore>
     </element>
   </define>
