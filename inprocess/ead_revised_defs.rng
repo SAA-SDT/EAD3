@@ -675,9 +675,7 @@
         <ref name="a.link.xpointer"/>
       </optional>
       <optional>
-        <attribute name="entityref">
-          <data type="ENTITY"/>
-        </attribute>
+        <ref name="a.entityref"/>
       </optional>
       <attribute name="daotype">
         <choice>
