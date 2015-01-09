@@ -505,14 +505,14 @@
 
 <!-- ATTRIBUTE VALUE LISTS -->
 
-<!ENTITY % av.boolean "NMTOKEN">
+<!ENTITY % av.boolean "true|false">
 
 <!ELEMENT physdescset (physdescstructured,physdescstructured+)>
 <!ATTLIST physdescset
   %am.common;
   label CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED
-  parallel %av.boolean; #IMPLIED
+  parallel (%av.boolean;) #IMPLIED
   coverage (whole|part) #IMPLIED>
 
 <!ELEMENT physloc %m.mixed.basic;>
@@ -550,7 +550,7 @@
 <!ATTLIST quantity
   %am.common;
   encodinganalog CDATA #IMPLIED
-  approximate %av.boolean; #IMPLIED>
+  approximate (%av.boolean;) #IMPLIED>
 
 <!ELEMENT unittype (#PCDATA)>
 <!ATTLIST unittype
@@ -963,16 +963,16 @@
 <!ATTLIST table
   %am.common;
   frame (top|bottom|topbot|all|sides|none) #IMPLIED
-  colsep %av.boolean; #IMPLIED
-  rowsep %av.boolean; #IMPLIED
-  pgwide %av.boolean; #IMPLIED>
+  colsep (%av.boolean;) #IMPLIED
+  rowsep (%av.boolean;) #IMPLIED
+  pgwide (%av.boolean;) #IMPLIED>
 
 <!ELEMENT tgroup (colspec*,thead?,tbody)>
 <!ATTLIST tgroup
   %am.common;
   cols NMTOKEN #REQUIRED
-  colsep %av.boolean; #IMPLIED
-  rowsep %av.boolean; #IMPLIED
+  colsep (%av.boolean;) #IMPLIED
+  rowsep (%av.boolean;) #IMPLIED
   align (left|right|center|justify|char) #IMPLIED>
 
 <!ELEMENT colspec EMPTY>
@@ -980,8 +980,8 @@
   colnum NMTOKEN #IMPLIED
   colname NMTOKEN #IMPLIED
   colwidth CDATA #IMPLIED
-  colsep %av.boolean; #IMPLIED
-  rowsep %av.boolean; #IMPLIED
+  colsep (%av.boolean;) #IMPLIED
+  rowsep (%av.boolean;) #IMPLIED
   align (left|right|center|justify|char) #IMPLIED
   char CDATA #IMPLIED
   charoff NMTOKEN #IMPLIED>
@@ -994,7 +994,7 @@
 <!ELEMENT row (entry)+>
 <!ATTLIST row
   %am.common;
-  rowsep %av.boolean; #IMPLIED
+  rowsep (%av.boolean;) #IMPLIED
   valign (top|middle|bottom) #IMPLIED>
 
 <!ELEMENT entry %m.para.content;>
@@ -1004,8 +1004,8 @@
   namest NMTOKEN #IMPLIED
   nameend NMTOKEN #IMPLIED
   morerows NMTOKEN #IMPLIED
-  colsep %av.boolean; #IMPLIED
-  rowsep %av.boolean; #IMPLIED
+  colsep (%av.boolean;) #IMPLIED
+  rowsep (%av.boolean;) #IMPLIED
   align (left|right|center|justify|char) #IMPLIED
   char CDATA #IMPLIED
   charoff NMTOKEN #IMPLIED
@@ -1326,10 +1326,10 @@
   colname NMTOKEN #REQUIRED">
 
 <!ENTITY % a.colsep "
-  colsep %av.boolean; #REQUIRED">
+  colsep (%av.boolean;) #REQUIRED">
 
 <!ENTITY % a.rowsep "
-  rowsep %av.boolean; #REQUIRED">
+  rowsep (%av.boolean;) #REQUIRED">
 
 <!ENTITY % a.transliteration "
   transliteration NMTOKEN #REQUIRED">

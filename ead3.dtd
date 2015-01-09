@@ -639,7 +639,7 @@
   script NMTOKEN #IMPLIED
   label CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED
-  parallel NMTOKEN #IMPLIED
+  parallel (true|false) #IMPLIED
   coverage (whole|part) #IMPLIED>
 
 <!ELEMENT physdesc (#PCDATA|abbr|emph|expan|foreign|lb|ptr|ref)*>
@@ -707,7 +707,7 @@
   lang NMTOKEN #IMPLIED
   script NMTOKEN #IMPLIED
   encodinganalog CDATA #IMPLIED
-  approximate NMTOKEN #IMPLIED>
+  approximate (true|false) #IMPLIED>
 
 <!ELEMENT unittype (#PCDATA)>
 <!ATTLIST unittype
@@ -1468,9 +1468,9 @@
   lang NMTOKEN #IMPLIED
   script NMTOKEN #IMPLIED
   frame (top|bottom|topbot|all|sides|none) #IMPLIED
-  colsep NMTOKEN #IMPLIED
-  rowsep NMTOKEN #IMPLIED
-  pgwide NMTOKEN #IMPLIED>
+  colsep (true|false) #IMPLIED
+  rowsep (true|false) #IMPLIED
+  pgwide (true|false) #IMPLIED>
 
 <!ELEMENT tgroup (colspec*,thead?,tbody)>
 <!ATTLIST tgroup
@@ -1481,8 +1481,8 @@
   lang NMTOKEN #IMPLIED
   script NMTOKEN #IMPLIED
   cols NMTOKEN #REQUIRED
-  colsep NMTOKEN #IMPLIED
-  rowsep NMTOKEN #IMPLIED
+  colsep (true|false) #IMPLIED
+  rowsep (true|false) #IMPLIED
   align (left|right|center|justify|char) #IMPLIED>
 
 <!ELEMENT colspec EMPTY>
@@ -1490,8 +1490,8 @@
   colnum NMTOKEN #IMPLIED
   colname NMTOKEN #IMPLIED
   colwidth CDATA #IMPLIED
-  colsep NMTOKEN #IMPLIED
-  rowsep NMTOKEN #IMPLIED
+  colsep (true|false) #IMPLIED
+  rowsep (true|false) #IMPLIED
   align (left|right|center|justify|char) #IMPLIED
   char CDATA #IMPLIED
   charoff NMTOKEN #IMPLIED>
@@ -1514,7 +1514,7 @@
   audience (external|internal) #IMPLIED
   lang NMTOKEN #IMPLIED
   script NMTOKEN #IMPLIED
-  rowsep NMTOKEN #IMPLIED
+  rowsep (true|false) #IMPLIED
   valign (top|middle|bottom) #IMPLIED>
 
 <!ELEMENT entry (#PCDATA|abbr|emph|expan|foreign|lb|ptr|ref|date
@@ -1532,8 +1532,8 @@
   namest NMTOKEN #IMPLIED
   nameend NMTOKEN #IMPLIED
   morerows NMTOKEN #IMPLIED
-  colsep NMTOKEN #IMPLIED
-  rowsep NMTOKEN #IMPLIED
+  colsep (true|false) #IMPLIED
+  rowsep (true|false) #IMPLIED
   align (left|right|center|justify|char) #IMPLIED
   char CDATA #IMPLIED
   charoff NMTOKEN #IMPLIED

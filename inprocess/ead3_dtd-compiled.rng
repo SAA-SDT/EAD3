@@ -12,7 +12,9 @@
       <optional>
         <ref name="a.relatedencoding"/>
       </optional>
-      <optional><ref name="a.base"/></optional>
+      <optional>
+        <ref name="a.base"/>
+      </optional>
       <ref name="e.control"/>
       <ref name="e.archdesc"/>
     </element>
@@ -27,7 +29,9 @@
       <optional>
         <ref name="a.relatedencoding"/>
       </optional>
-      <optional><ref name="a.base"/></optional>
+      <optional>
+        <ref name="a.base"/>
+      </optional>
       <optional>
         <attribute name="langencoding">
           <choice>
@@ -399,7 +403,9 @@
           <optional>
             <ref name="a.localtype"/>
           </optional>
-          <optional><ref name="a.base"/></optional>
+          <optional>
+            <ref name="a.base"/>
+          </optional>
           <oneOrMore>
             <element name="source">
               <ref name="am.common"/>
@@ -596,7 +602,9 @@
       </optional>
       <ref name="am.desc.base"/>
       <ref name="a.level"/>
-      <optional><ref name="a.base"/></optional>
+      <optional>
+        <ref name="a.base"/>
+      </optional>
       <ref name="e.did"/>
       <zeroOrMore>
         <choice>
@@ -679,9 +687,7 @@
         <ref name="a.link.xpointer"/>
       </optional>
       <optional>
-        <attribute name="entityref">
-          <data type="ENTITY"/>
-        </attribute>
+        <ref name="a.entityref"/>
       </optional>
       <attribute name="daotype">
         <choice>
@@ -714,8 +720,12 @@
       <optional>
         <ref name="a.label"/>
       </optional>
-      <optional><ref name="a.coverage"/></optional>
-      <optional><ref name="a.base"/></optional>
+      <optional>
+        <ref name="a.coverage"/>
+      </optional>
+      <optional>
+        <ref name="a.base"/>
+      </optional>
       <ref name="e.dao"/>
       <oneOrMore>
         <ref name="e.dao"/>
@@ -794,8 +804,8 @@
       </optional>
       <ref name="e.physdescstructured"/>
       <oneOrMore>
-          <ref name="e.physdescstructured"/>
-       </oneOrMore>      
+        <ref name="e.physdescstructured"/>
+      </oneOrMore>
     </element>
   </rng:define>
   <rng:define name="e.physdesc">
@@ -2377,7 +2387,9 @@
     <element name="ptr">
       <ref name="am.common.empty"/>
       <ref name="am.internal.ptr"/>
-      <optional><ref name="a.entityref"/></optional>
+      <optional>
+        <ref name="a.entityref"/>
+      </optional>
       <empty/>
     </element>
   </rng:define>
@@ -2385,7 +2397,9 @@
     <element name="ref">
       <ref name="am.common"/>
       <ref name="am.internal.ptr"/>
-      <optional><ref name="a.entityref"/></optional>
+      <optional>
+        <ref name="a.entityref"/>
+      </optional>
       <zeroOrMore>
         <choice>
           <text/>
@@ -2844,7 +2858,7 @@
       <ref name="e.ref"/>
     </choice>
   </rng:define>
- <rng:define name="m.mixed.basic">
+  <rng:define name="m.mixed.basic">
     <zeroOrMore>
       <choice>
         <text/>
@@ -2852,14 +2866,14 @@
       </choice>
     </zeroOrMore>
   </rng:define>
-   <rng:define name="m.mixed.basic.plus.elements">
-      <choice>
-        <ref name="m.mixed.basic.elements"/>
-        <ref name="e.date"/>
-        <ref name="e.footnote"/>
-        <ref name="e.num"/>
-        <ref name="e.quote"/>
-      </choice>
+  <rng:define name="m.mixed.basic.plus.elements">
+    <choice>
+      <ref name="m.mixed.basic.elements"/>
+      <ref name="e.date"/>
+      <ref name="e.footnote"/>
+      <ref name="e.num"/>
+      <ref name="e.quote"/>
+    </choice>
   </rng:define>
   <rng:define name="m.mixed.basic.plus.access">
     <zeroOrMore>
@@ -2891,7 +2905,9 @@
         <data type="IDREF"/>
       </attribute>
     </optional>
-    <optional><ref name="a.link.xpointer"/></optional>
+    <optional>
+      <ref name="a.link.xpointer"/>
+    </optional>
     <ref name="am.simplelink"/>
   </rng:define>
   <rng:define name="am.simplelink">
@@ -2959,7 +2975,9 @@
   </rng:define>
   <rng:define name="am.desc.c">
     <ref name="am.common"/>
-    <optional><ref name="a.base"/></optional>
+    <optional>
+      <ref name="a.base"/>
+    </optional>
     <optional>
       <ref name="a.level"/>
     </optional>
@@ -2982,7 +3000,9 @@
         <data type="NMTOKEN"/>
       </attribute>
     </optional>
-    <optional><ref name="a.identifier"/></optional>
+    <optional>
+      <ref name="a.identifier"/>
+    </optional>
   </rng:define>
   <!-- ATTRIBUTE DEFINITIONS -->
   <!-- xlink-modelled attributes -->
@@ -3254,9 +3274,12 @@
 
   <!-- ATTRIBUTE VALUE LISTS -->
   <rng:define name="av.boolean">
-          <data type="boolean"/>
+    <choice>
+      <value>true</value>
+      <value>false</value>
+    </choice>
   </rng:define>
- 
+
 </rng:div></rng:div>
     <start>
         <ref name="e.ead"/>
