@@ -14,7 +14,7 @@
     </xsl:template>
     <!-- make any <element> not named "ead" a complexType -->
     <xsl:template match="xs:element[@name != 'ead']">
-       <xs:complexType name="@name">
+       <xs:complexType name="{@name}">
            <xsl:apply-templates select="child::xs:complexType/*"/>
        </xs:complexType>
     </xsl:template>
