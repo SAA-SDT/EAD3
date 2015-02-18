@@ -4,7 +4,7 @@
 <xsl:stylesheet 
 xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
 xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-xmlns:s="http://http://www.taxonx.org/schema/v1"
+xmlns:s="http://ead3.archivists.org/schema/"
 version="1.0">
 
 <xsl:output method="xml" version="1.0" omit-xml-declaration="no" indent="yes" encoding="utf-8"/>
