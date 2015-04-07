@@ -26,7 +26,7 @@
   		<agencyname>University of Minnesota Libraries</agencyname>
   	</maintenanceagency> 
   	<languagedeclaration>
-  		<language langcode="en"/>
+  		<language langcode="eng"/>
   		<script scriptcode="Latn"/>
   	</languagedeclaration>
   	<conventiondeclaration>
