@@ -22,7 +22,9 @@
      values of $language-code-lookups' @key attribute, with a fall-back of 'iso639-2'-->
 
     <let name="language-code-lookup"
-        value="document($language-code-lookups[@key = $active-language-code-key])//madsrdf:code/normalize-space(.)  | document($language-code-lookups[@key = $active-language-code-key])//iso_639_3_entry/@id"/>
+        value="document($language-code-lookups[@key = $active-language-code-key])//madsrdf:code/normalize-space(.)"/>
+        
+    <!--    | document($language-code-lookups[@key = $active-language-code-key])//iso_639_3_entry/@id"/> -->
 
     <!-- CODES -->
 
@@ -92,6 +94,8 @@
             <assert test="normalize-space(@otherrelationtype)"> If the value of a <emph>otherrelation</emph> attribute is "otherrelationtype', then the <emph>otherrelationtype</emph> attribute must be used.
             </assert>
         </rule>
+        <!-- @otherlangcode -->
+        <!-- @listtype="unordered" @mark -->
     </pattern>
     
     <!-- DATE NORMALIZATION -->
@@ -101,6 +105,7 @@
             <assert test="matches(@normal, '(\-?(0|1|2)([0-9]{3})(((01|02|03|04|05|06|07|08|09|10|11|12)((0[1-9])|((1|2)[0-9])|(3[0-1])))|\-((01|02|03|04|05|06|07|08|09|10|11|12)(\-((0[1-9])|((1|2)[0-9])|(3[0-1])))?))?)(/\-?(0|1|2)([0-9]{3})(((01|02|03|04|05|06|07|08|09|10|11|12)((0[1-9])|((1|2)[0-9])|(3[0-1])))|\-((01|02|03|04|05|06|07|08|09|10|11|12)(\-((0[1-9])|((1|2)[0-9])|(3[0-1])))?))?)?')">
                 The <emph>normal</emph> attribute of <name/> must be a iso8601 date.
             </assert>
+           
         </rule>
     </pattern>
     

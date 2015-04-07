@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<?xml-model href="ead3.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../../schematron/ead.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <ead xmlns="http://ead3.archivists.org/schema/" audience="external">  
   <control>
 	<recordid>sw0116</recordid> 
@@ -26,7 +26,7 @@
   		<agencyname>University of Minnesota Libraries</agencyname>
   	</maintenanceagency> 
   	<languagedeclaration>
-  		<language langcode="eng"/>
+  		<language langcode="en"/>
   		<script scriptcode="Latn"/>
   	</languagedeclaration>
   	<conventiondeclaration>
@@ -173,7 +173,7 @@
 			 <did> 
 				<unittitle>Self Study, History of Music School and
 				  Playhouse</unittitle> 
-				<unitdate unitdatetype="inclusive">1966</unitdate> 
+				<unitdate unitdatetype="inclusive" normal="1966">1966</unitdate> 
 				<container localtype="box">1</container> 
 				<container localtype="folder">1</container> 
 			 </did> 
@@ -182,7 +182,7 @@
 			 <did> 
 				<unittitle>Self-Study, History of Music School and
 				  Playhouse</unittitle> 
-				<unitdate unitdatetype="inclusive">1966</unitdate> 
+				<unitdate unitdatetype="inclusive" normal="1966">1966</unitdate> 
 				<container localtype="box">1</container> 
 				<container localtype="folder">2</container> 
 			 </did> 
