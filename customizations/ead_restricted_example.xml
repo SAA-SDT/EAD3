@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="ead3_restricted.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<ead xmlns="http://ead3.archivists.org/schema/">
+    <control>
+        <recordid>xxx</recordid>
+        <filedesc>
+            <titlestmt>
+                <titleproper>Sample EAD Instance using restricted EAD tagset</titleproper>
+            </titlestmt>
+        </filedesc>
+        <maintenancestatus value="new"/>
+        <maintenanceagency>
+            <agencyname>xxx</agencyname>
+        </maintenanceagency>
+        <maintenancehistory>
+            <maintenanceevent>
+                <eventtype value="created"/>
+                <eventdatetime/>
+                <agenttype value="human"/>
+                <agent/>
+            </maintenanceevent>
+        </maintenancehistory>
+    </control>
+    <archdesc level="collection">
+        <did>
+            <unittitle>Jane Smith Papers</unittitle>
+            <unitdatestructured>
+                <daterange>
+                    <fromdate>1983</fromdate>
+                    <todate>1989</todate>
+                </daterange>
+            </unitdatestructured>
+            <origination>
+                <persname identifier="http://viaf.org/viaf/12345678">
+                    <part localtype="http://xmlns.com/foaf/0.1/foaf:familyName">Smith</part>
+                    <part localtype="http://xmlns.com/foaf/0.1/givenName">Jane</part>
+                </persname>
+            </origination>
+            <physdescstructured coverage="whole" physdescstructuredtype="spaceoccupied">
+                <quantity>10</quantity>
+                <unittype identifier="http://data.nasa.gov/qudt/owl/unit#CubicFoot">cubic feet</unittype>
+            </physdescstructured>
+        </did>
+        <scopecontent>
+            <p></p>
+        </scopecontent>
+    </archdesc>
+</ead>
