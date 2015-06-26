@@ -47,6 +47,23 @@
 
   base CDATA #REQUIRED>
 
+<!-- ELEMENT MODELS -->
+
+<!-- dsc -->
+
+<!ELEMENT dsc (head?,(chronlist|list|table|blockquote|p)*,thead?,(c+|c01+)?)>
+<!ATTLIST dsc
+
+  id ID #IMPLIED
+  altrender CDATA #IMPLIED
+  audience (external|internal) #IMPLIED
+  lang NMTOKEN #IMPLIED
+  script NMTOKEN #IMPLIED
+  tpattern NMTOKEN #IMPLIED
+  dsctype (analyticover|combined|in-depth|otherdsctype) #IMPLIED
+  otherdsctype CDATA #IMPLIED
+  encodinganalog CDATA #IMPLIED>
+
 <!-- Components -->
 
 <!ELEMENT c ((head?,did,(accessrestrict|accruals|acqinfo
@@ -70,7 +87,8 @@
          |subfonds|subgrp|subseries) #IMPLIED
 
   otherlevel CDATA #IMPLIED
-  encodinganalog CDATA #IMPLIED>
+  encodinganalog CDATA #IMPLIED
+  tpattern NMTOKEN #IMPLIED>
 
 <!ELEMENT c01 ((head?,did,(accessrestrict|accruals|acqinfo
                                 |altformavail|appraisal|arrangement
@@ -93,7 +111,8 @@
          |subfonds|subgrp|subseries) #IMPLIED
 
   otherlevel CDATA #IMPLIED
-  encodinganalog CDATA #IMPLIED>
+  encodinganalog CDATA #IMPLIED
+  tpattern NMTOKEN #IMPLIED>
 
 <!ELEMENT c02 ((head?,did,(accessrestrict|accruals|acqinfo
                                 |altformavail|appraisal|arrangement
@@ -116,7 +135,8 @@
          |subfonds|subgrp|subseries) #IMPLIED
 
   otherlevel CDATA #IMPLIED
-  encodinganalog CDATA #IMPLIED>
+  encodinganalog CDATA #IMPLIED
+  tpattern NMTOKEN #IMPLIED>
 
 <!ELEMENT c03 ((head?,did,(accessrestrict|accruals|acqinfo
                                 |altformavail|appraisal|arrangement
@@ -139,7 +159,8 @@
          |subfonds|subgrp|subseries) #IMPLIED
 
   otherlevel CDATA #IMPLIED
-  encodinganalog CDATA #IMPLIED>
+  encodinganalog CDATA #IMPLIED
+  tpattern NMTOKEN #IMPLIED>
 
 <!ELEMENT c04 ((head?,did,(accessrestrict|accruals|acqinfo
                                 |altformavail|appraisal|arrangement
@@ -162,7 +183,8 @@
          |subfonds|subgrp|subseries) #IMPLIED
 
   otherlevel CDATA #IMPLIED
-  encodinganalog CDATA #IMPLIED>
+  encodinganalog CDATA #IMPLIED
+  tpattern NMTOKEN #IMPLIED>
 
 <!ELEMENT c05 ((head?,did,(accessrestrict|accruals|acqinfo
                                 |altformavail|appraisal|arrangement
@@ -185,7 +207,8 @@
          |subfonds|subgrp|subseries) #IMPLIED
 
   otherlevel CDATA #IMPLIED
-  encodinganalog CDATA #IMPLIED>
+  encodinganalog CDATA #IMPLIED
+  tpattern NMTOKEN #IMPLIED>
 
 <!ELEMENT c06 ((head?,did,(accessrestrict|accruals|acqinfo
                                 |altformavail|appraisal|arrangement
@@ -208,7 +231,8 @@
          |subfonds|subgrp|subseries) #IMPLIED
 
   otherlevel CDATA #IMPLIED
-  encodinganalog CDATA #IMPLIED>
+  encodinganalog CDATA #IMPLIED
+  tpattern NMTOKEN #IMPLIED>
 
 <!ELEMENT c07 ((head?,did,(accessrestrict|accruals|acqinfo
                                 |altformavail|appraisal|arrangement
@@ -231,7 +255,8 @@
          |subfonds|subgrp|subseries) #IMPLIED
 
   otherlevel CDATA #IMPLIED
-  encodinganalog CDATA #IMPLIED>
+  encodinganalog CDATA #IMPLIED
+  tpattern NMTOKEN #IMPLIED>
 
 <!ELEMENT c08 ((head?,did,(accessrestrict|accruals|acqinfo
                                 |altformavail|appraisal|arrangement
@@ -254,7 +279,8 @@
          |subfonds|subgrp|subseries) #IMPLIED
 
   otherlevel CDATA #IMPLIED
-  encodinganalog CDATA #IMPLIED>
+  encodinganalog CDATA #IMPLIED
+  tpattern NMTOKEN #IMPLIED>
 
 <!ELEMENT c09 ((head?,did,(accessrestrict|accruals|acqinfo
                                 |altformavail|appraisal|arrangement
@@ -277,7 +303,8 @@
          |subfonds|subgrp|subseries) #IMPLIED
 
   otherlevel CDATA #IMPLIED
-  encodinganalog CDATA #IMPLIED>
+  encodinganalog CDATA #IMPLIED
+  tpattern NMTOKEN #IMPLIED>
 
 <!ELEMENT c10 ((head?,did,(accessrestrict|accruals|acqinfo
                                 |altformavail|appraisal|arrangement
@@ -300,7 +327,8 @@
          |subfonds|subgrp|subseries) #IMPLIED
 
   otherlevel CDATA #IMPLIED
-  encodinganalog CDATA #IMPLIED>
+  encodinganalog CDATA #IMPLIED
+  tpattern NMTOKEN #IMPLIED>
 
 <!ELEMENT c11 ((head?,did,(accessrestrict|accruals|acqinfo
                                 |altformavail|appraisal|arrangement
@@ -323,7 +351,8 @@
          |subfonds|subgrp|subseries) #IMPLIED
 
   otherlevel CDATA #IMPLIED
-  encodinganalog CDATA #IMPLIED>
+  encodinganalog CDATA #IMPLIED
+  tpattern NMTOKEN #IMPLIED>
 
 <!ELEMENT c12 (head?,did,(accessrestrict|accruals|acqinfo
                                 |altformavail|appraisal|arrangement
@@ -346,7 +375,8 @@
          |subfonds|subgrp|subseries) #IMPLIED
 
   otherlevel CDATA #IMPLIED
-  encodinganalog CDATA #IMPLIED>
+  encodinganalog CDATA #IMPLIED
+  tpattern NMTOKEN #IMPLIED>
 
 <!-- MIXED CONTENT MODELS -->
 
@@ -775,8 +805,6 @@
   script NMTOKEN #IMPLIED
   localtype CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED>
-
-<!-- ELEMENT MODELS -->
 
 <!ELEMENT controlnote (chronlist|list|table|blockquote|p)+>
 <!ATTLIST controlnote
@@ -2205,18 +2233,6 @@
   entityref ENTITY #IMPLIED>
 
 <!-- DSC -->
-
-<!ELEMENT dsc (head?,(chronlist|list|table|blockquote|p)*,thead?,(c+|c01+)?)>
-<!ATTLIST dsc
-
-  id ID #IMPLIED
-  altrender CDATA #IMPLIED
-  audience (external|internal) #IMPLIED
-  lang NMTOKEN #IMPLIED
-  script NMTOKEN #IMPLIED
-  dsctype (analyticover|combined|in-depth|otherdsctype) #IMPLIED
-  otherdsctype CDATA #IMPLIED
-  encodinganalog CDATA #IMPLIED>
 
 <!-- RELATIONS -->
 

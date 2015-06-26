@@ -58,6 +58,26 @@
   %a.level;
   %a.base;>
 
+<!ENTITY % m.inter.noquote "chronlist|list|table">
+
+<!ENTITY % m.inter "%m.inter.noquote;|blockquote">
+
+<!ENTITY % m.cOrC01 "c+|c01+">
+
+<!-- ELEMENT MODELS -->
+
+<!ENTITY % m.blocks "%m.inter;|p">
+
+<!-- dsc -->
+
+<!ELEMENT dsc (head?,(%m.blocks;)*,thead?,(%m.cOrC01;)?)>
+<!ATTLIST dsc
+  %am.common;
+  tpattern NMTOKEN #IMPLIED
+  dsctype (analyticover|combined|in-depth|otherdsctype) #IMPLIED
+  otherdsctype CDATA #IMPLIED
+  encodinganalog CDATA #IMPLIED>
+
 <!ENTITY % am.desc.c "
   %am.common;
   base CDATA #IMPLIED
@@ -71,55 +91,68 @@
 
 <!ELEMENT c ((%m.c.base.descgrp;),(thead?,c+)*)>
 <!ATTLIST c
-  %am.desc.c;>
+  %am.desc.c;
+  tpattern NMTOKEN #IMPLIED>
 
 <!ELEMENT c01 ((%m.c.base.descgrp;),(thead?,c02+)*)>
 <!ATTLIST c01
-  %am.desc.c;>
+  %am.desc.c;
+  tpattern NMTOKEN #IMPLIED>
 
 <!ELEMENT c02 ((%m.c.base.descgrp;),(thead?,c03+)*)>
 <!ATTLIST c02
-  %am.desc.c;>
+  %am.desc.c;
+  tpattern NMTOKEN #IMPLIED>
 
 <!ELEMENT c03 ((%m.c.base.descgrp;),(thead?,c04+)*)>
 <!ATTLIST c03
-  %am.desc.c;>
+  %am.desc.c;
+  tpattern NMTOKEN #IMPLIED>
 
 <!ELEMENT c04 ((%m.c.base.descgrp;),(thead?,c05+)*)>
 <!ATTLIST c04
-  %am.desc.c;>
+  %am.desc.c;
+  tpattern NMTOKEN #IMPLIED>
 
 <!ELEMENT c05 ((%m.c.base.descgrp;),(thead?,c06+)*)>
 <!ATTLIST c05
-  %am.desc.c;>
+  %am.desc.c;
+  tpattern NMTOKEN #IMPLIED>
 
 <!ELEMENT c06 ((%m.c.base.descgrp;),(thead?,c07+)*)>
 <!ATTLIST c06
-  %am.desc.c;>
+  %am.desc.c;
+  tpattern NMTOKEN #IMPLIED>
 
 <!ELEMENT c07 ((%m.c.base.descgrp;),(thead?,c08+)*)>
 <!ATTLIST c07
-  %am.desc.c;>
+  %am.desc.c;
+  tpattern NMTOKEN #IMPLIED>
 
 <!ELEMENT c08 ((%m.c.base.descgrp;),(thead?,c09*)*)>
 <!ATTLIST c08
-  %am.desc.c;>
+  %am.desc.c;
+  tpattern NMTOKEN #IMPLIED>
 
 <!ELEMENT c09 ((%m.c.base.descgrp;),(thead?,c10+)*)>
 <!ATTLIST c09
-  %am.desc.c;>
+  %am.desc.c;
+  tpattern NMTOKEN #IMPLIED>
 
 <!ELEMENT c10 ((%m.c.base.descgrp;),(thead?,c11+)*)>
 <!ATTLIST c10
-  %am.desc.c;>
+  %am.desc.c;
+  tpattern NMTOKEN #IMPLIED>
 
 <!ELEMENT c11 ((%m.c.base.descgrp;),(thead?,c12+)*)>
 <!ATTLIST c11
-  %am.desc.c;>
+  %am.desc.c;
+  tpattern NMTOKEN #IMPLIED>
 
 <!ELEMENT c12 (%m.c.base.descgrp;)>
 <!ATTLIST c12
-  %am.desc.c;>
+  %am.desc.c;
+  tpattern NMTOKEN #IMPLIED>
 
 <!ENTITY % m.access "persname|corpname|famname|geogname|name|occupation
                      |subject|genreform|function|title">
@@ -376,14 +409,6 @@
   %am.common;
   localtype CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED>
-
-<!ENTITY % m.inter.noquote "chronlist|list|table">
-
-<!ENTITY % m.inter "%m.inter.noquote;|blockquote">
-
-<!-- ELEMENT MODELS -->
-
-<!ENTITY % m.blocks "%m.inter;|p">
 
 <!ELEMENT controlnote (%m.blocks;)+>
 <!ATTLIST controlnote
@@ -1198,16 +1223,7 @@
   %am.internal.ptr;
   entityref ENTITY #IMPLIED>
 
-<!ENTITY % m.cOrC01 "c+|c01+">
-
 <!-- DSC -->
-
-<!ELEMENT dsc (head?,(%m.blocks;)*,thead?,(%m.cOrC01;)?)>
-<!ATTLIST dsc
-  %am.common;
-  dsctype (analyticover|combined|in-depth|otherdsctype) #IMPLIED
-  otherdsctype CDATA #IMPLIED
-  encodinganalog CDATA #IMPLIED>
 
 <!-- RELATIONS -->
 
