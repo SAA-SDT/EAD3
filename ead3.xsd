@@ -413,7 +413,7 @@
             <xs:enumeration value="otherdaotype"/>
           </xs:restriction>
         </xs:simpleType>
-      </xs:attribute><xs:attribute name="otherdaotype"/><xs:attribute name="coverage">
+      </xs:attribute><xs:attribute name="otherdaotype" type="xs:token"/><xs:attribute name="coverage">
         <xs:simpleType>
           <xs:restriction base="xs:token">
             <xs:enumeration value="whole"/>
@@ -507,7 +507,7 @@
             <xs:enumeration value="otherphysdescstructuredtype"/>
           </xs:restriction>
         </xs:simpleType>
-      </xs:attribute><xs:attribute name="otherphysdescstructuredtype"/><xs:attributeGroup ref="a.coverage"/></xs:complexType>
+      </xs:attribute><xs:attribute name="otherphysdescstructuredtype" type="xs:token"/><xs:attributeGroup ref="a.coverage"/></xs:complexType>
   <xs:complexType name="quantity" mixed="true"><xs:attributeGroup ref="am.common"/><xs:attribute name="encodinganalog" type="xs:token"/><xs:attribute name="approximate" type="av.boolean"/></xs:complexType>
   <xs:complexType name="unittype" mixed="true"><xs:attributeGroup ref="am.common"/><xs:attribute name="encodinganalog" type="xs:token"/><xs:attributeGroup ref="am.access.no.normal"/></xs:complexType>
   <xs:complexType name="repository"><xs:sequence>
@@ -1250,7 +1250,7 @@
             <xs:enumeration value="otherdsctype"/>
           </xs:restriction>
         </xs:simpleType>
-      </xs:attribute><xs:attribute name="otherdsctype" type="xs:NMTOKEN"/><xs:attribute name="encodinganalog" type="xs:token"/></xs:complexType>
+      </xs:attribute><xs:attribute name="otherdsctype" type="xs:token"/><xs:attribute name="encodinganalog" type="xs:token"/></xs:complexType>
   <xs:complexType name="c"><xs:complexContent>
         <xs:extension base="m.c.base">
           <xs:sequence minOccurs="0" maxOccurs="unbounded">
@@ -1371,7 +1371,7 @@
             <xs:enumeration value="otherrelationtype"/>
           </xs:restriction>
         </xs:simpleType>
-      </xs:attribute><xs:attribute name="otherrelationtype" type="xs:string"/><xs:attribute name="lastdatetimeverified">
+      </xs:attribute><xs:attribute name="otherrelationtype" type="xs:token"/><xs:attribute name="lastdatetimeverified">
         <xs:simpleType>
           <xs:union>
             <xs:simpleType>
@@ -1673,7 +1673,7 @@
     <xs:attribute name="script" type="xs:NMTOKEN"/>
   </xs:attributeGroup>
   <xs:attributeGroup name="am.desc.base">
-    <xs:attribute name="otherlevel" type="xs:NMTOKEN"/>
+    <xs:attribute name="otherlevel" type="xs:token"/>
     <xs:attribute name="encodinganalog" type="xs:token"/>
   </xs:attributeGroup>
   <xs:attributeGroup name="am.desc.c">
