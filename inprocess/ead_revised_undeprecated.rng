@@ -2614,6 +2614,9 @@
       <optional>
         <ref name="a.encodinganalog"/>
       </optional>
+      <optional>
+        <ref name="a.tpattern"/>
+      </optional>
       <group>
         <optional>
           <ref name="e.head"/>
@@ -3011,6 +3014,9 @@
     <optional>
       <ref name="a.level"/>
     </optional>
+    <optional>
+      <ref name="a.tpattern"/>
+    </optional>
     <ref name="am.desc.base"/>
   </rng:define>
   <rng:define name="am.access">
@@ -3273,6 +3279,11 @@
       <ref name="av.zeroorone"/>
     </attribute>
   </rng:define>
+      <rng:define name="a.tpattern">
+        <rng:attribute name="tpattern">
+          <rng:data type="NMTOKEN"/>
+        </rng:attribute>
+      </rng:define>
   <!-- other attributes -->
   <rng:define name="a.coverage">
     <attribute name="coverage">
