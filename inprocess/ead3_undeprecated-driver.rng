@@ -39,6 +39,52 @@
                 </zeroOrMore>
             </element>
         </define>
+        
+        <!-- dsc -->
+
+        <define name="e.dsc">
+            <element name="dsc">
+                <ref name="am.common"/>
+                <optional>
+                    <attribute name="tpattern">
+                        <data type="NMTOKEN"/>
+                    </attribute>
+                </optional>
+                <optional>
+                    <attribute name="dsctype">
+                        <choice>
+                            <value>analyticover</value>
+                            <value>combined</value>
+                            <value>in-depth</value>
+                            <value>otherdsctype</value>
+                        </choice>
+                    </attribute>
+                </optional>
+                <optional>
+                    <attribute name="otherdsctype">
+                        <data type="token"/>
+                    </attribute>
+                </optional>
+                <optional>
+                    <ref name="a.encodinganalog"/>
+                </optional>
+                <group>
+                    <optional>
+                        <ref name="e.head"/>
+                    </optional>
+                    <zeroOrMore>
+                        <ref name="m.blocks"/>
+                    </zeroOrMore>
+                </group>
+                <optional>
+                    <ref name="e.thead"/>
+                </optional>
+                <optional>
+                    <ref name="m.cOrC01"/>
+                </optional>
+            </element>
+        </define>
+        
         <!-- Components -->
         <define name="e.c">
             <element name="c">
@@ -381,6 +427,11 @@
     </define>
     <define name="m.c.base.descgrp">
         <ref name="am.desc.c"/>
+        <optional>
+            <attribute name="tpattern">
+                <data type="NMTOKEN"/>
+            </attribute>
+        </optional>
         <optional>
             <ref name="e.head"/>
         </optional>

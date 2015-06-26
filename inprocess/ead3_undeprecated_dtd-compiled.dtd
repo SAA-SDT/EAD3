@@ -31,7 +31,7 @@
          |subfonds|subgrp|subseries) #REQUIRED">
 
 <!ENTITY % am.desc.base "
-  otherlevel NMTOKEN #IMPLIED
+  otherlevel CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED">
 
 <!ENTITY % a.localtype "
@@ -1206,7 +1206,7 @@
 <!ATTLIST dsc
   %am.common;
   dsctype (analyticover|combined|in-depth|otherdsctype) #IMPLIED
-  otherdsctype NMTOKEN #IMPLIED
+  otherdsctype CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED>
 
 <!-- RELATIONS -->

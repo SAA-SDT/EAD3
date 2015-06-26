@@ -39,7 +39,7 @@
 
   relatedencoding CDATA #REQUIRED
 
-  otherlevel NMTOKEN #IMPLIED
+  otherlevel CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED
 
   level (class|collection|file|fonds|item|otherlevel|recordgrp|series
@@ -69,7 +69,7 @@
   level (class|collection|file|fonds|item|otherlevel|recordgrp|series
          |subfonds|subgrp|subseries) #IMPLIED
 
-  otherlevel NMTOKEN #IMPLIED
+  otherlevel CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED>
 
 <!ELEMENT c01 ((head?,did,(accessrestrict|accruals|acqinfo
@@ -92,7 +92,7 @@
   level (class|collection|file|fonds|item|otherlevel|recordgrp|series
          |subfonds|subgrp|subseries) #IMPLIED
 
-  otherlevel NMTOKEN #IMPLIED
+  otherlevel CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED>
 
 <!ELEMENT c02 ((head?,did,(accessrestrict|accruals|acqinfo
@@ -115,7 +115,7 @@
   level (class|collection|file|fonds|item|otherlevel|recordgrp|series
          |subfonds|subgrp|subseries) #IMPLIED
 
-  otherlevel NMTOKEN #IMPLIED
+  otherlevel CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED>
 
 <!ELEMENT c03 ((head?,did,(accessrestrict|accruals|acqinfo
@@ -138,7 +138,7 @@
   level (class|collection|file|fonds|item|otherlevel|recordgrp|series
          |subfonds|subgrp|subseries) #IMPLIED
 
-  otherlevel NMTOKEN #IMPLIED
+  otherlevel CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED>
 
 <!ELEMENT c04 ((head?,did,(accessrestrict|accruals|acqinfo
@@ -161,7 +161,7 @@
   level (class|collection|file|fonds|item|otherlevel|recordgrp|series
          |subfonds|subgrp|subseries) #IMPLIED
 
-  otherlevel NMTOKEN #IMPLIED
+  otherlevel CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED>
 
 <!ELEMENT c05 ((head?,did,(accessrestrict|accruals|acqinfo
@@ -184,7 +184,7 @@
   level (class|collection|file|fonds|item|otherlevel|recordgrp|series
          |subfonds|subgrp|subseries) #IMPLIED
 
-  otherlevel NMTOKEN #IMPLIED
+  otherlevel CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED>
 
 <!ELEMENT c06 ((head?,did,(accessrestrict|accruals|acqinfo
@@ -207,7 +207,7 @@
   level (class|collection|file|fonds|item|otherlevel|recordgrp|series
          |subfonds|subgrp|subseries) #IMPLIED
 
-  otherlevel NMTOKEN #IMPLIED
+  otherlevel CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED>
 
 <!ELEMENT c07 ((head?,did,(accessrestrict|accruals|acqinfo
@@ -230,7 +230,7 @@
   level (class|collection|file|fonds|item|otherlevel|recordgrp|series
          |subfonds|subgrp|subseries) #IMPLIED
 
-  otherlevel NMTOKEN #IMPLIED
+  otherlevel CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED>
 
 <!ELEMENT c08 ((head?,did,(accessrestrict|accruals|acqinfo
@@ -253,7 +253,7 @@
   level (class|collection|file|fonds|item|otherlevel|recordgrp|series
          |subfonds|subgrp|subseries) #IMPLIED
 
-  otherlevel NMTOKEN #IMPLIED
+  otherlevel CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED>
 
 <!ELEMENT c09 ((head?,did,(accessrestrict|accruals|acqinfo
@@ -276,7 +276,7 @@
   level (class|collection|file|fonds|item|otherlevel|recordgrp|series
          |subfonds|subgrp|subseries) #IMPLIED
 
-  otherlevel NMTOKEN #IMPLIED
+  otherlevel CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED>
 
 <!ELEMENT c10 ((head?,did,(accessrestrict|accruals|acqinfo
@@ -299,7 +299,7 @@
   level (class|collection|file|fonds|item|otherlevel|recordgrp|series
          |subfonds|subgrp|subseries) #IMPLIED
 
-  otherlevel NMTOKEN #IMPLIED
+  otherlevel CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED>
 
 <!ELEMENT c11 ((head?,did,(accessrestrict|accruals|acqinfo
@@ -322,7 +322,7 @@
   level (class|collection|file|fonds|item|otherlevel|recordgrp|series
          |subfonds|subgrp|subseries) #IMPLIED
 
-  otherlevel NMTOKEN #IMPLIED
+  otherlevel CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED>
 
 <!ELEMENT c12 (head?,did,(accessrestrict|accruals|acqinfo
@@ -345,7 +345,7 @@
   level (class|collection|file|fonds|item|otherlevel|recordgrp|series
          |subfonds|subgrp|subseries) #IMPLIED
 
-  otherlevel NMTOKEN #IMPLIED
+  otherlevel CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED>
 
 <!-- MIXED CONTENT MODELS -->
@@ -2215,7 +2215,7 @@
   lang NMTOKEN #IMPLIED
   script NMTOKEN #IMPLIED
   dsctype (analyticover|combined|in-depth|otherdsctype) #IMPLIED
-  otherdsctype NMTOKEN #IMPLIED
+  otherdsctype CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED>
 
 <!-- RELATIONS -->
