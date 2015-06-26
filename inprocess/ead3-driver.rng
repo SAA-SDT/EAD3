@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<grammar xmlns="http://relaxng.org/ns/structure/1.0"
-    xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" ns="http://ead3.archivists.org/schema/">
-    <include href="ead_revised_defs.rng"/>
-    <start>
-        <ref name="e.ead"/>
-    </start>
-</grammar>
