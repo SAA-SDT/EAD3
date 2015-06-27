@@ -2771,47 +2771,17 @@
   <rng:define name="m.datesingle">
     <optional>
       <attribute name="standarddate">
-        <choice>
-          <data type="date">
-            <param name="maxInclusive">2099-12-31</param>
-          </data>
-          <data type="gYear">
-            <param name="maxInclusive">2099</param>
-          </data>
-          <data type="gYearMonth">
-            <param name="maxInclusive">2099-12</param>
-          </data>
-        </choice>
+          <data type="token"/>
       </attribute>
     </optional>
     <optional>
       <attribute name="notbefore">
-        <choice>
-          <data type="date">
-            <param name="maxInclusive">2099-12-31</param>
-          </data>
-          <data type="gYear">
-            <param name="maxInclusive">2099</param>
-          </data>
-          <data type="gYearMonth">
-            <param name="maxInclusive">2099-12</param>
-          </data>
-        </choice>
+        <data type="token"/> 
       </attribute>
     </optional>
     <optional>
       <attribute name="notafter">
-        <choice>
-          <data type="date">
-            <param name="maxInclusive">2099-12-31</param>
-          </data>
-          <data type="gYear">
-            <param name="maxInclusive">2099</param>
-          </data>
-          <data type="gYearMonth">
-            <param name="maxInclusive">2099-12</param>
-          </data>
-        </choice>
+        <data type="token"/>
       </attribute>
     </optional>
     <ref name="m.mixed.basic"/>

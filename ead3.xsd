@@ -1460,69 +1460,9 @@
   <xs:complexType name="m.datesingle">
     <xs:complexContent>
       <xs:extension base="m.mixed.basic">
-        <xs:attribute name="standarddate">
-          <xs:simpleType>
-            <xs:union>
-              <xs:simpleType>
-                <xs:restriction base="xs:date">
-                  <xs:maxInclusive value="2099-12-31"/>
-                </xs:restriction>
-              </xs:simpleType>
-              <xs:simpleType>
-                <xs:restriction base="xs:gYear">
-                  <xs:maxInclusive value="2099"/>
-                </xs:restriction>
-              </xs:simpleType>
-              <xs:simpleType>
-                <xs:restriction base="xs:gYearMonth">
-                  <xs:maxInclusive value="2099-12"/>
-                </xs:restriction>
-              </xs:simpleType>
-            </xs:union>
-          </xs:simpleType>
-        </xs:attribute>
-        <xs:attribute name="notbefore">
-          <xs:simpleType>
-            <xs:union>
-              <xs:simpleType>
-                <xs:restriction base="xs:date">
-                  <xs:maxInclusive value="2099-12-31"/>
-                </xs:restriction>
-              </xs:simpleType>
-              <xs:simpleType>
-                <xs:restriction base="xs:gYear">
-                  <xs:maxInclusive value="2099"/>
-                </xs:restriction>
-              </xs:simpleType>
-              <xs:simpleType>
-                <xs:restriction base="xs:gYearMonth">
-                  <xs:maxInclusive value="2099-12"/>
-                </xs:restriction>
-              </xs:simpleType>
-            </xs:union>
-          </xs:simpleType>
-        </xs:attribute>
-        <xs:attribute name="notafter">
-          <xs:simpleType>
-            <xs:union>
-              <xs:simpleType>
-                <xs:restriction base="xs:date">
-                  <xs:maxInclusive value="2099-12-31"/>
-                </xs:restriction>
-              </xs:simpleType>
-              <xs:simpleType>
-                <xs:restriction base="xs:gYear">
-                  <xs:maxInclusive value="2099"/>
-                </xs:restriction>
-              </xs:simpleType>
-              <xs:simpleType>
-                <xs:restriction base="xs:gYearMonth">
-                  <xs:maxInclusive value="2099-12"/>
-                </xs:restriction>
-              </xs:simpleType>
-            </xs:union>
-          </xs:simpleType>
-        </xs:attribute>
+        <xs:attribute name="standarddate" type="xs:token"/>
+        <xs:attribute name="notbefore" type="xs:token"/>
+        <xs:attribute name="notafter" type="xs:token"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
