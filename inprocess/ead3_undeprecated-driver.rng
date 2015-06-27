@@ -28,7 +28,9 @@
         <define name="e.archdesc">
             <element name="archdesc">
                 <ref name="am.common"/>
-                <ref name="a.localtype"/>
+                <optional>
+                    <ref name="a.localtype"/>
+                </optional>
                 <optional>
                     <ref name="a.relatedencoding"/>
                 </optional>
@@ -430,8 +432,10 @@
                 <ref name="e.head"/>
             </optional>
             <oneOrMore>
+                <choice>
                 <ref name="m.blocks"/>
                 <ref name="m.desc.base.descgrp"/>
+                </choice>
             </oneOrMore>
         </element>
     </define>

@@ -20,7 +20,7 @@
           <xs:group ref="m.desc.base.descgrp"/>
           <xs:element name="dsc" type="dsc"/>
         </xs:choice>
-      </xs:sequence><xs:attributeGroup ref="am.common"/><xs:attributeGroup ref="a.localtype"/><xs:attribute name="relatedencoding" type="xs:token"/><xs:attributeGroup ref="am.desc.base"/><xs:attributeGroup ref="a.level"/><xs:attribute name="base" type="xs:anyURI"/></xs:complexType>
+      </xs:sequence><xs:attributeGroup ref="am.common"/><xs:attribute name="localtype" type="xs:token"/><xs:attribute name="relatedencoding" type="xs:token"/><xs:attributeGroup ref="am.desc.base"/><xs:attributeGroup ref="a.level"/><xs:attribute name="base" type="xs:anyURI"/></xs:complexType>
   <!-- dsc -->
   <xs:complexType name="dsc"><xs:sequence>
         <xs:sequence>
@@ -1945,10 +1945,10 @@
   </xs:group>
   <xs:complexType name="descgrp"><xs:sequence>
         <xs:element name="head" type="head" minOccurs="0"/>
-        <xs:sequence maxOccurs="unbounded">
+        <xs:choice maxOccurs="unbounded">
           <xs:group ref="m.blocks"/>
           <xs:group ref="m.desc.base.descgrp"/>
-        </xs:sequence>
+        </xs:choice>
       </xs:sequence><xs:attributeGroup ref="am.common"/><xs:attribute name="localtype" type="xs:token"/><xs:attribute name="encodinganalog" type="xs:token"/></xs:complexType>
   <xs:complexType name="m.c.base.descgrp">
     <xs:sequence>
