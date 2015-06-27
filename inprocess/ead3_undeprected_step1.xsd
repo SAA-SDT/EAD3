@@ -26,10 +26,10 @@
       </xs:sequence>
       <xs:attributeGroup ref="u:am.common"/>
       <xs:attributeGroup ref="u:a.localtype"/>
-      <xs:attributeGroup ref="u:a.relatedencoding"/>
+      <xs:attribute name="relatedencoding" type="xs:token"/>
       <xs:attributeGroup ref="u:am.desc.base"/>
       <xs:attributeGroup ref="u:a.level"/>
-      <xs:attributeGroup ref="u:a.base"/>
+      <xs:attribute name="base" type="xs:anyURI"/>
     </xs:complexType>
   </xs:element>
   <!-- dsc -->

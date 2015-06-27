@@ -20,7 +20,7 @@
           <xs:group ref="m.desc.base.descgrp"/>
           <xs:element name="dsc" type="dsc"/>
         </xs:choice>
-      </xs:sequence><xs:attributeGroup ref="am.common"/><xs:attributeGroup ref="a.localtype"/><xs:attributeGroup ref="a.relatedencoding"/><xs:attributeGroup ref="am.desc.base"/><xs:attributeGroup ref="a.level"/><xs:attributeGroup ref="a.base"/></xs:complexType>
+      </xs:sequence><xs:attributeGroup ref="am.common"/><xs:attributeGroup ref="a.localtype"/><xs:attribute name="relatedencoding" type="xs:token"/><xs:attributeGroup ref="am.desc.base"/><xs:attributeGroup ref="a.level"/><xs:attribute name="base" type="xs:anyURI"/></xs:complexType>
   <!-- dsc -->
   <xs:complexType name="dsc"><xs:sequence>
         <xs:sequence>

@@ -29,10 +29,14 @@
             <element name="archdesc">
                 <ref name="am.common"/>
                 <ref name="a.localtype"/>
-                <ref name="a.relatedencoding"/>
+                <optional>
+                    <ref name="a.relatedencoding"/>
+                </optional>
                 <ref name="am.desc.base"/>
                 <ref name="a.level"/>
-                <ref name="a.base"/>
+                <optional>
+                    <ref name="a.base"/>
+                </optional>
                 <zeroOrMore>
                     <ref name="e.runner"/>
                 </zeroOrMore>
