@@ -9,8 +9,8 @@
         <xs:element ref="u:archdesc"/>
       </xs:sequence>
       <xs:attributeGroup ref="u:am.common"/>
-      <xs:attributeGroup ref="u:a.relatedencoding"/>
-      <xs:attributeGroup ref="u:a.base"/>
+      <xs:attribute name="relatedencoding" type="xs:token"/>
+      <xs:attribute name="base" type="xs:anyURI"/>
     </xs:complexType>
   </xs:element>
   <!-- ARCHDESC -->

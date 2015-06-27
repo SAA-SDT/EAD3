@@ -2697,7 +2697,7 @@
     <element>
       <anyName>
         <except>
-          <nsName ns="http://ead3.archivists.org/schema/undeprecated"/>
+          <nsName ns="http://ead3.archivists.org/schema/"/>
         </except>
       </anyName>
       <zeroOrMore>
