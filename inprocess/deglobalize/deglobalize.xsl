@@ -42,6 +42,9 @@
     <xsl:template match="@*[starts-with(., 'schema')]">
         <xsl:attribute name="{name()}"><xsl:value-of select="substring-after(., ':')"/></xsl:attribute>
     </xsl:template>
+    <xsl:template match="@*[starts-with(., 'u')]">
+        <xsl:attribute name="{name()}"><xsl:value-of select="substring-after(., ':')"/></xsl:attribute>
+    </xsl:template>
     <!--    
     <xsl:template match="xs:element[starts-with(@ref, 'schema:m.')]">
         <xs:group>
