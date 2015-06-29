@@ -1,0 +1,2076 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="ead3.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-stylesheet type="text/xsl" href="uarcstyle.xsl"?>
+<ead xmlns="http://ead3.archivists.org/schema/" audience="external"> 
+	<control>
+		<recordid>uarc01180</recordid>
+	 
+	 <filedesc> 
+		<titlestmt> 
+		  <titleproper encodinganalog="Title">John Gibler Papers,
+			 1890-2006</titleproper> 
+		  <author encodinganalog="Contributor">Susan Hoffman</author> 
+		</titlestmt> 
+	 	
+		<publicationstmt> 
+		  <publisher encodinganalog="Publisher">University of Minnesota
+			 Libraries</publisher> 
+		  <date encodinganalog="date">April 2010</date> 
+		  <address> 
+			 <addressline>University of Minnesota Libraries</addressline> 
+			 <addressline>Minneapolis, MN 55455</addressline> 
+		  </address> 
+		</publicationstmt> 
+	 </filedesc> 
+		
+		<maintenancestatus value="new">New</maintenancestatus>
+		
+		<maintenanceagency>
+			<agencycode>MnU</agencycode>	
+			<agencyname>University of Minnesota Libraries</agencyname>
+		</maintenanceagency>
+		
+		<languagedeclaration>
+			<language langcode="eng">English</language>
+			<script scriptcode="Latn">Latin</script>
+		</languagedeclaration>
+		
+		<conventiondeclaration>
+			<citation>DACS</citation>
+		</conventiondeclaration>
+		
+		<maintenancehistory>
+			<maintenanceevent>
+				<eventtype value="created"/>
+				<eventdatetime standarddatetime="2010-04">April 2010</eventdatetime>
+				<agenttype value="human"/>
+				<agent>EAD encoding by Karen Spilman</agent>
+			</maintenanceevent>
+			<maintenanceevent>
+				<eventtype value="updated">Converted to EAD3</eventtype>
+				<eventdatetime standarddatetime="2014-09-11">September 11, 2014</eventdatetime>
+				<agenttype value="human"/>
+				<agent>EAD converted by Lisa Calahan</agent>
+			</maintenanceevent>
+		</maintenancehistory>
+	</control>
+	
+  <archdesc level="collection" relatedencoding="MARC21"> 
+	 <did> 
+	 	<repository label="Repository:" encodinganalog="852$a">
+	 		<corpname source="LCNAF" encodinganalog="110">
+	 			<part localtype="a">University of Minnesota</part>
+	 			<part localtype="b">University of Minnesota Archives [uarc]</part>
+	 		</corpname>
+	 	</repository> 
+
+		<origination label="Creator: "> 
+		  <persname source="lcnaf" rules="aacr2" encodinganalog="100">
+		  	<part>Gibler, John W.</part>
+		  </persname> 
+		</origination> 
+		
+	 	<unittitle encodinganalog="245$a" label="Title: ">John Gibler papers
+		  </unittitle> 
+	 	
+		<unitdatestructured encodinganalog="245$f" unitdatetype="inclusive" label="Dates: ">
+			<daterange>
+			<fromdate>1890</fromdate>
+			<todate>2006</todate>
+		</daterange>
+		</unitdatestructured> 
+		<unitdatestructured label="Dates: " unitdatetype="bulk" encodinganalog="245$g">
+			<daterange>
+				<fromdate>1950s</fromdate>
+				<todate>1990s</todate>
+			</daterange>
+		</unitdatestructured> 
+	 
+	 	<parallelphysdescset>
+	 		<physdescstructured label="Quantity:" physdescstructuredtype="carrier" coverage="whole"  encodinganalog="300">
+	 			<quantity>6</quantity>					
+	 			<unittype>boxes</unittype>
+	 		</physdescstructured>
+	 		<physdescstructured label="Quantity:" physdescstructuredtype="spaceoccupied" coverage="whole" encodinganalog="300">
+	 			<quantity>6</quantity>
+	 			<unittype>cubic feet</unittype>
+	 		</physdescstructured>
+	 	</parallelphysdescset>
+
+		<abstract encodinganalog="520" label="Abstract: ">Collection contains the
+		  papers of John W. Gibler, noted breeder of cereal grains and soybeans, and
+		  alumnus of the University of Minnesota. </abstract> 
+	
+	 	<unitid encodinganalog="099" countrycode="mnu" repositorycode="MnU" label="Collection Number: ">uarc 1180</unitid>
+		
+	 	<langmaterial encodinganalog="546" label="Language">
+		<language encodinganalog="041" langcode="mul">Collection material in English,
+		Spanish, and Portuguese</language> 
+	 	</langmaterial> 
+	 </did> 
+  	
+  	 <accessrestrict encodinganalog="506"> 
+		<head>Use of Materials</head> 
+		<p>Items in this collection do not circulate and may be used in-house
+		  only. </p> 
+	 </accessrestrict> 
+	 <userestrict encodinganalog="540"> 
+		<head>Copyright</head> 
+		<p>Researchers may quote from the collection under the fair use provision
+		  of the copyright law (Title 17, U.S. Code). Requests to publish should be
+		  arranged with the University of Minnesota Archives. </p> 
+	 </userestrict> 
+	 <prefercite> 
+		<head>Preferred citation</head> 
+		<p>John Gibler papers, University Archives, University of Minnesota, Twin
+		  Cities. </p> 
+	 </prefercite> 
+	 <acqinfo> 
+		<head>Source of acquisition</head> 
+		<p>The collection was acquired through a donation from John Gibler’s
+		  daughter, Janet Margaret Krukar in 2007. </p> 
+	 </acqinfo> 
+	 <processinfo> 
+		<head>Processing Information</head> 
+		<p>Collection processed by Susan Hoffman with funds from the College of
+		  Food, Agriculture, and Natural Resource Sciences (CFANS) and individual donors.
+		  Digitization funds provided by the State of Minnesota from the Arts and
+		  Cultural Heritage Fund through the Minnesota Historical Society.</p> 
+	 </processinfo>
+  	
+	 <arrangement> 
+		<head>Arrangement</head> 
+		<p>The collection is arranged in six series: 
+		  <list> 
+			 <item>Professional Affiliations</item> 
+			 <item>Correspondence </item> 
+			 <item>Country Bulletins</item> 
+			 <item>Crop-Related Publications</item> 
+			 <item>Awards and Honoraria</item> 
+			 <item>Miscellaneous</item> 
+		  </list></p> 
+	 </arrangement> 
+	 <scopecontent encodinganalog="520"> 
+		<head>Scope and Content</head> 
+		<p>The John W. Gibler Papers include a wide range of wheat and crop
+		  breeding-related materials, including Gibler’s collection of journal articles,
+		  conference papers, plant-crossing ledgers and other technical and
+		  field-oriented materials. The materials cover the period when Gibler began his
+		  work in Mexico with Norman Borlaug in the early 1950s through the mid 1990s,
+		  when Gibler retired from consulting and international travel. The collection
+		  also includes work-related and personal correspondence. Much of the collection
+		  is in languages other than English. Because of the large volume, no attempt was
+		  made to identify the language of materials at the folder level. </p> 
+		<p>The material was in no discernable order. The collection has been
+		  organized into six series: Series 1. Professional Affiliations, includes
+		  documents generated by organizations and companies Gibler worked with or for
+		  during the course of his career. Series 2. Correspondence is divided into two
+		  sub-series, Personal and Professional. Series 3. Country Bulletins, contains
+		  copies of the official publications from Central and South American
+		  organizations Gibler was affiliated with. These materials are primarily in
+		  Portuguese and Spanish. Series 4. Crop-Related Publications includes Gibler’s
+		  library of crop-related research materials. Crops featured in this section
+		  include wheat, triticale, soybeans, corn, oats and barley. The bulk of the
+		  material focuses on wheat crosses and wheat pedigrees, and includes the
+		  published crosses of wheat generated during Gibler's work in Mexico. Most
+		  materials are in English, with some in Portuguese and French. Series 5. Awards
+		  and Honorarium. Series 6. Miscellaneous, includes news clippings, photographs,
+		  and biographical information. </p> 
+	 </scopecontent> 
+	 <bioghist encodinganalog="545"> 
+		<head>Biographical Sketch of John Gibler (1920-2006)</head> 
+		<p>John Wesley Gibler, B.S. (1947) University of Montana; M.S. (1950),
+		  Ph.D. (1951) University of Minnesota. University of Minnesota alumnus and
+		  contemporary of Norman Borlaug. Expert in the breeding of cereal and soybeans
+		  in highly toxic soils and leader in Latin American crop development. </p> 
+		<p>John Gibler was born in Willow City, South Dakota on November 10,
+		  1920. He grew up in rural Teton County, Montana where his father and mother
+		  farmed. He served as a Navy pilot in WWII, and enrolled at the University of
+		  Montana after leaving the service, earning his bachelor's degree in 1947.
+		  Gibler then enrolled in the University of Minnesota, earning his M.S. in 1950
+		  and Ph.D. in 1951, both in plant pathology. After receiving his doctorate,
+		  Gibler was recommended by E.C. Stakman to join Norman Borlaug in Mexico to work
+		  on wheat breeding projects. Gibler remained in Mexico through 1955. From 1955
+		  through 1969, Gibler worked as an agricultural consultant for the Rockefeller
+		  Foundation. He provided leadership on wheat, barley and oat improvement
+		  programs in Colombia (1956-1965) and Ecuador (1965-1967). In 1968-1969, he
+		  returned to Mexico and served as Director of Agricultural Programs at CIMMYT.
+		  His twenty years in the field in South American solidified his expertise in
+		  cereal and soybean breeding and seed production in highly toxic soils. </p> 
+		<p>Between 1969 and 1980, Gibler held several positions simultaneously in
+		  the public and private sector. He was Director of Massey-Ferguson International
+		  Programs based in Brazil from 1969-1980. He also served as Technical Director
+		  for FECOTRIGO (Federation of Farmer’s Wheat and Soybean Cooperatives of Rio
+		  Grand e do Sul Brazil) from 1969-1977, and Research Director for OCEPAR
+		  (Organization of Farm Cooperatives) in Brazil from 1977-1979. </p> 
+		<p>Between 1955 and 1980, Gibler participated in numerous special
+		  assignments which took him around the globe. He participated in crop
+		  improvement feasibility studies in the Near East, North Africa, Turkey, Spain,
+		  and Central American countries conducted by U.S. AID, FAO, the Rockefeller and
+		  Ford Foundations, CENTO and the World Bank From 1980-1983, Gibler worked
+		  briefly for International Plant Research Institute in the Cereals Program. When
+		  that company failed, Gibler returned to consulting, and spent his remaining
+		  work years through the mid 1990s advising South and Central American
+		  agricultural ministries on crop programs, concentrating on Bolivia and Brazil.
+		  </p> 
+		<p>Gibler received numerous honors for his work on wheat and triticale
+		  breeding, and was highly regarded as a program administrator. He was awarded
+		  the University of Minnesota’s E.C. Stakman award in September 2006. He Married
+		  twice; first to Catherine Marie Zander, who died in 2001, and to Bettie Rice.
+		  The Giblers had three children; Mary, Jeanette and Paul. John Gibler died
+		  December 13, 2006 in Hot Springs, AK. </p> 
+	 </bioghist> 
+	 <relatedmaterial> 
+		<head>Related Materials in University Archives</head> 
+		<p>The John Gibler papers are one of several collections held by the
+		  University of Minnesota that document the development of agricultural practices
+		  that were central to the Green Revolution, including</p> 
+		<p>Norman Borlaug papers</p> 
+		<p>Elvin C. Stakman papers</p> 
+		<p>John S. Niederhauser papers</p> 
+		<p>Helen Hart papers</p> 
+		<p>Cereal Rust Laboratory records</p> 
+		<p>Department of Plant Pathology records</p> 
+	 </relatedmaterial> 
+	 <controlaccess> 
+		<head>Index Terms</head> 
+		<p>This collection is indexed under the following headings in the catalog
+		  of the University of Minnesota Libraries. Researchers desiring materials about
+		  related topics, persons or places should search the catalog using these
+		  headings. </p> 
+		<persname source="lcnaf" rules="aacr2" encodinganalog="700 1"><part localtype="a">Gibler,
+			John W.</part> 
+			<part localtype="b">-- Archives.</part></persname> 
+	 	<persname source="lcnaf" rules="aacr2" encodinganalog="700 1"><part>Borlaug,
+	 		N.E.</part></persname> 
+	 	<corpname source="lcnaf" rules="aacr2" encodinganalog="610"><part>Rockefeller
+	 		Foundation.</part> </corpname> 
+	 	<geogname source="lcnaf" rules="aacr2" encodinganalog="651"><part>Mexico.</part>
+		  </geogname> 
+	 	<geogname source="lcnaf" rules="aacr2" encodinganalog="651"><part>Brazil.</part></geogname> 
+	 	<geogname source="lcnaf" rules="aacr2" encodinganalog="651"><part>Colombia.
+	 	</part></geogname> 
+	 	<subject source="lcsh" encodinganalog="650"><part>Green Revolution.</part></subject> 
+	 	<subject source="lcsh" encodinganalog="650"><part localtype="a">Wheat</part>
+	 		<part localtype="b">--Disease and pest
+	 		resistance.</part></subject> 
+	 	<subject source="lcsh" encodinganalog="650"><part localtype="a">Wheat</part>
+	 		<part localtype="b">--Genetics.</part></subject> 
+	 	<subject source="lcsh" encodinganalog="650"><part localtype="a">Wheat</part>
+	 		<part localtype="b">--Mexico.</part></subject> 
+	 </controlaccess> 
+
+  	<dsc> 
+		<head>Detailed Contents</head> 
+		<p>The following section contains a detailed list of the materials in the
+		  collection.</p> 
+		<c01 level="series"> 
+		  <did> 
+			 <unittitle>Professional Affiliations</unittitle> 
+		  </did> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Rockefeller Foundation, Wheat, Oat and Barley program.
+				  Colombia, </unittitle> 
+				<unitdate unitdatetype="inclusive">1955-1965.</unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">24</container> 
+				<dao daotype="derived" show="replace" actuate="onrequest"  href="http://purl.umn.edu/105002"> 
+				  <descriptivenote> 
+					 <p>View folder contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Wheat breeding program histories written by John Gibler,
+				  </unittitle> 
+				<unitdate unitdatetype="inclusive">1996. </unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">25</container> 
+			 	<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/105003"> 
+				  <descriptivenote> 
+					 <p>View folder contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Tibaitata, Colombia, </unittitle> 
+				<unitdate unitdatetype="inclusive">1955.</unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">26</container> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/105004"> 
+				  <descriptivenote> 
+					 <p>View folder contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+			 <scopecontent> 
+				<p>Includes photographs. </p> 
+			 </scopecontent> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Wheat rust and wheat production in Mexico and Colombia,
+				  Gibler and Borlaug, </unittitle> 
+				<unitdate unitdatetype="inclusive">1952-1953. </unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">27</container> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/105005"> 
+				  <descriptivenote> 
+					 <p>View folder contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Wheat rust, Colombia, </unittitle> 
+				<unitdate unitdatetype="inclusive">1962. </unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">28</container> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/105006"> 
+				  <descriptivenote> 
+					 <p>View folder contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Wheat rust, Gibler and Borlaug, </unittitle> 
+				<unitdate unitdatetype="inclusive">1964-1965. </unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">29</container> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/105007"> 
+				  <descriptivenote> 
+					 <p>View folder contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Notes on Turkish wheat rust programs, Gibler and
+				  Borlaug, </unittitle> 
+				<unitdate unitdatetype="inclusive">1968. </unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">30</container> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/105008"> 
+				  <descriptivenote> 
+					 <p>View folder contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>“The Bolivian Wheat Program, Santa Cruz. A Review and
+				  Evaluation,” John Gibler, </unittitle> 
+				<unitdate unitdatetype="inclusive">1972.</unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">31</container> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/105009"> 
+				  <descriptivenote> 
+					 <p>View folder contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Brazil, miscellaneous, </unittitle> 
+				<unitdate unitdatetype="inclusive">1972-1977. </unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">32</container> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/105010"> 
+				  <descriptivenote> 
+					 <p>View folder contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Massey-Ferguson, </unittitle> 
+				<unitdate unitdatetype="inclusive">1973-1979. </unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">33</container> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/105011"> 
+				  <descriptivenote> 
+					 <p>View folder contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Brazil seed requests to CIMMYT, </unittitle> 
+				<unitdate unitdatetype="inclusive">1977. </unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">34</container> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/105012"> 
+				  <descriptivenote> 
+					 <p>View folder contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>International Plant Research Institute (IPRI),
+				  </unittitle> 
+				<unitdate unitdatetype="inclusive">1980s.</unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">35-40</container> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/105013"> 
+				  <descriptivenote> 
+					 <p>View folder 35 contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/105014"> 
+				  <descriptivenote> 
+					 <p>View folder 36 contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/105015"> 
+				  <descriptivenote> 
+					 <p>View folder 37 contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/105016"> 
+				  <descriptivenote> 
+					 <p>View folder 38 contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/105017"> 
+				  <descriptivenote> 
+					 <p>View folder 39 contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/105018"> 
+				  <descriptivenote> 
+					 <p>View folder 40 contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Dow Chemical consulting, </unittitle> 
+				<unitdate unitdatetype="inclusive">1986. </unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">41</container> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/105019"> 
+				  <descriptivenote> 
+					 <p>View folder contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Kenya Agricultural Research Project consulting,
+				  </unittitle> 
+				<unitdate unitdatetype="inclusive">1987. </unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">42</container> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/105020"> 
+				  <descriptivenote> 
+					 <p>View folder contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Ronco consulting, </unittitle> 
+				<unitdate unitdatetype="inclusive">1988-1989. </unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">43</container> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/105021"> 
+				  <descriptivenote> 
+					 <p>View folder contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		</c01> 
+		<c01 level="series"> 
+		  <did> 
+			 <unittitle>Correspondence</unittitle> 
+		  </did> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Professional, </unittitle> 
+				<unitdate unitdatetype="inclusive">1950s-1990s.</unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">44-46</container> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/105022"> 
+				  <descriptivenote> 
+					 <p>View folder 44 contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/105023"> 
+				  <descriptivenote> 
+					 <p>View folder 45 contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/105024"> 
+				  <descriptivenote> 
+					 <p>View folder 46 contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Professional, </unittitle> 
+				<unitdate unitdatetype="inclusive">1957-1979.</unitdate> 
+				<container localtype="box">5</container> 
+				<container localtype="folder">26</container> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/105031"> 
+				  <descriptivenote> 
+					 <p>View folder contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Personal, </unittitle> 
+				<unitdate unitdatetype="inclusive">1953, 1970s-2000.</unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">47-52</container> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/105025"> 
+				  <descriptivenote> 
+					 <p>View folder 47 contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/105026"> 
+				  <descriptivenote> 
+					 <p>View folder 48 contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/105027"> 
+				  <descriptivenote> 
+					 <p>View folder 49 contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/105028"> 
+				  <descriptivenote> 
+					 <p>View folder 50 contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/105029"> 
+				  <descriptivenote> 
+					 <p>View folder 51 contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/105030"> 
+				  <descriptivenote> 
+					 <p>View folder 52 contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+			 <scopecontent> 
+				<p>Includes correspondence with Norman Borlaug and Katherine
+				  Gibler. </p> 
+			 </scopecontent> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Personal, </unittitle> 
+				<unitdate unitdatetype="inclusive">1958-1964.</unitdate> 
+				<container localtype="box">5</container> 
+				<container localtype="folder">27</container> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/105032"> 
+				  <descriptivenote> 
+					 <p>View folder contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		</c01> 
+		<c01 level="series"> 
+		  <did> 
+			 <unittitle>Country Bulletins</unittitle> 
+		  </did> 
+		  <c02 level="subseries"> 
+			 <did> 
+				<unittitle>Brazil</unittitle> 
+			 </did> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>“Boletim Technico” no.25, 26, </unittitle> 
+				  <unitdate unitdatetype="inclusive">1989, 1990.</unitdate> 
+				  <container localtype="box">2</container> 
+				  <container localtype="folder">1</container> 
+				</did> 
+			 </c03> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>“Controle Integrado de Doencas e de Paragas do Trigo
+					 no Rio Grande del Sul”. Centro Nacional de Pesquisa de Trigo, </unittitle> 
+				  <unitdate unitdatetype="inclusive">1988. </unitdate> 
+				  <container localtype="box">2</container> 
+				  <container localtype="folder">2</container> 
+				</did> 
+			 </c03> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>“Programa des Pesquisas,” </unittitle> 
+				  <unitdate unitdatetype="inclusive">1982, 1983. </unitdate> 
+				  <container localtype="box">2</container> 
+				  <container localtype="folder">3</container> 
+				</did> 
+			 </c03> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>Assorted wheat-related bulletins. Centro Nacional de
+					 Pesquisa de Trigo, </unittitle> 
+				  <unitdate unitdatetype="inclusive">1984, 1986, 1987. </unitdate> 
+				  <container localtype="box">2</container> 
+				  <container localtype="folder">4</container> 
+				</did> 
+			 </c03> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle> “Programa de Pesquisa: resultados de pesquisa com
+					 trigo e triticale 1978-1979 and 1979-1980”. OCEPAR (Organizacao das
+					 Cooperativas do Estado do Parana), </unittitle> 
+				  <unitdate unitdatetype="inclusive">1980, 1981. </unitdate> 
+				  <container localtype="box">2</container> 
+				  <container localtype="folder">5</container> 
+				</did> 
+			 </c03> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>“Programa de Pesquita: resultados de pesquita na safra
+					 de verao, 1986-1987." OCEPAR, </unittitle> 
+				  <unitdate unitdatetype="inclusive">1988. </unitdate> 
+				  <container localtype="box">2</container> 
+				  <container localtype="folder">6</container> 
+				</did> 
+			 </c03> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>“Culturas de Inverno: resultados de pesquita,
+					 1987-88”, Fundacao Centro de Experimentacao e Pequisa Fecotrigo (FUNDACEP
+					 Fecotrigo); "Recomendacoes da Comissao Sul Brasileira de Pesquita de
+					 Trigo-1989” (FUNDACEP Fecotrigo); Recomendacoes da Comissao Sul Brasileira de
+					 Pesquita de Trigo-1988” (FUNDACEP Fecotrigo), </unittitle> 
+				  <unitdate unitdatetype="inclusive">1988-1989. </unitdate> 
+				  <container localtype="box">2</container> 
+				  <container localtype="folder">7</container> 
+				</did> 
+			 </c03> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>OCEPAR "Programa de Pesquisa," </unittitle> 
+				  <unitdate unitdatetype="inclusive">1980. </unitdate> 
+				  <container localtype="box">5</container> 
+				  <container localtype="folder">3</container> 
+				</did> 
+			 </c03> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>OCEPAR Wheat crosses, </unittitle> 
+				  <unitdate unitdatetype="inclusive">1981. </unitdate> 
+				  <container localtype="box">5</container> 
+				  <container localtype="folder">4</container> 
+				</did> 
+			 </c03> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>OCEPAR Correspondence, </unittitle> 
+				  <unitdate unitdatetype="inclusive">1984. </unitdate> 
+				  <container localtype="box">5</container> 
+				  <container localtype="folder">5</container> 
+				</did> 
+			 </c03> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>OCEPAR "Informe Tecnico," </unittitle> 
+				  <unitdate unitdatetype="inclusive">1984. </unitdate> 
+				  <container localtype="box">5</container> 
+				  <container localtype="folder">6</container> 
+				</did> 
+			 </c03> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>OCEPAR. “Resultados Dos Ensaios Sul Brasileiros de
+					 Trigo” XXII Reunio Da Comissao Sul-Brasileira De Pesquisa De Trigo Passo Fundo,
+					 Brasil, </unittitle> 
+				  <unitdate unitdatetype="inclusive">1990. </unitdate> 
+				  <container localtype="box">5</container> 
+				  <container localtype="folder">7</container> 
+				</did> 
+			 </c03> 
+		  </c02> 
+		  <c02 level="subseries"> 
+			 <did> 
+				<unittitle>Bolivia</unittitle> 
+			 </did> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle> “Boletin OAP-5”; “Boletin OAP-9” </unittitle> 
+				  <unitdate unitdatetype="inclusive">1988-1989. </unitdate> 
+				  <container localtype="box">2</container> 
+				  <container localtype="folder">8</container> 
+				</did> 
+			 </c03> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>“Policy Alternatives for Wheat Production and
+					 Marketing of Wheat in Bolivia” Report 110, Food and Grain Institute, Manhattan,
+					 KS, </unittitle> 
+				  <unitdate unitdatetype="inclusive">December 1988. </unitdate> 
+				  <container localtype="box">2</container> 
+				  <container localtype="folder">9</container> 
+				</did> 
+			 </c03> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>"Wheat growing plan for Chuquisaca, </unittitle> 
+				  <unitdate unitdatetype="inclusive">1990-1991. </unitdate> 
+				  <container localtype="box">2</container> 
+				  <container localtype="folder">10</container> 
+				</did> 
+			 </c03> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>Miscellaneous, </unittitle> 
+				  <unitdate unitdatetype="inclusive">1988-1989. </unitdate> 
+				  <container localtype="box">5</container> 
+				  <container localtype="folder">2</container> 
+				</did> 
+			 </c03> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Uruguay. “Archivo Fitotecnico del Uruguay”, volume 5,
+				  Montivedeo, </unittitle> 
+				<unitdate unitdatetype="inclusive">1953. </unitdate> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">11</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="subseries"> 
+			 <did> 
+				<unittitle>United States</unittitle> 
+			 </did> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>USDA. “Classification of American Wheat Varieties”.
+					 Bulletin No. 1074, </unittitle> 
+				  <unitdate unitdatetype="inclusive">1922. </unitdate> 
+				  <container localtype="box">2</container> 
+				  <container localtype="folder">12</container> 
+				</did> 
+			 </c03> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>Miscellaneous wheat-related bulletins from the USDA,
+					 </unittitle> 
+				  <unitdate unitdatetype="inclusive">1890-1930. </unitdate> 
+				  <container localtype="box">2</container> 
+				  <container localtype="folder">13</container> 
+				</did> 
+			 </c03> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>USDA and Agricultural Research Services, </unittitle> 
+				  <unitdate unitdatetype="inclusive">1950s. </unitdate> 
+				  <container localtype="box">2</container> 
+				  <container localtype="folder">14</container> 
+				</did> 
+				<scopecontent> 
+				  <p> “Reaction of Selected Wheats to Six Races of Stem Rust in
+					 Puerto Rico and St. Croix, VI, in 1954-1955” T. Theis and H.A. Rodenheiser,
+					 undated. “Reaction of Individual Races of Stem and Leaf Rust of Selected Wheat
+					 Varieties in 1953” Bayles, B.B., compiler, 1953. “Report of Uniform Eastern
+					 Soft Winter Wheat Nurseries for 1953” Bayles, B.B., 1953. Supplement to the
+					 report “Reaction to Individual races of Stem and Leaf Rust of Selected
+					 Varieties in 1953”, compiled by B.B. Bayles, March, 1954, No. 302CC”, 1953.
+					 “Data on Wheat Breeding Materials Resistant to Stem Rust Race 15B in the
+					 greenhouse at Beltsville, MD., in 1950-1951 and their field reaction in the
+					 summer of 1951” B.B. Bayles, compiler, April, 1951.</p> 
+				</scopecontent> 
+			 </c03> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>USDA and Agricultural Research Services, </unittitle> 
+				  <unitdate unitdatetype="inclusive">1950s. </unitdate> 
+				  <container localtype="box">2</container> 
+				  <container localtype="folder">15</container> 
+				</did> 
+				<scopecontent> 
+				  <p>“Reactions of Wheat from the World Collections to 8 Races of
+					 Stem Rust in the Seedling and Adult Stages at 65-70 degrees and 80-85 degrees
+					 F. and 80-85 F. in the greenhouse at Beltsville, MD., 1951-1952”: Lowther, C.V.
+					 1951. “Wheats From World Collections Resistant to Rust” Bayles, B.B., Ward, JJ,
+					 Borlaug, N.E., 1952. “Disease and Agronomic Data on the Foreign Spring Wheats
+					 (P.I. Nos. 170838- 178098, Inclusive) For the World Collection In 1951”. Ward,
+					 D.J. compiler, 1953. “Summary Report of the Reaction of Wheat and Oats to
+					 Cereal Rusts in Argentina, Brazil, Chile, and Peru in 1951-1952”. H.A.
+					 Rodenheiser and C.S. Holton. 1952.</p> 
+				</scopecontent> 
+			 </c03> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>USDA “Research Bulletin 281,” </unittitle> 
+				  <unitdate unitdatetype="inclusive">October 1977.</unitdate> 
+				  <container localtype="box">2</container> 
+				  <container localtype="folder">16</container> 
+				</did> 
+			 </c03> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>USDA “Research Bulletin 285,” </unittitle> 
+				  <unitdate unitdatetype="inclusive">July 1978. </unitdate> 
+				  <container localtype="box">2</container> 
+				  <container localtype="folder">17</container> 
+				</did> 
+			 </c03> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>USDA “Research Bulletin 296,” </unittitle> 
+				  <unitdate unitdatetype="inclusive"> July 1981.</unitdate> 
+				  <container localtype="box">2</container> 
+				  <container localtype="folder">18</container> 
+				</did> 
+			 </c03> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>USDA “Research Bulletin 297,” </unittitle> 
+				  <unitdate unitdatetype="inclusive">October 1981.</unitdate> 
+				  <container localtype="box">2</container> 
+				  <container localtype="folder">19</container> 
+				</did> 
+			 </c03> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>UDSA "Memo on wheat variety descriptions for wheat
+					 workers," </unittitle> 
+				  <unitdate unitdatetype="inclusive">1972. </unitdate> 
+				  <container localtype="box">2</container> 
+				  <container localtype="folder">20</container> 
+				</did> 
+			 </c03> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>USDA “Distribution of the Varieties and Classes of
+					 Wheat in the U.S., 1979” Statistical Bulletin no. 676, </unittitle> 
+				  <unitdate unitdatetype="inclusive">1980.</unitdate> 
+				  <container localtype="box">2</container> 
+				  <container localtype="folder">21</container> 
+				</did> 
+			 </c03> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>USDA “Classification of Wheat Varieties Grown in the
+					 United States.” J.Allen Clarke and B.B. Bayles. Technical Bulletin no. 459,
+					 </unittitle> 
+				  <unitdate unitdatetype="inclusive">April 1935.</unitdate> 
+				  <container localtype="box">2</container> 
+				  <container localtype="folder">22</container> 
+				</did> 
+			 </c03> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>USDA “Classification of Wheat Varieties grown in the
+					 United States in 1939” Technical Bulletin no. 795, </unittitle> 
+				  <unitdate unitdatetype="inclusive">June 1942. </unitdate> 
+				  <container localtype="box">2</container> 
+				  <container localtype="folder">23</container> 
+				</did> 
+				<scopecontent> 
+				  <p>Folder includes index cards with wheat breed names and
+					 notations. </p> 
+				</scopecontent> 
+			 </c03> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>USDA “Classification of Wheat Varieties Grown in the
+					 United States in 1949” Technical Bulletin no. 1083, </unittitle> 
+				  <unitdate unitdatetype="inclusive">March 1954.</unitdate> 
+				  <container localtype="box">2</container> 
+				  <container localtype="folder">24</container> 
+				</did> 
+			 </c03> 
+		  </c02> 
+		</c01> 
+		<c01 level="series"> 
+		  <did> 
+			 <unittitle>Crop-Related Publications</unittitle> 
+		  </did> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>“Wheats From J.W. Taylor Beltsville Breeding Program
+				  Grown At Several Stations in 1952.” B.B. Bayles, compiler, </unittitle> 
+				<unitdate unitdatetype="inclusive">January 1953.</unitdate> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">25</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Grids with data pertaining to wheat grown with rust at
+				  Chapingo, Mexico and “Disease reaction of Mexican Wheats in the Field,” Forest
+				  Products Pathology Nursery, Madison, Wisconsin, </unittitle> 
+				<unitdate unitdatetype="inclusive">1952.</unitdate> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">26</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>National Wheat Research Conference program, </unittitle>
+				
+				<unitdate unitdatetype="inclusive">1982. </unitdate> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">27</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>“Registration of Improved Wheat Varieties XX”;
+				  “Registration of Improved Wheat Varieties, XXI”, “Registration of Improved
+				  Wheat Varieties XXII”, Registration of Improved Wheat Varieties XXIII”,
+				  “Registration of Improved Wheat Varieties XXIV”, Registration of Wheat
+				  Varieties, XVIII” in Agronomy Journal. </unittitle> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">28</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>“Wheat In New York” Reisner, J.A. Masters Thesis,
+				  Cornell University, </unittitle> 
+				<unitdate unitdatetype="inclusive">1915. </unitdate> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">29</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Wheat Newsletter. Vols. VI, VIII, IX, X; Kansas State
+				  University and University of Saskatchewan, </unittitle> 
+				<unitdate unitdatetype="inclusive">1959, 1961-1963. </unitdate> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">30</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Annual Wheat Newsletter. Vols XXVII, XXIV, XXIII: Kansas
+				  State University and the Canada Department of Agriculture, </unittitle> 
+				<unitdate unitdatetype="inclusive"> 1977-1978, 1980. </unitdate> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">31</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Origini, Suviluppi, Lavori e Risultati. Istituto
+				  Nazionale di Genetica per la Cerealicoltura in Roma, </unittitle> 
+				<unitdate unitdatetype="inclusive">1932.</unitdate> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">32</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Annali dell’Istituto sperimentale per la Cerealicoltura.
+				  Rome. Vol X, </unittitle> 
+				<unitdate unitdatetype="inclusive">1979. </unitdate> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">33</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Assorted wheat-related reprints from Kansas Agricultural
+				  Experiment Station, USDA, Canadian Department of Agriculture, Agronomia
+				  Lusitana (Portugal), Phytopathology; Proceedings of the National Academy of
+				  Sciences, and Journal of Agricultural Research, </unittitle> 
+				<unitdate unitdatetype="inclusive">1931-1949. </unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">1</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Assorted wheat-related reprints from USDA, FAO,
+				  Agricultural Experiment Station University of Minnesota, Pacific Cooperative
+				  Extension Stations, </unittitle> 
+				<unitdate unitdatetype="inclusive">1950-1960. </unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">2</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Assorted wheat-related reprints from FAO, Institute of
+				  Plant Breeding, Crop Science, Wheat Information Service Kyoto Japan,
+				  Commonwealth Scientific and Industrial Research Organization, </unittitle> 
+				<unitdate unitdatetype="inclusive">1961-1969. </unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">3</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Assorted wheat-related reprints from Ohio Agricultural
+				  Research and Development Center, USDA, Euphytica, Department of Agronomy and
+				  range Science University of California at Davis, CIMMYT, </unittitle> 
+				<unitdate unitdatetype="inclusive">1970-1979. </unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">4</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Assorted wheat-related reprints from the Noble
+				  Foundation, Crop Development center, University of Saskatchewan, Theoretical
+				  and Applied Genetics, </unittitle> 
+				<unitdate unitdatetype="inclusive">1980-1985. </unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">5</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Assorted wheat-related publications, </unittitle> 
+				<unitdate unitdatetype="inclusive">undated, 1930s-1970s. </unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">6-8</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle> “Production and Performance of Common and Durum Wheats
+				  and Triticale at the University of California Imperial Valley Field Station, El
+				  Centro, in 1981, 1982, and 1983” and “Production and Performance of Common and
+				  Durum Wheats and Triticale at the University of California Imperial Valley
+				  Field Station, El Centro California for 1980, 1981 and 1982” in Agronomy
+				  Progress Report, </unittitle> 
+				<unitdate unitdatetype="inclusive">1982, 1983. </unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">9</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Food and Agriculture Organization of the United Nations
+				  (FAO) reprints, </unittitle> 
+				<unitdate unitdatetype="inclusive">1960-1965, 1975. </unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">10</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Wheat, Australia, </unittitle> 
+				<unitdate unitdatetype="inclusive">undated. </unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">11</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Wheat in Great Britain. John Percival, </unittitle> 
+				<unitdate unitdatetype="inclusive">1934. </unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">12</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Wheat in India: its production, varieties and
+				  improvement. Albert Howard; Imperial Department of Agriculture in India,
+				  </unittitle> 
+				<unitdate unitdatetype="inclusive">1909. </unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">13</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Wheat in India; Unidentified published manuscript,
+				  </unittitle> 
+				<unitdate unitdatetype="inclusive">undated. </unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">14-15</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Annual Wheat Newsletter. Vol. XXIII Kansas State
+				  University and Canada Department of Agriculture, </unittitle> 
+				<unitdate unitdatetype="inclusive">May 1977. </unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">16</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Wheat plantings in Jordan and Saudi Arabia with
+				  additional materials on wheat varietals form the USDA, </unittitle> 
+				<unitdate unitdatetype="inclusive">undated. </unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">17</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Kenya Wheat Program, </unittitle> 
+				<unitdate unitdatetype="inclusive">undated. </unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">18</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>“Wheat Varieties in South Africa: their history and
+				  development until 1912” J.H. Neethling. Stellenn-Elsenburg College of
+				  Agriculture at the University of Stellenbosch, </unittitle> 
+				<unitdate unitdatetype="inclusive">1932. </unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">19</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>“Wheat Production in South Africa”, Dr. J.T.R. Sim;
+				  Bulletin N. 334 (Stellenbosch-Elsenburg Farmers Series No. 226) Department of
+				  Agriculture, </unittitle> 
+				<unitdate unitdatetype="inclusive">1953. </unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">20</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>“Report of the Wheat Stem Rust Conference,” University
+				  of Minnesota, </unittitle> 
+				<unitdate unitdatetype="inclusive">1950. </unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">21</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>“Report of the Yellow Rust Trials Project in 1962”, Ir.
+				  E. Ubels and Eva Fuchs; Institute for Phytopathological Research, Holland and
+				  Biologisch Bundesanstalt fur Land- und Forstwirschaft, Braunschweig, Germany,
+				  </unittitle> 
+				<unitdate unitdatetype="inclusive">1964. </unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">22</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle> “Stem Rust of Wheat, Barley and Rye in Canada in 1977”,
+				  G.J Green: Inventaire des maladies des plantes su Canada, 58:3, </unittitle> 
+				<unitdate unitdatetype="inclusive">1978. </unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">23</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>“Development of Salt-Tolerant Wheat: a preliminary
+				  business prospectus,” Ralph W. Kingsbury, </unittitle> 
+				<unitdate unitdatetype="inclusive">July 1985. </unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">24</container> 
+			 </did> 
+			 <scopecontent> 
+				<p>Unpublished paper. </p> 
+			 </scopecontent> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Unpublished preliminary reports on reactions of wheat to
+				  stem, leaf and stripe rust and mildew. USDA/ARS Field Crop Research branch,
+				  </unittitle> 
+				<unitdate unitdatetype="inclusive">1951-1953. </unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">25</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Unpublished preliminary reports on reactions of winter
+				  wheat to the introduction of rust varieties in wheat rust nurseries,
+				  </unittitle> 
+				<unitdate unitdatetype="inclusive">1958-1961, 1963-1964, 1966. </unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">26</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Unpublished preliminary reports on reactions of spring
+				  wheat to the introduction of rust varieties in wheat rust nurseries. USDA/ARS
+				  Crops Research Division, </unittitle> 
+				<unitdate unitdatetype="inclusive">1954-1963. </unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">27</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Unpublished preliminary reports of reactions in wheat to
+				  stripe rust and other disease-producing organisms, </unittitle> 
+				<unitdate unitdatetype="inclusive">1960, 1966. </unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">28</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Assorted issues of unpublished reports relating to wheat
+				  breeding and rusts in facilities in the United States and Mexico, </unittitle> 
+				<unitdate unitdatetype="inclusive">1952-1953, 1960. </unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">29</container> 
+			 </did> 
+			 <scopecontent> 
+				<p>Several reports co-authored by N.E. Borlaug. </p> 
+			 </scopecontent> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Unpublished preliminary reports on reactions in wheat to
+				  stem, leaf and stripe rust and other diseases, </unittitle> 
+				<unitdate unitdatetype="inclusive">1971-1975.</unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">30</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Miscellaneous government reports on agricultural
+				  production and wheat taxonomies, </unittitle> 
+				<unitdate unitdatetype="inclusive">undated, 1953, </unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">31</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Assorted periodical articles and reports on wheat,
+				  </unittitle> 
+				<unitdate unitdatetype="inclusive">1978-1988. </unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">32</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>“Observaciones Sobre Variedades Y Especies de Trigo,”
+				  Instituto de Fitotecnia, </unittitle> 
+				<unitdate unitdatetype="inclusive">1954. </unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">33</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle> “Tres anos de ensayos con variedades de trigo en el
+				  Paraguay” Ministerio de Agricultura Y Ganaderia, Paraguay, </unittitle> 
+				<unitdate unitdatetype="inclusive">1970. </unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">34</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>“Registered Field Crop Varieties: 1926-1981,” Crop
+				  Science Society of America, Madison, WI, </unittitle> 
+				<unitdate unitdatetype="inclusive">1982. </unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">35</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>De Santa a Pescadora: A saga da soja pelso campos do Rio
+				  Grande. Luiz Pedro Bonett. Cruz Alta, Brazil, </unittitle> 
+				<unitdate unitdatetype="inclusive">1987. </unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">36</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Journal article and list of hybrids of Triticum,
+				  Aegilops, Secale and Agropyron, </unittitle> 
+				<unitdate unitdatetype="inclusive">undated. </unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">37</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>“Uptake of nutrients by plant roots.” From barley
+				  research in Norway, </unittitle> 
+				<unitdate unitdatetype="inclusive">1986. </unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">38</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle> “Chemical Castration in Rice,” anonymous unpublished
+				  paper, </unittitle> 
+				<unitdate unitdatetype="inclusive">undated. </unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">39</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>"Registrations of Crop Varietals," In
+				  <emph render="italic">Crop Sciences</emph>, vol 21, </unittitle> 
+				<unitdate unitdatetype="inclusive">November-December 1981. </unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">40</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle> “Corn Genes and Big Dollars” in <emph render="italic">Technology Review </emph>, </unittitle> 
+				<unitdate unitdatetype="inclusive">November-December 1981.</unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">41</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Compendium of Corn Diseases and Compendium of Soybean
+				  Diseases, American Phytopathological Society, </unittitle> 
+				<unitdate unitdatetype="inclusive">1980, 1982. </unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">42</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Manual papra el control de las plagas en el cultivo de
+				  la soya. ANAPO-CIAT, </unittitle> 
+				<unitdate unitdatetype="inclusive">undated. </unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">43</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Referred publications of J.B. Thomas. Focus on
+				  chromosome pairing, </unittitle> 
+				<unitdate unitdatetype="inclusive">1971-1979. </unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">44</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Regional Wheat Workshop, Ford Foundation, Beirut,
+				  Lebanon, </unittitle> 
+				<unitdate unitdatetype="inclusive">1972. </unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">45</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>“Consolidated List of Abbreviations of Wheat and Barley
+				  Varieties,” compiled at regional wheat workshop, Beirut, Lebanon. ALAD-Ford
+				  Foundation, </unittitle> 
+				<unitdate unitdatetype="inclusive">1982, 1983. </unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">46</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Third Regional Wheat Workshop, sponsored by FAO, Ford
+				  and Rockefeller Foundations and CIMMYT, Tunis, Tunisia, </unittitle> 
+				<unitdate unitdatetype="inclusive">April-May 1975. </unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">47</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Assorted wheat crossing publications, including
+				  glossary, identification schemes, handwritten notes, </unittitle> 
+				<unitdate unitdatetype="inclusive">undated. </unitdate> 
+				<container localtype="box">4</container> 
+				<container localtype="folder">1</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>“Australian Wheat Varieties; supplement No. 1”. Ferns,
+				  Fitzsimmons, Martin, et al., </unittitle> 
+				<unitdate unitdatetype="inclusive">undated. </unitdate> 
+				<container localtype="box">4</container> 
+				<container localtype="folder">2</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>“Lista de Progenitores Resistentes a Puccina Glumarum:
+				  Empleados en la formacion de los comuestos (Sintetico) Colombia, </unittitle> 
+				<unitdate unitdatetype="inclusive">undated. </unitdate> 
+				<container localtype="box">4</container> 
+				<container localtype="folder">3</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>“Pedigrees of various Winter and Spring Wheat
+				  varieties,” Rockefeller Foundation, </unittitle> 
+				<unitdate unitdatetype="inclusive">undated. </unitdate> 
+				<container localtype="box">4</container> 
+				<container localtype="folder">4</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle> “Sistemica de Trigos” I &amp; III and “Novos Trigos
+				  Portugueses: classificacao e descricao botanica," </unittitle> 
+				<unitdate unitdatetype="inclusive">undated. </unitdate> 
+				<container localtype="box">4</container> 
+				<container localtype="folder">5</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Wheat crosses. Typescript. Carbons of original.110
+				  pages, </unittitle> 
+				<unitdate unitdatetype="inclusive">undated. </unitdate> 
+				<container localtype="box">4</container> 
+				<container localtype="folder">6</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Wheat cultivars. Handwritten notes identifying origins
+				  of names of wheat varieties,“ </unittitle> 
+				<unitdate unitdatetype="inclusive">undated. </unitdate> 
+				<container localtype="box">4</container> 
+				<container localtype="folder">7</container> 
+			 </did> 
+			 <scopecontent> 
+				<p>Yugoslavia” is prominent on the first page. Included in the
+				  folder are two brochures in Turkish and English with descriptions of durum and
+				  bread wheat cultivars from the Mediterranean region.</p> 
+			 </scopecontent> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Untitled publication in French with wheat variety names,
+				  </unittitle> 
+				<unitdate unitdatetype="inclusive">circa 1974. </unitdate> 
+				<container localtype="box">4</container> 
+				<container localtype="folder">8</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>“Wheat pedigrees and breeding systems,” </unittitle> 
+				<unitdate unitdatetype="inclusive">undated. </unitdate> 
+				<container localtype="box">4</container> 
+				<container localtype="folder">9</container> 
+			 </did> 
+			 <scopecontent> 
+				<p>Unattributed, unpublished paper concerning systems of
+				  designation crosses and hybrids used by the breeding programs of the
+				  Rockefeller Foundation.</p> 
+			 </scopecontent> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>“Tipos de Infeccion producidos por Puccinia Graminis
+				  triticci sobre lineas puras des trigo en estado de plantulas…’’ at Tibaitata
+				  (I) y Villa de Leiva (II). Typescript list, </unittitle> 
+				<unitdate unitdatetype="inclusive">1950. </unitdate> 
+				<container localtype="box">4</container> 
+				<container localtype="folder">10</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>“Tipos de Infeccion produccio por Puccinia glumarum
+				  triticina, y P. Graminis gritici sobre variedades de trigo bajo codiciones de
+				  inverndero. La Picota, Mexico, </unittitle> 
+				<unitdate unitdatetype="inclusive">1950. </unitdate> 
+				<container localtype="box">4</container> 
+				<container localtype="folder">11</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Wheat crossing publications and lists relating to Kenya
+				  wheat production, </unittitle> 
+				<unitdate unitdatetype="inclusive">1952-1959. </unitdate> 
+				<container localtype="box">4</container> 
+				<container localtype="folder">12</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Pedigree de las Cruzas Interspecificas de Trigo,
+				  </unittitle> 
+				<unitdate unitdatetype="inclusive">1953. </unitdate> 
+				<container localtype="box">4</container> 
+				<container localtype="folder">13</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Wheat crosses, Mexico, </unittitle> 
+				<unitdate unitdatetype="inclusive">1953. </unitdate> 
+				<container localtype="box">4</container> 
+				<container localtype="folder">14</container> 
+			 </did> 
+			 <scopecontent> 
+				<p>Unbound boards, typescript and handwritten with wheat crosses.
+				  Title on inside page is “Expert. XIII: Fi de cruces hechas en Picota 1950” with
+				  notation in green pencil next to title “Lineas para NEB” Annotation all in
+				  Spanish. Approximately 200 pages.</p> 
+			 </scopecontent> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>“Historia Cruzas 1-3342 Mexico, </unittitle> 
+				<unitdate unitdatetype="inclusive">March-April 1945. </unitdate> 
+				<container localtype="box">4</container> 
+				<container localtype="folder">15</container> 
+			 </did> 
+			 <scopecontent> 
+				<p>Handwritten title appears on front board. Header on first page
+				  of list as follows: "Historia de las cruzas hechas por el personal de la
+				  Oficina de Estudios Especiale Historia de cruzas hechas Chapingo." Approximatel
+				  135 pages.</p> 
+			 </scopecontent> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle> Inventory, </unittitle> 
+				<unitdate unitdatetype="inclusive">1951-1952. </unitdate> 
+				<container localtype="box">4</container> 
+				<container localtype="folder">16</container> 
+			 </did> 
+			 <scopecontent> 
+				<p>2 Dup (title) on front board. Introducciones +. Fundacion
+				  Rockefeller appears on title page. On first page of the history, header reads
+				  “Lineas de Trigo de la Oficina de Investigaciones Especiales de Colombia”. </p>
+				
+			 </scopecontent> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Inventory, </unittitle> 
+				<unitdate unitdatetype="inclusive">1958. </unitdate> 
+				<container localtype="box">4</container> 
+				<container localtype="folder">17</container> 
+			 </did> 
+			 <scopecontent> 
+				<p>No front board. No interior titles. Typescript of wheat crosses.
+				  After page 70, title page reads “(Copia) 1. Tibaitaba, </p> 
+			 </scopecontent> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Wheat pedigrees and crosses, Colombia, </unittitle> 
+				<unitdate unitdatetype="inclusive">1958. </unitdate> 
+				<container localtype="box">4</container> 
+				<container localtype="folder">18</container> 
+			 </did> 
+			 <scopecontent> 
+				<p>Including paper titled “Inheritance of resistance to Stripe
+				  Rust, Puccinia Glumarum in Bonza and other wheat varieties” Maual Rosero and
+				  John Gibler. Report. IV Reunion Latinamericano de Filotecina, Santiago
+				  Chile.</p> 
+			 </scopecontent> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Notes on wheat crosses, worldwide, </unittitle> 
+				<unitdate unitdatetype="inclusive">undated, 1963. </unitdate> 
+				<container localtype="box">4</container> 
+				<container localtype="folder">19</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>“Descripcion de las Varidados de trigo Cultivades en la
+				  Argentina. Rath, Conta, Tombetta, et al, Collecion Agropopecuaria del I.N.T.A,
+				  Buenos Aires, </unittitle> 
+				<unitdate unitdatetype="inclusive">1964. </unitdate> 
+				<container localtype="box">4</container> 
+				<container localtype="folder">20</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Wheat Crosses, Mexico, </unittitle> 
+				<unitdate unitdatetype="inclusive">1967. </unitdate> 
+				<container localtype="box">4</container> 
+				<container localtype="folder">21</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Recently named lines and varieties of bread wheat,
+				  durum, barley and triticale, </unittitle> 
+				<unitdate unitdatetype="inclusive">1974. </unitdate> 
+				<container localtype="box">4</container> 
+				<container localtype="folder">22</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Oversized charts of wheat crosses and an organizational
+				  chart of the Argentine agricultural ministry, </unittitle> 
+				<unitdate unitdatetype="inclusive">1980. </unitdate> 
+				<container localtype="box">4</container> 
+				<container localtype="folder">23</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Publications by John Gibler, </unittitle> 
+				<unitdate unitdatetype="inclusive">undated, 1949, 1953, 1956, 1963.
+				  </unitdate> 
+				<container localtype="box">4</container> 
+				<container localtype="folder">24</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Note cards on wheat crosses, </unittitle> 
+				<unitdate unitdatetype="inclusive">undated. </unitdate> 
+				<container localtype="box">4</container> 
+				<container localtype="folder">25</container> 
+			 </did> 
+			 <scopecontent> 
+				<p>120 Note cards. </p> 
+			 </scopecontent> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Bibliography, </unittitle> 
+				<unitdate unitdatetype="inclusive">1975. </unitdate> 
+				<container localtype="box">5</container> 
+				<container localtype="folder">1</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Miscellaneous wheat-related articles and reports,
+				  </unittitle> 
+				<unitdate unitdatetype="inclusive">1978-1982. </unitdate> 
+				<container localtype="box">5</container> 
+				<container localtype="folder">8</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Wheat pedigrees, </unittitle> 
+				<unitdate unitdatetype="inclusive">undated. </unitdate> 
+				<container localtype="box">5</container> 
+				<container localtype="folder">9</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Wheat Crosses, Mexico and South America, </unittitle> 
+				<unitdate unitdatetype="inclusive">undated, 1947-1959.</unitdate> 
+				<container localtype="box">5</container> 
+				<container localtype="folder">10</container> 
+			 </did> 
+			 <scopecontent> 
+				<p>Includes letter from Gibler to Norman Borlaug. </p> 
+			 </scopecontent> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Wheat crosses and pedigrees, </unittitle> 
+				<unitdate unitdatetype="inclusive">1960-1971. </unitdate> 
+				<container localtype="box">5</container> 
+				<container localtype="folder">11</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle> “Cultivares de Trigo Lancadas no Rio Grande de Sul a
+				  Partir de 1979.”</unittitle> 
+				<container localtype="box">5</container> 
+				<container localtype="folder">12</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Miscellaneous wheat crossing-related materials,
+				  </unittitle> 
+				<unitdate unitdatetype="inclusive">1965-1975. </unitdate> 
+				<container localtype="box">5</container> 
+				<container localtype="folder">13</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>“Grain Qualities of the Krasnodar Wheat Variety” in New
+				  Varieties of Winter Wheat: Prutskova, M.G. and Ukhanova, I.O. Kolos Press:
+				  Moscow, </unittitle> 
+				<unitdate unitdatetype="inclusive">1972. </unitdate> 
+				<container localtype="box">5</container> 
+				<container localtype="folder">14</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Wheat Abbreviations, CIMMYT, </unittitle> 
+				<unitdate unitdatetype="inclusive">1978-1979. </unitdate> 
+				<container localtype="box">5</container> 
+				<container localtype="folder">15</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Two publications on cereals in Kenya, </unittitle> 
+				<unitdate unitdatetype="inclusive">1958. </unitdate> 
+				<container localtype="box">5</container> 
+				<container localtype="folder">16</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>“Trials: South American Wheat Introductions 1963/64.”
+				  Atsmon, Y. Hazera Seed Growing Cie. Research Department, Mivhor Farm, Israel,
+				  </unittitle> 
+				<unitdate unitdatetype="inclusive">1964. </unitdate> 
+				<container localtype="box">5</container> 
+				<container localtype="folder">17</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Wheat varieties by country, A-Z, </unittitle> 
+				<unitdate unitdatetype="inclusive">undated. </unitdate> 
+				<container localtype="box">5</container> 
+				<container localtype="folder">18</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>USDA. “Rust Reaction of new Introductions and Spring
+				  Habit Common Wheats from the World Collection Grown in Mexico in the Summer of
+				  1952.” Borlaug, NE, Gibler, JW, Narveaz, I, et al, </unittitle> 
+				<unitdate unitdatetype="inclusive">1953. </unitdate> 
+				<container localtype="box">5</container> 
+				<container localtype="folder">19</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>USDA. “World Collection of Wheat. Data Compilation #2:
+				  Disease and Agronomic Data Recorded on Strains of Wheat Species Collection
+				  grown at Chapingo and Trapunto, Mexico in 1952; St Croix, Virgin Islands and
+				  Mayaguez, Puerto Rico in 1952-1953 and St. Paul Minnesota in 1954” Ward, D.J.
+				  Beltsville, MD, </unittitle> 
+				<unitdate unitdatetype="inclusive">1956. </unitdate> 
+				<container localtype="box">5</container> 
+				<container localtype="folder">20</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>USDA. “Rust Reaction to Durum Wheats from the World
+				  Collection Grown in Mexico, Summer of 1952” Borlaug, NE, Gibler, JW, Campos, A.
+				  et al; Beltsville, MD, </unittitle> 
+				<unitdate unitdatetype="inclusive">1953. </unitdate> 
+				<container localtype="box">5</container> 
+				<container localtype="folder">21</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>USDA. “Reaction of 105 Selected Wheat Varieties in the
+				  1957 International Seedling Test Nursery to Individual Races of Stem and Leaf
+				  Rust,” Beltsville, MD, </unittitle> 
+				<unitdate unitdatetype="inclusive">1958.</unitdate> 
+				<container localtype="box">5</container> 
+				<container localtype="folder">22</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>“Reactions of Wheats From World Collection to Stem Rust
+				  1952” </unittitle> 
+				<container localtype="box">5</container> 
+				<container localtype="folder">23</container> 
+			 </did> 
+			 <scopecontent> 
+				<p>2 copies.</p> 
+			 </scopecontent> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Wheat pedigrees, </unittitle> 
+				<unitdate unitdatetype="inclusive">1969-1970. </unitdate> 
+				<container localtype="box">5</container> 
+				<container localtype="folder">28</container> 
+			 </did> 
+			 <scopecontent> 
+				<p>“Colecao de Cultivares De Trigo” (Portuguese); “Variedades de
+				  Trigo para la Costa Central del Peru” (Spanish) and “Informatcao Sobre O
+				  Comportamento em Relacao a P. graminis tritici da veridades em Cultivo e
+				  Linhagens, no Palnio de Verao de 1969/1970” (Portuguese). </p> 
+			 </scopecontent> 
+		  </c02> 
+		</c01> 
+		<c01 level="series"> 
+		  <did> 
+			 <unittitle>Awards and Honoraria</unittitle> 
+		  </did> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>New York Academy of Sciences certification, </unittitle>
+				
+				<unitdate>1973. </unitdate> 
+				<container localtype="box">4</container> 
+				<container localtype="folder">26</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>American Phytopathological Society Membership Emeritus
+				  certification. </unittitle> 
+				<container localtype="box">4</container> 
+				<container localtype="folder">27</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Certificate of Honor, City of Cruz Alta, Rio Grande Do
+				  Sul, Brasil. </unittitle> 
+				<container localtype="box">6</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Plaques, medals, and miscellaneous, </unittitle> 
+				<unitdate unitdatetype="inclusive">1950s-2000s. </unitdate> 
+				<container localtype="box">6</container> 
+			 </did> 
+			 <scopecontent> 
+				<p>Includes E.C. Stakman award. </p> 
+			 </scopecontent> 
+		  </c02> 
+		</c01> 
+		<c01 level="series"> 
+		  <did> 
+			 <unittitle>Miscellaneous</unittitle> 
+		  </did> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Photographs, </unittitle> 
+				<unitdate unitdatetype="inclusive">circa 1960s-1970s. </unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">1-4</container> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/104979"> 
+				  <descriptivenote> 
+					 <p>View folder 1 contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/104980"> 
+				  <descriptivenote> 
+					 <p>View folder 2 contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/104981"> 
+				  <descriptivenote> 
+					 <p>View folder 3 contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/104982"> 
+				  <descriptivenote> 
+					 <p>View folder 4 contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+			 <scopecontent> 
+				<p>Include photographs of E.C. Stakman and Norman Borlaug. </p> 
+			 </scopecontent> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Snapshot albums of South American plantations
+				  activities, </unittitle> 
+				<unitdate unitdatetype="inclusive">circa 1960s. </unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">5-6</container> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/104983"> 
+				  <descriptivenote> 
+					 <p>View folder 5 contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/104984"> 
+				  <descriptivenote> 
+					 <p>View folder 6 contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Newspaper clippings, </unittitle> 
+				<unitdate unitdatetype="inclusive">1950s-1990s. </unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">7-15</container> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/104985"> 
+				  <descriptivenote> 
+					 <p>View folder 7 contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/104986"> 
+				  <descriptivenote> 
+					 <p>View folder 8 contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/104987"> 
+				  <descriptivenote> 
+					 <p>View folder 9 contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/104988"> 
+				  <descriptivenote> 
+					 <p>View folder 10 contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/104989"> 
+				  <descriptivenote> 
+					 <p>View folder 11 contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/104990"> 
+				  <descriptivenote> 
+					 <p>View folder 12 contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/104991"> 
+				  <descriptivenote> 
+					 <p>View folder 13 contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/104992"> 
+				  <descriptivenote> 
+					 <p>View folder 14 contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/104993"> 
+				  <descriptivenote> 
+					 <p>View folder 15 contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+			 <scopecontent> 
+				<p>Clipping from English and Spanish language newspapers. </p> 
+			 </scopecontent> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Spanish language newspaper clippings. </unittitle> 
+				<container localtype="box">5</container> 
+				<container localtype="folder">25</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>South American travel notebook, </unittitle> 
+				<unitdate unitdatetype="inclusive">circa 1960s.</unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">16</container> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/104994"> 
+				  <descriptivenote> 
+					 <p>View folder contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Clippings and speeches by/about Norman Borlaug,
+				  </unittitle> 
+				<unitdate unitdatetype="inclusive">circa 1970s.</unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">17-18</container> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/104995"> 
+				  <descriptivenote> 
+					 <p>View folder 17 contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/104996"> 
+				  <descriptivenote> 
+					 <p>View folder 18 contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Background information on CIMMYT, </unittitle> 
+				<unitdate unitdatetype="inclusive">1980s. </unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">19-22</container> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/104997"> 
+				  <descriptivenote> 
+					 <p>View folder 19 contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/104998"> 
+				  <descriptivenote> 
+					 <p>View folder 20 contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/104999"> 
+				  <descriptivenote> 
+					 <p>View folder 21 contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/105000"> 
+				  <descriptivenote> 
+					 <p>View folder 22 contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Biographical information, </unittitle> 
+				<unitdate unitdatetype="inclusive">circa 1946-2006. </unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">23</container> 
+				<dao daotype="derived" show="replace" actuate="onrequest" href="http://purl.umn.edu/105001"> 
+				  <descriptivenote> 
+					 <p>View folder contents.</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		</c01> 
+	 </dsc> 
+  </archdesc> 
+</ead>

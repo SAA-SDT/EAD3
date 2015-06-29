@@ -1,0 +1,214 @@
+<?xml version="1.0"?>
+<?xml-model href="ead3.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-stylesheet type="text/xsl" href="clrc.xsl"?>
+<ead xmlns="http://ead3.archivists.org/schema/" audience="external"> 
+<control> 
+	<recordid>CLRC2155</recordid>
+	 
+	 <filedesc> 
+		<titlestmt> 
+		  <titleproper encodinganalog="Title">Jenny Han papers,
+			 2009-2010</titleproper> 
+		  <author encodinganalog="Contributor">Finding aid created by Kate
+			 Dietrick</author> 
+		</titlestmt> 
+	 	
+		<publicationstmt> 
+		  <publisher encodinganalog="Publisher">University of Minnesota
+			 Libraries</publisher> 
+		  <date encodinganalog="Date">July 2014</date> 
+		  <address> 
+			 <addressline>University of Minnesota Libraries</addressline> 
+			 <addressline>Minneapolis, MN 55455</addressline> 
+		  </address> 
+		</publicationstmt> 
+	 </filedesc> 
+
+	<maintenancestatus value="new">New</maintenancestatus>	
+
+	<maintenanceagency>
+		<agencycode>MnU</agencycode>	
+		<agencyname>University of Minnesota Libraries</agencyname>
+	</maintenanceagency>
+	
+	<languagedeclaration>
+		<language langcode="eng">English</language>
+		<script scriptcode="Latn">Latin</script>
+	</languagedeclaration>
+	
+	<conventiondeclaration>
+			<citation>DACS</citation>
+	</conventiondeclaration>
+	
+	<maintenancehistory>
+		<maintenanceevent>
+			<eventtype value="created"/>
+			<eventdatetime standarddatetime="2014-07">July 2014</eventdatetime>
+			<agenttype value="human"/>
+			<agent>Ead encoding by Kate Dietrick</agent>
+		</maintenanceevent>
+		<maintenanceevent>
+			<eventtype value="updated">Converted to EAD3</eventtype>
+			<eventdatetime standarddatetime="2014-09-11">September 11, 2014</eventdatetime>
+			<agenttype value="human"/>
+			<agent>EAD converted by Lisa Calahan</agent>
+		</maintenanceevent>
+	</maintenancehistory>	
+</control>
+	 
+  <archdesc level="collection" relatedencoding="MARC"> 
+	 <did> 
+		<repository label="Repository:" encodinganalog="852$a">
+			<corpname source="LCNAF" encodinganalog="110">
+				<part localtype="a">University of Minnesota</part>
+				<part localtype="b">Children's Literature Research Collections. [clrc]</part>
+			</corpname>
+		</repository> 
+		
+	 	<origination label="Creator:" encodinganalog="100"> 
+		  <persname source="lcnaf" rules="aacr2">
+		  	<part localtype="a">Han, Jenny</part>
+		  </persname>
+	 	</origination> 
+	 	
+		<unittitle label="Title:" encodinganalog="245$a">Jenny Han
+		  papers</unittitle> 
+	 	
+	 	<unitdatestructured label="Dates:" unitdatetype="inclusive" encodinganalog="245$f">
+	 		<daterange>
+	 			<fromdate>2009</fromdate>
+	 			<todate>2010</todate>
+	 		</daterange>
+	 	</unitdatestructured> 
+	 
+	 <unitid label="Collection Number:" encodinganalog="099" countrycode="US" repositorycode="MnU">CLRC-2155</unitid> 
+		
+	 <abstract label="Abstract:" encodinganalog="520">This collection consists of manuscript
+		  materials related to three publications by Jenny Han. </abstract> 
+		
+	 <parallelphysdescset>
+	 	<physdescstructured label="Quantity:" physdescstructuredtype="carrier" coverage="whole"  encodinganalog="300">
+	 		<quantity>1</quantity>
+	 		<unittype>box</unittype>
+	 	</physdescstructured>
+	 	<physdescstructured label="Quantity:" physdescstructuredtype="spaceoccupied" coverage="whole" encodinganalog="300">
+	 		<quantity>.40</quantity>
+	 		<unittype>cubic feet</unittype>
+	 	</physdescstructured>
+	 </parallelphysdescset>
+	 	
+	<langmaterial>
+		<language langcode="eng">English</language>
+		<descriptivenote>
+			<p>Collection materials are in English</p>
+		</descriptivenote>
+	</langmaterial> 
+ </did> 
+	 <accessrestrict encodinganalog="506"> 
+		<head>Access and Use</head> 
+		<p>Collection is open for researchers with no restrictions. Registration
+		  with the collection is required. Items in this collection do not circulate and
+		  may be used in-house only. Materials will be retrieved from and returned to
+		  storage areas by staff members. </p> 
+	 </accessrestrict> 
+	 <userestrict encodinganalog="540"> 
+		<head>Copyright</head> 
+		<p>Please contact staff regarding copyright status of these materials.
+		  Researchers may quote from the collection under fair use provisions of the
+		  copyright law (Title 17, U.S. Code). </p> 
+	 </userestrict> 
+	 <prefercite> 
+		<head>Preferred Citation</head> 
+		<p>Jenny Han papers, Children's Literature Research Collection,
+		  University of Minnesota Libraries, Minneapolis.</p> 
+	 </prefercite> 
+	 <acqinfo> 
+		<head>Source of acquisition</head> 
+		<p>Gift of Han, Jenny</p> 
+	 </acqinfo>  
+	 <bioghist encodinganalog="545" id="hb"> 
+		<head altrender="history"><emph render="bold">Biographical
+		  Sketch</emph></head> 
+		<p>Jenny Han was born and raised in Richmond, Virginia. She received her
+		  B.A. from the University of North Carolina at Chapel Hill and went on to
+		  gradute school at the New School in New York where she received her MFA in
+		  Writing for Children. Her first book, <emph render="italic">Shug</emph>, was
+		  published in 2006, and was written while she was still in college. She
+		  currently lives in Brooklyn. Her website can be found at
+		  www.dearjennyhan.com.</p> 
+	 </bioghist> 
+	 <scopecontent encodinganalog="520"> 
+		<head>Scope and Content</head> 
+		<p>This collection consists of manuscript materials for three
+		  publications and includes corrected page proofs and corrected typescripts dated
+		  2009 to 2010.</p> 
+	 </scopecontent> 
+
+  	<controlaccess> 
+		<head>Indexing Terms</head> 
+		<p>This collection is indexed under the following headings in the catalog
+		  of the University of Minnesota Libraries. Researchers desiring materials about
+		  related topics, persons or places should search the catalog using these
+		  headings.</p> 
+  		<persname source="lcnaf" rules="aacr2">
+  			<part localtype="a">Han, Jenny</part>
+  		</persname>
+	 </controlaccess> 
+	
+  	<arrangement encodinganalog="351$a"> 
+		<head>Arrangement</head> 
+		<p>Publications are arranged alphabetically by title. </p> 
+	 </arrangement> 
+	
+  	<dsc dsctype="combined"> 
+		<head> Collection Contents</head> 
+		<c01 level="file"> 
+		  <did> 
+			 <unittitle><emph render="italic">Clara Lee and the Apple Pie
+				  Dream,</emph></unittitle> 
+			 <unitdate unitdatetype="inclusive">2011</unitdate> 
+		  </did> 
+		  <c02 level="file"> 
+			 <did> 
+				<container localtype="box"> 1 </container> 
+				<container localtype="folder"> 1 </container> 
+				<unittitle> Corrected Page Proof </unittitle> 
+				<unitdate> 2010 </unitdate> 
+			 </did> 
+		  </c02> 
+		</c01> 
+		<c01 level="file"> 
+		  <did> 
+			 <unittitle> 
+				<emph render="italic">Its Not Summer Without You: A Summer
+				  Novel,</emph></unittitle> 
+			 <unitdate unitdatetype="inclusive">2010</unitdate> 
+		  </did> 
+		  <c02 level="file"> 
+			 <did> 
+				<container localtype="box"> 1 </container> 
+				<container localtype="folder"> 2-3 </container> 
+				<unittitle> Corrected Typescript </unittitle> 
+				<unitdate> 2009 </unitdate> 
+			 </did> 
+		  </c02> 
+		</c01> 
+		<c01 level="file"> 
+		  <did> 
+			 <unittitle> 
+				<emph render="italic">We'll Always Have Summer: A Summer
+				  Novel,</emph></unittitle> 
+			 <unitdate unitdatetype="inclusive">2011</unitdate> 
+		  </did> 
+		  <c02 level="file"> 
+			 <did> 
+				<container localtype="box"> 1 </container> 
+				<container localtype="folder"> 4-5 </container> 
+				<unittitle> Corrected Typescript </unittitle> 
+				<unitdate> 2009 </unitdate> 
+			 </did> 
+		  </c02> 
+		</c01> 
+	 </dsc> 
+  </archdesc> 
+</ead>

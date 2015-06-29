@@ -1,0 +1,151 @@
+<?xml version="1.0"?>
+<!-- $Id: readme.dbx,v 1.6 2004/01/18 16:18:58 dvd Exp $ -->
+<article>
+
+  <title>incelim &#x2014; Relax NG Splicer</title>
+  <subtitle>Version 1</subtitle>
+
+  <abstract>
+  <para>
+   incelim takes a Relax NG grammar in XML syntax, expands all
+   includes and externalRefs, and optionally replaces references
+   to text, empty, or notAllowed with the patterns. The result is
+   a 'compiled' schema convenient for distribution.
+  </para> 
+  </abstract>
+
+  <para>
+    The package includes stylesheets for each of the transformation
+    steps, and two kinds of glue: XSLT stylesheet incelim.xsl, which
+    chains the transformations using exsl:node-set(), and a shell
+    script, incelim, which applies each of the stylesheets to the 
+    serialized result of the previous one.
+  </para>
+  
+  <section><title>Package Contents</title>
+
+  <variablelist>
+    <varlistentry>
+      <term>inc.xsl</term>
+      <listitem><para>
+        literally inserts contents of included files (and externalRefs);
+      </para></listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>elim.xsl</term>
+      <listitem><para>removes overriden defines;
+      </para></listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>strip.xsl</term>
+      <listitem><para>splices references to single parameterless patterns
+        (text,empty,notAllowed);
+      </para></listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>clean.xsl</term>
+      <listitem><para>filters out empty divs and unreferenced defines;
+      </para></listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>incelim.xsl</term>
+      <listitem><para>XSLT glue to chain the transformations;
+      </para></listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>incelim</term>
+      <listitem><para>(ash or bash) shell script to run each of the
+      transformations in order;
+      </para></listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>saxon-6.5.3.diff</term>
+      <listitem><para>performance patch for SAXON 6.5.3;
+      </para></listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>readme.txt, readme.dbx</term>
+      <listitem><para>brief description in plain text and DocBook XML formats;
+      </para></listitem>
+    </varlistentry>
+     <varlistentry>
+      <term>license.txt</term>
+      <listitem><para>the license.
+      </para></listitem>
+    </varlistentry>
+ </variablelist>
+  </section>
+
+  <section><title>Invocation</title>
+  <para>For the XSLT glue, the arguments are the source schema and
+  the stylesheet. Parameter <varname>rinses</varname> specifies
+  the number of times to apply strip/clean phase (it should be recursive,
+  but it would be too complex for XSLT to stop timely). 1 is the default,
+  more than 3 does not make sense in most practical cases.
+  </para>
+
+  <note>
+    <itemizedlist>
+    <listitem><para>
+    xsltproc compiled against libxml 20604, libxslt 10102 and libexslt 802
+    and earlier versions cannot be used with this stylesheets due to bugs
+    in implementation of exsl:node-set();
+    </para></listitem>
+
+    <listitem><para>
+    SAXON 6.5.[23] and jd.xslt 1.5.5 are slow, a patch for SAXON 6.5.3 that
+    makes it fast is included in the distribution (saxon-6.5.3.diff).
+    </para></listitem>
+    </itemizedlist>
+  </note>
+
+
+  <para>The shell script takes a list of schema files and puts the
+  result for each <filename>schema.rng</filename> into
+  <filename>schema-compiled.rng</filename>. Additionally,the following
+  command-line options are accepted:
+  </para>
+
+  <variablelist>
+  <varlistentry>
+    <term><option>-nnn</option></term>
+    <listitem><para>number of strip/clean passes (default is <option>-1</option>)
+    </para></listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><option>-processor</option></term>
+    <listitem><para>XSLT processor to use, default is
+    <option>-saxon</option>, other options are xt, jd.xslt, xalan,
+    4xslt, xsltproc
+    </para></listitem>
+  </varlistentry>
+  </variablelist>
+<para>
+  Environment variable <varname>INCELIM</varname> should point to the
+  directory containing XSLT scripts, default is
+  <filename>/usr/local/lib/incelim</filename>.  Temporary files are
+  created in a directory pointed to by environment variable
+  <varname>TMPDIR</varname>, <filename>/tmp</filename> by default.
+</para>
+</section>
+
+<section>
+<title>Aknowledgements</title>
+<para>I would like to thank Sebastian Rahtz for the idea, inspiration, sample
+stylesheet using exsl:node-set(),  and testing of the program.
+</para>
+</section>
+
+<section><title>Terms and Conditions</title>
+<para>This software is distributed under BSD license. The details
+are in <filename>license.txt</filename>.
+</para>
+</section>
+
+<section><title>News and updates</title>
+<para>
+Visit <ulink url="http://davidashen.net/">http://davidashen.net/</ulink>.
+</para>
+</section>
+
+</article>
