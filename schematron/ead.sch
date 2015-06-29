@@ -43,10 +43,10 @@
         <!-- COUNTRY CODES -->
 
         <let name="countrycodes"
-            value="document('country_names_and_code_elements_xml.xml')"/>
+            value="document('iso_3166.xml')"/>
         <rule context="@countrycode">
             <let name="code" value="normalize-space(.)"/>
-            <assert test="$countrycodes//ISO_3166-1_Alpha-2_Code_element/normalize-space(.) = $code"
+            <assert test="$scriptcodes//iso_3166_entry/@alpha_2_code = $code "
                 > The <name/> attribute should contain a code from the ISO 3166-1 codelist.
             </assert>
         </rule>
@@ -54,13 +54,13 @@
         <!-- SCRIPT CODES -->
 
         <let name="scriptcodes"
-            value="document('http://anonscm.debian.org/gitweb/?p=iso-codes/iso-codes.git;a=blob_plain;f=iso_15924/iso_15924.xml;hb=HEAD')"/>
+            value="document('iso_15924.xml')"/>
         <rule context="@scriptcode | @script">
             <let name="code" value="normalize-space(.)"/>
             <assert test="$scriptcodes//iso_15924_entry/@alpha_4_code = $code "> The <name/>
                 attribute should contain a code from the iso_15924 codelist. </assert>
         </rule>
-       
+         
         <!-- REPOSITORY CODES -->
        
         <rule context="*[@repositorycode][preceding::ead:control/@repositoryencoding = 'iso15511']">
