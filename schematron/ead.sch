@@ -46,7 +46,7 @@
             value="document('iso_3166.xml')"/>
         <rule context="@countrycode">
             <let name="code" value="normalize-space(.)"/>
-            <assert test="$scriptcodes//iso_3166_entry/@alpha_2_code = $code "
+            <assert test="$countrycodes//iso_3166_entry/@alpha_2_code = $code "
                 > The <name/> attribute should contain a code from the ISO 3166-1 codelist.
             </assert>
         </rule>
