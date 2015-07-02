@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schematron/ead.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<ead xmlns="http://ead3.archivists.org/schema/">
+    <control langencoding="iso639-3">
+        <recordid></recordid>
+        <filedesc>
+            <titlestmt>
+                <titleproper></titleproper>
+            </titlestmt>
+        </filedesc>
+        <maintenancestatus value="new"></maintenancestatus>
+        <maintenanceagency>
+            <agencyname></agencyname>
+        </maintenanceagency>
+        <maintenancehistory>
+            <maintenanceevent>
+                <eventtype value="created"></eventtype>
+                <eventdatetime></eventdatetime>
+                <agenttype value="human"></agenttype>
+                <agent></agent>
+            </maintenanceevent>
+        </maintenancehistory>
+    </control>
+    <archdesc level="collection">
+        <did lang="sslslsssslkksdpow1kiojnfckvnopwhviowhivhwehf2h3yu97349uropjhp1jpou907u249019l" script="Latn"><unitdatestructured>
+            <datesingle notafter="1999-01-01" notbefore="1999-01-02" standarddate="this is not a date"></datesingle>
+        </unitdatestructured>
+        <unitdate normal="this is not a date"></unitdate></did>
+    </archdesc>
+</ead>
