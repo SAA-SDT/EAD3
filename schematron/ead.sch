@@ -8,10 +8,9 @@
 
     <!-- VARIABLE $language-code-lookups: array of urls of target codelist documents -->
     <xsl:variable name="language-code-lookups" as="element()*">
-        <file key="iso639-1">http://id.loc.gov/vocabulary/iso639-1.rdf</file>
-        <file key="iso639-2">http://id.loc.gov/vocabulary/iso639-2.rdf</file>
-        <!-- unavailable as of 2015-04-07; where can we find a current list in XML, RDF, or JSON format ? -->
-        <!--       <file key="iso639-3">http://anonscm.debian.org/gitweb/?p=iso-codes/pkg-iso-codes.git;a=blob_plain;f=iso_639_3/iso_639_3.xml</file> -->
+        <file key="iso639-1">iso639-1.rdf</file>
+        <file key="iso639-2">iso639-2.rdf</file>
+        <file key="iso639-3">iso_639_3.xml</file>
     </xsl:variable>
 
     <let name="active-language-code-key"
@@ -23,9 +22,7 @@
      values of $language-code-lookups' @key attribute, with a fall-back of 'iso639-2'-->
 
     <let name="language-code-lookup"
-        value="document($language-code-lookups[@key = $active-language-code-key])//madsrdf:code/normalize-space(.)"/>
-
-    <!--    | document($language-code-lookups[@key = $active-language-code-key])//iso_639_3_entry/@id"/> -->
+        value="document($language-code-lookups[@key = $active-language-code-key])//madsrdf:code/normalize-space(.) | document($language-code-lookups[@key = $active-language-code-key])//iso_639_3_entry/@id"/>
 
     <!-- CODES -->
 
@@ -96,7 +93,7 @@
         </rule>
         <rule context="ead:datesingle[exists(@notbefore | @notafter | @standarddate)]">
             <let name="isoPattern" value="'(\-?(0|1|2)([0-9]{3})(((01|02|03|04|05|06|07|08|09|10|11|12)((0[1-9])|((1|2)[0-9])|(3[0-1])))|\-((01|02|03|04|05|06|07|08|09|10|11|12)(\-((0[1-9])|((1|2)[0-9])|(3[0-1])))?))?)(/\-?(0|1|2)([0-9]{3})(((01|02|03|04|05|06|07|08|09|10|11|12)((0[1-9])|((1|2)[0-9])|(3[0-1])))|\-((01|02|03|04|05|06|07|08|09|10|11|12)(\-((0[1-9])|((1|2)[0-9])|(3[0-1])))?))?)?'"/>
-            <assert test="every $d in (@notbefore, @notafter,@standarddate) satisfies matches($d, $isoPattern)"> The <emph>notbefore</emph>, <emph>notafter</emph>, and <emph>standarddate</emph> attributes of <name/> must be a iso8601 date. </assert>
+            <assert test="every $d in (@notbefore, @notafter, @standarddate) satisfies matches($d, $isoPattern)"> The <emph>notbefore</emph>, <emph>notafter</emph>, and <emph>standarddate</emph> attributes of <name/> must be a iso8601 date. </assert>
         </rule>
     </pattern>
 
