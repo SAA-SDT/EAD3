@@ -6,7 +6,7 @@
 
     <!-- VARIABLES -->
 
-    <!-- $language-code-lookups: array of urls of target codelist documents -->
+    <!-- VARIABLE $language-code-lookups: array of urls of target codelist documents -->
     <xsl:variable name="language-code-lookups" as="element()*">
         <file key="iso639-1">http://id.loc.gov/vocabulary/iso639-1.rdf</file>
         <file key="iso639-2">http://id.loc.gov/vocabulary/iso639-2.rdf</file>
@@ -16,7 +16,7 @@
   
    <let name="active-language-code-key" value="(/ead:ead/ead:control/@langencoding[.=$language-code-lookups/@key],'iso639-2')[1]"/>
     
-    <!--$language-code-lookup:
+    <!-- VARIABLE $language-code-lookup:
      select <file> element from $language-code-lookups
      whose @key value matches the EAD3 document's /ead:ead/ead:control/@langencoding that declares the language codelist with any of the
      values of $language-code-lookups' @key attribute, with a fall-back of 'iso639-2'-->
@@ -106,12 +106,13 @@
                 The <emph>normal</emph> attribute of <name/> must be a iso8601 date.
             </assert>
         </rule>
-        <rule context="ead:datesingle/@standarddate">
-            <assert test="matches(., '(\-?(0|1|2)([0-9]{3})(((01|02|03|04|05|06|07|08|09|10|11|12)((0[1-9])|((1|2)[0-9])|(3[0-1])))|\-((01|02|03|04|05|06|07|08|09|10|11|12)(\-((0[1-9])|((1|2)[0-9])|(3[0-1])))?))?)(/\-?(0|1|2)([0-9]{3})(((01|02|03|04|05|06|07|08|09|10|11|12)((0[1-9])|((1|2)[0-9])|(3[0-1])))|\-((01|02|03|04|05|06|07|08|09|10|11|12)(\-((0[1-9])|((1|2)[0-9])|(3[0-1])))?))?)?')">
-                The <emph>standarddate</emph> attribute of <name/> must be a iso8601 date.
+                <rule context="ead:datesingle[exists(@notbefore | @notafter | @standarddate)]">
+            <let name="isoPattern" value="'(\-?(0|1|2)([0-9]{3})(((01|02|03|04|05|06|07|08|09|10|11|12)((0[1-9])|((1|2)[0-9])|(3[0-1])))|\-((01|02|03|04|05|06|07|08|09|10|11|12)(\-((0[1-9])|((1|2)[0-9])|(3[0-1])))?))?)(/\-?(0|1|2)([0-9]{3})(((01|02|03|04|05|06|07|08|09|10|11|12)((0[1-9])|((1|2)[0-9])|(3[0-1])))|\-((01|02|03|04|05|06|07|08|09|10|11|12)(\-((0[1-9])|((1|2)[0-9])|(3[0-1])))?))?)?'"/>
+            <assert test="every $d in (@notbefore, @notafter,@standarddate) satisfies matches($d, $isoPattern)">
+                The <emph>notbefore</emph>, <emph>notafter</emph>, and <emph>standarddate</emph> attributes of <name/> must be a iso8601 date.
             </assert>
         </rule>
-        <rule context="ead:datesingle/@notbefore">
+<!--       <rule context="ead:datesingle/@notbefore">
             <assert test="matches(., '(\-?(0|1|2)([0-9]{3})(((01|02|03|04|05|06|07|08|09|10|11|12)((0[1-9])|((1|2)[0-9])|(3[0-1])))|\-((01|02|03|04|05|06|07|08|09|10|11|12)(\-((0[1-9])|((1|2)[0-9])|(3[0-1])))?))?)(/\-?(0|1|2)([0-9]{3})(((01|02|03|04|05|06|07|08|09|10|11|12)((0[1-9])|((1|2)[0-9])|(3[0-1])))|\-((01|02|03|04|05|06|07|08|09|10|11|12)(\-((0[1-9])|((1|2)[0-9])|(3[0-1])))?))?)?')">
                 The <emph>notbefore</emph> attribute of <name/> must be a iso8601 date.
             </assert>
@@ -120,7 +121,8 @@
             <assert test="matches(., '(\-?(0|1|2)([0-9]{3})(((01|02|03|04|05|06|07|08|09|10|11|12)((0[1-9])|((1|2)[0-9])|(3[0-1])))|\-((01|02|03|04|05|06|07|08|09|10|11|12)(\-((0[1-9])|((1|2)[0-9])|(3[0-1])))?))?)(/\-?(0|1|2)([0-9]{3})(((01|02|03|04|05|06|07|08|09|10|11|12)((0[1-9])|((1|2)[0-9])|(3[0-1])))|\-((01|02|03|04|05|06|07|08|09|10|11|12)(\-((0[1-9])|((1|2)[0-9])|(3[0-1])))?))?)?')">
                 The <emph>notafter</emph> attribute of <name/> must be a iso8601 date.
             </assert>
-        </rule>       
+        </rule>
+-->        
     </pattern>
     
 </schema>
