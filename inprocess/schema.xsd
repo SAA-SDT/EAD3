@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://ead3.archivists.org/schema/" xmlns:u="http://ead3.archivists.org/schema/undeprecated/" xmlns:schema="http://ead3.archivists.org/schema/">
-  <xs:import namespace="http://ead3.archivists.org/schema/undeprecated/" schemaLocation="ead3_undeprected_step1.xsd"/>
+  <xs:import namespace="http://ead3.archivists.org/schema/undeprecated/" schemaLocation="ead3_undeprecated_step1.xsd"/>
   <xs:group name="local">
     <xs:sequence>
       <xs:any namespace="##other" processContents="lax"/>

@@ -315,19 +315,7 @@
                         <ref name="e.footnote"/>
                         <ref name="e.num"/>
                         <ref name="e.quote"/>
-                        <element name="extent">
-                            <ref name="am.common"/>
-                            <optional>
-                                <ref name="a.label"/>
-                            </optional>
-                            <optional>
-                                <ref name="a.encodinganalog"/>
-                            </optional>
-                            <optional>
-                                <ref name="a.localtype"/>
-                            </optional>
-                            <ref name="m.mixed.basic"/>
-                        </element>
+                        <ref name="e.extent"/>
                         <ref name="e.physfacet"/>
                         <ref name="e.dimensions"/>
                     </choice>
@@ -515,6 +503,21 @@
                     <ref name="e.subtitle"/>
                 </choice>
             </oneOrMore>
+        </element>
+    </define>
+    <define name="e.extent">
+        <element name="extent">
+            <ref name="am.common"/>
+            <optional>
+                <ref name="a.label"/>
+            </optional>
+            <optional>
+                <ref name="a.encodinganalog"/>
+            </optional>
+            <optional>
+                <ref name="a.localtype"/>
+            </optional>
+            <ref name="m.mixed.basic"/>
         </element>
     </define>
 </grammar>

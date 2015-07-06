@@ -412,18 +412,6 @@
   label CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED>
 
-<!ELEMENT extent (#PCDATA|abbr|emph|expan|foreign|lb|ptr|ref)*>
-<!ATTLIST extent
-
-  id ID #IMPLIED
-  altrender CDATA #IMPLIED
-  audience (external|internal) #IMPLIED
-  lang NMTOKEN #IMPLIED
-  script NMTOKEN #IMPLIED
-  label CDATA #IMPLIED
-  encodinganalog CDATA #IMPLIED
-  localtype CDATA #IMPLIED>
-
 <!-- ELEMENTS -->
 
 <!-- control -->
@@ -2381,3 +2369,15 @@
   audience (external|internal) #IMPLIED
   lang NMTOKEN #IMPLIED
   script NMTOKEN #IMPLIED>
+
+<!ELEMENT extent (#PCDATA|abbr|emph|expan|foreign|lb|ptr|ref)*>
+<!ATTLIST extent
+
+  id ID #IMPLIED
+  altrender CDATA #IMPLIED
+  audience (external|internal) #IMPLIED
+  lang NMTOKEN #IMPLIED
+  script NMTOKEN #IMPLIED
+  label CDATA #IMPLIED
+  encodinganalog CDATA #IMPLIED
+  localtype CDATA #IMPLIED>

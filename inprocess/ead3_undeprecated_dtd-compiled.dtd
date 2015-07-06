@@ -181,15 +181,6 @@
   label CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED>
 
-<!ENTITY % m.mixed.basic "(#PCDATA|%m.mixed.basic.elements;)*">
-
-<!ELEMENT extent %m.mixed.basic;>
-<!ATTLIST extent
-  %am.common;
-  label CDATA #IMPLIED
-  encodinganalog CDATA #IMPLIED
-  localtype CDATA #IMPLIED>
-
 <!-- ELEMENTS -->
 
 <!-- control -->
@@ -375,6 +366,8 @@
   %am.common;
   encodinganalog CDATA #IMPLIED
   transliteration NMTOKEN #IMPLIED>
+
+<!ENTITY % m.mixed.basic "(#PCDATA|%m.mixed.basic.elements;)*">
 
 <!ELEMENT titleproper %m.mixed.basic;>
 <!ATTLIST titleproper
@@ -1391,3 +1384,10 @@
                      |bibseries|sponsor|titleproper|subtitle)+>
 <!ATTLIST titlepage
   %am.common;>
+
+<!ELEMENT extent %m.mixed.basic;>
+<!ATTLIST extent
+  %am.common;
+  label CDATA #IMPLIED
+  encodinganalog CDATA #IMPLIED
+  localtype CDATA #IMPLIED>
