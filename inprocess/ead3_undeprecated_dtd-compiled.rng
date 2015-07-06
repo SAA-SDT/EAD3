@@ -5,14 +5,16 @@
         
         
 
-         <rng:define name="e.ead">
+        <rng:define name="e.ead">
             <element name="ead">
                 <ref name="am.common"/>
                 <ref name="a.relatedencoding"/>
                 <ref name="a.base"/>
                 <ref name="e.control"/>
                 <!-- OPTIONAL FRONTMATTER -->
-                <optional><ref name="e.frontmatter"/></optional>
+                <optional>
+                    <ref name="e.frontmatter"/>
+                </optional>
                 <ref name="e.archdesc"/>
             </element>
         </rng:define>
@@ -304,6 +306,16 @@
                         <ref name="e.num"/>
                         <ref name="e.quote"/>
                         <element name="extent">
+                            <ref name="am.common"/>
+                            <optional>
+                                <ref name="a.label"/>
+                            </optional>
+                            <optional>
+                                <ref name="a.encodinganalog"/>
+                            </optional>
+                            <optional>
+                                <ref name="a.localtype"/>
+                            </optional>
                             <ref name="m.mixed.basic"/>
                         </element>
                         <ref name="e.physfacet"/>
@@ -3448,21 +3460,21 @@
                 </choice>
             </zeroOrMore>
         </element>
-      
+
 
     </rng:define>
     <rng:define xmlns:rng="http://relaxng.org/ns/structure/1.0" name="e.frontmatter">
 
-            <element name="frontmatter">
-                <ref name="am.common"/>
-                <optional>
-                    <ref name="e.titlepage"/>
-                    
-                </optional>
-                <zeroOrMore>
-                    <ref name="e.div"/>
-                </zeroOrMore>
-            </element>
+        <element name="frontmatter">
+            <ref name="am.common"/>
+            <optional>
+                <ref name="e.titlepage"/>
+
+            </optional>
+            <zeroOrMore>
+                <ref name="e.div"/>
+            </zeroOrMore>
+        </element>
     </rng:define>
     <rng:define xmlns:rng="http://relaxng.org/ns/structure/1.0" name="e.titlepage">
         <element name="titlepage">

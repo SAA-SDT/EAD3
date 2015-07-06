@@ -184,6 +184,11 @@
 <!ENTITY % m.mixed.basic "(#PCDATA|%m.mixed.basic.elements;)*">
 
 <!ELEMENT extent %m.mixed.basic;>
+<!ATTLIST extent
+  %am.common;
+  label CDATA #IMPLIED
+  encodinganalog CDATA #IMPLIED
+  localtype CDATA #IMPLIED>
 
 <!-- ELEMENTS -->
 
