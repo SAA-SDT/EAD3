@@ -181,6 +181,16 @@
   label CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED>
 
+<!ENTITY % m.mixed.basic.plus.access.ref "(#PCDATA
+                                           |%m.mixed.basic.elements;
+                                           |%m.access;|date|footnote|num
+                                           |quote|bibseries|imprint)*">
+
+<!ELEMENT bibref %m.mixed.basic.plus.access.ref;>
+<!ATTLIST bibref
+  %am.common;
+  encodinganalog CDATA #IMPLIED>
+
 <!-- ELEMENTS -->
 
 <!-- control -->
@@ -1089,11 +1099,6 @@
 
 <!ELEMENT archref %m.mixed.basic.plus.access;>
 <!ATTLIST archref
-  %am.common;
-  encodinganalog CDATA #IMPLIED>
-
-<!ELEMENT bibref %m.mixed.basic.plus.access;>
-<!ATTLIST bibref
   %am.common;
   encodinganalog CDATA #IMPLIED>
 

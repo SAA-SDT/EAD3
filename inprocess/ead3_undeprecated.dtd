@@ -412,6 +412,20 @@
   label CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED>
 
+<!ELEMENT bibref (#PCDATA
+                                           |abbr|emph|expan|foreign|lb|ptr|ref
+                                           |persname|corpname|famname|geogname|name|occupation
+                     |subject|genreform|function|title|date|footnote|num
+                                           |quote|bibseries|imprint)*>
+<!ATTLIST bibref
+
+  id ID #IMPLIED
+  altrender CDATA #IMPLIED
+  audience (external|internal) #IMPLIED
+  lang NMTOKEN #IMPLIED
+  script NMTOKEN #IMPLIED
+  encodinganalog CDATA #IMPLIED>
+
 <!-- ELEMENTS -->
 
 <!-- control -->
@@ -1987,19 +2001,6 @@
                      |subject|genreform|function|title|date|footnote|num
                                        |quote)*>
 <!ATTLIST archref
-
-  id ID #IMPLIED
-  altrender CDATA #IMPLIED
-  audience (external|internal) #IMPLIED
-  lang NMTOKEN #IMPLIED
-  script NMTOKEN #IMPLIED
-  encodinganalog CDATA #IMPLIED>
-
-<!ELEMENT bibref (#PCDATA|abbr|emph|expan|foreign|lb|ptr|ref
-                                       |persname|corpname|famname|geogname|name|occupation
-                     |subject|genreform|function|title|date|footnote|num
-                                       |quote)*>
-<!ATTLIST bibref
 
   id ID #IMPLIED
   altrender CDATA #IMPLIED

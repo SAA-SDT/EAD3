@@ -161,6 +161,12 @@
         <xs:element name="physfacet" type="physfacet"/>
         <xs:element name="dimensions" type="dimensions"/>
       </xs:choice><xs:attributeGroup ref="am.common"/><xs:attribute name="localtype" type="xs:token"/><xs:attribute name="label" type="xs:string"/><xs:attribute name="encodinganalog" type="xs:token"/></xs:complexType>
+  <xs:complexType name="bibref"><xs:complexContent>
+        <xs:extension base="m.mixed.basic.plus.access.ref">
+          <xs:attributeGroup ref="am.common"/>
+          <xs:attribute name="encodinganalog" type="xs:token"/>
+        </xs:extension>
+      </xs:complexContent></xs:complexType>
   <!-- ELEMENTS -->
   <!-- control -->
   <xs:complexType name="control"><xs:sequence>
@@ -1203,12 +1209,6 @@
           <xs:attribute name="encodinganalog" type="xs:token"/>
         </xs:extension>
       </xs:complexContent></xs:complexType>
-  <xs:complexType name="bibref"><xs:complexContent>
-        <xs:extension base="m.mixed.basic.plus.access">
-          <xs:attributeGroup ref="am.common"/>
-          <xs:attribute name="encodinganalog" type="xs:token"/>
-        </xs:extension>
-      </xs:complexContent></xs:complexType>
   <xs:complexType name="descriptivenote"><xs:sequence>
         <xs:element name="p" type="p" maxOccurs="unbounded"/>
       </xs:sequence><xs:attributeGroup ref="am.common"/><xs:attribute name="encodinganalog" type="xs:token"/></xs:complexType>
@@ -1990,4 +1990,16 @@
           <xs:attribute name="localtype" type="xs:token"/>
         </xs:extension>
       </xs:complexContent></xs:complexType>
+  <xs:complexType name="m.mixed.basic.plus.access.ref" mixed="true">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:group ref="m.mixed.basic.elements"/>
+      <xs:group ref="m.access"/>
+      <xs:element name="date" type="date"/>
+      <xs:element name="footnote" type="footnote"/>
+      <xs:element name="num" type="num"/>
+      <xs:element name="quote" type="quote"/>
+      <xs:element name="bibseries" type="bibseries"/>
+      <xs:element name="imprint" type="imprint"/>
+    </xs:choice>
+  </xs:complexType>
 </xs:schema>
