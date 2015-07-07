@@ -1,6 +1,4 @@
 
-<!-- other linking-related attributes -->
-
 <!-- include "ead_revised_defs.rng" -->
 
 <!ELEMENT ead (control,frontmatter?,archdesc)>
@@ -11,10 +9,8 @@
   audience (external|internal) #IMPLIED
   lang NMTOKEN #IMPLIED
   script NMTOKEN #IMPLIED
-
-  relatedencoding CDATA #REQUIRED
-
-  base CDATA #REQUIRED>
+  relatedencoding CDATA #IMPLIED
+  base CDATA #IMPLIED>
 
 <!-- ARCHDESC -->
 
@@ -34,18 +30,15 @@
   audience (external|internal) #IMPLIED
   lang NMTOKEN #IMPLIED
   script NMTOKEN #IMPLIED
-
-  localtype CDATA #REQUIRED
-
-  relatedencoding CDATA #REQUIRED
+  localtype CDATA #IMPLIED
+  relatedencoding CDATA #IMPLIED
 
   otherlevel CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED
 
   level (class|collection|file|fonds|item|otherlevel|recordgrp|series
          |subfonds|subgrp|subseries) #REQUIRED
-
-  base CDATA #REQUIRED>
+  base CDATA #IMPLIED>
 
 <!-- ELEMENT MODELS -->
 
@@ -2284,6 +2277,8 @@
 <!-- ATTRIBUTE DEFINITIONS -->
 
 <!-- xlink-modelled attributes -->
+
+<!-- other linking-related attributes -->
 
 <!-- display attributes -->
 
