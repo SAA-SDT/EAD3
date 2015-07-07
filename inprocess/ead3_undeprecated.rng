@@ -330,6 +330,26 @@
                 <ref name="m.mixed.basic.plus.access.ref"/>
             </element>
         </rng:define>
+        <rng:define name="e.anyname">
+            <element>
+                <anyName>
+                    <except>
+                        <nsName ns="http://ead3.archivists.org/schema/undeprecated/"/>
+                    </except>
+                </anyName>
+                <zeroOrMore>
+                    <attribute>
+                        <anyName/>
+                    </attribute>
+                </zeroOrMore>
+                <zeroOrMore>
+                    <choice>
+                        <text/>
+                        <ref name="e.anyname"/>
+                    </choice>
+                </zeroOrMore>
+            </element>
+        </rng:define>
     <rng:div datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
   <!-- ELEMENTS -->
   
@@ -2764,26 +2784,7 @@
       <ref name="e.anyname"/>
     </element>
   </rng:define>
-  <rng:define name="e.anyname">
-    <element>
-      <anyName>
-        <except>
-          <nsName ns="http://ead3.archivists.org/schema/undeprecated/"/>
-        </except>
-      </anyName>
-      <zeroOrMore>
-        <attribute>
-          <anyName/>
-        </attribute>
-      </zeroOrMore>
-      <zeroOrMore>
-        <choice>
-          <text/>
-          <ref name="e.anyname"/>
-        </choice>
-      </zeroOrMore>
-    </element>
-  </rng:define>
+  
   <!-- ELEMENT MODELS -->
   <rng:define name="m.blocks">
     <choice>
