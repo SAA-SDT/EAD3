@@ -332,6 +332,26 @@
                 <ref name="m.mixed.basic.plus.access.ref"/>
             </element>
         </define>
+        <define name="e.anyname">
+            <element>
+                <anyName>
+                    <except>
+                        <nsName ns="http://ead3.archivists.org/schema/undeprecated/"/>
+                    </except>
+                </anyName>
+                <zeroOrMore>
+                    <attribute>
+                        <anyName/>
+                    </attribute>
+                </zeroOrMore>
+                <zeroOrMore>
+                    <choice>
+                        <text/>
+                        <ref name="e.anyname"/>
+                    </choice>
+                </zeroOrMore>
+            </element>
+        </define>
     </include>
     <start>
         <ref name="e.ead"/>
