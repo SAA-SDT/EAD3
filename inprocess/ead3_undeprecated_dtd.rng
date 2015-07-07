@@ -318,7 +318,15 @@
 
             </element>
         </define>
-
+        <define name="e.bibref">
+            <element name="bibref">
+                <ref name="am.common"/>
+                <optional>
+                    <ref name="a.encodinganalog"/>
+                </optional>
+                <ref name="m.mixed.basic.plus.access.ref"/>
+            </element>
+        </define>
     </include>
     <start>
         <ref name="e.ead"/>
@@ -512,5 +520,20 @@
             </optional>
             <ref name="m.mixed.basic"/>
         </element>
+    </define>
+    <define name="m.mixed.basic.plus.access.ref">
+        <zeroOrMore>
+            <choice>
+                <text/>
+                <ref name="m.mixed.basic.elements"/>
+                <ref name="m.access"/>
+                <ref name="e.date"/>
+                <ref name="e.footnote"/>
+                <ref name="e.num"/>
+                <ref name="e.quote"/>
+                <ref name="e.bibseries"/>
+                <ref name="e.imprint"/>
+            </choice>
+        </zeroOrMore>
     </define>
 </grammar>
