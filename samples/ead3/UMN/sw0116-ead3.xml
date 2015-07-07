@@ -1,0 +1,1496 @@
+<?xml version="1.0"?>
+<?xml-model href="../../schematron/ead.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<ead xmlns="http://ead3.archivists.org/schema/" audience="external">  
+  <control>
+	<recordid>sw0116</recordid> 
+  	<filedesc> 
+		<titlestmt> 
+		  <titleproper encodinganalog="Title">Henry Street Music School records,
+			 1927-1969 </titleproper> 
+		  <author encodinganalog="Contributor">Heather McMullen, David Klaassen
+			 </author> 
+		</titlestmt> 
+		<publicationstmt> 
+		  <publisher encodinganalog="Publisher">University of Minnesota
+			 Libraries</publisher> 
+		  <date encodinganalog="Date">September 1992</date> 
+		  <address> 
+			 <addressline>University of Minnesota Libraries</addressline> 
+			 <addressline>Minneapolis, MN 55455</addressline> 
+		  </address> 
+		</publicationstmt> 
+	 </filedesc> 
+  	<maintenancestatus value="derived"/> 
+  	<maintenanceagency> 
+  		<agencycode>UMN</agencycode>
+  		<agencyname>University of Minnesota Libraries</agencyname>
+  	</maintenanceagency> 
+  	<languagedeclaration>
+  		<language langcode="eng"/>
+  		<script scriptcode="Latn"/>
+  	</languagedeclaration>
+  	<conventiondeclaration>
+  		<citation>DACS</citation>
+  	</conventiondeclaration>
+  	<maintenancehistory>
+  		<maintenanceevent>
+  			<eventtype value="created"/>
+  			<eventdatetime>June 2004</eventdatetime>
+  			<agenttype value="human"/>
+  			<agent>Leslie Czechowski</agent>
+  		</maintenanceevent>
+  		<maintenanceevent>
+  			<eventtype value="revised"/>
+  			<eventdatetime>November 2008</eventdatetime>
+  			<agenttype value="human"/>
+  			<agent>Kersten Dolgner</agent>
+  		</maintenanceevent> 
+  		<maintenanceevent>
+  			<eventtype value="derived">Conversion to EAD3</eventtype>
+  			<eventdatetime>September 2014</eventdatetime>
+  			<agenttype value="human"/>
+  			<agent>Lara Friedman-Shedlov</agent>
+  		</maintenanceevent>
+  	</maintenancehistory>
+  </control> 
+  
+<archdesc level="collection" relatedencoding="MARC"> 
+	 <did> 
+	 	<repository label="Repository:" encodinganalog="852$a">
+	 		<corpname source="LCNAF">
+	 			<part localtype="a">University of Minnesota. </part>
+	 			<part localtype="b">Social Welfare History Archives. [swha]</part>
+	 		</corpname>
+	 	</repository> 
+		<origination label="Creator: ">
+			<corpname encodinganalog="110"><part localtype="a">Henry Street Music School</part> </corpname>
+		</origination> 
+		<unittitle encodinganalog="245$a" label="Title: ">Henry Street Music School records</unittitle> 
+	 	<unitdatestructured label="Dates:" encodinganalog="245$f" unitdatetype="bulk">
+	 		<daterange>
+	 			<fromdate>1927</fromdate>
+	 			<todate>1969</todate>
+	 		</daterange>
+	 	</unitdatestructured> 
+	 	<physdesc label="Quantity: ">47.25 linear feet</physdesc> 
+		<abstract encodinganalog="520" label="Abstract: ">The Henry Street
+		  Settlement Music School records contain correspondence, financial records,
+		  reports, statistics and scrapbooks. Also includes card files with student and
+		  faculty information. </abstract> 
+		<unitid encodinganalog="099" countrycode="mnu" repositorycode="MnU" label="Collection Number: ">SW0116</unitid>
+		<langmaterial encodinganalog="546" label="Language">
+			<language encodinganalog="041" langcode="eng">English</language>
+		</langmaterial> 
+	 </did> 
+	 
+  	<accessrestrict encodinganalog="506"> 
+		<head>Use of Materials</head> 
+		<p>Open for use in Social Welfare History Archives reading room. </p> 
+	 </accessrestrict> 
+	 <userestrict encodinganalog="540"> 
+		<head>Copyright</head> 
+		<p>Please contact the Archivist for copyright information.</p> 
+	 </userestrict>  
+	 <acqinfo> 
+		<head>Acquisition Information</head> 
+		<p>The Henry Street Settlement Music School records were received as a
+		  gift from the school in 1970 and 1975.</p> 
+	 </acqinfo> 
+	 <otherfindaid> 
+		<head>Other Finding Aid</head> 
+		<p>Unpublished inventory available. Please contact Archives for more
+		  information. </p> 
+	 </otherfindaid> 
+	 <relatedmaterial> 
+		<head>Related Material</head> 
+		<p>In addition to the above-described records of the Music School, the
+		  Social Welfare History Archives holds the records of 
+		  <ref href="http://special.lib.umn.edu/findaid/xml/sw0058.xml">Henry
+			 Street Settlement</ref>, the parent institution. These records contain
+		  scattered references to activities of the Music School as well as the
+		  Playhouse, whose dramatic productions often involved the Music School.</p> 
+	 </relatedmaterial> 
+	 <bioghist> 
+		<head>Historical Note</head> 
+		<p>The Music School of Henry Street Settlement was formed in 1927,
+		  although the Settlement had offered musical activities for residents of New
+		  York City's Lower East Side for many years. The new school, which opened to
+		  students in the fall of 1928, offered classes in instrumental and vocal music,
+		  dancing, and instrument construction and repair. </p> 
+	 </bioghist> 
+	 <scopecontent encodinganalog="520"> 
+		<head>Scope and Content</head> 
+		<p> The Henry Street Music School records demonstrate the school's
+		  determination to provide both excellence in individual instruction (as
+		  evidenced in the number of its students who went on to professional careers)
+		  and diverse musical activities that would appeal to all sectors of the
+		  community. Among the special events and projects documented in the records are
+		  the school's 1937 world premiere performance of Aaron Copland's opera,
+		  <emph render="italic">The Second Hurricane</emph> (Copland was a member of the
+		  school's advisory committee as were George Gershwin and Jascha Heifetz), and a
+		  1960s project to allow young men released from the Riker's Island Prison for
+		  young offenders to continue the instrumental lessons they had begun while
+		  incarcerated.</p> 
+		<p>The bulk of the records comprises scrapbooks of programs, photographs,
+		  and clippings from recitals, productions, and other performances and card files
+		  containing basic information on individual students and faculty members. Also
+		  included in the records are annual reports, committee minutes, correspondence,
+		  financial records, statistical reports on students, and loose programs and
+		  photographs. The individuals represented most prominently in the records are
+		  three of the school's directors: Hedi Katz (1927-1935); Grace Spofford
+		  (1935-1954); and Robert Egan (1954-1969).</p> 
+	 </scopecontent> 
+	 <controlaccess> 
+		<head>Index Terms</head> 
+		<p>This Henry Street Music School records are indexed under the following
+		  headings in the catalog of the University of Minnesota Libraries. Researchers
+		  desiring materials about related topics, persons or places should search the
+		  catalog using these headings. </p> 
+		<corpname encodinganalog="610" source="lcnaf" rules="aacr2"><part localtype="a">Henry Street
+		  Settlement (New York, N.Y.).</part><part localtype="b"> Music School</part></corpname> 
+	 	<corpname source="lcnaf" rules="aacr2" encodinganalog="610"><part localtype="a">Henry Street
+	 		Settlement (New York, N.Y.). </part><part localtype="b">Music School</part><part localtype="x">Records.</part></corpname> 
+	 	<geogname source="lcnaf" rules="aacr2" encodinganalog="651"><part localtype="a">Lower East
+	 		Side (New York, N.Y.)</part></geogname> 
+	 	<subject encodinganalog="650" source="lcsh"><part localtype="a">Music Instruction and
+	 		study</part><part localtype="z">New York (State)</part><part localtype="z">New York</part><part localtype="x">History</part><part localtype="x">Sources.</part></subject> 
+	 	<subject source="lcsh" encodinganalog="650"><part localtype="a">Social settlements</part><part localtype="z">New York
+	 		(State)</part><part localtype="z"> New York</part><part localtype="x">History</part><part localtype="x">Sources.</part></subject> 
+	 </controlaccess> 
+	 <dsc> 
+		<head>Detailed Description of the Records</head> 
+		<c01 level="series"> 
+		  <did> 
+			 <unittitle>Series 1: Administrative Materials</unittitle> 
+			 <unitdate unitdatetype="inclusive" normal="1927/1967">1927-1967</unitdate> 
+		  </did> 
+		  <scopecontent> 
+			 <p>Series 1 consists of three record storage boxes of administrative
+				records of the Music School. Materials in series 1 include correspondence
+				financial records, reports and statistics. </p> 
+		  </scopecontent> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Self Study, History of Music School and
+				  Playhouse</unittitle> 
+				<unitdate unitdatetype="inclusive" normal="1966">1966</unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">1</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Self-Study, History of Music School and
+				  Playhouse</unittitle> 
+				<unitdate unitdatetype="inclusive" normal="1966">1966</unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">2</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Self-Study, History of Music School and
+				  Playhouse</unittitle> 
+				<unitdate unitdatetype="inclusive">1966</unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">3</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>New York State Material: State Education Department
+				  Approval for Veterans</unittitle> 
+				<unitdate unitdatetype="inclusive">1945-1952</unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">4</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle> New York State Material: State Education Department
+				  Approval for Veterans</unittitle> 
+				<unitdate unitdatetype="inclusive">1953, 1955, 1960s</unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">5</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Veterans Material</unittitle> 
+				<unitdate unitdatetype="inclusive">1946-1949</unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">6</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Veterans Material</unittitle> 
+				<unitdate unitdatetype="inclusive">1950-1952</unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">7</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Veterans List</unittitle> 
+				<unitdate unitdatetype="inclusive">1954</unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">8</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>New York State War Service Scholarship for
+				  Veterans</unittitle> 
+				<unitdate unitdatetype="inclusive">1947-1948</unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">9</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Teachers' Salaries</unittitle> 
+				<unitdate unitdatetype="inclusive">1952-1955</unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">10</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Monday Staff Meetings</unittitle> 
+				<unitdate unitdatetype="inclusive">1960s</unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">11</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Music School Faculty Manual</unittitle> 
+				<unitdate unitdatetype="inclusive">1965</unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">12</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Concerts, Book Bazar</unittitle> 
+				<unitdate unitdatetype="inclusive">1960</unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">13</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Violin Faculty Meeting</unittitle> 
+				<unitdate unitdatetype="inclusive">November 10, 1960</unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">14</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Chamber Ensemble</unittitle> 
+				<unitdate unitdatetype="inclusive">1964-1965</unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">16</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Financial, Enrollment</unittitle> 
+				<unitdate unitdatetype="inclusive">1964-1967</unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">17</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Riker's Island Project</unittitle> 
+				<unitdate unitdatetype="inclusive">1963-1967</unitdate> 
+			 </did> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>Indiana State Prison</unittitle> 
+				  <unitdate unitdatetype="inclusive"/>
+				  
+				</did> 
+			 </c03> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>Program</unittitle> 
+				  <unitdate unitdatetype="inclusive"/>
+				  
+				  <container localtype="box">1</container> 
+				  <container localtype="folder">19</container> 
+				</did> 
+			 </c03> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>Lists of Instruments rented out</unittitle> 
+				  <unitdate unitdatetype="inclusive"/>
+				  
+				  <container localtype="box">1</container> 
+				  <container localtype="folder">19</container> 
+				</did> 
+			 </c03> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>Participation Charts</unittitle> 
+				  <unitdate unitdatetype="inclusive"/>
+				  
+				  <container localtype="box">1</container> 
+				  <container localtype="folder">19</container> 
+				</did> 
+			 </c03> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>Correspondence and Reports</unittitle> 
+				  <unitdate unitdatetype="inclusive"/>
+				  
+				  <container localtype="box">1</container> 
+				  <container localtype="folder">19</container> 
+				</did> 
+			 </c03> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>List of Students, Attendance Logs, Instrument
+					 Rentals</unittitle> 
+				  <unitdate unitdatetype="inclusive"/>
+				  
+				  <container localtype="box">1</container> 
+				  <container localtype="folder">19</container> 
+				</did> 
+			 </c03> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>Lists, Reports, and Statistical Summaries</unittitle> 
+				  <unitdate unitdatetype="inclusive"/>
+				  
+				  <container localtype="box">1</container> 
+				  <container localtype="folder">19</container> 
+				</did> 
+			 </c03> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>Lists, Attendance Logs</unittitle> 
+				  <unitdate unitdatetype="inclusive"/>
+				  
+				  <container localtype="box">1</container> 
+				  <container localtype="folder">19</container> 
+				</did> 
+			 </c03> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Correspondence, Financial, Miscellaneous</unittitle> 
+				<unitdate unitdatetype="inclusive">1927-1928</unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">20</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Miscellaneous</unittitle> 
+				<unitdate unitdatetype="inclusive">1928-1929</unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">21</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Correspondence</unittitle> 
+				<unitdate unitdatetype="inclusive">1929-1930</unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">22</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Financial</unittitle> 
+				<unitdate unitdatetype="inclusive">1929-1930</unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">23</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Expenditures and 1929-1933 Enrollment</unittitle> 
+				<unitdate unitdatetype="inclusive">1929-1933</unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">24</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Executive Committee Meetings</unittitle> 
+				<unitdate unitdatetype="inclusive">1929-1930</unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">25</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Miscellaneous</unittitle> 
+				<unitdate unitdatetype="inclusive">1929-1930</unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">26</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Correspondence, Financial, Executive Meeting Minutes,
+				  Miscellaneous</unittitle> 
+				<unitdate unitdatetype="inclusive">1930-1931</unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">27</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Correspondence, Financial, Executive Meeting Minutes,
+				  Miscellaneous</unittitle> 
+				<unitdate unitdatetype="inclusive">1931-1932</unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">28</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Correspondence, Miscellaneous</unittitle> 
+				<unitdate unitdatetype="inclusive">1932-1933</unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">29</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Correspondence, Financial, Miscellaneous</unittitle> 
+				<unitdate unitdatetype="inclusive">1933-1934</unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">30</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Correspondence, Miscellaneous</unittitle> 
+				<unitdate unitdatetype="inclusive">1934-1935</unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">31</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Correspondence, Financial, Executive Meeting Minutes,
+				  Miscellaneous</unittitle> 
+				<unitdate unitdatetype="inclusive">1935-1936</unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">32</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folio - Financial</unittitle> 
+				<unitdate unitdatetype="inclusive">1929, 1957</unitdate> 
+				<container localtype="box">1</container> 
+				<container localtype="folder">33</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Correspondence</unittitle> 
+				<unitdate unitdatetype="inclusive">1945-1948</unitdate> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">1</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Correspondence</unittitle> 
+				<unitdate unitdatetype="inclusive">1953-1954</unitdate> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">2</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Brochures from Other Settlement Music
+				  Schools</unittitle> 
+				<unitdate unitdatetype="inclusive">1954-1956</unitdate> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">3</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Miscellaneous</unittitle> 
+				<unitdate unitdatetype="inclusive">1960s</unitdate> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">4</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Miscellaneous</unittitle> 
+				<unitdate unitdatetype="inclusive"/>
+				
+				<container localtype="box">2</container> 
+				<container localtype="folder">5</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Programs</unittitle> 
+				<unitdate unitdatetype="inclusive">1957-1958</unitdate> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">6</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Schedules and Plans</unittitle> 
+				<unitdate unitdatetype="inclusive">1960-1961</unitdate> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">7</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Arnold Pomerantz Memorial Fund Scholarship </unittitle> 
+				<unitdate unitdatetype="inclusive"/>
+				
+				<container localtype="box">2</container> 
+				<container localtype="folder">8</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Tennyson and other Competition Award
+				  Applicants</unittitle> 
+				<unitdate unitdatetype="inclusive">1953-1954</unitdate> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">9</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>LaGuardia Music Scholarship: Correspondence, Students,
+				  Tests</unittitle> 
+				<unitdate unitdatetype="inclusive">1953-1956</unitdate> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">10</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>LaGuardia Music Scholarship Candidates</unittitle> 
+				<unitdate unitdatetype="inclusive">1955-1956</unitdate> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">11</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>LaGuardia Music Scholarship</unittitle> 
+				<unitdate unitdatetype="inclusive">1959-1960</unitdate> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">12</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Music Scholarship Committee</unittitle> 
+				<unitdate unitdatetype="inclusive">1950-1951</unitdate> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">13</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Music Scholarship Committee</unittitle> 
+				<unitdate unitdatetype="inclusive">1952</unitdate> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">14</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Music Scholarship Committee</unittitle> 
+				<unitdate unitdatetype="inclusive">1953-1963</unitdate> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">15</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Board of Education</unittitle> 
+				<unitdate unitdatetype="inclusive">1936-1962</unitdate> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">16</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Benefit Contracts</unittitle> 
+				<unitdate unitdatetype="inclusive">1937-1942</unitdate> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">17</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Benefits: <emph render="italic">Parsifal</emph>;
+				  <emph render="italic">Carmen</emph></unittitle> 
+				<unitdate unitdatetype="inclusive">1938-1941, 1940</unitdate> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">18</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Benefit: <emph render="italic">Parsifal</emph></unittitle> 
+				<unitdate unitdatetype="inclusive">1942</unitdate> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">19</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Benefits, Miscellaneous</unittitle> 
+				<unitdate unitdatetype="inclusive"/>
+				
+				<container localtype="box">2</container> 
+				<container localtype="folder">20</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>25th Anniversary Clippings</unittitle> 
+				<unitdate unitdatetype="inclusive"/>
+				
+				<container localtype="box">2</container> 
+				<container localtype="folder">21</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Publicity</unittitle> 
+				<unitdate unitdatetype="inclusive">1947-1949</unitdate> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">22</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Publicity</unittitle> 
+				<unitdate unitdatetype="inclusive">1950-1956</unitdate> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">23</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Publicity</unittitle> 
+				<unitdate unitdatetype="inclusive">1957-1958</unitdate> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">24</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Publicity</unittitle> 
+				<unitdate unitdatetype="inclusive">1962</unitdate> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">25</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>String Faculty</unittitle> 
+				<unitdate unitdatetype="inclusive"/>
+				
+				<container localtype="box">2</container> 
+				<container localtype="folder">26</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Mrs. Jane Inge</unittitle> 
+				<unitdate unitdatetype="inclusive"/>
+				
+				<container localtype="box">2</container> 
+				<container localtype="folder">27</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Anecdotes from a Survey of Attitudes toward Music,
+				  Radio, etc.</unittitle> 
+				<unitdate unitdatetype="inclusive">1941</unitdate> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">28</container> 
+			 </did> 
+			 <scopecontent> 
+				<p>Survey may be of the Pitt St. area of the Lower East Side in New
+				  York City. </p> 
+			 </scopecontent> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Statistics</unittitle> 
+				<unitdate unitdatetype="inclusive">1936-1950</unitdate> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">29</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Statistics</unittitle> 
+				<unitdate unitdatetype="inclusive">1950-1951</unitdate> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">30</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Statistics</unittitle> 
+				<unitdate unitdatetype="inclusive">1951-1952</unitdate> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">31</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Statistics</unittitle> 
+				<unitdate unitdatetype="inclusive">1952-1953</unitdate> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">32</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Statistics</unittitle> 
+				<unitdate unitdatetype="inclusive">1953-1954</unitdate> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">33</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Statistics</unittitle> 
+				<unitdate unitdatetype="inclusive">1954-1955</unitdate> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">34</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Statistics</unittitle> 
+				<unitdate unitdatetype="inclusive">1955-1956</unitdate> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">35</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Statistics</unittitle> 
+				<unitdate unitdatetype="inclusive">1956-1957</unitdate> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">36</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Statistics</unittitle> 
+				<unitdate unitdatetype="inclusive">1957-1958</unitdate> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">37</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Statistics</unittitle> 
+				<unitdate unitdatetype="inclusive">1958-1959</unitdate> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">38</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Statistics</unittitle> 
+				<unitdate unitdatetype="inclusive">1959-1960</unitdate> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">39</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Statistics</unittitle> 
+				<unitdate unitdatetype="inclusive">1960-1961</unitdate> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">40</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Statistics</unittitle> 
+				<unitdate unitdatetype="inclusive">1961-1962</unitdate> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">41</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Statistics</unittitle> 
+				<unitdate unitdatetype="inclusive">1962-1963</unitdate> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">42</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Statistics</unittitle> 
+				<unitdate unitdatetype="inclusive">1963-1964</unitdate> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">43</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Statistics</unittitle> 
+				<unitdate unitdatetype="inclusive">1964-1965</unitdate> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">44</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Statistics</unittitle> 
+				<unitdate unitdatetype="inclusive">1965-1966</unitdate> 
+				<container localtype="box">2</container> 
+				<container localtype="folder">45</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Music School Instruments Issued to Students</unittitle> 
+				<unitdate unitdatetype="inclusive"/>
+				
+				<container localtype="box">3</container> 
+				<container localtype="folder">1</container> 
+			 </did> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>Correspondence, List of Instruments Issued to
+					 Students</unittitle> 
+				  <unitdate unitdatetype="inclusive"/>
+				  
+				  <container localtype="box">3</container> 
+				  <container localtype="folder">1</container> 
+				</did> 
+			 </c03> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>Alphabetical files of Students</unittitle> 
+				  <unitdate unitdatetype="inclusive"/>
+				  
+				  <container localtype="box">3</container> 
+				  <container localtype="folder">1</container> 
+				</did> 
+			 </c03> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Music School Ten Year Plan</unittitle> 
+				<unitdate unitdatetype="inclusive">1959</unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">2</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Henry Street Settlement Proposal: The Open Door to the
+				  Arts on the Lower East Side </unittitle> 
+				<unitdate unitdatetype="inclusive">1966</unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">3</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Director's Reports</unittitle> 
+				<unitdate unitdatetype="inclusive">1932-1960</unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">4</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Director's Reports</unittitle> 
+				<unitdate unitdatetype="inclusive">1955-1956</unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">5</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Director's Reports</unittitle> 
+				<unitdate unitdatetype="inclusive">1956-1957</unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">6</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Director's Reports</unittitle> 
+				<unitdate unitdatetype="inclusive">1957-1958</unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">7</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Director's Reports</unittitle> 
+				<unitdate unitdatetype="inclusive">1958-1959</unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">8</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Director's Reports</unittitle> 
+				<unitdate unitdatetype="inclusive">1959-1960</unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">9</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Music School Committee Minutes</unittitle> 
+				<unitdate unitdatetype="inclusive">1947-1954</unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">10</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Music School Committee Minutes, Notes</unittitle> 
+				<unitdate unitdatetype="inclusive">1949-1952</unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">11</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Music School Committee Minutes,
+				  Correspondence</unittitle> 
+				<unitdate unitdatetype="inclusive">1951-1952</unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">12</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Music School Committee Minutes</unittitle> 
+				<unitdate unitdatetype="inclusive">1952-1953</unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">13</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Music School Committee Minutes,
+				  Correspondence</unittitle> 
+				<unitdate unitdatetype="inclusive">1953-1954</unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">14</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Music School Committee Correspondence</unittitle> 
+				<unitdate unitdatetype="inclusive">1954-1955</unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">15</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Music School Committee Correspondence</unittitle> 
+				<unitdate unitdatetype="inclusive">1959-1960</unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">16</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Music School Budget</unittitle> 
+				<unitdate unitdatetype="inclusive">1962-1963</unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">17</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Music School Budget</unittitle> 
+				<unitdate unitdatetype="inclusive">1964-1965</unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">18</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Music School Budget</unittitle> 
+				<unitdate unitdatetype="inclusive">1964-1965</unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">19</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Music School Programs, Reports, Etc.</unittitle> 
+				<unitdate unitdatetype="inclusive">1948-1962</unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">20</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Music School Programs</unittitle> 
+				<unitdate unitdatetype="inclusive">1956-1957</unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">21</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Helen Hall's Music School Correspondence</unittitle> 
+				<unitdate unitdatetype="inclusive">1935, 1948-1962</unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">22</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Henry Street Arts Center Building</unittitle> 
+				<unitdate unitdatetype="inclusive"/>
+				
+				<container localtype="box">3</container> 
+				<container localtype="folder">23</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>National Guild of Community Music Schools</unittitle> 
+				<unitdate unitdatetype="inclusive"/>
+				
+				<container localtype="box">3</container> 
+				<container localtype="folder">24</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Samuel Weschler</unittitle> 
+				<unitdate unitdatetype="inclusive">1962-1963</unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">25</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Music School Strike Material</unittitle> 
+				<unitdate unitdatetype="inclusive">1965</unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">26</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Music School Problems</unittitle> 
+				<unitdate unitdatetype="inclusive"/>
+				
+				<container localtype="box">3</container> 
+				<container localtype="folder">27</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Building Problems, Violations and Plans</unittitle> 
+				<unitdate unitdatetype="inclusive">1960-1964</unitdate> 
+				<container localtype="box">3</container> 
+				<container localtype="folder">28</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Violations: 8 Pitt St., 466 Grand St.</unittitle> 
+				<unitdate unitdatetype="inclusive"/>
+				
+				<container localtype="box">3</container> 
+				<container localtype="folder">29</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Financial Ledgers</unittitle> 
+				<unitdate unitdatetype="inclusive">circa 1940s-1950s</unitdate> 
+				<container localtype="box">4</container> 
+			 </did> 
+		  </c02> 
+		</c01> 
+		<c01 level="series"> 
+		  <did> 
+			 <unittitle>Series 2: Student Registration Cards</unittitle> 
+			 <unitdate unitdatetype="inclusive" normal="1932/1969">1932-1969</unitdate> 
+		  </did> 
+		  <scopecontent> 
+			 <p>Series 2 contains 22 record storage boxes of student registration
+				cards. The student cards are organized into several sets according to date
+				span. Within each set, cards are usually filed alphabetically. There are also 4
+				boxes containing faculty record cards; index cards listing music books, scores,
+				and texts; business cards for music companies, tuners and other service
+				providers; and cards on supporters of the school. There are about 35,000 of
+				these types of cards, combined, spanning 1932 to1969. </p> 
+			 <p>Faculty cards may include name, teaching position, date(s) of
+				employment, and reason for leaving. Student cards may include name, date,
+				address, occupation, birth date, birth place, parents' name(s), parents' birth
+				place, parents' occupations, nationality, religion, date of previous study,
+				current subject studied, name of teacher, and fee schedule.</p> 
+		  </scopecontent> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Registration Cards, S-W</unittitle> 
+				<unitdate unitdatetype="inclusive">1934-1937</unitdate> 
+				<container localtype="box">6</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Registration Cards</unittitle> 
+				<unitdate unitdatetype="inclusive">1929-1960</unitdate> 
+				<container localtype="box">7</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Registration Cards</unittitle> 
+				<unitdate unitdatetype="inclusive">1933, 1955-1956</unitdate> 
+				<container localtype="box">8</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Registration Cards</unittitle> 
+				<unitdate unitdatetype="inclusive">1930-1934</unitdate> 
+				<container localtype="box">9</container> 
+			 </did> 
+			 <scopecontent> 
+				<p>5" x 8" cards</p> 
+			 </scopecontent> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Registration Cards, K-Z</unittitle> 
+				<unitdate unitdatetype="inclusive">no date</unitdate> 
+				<container localtype="box">9</container> 
+			 </did> 
+			 <scopecontent> 
+				<p>4" x 6" cards</p> 
+			 </scopecontent> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Registration Cards, S-Z</unittitle> 
+				<unitdate unitdatetype="inclusive">1940s-1960s</unitdate> 
+				<container localtype="box">9</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Registration Cards, M</unittitle> 
+				<unitdate unitdatetype="inclusive">1934-1936</unitdate> 
+				<container localtype="box">9</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Registration Cards</unittitle> 
+				<unitdate unitdatetype="inclusive">1950s</unitdate> 
+				<container localtype="box">10</container> 
+			 </did> 
+			 <scopecontent> 
+				<p>5" x 8" cards</p> 
+			 </scopecontent> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Registration Cards</unittitle> 
+				<unitdate unitdatetype="inclusive">1950s</unitdate> 
+				<container localtype="box">11</container> 
+			 </did> 
+			 <scopecontent> 
+				<p>4" x 6" and 5" x 8"</p> 
+			 </scopecontent> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Registration Cards</unittitle> 
+				<unitdate unitdatetype="inclusive">1969-1970</unitdate> 
+				<container localtype="box">11</container> 
+			 </did> 
+			 <scopecontent> 
+				<p>7" cards</p> 
+			 </scopecontent> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Registration Cards</unittitle> 
+				<unitdate unitdatetype="inclusive">1936-1939</unitdate> 
+				<container localtype="box">12</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Registration Cards, A-C</unittitle> 
+				<unitdate unitdatetype="inclusive">1960s</unitdate> 
+				<container localtype="box">13</container> 
+			 </did> 
+			 <scopecontent> 
+				<p>5" x 8" cards</p> 
+			 </scopecontent> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Registration Cards</unittitle> 
+				<unitdate unitdatetype="inclusive">1935-1939, 1960s</unitdate> 
+				<container localtype="box">14</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Cards of music books and scores arranged by instrument
+				  and composer</unittitle> 
+				<unitdate unitdatetype="inclusive"/>
+				
+				<container localtype="box">15</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Supporters,</unittitle> 
+				<unitdate unitdatetype="inclusive"/>
+				
+				<container localtype="box">16</container> 
+			 </did> 
+			 <scopecontent> 
+				<p>National Suzuki Network teachers; music history texts,
+				  autobiographies organized by subject</p> 
+			 </scopecontent> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Cards of music scores arranged by instrument and
+				  composer</unittitle> 
+				<unitdate unitdatetype="inclusive"/> 
+				<container localtype="box">17</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Registration Cards</unittitle> 
+				<unitdate unitdatetype="inclusive">1940s-1950s</unitdate> 
+				<container localtype="box">18</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Registration Cards</unittitle> 
+				<unitdate unitdatetype="inclusive">1949</unitdate> 
+				<container localtype="box">18</container> 
+			 </did> 
+			 <scopecontent> 
+				<p>Veterans' GI Bill</p> 
+			 </scopecontent> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Registration Cards, D-M</unittitle> 
+				<unitdate unitdatetype="inclusive">1960s</unitdate> 
+				<container localtype="box">19</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Registration Cards</unittitle> 
+				<unitdate unitdatetype="inclusive">1940s</unitdate> 
+				<container localtype="box">20</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Faculty Cards and Student Registration Cards; G, M-N,
+				  P-S</unittitle> 
+				<unitdate unitdatetype="inclusive">1960s</unitdate> 
+				<container localtype="box">21</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Registration Cards; G, M-N, P-S</unittitle> 
+				<unitdate unitdatetype="inclusive">1960s</unitdate> 
+				<container localtype="box">22</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Business Cards</unittitle> 
+				<unitdate unitdatetype="inclusive"/>
+				
+				<container localtype="box">22</container> 
+			 </did> 
+			 <scopecontent> 
+				<p>music companies, tuners, etc.</p> 
+			 </scopecontent> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Student Card files</unittitle> 
+				<unitdate unitdatetype="inclusive"/>
+				
+				<container localtype="box">23</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Student Card Files; A-Bur</unittitle> 
+				<unitdate unitdatetype="inclusive"/>
+				
+				<container localtype="box">24</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Student Card Files; Bur-Exum</unittitle> 
+				<unitdate unitdatetype="inclusive"/>
+				
+				<container localtype="box">25</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Student Card Files; F-Goo</unittitle> 
+				<unitdate unitdatetype="inclusive"/>
+				
+				<container localtype="box">26</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Student Card Files; Goo-Kaplan</unittitle> 
+				<unitdate unitdatetype="inclusive"/>
+				
+				<container localtype="box">27</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Student Card Files; Kaplan-Lo</unittitle> 
+				<unitdate unitdatetype="inclusive"/>
+				
+				<container localtype="box">28</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Student Card Files; Lo-Parsoff</unittitle> 
+				<unitdate unitdatetype="inclusive"/>
+				
+				<container localtype="box">29</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Student Card files; Parsons-Ritter</unittitle> 
+				<unitdate unitdatetype="inclusive"/>
+				
+				<container localtype="box">30</container> 
+			 </did> 
+		  </c02> 
+		</c01> 
+		<c01 level="series"> 
+		  <did> 
+			 <unittitle>Series 3. Scrapbooks</unittitle> 
+			 <unitdate unitdatetype="inclusive" normal="1933/1954">1933-1954</unitdate> 
+		  </did> 
+		  <scopecontent> 
+			 <p>Series 3 is housed in 2 record center boxes, 3 oversize storage
+				boxes and one legal length document box. Materials in Series 3 include
+				newspaper clippings, photographs, concert programs, and information on benefits
+				on behalf of the school.</p> 
+		  </scopecontent> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Scrapbooks</unittitle> 
+				<unitdate unitdatetype="inclusive">circa 1940s-1950s</unitdate> 
+				<container localtype="box">4</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Scrapbook, Photographs</unittitle> 
+				<unitdate unitdatetype="inclusive"/>
+				
+				<container localtype="box">5</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Newspaper Clippings and Miscellaneous</unittitle> 
+				<unitdate unitdatetype="inclusive">1933-1939</unitdate> 
+				<container localtype="box">OS 1</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Newspaper Clippings and Miscellaneous</unittitle> 
+				<unitdate unitdatetype="inclusive">1944-1954</unitdate> 
+				<container localtype="box">OS 2</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Programs</unittitle> 
+				<unitdate unitdatetype="inclusive">1945-1954</unitdate> 
+				<container localtype="box">OS 3</container> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Benefits Clippings and Correspondence</unittitle> 
+				<unitdate unitdatetype="inclusive">1940</unitdate> 
+				<container localtype="box">OS 3</container> 
+			 </did> 
+			 <scopecontent> 
+				<p><emph render="italic">Carmen</emph></p> 
+			 </scopecontent> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Benefits - Clippings and correspondence</unittitle> 
+				<unitdate unitdatetype="inclusive">1939, 1941, 1942</unitdate> 
+				<container localtype="box">OS 4</container> 
+			 </did> 
+			 <scopecontent> 
+				<p><emph render="italic">Parsifal</emph></p> 
+			 </scopecontent> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Programs, Mozart Orchestra</unittitle> 
+				<unitdate unitdatetype="inclusive">1947-1951</unitdate> 
+				<container localtype="box">OS 4</container> 
+			 </did> 
+		  </c02> 
+		</c01> 
+	 </dsc> 
+  </archdesc> 
+</ead>

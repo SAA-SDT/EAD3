@@ -246,7 +246,6 @@
       <xs:attribute name="encodinganalog" type="xs:token"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="extent" type="u:m.mixed.basic"/>
   <!-- ELEMENTS -->
   <!-- control -->
   <xs:element name="control">
@@ -3031,6 +3030,18 @@
         <xs:element ref="u:subtitle"/>
       </xs:choice>
       <xs:attributeGroup ref="u:am.common"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="extent">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="u:m.mixed.basic">
+          <xs:attributeGroup ref="u:am.common"/>
+          <xs:attribute name="label" type="xs:string"/>
+          <xs:attribute name="encodinganalog" type="xs:token"/>
+          <xs:attribute name="localtype" type="xs:token"/>
+        </xs:extension>
+      </xs:complexContent>
     </xs:complexType>
   </xs:element>
 </xs:schema>

@@ -10,14 +10,16 @@
             <notAllowed/>
         </define>
 
-         <define name="e.ead">
+        <define name="e.ead">
             <element name="ead">
                 <ref name="am.common"/>
                 <ref name="a.relatedencoding"/>
                 <ref name="a.base"/>
                 <ref name="e.control"/>
                 <!-- OPTIONAL FRONTMATTER -->
-                <optional><ref name="e.frontmatter"/></optional>
+                <optional>
+                    <ref name="e.frontmatter"/>
+                </optional>
                 <ref name="e.archdesc"/>
             </element>
         </define>
@@ -308,9 +310,7 @@
                         <ref name="e.footnote"/>
                         <ref name="e.num"/>
                         <ref name="e.quote"/>
-                        <element name="extent">
-                            <ref name="m.mixed.basic"/>
-                        </element>
+                        <ref name="e.extent"/>
                         <ref name="e.physfacet"/>
                         <ref name="e.dimensions"/>
                     </choice>
@@ -463,21 +463,21 @@
                 </choice>
             </zeroOrMore>
         </element>
-      
+
 
     </define>
     <define name="e.frontmatter">
 
-            <element name="frontmatter">
-                <ref name="am.common"/>
-                <optional>
-                    <ref name="e.titlepage"/>
-                    
-                </optional>
-                <zeroOrMore>
-                    <ref name="e.div"/>
-                </zeroOrMore>
-            </element>
+        <element name="frontmatter">
+            <ref name="am.common"/>
+            <optional>
+                <ref name="e.titlepage"/>
+
+            </optional>
+            <zeroOrMore>
+                <ref name="e.div"/>
+            </zeroOrMore>
+        </element>
     </define>
     <define name="e.titlepage">
         <element name="titlepage">
@@ -496,6 +496,21 @@
                     <ref name="e.subtitle"/>
                 </choice>
             </oneOrMore>
+        </element>
+    </define>
+    <define name="e.extent">
+        <element name="extent">
+            <ref name="am.common"/>
+            <optional>
+                <ref name="a.label"/>
+            </optional>
+            <optional>
+                <ref name="a.encodinganalog"/>
+            </optional>
+            <optional>
+                <ref name="a.localtype"/>
+            </optional>
+            <ref name="m.mixed.basic"/>
         </element>
     </define>
 </grammar>

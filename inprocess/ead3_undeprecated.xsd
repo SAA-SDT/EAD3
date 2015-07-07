@@ -161,7 +161,6 @@
         <xs:element name="physfacet" type="physfacet"/>
         <xs:element name="dimensions" type="dimensions"/>
       </xs:choice><xs:attributeGroup ref="am.common"/><xs:attribute name="localtype" type="xs:token"/><xs:attribute name="label" type="xs:string"/><xs:attribute name="encodinganalog" type="xs:token"/></xs:complexType>
-  <xs:complexType name="extent"/>
   <!-- ELEMENTS -->
   <!-- control -->
   <xs:complexType name="control"><xs:sequence>
@@ -1983,4 +1982,12 @@
         <xs:element name="titleproper" type="titleproper"/>
         <xs:element name="subtitle" type="subtitle"/>
       </xs:choice><xs:attributeGroup ref="am.common"/></xs:complexType>
+  <xs:complexType name="extent"><xs:complexContent>
+        <xs:extension base="m.mixed.basic">
+          <xs:attributeGroup ref="am.common"/>
+          <xs:attribute name="label" type="xs:string"/>
+          <xs:attribute name="encodinganalog" type="xs:token"/>
+          <xs:attribute name="localtype" type="xs:token"/>
+        </xs:extension>
+      </xs:complexContent></xs:complexType>
 </xs:schema>
