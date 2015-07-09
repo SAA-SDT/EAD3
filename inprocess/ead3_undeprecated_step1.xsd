@@ -246,6 +246,24 @@
       <xs:attribute name="encodinganalog" type="xs:token"/>
     </xs:complexType>
   </xs:element>
+
+  <xs:element name="bibref">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="u:m.mixed.basic.plus.access.ref">
+          <xs:attributeGroup ref="u:am.common"/>
+          <xs:attribute name="encodinganalog" type="xs:token"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="e.anyname">
+    <xs:choice>
+      <xs:any namespace="##other" processContents="lax"/>
+      <xs:any namespace="##local" processContents="lax"/>
+    </xs:choice>
+  </xs:complexType>
+
   <!-- ELEMENTS -->
   <!-- control -->
   <xs:element name="control">
@@ -2091,16 +2109,6 @@
       </xs:complexContent>
     </xs:complexType>
   </xs:element>
-  <xs:element name="bibref">
-    <xs:complexType>
-      <xs:complexContent>
-        <xs:extension base="u:m.mixed.basic.plus.access">
-          <xs:attributeGroup ref="u:am.common"/>
-          <xs:attribute name="encodinganalog" type="xs:token"/>
-        </xs:extension>
-      </xs:complexContent>
-    </xs:complexType>
-  </xs:element>
   <xs:element name="descriptivenote">
     <xs:complexType>
       <xs:sequence>
@@ -2424,12 +2432,6 @@
       </xs:complexContent>
     </xs:complexType>
   </xs:element>
-  <xs:complexType name="e.anyname">
-    <xs:choice>
-      <xs:any namespace="##other" processContents="lax"/>
-      <xs:any namespace="##local" processContents="lax"/>
-    </xs:choice>
-  </xs:complexType>
   <!-- ELEMENT MODELS -->
   <xs:group name="m.blocks">
     <xs:choice>
@@ -3040,8 +3042,25 @@
           <xs:attribute name="label" type="xs:string"/>
           <xs:attribute name="encodinganalog" type="xs:token"/>
           <xs:attribute name="localtype" type="xs:token"/>
+
+          <xs:attribute name="unit" type="xs:token"/>
+
         </xs:extension>
       </xs:complexContent>
     </xs:complexType>
   </xs:element>
+
+  <xs:complexType name="m.mixed.basic.plus.access.ref" mixed="true">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:group ref="u:m.mixed.basic.elements"/>
+      <xs:group ref="u:m.access"/>
+      <xs:element ref="u:date"/>
+      <xs:element ref="u:footnote"/>
+      <xs:element ref="u:num"/>
+      <xs:element ref="u:quote"/>
+      <xs:element ref="u:bibseries"/>
+      <xs:element ref="u:imprint"/>
+    </xs:choice>
+  </xs:complexType>
+
 </xs:schema>

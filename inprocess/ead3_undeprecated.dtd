@@ -1,6 +1,4 @@
 
-<!-- other linking-related attributes -->
-
 <!-- include "ead_revised_defs.rng" -->
 
 <!ELEMENT ead (control,frontmatter?,archdesc)>
@@ -11,10 +9,8 @@
   audience (external|internal) #IMPLIED
   lang NMTOKEN #IMPLIED
   script NMTOKEN #IMPLIED
-
-  relatedencoding CDATA #REQUIRED
-
-  base CDATA #REQUIRED>
+  relatedencoding CDATA #IMPLIED
+  base CDATA #IMPLIED>
 
 <!-- ARCHDESC -->
 
@@ -34,18 +30,15 @@
   audience (external|internal) #IMPLIED
   lang NMTOKEN #IMPLIED
   script NMTOKEN #IMPLIED
-
-  localtype CDATA #REQUIRED
-
-  relatedencoding CDATA #REQUIRED
+  localtype CDATA #IMPLIED
+  relatedencoding CDATA #IMPLIED
 
   otherlevel CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED
 
   level (class|collection|file|fonds|item|otherlevel|recordgrp|series
          |subfonds|subgrp|subseries) #REQUIRED
-
-  base CDATA #REQUIRED>
+  base CDATA #IMPLIED>
 
 <!-- ELEMENT MODELS -->
 
@@ -410,6 +403,20 @@
   script NMTOKEN #IMPLIED
   localtype CDATA #IMPLIED
   label CDATA #IMPLIED
+  encodinganalog CDATA #IMPLIED>
+
+<!ELEMENT bibref (#PCDATA
+                                           |abbr|emph|expan|foreign|lb|ptr|ref
+                                           |persname|corpname|famname|geogname|name|occupation
+                     |subject|genreform|function|title|date|footnote|num
+                                           |quote|bibseries|imprint)*>
+<!ATTLIST bibref
+
+  id ID #IMPLIED
+  altrender CDATA #IMPLIED
+  audience (external|internal) #IMPLIED
+  lang NMTOKEN #IMPLIED
+  script NMTOKEN #IMPLIED
   encodinganalog CDATA #IMPLIED>
 
 <!-- ELEMENTS -->
@@ -1995,19 +2002,6 @@
   script NMTOKEN #IMPLIED
   encodinganalog CDATA #IMPLIED>
 
-<!ELEMENT bibref (#PCDATA|abbr|emph|expan|foreign|lb|ptr|ref
-                                       |persname|corpname|famname|geogname|name|occupation
-                     |subject|genreform|function|title|date|footnote|num
-                                       |quote)*>
-<!ATTLIST bibref
-
-  id ID #IMPLIED
-  altrender CDATA #IMPLIED
-  audience (external|internal) #IMPLIED
-  lang NMTOKEN #IMPLIED
-  script NMTOKEN #IMPLIED
-  encodinganalog CDATA #IMPLIED>
-
 <!ELEMENT descriptivenote (p)+>
 <!ATTLIST descriptivenote
 
@@ -2284,6 +2278,8 @@
 
 <!-- xlink-modelled attributes -->
 
+<!-- other linking-related attributes -->
+
 <!-- display attributes -->
 
 <!-- typing attributes -->
@@ -2380,4 +2376,5 @@
   script NMTOKEN #IMPLIED
   label CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED
-  localtype CDATA #IMPLIED>
+  localtype CDATA #IMPLIED
+  unit CDATA #IMPLIED>

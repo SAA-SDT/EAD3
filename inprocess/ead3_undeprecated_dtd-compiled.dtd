@@ -5,14 +5,6 @@
   altrender CDATA #IMPLIED
   audience (external|internal) #IMPLIED">
 
-<!-- other linking-related attributes -->
-
-<!ENTITY % a.base "
-  base CDATA #REQUIRED">
-
-<!ENTITY % a.relatedencoding "
-  relatedencoding CDATA #REQUIRED">
-
 <!ENTITY % am.common "
   %am.common.empty;
   lang NMTOKEN #IMPLIED
@@ -23,8 +15,8 @@
 <!ELEMENT ead (control,frontmatter?,archdesc)>
 <!ATTLIST ead
   %am.common;
-  %a.relatedencoding;
-  %a.base;>
+  relatedencoding CDATA #IMPLIED
+  base CDATA #IMPLIED>
 
 <!ENTITY % a.level "
   level (class|collection|file|fonds|item|otherlevel|recordgrp|series
@@ -33,9 +25,6 @@
 <!ENTITY % am.desc.base "
   otherlevel CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED">
-
-<!ENTITY % a.localtype "
-  localtype CDATA #REQUIRED">
 
 <!ENTITY % m.desc.base.descgrp "accessrestrict|accruals|acqinfo
                                 |altformavail|appraisal|arrangement
@@ -52,11 +41,11 @@
 <!ELEMENT archdesc (runner*,did,(%m.desc.base.descgrp;|dsc)*)>
 <!ATTLIST archdesc
   %am.common;
-  %a.localtype;
-  %a.relatedencoding;
+  localtype CDATA #IMPLIED
+  relatedencoding CDATA #IMPLIED
   %am.desc.base;
   %a.level;
-  %a.base;>
+  base CDATA #IMPLIED>
 
 <!ENTITY % m.inter.noquote "chronlist|list|table">
 
@@ -180,6 +169,18 @@
   localtype CDATA #IMPLIED
   label CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED>
+
+
+<!ENTITY % m.mixed.basic.plus.access.ref "(#PCDATA
+                                           |%m.mixed.basic.elements;
+                                           |%m.access;|date|footnote|num
+                                           |quote|bibseries|imprint)*">
+
+<!ELEMENT bibref %m.mixed.basic.plus.access.ref;>
+<!ATTLIST bibref
+  %am.common;
+  encodinganalog CDATA #IMPLIED>
+
 
 <!-- ELEMENTS -->
 
@@ -1092,11 +1093,6 @@
   %am.common;
   encodinganalog CDATA #IMPLIED>
 
-<!ELEMENT bibref %m.mixed.basic.plus.access;>
-<!ATTLIST bibref
-  %am.common;
-  encodinganalog CDATA #IMPLIED>
-
 <!ELEMENT descriptivenote (p)+>
 <!ATTLIST descriptivenote
   %am.common;
@@ -1280,6 +1276,11 @@
 <!ENTITY % a.link.title "
   linktitle CDATA #REQUIRED">
 
+<!-- other linking-related attributes -->
+
+<!ENTITY % a.base "
+  base CDATA #REQUIRED">
+
 <!ENTITY % a.identifier "
   identifier CDATA #REQUIRED">
 
@@ -1327,6 +1328,12 @@
 
 <!ENTITY % a.encodinganalog "
   encodinganalog CDATA #REQUIRED">
+
+<!ENTITY % a.localtype "
+  localtype CDATA #REQUIRED">
+
+<!ENTITY % a.relatedencoding "
+  relatedencoding CDATA #REQUIRED">
 
 <!-- table attributes -->
 
@@ -1390,4 +1397,5 @@
   %am.common;
   label CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED
-  localtype CDATA #IMPLIED>
+  localtype CDATA #IMPLIED
+  unit CDATA #IMPLIED>
