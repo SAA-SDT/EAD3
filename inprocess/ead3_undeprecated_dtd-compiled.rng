@@ -3505,6 +3505,11 @@
             <optional>
                 <ref name="a.localtype"/>
             </optional>
+            <optional>
+                <attribute name="unit">
+                    <data type="token"/>
+                </attribute>
+            </optional>
             <ref name="m.mixed.basic"/>
         </element>
     </rng:define>

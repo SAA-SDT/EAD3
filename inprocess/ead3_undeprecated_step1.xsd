@@ -256,6 +256,12 @@
       </xs:complexContent>
     </xs:complexType>
   </xs:element>
+  <xs:complexType name="e.anyname">
+    <xs:choice>
+      <xs:any namespace="##other" processContents="lax"/>
+      <xs:any namespace="##local" processContents="lax"/>
+    </xs:choice>
+  </xs:complexType>
   <!-- ELEMENTS -->
   <!-- control -->
   <xs:element name="control">
@@ -2424,12 +2430,6 @@
       </xs:complexContent>
     </xs:complexType>
   </xs:element>
-  <xs:complexType name="e.anyname">
-    <xs:choice>
-      <xs:any namespace="##other" processContents="lax"/>
-      <xs:any namespace="##local" processContents="lax"/>
-    </xs:choice>
-  </xs:complexType>
   <!-- ELEMENT MODELS -->
   <xs:group name="m.blocks">
     <xs:choice>
@@ -3040,6 +3040,7 @@
           <xs:attribute name="label" type="xs:string"/>
           <xs:attribute name="encodinganalog" type="xs:token"/>
           <xs:attribute name="localtype" type="xs:token"/>
+          <xs:attribute name="unit" type="xs:token"/>
         </xs:extension>
       </xs:complexContent>
     </xs:complexType>

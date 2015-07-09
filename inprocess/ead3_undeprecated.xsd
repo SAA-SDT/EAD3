@@ -167,6 +167,12 @@
           <xs:attribute name="encodinganalog" type="xs:token"/>
         </xs:extension>
       </xs:complexContent></xs:complexType>
+  <xs:complexType name="e.anyname">
+    <xs:choice>
+      <xs:any namespace="##other" processContents="lax"/>
+      <xs:any namespace="##local" processContents="lax"/>
+    </xs:choice>
+  </xs:complexType>
   <!-- ELEMENTS -->
   <!-- control -->
   <xs:complexType name="control"><xs:sequence>
@@ -1415,12 +1421,6 @@
           <xs:attributeGroup ref="am.common"/>
         </xs:extension>
       </xs:complexContent></xs:complexType>
-  <xs:complexType name="e.anyname">
-    <xs:choice>
-      <xs:any namespace="##other" processContents="lax"/>
-      <xs:any namespace="##local" processContents="lax"/>
-    </xs:choice>
-  </xs:complexType>
   <!-- ELEMENT MODELS -->
   <xs:group name="m.blocks">
     <xs:choice>
@@ -1988,6 +1988,7 @@
           <xs:attribute name="label" type="xs:string"/>
           <xs:attribute name="encodinganalog" type="xs:token"/>
           <xs:attribute name="localtype" type="xs:token"/>
+          <xs:attribute name="unit" type="xs:token"/>
         </xs:extension>
       </xs:complexContent></xs:complexType>
   <xs:complexType name="m.mixed.basic.plus.access.ref" mixed="true">

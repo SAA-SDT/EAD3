@@ -1395,4 +1395,5 @@
   %am.common;
   label CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED
-  localtype CDATA #IMPLIED>
+  localtype CDATA #IMPLIED
+  unit CDATA #IMPLIED>
