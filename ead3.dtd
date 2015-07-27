@@ -1385,11 +1385,10 @@
   lang NMTOKEN #IMPLIED
   script NMTOKEN #IMPLIED
   listtype (deflist|unordered|ordered) #IMPLIED
-  mark (disc|circle|square|decimal|decimal-leading-zero|lower-roman
-        |upper-roman|lower-greek|lower-latin|upper-latin|armenian
-        |georgian|lower-alpha|upper-alpha|none|inherit) #IMPLIED
-  numeration (arabic|upperalpha|loweralpha|upperroman
-              |lowerroman) #IMPLIED>
+  mark (disc|circle|square|none|inherit) #IMPLIED
+  numeration (decimal|decimal-leading-zero|lower-roman|upper-roman
+              |lower-greek|lower-latin|upper-latin|armenian|georgian
+              |lower-alpha|upper-alpha|inherit) #IMPLIED>
 
 <!ELEMENT defitem (label,item)>
 <!ATTLIST defitem
