@@ -1851,7 +1851,6 @@
       <optional>
         <attribute name="numeration">
           <choice>
-            <value>arabic</value>
             <value>decimal</value>
             <value>decimal-leading-zero</value>
             <value>lower-roman</value>
