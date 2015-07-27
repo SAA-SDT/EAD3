@@ -872,6 +872,13 @@
             <xs:enumeration value="disc"/>
             <xs:enumeration value="circle"/>
             <xs:enumeration value="square"/>
+            <xs:enumeration value="none"/>
+            <xs:enumeration value="inherit"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute><xs:attribute name="numeration">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
             <xs:enumeration value="decimal"/>
             <xs:enumeration value="decimal-leading-zero"/>
             <xs:enumeration value="lower-roman"/>
@@ -883,18 +890,7 @@
             <xs:enumeration value="georgian"/>
             <xs:enumeration value="lower-alpha"/>
             <xs:enumeration value="upper-alpha"/>
-            <xs:enumeration value="none"/>
             <xs:enumeration value="inherit"/>
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:attribute><xs:attribute name="numeration">
-        <xs:simpleType>
-          <xs:restriction base="xs:token">
-            <xs:enumeration value="arabic"/>
-            <xs:enumeration value="upperalpha"/>
-            <xs:enumeration value="loweralpha"/>
-            <xs:enumeration value="upperroman"/>
-            <xs:enumeration value="lowerroman"/>
           </xs:restriction>
         </xs:simpleType>
       </xs:attribute></xs:complexType>

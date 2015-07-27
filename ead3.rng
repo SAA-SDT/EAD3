@@ -1844,6 +1844,14 @@
             <value>disc</value>
             <value>circle</value>
             <value>square</value>
+            <value>none</value>
+            <value>inherit</value>
+          </choice>
+        </attribute>
+      </optional>
+      <optional>
+        <attribute name="numeration">
+          <choice>
             <value>decimal</value>
             <value>decimal-leading-zero</value>
             <value>lower-roman</value>
@@ -1855,19 +1863,7 @@
             <value>georgian</value>
             <value>lower-alpha</value>
             <value>upper-alpha</value>
-            <value>none</value>
             <value>inherit</value>
-          </choice>
-        </attribute>
-      </optional>
-      <optional>
-        <attribute name="numeration">
-          <choice>
-            <value>arabic</value>
-            <value>upperalpha</value>
-            <value>loweralpha</value>
-            <value>upperroman</value>
-            <value>lowerroman</value>
           </choice>
         </attribute>
       </optional>
