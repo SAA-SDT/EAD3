@@ -69,7 +69,7 @@
 
     </pattern>
 
-    <!-- Co-Occurrence-Constraints -->
+    <!-- CO-OCCURRENCE CONSTRAINTS -->
 
     <pattern id="co-occurrence-constraints">
         <rule context="*[@level = 'otherlevel']">
@@ -105,13 +105,27 @@
         </rule>
     </pattern>
     
-    <!-- Cardinality Restrictions -->
+    <!-- CARDINALITY RESTRICTIONS -->
     
     <pattern id="cardinality">
         <rule context="ead:dsc">
             <report test="preceding::ead:dsc">
              The use of multiple &lt;dsc&gt; elements is discouraged. It may be deprecated in the future and eliminating multiple &lt;dsc&gt; elements will facilitate future migration
             </report>
+        </rule>
+    </pattern>
+    
+    <!-- SUGGESTED VALUES -->
+    <pattern>
+        <rule context="@era">
+            <assert test=". = 'ce' or . = 'bce'">
+                Suggested values for the era attribute are 'ce' or 'bce'
+            </assert>
+        </rule>
+        <rule context="@calendar">
+            <assert test=". = 'julian' or . = 'gregorian'">
+                Suggested values for the calendar attribute are 'julian' or 'gregorian'
+            </assert>
         </rule>
     </pattern>
 
