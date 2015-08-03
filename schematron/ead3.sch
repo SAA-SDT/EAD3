@@ -96,5 +96,15 @@
             <assert test="every $d in (@notbefore, @notafter, @standarddate) satisfies matches($d, $isoPattern)"> The <emph>notbefore</emph>, <emph>notafter</emph>, and <emph>standarddate</emph> attributes of <name/> must be a iso8601 date. </assert>
         </rule>
     </pattern>
+    
+    <!-- Cardinality Restrictions -->
+    
+    <pattern id="cardinality">
+        <rule context="ead:archdesc">
+            <assert test="count(child::ead:dsc) = 1">
+             The use of multiple &lt;dsc&gt; elements is discouraged. It may be deprecated in the future and eliminating multiple &lt;dsc&gt; elements will facilitate future migration
+            </assert>
+        </rule>
+    </pattern>
 
 </schema>
