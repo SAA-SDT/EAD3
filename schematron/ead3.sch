@@ -58,6 +58,15 @@
             <assert
                 test="matches(@repositorycode, '(([A-Z]{2})|([a-zA-Z]{1})|([a-zA-Z]{3,4}))(-[a-zA-Z0-9:/\-]{1,11})')"> If the repositoryencoding is set to iso15511, the <emph>repositorycode</emph> attribute of <name/> must be formatted as a iso15511 code. </assert>
         </rule>
+        
+        <!-- AGENCY CODES -->
+        
+        <rule context="@agencycode">
+            <let name="code" value="normalize-space(.)"/>
+            <assert test="matches($code, '(([A-Z]{2})|([a-zA-Z]{1})|([a-zA-Z]{3,4}))(-[a-zA-Z0-9:/\-]{1,11})')">
+                The format of the agencycode attribute is constrained to that of the International Standard Identifier for Libraries and Related Organizations (ISIL: ISO 15511): a prefix, a dash, and an identifier.
+            </assert>
+        </rule>
 
     </pattern>
 
