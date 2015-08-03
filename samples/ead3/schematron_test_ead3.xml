@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../schematron/ead.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../schematron/ead3.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <ead xmlns="http://ead3.archivists.org/schema/">
     <control langencoding="iso639-3">
         <recordid></recordid>
@@ -10,6 +10,7 @@
         </filedesc>
         <maintenancestatus value="new"></maintenancestatus>
         <maintenanceagency>
+            <agencycode>nlmannkshysnhedjdusbs</agencycode>
             <agencyname></agencyname>
         </maintenanceagency>
         <maintenancehistory>

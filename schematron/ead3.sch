@@ -62,8 +62,7 @@
         <!-- AGENCY CODES -->
         
         <rule context="ead:agencycode">
-            <let name="code" value="normalize-space(.)"/>
-            <assert test="matches($code, '(([A-Z]{2})|([a-zA-Z]{1})|([a-zA-Z]{3,4}))(-[a-zA-Z0-9:/\-]{1,11})')">
+            <assert test="matches(normalize-space(.), '(([A-Z]{2})|([a-zA-Z]{1})|([a-zA-Z]{3,4}))(-[a-zA-Z0-9:/\-]{1,11})')">
                 The format of the agencycode attribute is constrained to that of the International Standard Identifier for Libraries and Related Organizations (ISIL: ISO 15511): a prefix, a dash, and an identifier.
             </assert>
         </rule>
@@ -109,10 +108,10 @@
     <!-- Cardinality Restrictions -->
     
     <pattern id="cardinality">
-        <rule context="ead:archdesc">
-            <assert test="count(child::ead:dsc) = 1">
+        <rule context="ead:dsc">
+            <report test="preceding::ead:dsc">
              The use of multiple &lt;dsc&gt; elements is discouraged. It may be deprecated in the future and eliminating multiple &lt;dsc&gt; elements will facilitate future migration
-            </assert>
+            </report>
         </rule>
     </pattern>
 
