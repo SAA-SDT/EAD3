@@ -61,7 +61,7 @@
         
         <!-- AGENCY CODES -->
         
-        <rule context="@agencycode">
+        <rule context="ead:agencycode">
             <let name="code" value="normalize-space(.)"/>
             <assert test="matches($code, '(([A-Z]{2})|([a-zA-Z]{1})|([a-zA-Z]{3,4}))(-[a-zA-Z0-9:/\-]{1,11})')">
                 The format of the agencycode attribute is constrained to that of the International Standard Identifier for Libraries and Related Organizations (ISIL: ISO 15511): a prefix, a dash, and an identifier.
