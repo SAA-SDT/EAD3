@@ -58,10 +58,18 @@
             <assert
                 test="matches(@repositorycode, '(([A-Z]{2})|([a-zA-Z]{1})|([a-zA-Z]{3,4}))(-[a-zA-Z0-9:/\-]{1,11})')"> If the repositoryencoding is set to iso15511, the <emph>repositorycode</emph> attribute of <name/> must be formatted as a iso15511 code. </assert>
         </rule>
+        
+        <!-- AGENCY CODES -->
+        
+        <rule context="ead:agencycode">
+            <assert test="matches(normalize-space(.), '(([A-Z]{2})|([a-zA-Z]{1})|([a-zA-Z]{3,4}))(-[a-zA-Z0-9:/\-]{1,11})')">
+                The format of the agencycode attribute is constrained to that of the International Standard Identifier for Libraries and Related Organizations (ISIL: ISO 15511): a prefix, a dash, and an identifier.
+            </assert>
+        </rule>
 
     </pattern>
 
-    <!-- Co-Occurrence-Constraints -->
+    <!-- CO-OCCURRENCE CONSTRAINTS -->
 
     <pattern id="co-occurrence-constraints">
         <rule context="*[@level = 'otherlevel']">
@@ -94,6 +102,30 @@
         <rule context="ead:datesingle[exists(@notbefore | @notafter | @standarddate)]">
             <let name="isoPattern" value="'(\-?(0|1|2)([0-9]{3})(((01|02|03|04|05|06|07|08|09|10|11|12)((0[1-9])|((1|2)[0-9])|(3[0-1])))|\-((01|02|03|04|05|06|07|08|09|10|11|12)(\-((0[1-9])|((1|2)[0-9])|(3[0-1])))?))?)(/\-?(0|1|2)([0-9]{3})(((01|02|03|04|05|06|07|08|09|10|11|12)((0[1-9])|((1|2)[0-9])|(3[0-1])))|\-((01|02|03|04|05|06|07|08|09|10|11|12)(\-((0[1-9])|((1|2)[0-9])|(3[0-1])))?))?)?'"/>
             <assert test="every $d in (@notbefore, @notafter, @standarddate) satisfies matches($d, $isoPattern)"> The <emph>notbefore</emph>, <emph>notafter</emph>, and <emph>standarddate</emph> attributes of <name/> must be a iso8601 date. </assert>
+        </rule>
+    </pattern>
+    
+    <!-- CARDINALITY RESTRICTIONS -->
+    
+    <pattern id="cardinality">
+        <rule context="ead:dsc">
+            <report test="preceding::ead:dsc">
+             The use of multiple &lt;dsc&gt; elements is discouraged. It may be deprecated in the future and eliminating multiple &lt;dsc&gt; elements will facilitate future migration
+            </report>
+        </rule>
+    </pattern>
+    
+    <!-- SUGGESTED VALUES -->
+    <pattern>
+        <rule context="@era">
+            <assert test=". = 'ce' or . = 'bce'">
+                Suggested values for the era attribute are 'ce' or 'bce'
+            </assert>
+        </rule>
+        <rule context="@calendar">
+            <assert test=". = 'julian' or . = 'gregorian'">
+                Suggested values for the calendar attribute are 'julian' or 'gregorian'
+            </assert>
         </rule>
     </pattern>
 
