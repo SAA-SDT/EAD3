@@ -125,11 +125,11 @@
                 Suggested values for the era attribute are 'ce' or 'bce'
             </assert>
         </rule>
-        <rule context="@calendar">
+        <!--<rule context="@calendar">
             <assert test=". = 'julian' or . = 'gregorian'">
                 Suggested values for the calendar attribute are 'julian' or 'gregorian'
             </assert>
-        </rule>
+        </rule>-->
     </pattern>
 
 </schema>
