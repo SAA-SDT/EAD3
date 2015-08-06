@@ -89,6 +89,9 @@
         <rule context="*[@listtype = 'unordered']">
             <assert test="normalize-space(@mark)"> If the value of attribute <emph>listtype</emph> is 'unordered', then the <emph>mark</emph> attribute should be used </assert>
         </rule>
+        <rule context="*[@listtype = 'ordered']">
+            <assert test="normalize-space(@numeration)"> If the value of attribute <emph>listtype</emph> is 'ordered', then the <emph>numeration</emph> attribute should be used </assert>
+        </rule>
         <!-- @otherlangcode -->
         <!-- @listtype="unordered" @mark -->
     </pattern>
