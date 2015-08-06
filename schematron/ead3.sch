@@ -102,7 +102,7 @@
             <assert
                 test="matches(@normal, '(\-?(0|1|2)([0-9]{3})(((01|02|03|04|05|06|07|08|09|10|11|12)((0[1-9])|((1|2)[0-9])|(3[0-1])))|\-((01|02|03|04|05|06|07|08|09|10|11|12)(\-((0[1-9])|((1|2)[0-9])|(3[0-1])))?))?)(/\-?(0|1|2)([0-9]{3})(((01|02|03|04|05|06|07|08|09|10|11|12)((0[1-9])|((1|2)[0-9])|(3[0-1])))|\-((01|02|03|04|05|06|07|08|09|10|11|12)(\-((0[1-9])|((1|2)[0-9])|(3[0-1])))?))?)?')">The <emph>normal</emph> attribute of <name/> must be a iso8601 date. </assert>
         </rule>
-        <rule context="ead:datesingle[exists(@notbefore | @notafter | @standarddate)] | ead:fromdate[exists(@notbefore | @notafter | @standarddate)] | ead:todate[exists(@notbefore | @notafter | @standarddate)]">
+        <rule context="ead:datesingle[exists(@notbefore | @notafter | @standarddate)]">
             <let name="isoPattern" value="'(\-?(0|1|2)([0-9]{3})(((01|02|03|04|05|06|07|08|09|10|11|12)((0[1-9])|((1|2)[0-9])|(3[0-1])))|\-((01|02|03|04|05|06|07|08|09|10|11|12)(\-((0[1-9])|((1|2)[0-9])|(3[0-1])))?))?)(/\-?(0|1|2)([0-9]{3})(((01|02|03|04|05|06|07|08|09|10|11|12)((0[1-9])|((1|2)[0-9])|(3[0-1])))|\-((01|02|03|04|05|06|07|08|09|10|11|12)(\-((0[1-9])|((1|2)[0-9])|(3[0-1])))?))?)?'"/>
             <assert test="every $d in (@notbefore, @notafter, @standarddate) satisfies matches($d, $isoPattern)"> The <emph>notbefore</emph>, <emph>notafter</emph>, and <emph>standarddate</emph> attributes of <name/> must be a iso8601 date. </assert>
         </rule>
