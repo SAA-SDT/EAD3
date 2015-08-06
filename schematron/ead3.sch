@@ -83,7 +83,7 @@
         <rule context="*[@dsctype = 'otherdsctype']">
             <assert test="normalize-space(@otherdsctype)"> If the value of a <emph>dsctype</emph> attribute is "otherdsctype', then the <emph>otherdsctype</emph> attribute must be used. </assert>
         </rule>
-        <rule context="*[@otherrelation = 'otherrelationtype']">
+        <rule context="*[@relationtype = 'otherrelationtype']">
             <assert test="normalize-space(@otherrelationtype)"> If the value of an <emph>otherrelation</emph> attribute is "otherrelationtype', then the <emph>otherrelationtype</emph> attribute must be used. </assert>
         </rule>
         <rule context="*[@listtype = 'unordered']">
