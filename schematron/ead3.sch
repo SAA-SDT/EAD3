@@ -29,12 +29,12 @@
     <pattern id="codes">
 
         <!-- LANGUAGE CODES -->
-        <rule context="*[exists(@langcode | @lang)]">
+        <!--<rule context="*[exists(@langcode | @lang)]">
             <let name="code" value="@lang | @langcode"/>
-            <!-- for every @lang or @langcode attribute test that it is equal to a value in the language code list -->
+            <!-\- for every @lang or @langcode attribute test that it is equal to a value in the language code list -\->
             <assert
                 test="every $l in (@lang | @langcode) satisfies normalize-space($l) = $language-code-lookup"> The <name/> element's lang or langcode attribute should contain a value from the<value-of select="$active-language-code-key"/> codelist. </assert>
-        </rule>
+        </rule>-->
 
         <!-- COUNTRY CODES -->
 
