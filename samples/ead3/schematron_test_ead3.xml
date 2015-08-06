@@ -23,7 +23,8 @@
         </maintenancehistory>
     </control>
     <archdesc level="collection">
-        <did lang="sslslsssslkksdpow1kiojnfckvnopwhviowhivhwehf2h3yu97349uropjhp1jpou907u249019l" script="latn"><unitdatestructured>
+        <did lang="sslslsssslkksdpow1kiojnfckvnopwhviowhivhwehf2h3yu97349uropjhp1jpou907u249019l" script="latn">
+            <unitdatestructured era="bsnsbs">
             <datesingle standarddate="10000121ssssssssssssssssssssssssss"></datesingle>
         </unitdatestructured>
         <unitdate normal="1209-09-23" lang="eng" script="Latn"></unitdate></did>
