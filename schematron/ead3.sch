@@ -21,9 +21,6 @@
      whose @key value matches the EAD3 document's /ead:ead/ead:control/@langencoding that declares the language codelist with any of the
      values of $language-code-lookups' @key attribute, with a fall-back of 'iso639-2b'-->
 
-<!--    <let name="language-code-lookup"
-        value="document($language-code-lookups[@key = $active-language-code-key])//madsrdf:code/normalize-space(.) | document($language-code-lookups[@key = $active-language-code-key])//iso_639_3_entry/@id"/>
--->
     <let name="language-code-lookup"
         value="document($language-code-lookups[@key = $active-language-code-key])//madsrdf:code/normalize-space(.)"/>
     
