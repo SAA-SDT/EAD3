@@ -9,28 +9,28 @@
     <!-- VARIABLE $language-code-lookups: array of urls of target codelist documents -->
     <xsl:variable name="language-code-lookups" as="element()*">
         <file key="iso639-1">iso639-1.rdf</file>
-        <file key="iso639-2">iso639-2.rdf</file>
-        <file key="iso639-3">iso_639_3.xml</file>
+        <file key="iso639-2b">iso639-2.rdf</file>
+<!--        <file key="iso639-3">iso_639_3.xml</file> -->
     </xsl:variable>
 
     <let name="active-language-code-key"
-        value="(/ead:ead/ead:control/@langencoding[.=$language-code-lookups/@key],'iso639-2')[1]"/>
+        value="(/ead:ead/ead:control/@langencoding[.=$language-code-lookups/@key],'iso639-2b')[1]"/>
 
     <!-- VARIABLE $language-code-lookup:
      select <file> element from $language-code-lookups
      whose @key value matches the EAD3 document's /ead:ead/ead:control/@langencoding that declares the language codelist with any of the
-     values of $language-code-lookups' @key attribute, with a fall-back of 'iso639-2'-->
+     values of $language-code-lookups' @key attribute, with a fall-back of 'iso639-2b'-->
 
     <let name="language-code-lookup"
-        value="document($language-code-lookups[@key = $active-language-code-key])//madsrdf:code/normalize-space(.) | document($language-code-lookups[@key = $active-language-code-key])//iso_639_3_entry/@id"/>
-
+        value="document($language-code-lookups[@key = $active-language-code-key])//madsrdf:code/normalize-space(.)"/>
+    
     <!-- CODES -->
 
     <pattern id="codes">
 
         <!-- LANGUAGE CODES -->
         <rule context="*[exists(@langcode | @lang)]">
-            <let name="code" value="@lang | @langcode"/>
+            <!--<let name="code" value="@lang | @langcode"/> -->
             <!-- for every @lang or @langcode attribute test that it is equal to a value in the language code list -->
             <assert
                 test="every $l in (@lang | @langcode) satisfies normalize-space($l) = $language-code-lookup"> The <name/> element's lang or langcode attribute should contain a value from the<value-of select="$active-language-code-key"/> codelist. </assert>
@@ -54,11 +54,11 @@
 
         <!-- REPOSITORY CODES -->
 
-        <rule context="*[@repositorycode][preceding::ead:control/@repositoryencoding = 'iso15511']">
+ <!--       <rule context="*[@repositorycode][preceding::ead:control/@repositoryencoding = 'iso15511']">
             <assert
-                test="matches(@repositorycode, '(([A-Z]{2})|([a-zA-Z]{1})|([a-zA-Z]{3,4}))(-[a-zA-Z0-9:/\-]{1,11})')"> If the repositoryencoding is set to iso15511, the <emph>repositorycode</emph> attribute of <name/> must be formatted as a iso15511 code. </assert>
+                test="matches(@repositorycode, '(([A-Z]{2})|([a-zA-Z]{1})|([a-zA-Z]{3,4}))(-[a-zA-Z0-9:/\-]{1,11})')"> If the repositoryencoding is set to iso15511, the <emph>repositorycode</emph> attribute of <name/> must be formatted as an iso15511 code. </assert>
         </rule>
-        
+ -->       
         <!-- AGENCY CODES -->
         
         <rule context="ead:agencycode">
@@ -83,11 +83,14 @@
         <rule context="*[@dsctype = 'otherdsctype']">
             <assert test="normalize-space(@otherdsctype)"> If the value of a <emph>dsctype</emph> attribute is "otherdsctype', then the <emph>otherdsctype</emph> attribute must be used. </assert>
         </rule>
-        <rule context="*[@otherrelation = 'otherrelationtype']">
+        <rule context="*[@relationtype = 'otherrelationtype']">
             <assert test="normalize-space(@otherrelationtype)"> If the value of an <emph>otherrelation</emph> attribute is "otherrelationtype', then the <emph>otherrelationtype</emph> attribute must be used. </assert>
         </rule>
         <rule context="*[@listtype = 'unordered']">
             <assert test="normalize-space(@mark)"> If the value of attribute <emph>listtype</emph> is 'unordered', then the <emph>mark</emph> attribute should be used </assert>
+        </rule>
+        <rule context="*[@listtype = 'ordered']">
+            <assert test="normalize-space(@numeration)"> If the value of attribute <emph>listtype</emph> is 'ordered', then the <emph>numeration</emph> attribute should be used </assert>
         </rule>
         <!-- @otherlangcode -->
         <!-- @listtype="unordered" @mark -->
@@ -95,12 +98,15 @@
 
     <!-- DATE NORMALIZATION -->
     <pattern id="dates">
+        <let name="isoYYYY" value="'\-?(0|1|2)([0-9]{3})'"/>
+        <let name="isoMM" value="'\-?(01|02|03|04|05|06|07|08|09|10|11|12)'"/>
+        <let name="isoDD" value="'\-?((0[1-9])|((1|2)[0-9])|(3[0-1]))'"/>
+        <let name="isoPattern" value="concat('^', $isoYYYY, '$','|', '^', $isoYYYY, $isoMM, '$', '|', '^', $isoYYYY, $isoMM, $isoDD,  '$')"/>
         <rule context="ead:unitdate[@normal] | ead:date[@normal]">
             <assert
-                test="matches(@normal, '(\-?(0|1|2)([0-9]{3})(((01|02|03|04|05|06|07|08|09|10|11|12)((0[1-9])|((1|2)[0-9])|(3[0-1])))|\-((01|02|03|04|05|06|07|08|09|10|11|12)(\-((0[1-9])|((1|2)[0-9])|(3[0-1])))?))?)(/\-?(0|1|2)([0-9]{3})(((01|02|03|04|05|06|07|08|09|10|11|12)((0[1-9])|((1|2)[0-9])|(3[0-1])))|\-((01|02|03|04|05|06|07|08|09|10|11|12)(\-((0[1-9])|((1|2)[0-9])|(3[0-1])))?))?)?')">The <emph>normal</emph> attribute of <name/> must be a iso8601 date. </assert>
+                test="matches(@normal, $isoPattern)">The <emph>normal</emph> attribute of <name/> must be a iso8601 date. </assert>
         </rule>
-        <rule context="ead:datesingle[exists(@notbefore | @notafter | @standarddate)]">
-            <let name="isoPattern" value="'(\-?(0|1|2)([0-9]{3})(((01|02|03|04|05|06|07|08|09|10|11|12)((0[1-9])|((1|2)[0-9])|(3[0-1])))|\-((01|02|03|04|05|06|07|08|09|10|11|12)(\-((0[1-9])|((1|2)[0-9])|(3[0-1])))?))?)(/\-?(0|1|2)([0-9]{3})(((01|02|03|04|05|06|07|08|09|10|11|12)((0[1-9])|((1|2)[0-9])|(3[0-1])))|\-((01|02|03|04|05|06|07|08|09|10|11|12)(\-((0[1-9])|((1|2)[0-9])|(3[0-1])))?))?)?'"/>
+        <rule context="ead:datesingle[exists(@notbefore | @notafter | @standarddate)] | ead:todate[exists(@notbefore | @notafter | @standarddate)] | ead:fromdate[exists(@notbefore | @notafter | @standarddate)]">            
             <assert test="every $d in (@notbefore, @notafter, @standarddate) satisfies matches($d, $isoPattern)"> The <emph>notbefore</emph>, <emph>notafter</emph>, and <emph>standarddate</emph> attributes of <name/> must be a iso8601 date. </assert>
         </rule>
     </pattern>
@@ -122,11 +128,11 @@
                 Suggested values for the era attribute are 'ce' or 'bce'
             </assert>
         </rule>
-        <rule context="@calendar">
+<!--        <rule context="@calendar">
             <assert test=". = 'julian' or . = 'gregorian'">
                 Suggested values for the calendar attribute are 'julian' or 'gregorian'
             </assert>
         </rule>
+-->
     </pattern>
-
 </schema>
