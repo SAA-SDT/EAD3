@@ -11,7 +11,8 @@
         </filedesc>
         <maintenancestatus value="new"/>
         <maintenanceagency>
-            <agencyname/>
+            <agencycode>AU=ANA-12345678910aaa</agencycode>
+            <agencyname>Blak</agencyname>
         </maintenanceagency>
         <maintenancehistory>
             <maintenanceevent>
@@ -24,25 +25,25 @@
     </control>
     <archdesc level="collection">
         <did>
-            <unitdate normal="199999999999">This is an incorrectly formatted date</unitdate>
-            <unitdate normal="1999/2005">1999-2005</unitdate>
+            <unitdate normal="199999999999">****This is an incorrectly formatted date</unitdate>
+            <unitdate normal="1999/2005">****1999-2005</unitdate>
             <unitdatestructured>
                 <datesingle notbefore="1999-01-01" notafter="20051231">1999-2005</datesingle>
             </unitdatestructured>
             <unitdatestructured>
-                <datesingle notbefore="1999-01-01-000000" notafter="20051231s">This is an incorectly formatted datesingle</datesingle>
+                <datesingle notbefore="1999-01-01-000000" notafter="20051231s">****This is an incorectly formatted datesingle</datesingle>
             </unitdatestructured>
-            <abstract lang="jpn" script="Latn">jksjsjjsksjsklskslksoosn</abstract>
-            <abstract lang="jp" script="katakana">jksjsjjsksjsklskslksoosn</abstract>
+            <abstract lang="eng" script="Latn">jksjsjjsksjsklskslksoosn</abstract>
+            <abstract lang="jp" script="katakana">***jksjsjjsksjsklskslksoosn</abstract>
         </did>
         <dsc><c level="otherlevel">
             <did>
                 <unitid  repositorycode="us-i" countrycode="US">ID1</unitid>
-                <unitid repositorycode="US-I" countrycode="USa">ID2</unitid>
+                <unitid repositorycode="1234-00psoos" countrycode="USa">ID2</unitid>
             </did>
         </c></dsc>
         <dsc>
-            <head>SHOULD NOT BE HERE</head>
+            <head>****SHOULD NOT BE HERE</head>
             <c>
                 <did><unittitle>Blak</unittitle></did>
             </c>
