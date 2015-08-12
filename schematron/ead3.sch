@@ -47,9 +47,9 @@
         <!-- SCRIPT CODES -->
 <pattern id="scriptcode">
         <let name="scriptcodes" value="document('iso_15924.xml')"/>
-        <rule context="@scriptcode | @script">
+        <rule context="*[exists(@scriptcode | @script)]">
             <let name="code" value="normalize-space(.)"/>
-            <assert test="$scriptcodes//iso_15924_entry/@alpha_4_code = $code "> The <name/> attribute should contain a code from the iso_15924 codelist. </assert>
+            <assert test="every $l in (@script | @scriptcode) satisfies $scriptcodes//iso_15924_entry/@alpha_4_code = $l "> The script or scriptcode attribute should contain a code from the iso_15924 codelist. </assert>
         </rule>
 </pattern>
         <!-- REPOSITORY CODES -->
@@ -122,8 +122,8 @@
     
     <!-- SUGGESTED VALUES -->
     <pattern>
-        <rule context="@era">
-            <assert test=". = 'ce' or . = 'bce'">
+        <rule context="*[@era]">
+            <assert test="@era = 'ce' or . = 'bce'">
                 Suggested values for the era attribute are 'ce' or 'bce'
             </assert>
         </rule>
