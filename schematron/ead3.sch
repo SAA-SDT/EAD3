@@ -56,7 +56,7 @@
 
         <rule context="*[@repositorycode][preceding::ead:control/@repositoryencoding = 'iso15511']">
             <assert
-                test="matches(@repositorycode, '(([A-Z]{2})|([a-zA-Z]{1})|([a-zA-Z]{3,4}))(-[a-zA-Z0-9:/\-]{1,11})')"> If the repositoryencoding is set to iso15511, the <emph>repositorycode</emph> attribute of <name/> must be formatted as an iso15511 code. </assert>
+                test="matches(@repositorycode, '(^([A-Z]{2})|([a-zA-Z]{1})|([a-zA-Z]{3,4}))(-[a-zA-Z0-9:/\-]{1,11})$')"> If the repositoryencoding is set to iso15511, the <emph>repositorycode</emph> attribute of <name/> must be formatted as an iso15511 code. </assert>
         </rule>
         
         <!-- AGENCY CODES -->
