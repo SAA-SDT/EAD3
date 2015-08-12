@@ -38,8 +38,8 @@
         </did>
         <dsc><c level="otherlevel">
             <did>
-                <unitid  repositorycode="us-i" countrycode="US">ID1</unitid>
-                <unitid repositorycode="1234-00psoos" countrycode="USa">ID2</unitid>
+                <unitid  repositorycode="us-ixxx1234567891010" countrycode="US">ID1</unitid>
+                <unitid repositorycode="1234-00psoos" countrycode="US">ID2</unitid>
             </did>
         </c></dsc>
         <dsc>

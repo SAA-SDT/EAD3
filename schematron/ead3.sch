@@ -26,7 +26,7 @@
     
     <!-- CODES -->
 
-    <pattern id="codes">
+    <pattern id="langcodes">
 
         <!-- LANGUAGE CODES -->
         <rule context="*[exists(@langcode | @lang)]">
@@ -35,39 +35,38 @@
             <assert
                 test="every $l in (@lang | @langcode) satisfies normalize-space($l) = $language-code-lookup"> The <name/> element's lang or langcode attribute should contain a value from the<value-of select="$active-language-code-key"/> codelist. </assert>
         </rule>
-
+    </pattern>
         <!-- COUNTRY CODES -->
-
+<pattern id="countrycode">
         <let name="countrycodes" value="document('iso_3166.xml')"/>
-        <rule context="@countrycode">
-            <let name="code" value="normalize-space(.)"/>
-            <assert test="$countrycodes//iso_3166_entry/@alpha_2_code = $code "> The <name/> attribute should contain a code from the ISO 3166-1 codelist. </assert>
+        <rule context="*[exists(@countrycode)]">
+            <let name="code" value="normalize-space(@countrycode)"/>
+            <assert test="$countrycodes//iso_3166_entry/@alpha_2_code = $code "> The countrycode attribute should contain a code from the ISO 3166-1 codelist. </assert>
         </rule>
-
+</pattern>
         <!-- SCRIPT CODES -->
-
+<pattern id="scriptcode">
         <let name="scriptcodes" value="document('iso_15924.xml')"/>
         <rule context="@scriptcode | @script">
             <let name="code" value="normalize-space(.)"/>
             <assert test="$scriptcodes//iso_15924_entry/@alpha_4_code = $code "> The <name/> attribute should contain a code from the iso_15924 codelist. </assert>
         </rule>
-
+</pattern>
         <!-- REPOSITORY CODES -->
-
+<pattern id="repositorycode">
         <rule context="*[@repositorycode][preceding::ead:control/@repositoryencoding = 'iso15511']">
             <assert
                 test="matches(@repositorycode, '(^([A-Z]{2})|([a-zA-Z]{1})|([a-zA-Z]{3,4}))(-[a-zA-Z0-9:/\-]{1,11})$')"> If the repositoryencoding is set to iso15511, the <emph>repositorycode</emph> attribute of <name/> must be formatted as an iso15511 code. </assert>
         </rule>
-        
+</pattern>        
         <!-- AGENCY CODES -->
-        
+<pattern id="agencycode">        
         <rule context="ead:agencycode">
             <assert test="matches(normalize-space(.), '(^([A-Z]{2})|([a-zA-Z]{1})|([a-zA-Z]{3,4}))(-[a-zA-Z0-9:/\-]{1,11}$)')">
                 The format of the agencycode attribute is constrained to that of the International Standard Identifier for Libraries and Related Organizations (ISIL: ISO 15511): a prefix, a dash, and an identifier.
             </assert>
         </rule>
-
-    </pattern>
+</pattern>
 
     <!-- CO-OCCURRENCE CONSTRAINTS -->
 
