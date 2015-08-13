@@ -25,7 +25,7 @@
     </control>
     <archdesc level="collection">
         <did>
-            <unitdate normal="199999999999">****This is an incorrectly formatted date</unitdate>
+            <unitdate normal="1999">****This is an incorrectly formatted date</unitdate>
             <unitdate normal="1999/2005">****1999-2005</unitdate>
             <unitdatestructured>
                 <datesingle notbefore="1999-01-01" notafter="20051231">1999-2005</datesingle>
