@@ -1,114 +1,180 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <grammar xmlns="http://relaxng.org/ns/structure/1.0"
     xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" ns="http://ead3.archivists.org/schema/">
+    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
+    ns="http://ead3.archivists.org/schema/">
     <include href="../inprocess/ead_revised_defs.rng">
+
+        <!-- OPTIONAL single dsc in archdesc -->
+
+        <define name="e.archdesc">
+            <element name="archdesc">
+                <ref name="am.common"/>
+                <optional>
+                    <ref name="a.localtype"/>
+                </optional>
+                <optional>
+                    <ref name="a.relatedencoding"/>
+                </optional>
+                <ref name="am.desc.base"/>
+                <ref name="a.level"/>
+                <optional>
+                    <ref name="a.base"/>
+                </optional>
+                <ref name="e.did"/>
+                <zeroOrMore>
+                    <ref name="m.desc.base"/>
+                </zeroOrMore>
+                <optional>
+                    <ref name="e.dsc"/>
+                </optional>
+            </element>
+        </define>
+
+        <!-- ONLY c in dsc -->
+
+        <define name="e.dsc">
+            <element name="dsc">
+                <ref name="am.common"/>
+                <optional>
+                    <attribute name="dsctype">
+                        <choice>
+                            <value>analyticover</value>
+                            <value>combined</value>
+                            <value>in-depth</value>
+                            <value>otherdsctype</value>
+                        </choice>
+                    </attribute>
+                </optional>
+                <optional>
+                    <attribute name="otherdsctype">
+                        <data type="token"/>
+                    </attribute>
+                </optional>
+                <optional>
+                    <ref name="a.encodinganalog"/>
+                </optional>
+                <group>
+                    <optional>
+                        <ref name="e.head"/>
+                    </optional>
+                </group>
+                <optional>
+                    <ref name="e.thead"/>
+                </optional>
+                <optional>
+                    <ref name="m.cOrC01"/>
+                </optional>
+            </element>
+        </define>
+
+
+
+
         <!-- NO RECURSION IN m.desc.base elements -->
-        
+
         <define name="e.accessrestrict">
             <element name="accessrestrict">
                 <ref name="m.base.content.bare"/>
             </element>
         </define>
-        
+
         <define name="e.accruals">
             <element name="accruals">
                 <ref name="m.base.content.bare"/>
             </element>
         </define>
-        
+
         <define name="e.acqinfo">
             <element name="acqinfo">
                 <ref name="m.base.content.bare"/>
             </element>
         </define>
-        
+
         <define name="e.altformavail">
             <element name="altformavail">
                 <ref name="m.base.content.bare"/>
             </element>
         </define>
-        
+
         <define name="e.appraisal">
             <element name="appraisal">
                 <ref name="m.base.content.bare"/>
             </element>
         </define>
-        
+
         <define name="e.arrangement">
             <element name="arrangement">
                 <ref name="m.base.content.bare"/>
             </element>
         </define>
-        
+
         <define name="e.bioghist">
             <element name="bioghist">
                 <ref name="m.base.content.bare"/>
             </element>
         </define>
-        
+
         <define name="e.custodhist">
             <element name="custodhist">
                 <ref name="m.base.content.bare"/>
             </element>
         </define>
-        
+
         <define name="e.fileplan">
             <element name="fileplan">
                 <ref name="m.base.content.bare"/>
             </element>
         </define>
-        
+
         <define name="e.legalstatus">
             <element name="legalstatus">
                 <ref name="m.base.content.bare"/>
             </element>
         </define>
-        
+
         <define name="e.odd">
             <element name="odd">
                 <ref name="m.base.content.bare"/>
             </element>
         </define>
-        
+
         <define name="e.originalsloc">
             <element name="originalsloc">
                 <ref name="m.base.content.bare"/>
             </element>
         </define>
-        
+
         <define name="e.phystech">
             <element name="phystech">
                 <ref name="m.base.content.bare"/>
             </element>
         </define>
-        
+
         <define name="e.prefercite">
             <element name="prefercite">
                 <ref name="m.base.content.bare"/>
             </element>
         </define>
-        
+
         <define name="e.processinfo">
             <element name="processinfo">
                 <ref name="m.base.content.bare"/>
             </element>
         </define>
-        
+
         <define name="e.scopecontent">
             <element name="scopecontent">
                 <ref name="m.base.content.bare"/>
             </element>
         </define>
-        
+
         <define name="e.userestrict">
             <element name="userestrict">
                 <ref name="m.base.content.bare"/>
             </element>
         </define>
-       
-        
-        
+
         <!-- ONLY ACCESS ELEMENTS IN CONTROLACCESS  -->
         <define name="e.controlaccess">
             <element name="controlaccess">
@@ -119,65 +185,66 @@
         </define>
 
         <!-- NO HEAD  -->
-        
+
         <define name="e.head">
             <notAllowed/>
         </define>
-        
+
         <!-- NO TABLE -->
-        
+
         <define name="e.table">
             <notAllowed/>
         </define>
-        
+
         <define name="e.thead">
             <notAllowed/>
         </define>
-        
+
         <!-- NO CHRONLIST -->
-        
+
         <define name="e.chronlist">
             <notAllowed/>
         </define>
-        
+
         <!-- NO INDEX -->
-        
+
         <define name="e.index">
             <notAllowed/>
         </define>
-        
+
         <!-- NO UNSTRUCTURED DID ELEMENTS -->
-        
+
         <define name="e.physdesc">
             <notAllowed/>
         </define>
-        
+
         <define name="e.unitdate">
             <notAllowed/>
         </define>
-        
+
         <!-- UNNUMBERED C's ONLY in DSC -->
-        
+
         <define name="e.c01">
             <element name="c01">
                 <notAllowed/>
             </element>
         </define>
-        
-       
+
+
     </include>
     <start>
         <ref name="e.ead"/>
     </start>
     <define name="m.base.content.bare">
         <ref name="am.common"/>
-        <optional><ref name="a.localtype"/></optional>
-        <optional><ref name="a.encodinganalog"/></optional>
+        <optional>
+            <ref name="a.localtype"/>
+        </optional>
+        <optional>
+            <ref name="a.encodinganalog"/>
+        </optional>
         <oneOrMore>
             <ref name="e.p"/>
         </oneOrMore>
     </define>
 </grammar>
-
-    
-    

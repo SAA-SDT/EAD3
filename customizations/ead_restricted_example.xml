@@ -38,11 +38,19 @@
             </origination>
             <physdescstructured coverage="whole" physdescstructuredtype="spaceoccupied">
                 <quantity>10</quantity>
-                <unittype identifier="http://data.nasa.gov/qudt/owl/unit#CubicFoot">cubic feet</unittype>
+                <unittype identifier="http://data.nasa.gov/qudt/owl/unit#CubicFoot">cubic
+                    feet</unittype>
             </physdescstructured>
         </did>
         <scopecontent>
-            <p></p>
+            <p/>
         </scopecontent>
+        <dsc>
+            <c>
+                <did>
+                    <unittitle>Test</unittitle>
+                </did>
+            </c>
+        </dsc>
     </archdesc>
 </ead>

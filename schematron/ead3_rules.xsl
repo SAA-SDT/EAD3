@@ -404,7 +404,7 @@
    <xsl:variable name="isoMM" select="'\-?(01|02|03|04|05|06|07|08|09|10|11|12)'"/>
    <xsl:variable name="isoDD" select="'\-?((0[1-9])|((1|2)[0-9])|(3[0-1]))'"/>
    <xsl:variable name="isoPattern"
-                 select="concat('^', $isoYYYY, '$','|', '^', $isoYYYY, $isoMM, '$', '|', '^', $isoYYYY, $isoMM, $isoDD,  '$')"/>
+                 select="concat('^', $isoYYYY, '(/', $isoYYYY, ')?','$','|', '^', $isoYYYY, $isoMM, '(/', $isoYYYY,$isoMM, ')?','$', '|', '^', $isoYYYY, $isoMM, $isoDD,  '(/', $isoYYYY, $isoMM, $isoDD,')?','$')"/>
 
 	  <!--RULE -->
    <xsl:template match="ead:unitdate[@normal] | ead:date[@normal]"
