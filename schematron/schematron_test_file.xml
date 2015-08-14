@@ -2,7 +2,7 @@
 <?xml-model href="file:/home/thc4/Github/EAD-Revision/ead3.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="ead3.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <ead xmlns="http://ead3.archivists.org/schema/">
-    <control langencoding="iso639-2b" repositoryencoding="iso15511" dateencoding="iso8601" countryencoding="iso3166-1" scriptencoding="iso15924">
+    <control langencoding="iso639-3" repositoryencoding="iso15511" dateencoding="iso8601" countryencoding="iso3166-1" scriptencoding="iso15924">
         <recordid/>
         <filedesc>
             <titlestmt>

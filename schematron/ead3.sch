@@ -10,7 +10,7 @@
     <xsl:variable name="language-code-lookups" as="element()*">
         <file key="iso639-1">iso639-1.rdf</file>
         <file key="iso639-2b">iso639-2.rdf</file>
-<!--        <file key="iso639-3">iso_639_3.xml</file> -->
+        <file key="iso639-3">iso_639_3.xml</file>
     </xsl:variable>
 
     <let name="active-language-code-key"
@@ -22,7 +22,7 @@
      values of $language-code-lookups' @key attribute, with a fall-back of 'iso639-2b'-->
 
     <let name="language-code-lookup"
-        value="document($language-code-lookups[@key = $active-language-code-key])//madsrdf:code/normalize-space(.)"/>
+        value="document($language-code-lookups[@key = $active-language-code-key])//(madsrdf:code | iso_639_3_entries/iso_639_3_entry/@id)"/>
     
     <!-- CODES -->
 
