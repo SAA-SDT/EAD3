@@ -100,10 +100,11 @@
         <let name="isoYYYY" value="'\-?(0|1|2)([0-9]{3})'"/>
         <let name="isoMM" value="'\-?(01|02|03|04|05|06|07|08|09|10|11|12)'"/>
         <let name="isoDD" value="'\-?((0[1-9])|((1|2)[0-9])|(3[0-1]))'"/>
-        <let name="isoPattern" value="concat('^', $isoYYYY, '(/', $isoYYYY, ')?','$','|', '^', $isoYYYY, $isoMM, '(/', $isoYYYY,$isoMM, ')?','$', '|', '^', $isoYYYY, $isoMM, $isoDD,  '(/', $isoYYYY, $isoMM, $isoDD,')?','$')"/>
+        <let name="isoRangePattern" value="concat('^', '(\-?(0|1|2)([0-9]{3})(((01|02|03|04|05|06|07|08|09|10|11|12)((0[1-9])|((1|2)[0-9])|(3[0-1])))|\-((01|02|03|04|05|06|07|08|09|10|11|12)(\-((0[1-9])|((1|2)[0-9])|(3[0-1])))?))?)(/\-?(0|1|2)([0-9]{3})(((01|02|03|04|05|06|07|08|09|10|11|12)((0[1-9])|((1|2)[0-9])|(3[0-1])))|\-((01|02|03|04|05|06|07|08|09|10|11|12)(\-((0[1-9])|((1|2)[0-9])|(3[0-1])))?))?)?', '$')"/>
+        <let name="isoPattern" value="concat('^', $isoYYYY, '$','|', '^', $isoYYYY, $isoMM,'$', '|', '^', $isoYYYY, $isoMM, $isoDD,'$')"/>
         <rule context="ead:unitdate[@normal] | ead:date[@normal]">
             <assert
-                test="matches(@normal, $isoPattern)">The <emph>normal</emph> attribute of <name/> must be a iso8601 date. </assert>
+                test="matches(@normal, $isoRangePattern)">The <emph>normal</emph> attribute of <name/> must be a iso8601 date. </assert>
         </rule>
         <rule context="ead:datesingle[exists(@notbefore | @notafter | @standarddate)] | ead:todate[exists(@notbefore | @notafter | @standarddate)] | ead:fromdate[exists(@notbefore | @notafter | @standarddate)]">            
             <assert test="every $d in (@notbefore, @notafter, @standarddate) satisfies matches($d, $isoPattern)"> The <emph>notbefore</emph>, <emph>notafter</emph>, and <emph>standarddate</emph> attributes of <name/> must be a iso8601 date. </assert>
