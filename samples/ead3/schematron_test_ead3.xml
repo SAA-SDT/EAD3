@@ -27,6 +27,12 @@
             <unitdatestructured era="bsnsbs">
             <datesingle standarddate="10000121ssssssssssssssssssssssssss"></datesingle>
         </unitdatestructured>
+            <unitdatestructured era="bce">
+                <daterange>
+                    <fromdate notbefore="1920-01-01" notafter="19291231">1920s</fromdate>
+                    <todate notbefore="19500101" notafter="1959-12-311111">195s</todate>
+                </daterange>
+            </unitdatestructured>
         <unitdate normal="1209-09-23" lang="eng" script="Latn"></unitdate></did>
     </archdesc>
 </ead>

@@ -47,7 +47,7 @@
         <let name="scriptcodes" value="document('iso_15924.xml')"/>
         <rule context="*[exists(@scriptcode | @script)]">
             <let name="code" value="normalize-space(.)"/>
-            <assert test="every $l in (@script | @scriptcode) satisfies $scriptcodes//iso_15924_entry/@alpha_4_code = $l "> The script or scriptcode attribute should contain a code from the iso_15924 codelist. </assert>
+            <assert test="every $s in (@script | @scriptcode) satisfies $scriptcodes//iso_15924_entry/@alpha_4_code = $s "> The script or scriptcode attribute should contain a code from the iso_15924 codelist. </assert>
         </rule>
      </pattern>
         
