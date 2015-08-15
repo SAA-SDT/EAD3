@@ -40,7 +40,6 @@ Schema Development Team members included
 * Daniel Pitti, University of Virginia
 * Salvatore Vassallo, Università degli Studi di Pavia (Italy).
  
-
 Adopted by SAA Council, July 2015.
 
 Lead schema developer: Terry Catapano
@@ -51,16 +50,17 @@ EAD3 was possible because of the generous support of the Society of American Arc
 * ead3.dtd
 * ead3.rng
 * ead3.xsd
-* ead3.sch
-* ead3_undeprecated.dtd
-* ead3_undeprecated.rng
-* ead3_undeprecated.xsd
+* schematron/ead3.sch (+ code list lookup files)
+* schematron/ead3_rules.xsl
+* undeprecated/ead3_undeprecated.dtd
+* undeprecated/ead3_undeprecated.rng
+* undeprecated/ead3_undeprecated.xsd
 
 ### Notes:
 
 * EAD3 is available as Relax NG Schema, DTD, and W3C Schema. 
 * The EAD3 DTD does not support the <objectxmlwrap> element.
-* In the EAD3 DTD, attributes iwth anyURI, token, and string data types are converted to CDATA.
+* In the EAD3 DTD, attributes with anyURI, token, and string data types are converted to CDATA.
 * Deprecated EAD 2002 elements are available in the undprecated versions of EAD3. 
 * A Schematron schema (ead3.sch) is available to validate external code lists not maintained within EAD, standard attribute value patterns, attribute or element co-ocurrence not enforcable in the schema,and some encoding practices recommended for future migration.
 
