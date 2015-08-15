@@ -1,7 +1,6 @@
 
 ## EAD3
 ### Encoded Archival Description (EAD), Version 3
-======================
 * Release: 1.0
 * Date: 2015-08
 
@@ -49,7 +48,6 @@ Lead schema developer: Terry Catapano
 EAD3 was possible because of the generous support of the Society of American Archivists, the Gladys Krieble Delmas Foundation, the National Endowment for the Humanities, the Nationaal Archief of the Netherlands, the Beinecke Rare Book and Manuscript Library, the Institute for Advanced Technology in the Humanities at the University of Virginia, and OCLC Research. 
 
 ### EAD3 Files
-=====================
 * ead3.dtd
 * ead3.rng
 * ead3.xsd
@@ -59,7 +57,7 @@ EAD3 was possible because of the generous support of the Society of American Arc
 * ead3_undeprecated.xsd
 
 ### Notes:
-=====================
+
 * EAD3 is available as Relax NG Schema, DTD, and W3C Schema. 
 * The EAD3 DTD does not support the <objectxmlwrap> element.
 * In the EAD3 DTD, attributes iwth anyURI, token, and string data types are converted to CDATA.
