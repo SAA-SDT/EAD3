@@ -4,69 +4,69 @@
     <ns uri="http://www.loc.gov/mads/rdf/v1#" prefix="madsrdf"/>
     <ns uri="http://ead3.archivists.org/schema/" prefix="ead"/>
 
-    <!-- VARIABLES -->
-
-    <!-- VARIABLE $language-code-lookups: array of urls of target codelist documents -->
+    <!-- LANGUAGE CODES -->
+    
+    <pattern id="langcodes">
+    
+    <!-- VARIABLE $language-code-lookups: list of filenames of target codelist documents -->
+    
     <xsl:variable name="language-code-lookups" as="element()*">
         <file key="iso639-1">iso639-1.rdf</file>
         <file key="iso639-2b">iso639-2.rdf</file>
         <file key="iso639-3">iso_639_3.xml</file>
     </xsl:variable>
 
+    <!-- VARIABLE $language-code-key: the EAD3 document's /ead:ead/ead:control/@langencoding, with a fall-back of iso639- 2b -->
+
     <let name="active-language-code-key"
         value="(/ead:ead/ead:control/@langencoding[.=$language-code-lookups/@key],'iso639-2b')[1]"/>
 
-    <!-- VARIABLE $language-code-lookup:
-     select <file> element from $language-code-lookups
-     whose @key value matches the EAD3 document's /ead:ead/ead:control/@langencoding that declares the language codelist with any of the
-     values of $language-code-lookups' @key attribute, with a fall-back of 'iso639-2b'-->
+    <!-- VARIABLE $language-code-lookup: lookup in the external code list based on $active-language-code-key  -->
 
     <let name="language-code-lookup"
         value="document($language-code-lookups[@key = $active-language-code-key])//(madsrdf:code | iso_639_3_entries/iso_639_3_entry/@id)"/>
-    
-    <!-- CODES -->
-
-    <pattern id="langcodes">
-
-        <!-- LANGUAGE CODES -->
+   
         <rule context="*[exists(@langcode | @lang)]">
-            <!--<let name="code" value="@lang | @langcode"/> -->
-            <!-- for every @lang or @langcode attribute test that it is equal to a value in the language code list -->
+            <!-- for every @lang or @langcode attribute, test that it is equal to a value in the relevant language code list -->
             <assert
                 test="every $l in (@lang | @langcode) satisfies normalize-space($l) = $language-code-lookup"> The <name/> element's lang or langcode attribute should contain a value from the<value-of select="$active-language-code-key"/> codelist. </assert>
         </rule>
     </pattern>
-        <!-- COUNTRY CODES -->
-<pattern id="countrycode">
+     
+    <!-- COUNTRY CODES -->
+    <pattern id="countrycode">
         <let name="countrycodes" value="document('iso_3166.xml')"/>
         <rule context="*[exists(@countrycode)]">
             <let name="code" value="normalize-space(@countrycode)"/>
             <assert test="$countrycodes//iso_3166_entry/@alpha_2_code = $code "> The countrycode attribute should contain a code from the ISO 3166-1 codelist. </assert>
         </rule>
-</pattern>
-        <!-- SCRIPT CODES -->
-<pattern id="scriptcode">
+    </pattern>
+     
+    <!-- SCRIPT CODES -->
+    <pattern id="scriptcode">
         <let name="scriptcodes" value="document('iso_15924.xml')"/>
         <rule context="*[exists(@scriptcode | @script)]">
             <let name="code" value="normalize-space(.)"/>
             <assert test="every $l in (@script | @scriptcode) satisfies $scriptcodes//iso_15924_entry/@alpha_4_code = $l "> The script or scriptcode attribute should contain a code from the iso_15924 codelist. </assert>
         </rule>
-</pattern>
+     </pattern>
+        
         <!-- REPOSITORY CODES -->
-<pattern id="repositorycode">
+     <pattern id="repositorycode">
         <rule context="*[@repositorycode][preceding::ead:control/@repositoryencoding = 'iso15511']">
             <assert
                 test="matches(@repositorycode, '(^([A-Z]{2})|([a-zA-Z]{1})|([a-zA-Z]{3,4}))(-[a-zA-Z0-9:/\-]{1,11})$')"> If the repositoryencoding is set to iso15511, the <emph>repositorycode</emph> attribute of <name/> must be formatted as an iso15511 code. </assert>
         </rule>
-</pattern>        
-        <!-- AGENCY CODES -->
-<pattern id="agencycode">        
+     </pattern>        
+     
+     <!-- AGENCY CODES -->
+     <pattern id="agencycode">        
         <rule context="ead:agencycode">
             <assert test="matches(normalize-space(.), '(^([A-Z]{2})|([a-zA-Z]{1})|([a-zA-Z]{3,4}))(-[a-zA-Z0-9:/\-]{1,11}$)')">
                 The format of the agencycode attribute is constrained to that of the International Standard Identifier for Libraries and Related Organizations (ISIL: ISO 15511): a prefix, a dash, and an identifier.
             </assert>
         </rule>
-</pattern>
+     </pattern>
 
     <!-- CO-OCCURRENCE CONSTRAINTS -->
 
@@ -128,11 +128,5 @@
                 Suggested values for the era attribute are 'ce' or 'bce'
             </assert>
         </rule>
-<!--        <rule context="@calendar">
-            <assert test=". = 'julian' or . = 'gregorian'">
-                Suggested values for the calendar attribute are 'julian' or 'gregorian'
-            </assert>
-        </rule>
--->
     </pattern>
 </schema>
