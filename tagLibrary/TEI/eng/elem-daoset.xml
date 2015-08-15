@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-daoset"
+     type="elementDocumentation">
+   <head>
+      <gi>daoset</gi>
+      <seg type="fullName">Digital Archival Object Set</seg>
+   </head>
+   <div type="summary">
+      <p>An element for binding together two or more links to digital archival objects.</p>
+   </div>
+   <div type="mayContain">
+      <p>dao, descriptivenote</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>did</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>base</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>coverage</cell>
+            <cell>Optional (values limited to: part, whole)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>label</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>Use <gi>daoset</gi> to group multiple links to born digital records or digital
+                     representations of the materials being described. <gi>dao</gi> and
+                        <gi>daoset</gi> allow the content of an archival collection or record group
+                     to be incorporated into the finding aid. These digital representations include
+                     graphic images, audio or video clips, images of text pages, and electronic
+                     transcriptions of text. The objects can be selected examples, or digital
+                     surrogates of all the materials in a collection, fonds, or an individual
+                     file.</p>
+      <p>
+         <gi>daoset</gi> must contain more two or more <gi>dao</gi> elements, which may
+                     be followed by an optional <gi>descriptivenote</gi> to provide a description of
+                     the objects being linked to.</p>
+      <p>Attribute usage:</p>
+      <list>
+         <item>Use <att>coverage</att> to indicate whether the set is part of or the
+                        whole of the unit being described.</item>
+         <item>Use <att>localtype</att> to indicate the nature of the set of digital
+                        archival objects.</item>
+      </list>
+      <p>See also:</p>
+      <list>
+         <item>
+            <gi>dao</gi> for linking to a single digital archival object.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="references">
+      <p>MODS <gi>location</gi>
+         <gi>url</gi>
+      </p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:daoset label="Digital Objects" coverage="part">
+            <ead:dao daotype="derived"
+                     coverage="part"
+                     actuate="onload"
+                     show="embed"
+                     linktitle="Chapter 1"
+                     localtype="thumbnail"
+                     href="http://imgs.ud.edu/archives/image/f12001_1thumb.gif"/>
+            <ead:dao daotype="derived"
+                     coverage="part"
+                     actuate="onrequest"
+                     show="new"
+                     linktitle="Chapter 1"
+                     localtype="fullsize"
+                     href="http://imgs.ud.edu/archives/image/f12001_1.jpg"/>
+         </ead:daoset>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:daoset label="Digital Objects" coverage="whole">
+            <ead:dao daotype="derived"
+                     coverage="whole"
+                     actuate="onrequest"
+                     show="new"
+                     linkrole="The Pippa and Porthos (cover)"
+                     href="http://brbl-media.library.yale.edu/images/1044151_quarter.jpg"/>
+            <ead:dao daotype="derived"
+                     coverage="whole"
+                     actuate="onrequest"
+                     show="new"
+                     linkrole="The Pippa and Porthos (title page)"
+                     href="http://brbl-media.library.yale.edu/images/1044153_quarter.jpg"/>
+            <ead:dao daotype="derived"
+                     coverage="whole"
+                     actuate="onrequest"
+                     show="new"
+                     linkrole="The Pippa and Porthos (p.1)"
+                     href="http://brbl-media.library.yale.edu/images/1044154_quarter.jpg"/> [.
+                        . .] <ead:descriptivenote>
+               <ead:p>Digitized pages of Barrie's "The Pippa and Porthos."</ead:p>
+            </ead:descriptivenote>
+         </ead:daoset>
+      </eg:egXML>
+   </div>
+</div>

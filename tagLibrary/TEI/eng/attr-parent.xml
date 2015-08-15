@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="attr-parent"
+     type="attributeDocumentation">
+   <head>
+      <att>parent</att>
+      <seg type="fullName">Parent</seg>
+   </head>
+   <div type="summary">
+      <p>On <gi>container</gi>, the values of the id attributes of one or more other
+                           <gi>container</gi>s that hold the container item being described in the
+                        current element. For a folder this might point to the <gi>container</gi>
+                        that describes the box in which that folder is housed. On <gi>physloc</gi>,
+                        the values of the id attributes of one or more other <gi>physloc</gi>s that
+                        represent a larger physical location. For a shelf, this might point to the
+                           <gi>physloc</gi> that describes the range in which the shelf is found.
+                        Available in <gi>container</gi> and <gi>physloc</gi>.</p>
+   </div>
+   <div type="dataType">
+      <p>IDREFS</p>
+   </div>
+</div>

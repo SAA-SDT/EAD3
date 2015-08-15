@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-tgroup"
+     type="elementDocumentation">
+   <head>
+      <gi>tgroup</gi>
+      <seg type="fullName">Table Group</seg>
+   </head>
+   <div type="summary">
+      <p>A wrapper element that binds together <gi>colspec</gi>, <gi>thead</gi>, and
+                        <gi>tbody</gi> elements in a table.</p>
+   </div>
+   <div type="mayContain">
+      <p>colspec, tbody, thead</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>table</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>align</cell>
+            <cell>Optional (values limited to: center, char, justify, left, right)</cell>
+         </row>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>cols</cell>
+            <cell>Required</cell>
+         </row>
+         <row>
+            <cell>colsep</cell>
+            <cell>Optional (values limited to: false, true)</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>rowsep</cell>
+            <cell>Optional (values limited to: false, true)</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>Tables comprise one or more <gi>tgroup</gi> elements depending on the number of
+                     times the column specifications change. <gi>tgroup</gi> provides a subgrouping
+                     of rows within a table that all use the same column specifications.</p>
+      <p>Attribute usage:</p>
+      <list>
+         <item>The required <att>cols</att> specifies the number of columns in the table
+                        group.</item>
+         <item>By convention, any rule specified in <att>colsep</att> is printed or
+                        displayed to the right of the column.</item>
+         <item>External rules are specified with the <att>frame</att> of <gi>table</gi>;
+                        horizontal rules are specified with <gi>table</gi> or <gi>tgroup</gi>
+            <att>rowsep</att>.</item>
+         <item>By convention, any rule specified in <att>rowsep</att> prints or displays
+                        below the row.</item>
+         <item>Vertical rules are specified by <att>colsep</att>; external rules are
+                        specified by <att>frame</att> in <gi>table</gi>.</item>
+      </list>
+      <p>See also:</p>
+      <list>
+         <item>Related elements <gi>colspec</gi>, <gi>table</gi>, <gi>tbody</gi>,
+                           <gi>thead</gi>.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Required, repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:table frame="none">
+            <ead:tgroup cols="3">
+               <ead:colspec colnum="1" colname="1" align="left" colwidth="50pt"/>
+               <ead:colspec colnum="2" colname="2" align="left" colwidth="50pt"/>
+               <ead:colspec colnum="3" colname="3" align="left" colwidth="50pt"/>
+               <ead:thead>
+                  <ead:row>
+                     <ead:entry colname="1">Major Family Members</ead:entry>
+                     <ead:entry colname="2">Spouses</ead:entry>
+                     <ead:entry colname="3">Children</ead:entry>
+                  </ead:row>
+               </ead:thead>
+               <ead:tbody>
+                  <ead:row>
+                     <ead:entry colname="1">John Albemarle (1760-1806)</ead:entry>
+                     <ead:entry colname="2">Mary Frances Delaney (1769-1835)</ead:entry>
+                     <ead:entry colname="3">John Delaney Albemarle (1787-1848)</ead:entry>
+                  </ead:row> . . .
+                           </ead:tbody>
+            </ead:tgroup>
+         </ead:table>
+      </eg:egXML>
+   </div>
+</div>

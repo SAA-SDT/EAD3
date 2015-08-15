@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="attr-expan"
+     type="attributeDocumentation">
+   <head>
+      <att>expan</att>
+      <seg type="fullName">Expansion</seg>
+   </head>
+   <div type="summary">
+      <p>The full form of an abbreviation or acronym found in an element's text; used
+                        for indexing and searching purposes. Available only in <gi>abbr</gi>.</p>
+   </div>
+   <div type="dataType">
+      <p>string</p>
+   </div>
+</div>

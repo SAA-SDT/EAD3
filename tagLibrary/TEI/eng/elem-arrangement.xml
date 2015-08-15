@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-arrangement"
+     type="elementDocumentation">
+   <head>
+      <gi>arrangement</gi>
+      <seg type="fullName">Arrangement</seg>
+   </head>
+   <div type="summary">
+      <p>An element for describing the organization or filing sequence of the records.</p>
+   </div>
+   <div type="mayContain">
+      <p>arrangement, blockquote, chronlist, head, list, p, table</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>archdesc, arrangement, c, c01, c02, c03, c04, c05, c06, c07, c08, c09, c10, c11, c12</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>Use <gi>arrangement</gi> to record the logical or physical groupings within a
+                     hierarchical structure and their relationships. This includes how the described
+                     materials have been subdivided into smaller units, e.g., record groups into
+                     series. May also indicate the filing sequence of the described materials, for
+                     example chronological or alphabetical arrangement.</p>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="references">
+      <p>ISAD(G) 3.3.4</p>
+      <p>MARC 351</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:arrangement>
+            <ead:head>Arrangement of the Collection</ead:head>
+            <ead:p>The filing system for the Braman Collection has been kept substantially in its original form. That is, original folders and their titles have been retained. The processor devised the basic organization scheme for the collection and, where necessary, reorganized the papers within the various component groups.</ead:p>
+         </ead:arrangement>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:c01 level="series">
+            <ead:did>
+               <ead:unittitle>Research files</ead:unittitle>
+               <ead:unitdate unitdatetype="inclusive" normal="1887/1995">1887-1995</ead:unitdate>
+               <ead:physdescstructured coverage="whole" physdescstructuredtype="spaceoccupied">
+                  <ead:quantity>3.5</ead:quantity>
+                  <ead:unittype>linear ft.</ead:unittype>
+               </ead:physdescstructured>
+            </ead:did>
+            <ead:scopecontent>
+               <ead:p>This series consists of newspaper clippings and research notes of Fred Reed, pertaining to the Champlain Transportation Company, its vessels, and the vessels' crew members. Several of the folders of chronological clippings include subjects, such as the move of the Ticonderoga (1954-1955) and the sale of the Champlain Transportation Company (1966). A number of clippings under "Persons" are obituaries. Two folders under the subseries "Notes" contain handwritten notes by Fred Reed broadly pertaining to the history of the Champlain Transportation Company, including a chronology, a list of crew members, and information about the Company's vessels.</ead:p>
+            </ead:scopecontent>
+            <ead:arrangement>
+               <ead:p>Organized into three subseries: <ead:list listtype="unordered">
+                     <ead:item>Clippings--chronological</ead:item>
+                     <ead:item>Clippings--persons</ead:item>
+                     <ead:item>Notes</ead:item>
+                  </ead:list>
+               </ead:p>
+               <ead:p>"Clippings-persons" is arranged alphabetically by surname, and "Notes" alphabetically by subject.</ead:p>
+            </ead:arrangement>
+         </ead:c01>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:c03 level="file">
+            <ead:did>
+               <ead:unittitle id="bruce.A.2.3">Letters from various correspondents to Craufurd Bruce</ead:unittitle>
+               <ead:unitdate normal="1807/1819">1807-19</ead:unitdate>
+               <ead:unitid>MS. Eng. c. 5746</ead:unitid>
+               <ead:physdesc>126 items</ead:physdesc>
+            </ead:did>
+            <ead:arrangement>
+               <ead:p>Alphabetical, Grey - Peterkin</ead:p>
+            </ead:arrangement>
+            <ead:scopecontent>
+               <ead:p>Mainly relating to Michael Bruce, with drafts of a few letters from Craufurd Bruce.</ead:p>
+            </ead:scopecontent>
+         </ead:c03>
+      </eg:egXML>
+   </div>
+</div>

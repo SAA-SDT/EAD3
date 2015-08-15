@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-bibliography"
+     type="elementDocumentation">
+   <head>
+      <gi>bibliography</gi>
+      <seg type="fullName">Bibliography</seg>
+   </head>
+   <div type="summary">
+      <p>For citing works based on the use or analysis of the materials being described.</p>
+   </div>
+   <div type="mayContain">
+      <p>archref, bibliography, bibref, blockquote, chronlist, head, list, p, table</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>archdesc, bibliography, c, c01, c02, c03, c04, c05, c06, c07, c08, c09, c10, c11, c12</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>
+         <gi>bibliography</gi> identifies works that are based on, about, or of special
+                     value when using the materials being described, or works in which a citation to
+                     or brief description of the materials occurs.</p>
+      <p>The works may be encoded in <gi>bibref</gi> or <gi>archref</gi>, as a
+                        <gi>table</gi>, <gi>list</gi>, or <gi>chronlist</gi>, or in a series of
+                        <gi>p</gi> elements.</p>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="references">
+      <p>ISAD(G) 3.5.4</p>
+      <p>MARC 510, 581</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:bibliography>
+            <ead:head>Bibliography</ead:head>
+            <ead:p>Sources consulted by John Kobler.</ead:p>
+            <ead:bibliography>
+               <ead:head>Monographs</ead:head>
+               <ead:bibref>
+                  <ead:title render="italic">
+                     <ead:part>Affiches americaines</ead:part>
+                  </ead:title> San Domingo: Imprimerie
+                              royale du Cap, 1782. Nos. 30, 35.</ead:bibref>
+               <ead:bibref>Ardouin, Charles Nicholas Celigny. <ead:title render="italic">
+                     <ead:part>Essais sur l'histoire d'Haiti</ead:part>
+                  </ead:title>.
+                              Port-au-Prince, 1865.</ead:bibref>
+               <ead:bibref>Bastien, Remy. <ead:title render="italic">
+                     <ead:part>Anthologie du folklore haitien</ead:part>
+                  </ead:title>, <ead:title render="doublequote">
+                     <ead:part>Proverbes</ead:part>
+                  </ead:title>.Mexico, 1946.
+                              pp.83-91.</ead:bibref>
+               <ead:bibref>Bellegarde, Dantes. <ead:title render="italic">
+                     <ead:part>Dessalines a parle</ead:part>
+                  </ead:title>.
+                              Port-au-Prince, 1948.Chap. IV: pp. 47-54.</ead:bibref>
+            </ead:bibliography>
+            <ead:bibliography>
+               <ead:head>Serial publications</ead:head> [. . .] </ead:bibliography>
+         </ead:bibliography>
+      </eg:egXML>
+   </div>
+</div>

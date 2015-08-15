@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-sponsor"
+     type="elementDocumentation">
+   <head>
+      <gi>sponsor</gi>
+      <seg type="fullName">Sponsor</seg>
+   </head>
+   <div type="summary">
+      <p>An optional child element of <gi>titlestmt</gi> for providing the name of an
+                     institution or individual who contributed significant support, monetary or
+                     otherwise, to the processing of the materials being described.</p>
+   </div>
+   <div type="mayContain">
+      <p>[text], abbr, emph, expan, foreign, lb, ptr, ref</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>titlestmt</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>
+         <gi>sponsor</gi> may be used to identify institution(s) and individual(s) who
+                     endorsed, financed, or arranged the acquisition, appraisal, and processing of
+                     the described materials or the preparation and distribution of the finding
+                     aid.</p>
+      <p>Attribute usage:</p>
+      <list>
+         <item>Use <att>localtype</att> if local practice requires recording the type of
+                        sponsor.</item>
+      </list>
+      <p>See also:</p>
+      <list>
+         <item>Do not confuse with <gi>author</gi>, which is for identifying the persons
+                        or institutions responsible for the intellectual content of the finding aid,
+                        or with <gi>repository</gi>, which is used to identify the institution or
+                        corporate body providing intellectual access to the described
+                        materials.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="references">
+      <p>MARC 536</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:titlestmt>
+            <ead:titleproper encodinganalog="245$a">The Edgar Holden Papers, 1978-1993</ead:titleproper>
+            <ead:subtitle encodinganalog="245$b">A Guide to the Holden Papers at the University of Ishtaba</ead:subtitle>
+            <ead:author>Finding aid prepared by Avery Thimble</ead:author>
+            <ead:sponsor>Processing sponsored by grant funding from the National Historical Publications and Records Commission, grant number 94-0123</ead:sponsor>
+         </ead:titlestmt>
+      </eg:egXML>
+   </div>
+</div>

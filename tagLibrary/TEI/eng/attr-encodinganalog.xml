@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="attr-encodinganalog"
+     type="attributeDocumentation">
+   <head>
+      <att>encodinganalog</att>
+      <seg type="fullName">Encoding Analog</seg>
+   </head>
+   <div type="summary">
+      <p>A field or element in another descriptive encoding system to which an EAD
+                        element or attribute is comparable. Mapping elements from one system to
+                        another enables creation of a single user interface that can index
+                        comparable information across multiple schemas. The mapping designations may
+                        also enable a repository to harvest selected data from a finding aid, for
+                        example, to build a basic catalog record, or OAI-PMH compliant Dublin Core
+                        record. The <att>relatedencoding</att> attribute may be used in
+                        <gi>ead</gi>, <gi>control</gi>, or <gi>archdesc</gi> to identify the
+                        encoding system from which fields are specified in
+                        <att>encodinganalog</att>. If <att>relatedencoding</att> is not used, then
+                        include the system designation in <att>encodinganalog</att>.</p>
+   </div>
+   <div type="dataType">
+      <p>token</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:origination>
+            <ead:corpname encodinganalog="MARC21 110">
+               <ead:part>Waters Studio</ead:part>
+            </ead:corpname>
+         </ead:origination>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:archdesc relatedencoding="MARC21">
+            <ead:origination>
+               <ead:persname encodinganalog="100$a$q$d$e" source="lcnaf">
+                  <ead:part>Waters, E. C. (Elizabeth Cat), 1870-1944, photographer</ead:part>
+               </ead:persname>
+            </ead:origination>
+         </ead:archdesc>
+      </eg:egXML>
+   </div>
+</div>

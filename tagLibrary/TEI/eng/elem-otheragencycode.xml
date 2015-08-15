@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-otheragencycode"
+     type="elementDocumentation">
+   <head>
+      <gi>otheragencycode</gi>
+      <seg type="fullName">Other Agency Code</seg>
+   </head>
+   <div type="summary">
+      <p>A child element of <gi>maintenanceagency</gi> that provides an alternative code
+                     for the institution or service responsible for the EAD instance.</p>
+   </div>
+   <div type="mayContain">
+      <p>[text]</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>maintenanceagency</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>Use <gi>otheragencycode</gi> to provide alternative and/or local institution
+                     code that represents the institution or service responsible for the creation,
+                     maintenance, and/or dissemination of the EAD instance. Any code other than that
+                     given in <gi>agencycode</gi> may be provided in <gi>otheragencycode</gi>. The
+                     addition of an ISO 3166-1 alpha-2 country code as the prefix to a local code is
+                     recommended to ensure international uniqueness.</p>
+      <p>Attribute usage:</p>
+      <list>
+         <item>Use <att>localtype</att> to specify the type of code being
+                        provided.</item>
+      </list>
+      <p>See also:</p>
+      <list>
+         <item>To provide an institution code in the format of the International
+                        Standard identifier for Libraries and Related Organizations (ISIL: ISO
+                        15511), use <gi>agencycode</gi>.</item>
+         <item>Provide the name of the agency in <gi>agencyname</gi>.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="references">
+      <p>MODS <gi>recordContentSource</gi>
+      </p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:maintenanceagency>
+            <ead:otheragencycode localtype="archon">GB-58</ead:otheragencycode>
+            <ead:agencyname>British Library</ead:agencyname>
+         </ead:maintenanceagency>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:maintenanceagency>
+            <ead:agencycode>DNASA-G</ead:agencycode>
+            <ead:otheragencycode localtype="agency">GSFC</ead:otheragencycode>
+            <ead:agencyname>NASA Goddard Space Flight Center</ead:agencyname>
+         </ead:maintenanceagency>
+      </eg:egXML>
+   </div>
+</div>

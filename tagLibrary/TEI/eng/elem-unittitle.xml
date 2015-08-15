@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-unittitle"
+     type="elementDocumentation">
+   <head>
+      <gi>unittitle</gi>
+      <seg type="fullName">Title of the Unit</seg>
+   </head>
+   <div type="summary">
+      <p>A child element of <gi>did</gi> that specifies a title for the described
+                     materials.</p>
+   </div>
+   <div type="mayContain">
+      <p>[text], abbr, corpname, date, emph, expan, famname, footnote, foreign, function, genreform, geogname, lb, name, num, occupation, persname, ptr, quote, ref, subject, title</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>did</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>label</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>normal</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>
+         <gi>unittitle</gi> is for recording the title statement, either formal or
+                     supplied, of the described materials. The title statement may consist of a word
+                     or phrase. <gi>unittitle</gi> is used at both the highest unit or
+                        <gi>archdesc</gi> level (e.g., collection, record group, or fonds) and at
+                     all the subordinate <gi>c</gi> levels (e.g., subseries, files, items, or other
+                     intervening stages within a hierarchical description).</p>
+      <p>Attribute usage:</p>
+      <list>
+         <item>Use <att>encodinganalog</att> to indicate corresponding data elements in
+                        another data format, such as MARC.</item>
+         <item>Use <att>localtype</att> if local use requires recording the type of
+                           <gi>unittitle</gi>.</item>
+         <item>Use <att>normal</att> to allow for normalization of unit titles with
+                        initial articles.</item>
+      </list>
+      <p>See also:</p>
+      <list>
+         <item>Do not confuse <gi>unittitle</gi> with <gi>title</gi>, an element used to
+                        encode the formal names of works such as monographs, serials, paintings,
+                        etc.</item>
+      </list>
+      <list>
+         <item>Also do not confuse with <gi>titleproper</gi>, used to designate the name
+                        of a finding aid encoded in EAD.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="references">
+      <p>ISAD(G) 3.1.2</p>
+      <p>MARC 130, 240, 245</p>
+      <p>MODS <gi>titleInfo</gi>
+         <gi>title</gi>
+      </p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:c level="subseries">
+            <ead:did>
+               <ead:unittitle>Documentary Movies</ead:unittitle>
+               <ead:unitdate unitdatetype="inclusive">1952-1964</ead:unitdate>
+               <ead:physdesc>2.5 linear ft.</ead:physdesc>
+               <ead:abstract label="Summary:">Includes scores, arranged alphabetically by movie title, and some correspondence, arranged chronologically.</ead:abstract>
+            </ead:did>
+         </ead:c>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:archdesc level="collection" relatedencoding="MARC21" localtype="inventory">
+            <ead:did>
+               <ead:head>Overview of the Collection</ead:head>
+               <ead:repository encodinganalog="852$a" label="Repository:">
+                  <ead:corpname>
+                     <ead:part>Syracuse University Special Collections Research Center</ead:part>
+                  </ead:corpname>
+               </ead:repository>
+               <ead:origination label="Creator:">
+                  <ead:persname encodinganalog="100">
+                     <ead:part>Langner, William R.</ead:part>
+                  </ead:persname>
+               </ead:origination>
+               <ead:unittitle encodinganalog="245$a" label="Title:">William Langner Papers</ead:unittitle>
+               <ead:abstract encodinganalog="520$a" label="Abstract:">William Langner worked for the Department of Education's Division of Adult Education and Literacy for many years. He was active in raising awareness of education for the disabled (Langner himself was a paraplegic from the age of 18 due to a car accident). Collection includes correspondence (both personal and professional), writings, memorabilia, and large amounts of printed material (papers, reports, handbooks, manuals, etc).concerning adult education.</ead:abstract>
+               <ead:langmaterial encodinganalog="546" label="Language:">
+                  <ead:language langcode="eng"/>
+                  <ead:language langcode="spa"/>
+                  <ead:descriptivenote>
+                     <ead:p>English, some printed material in Spanish</ead:p>
+                  </ead:descriptivenote>
+               </ead:langmaterial>
+            </ead:did>
+            <ead:accessrestrict>
+               <ead:head>Access Restrictions</ead:head>
+               <ead:p>Unprocessed. Accessible by special permission only.</ead:p>
+            </ead:accessrestrict>
+         </ead:archdesc>
+      </eg:egXML>
+   </div>
+   <div type="summary">
+      <p>&lt;/did&gt;</p>
+   </div>
+</div>

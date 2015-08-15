@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-date"
+     type="elementDocumentation">
+   <head>
+      <gi>date</gi>
+      <seg type="fullName">Date</seg>
+   </head>
+   <div type="summary">
+      <p>An element used to express a date.</p>
+   </div>
+   <div type="mayContain">
+      <p>[text], abbr, emph, expan, foreign, lb, ptr, ref</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>abstract, archref, bibref, entry, event, item, p, physfacet, publicationstmt, ref, unittitle</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>calendar</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>certainty</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>era</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>normal</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>Use <gi>date</gi> to highlight any dates that merit encoding and are not more
+                     appropriately encoded in other, more specific date-related elements, e.g.,
+                        <gi>unitdate</gi> or <gi>unitdatestructured</gi>.</p>
+      <p>Attribute usage:</p>
+      <list>
+         <item>A standard numeric form of the date (YYYY-MM-DD) can be expressed with
+                           <att>normal</att> to facilitate machine processing of dates, for example,
+                        1948-01-01/1998-04-01 (YYYY-MM-DD/YYYY-MM-DD), or 1948/1998
+                        (YYYY/YYYY).</item>
+         <item>Use <att>localtype</att> to supply a more specific designation, for
+                        example, "life," "flourish," "depiction," "publication," or
+                        "acquisition."</item>
+         <item>Use <att>certainty</att> to indicate the degree of precision in the
+                        dating, for example, "circa," "approximately," or "after."</item>
+         <item>Use <att>calendar</att> to indicate the calendar from which the date
+                        stems, e.g., "gregorian".</item>
+         <item>Use <att>era</att> to indicate the era in which the date occurred, e.g.,
+                        "ce" for Common Era.</item>
+         <item>Use <att>normal</att> to capture a standardized expression of the date or
+                        dates to facilitate machine processing.</item>
+      </list>
+      <p>See also:</p>
+      <list>
+         <item>Do not confuse with <gi>unitdate</gi> and <gi>unitdatestructured</gi>,
+                        which provide the date of creation and other relevant dates of the described
+                        materials.</item>
+         <item>Do not confuse with <gi>daterange</gi>, <gi>dateset</gi>, and
+                           <gi>datesingle</gi>, which are used to record dates in the creation
+                        (within <gi>unitdatestructured</gi>), contextual history (within
+                           <gi>chronlist</gi>), local control of the described materials (within
+                           <gi>localcontrol</gi>), or their relationships to other entities (within
+                           <gi>relations</gi>).</item>
+         <item>Do not confuse with <gi>eventdatetime</gi>, which is used for the date
+                        and time of a maintenance event in the history of the EAD instance. </item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:bibref>
+            <ead:persname relator="author">
+               <ead:part>Kinder, Dolores.</ead:part>
+            </ead:persname>
+            <ead:title>
+               <ead:part>Once Upon a Lullaby.</ead:part>
+            </ead:title>
+            <ead:geogname>
+               <ead:part>New York:</ead:part>
+            </ead:geogname>
+            <ead:corpname relator="publsher">
+               <ead:part>Wells &amp; Sons,</ead:part>
+            </ead:corpname>
+            <ead:date localtype="publication">1931</ead:date>
+         </ead:bibref>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:acqinfo>
+            <ead:p>This collection, number <ead:num localtype="donor">1988-015,</ead:num>was donated by Mrs. Dolores Franklin on <ead:date localtype="acquisition" normal="19880423">April 23, 1988.</ead:date>
+            </ead:p>
+         </ead:acqinfo>
+      </eg:egXML>
+   </div>
+</div>

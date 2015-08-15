@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-separatedmaterial"
+     type="elementDocumentation">
+   <head>
+      <gi>separatedmaterial</gi>
+      <seg type="fullName">Separated Material</seg>
+   </head>
+   <div type="summary">
+      <p>For identifying materials associated by provenance that have been physically separated or removed.</p>
+   </div>
+   <div type="mayContain">
+      <p>archref, bibref, blockquote, chronlist, head, list, p, separatedmaterial, table</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>archdesc, c, c01, c02, c03, c04, c05, c06, c07, c08, c09, c10, c11, c12, separatedmaterial</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>
+         <gi>separatedmaterial</gi> identifies materials that are associated by
+                     provenance to the described materials that have been physically separated or
+                     removed. Examples include the separation of special formats; the destruction of
+                     duplicate or nonessential material; and the deliberate or unintentional
+                     dispersal of a creator's records among different repositories.</p>
+      <p>See also:</p>
+      <list>
+         <item>Do not confuse with <gi>relatedmaterial</gi>, which is used for
+                        references to materials that are not physically or logically included in the
+                        material described in the finding aid.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="references">
+      <p>ISAD(G) 3.5.3</p>
+      <p>MARC 544</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:separatedmaterial>
+            <ead:head>Materials Cataloged Separately</ead:head>
+            <ead:p>Photographs have been transferred to Pictorial Collections of The Bancroft Library.</ead:p>
+         </ead:separatedmaterial>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:separatedmaterial>
+            <ead:p>Photographs and sound recordings have been transferred to the appropriate custodial divisions of the Library where they are identified as part of these papers. Among the sound recordings are the following broadcasts:</ead:p>
+            <ead:list>[...]</ead:list>
+         </ead:separatedmaterial>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:separatedmaterial>
+            <ead:p>Other papers of Earl Warren, which relate chiefly to his early years and public service in California, are held by the California State Archives in Sacramento.</ead:p>
+         </ead:separatedmaterial>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:relatedmaterial>
+            <ead:p>Records relating to the Warren Commission are held in the National Archives and Records Administration.</ead:p>
+         </ead:relatedmaterial>
+      </eg:egXML>
+   </div>
+</div>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-appraisal"
+     type="elementDocumentation">
+   <head>
+      <gi>appraisal</gi>
+      <seg type="fullName">Appraisal Information</seg>
+   </head>
+   <div type="summary">
+      <p>An element for documenting decisions and actions related to assessing the archival value and disposition of the materials being described.</p>
+   </div>
+   <div type="mayContain">
+      <p>appraisal, blockquote, chronlist, head, list, p, table</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>appraisal, archdesc, c, c01, c02, c03, c04, c05, c06, c07, c08, c09, c10, c11, c12</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>A statement of the rationale for decisions related to appraisal and disposition of the materials being described. Such decisions may be based upon the records' current administrative, legal, and fiscal use; their evidential, intrinsic, and informational value; their arrangement and condition; and their relationship to other records. May include information about destruction actions, sampling, and disposition schedules.</p>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="references">
+      <p>ISAD(G) 3.3.2</p>
+      <p>MARC 583</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:appraisal>
+            <ead:p>The records of the Mid-Ocean Dynamics Experiment came to the
+                           Institute Archives in two accessions in 1980 and 1982. During processing
+                           the collection was reduced from fifteen cubic feet to four by discarding
+                           duplicate materials, financial records, and publications not authored by
+                           MODE participants. Forty charts and six inches of raw data presented the
+                           primary appraisal issues. The raw data consisted of bulletins and reports
+                           referring to float positions, moorings, isotherms, geostrophic velocity
+                           calculations, ships' summaries, and work proposed and work carried out
+                           during the MODE-I experiment. As this raw data was recapitulated in
+                           weekly <ead:title render="underline">
+                  <ead:part>MODE Hot Line Bulletins</ead:part>
+               </ead:title>, only a sampling was retained in
+                           the collection. Also discarded were ten charts for which there were no
+                           descriptions of indicated data points, nor were dates or test site
+                           locations provided.</ead:p>
+            <ead:p>Six inches of materials pertaining to the POLYMODE project, 1973-1980, were added to the Institute Archives POLYMODE collection.</ead:p>
+            <ead:p>The appraisal of this collection was carried out in consultation with Robert Heinmiller, a research associate at Woods Hole Oceanographic Institution during MODE.</ead:p>
+         </ead:appraisal>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:appraisal>
+            <ead:chronlist>
+               <ead:chronitem>
+                  <ead:datesingle standarddate="1975">1975</ead:datesingle>
+                  <ead:event>Appraisal provided by donor, $12,500.</ead:event>
+               </ead:chronitem>
+               <ead:chronitem>
+                  <ead:datesingle standarddate="2008">2008</ead:datesingle>
+                  <ead:event>Appraised for insurance purposes, $15,750.</ead:event>
+               </ead:chronitem>
+            </ead:chronlist>
+         </ead:appraisal>
+      </eg:egXML>
+   </div>
+</div>

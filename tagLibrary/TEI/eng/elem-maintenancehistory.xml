@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-maintenancehistory"
+     type="elementDocumentation">
+   <head>
+      <gi>maintenancehistory</gi>
+      <seg type="fullName">Maintenance History</seg>
+   </head>
+   <div type="summary">
+      <p>A required child element of <gi>control</gi> that captures the history of the
+                     EAD instance.</p>
+   </div>
+   <div type="mayContain">
+      <p>maintenanceevent</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>control</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>
+         <gi>maintenancehistory</gi> is for recording the history of the creation,
+                     revisions, updates, and other modifications to the EAD instance. There must be
+                     at least one child <gi>maintenanceevent</gi> in <gi>maintenancehistory</gi>,
+                     which usually will be a record of the creation of the instance, but there may
+                     be many other <gi>maintenanceevent</gi> elements documenting the milestone
+                     changes or activities in the maintenance of the instance.</p>
+   </div>
+   <div type="availability">
+      <p>Required, not repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:maintenancehistory>
+            <ead:maintenanceevent>
+               <ead:eventtype value="created"/>
+               <ead:eventdatetime standarddatetime="2006-10">October 2006</ead:eventdatetime>
+               <ead:agenttype value="human"/>
+               <ead:agent>Michael Rush</ead:agent>
+               <ead:eventdescription>Finding aid created.</ead:eventdescription>
+            </ead:maintenanceevent>
+            <ead:maintenanceevent>
+               <ead:eventtype value="created"/>
+               <ead:eventdatetime standarddatetime="2006-10">October 2006</ead:eventdatetime>
+               <ead:agenttype value="machine"/>
+               <ead:agent>Beinecke Library Edix/Wordix macros</ead:agent>
+               <ead:eventdescription>Encoded in EAD 1.0.</ead:eventdescription>
+            </ead:maintenanceevent>
+            <ead:maintenanceevent>
+               <ead:eventtype value="revised"/>
+               <ead:eventdatetime standarddatetime="2007-08-13"/>
+               <ead:agenttype value="machine"/>
+               <ead:agent>brbl-migrate-01.xsl</ead:agent>
+               <ead:eventdescription>converted for compliance with Yale EAD Best Practice Guidelines</ead:eventdescription>
+            </ead:maintenanceevent>
+            <ead:maintenanceevent>
+               <ead:eventtype value="revised"/>
+               <ead:eventdatetime standarddatetime="2007-07-26"/>
+               <ead:agenttype value="machine"/>
+               <ead:agent>v1to02.xsl</ead:agent>
+               <ead:eventdescription>PUBLIC "-//Yale University::Beinecke Rare Book and Manuscript Library//TEXT (US::CtYBR::::[ABRAHAM HAYWARD COLLECTION ])//EN" "hayward.xml" converted from EAD 1.0 to 2002 by v1to02.xsl (sy2003-10-15).</ead:eventdescription>
+            </ead:maintenanceevent>
+            <ead:maintenanceevent>
+               <ead:eventtype value="revised"/>
+               <ead:eventdatetime standarddatetime="2010-02-10"/>
+               <ead:agenttype value="machine"/>
+               <ead:agent>yale.addEadidUrl.xsl</ead:agent>
+               <ead:eventdescription>Transformed with yale.addEadidUrl.xsl. Adds @url with handle for finding aid. Overwrites @url if already present.</ead:eventdescription>
+            </ead:maintenanceevent>
+         </ead:maintenancehistory>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:maintenancehistory>
+            <ead:maintenanceevent>
+               <ead:eventtype value="derived"/>
+               <ead:eventdatetime standarddatetime="2015-09-13T08:05:33-05:00">13 September 2015</ead:eventdatetime>
+               <ead:agenttype value="machine"/>
+               <ead:agent>EAD2002_to_EAD3.xsl</ead:agent>
+               <ead:eventdescription>Conversion from EAD 2002 finding aid using XSL transformation.</ead:eventdescription>
+            </ead:maintenanceevent>
+            <ead:maintenanceevent>
+               <ead:eventtype value="revised"/>
+               <ead:eventdatetime standarddatetime="2015-09-14T10:05:23-05:00">14 September 2014</ead:eventdatetime>
+               <ead:agenttype value="human"/>
+               <ead:agent>Lisa Bolkonskaya</ead:agent>
+               <ead:eventdescription>Conversion from EAD 2002 revised. Conventions and local control added..</ead:eventdescription>
+            </ead:maintenanceevent>
+            <ead:maintenanceevent>
+               <ead:eventtype value="revised"/>
+               <ead:eventdatetime standarddatetime="2015-09-16T14:23:42-05:00">16 September 2014</ead:eventdatetime>
+               <ead:agenttype value="human"/>
+               <ead:agent>Lisa Bolkonskaya</ead:agent>
+               <ead:eventdescription>Minor revisions. Added sources.</ead:eventdescription>
+            </ead:maintenanceevent>
+         </ead:maintenancehistory>
+      </eg:egXML>
+   </div>
+</div>

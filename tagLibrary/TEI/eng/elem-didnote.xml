@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-didnote"
+     type="elementDocumentation">
+   <head>
+      <gi>didnote</gi>
+      <seg type="fullName">Descriptive Identification Note</seg>
+   </head>
+   <div type="summary">
+      <p>A child element of <gi>did</gi> that can express any kind of explanatory
+                     information.</p>
+   </div>
+   <div type="mayContain">
+      <p>[text], abbr, emph, expan, foreign, lb, ptr, ref</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>did</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>label</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>
+         <gi>didnote</gi> can encode textual notes within <gi>did</gi> that are not more
+                     appropriately encoded in the other available elements.</p>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="references">
+      <p>ISAD(G) 3.6.1</p>
+      <p>MARC 500</p>
+      <p>MODS <gi>note</gi>
+      </p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:archdesc level="collection">
+            <ead:did>
+               <ead:repository label="repository" encodinganalog="852">
+                  <ead:corpname>
+                     <ead:part>Library of Congress,</ead:part>
+                     <ead:part>Prints and Photographs Division,</ead:part>
+                  </ead:corpname>
+                  <ead:address>
+                     <ead:addressline>Washington, D.C. 20540</ead:addressline>
+                  </ead:address>
+               </ead:repository>
+               <ead:didnote> For information about Prints and Photographs Division
+                              collections and services, see the Prints and Photographs Division's
+                              Reading Room Home Page: <ead:ptr actuate="onrequest"
+                           href="http://lcweb.loc.gov/rr/print.htm"
+                           show="new"
+                           linkrole="text/html"/>
+               </ead:didnote>
+            </ead:did>
+         </ead:archdesc>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:did>
+            <ead:unittitle>Class Notes, Undergraduate</ead:unittitle>
+            <ead:unitdatestructured unitdatetype="inclusive">
+               <ead:daterange>
+                  <ead:fromdate notafter="1962">1962</ead:fromdate>
+                  <ead:todate notafter="1968">1968</ead:todate>
+               </ead:daterange>
+            </ead:unitdatestructured>
+            <ead:physdesc>12 notebooks</ead:physdesc>
+            <ead:container localtype="boxes">5-6</ead:container>
+            <ead:didnote>The notebooks contain months and days, not years. Estimated dates are based on the years Scully attended the University of Maryland.</ead:didnote>
+         </ead:did>
+      </eg:egXML>
+   </div>
+</div>

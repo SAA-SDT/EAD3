@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-otherrecordid"
+     type="elementDocumentation">
+   <head>
+      <gi>otherrecordid</gi>
+      <seg type="fullName">Other Record Identifier</seg>
+   </head>
+   <div type="summary">
+      <p>A child element of <gi>control</gi> that encodes any local identifier for the
+                     EAD instance.</p>
+   </div>
+   <div type="mayContain">
+      <p>[text]</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>control</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>
+         <gi>otherrecordid</gi> can be used to record an identifier that is an
+                     alternative to the mandatory identifier provided in <gi>recordid</gi>. These
+                     might include identifiers from systems that were used to generate the EAD
+                     instance or that are no longer current but had some part in the history and
+                     maintenance of the EAD instance.</p>
+      <p>Attribute usage:</p>
+      <list>
+         <item>Use <att>localtype</att> to identify the institution or service
+                        responsible for providing the associated record identifier, if not the same
+                        as that given in <gi>maintenanceagency</gi>.</item>
+      </list>
+      <p>See also:</p>
+      <list>
+         <item>Use <gi>representation</gi> to capture URLs for transformed and
+                        deliverable versions of the EAD instance (HTML, PDF, etc.).</item>
+         <item>Do not confuse with <gi>unitid</gi>, which records unique identifiers for
+                        the materials being described, rather than the finding aid itself.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:control>
+            <ead:recordid>beinecke.hayward</ead:recordid>
+            <ead:otherrecordid localtype="url">http://hdl.handle.net/10079/fa/beinecke.hayward</ead:otherrecordid>
+            <ead:otherrecordid localtype="publicid">-//Yale University::Beinecke Rare Book and Manuscript Library//TEXT (US::CtY-BR::::[ABRAHAM HAYWARD COLLECTION])//EN</ead:otherrecordid>
+            <ead:filedesc>
+               <ead:titlestmt>
+                  <ead:titleproper localtype="formal">Guide to the Abraham Hayward Collection</ead:titleproper>
+                  <ead:titleproper localtype="filing"
+                                   render="altrender"
+                                   altrender="nodisplay"
+                                   audience="internal">Hayward (Abraham) Collection</ead:titleproper>
+                  <ead:author>by Michael Rush</ead:author>
+               </ead:titlestmt>
+            </ead:filedesc> [. . .] </ead:control>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:control>
+            <ead:recordid instanceurl="http://drs.library.yale.edu/findaids/wa-mss-s-2636.xml">WA MSS S-2636</ead:recordid>
+            <ead:otherrecordid localtype="mss">S-2636</ead:otherrecordid>
+            <ead:filedesc>[. . .]</ead:filedesc> [. . .] </ead:control>
+      </eg:egXML>
+   </div>
+</div>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-indexentry"
+     type="elementDocumentation">
+   <head>
+      <gi>indexentry</gi>
+      <seg type="fullName">Index Entry</seg>
+   </head>
+   <div type="summary">
+      <p>A wrapper element that pairs an index term with zero or more linking elements.</p>
+   </div>
+   <div type="mayContain">
+      <p>corpname, famname, function, genreform, geogname, indexentry, name, namegrp, occupation, persname, ptr, ptrgrp, ref, subject, title</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>index, indexentry</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>Each <gi>indexentry</gi> must contain an access element, such as
+                        <gi>corpname</gi>, <gi>persname</gi>, <gi>subject</gi>, etc., or
+                        <gi>namegrp</gi> to handle multiple access elements. It may also contain
+                        <gi>ref</gi>, <gi>ptr</gi>, or <gi>ptrgrp</gi> to identify and/or provide a
+                     link to the relevant position in the finding aid. If desired, use controlled
+                     vocabulary terms to facilitate access to information within and across finding
+                     aid systems.</p>
+      <p>Use the child <gi>namegrp</gi> to bundle access element entries, e.g., several
+                        <gi>famname</gi> and <gi>persname</gi> elements that share the same
+                        <gi>ref</gi>, <gi>ptr</gi>, or <gi>ptrgrp</gi>.</p>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:index>
+            <ead:indexentry>
+               <ead:name>
+                  <ead:part>12th Air Force Photo</ead:part>
+               </ead:name>
+               <ead:ref target="LOT13105" actuate="onrequest" show="replace">LOT 13105</ead:ref>
+            </ead:indexentry>
+            <ead:indexentry>
+               <ead:name>
+                  <ead:part>15th Air Force Command:</ead:part>
+               </ead:name>
+               <ead:ref target="LOT13105" actuate="onrequest" show="replace">LOT 13105</ead:ref>
+            </ead:indexentry>
+         </ead:index>
+      </eg:egXML>
+   </div>
+</div>

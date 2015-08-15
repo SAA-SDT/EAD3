@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-todate"
+     type="elementDocumentation">
+   <head>
+      <gi>todate</gi>
+      <seg type="fullName">To Date</seg>
+   </head>
+   <div type="summary">
+      <p>A child element of <gi>daterange</gi> that records the end point in a range of
+                     dates.</p>
+   </div>
+   <div type="mayContain">
+      <p>[text], abbr, emph, expan, foreign, lb, ptr, ref</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>daterange</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>notafter</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>notbefore</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>standarddate</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>Use <gi>todate</gi> to record the end date in a range of dates, whether they be
+                     known or approximate. The content of the element is intended to be a
+                     human-readable, natural language expression of the date. If, however, indexing
+                     or other machine process of dates is desired, the <att>standarddate</att>
+                     should be used to record the date in machine-processable form as well.
+                        <gi>todate</gi> may be omitted from <gi>daterange</gi> if the date span is
+                     ongoing.</p>
+      <p>Attribute usage:</p>
+      <list>
+         <item>Use <att>localtype</att> to supply a more specific characterization of
+                        the date range.</item>
+         <item>Use <att>notafter</att> and <att>notbefore</att> to capture the earliest
+                        and latest possible dates in machine-processable form in cases when the date
+                        is uncertain.</item>
+         <item>Use <att>standarddate</att> to provide a machine-processable form of the
+                        date.</item>
+      </list>
+      <p>See also:</p>
+      <list>
+         <item>Use <gi>fromdate</gi> to record the starting point of a date
+                        range.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Optional, not repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:unitdatestructured calendar="gregorian" era="ce">
+            <ead:dateset>
+               <ead:datesingle standarddate="1963-01-22">22 January 1963</ead:datesingle>
+               <ead:daterange>
+                  <ead:fromdate standarddate="1971-06-01">1 June 1971</ead:fromdate>
+                  <ead:todate standarddate="1974-04-30">30 April 1974</ead:todate>
+               </ead:daterange>
+            </ead:dateset>
+         </ead:unitdatestructured>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:chronitem>
+            <ead:daterange>
+               <ead:fromdate>1819</ead:fromdate>
+               <ead:todate>1820</ead:todate>
+            </ead:daterange>
+            <ead:event>Studies theology at Yale College</ead:event>
+         </ead:chronitem>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:unitdatestructured unitdatetype="inclusive">
+            <ead:daterange>
+               <ead:fromdate notafter="1962">1962</ead:fromdate>
+               <ead:todate notafter="1968">1968</ead:todate>
+            </ead:daterange>
+         </ead:unitdatestructured>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:unitdatestructured certainty="circa" unitdatetype="inclusive">
+            <ead:daterange>
+               <ead:fromdate notbefore="1971" notafter="1975">around 1973</ead:fromdate>
+               <ead:todate standarddate="1992">1992</ead:todate>
+            </ead:daterange>
+         </ead:unitdatestructured>
+      </eg:egXML>
+   </div>
+</div>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-did"
+     type="elementDocumentation">
+   <head>
+      <gi>did</gi>
+      <seg type="fullName">Descriptive Identification</seg>
+   </head>
+   <div type="summary">
+      <p>A wrapper element that encloses information essential for identifying the material being described.</p>
+   </div>
+   <div type="mayContain">
+      <p>abstract, container, dao, daoset, didnote, head, langmaterial, materialspec, origination, physdescset, physdesc, physdescstructured, physloc, repository, unitdate, unitdatestructured, unitid, unittitle</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>archdesc, c, c01, c02, c03, c04, c05, c06, c07, c08, c09, c10, c11, c12</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>
+         <gi>did</gi> binds together other elements that provide core information needed
+                     for identifying the described materials. <gi>did</gi> occurs in
+                        <gi>archdesc</gi> and <gi>c</gi>, <gi>c01</gi> - <gi>c12</gi>. The various
+                        <gi>did</gi> child elements are intended for brief, clearly designated
+                     statements of information, whereas following sibling elements of <gi>did</gi>
+                     such as <gi>custodhist</gi>, <gi>arrangement</gi>, or <gi>scopecontent</gi>
+                     allow for more detailed, narrative description.</p>
+      <p>
+         <gi>did</gi> groups elements that constitute a good basic description of an
+                     archival unit. This grouping ensures that the same data elements and structure
+                     are available at every level of description within the EAD hierarchy. It
+                     facilitates the retrieval or output of a coherent body of elements for resource
+                     discovery and recognition.</p>
+      <p>The <gi>did</gi> in <gi>archdesc</gi> is sometimes called the high-level
+                        <gi>did</gi>, because it covers the entirety of the materials described by
+                     the EAD instance. Consider using the following child elements in the high-level
+                        <gi>did</gi>: <gi>origination</gi>, <gi>unittitle</gi>, <gi>unitdate</gi> or
+                        <gi>unitdatestructured</gi>, <gi>physdesc</gi> or
+                        <gi>physdescstructured</gi>, <gi>repository</gi>, and <gi>abstract</gi>.
+                        <gi>unitid</gi> and <gi>physloc</gi> are suggested if applicable to a
+                     repository's practice. <gi>did</gi> within components can have fewer elements,
+                     and might have only <gi>container</gi> or <gi>unitid</gi> and
+                        <gi>unittitle</gi>.</p>
+   </div>
+   <div type="availability">
+      <p>Required, not repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:archdesc localtype="inventory" level="subgrp">
+            <ead:did>
+               <ead:head>Overview of the Records</ead:head>
+               <ead:repository label="Repository:">
+                  <ead:corpname>
+                     <ead:part>Minnesota Historical Society</ead:part>
+                  </ead:corpname>
+               </ead:repository>
+               <ead:origination label="Creator:">
+                  <ead:corpname>
+                     <ead:part>Minnesota.</ead:part>
+                     <ead:part>Game and Fish Department</ead:part>
+                  </ead:corpname>
+               </ead:origination>
+               <ead:unittitle label="Title:">Game laws violation records,</ead:unittitle>
+               <ead:unitdate label="Dates:">1908-1928</ead:unitdate>
+               <ead:abstract label="Abstract:">Records of prosecutions for and seizures of property resulting from violation of the state's hunting and fishing laws.</ead:abstract>
+               <ead:physdesc label="Quantity:">2.25 cu. ft. (7 v. and 1 folder in 3 boxes)</ead:physdesc>
+            </ead:did> [ . . .] </ead:archdesc>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:c02 id="able-pa" level="file">
+            <ead:did>
+               <ead:unittitle>Adult Basic and Literacy Education, Pennsylvania (ABLE)</ead:unittitle>
+               <ead:abstract>includes "Focus on..." newsletters</ead:abstract>
+               <ead:physdescstructured coverage="whole" physdescstructuredtype="carrier">
+                  <ead:quantity>21</ead:quantity>
+                  <ead:unittype>reels</ead:unittype>
+               </ead:physdescstructured>
+               <ead:container localtype="Box">20</ead:container>
+            </ead:did>
+         </ead:c02>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:c03>
+            <ead:did>
+               <ead:unittitle>Class Notes, Undergraduate</ead:unittitle>
+               <ead:unitdatestructured unitdatetype="inclusive">
+                  <ead:daterange>
+                     <ead:fromdate notafter="1962">1962</ead:fromdate>
+                     <ead:todate notafter="1968">1968</ead:todate>
+                  </ead:daterange>
+               </ead:unitdatestructured>
+               <ead:physdesc>12 notebooks</ead:physdesc>
+               <ead:container localtype="boxes">5-6</ead:container>
+               <ead:didnote>The notebooks contain months and days, not years. Estimated dates are based on the years Scully attended the University of Maryland.</ead:didnote>
+            </ead:did>
+         </ead:c03>
+      </eg:egXML>
+   </div>
+</div>

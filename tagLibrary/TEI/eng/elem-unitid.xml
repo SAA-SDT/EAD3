@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-unitid"
+     type="elementDocumentation">
+   <head>
+      <gi>unitid</gi>
+      <seg type="fullName">ID of the Unit</seg>
+   </head>
+   <div type="summary">
+      <p>A child element of <gi>did</gi> that provides an identifier for the materials
+                     being described, such as an accession number.</p>
+   </div>
+   <div type="mayContain">
+      <p>[text],abbr, emph, expan, foreign, lb, ptr, ref</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>did</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>countrycode</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>identifier</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>label</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>repositorycode</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>
+         <gi>unitid</gi> may contain any alpha-numeric text string that serves as a
+                     unique reference point or control number for the described material, such as a
+                     lot number, an accession number, a classification number, or an entry number in
+                     a bibliography or catalog. <gi>unitid</gi> is primarily a logical designation,
+                     which sometimes indirectly provides location information, as in the case of a
+                     classification number.</p>
+      <p>Attribute usage:</p>
+      <list>
+         <item>Although not required, the <att>countrycode</att> and
+                           <att>repositorycode</att> should be used in <gi>unitid</gi> at the
+                           <gi>archdesc</gi>/<gi>did</gi> level to comply with ISAD(G) element
+                        3.1.1.</item>
+      </list>
+      <list>
+         <item>
+            <att>repositorycode</att> specifies the ISO 15511 code for the institution
+                        that has custody of the materials described, while <att>countrycode</att>
+                        provides the ISO 3166-1 code for the country in which that institution is
+                        located.</item>
+      </list>
+      <list>
+         <item>Use <att>identifier</att> to provide a number, code, or string (e.g.,
+                        URI) that uniquely identifies the Unit ID in an external system. Do not
+                        confuse with <att>id</att>, which provides a unique id for the element
+                        within the XML instance.</item>
+      </list>
+      <list>
+         <item>Use <att>localtype</att> to indicate the system from which the
+                           <gi>unitid</gi> was derived, e.g., accessioning system, record group
+                        classification scheme, records retention scheduling system, etc.</item>
+      </list>
+      <p>See also:</p>
+      <list>
+         <item>Use <gi>container</gi> and <gi>physloc</gi> to designate the physical
+                        housing or location of the described materials.</item>
+         <item>Do not confuse with <gi>recordid</gi> or <gi>otherrecordid</gi>, which
+                        are identifiers for the finding aid itself, not the materials described
+                        therein.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="references">
+      <p>ISAD(G) 3.1.1</p>
+      <p>MODS <gi>identifier</gi>
+      </p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:c01>
+            <ead:did>
+               <ead:unittitle>Manouche</ead:unittitle>
+            </ead:did>
+            <ead:c02>
+               <ead:did>
+                  <ead:unittitle>Recording</ead:unittitle>
+                  <ead:unitid>grove_005</ead:unitid>
+                  <ead:abstract>45-rpm phonodisc of Manouche singing two unidentified French songs</ead:abstract>
+                  <ead:container localtype="Box">559</ead:container>
+               </ead:did>
+            </ead:c02> [. . .] </ead:c01>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:archdesc level="collection">
+            <ead:did>
+               <ead:head>Descriptive Summary</ead:head>
+               <ead:unittitle label="Title">Donald C. Stone, Jr. Papers,</ead:unittitle>
+               <ead:unitdate unitdatetype="inclusive">1971-1983</ead:unitdate>
+               <ead:unitid countrycode="US"
+                           repositorycode="cbgtu"
+                           identifier="http://library.syr.edu/guides/s/stone_dc.htm"
+                           label="Accession number">GTU 2001-8-03</ead:unitid>
+               <ead:origination label="Creator">
+                  <ead:persname source="lcnaf">
+                     <ead:part>Stone, Donald C., Jr.</ead:part>
+                  </ead:persname>
+               </ead:origination>
+               <ead:physdesc label="Extent">4 boxes, 4 linear ft.</ead:physdesc>
+               <ead:repository label="Repository">
+                  <ead:corpname>
+                     <ead:part>The Graduate Theological Union</ead:part>
+                  </ead:corpname>
+                  <ead:address>
+                     <ead:addressline>Berkeley, California</ead:addressline>
+                  </ead:address>
+               </ead:repository>
+               <ead:abstract label="Abstract">The papers document Donald C. Stone's work
+                              with Ornstein and Swencionis on the <ead:emph render="italic">est</ead:emph> Outcome Project, and the development of his
+                              doctoral research, including his various publications on the human
+                              potential movement, up to the completion of his doctoral
+                              dissertation.</ead:abstract>
+               <ead:physloc label="Shelf location">5/D/4-5</ead:physloc>
+            </ead:did> [. . .] </ead:archdesc>
+      </eg:egXML>
+   </div>
+</div>

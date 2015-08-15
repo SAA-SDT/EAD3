@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-relatedmaterial"
+     type="elementDocumentation">
+   <head>
+      <gi>relatedmaterial</gi>
+      <seg type="fullName">Related Material</seg>
+   </head>
+   <div type="summary">
+      <p>For identifying archival materials that have an association to the materials being described.</p>
+   </div>
+   <div type="mayContain">
+      <p>archref, bibref, blockquote, chronlist, head, list, p, relatedmaterial, table</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>archdesc, c, c01, c02, c03, c04, c05, c06, c07, c08, c09, c10, c11, c12, relatedmaterial</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>
+         <gi>relatedmaterial</gi> is used to identify associated materials in the same
+                     repository or elsewhere. These materials may be related by sphere of activity,
+                     or subject matter.</p>
+      <p>See also:</p>
+      <list>
+         <item>Do not confuse with <gi>separatedmaterial</gi>, which provides
+                        information about materials that have been separated or physically removed
+                        from the described materials but that are related to them by
+                        provenance.</item>
+         <item>Do not confuse with <gi>altformavail</gi>, which encodes information
+                        about copies of the described materials, such as microforms, photocopies,
+                        and reproductions in digital formats.</item>
+         <item>Do not confuse with <gi>originalsloc</gi>, which encodes information
+                        regarding the existence and location of the originals when the unit being
+                        described consists of copies.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="references">
+      <p>ISAD(G) 3.5.3</p>
+      <p>MARC 544</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:relatedmaterial>
+            <ead:p>See also the following collections:</ead:p>
+            <ead:archref>Mary Smith Papers</ead:archref>
+            <ead:archref>Jeremiah Smith Correspondence</ead:archref>
+         </ead:relatedmaterial>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:separatedmaterial>
+            <ead:p>Photographs and sound recordings have been transferred to the appropriate custodial divisions of the Library where they are identified as part of these papers. Among the sound recordings are the following broadcasts:</ead:p>
+            <ead:list>[...]</ead:list>
+         </ead:separatedmaterial>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:relatedmaterial>
+            <ead:p>Records relating to the Warren Commission are held in the National Archives and Records Administration.</ead:p>
+         </ead:relatedmaterial>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:relatedmaterial>
+            <ead:p>Several genealogies and biographies of the Smith family have been published and are held in the Rare Books Department.</ead:p>
+            <ead:bibref>Kavanaugh, Carol. <ead:title>
+                  <ead:part>The Smith Family in Johnson County</ead:part>
+               </ead:title>. (New York: Penguin) <ead:num localtype="bibid">4569982</ead:num>
+            </ead:bibref>
+            <ead:bibref>Llewellyn, Gareth. <ead:title>
+                  <ead:part>Smythe, Smith: What's the Difference?</ead:part>
+               </ead:title>. (London: Jonathan Cape)
+                              <ead:num localtype="bibid">336712</ead:num>
+            </ead:bibref>
+         </ead:relatedmaterial>
+      </eg:egXML>
+   </div>
+</div>

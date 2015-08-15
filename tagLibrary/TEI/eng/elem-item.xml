@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-item"
+     type="elementDocumentation">
+   <head>
+      <gi>item</gi>
+      <seg type="fullName">Item</seg>
+   </head>
+   <div type="summary">
+      <p>An element used in either <gi>list</gi> or as part of <gi>defitem</gi>.</p>
+   </div>
+   <div type="mayContain">
+      <p>[text], abbr, corpname, date, emph, expan, famname, footnote, foreign, function, genreform, geogname, lb, list, name, num, occupation, persname, ptr, quote, ref, subject, title</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>defitem, list</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>An element used in two contexts: as an entry in a simple, random, or ordered
+                        <gi>list</gi> or as part of <gi>defitem</gi> inside a definition list. In
+                     the first instance, <gi>item</gi> can be a number, word, or phrase. In a
+                     definition list, which is usually displayed as two columns, <gi>defitem</gi>
+                     pairs <gi>label</gi> with a corresponding <gi>item</gi> containing text that
+                     defines, describes, or explains the terms or other text tagged as
+                        <gi>label</gi>.</p>
+      <p>See also:</p>
+      <list>
+         <item>Do not confuse with <gi>chronitem</gi>, which designates entries in
+                           <gi>chronlist</gi>.</item>
+         <item>Related elements <gi>list</gi> and <gi>defitem</gi>.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Within <gi>defitem</gi>: Required, not repeatable</p>
+      <p>Within <gi>list</gi>: Optional, repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:list listtype="unordered" mark="circle">
+            <ead:head>List of ministers of May Memorial Unitarian Universalist Church</ead:head>
+            <ead:item>John Storer, Minister 1839-1844</ead:item>
+            <ead:item>Samuel Joseph May, Minister 1845-1868</ead:item>
+            <ead:item>Samuel R. Calthrop, Minister 1868-1911</ead:item>
+            <ead:item>John H. Applebee, Minister 1911-1929</ead:item>
+            <ead:item>Waldemar W. Argow, Minister 1930-1941</ead:item>
+            <ead:item>Robert E. Romig, Minister 1941-1946</ead:item>
+            <ead:item>Glenn O. Canfield, Minister 1946-1952</ead:item>
+            <ead:item>John Fuller, Minister, 1961-1973</ead:item>
+         </ead:list>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:list listtype="deflist">
+            <ead:defitem>
+               <ead:label>ALS</ead:label>
+               <ead:item>Autograph Letter Signed</ead:item>
+            </ead:defitem>
+            <ead:defitem>
+               <ead:label>TLS</ead:label>
+               <ead:item>Typewritten Letter Signed</ead:item>
+            </ead:defitem>
+         </ead:list>
+      </eg:egXML>
+   </div>
+</div>

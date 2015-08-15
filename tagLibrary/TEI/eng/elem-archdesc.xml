@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-archdesc"
+     type="elementDocumentation">
+   <head>
+      <gi>archdesc</gi>
+      <seg type="fullName">Archival Description</seg>
+   </head>
+   <div type="summary">
+      <p>A required child element of <gi>ead</gi> that binds together all of the
+                     archival descriptive information in an EAD instance.</p>
+   </div>
+   <div type="mayContain">
+      <p>accessrestrict, accruals, acqinfo, altformavail, appraisal, arrangement, bibliography, bioghist, controlaccess, custodhist, did, dsc, fileplan, index, legalstatus, odd, originalsloc, otherfindaid, phystech, prefercite, processinfo, relatedmaterial, relations, scopecontent, separatedmaterial, userestrict</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>ead</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>base</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>level</cell>
+            <cell>Required (values limited to: class, collection, file, fonds, item, otherlevel, recordgrp, series, subfonds, subgrp, subseries)</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>otherlevel</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>relatedencoding</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>An element for binding together the bulk of an EAD document instance, which typically should include elements describing the content, context, and extent of a body of archival materials, as well as containing administrative and supplemental information that facilitates use of the materials. The elements are organized in hierarchical levels that provide a descriptive overview of the whole, optionally followed by more specific description of the component parts. Descriptive information is inherited downward, from one hierarchical level to the next.</p>
+      <p>The first child of <gi>archdesc</gi> must be the required <gi>did</gi> that
+                     provides core information about the overall unit being described in the finding
+                     aid. This may be followed by a variety of notes and controlled access elements
+                     that describe or provide administrative information about the whole of the
+                     materials being described. <gi>archdesc</gi> may also include information about
+                     subordinate units, which are bound together within <gi>dsc</gi> containing one
+                     or more levels of subordinate components. Data elements available in
+                        <gi>archdesc</gi> are repeatable in components (<gi>c</gi> or
+                        <gi>c01</gi>-<gi>c12</gi>) within <gi>dsc</gi>.</p>
+      <p>Attribute usage:</p>
+      <list>
+         <item>The required <att>level</att> identifies the type of aggregation being
+                        described in the EAD instance: class, collection, file, fonds, item,
+                        otherlevel, recordgrp, series, subfonds, subgrp, or subseries. If
+                        "otherlevel" is used as a value for <att>level</att>, the
+                           <att>otherlevel</att> should be used to provide an alternative
+                        term.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Required, not repeatable</p>
+   </div>
+   <div type="references">
+      <p>ISAD(G) 3.1.4 is equivalent to <att>level</att>
+      </p>
+      <p>MARC 351$c is equivalent to <att>level</att>
+      </p>
+   </div>
+   <div type="examples">
+      <p>See fully encoded examples provided at http://www.loc.gov/ead/.</p>
+   </div>
+</div>

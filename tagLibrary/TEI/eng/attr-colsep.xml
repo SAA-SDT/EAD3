@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="attr-colsep"
+     type="attributeDocumentation">
+   <head>
+      <att>colsep</att>
+      <seg type="fullName">Column Separator</seg>
+   </head>
+   <div type="summary">
+      <p>Used to indicate whether the columns in the table are to be separated by
+                        vertical rules: "true" specifies display of a rule to the right of the
+                        column, "false" specifies no rule is to be displayed. Available in
+                           <gi>colspec</gi>, <gi>entry</gi>, <gi>table</gi>, and
+                        <gi>tgroup</gi>.</p>
+   </div>
+   <div type="values">
+      <p>false, true</p>
+   </div>
+</div>

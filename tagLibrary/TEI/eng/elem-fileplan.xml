@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-fileplan"
+     type="elementDocumentation">
+   <head>
+      <gi>fileplan</gi>
+      <seg type="fullName">File Plan</seg>
+   </head>
+   <div type="summary">
+      <p>An element for information about any classification scheme used by the original creator to arrange, store, and retrieve the materials described.</p>
+   </div>
+   <div type="mayContain">
+      <p>blockquote, chronlist, fileplan, head, list, p, table</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>archdesc, c, c01, c02, c03, c04, c05, c06, c07, c08, c09, c10, c11, c12, fileplan</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>A filing plan is usually identified by the type of system used, e.g., alphabetical, numerical, alpha-numerical, decimal, color-coded, etc. It is often hierarchical and may include the filing guidelines of the originating entity. Additional types include a drawing of a room layout or a scientific scheme.</p>
+      <p>See also:</p>
+      <list>
+         <item>Do not confuse with <gi>arrangement</gi>, which describes the current
+                        organization and/or filing sequence of the materials, as opposed to that
+                        imposed by the original creator.</item>
+         <item>Do not confuse with <gi>otherfindaid</gi>, which contains references to
+                        additional descriptions of the material rather than descriptions of
+                        classification schemes by which the materials might still be
+                        arranged.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:fileplan>
+            <ead:head>File List</ead:head>
+            <ead:p>The list below outlines the classification system used for the central files of Vice President Mondale's office. This structure assigned alpha-numeric codes to primary subjects and to secondary and tertiary subdivisions thereunder.</ead:p>
+            <ead:fileplan>
+               <ead:head>AGRICULTURE (AG)</ead:head>
+               <ead:list listtype="ordered" numeration="arabic">
+                  <ead:item>Home Economics</ead:item>
+                  <ead:item>Horticulture</ead:item>
+                  <ead:item>Marketing</ead:item>
+                  <ead:item>Price Support</ead:item>
+               </ead:list>
+            </ead:fileplan>
+            <ead:fileplan>
+               <ead:head>ARTS (AR)</ead:head>
+               <ead:list listtype="ordered" numeration="arabic">
+                  <ead:item>Languages</ead:item>
+                  <ead:item>Museums</ead:item>
+                  <ead:item>Music</ead:item>
+               </ead:list>
+            </ead:fileplan>
+         </ead:fileplan>
+      </eg:egXML>
+   </div>
+</div>

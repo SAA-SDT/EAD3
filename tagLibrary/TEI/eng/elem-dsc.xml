@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-dsc"
+     type="elementDocumentation">
+   <head>
+      <gi>dsc</gi>
+      <seg type="fullName">Description of Subordinate Components</seg>
+   </head>
+   <div type="summary">
+      <p>A wrapper element that bundles information about the hierarchical groupings of the materials being described.</p>
+   </div>
+   <div type="mayContain">
+      <p>blockquote, c, c01, chronlist, head, list, p, table, thead</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>archdesc</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>dsctype</cell>
+            <cell>Optional (values limited to: analyticover, combined, in-depth, otherdsctype)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>otherdsctype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>Use <gi>dsc</gi> to wrap subordinate components in the archival hierarchy of
+                     the materials being described. Although <gi>dsc</gi> may repeat, it is
+                     recommended to include only a single <gi>dsc</gi> element. Because it is a
+                     wrapper element and not an essential part of archival description, <gi>dsc</gi>
+                     may be deprecated in future versions of EAD. Avoiding multiple <gi>dsc</gi>
+                     elements within an EAD instance will make future migrations simpler. </p>
+      <p>The subordinate components can be presented in several different forms or
+                     levels of descriptive detail, which are identified by the element's optional
+                        <att>dsctype</att>. For example, "combined" is used when the narrative
+                     description of a series is followed immediately by a listing of the contents of
+                     that series within a single <gi>dsc</gi>. The <att>dsctype</att> value
+                     "analyticover" identifies an overview description of series and subseries,
+                     which might be followed by a second <gi>dsc</gi> with the <att>dsctype</att>
+                     set to "in-depth" that provides a more detailed listing of the content of the
+                     materials, including information about the container numbers associated with
+                     those materials. The <att>dsctype</att> "otherdsctype" is for models that do
+                     not follow any of the above-mentioned formats, in which case
+                        <att>otherdsctype</att> can then be used to specify a particular
+                     presentation model.</p>
+      <p>If <gi>dsc</gi> contains children other than <gi>thead</gi> or component
+                     elements (<gi>c</gi>, <gi>cXX</gi>), those elements must come first, followed
+                     by the optional <gi>thead</gi>, then <gi>c</gi> or <gi>c01</gi>.</p>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:dsc dsctype="combined">
+            <ead:c01 level="series">
+               <ead:did>
+                  <ead:unittitle>Activities</ead:unittitle>
+                  <ead:unitdate unitdatetype="inclusive">1965-1971</ead:unitdate>
+                  <ead:physdesc>0.3 linear ft.</ead:physdesc>
+               </ead:did>
+               <ead:scopecontent>
+                  <ead:p>The Activities series gives examples of the types of activities offered at the camp. The folders contain reports, schedules, and inventories from each activity area of the camp. These records are predominantly from the late 1960s and early 1970s and replicate some of the information found in the staff manuals.</ead:p>
+               </ead:scopecontent>
+               <ead:c02 level="file">
+                  <ead:did>
+                     <ead:container localtype="box">1</ead:container>
+                     <ead:unittitle>General</ead:unittitle>
+                     <ead:unitdate unitdatetype="inclusive">1970-1971</ead:unitdate>
+                  </ead:did>
+               </ead:c02>
+               <ead:c02 level="file">
+                  <ead:did>
+                     <ead:container localtype="box">1</ead:container>
+                     <ead:unittitle>Camp Crafts</ead:unittitle>
+                     <ead:unitdate>1967</ead:unitdate>
+                  </ead:did>
+               </ead:c02>
+               <ead:c02 level="file">
+                  <ead:did>
+                     <ead:container localtype="box">1</ead:container>
+                     <ead:unittitle>Education Program</ead:unittitle>
+                     <ead:unitdate>1967</ead:unitdate>
+                  </ead:did>
+               </ead:c02>
+               <ead:c02 level="file">
+                  <ead:did>
+                     <ead:container localtype="box">1</ead:container>
+                     <ead:unittitle>Expressive Arts</ead:unittitle>
+                     <ead:unitdate>1970</ead:unitdate>
+                  </ead:did>
+               </ead:c02>[ . . .] </ead:c01>[ . . .] </ead:dsc>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:dsc dsctype="analyticover">
+            <ead:c01 level="series">
+               <ead:did>
+                  <ead:unitid>1-429-1</ead:unitid>
+                  <ead:unittitle>Forest Stand Maps by Township and Basemap</ead:unittitle>
+                  <ead:unitdate unitdatetype="inclusive">1958-1979</ead:unitdate>
+                  <ead:physdesc>36 ft. (approx. 1700 sheets) of cartographic records.</ead:physdesc>
+                  <ead:materialspec>Scale: predominantly 4 inches to 1 mile (1:15,840)</ead:materialspec>
+               </ead:did>
+               <ead:scopecontent>
+                  <ead:p>Series consists of forest stand maps. A map sheet was created for each township of the surveyed section of the province and for each basemap area in unsurveyed areas.</ead:p>[ . . .]
+                           </ead:scopecontent>
+            </ead:c01>
+            <ead:c01 level="series">
+               <ead:did>
+                  <ead:unitid>RG 1-429-2</ead:unitid>
+                  <ead:unittitle>Forest Stand Map Composites</ead:unittitle>
+                  <ead:unitdate unitdatetype="inclusive">1958-1971</ead:unitdate>
+                  <ead:physdesc>ca.70 maps</ead:physdesc>
+                  <ead:materialspec>Scale: 1 inch to 1 mile</ead:materialspec>
+               </ead:did>
+               <ead:scopecontent>
+                  <ead:p>Series consists of composite maps of the forest resource inventory data from all the townships within a Forestry Management Unit. The composites offer a broader view of an area than the township/basemaps, however the forest stand statistics are quite small and difficult to read.</ead:p>[ . . .] </ead:scopecontent>
+            </ead:c01>[ . . .] </ead:dsc>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:dsc dsctype="in-depth">
+            <ead:c01 level="series">
+               <ead:did>
+                  <ead:unitid>Series 1</ead:unitid>
+                  <ead:unittitle>Administrative Records</ead:unittitle>
+                  <ead:unitdate unitdatetype="inclusive">1912-1956</ead:unitdate>
+               </ead:did>
+               <ead:c02>
+                  <ead:did>
+                     <ead:container id="mss92-894c-bx1" localtype="box">Box 1</ead:container>
+                     <ead:container parent="mss92-894c-bx1" label="Folder" localtype="folder">7-8</ead:container>
+                     <ead:unittitle>Annual reports</ead:unittitle>
+                     <ead:unitdate unitdatetype="inclusive">1912-16, 1922</ead:unitdate>
+                  </ead:did>
+               </ead:c02>
+               <ead:c02>
+                  <ead:did>
+                     <ead:container parent="mss92-894c-bx1" label="Folder" localtype="folder">9</ead:container>
+                     <ead:unittitle>Board of Directors, Minutes and correspondence</ead:unittitle>
+                     <ead:unitdate unitdatetype="inclusive">1947-1949</ead:unitdate>
+                  </ead:did>
+               </ead:c02>
+               <ead:c02>
+                  <ead:did>
+                     <ead:container parent="mss92-894c-bx1" label="Folder" localtype="folder">10</ead:container>
+                     <ead:unittitle>Contracts and specifications for construction of nurses' quarters</ead:unittitle>
+                     <ead:unitdate>ca. 1947</ead:unitdate>
+                  </ead:did>
+               </ead:c02>
+               <ead:c02>
+                  <ead:did>
+                     <ead:container parent="mss92-894c-bx1" label="Folder" localtype="folder">11</ead:container>
+                     <ead:unittitle>Marin County Reports</ead:unittitle>
+                     <ead:unitdate unitdatetype="inclusive">1955-1956</ead:unitdate>
+                  </ead:did>
+               </ead:c02>
+            </ead:c01>
+            <ead:c01 level="series">
+               <ead:did>
+                  <ead:unitid>Series 3</ead:unitid>
+                  <ead:unittitle>Philip King Brown</ead:unittitle>
+                  <ead:unitdate unitdatetype="inclusive">1910-1931, n.d.</ead:unitdate>
+               </ead:did>
+               <ead:c02>
+                  <ead:did>
+                     <ead:container parent="mss92-894c-bx1" label="Folder" localtype="folder">21</ead:container>
+                     <ead:unittitle>Correspondence</ead:unittitle>
+                     <ead:unitdate unitdatetype="inclusive">1910-1931</ead:unitdate>
+                  </ead:did>
+               </ead:c02>
+               <ead:c02>
+                  <ead:did>
+                     <ead:container parent="mss92-894c-bx1" label="Folder" localtype="folder">22</ead:container>
+                     <ead:unittitle>Writings</ead:unittitle>
+                     <ead:unitdate>n.d.</ead:unitdate>
+                  </ead:did>
+               </ead:c02> [ . . .] </ead:c01>
+         </ead:dsc>
+      </eg:egXML>
+   </div>
+</div>

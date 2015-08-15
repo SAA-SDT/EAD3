@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-bibref"
+     type="elementDocumentation">
+   <head>
+      <gi>bibref</gi>
+      <seg type="fullName">Bibliographic Reference</seg>
+   </head>
+   <div type="summary">
+      <p>An element for citing a published work.</p>
+   </div>
+   <div type="mayContain">
+      <p>[text], abbr, corpname, date, emph, expan, famname, footnote, foreign, function, genreform, geogname, lb, name, num, occupation, persname, ptr, quote, ref, subject, title</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>bibliography, otherfindaid, relatedmaterial, separatedmaterial</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>Use <gi>bibref</gi> to cite a published work such as a book, article,
+                     dissertation, motion picture, or sound recording. The work may be based on,
+                     about, or related in some other way to the materials described.</p>
+      <p>
+         <gi>bibref</gi> may contain text, controlled access elements, or formatting
+                     elements, and may use <gi>ptr</gi> or <gi>ref</gi> to link to the published
+                     work. Multiple <gi>bibref</gi> elements may be grouped into a
+                        <gi>bibliography</gi>.</p>
+      <p>See also:</p>
+      <list>
+         <item>Do not confuse with <gi>ref</gi>, which provides links both internal to a
+                        finding aid or from the finding aid to external content. </item>
+         <item>Use the more specific <gi>archref</gi> to cite separately described
+                        archival materials.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:p>The Archibald MacLeish Papers are described in <ead:bibref>
+               <ead:title render="italic">
+                  <ead:part>Library of Congress Acquisitions: Manuscript Division, 1982</ead:part>
+               </ead:title>, p. 29.
+                        </ead:bibref>
+         </ead:p>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:bibliography>
+            <ead:head>Sources consulted</ead:head>
+            <ead:bibref>
+               <ead:emph render="italic">Affiches americaines</ead:emph>. San Domingo:
+                           Imprimerie royale du Cap, 1782. Nos. 30, 35. <ead:num localtype="bibid">inet</ead:num>
+            </ead:bibref>
+            <ead:bibref> Madiou, Thomas. <ead:emph render="italic">Histoire d'Haiti</ead:emph>. Port-au-Prince, 1987.<ead:num localtype="bibid">F1921.M154 1987</ead:num>
+            </ead:bibref>
+         </ead:bibliography>
+      </eg:egXML>
+   </div>
+</div>

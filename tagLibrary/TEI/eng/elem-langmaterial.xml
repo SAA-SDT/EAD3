@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-langmaterial"
+     type="elementDocumentation">
+   <head>
+      <gi>langmaterial</gi>
+      <seg type="fullName">Language of the Material</seg>
+   </head>
+   <div type="summary">
+      <p>A child element of <gi>did</gi> that identifies languages represented in the
+                     materials described.</p>
+   </div>
+   <div type="mayContain">
+      <p>descriptivenote, language, languageset</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>did</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>label</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>
+         <gi>langmaterial</gi> records information about languages and scripts
+                     represented in the materials being described. <gi>langmaterial</gi> must
+                     contain one or more <gi>language</gi> or <gi>languageset</gi> elements, but
+                     cannot contain text. </p>
+      <p>Any comments or notes about languages or scripts represented in the materials
+                     described must be encoded in an optional <gi>descriptivenote</gi> that follows
+                     all <gi>language</gi> and <gi>languageset</gi> elements.</p>
+      <p>Attribute usage:</p>
+      <list>
+         <item>Use @lang and <att>script</att>to indicate the language and written
+                        scripts of the descriptive information, not the language of
+                        materials.</item>
+         <item>Use <att>langcode</att> in the <gi>language</gi> child element to record
+                        the language of the material using language codes.</item>
+         <item>Use <att>scriptcode</att> in the <gi>script</gi> child element to record
+                        the script of the material using script codes.</item>
+      </list>
+      <p>See also:</p>
+      <list>
+         <item>Do not confuse with <gi>languagedeclaration</gi> in <gi>control</gi>,
+                        which specifies the language(s) and script(s) in which the finding aid is
+                        written. See also the descriptions for <gi>language</gi> and
+                           <gi>languageset</gi>.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="references">
+      <p>ISAD(G) 3.4.3</p>
+      <p>MARC 546</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:langmaterial>
+            <ead:languageset>
+               <ead:language langcode="lat">Latin</ead:language>
+               <ead:script scriptcode="Latn"/>
+            </ead:languageset>
+            <ead:languageset>
+               <ead:language langcode="ang">Old English</ead:language>
+               <ead:script scriptcode="Latn"/>
+            </ead:languageset>
+            <ead:languageset>
+               <ead:language langcode="eng">English</ead:language>
+               <ead:script scriptcode="Latn"/>
+            </ead:languageset>
+            <ead:descriptivenote>
+               <ead:p>The majority of the documents are written in Modern English. Roberts copies multiple passages from original manuscripts in Latin and Old English.</ead:p>
+            </ead:descriptivenote>
+         </ead:langmaterial>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:langmaterial>
+            <ead:language langcode="eng">English</ead:language>
+            <ead:language langcode="fre">French</ead:language>
+         </ead:langmaterial>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:langmaterial>
+            <ead:languageset>
+               <ead:language langcode="jpn">Japanese</ead:language>
+               <ead:script scriptcode="Hira">hiragana</ead:script>
+               <ead:script scriptcode="Kana">katakana</ead:script>
+            </ead:languageset>
+            <ead:descriptivenote>
+               <ead:p>This file contains documents in Japanese, in both the hiragana and katakana scripts.</ead:p>
+            </ead:descriptivenote>
+         </ead:langmaterial>
+      </eg:egXML>
+   </div>
+</div>

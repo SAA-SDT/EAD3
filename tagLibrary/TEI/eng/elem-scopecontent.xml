@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-scopecontent"
+     type="elementDocumentation">
+   <head>
+      <gi>scopecontent</gi>
+      <seg type="fullName">Scope and Content</seg>
+   </head>
+   <div type="summary">
+      <p>An element that provides information about the nature of and activities reflected in the described materials.</p>
+   </div>
+   <div type="mayContain">
+      <p>blockquote, chronlist, head, list, p, scopecontent, table</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>archdesc, c, c01, c02, c03, c04, c05, c06, c07, c08, c09, c10, c11, c12, scopecontent</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>
+         <gi>scopecontent</gi> contains a narrative statement that summarizes the range
+                     and topical coverage of the materials. It provides the researcher with the
+                     information necessary to evaluate the potential relevance of the materials
+                     being described. <gi>scopecontent</gi> may include information about the form
+                     and arrangement of the materials; dates covered by the materials; significant
+                     organizations, individuals, events, places, and subjects represented in the
+                     materials; and functions and activities that generated the materials being
+                     described. It may also identify strengths of or gaps in the materials.</p>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="references">
+      <p>ISAD(G) 3.3.1</p>
+      <p>MARC 520</p>
+      <p>MODS <gi>abstract</gi>
+      </p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:archdesc level="fonds">
+            <ead:did>[...]</ead:did>
+            <ead:scopecontent encodinganalog="520">
+               <ead:head>Scope and Content</ead:head>
+               <ead:p>Fonds includes records relating to the Department of Plant Ecology's administration, teaching and research; extension work relating to the Saskatchewan Weed Survey; and correspondence with a variety of institutions and individuals. A series of minutes and correspondence relating to the Saskatchewan Committee on the Ecology and Preservation of Grasslands (established in 1935) documents the efforts to establish permanent reserves of significant grasslands in Saskatchewan.</ead:p>
+            </ead:scopecontent>
+         </ead:archdesc>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:dsc dsctype="combined">
+            <ead:head>Detailed Description of the Collection</ead:head>
+            <ead:c01 level="series">
+               <ead:did>
+                  <ead:unittitle>Record of Prosecutions,</ead:unittitle>
+                  <ead:unitdate>1916-1927.</ead:unitdate>
+                  <ead:physdesc>3 volumes.</ead:physdesc>
+               </ead:did>
+               <ead:scopecontent>
+                  <ead:p>Information provided in each entry: date of report, name and address of person arrested, location where offense was committed, date of arrest, nature of offense, name of judge or justice, result of trial, amounts of fine and court costs, number of days served if jailed, name of warden, and occasional added remarks. Types of offenses included hunting or fishing out of season or in unauthorized places, exceeding catch or bag limits, taking undersized fish, illegal fishing practices such as gill-netting or dynamiting, illegal hunting practices such as night-lighting, killing non-game birds, fishing or hunting without a license, and hunting-related offenses against persons such as fraud and assault.</ead:p>
+               </ead:scopecontent>
+            </ead:c01>
+         </ead:dsc>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:c02>
+            <ead:did>
+               <ead:unittitle>Suspicion (RKO Radio Pictures)</ead:unittitle>
+               <ead:unitdate normal="1941" unitdatetype="inclusive">1941</ead:unitdate>
+               <ead:container localtype="Oversize">102A</ead:container>
+            </ead:did>
+            <ead:relatedmaterial>
+               <ead:p>See also <ead:ref target="cftm1">Classic Film Themes Medley [I]</ead:ref> and <ead:ref target="nft">Nostalgic Film Themes</ead:ref>.</ead:p>
+            </ead:relatedmaterial>
+            <ead:scopecontent>
+               <ead:p>Production score - excerpted reductions, photostats:</ead:p>
+               <ead:list>
+                  <ead:item>PROD. #306 M:10 Main title / before the fact</ead:item>
+                  <ead:item>PROD. #306 M:60 Melbeck's office / before the fact</ead:item>
+                  <ead:item>PROD. #306 M:74 Looking for Johnny / before the fact</ead:item>
+                  <ead:item>PROD. #306 M:85 Lina alone / before the fact</ead:item>
+                  <ead:item>PROD. #306 M:94 The morning mail / before the fact</ead:item>
+                  <ead:item>PROD. #306 M:106 Too fast / before the fact</ead:item>
+                  <ead:item>PROD. #306 M:74 Looking for Johnny / before the fact</ead:item>
+               </ead:list>
+            </ead:scopecontent>
+         </ead:c02>
+      </eg:egXML>
+   </div>
+</div>

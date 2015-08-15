@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-conventiondeclaration"
+     type="elementDocumentation">
+   <head>
+      <gi>conventiondeclaration</gi>
+      <seg type="fullName">Convention Declaration</seg>
+   </head>
+   <div type="summary">
+      <p>An optional child element of <gi>control</gi>, used to bind together
+                        <gi>citation</gi> with optional <gi>abbr</gi> and <gi>descriptivenote</gi>
+                     elements that identify rules or conventions applied in compiling the
+                     description.</p>
+   </div>
+   <div type="mayContain">
+      <p>abbr, citation, descriptivenote</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>control</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>A statement about any rules or conventions used in constructing the description. Examples include content standards, controlled vocabularies, or thesauri.</p>
+      <p>You may use <gi>conventiondeclaration</gi> to:</p>
+      <list>
+         <item>identify any rules used to formulate the content of controlled access
+                        terms and referenced in <att>rules</att>.</item>
+         <item>identify any controlled vocabularies used to populate controlled access
+                        terms and referenced in <att>source</att>.</item>
+         <item>identify any related encoding schemes referenced in
+                           <att>relatedencoding</att>.</item>
+         <item>specify standards used to formulate data elements or provide codes.</item>
+         <item>
+            <gi>conventiondeclaration</gi> should always be included when
+                           <att>langencoding</att>, <att>scriptencoding</att>,
+                           <att>dateencoding</att>, <att>countryencoding</att>, or
+                           <att>repositoryencoding</att> are set to the "other" value.</item>
+      </list>
+      <p>Each additional rule or set of rules, controlled vocabulary, or standard should
+                     be contained in a separate <gi>conventiondeclaration</gi>.</p>
+      <p>It may not be necessary to include <gi>conventiondeclaration</gi> in such cases
+                     where the above scenarios are addressed in local or consortial
+                     documentation.</p>
+      <p>
+         <gi>abbr</gi> may be used to identify the standard or controlled vocabulary in
+                     a coded structure. The content of <gi>abbr</gi> should be the same value given
+                     to <att>rules</att>, <att>source</att>, or <att>relatedencoding</att> when
+                     referencing a given convention. Any notes relating to how these rules or
+                     conventions have been used may be given within <gi>descriptivenote</gi>.</p>
+      <p>The prescribed order of all child elements (both required and optional) is:</p>
+      <list>
+         <item>
+            <gi>abbr</gi>
+         </item>
+         <item>
+            <gi>citation</gi>
+         </item>
+         <item>
+            <gi>descriptivenote</gi>
+         </item>
+      </list>
+      <p>See also:</p>
+      <list>
+         <item>Use <gi>localtypedeclaration</gi> to identify local values used in
+                           <att>localtype</att> attributes.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="references">
+      <p>ISAD(G) 3.7.2</p>
+      <p>MODS <gi>descriptionStandard</gi>
+      </p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:control> [. . .] <ead:conventiondeclaration>
+               <ead:abbr>ISAD(G)</ead:abbr>
+               <ead:citation>ISAD(G): General International Standard Archival Description, second edition, Ottawa 2000</ead:citation>
+            </ead:conventiondeclaration>
+            <ead:conventiondeclaration>
+               <ead:abbr>NCARules</ead:abbr>
+               <ead:citation>National Council on Archives, Rules for the Construction of Personal, Place and Corporate Names, 1997</ead:citation>
+            </ead:conventiondeclaration>
+            <ead:conventiondeclaration>
+               <ead:citation>ISO 8601 - Data elements and interchange formats - Information interchange - Representation of dates and times, 2nd ed., Geneva: International Standards Organization, 2000</ead:citation>
+            </ead:conventiondeclaration> [. . .] </ead:control>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:control> [. . .] <ead:conventiondeclaration>
+               <ead:abbr>DACS</ead:abbr>
+               <ead:citation href="http://www2.archivists.org/standards/DACS"
+                             lastdatetimeverified="2015-07-02T16:30:21-5:00"
+                             linktitle="DACS in HTML on SAA website"
+                             actuate="onload"
+                             show="new">Describing Archives: a Content Standard</ead:citation>
+               <ead:descriptivenote>
+                  <ead:p>DACS was used as the primary description standard.</ead:p>
+               </ead:descriptivenote>
+            </ead:conventiondeclaration> [. . .] </ead:control>
+      </eg:egXML>
+   </div>
+</div>

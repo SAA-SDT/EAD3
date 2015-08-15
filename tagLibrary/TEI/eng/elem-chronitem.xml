@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-chronitem"
+     type="elementDocumentation">
+   <head>
+      <gi>chronitem</gi>
+      <seg type="fullName">Chronology List Item</seg>
+   </head>
+   <div type="summary">
+      <p>An element that pairs a date with one or more events and zero or more
+                     geographic names within a chronology list <gi>chronlist</gi>.</p>
+   </div>
+   <div type="mayContain">
+      <p>chronitemset, daterange, dateset, datesingle, event, geogname</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>chronlist</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>An item within a chronology list, <gi>chronitem</gi> must contain a date, date
+                     range, or set of dates followed by an event or set of events. An optional
+                        <gi>geogname</gi> may follow the date, date range or set of dates. Use
+                        <gi>dateset</gi> to record multiple dates or date ranges and
+                        <gi>chronitemset</gi> to record multiple events or geographic names within a
+                     single <gi>chronitem</gi>.</p>
+      <p>Attribute usage:</p>
+      <list>
+         <item>Use <att>localtype</att>, if local use requires specification of the type
+                        of chronological item.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Required, repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:chronlist>
+            <ead:chronitem>
+               <ead:datesingle>2015</ead:datesingle>
+               <ead:chronitemset>
+                  <ead:geogname>
+                     <ead:part>Woodbury, Minnesota</ead:part>
+                  </ead:geogname>
+                  <ead:geogname>
+                     <ead:part>Roseville, Minnesota</ead:part>
+                  </ead:geogname>
+                  <ead:event>Opens additional stores</ead:event>
+               </ead:chronitemset>
+            </ead:chronitem>
+            <ead:chronitem>
+               <ead:datesingle>1948</ead:datesingle>
+               <ead:chronitemset>
+                  <ead:geogname>
+                     <ead:part>Minneapolis, Minnesota</ead:part>
+                  </ead:geogname>
+                  <ead:event>Graduates from the University of Minnesota</ead:event>
+                  <ead:event>Begins work as a receptionist for the Humphrey for Senator Committee</ead:event>
+               </ead:chronitemset>
+            </ead:chronitem>
+            <ead:chronitem>
+               <ead:datesingle>March 1957</ead:datesingle>
+               <ead:chronitemset>
+                  <ead:geogname>
+                     <ead:part encodinganalog="651" localtype="a">Biwabik, Minnesota</ead:part>
+                  </ead:geogname>
+                  <ead:event>Dies</ead:event>
+               </ead:chronitemset>
+               <ead:chronitemset>
+                  <ead:geogname>
+                     <ead:part encodinganalog="651" localtype="a">Minneapolis, Minnesota</ead:part>
+                  </ead:geogname>
+                  <ead:event>Buried in Lakewood Cemetery</ead:event>
+               </ead:chronitemset>
+            </ead:chronitem>
+         </ead:chronlist>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:chronlist>
+            <ead:chronitem>
+               <ead:datesingle standarddate="1927">1927</ead:datesingle>
+               <ead:geogname>
+                  <ead:part>Berlin, Germany</ead:part>
+                  <ead:geographiccoordinates coordinatesystem="mgrs">33UUU9029819737</ead:geographiccoordinates>
+               </ead:geogname>
+               <ead:event>Designs and builds Piscator Apartment</ead:event>
+            </ead:chronitem>
+            <ead:chronitem>
+               <ead:datesingle standarddate="1932">1932</ead:datesingle>
+               <ead:geogname>
+                  <ead:part>Basel, Switzerland</ead:part>
+                  <ead:geographiccoordinates coordinatesystem="mgrs">32TLT9469569092</ead:geographiccoordinates>
+               </ead:geogname>
+               <ead:event>Designs and builds Wohnbedarf Furnniture Stores</ead:event>
+            </ead:chronitem>
+         </ead:chronlist>
+      </eg:egXML>
+   </div>
+</div>

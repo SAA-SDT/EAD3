@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-unittype"
+     type="elementDocumentation">
+   <head>
+      <gi>unittype</gi>
+      <seg type="fullName">Unit Type</seg>
+   </head>
+   <div type="summary">
+      <p>A child element of <gi>physdescstructured</gi> that indicates the type of unit
+                     being quantified, e.g., boxes, linear feet, etc.</p>
+   </div>
+   <div type="mayContain">
+      <p>[text]</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>physdescstructured</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>identifier</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>rules</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>source</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>Required in <gi>physdescstructured</gi>, <gi>unittype</gi> identifies the type
+                     of unit being quantified. </p>
+      <p>Attribute usage:</p>
+      <list>
+         <item>Use <att>identifier</att> to provide a number, code, or string (e.g.,
+                        URI) that uniquely identifies the unit type in a controlled vocabulary,
+                        taxonomy, ontology, or other knowledge organization system. Do not confuse
+                        with <att>id</att>, which provides a unique id for the element within the
+                        XML instance.</item>
+         <item>Use <att>rules</att> to specify the descriptive rules followed for
+                        forming the unit type.</item>
+      </list>
+      <list>
+         <item>Use <att>source</att> to specify the controlled vocabulary in which the
+                        term in unit type is listed.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Required, not repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:physdescset>
+            <ead:physdescstructured coverage="whole" physdescstructuredtype="spaceoccupied">
+               <ead:quantity>12</ead:quantity>
+               <ead:unittype>linear feet</ead:unittype>
+            </ead:physdescstructured>
+            <ead:physdescstructured coverage="whole" physdescstructuredtype="carrier">
+               <ead:quantity>24</ead:quantity>
+               <ead:unittype>boxes</ead:unittype>
+            </ead:physdescstructured>
+         </ead:physdescset>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:physdescset>
+            <ead:physdescstructured coverage="part" physdescstructuredtype="spaceoccupied">
+               <ead:quantity>6</ead:quantity>
+               <ead:unittype>terabytes</ead:unittype>
+            </ead:physdescstructured>
+            <ead:physdescstructured coverage="part" physdescstructuredtype="carrier">
+               <ead:quantity>24</ead:quantity>
+               <ead:unittype>3 ½" floppy disks</ead:unittype>
+            </ead:physdescstructured>
+            <ead:physdescstructured coverage="part" physdescstructuredtype="materialtype">
+               <ead:quantity>1800</ead:quantity>
+               <ead:unittype>electronic files</ead:unittype>
+            </ead:physdescstructured>
+         </ead:physdescset>
+      </eg:egXML>
+   </div>
+</div>

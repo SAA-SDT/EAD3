@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-defitem"
+     type="elementDocumentation">
+   <head>
+      <gi>defitem</gi>
+      <seg type="fullName">Definition List Item</seg>
+   </head>
+   <div type="summary">
+      <p>A wrapper element for binding pairs of labels and items within a list.</p>
+   </div>
+   <div type="mayContain">
+      <p>item, label</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>list</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>An element, used within a definition list, that pairs a required <gi>label</gi>
+                     and <gi>item</gi>. The item may be an expansion of the label, as in a list of
+                     abbreviations. Definition lists are often displayed in two columns.</p>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:list listtype="deflist">
+            <ead:listhead>
+               <ead:head01>Abbreviation</ead:head01>
+               <ead:head02>Expansion</ead:head02>
+            </ead:listhead>
+            <ead:defitem>
+               <ead:label>ALS</ead:label>
+               <ead:item>Autograph Letter Signed</ead:item>
+            </ead:defitem>
+            <ead:defitem>
+               <ead:label>TLS</ead:label>
+               <ead:item>Typewritten Letter Signed</ead:item>
+            </ead:defitem>
+         </ead:list>
+      </eg:egXML>
+   </div>
+</div>

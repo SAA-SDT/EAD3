@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-quote"
+     type="elementDocumentation">
+   <head>
+      <gi>quote</gi>
+      <seg type="fullName">Quote</seg>
+   </head>
+   <div type="summary">
+      <p>A phrase-level element for identifying or formatting an inline quotation.</p>
+   </div>
+   <div type="mayContain">
+      <p>[text], abbr, emph, expan, foreign, lb, ptr, ref</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>Use <gi>quote</gi> to identify inline quotations within a block of text.</p>
+      <p>See also:</p>
+      <list>
+         <item>Use <gi>blockquote</gi> to designate an extended quotation.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="references">
+      <p>Equivalent to the element <gi>q</gi> in HTML.</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:p>In 1963, at the age of 27, Turnbull co-founded the firm of MLTW with
+                        fellow principals Charles Moore, Donlyn Lyndon, and Richard Whitaker. In a
+                        1968 letter to architectural historian David Gebhardt, Turnbull writes of
+                        the MLTW collaboration, <ead:quote>Essentially Chuck, Don, Dick and I are or were all designers. We worked together with the man having the strongest opinion about a subject usually prevailing. This built-in system of checks and balances was one of the reasons why the quality of design was so high . . .</ead:quote>
+         </ead:p>
+      </eg:egXML>
+   </div>
+</div>

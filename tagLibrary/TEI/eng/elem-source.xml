@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-source"
+     type="elementDocumentation">
+   <head>
+      <gi>source</gi>
+      <seg type="fullName">Source</seg>
+   </head>
+   <div type="summary">
+      <p>A child element of <gi>sources</gi> used to identify a particular source of
+                     evidence used in describing the archival material.</p>
+   </div>
+   <div type="mayContain">
+      <p>descriptivenote, objectxmlwrap, sourceentry</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>sources</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>actuate</cell>
+            <cell>Optional (values limited to: none, onload, onrequest, other)</cell>
+         </row>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>arcrole</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>href</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>linkrole</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>linktitle</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>show</cell>
+            <cell>Optional (value limited to: embed, new, none, other, replace)</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>Use <gi>source</gi> to cite a published resource used in describing the
+                     archival material. Though not required, a reference for the source should be
+                     included as a textual description in the child <gi>sourceentry</gi>. Use the
+                     optional <gi>descriptivenote</gi> for any additional notes about the source.
+                     Use the optional <gi>objectxmlwrap</gi> to embed XML documenting the source
+                     from any namespace other than EAD3. </p>
+      <p>The child elements of <gi>source</gi> are optional, but when present they must
+                     be provided in a specific order:</p>
+      <list>
+         <item>
+            <gi>sourceentry</gi>
+         </item>
+         <item>
+            <gi>objectxmlwrap</gi>
+         </item>
+         <item>
+            <gi>descriptivenote</gi>
+         </item>
+      </list>
+      <p>See also:</p>
+      <list>
+         <item>Do not confuse with <gi>citation</gi>, used in
+                           <gi>conventiondeclaration</gi> and <gi>localtypedeclaration</gi> to
+                        identify any rules and conventions applied in the description.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Required, repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:control> [. . .] <ead:sources>
+               <ead:source>
+                  <ead:sourceentry>HMC, Principal Family and Estate Collections: Family Names L-W, 1999</ead:sourceentry>
+               </ead:source>
+               <ead:source>
+                  <ead:sourceentry>HMC, Complete Peerage, 1936</ead:sourceentry>
+               </ead:source>
+            </ead:sources>
+         </ead:control>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:sources>
+            <ead:source lastdatetimeverified="2015-07-03T14:36:00-05:00"
+                        href="https://archive.org/details/dictionaryofamer00drakrich"
+                        actuate="onrequest"
+                        linktitle="Dictionary of American biography">
+               <ead:sourceentry>Dictionary of American biography: including men of the time ... and a supplement</ead:sourceentry> [. . .] </ead:source>
+         </ead:sources>
+      </eg:egXML>
+   </div>
+</div>

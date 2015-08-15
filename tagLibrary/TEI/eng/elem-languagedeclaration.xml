@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-languagedeclaration"
+     type="elementDocumentation">
+   <head>
+      <gi>languagedeclaration</gi>
+      <seg type="fullName">Language Declaration</seg>
+   </head>
+   <div type="summary">
+      <p>A child element of <gi>control</gi> that indicates the language and script in
+                     which an EAD instance is written.</p>
+   </div>
+   <div type="mayContain">
+      <p>descriptivenote, language, script</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>control</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>Use <gi>languagedeclaration</gi> to identify the language and script of an EAD
+                     instance with required <gi>language</gi> and <gi>script</gi> children. When the
+                     archival description is in a single language or it is the maintenance agency's
+                     policy to declare a primary language, then a single instance of
+                        <gi>languagedeclaration</gi> may be used. For declaring multiple languages,
+                        <gi>languagedeclaration</gi> may be repeated. Any comments about the
+                     languages and scripts in which the EAD instance is written may be included in
+                     the optional <gi>descriptivenote</gi>.</p>
+      <p>The prescribed order of all child elements (both required and optional) is:</p>
+      <list>
+         <item>
+            <gi>language</gi>
+         </item>
+         <item>
+            <gi>script</gi>
+         </item>
+         <item>
+            <gi>descriptivenote</gi>
+         </item>
+      </list>
+      <p>See also:</p>
+      <list>
+         <item>Do not confuse with <gi>langmaterial</gi>, which is used to identify
+                        languages and scripts found in the materials being described.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:control>
+            <ead:maintenanceagency>
+               <ead:otheragencycode localtype="archon">GB-58</ead:otheragencycode>
+               <ead:agencyname>British Library</ead:agencyname>
+            </ead:maintenanceagency>
+            <ead:languagedeclaration>
+               <ead:language langcode="eng">English</ead:language>
+               <ead:script scriptcode="Latn">Latin</ead:script>
+            </ead:languagedeclaration>
+            <ead:maintenancehistory>
+               <ead:maintenanceevent>
+                  <ead:eventtype value="derived"/>
+                  <ead:eventdatetime standarddatetime="2013-04-20T16:19:24Z"/>
+                  <ead:agenttype value="machine">machine</ead:agenttype>
+                  <ead:agent>IAMS</ead:agent>
+               </ead:maintenanceevent>
+            </ead:maintenancehistory>
+         </ead:control>
+      </eg:egXML>
+   </div>
+</div>

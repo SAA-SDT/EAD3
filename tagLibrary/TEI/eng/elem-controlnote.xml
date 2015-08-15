@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-controlnote"
+     type="elementDocumentation">
+   <head>
+      <gi>controlnote</gi>
+      <seg type="fullName">Control Note</seg>
+   </head>
+   <div type="summary">
+      <p>A child element of <gi>notestmt</gi>, used to provide a general note related to
+                     the EAD instance.</p>
+   </div>
+   <div type="mayContain">
+      <p>blockquote, chronlist, list, p, table</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>notestmt</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>Use <gi>controlnote</gi> to record general descriptive information about a
+                     finding aid. <gi>controlnote</gi> is similar to the "general notes" in
+                     traditional bibliographic descriptions. Repeat <gi>controlnote</gi> if it is
+                     necessary to capture multiple but separate general statements about the finding
+                     aid.</p>
+      <p>Attribute usage:</p>
+      <list>
+         <item>Use <att>localtype</att> if local practice requires recording the type of
+                        note.</item>
+      </list>
+      <p>See also:</p>
+      <list>
+         <item>Use <gi>descriptivenote</gi> for general information about the materials
+                        being described.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Required, repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:notestmt>
+            <ead:controlnote localtype="bpg">
+               <ead:p>This encoded finding aid is compliant with the Yale EAD Best Practice Guidelines, Version 1.0.</ead:p>
+            </ead:controlnote>
+         </ead:notestmt>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:notestmt>
+            <ead:controlnote>
+               <ead:p>Contact information: <ead:ref show="new"
+                           actuate="onrequest"
+                           href="http://hdl.loc.gov/loc.mss/mss.contact">http://hdl.loc.gov/loc.mss/mss.contact</ead:ref>
+               </ead:p>
+            </ead:controlnote>
+            <ead:controlnote>
+               <ead:p>Catalog Record: <ead:ref href="http://lccn.loc.gov/mm82036905"
+                           actuate="onrequest"
+                           linktitle="MARC record for collection">http://lccn.loc.gov/mm82036905</ead:ref>
+               </ead:p>
+            </ead:controlnote>
+         </ead:notestmt>
+      </eg:egXML>
+   </div>
+</div>

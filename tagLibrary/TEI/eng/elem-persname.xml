@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-persname"
+     type="elementDocumentation">
+   <head>
+      <gi>persname</gi>
+      <seg type="fullName">Personal Name</seg>
+   </head>
+   <div type="summary">
+      <p>An element for identifying a personal name.</p>
+   </div>
+   <div type="mayContain">
+      <p>part</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>abstract, archref, bibref, controlaccess, entry, event, indexentry, item, namegrp, origination, p, physfacet, ref, repository, unittitle</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>identifier</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>normal</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>relator</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>rules</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>source</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>Identifies a name, including any or all forenames, surnames, honorific titles, and added names, of a person who is related to the materials being described as either a source, creator, or subject.</p>
+      <p>
+         <gi>persname</gi> must contain one or more <gi>part</gi> elements. A single
+                        <gi>part</gi> may be used for the entire string, or if more granularity is
+                     desired, multiple <gi>part</gi> elements may be used to capture each component
+                     of the personal name, e.g.,</p>
+      <p>Part 1: Skinner</p>
+      <p>Part 2: B. F.</p>
+      <p>Part 3: Burrhus Frederic</p>
+      <p>Part 4: 1904-1990</p>
+      <p>Use <gi>persname</gi> within <gi>controlaccess</gi> for encoding personal names
+                     as defined by controlled vocabularies or according to appropriate rules. You
+                     may also use <gi>persname</gi> for encoding personal names as they appear
+                     within text.</p>
+      <p>Attribute usage:</p>
+      <list>
+         <item>Use <att>encodinganalog</att> to indicate corresponding data elements in
+                        another data format, such as MARC.</item>
+         <item>Use <att>identifier</att> to provide a number, code, or string (e.g.,
+                        URI) that uniquely identifies the personal name in a controlled vocabulary,
+                        taxonomy, ontology, or other knowledge organization system. Do not confuse
+                        with <att>id</att>, which provides a unique id for the element within the
+                        XML instance.</item>
+         <item>Use <att>localtype</att>, if local practice requires specification of the
+                        type of personal name.</item>
+         <item>Use <att>normal</att> to identify a standardized form of the personal
+                        name if not provided in the element itself.</item>
+         <item>Use <att>relator</att> to specify, either as a URI or a string, other
+                        relationship(s) the personal name has to the described materials, for
+                        example, "compiler," "creator," "collector," or "subject." The schema does
+                        not limit possible values of <att>relator</att>, but an institution could
+                        define and enforce values elsewhere if desired.</item>
+      </list>
+      <list>
+         <item>Use <att>rules</att> to specify the descriptive rules followed for
+                        forming the personal name.</item>
+         <item>Use <att>source</att> to indicate the vocabulary from which the personal
+                        name has been taken.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Within <gi>indexentry</gi>: Optional, not repeatable</p>
+      <p>Within all other elements: Optional, repeatable</p>
+   </div>
+   <div type="references">
+      <p>MARC 600, 700</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:controlaccess>
+            <ead:persname encodinganalog="600"
+                          relator="creator"
+                          rules="RDA"
+                          identifier="http://viaf.org/viaf/23746712"
+                          source="viaf">
+               <ead:part localtype="surname">Casey</ead:part>
+               <ead:part localtype="givenname">Silas</ead:part>
+               <ead:part localtype="dates">1807-1882</ead:part>
+            </ead:persname>
+         </ead:controlaccess>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:origination label="Creator">
+            <ead:persname>
+               <ead:part>Skinner</ead:part>
+               <ead:part>B. F.</ead:part>
+               <ead:part>Burrhus Frederic</ead:part>
+               <ead:part>1904-1990</ead:part>
+            </ead:persname>
+         </ead:origination>
+      </eg:egXML>
+   </div>
+</div>

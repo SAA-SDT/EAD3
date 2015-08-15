@@ -1,0 +1,2171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schemas/EAD3_TagLibrary_TEILite_schema.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude">
+   <teiHeader>
+      <fileDesc xml:lang="eng">
+         <titleStmt>
+            <title type="main">Encoded Archival Description <lb/>Tag Library</title>
+            <title type="additional">Version EAD3</title>
+            <respStmt>
+               <resp>Prepared and maintained by the</resp>
+               <name>Technical Subcommittee for Encoded Archival Description of the Society of American Archivists</name>
+            </respStmt>
+         </titleStmt>
+         <editionStmt>
+            <p>2015 Edition</p>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>Society of American Archivists</publisher>
+            <address>
+               <addrLine>17 North State Street, suite 1425</addrLine>
+               <addrLine>Chicago, IL 60602-3315</addrLine>
+               <addrLine>USA</addrLine>
+               <addrLine>312-606-0722</addrLine>
+               <addrLine>Fax: 312-606-0728</addrLine>
+               <addrLine>info@archivists.org</addrLine>
+               <addrLine>www.archivists.org</addrLine>
+            </address>
+            <date when="2015"/>
+            <idno>ISBN 1-931666-89-X</idno>
+            <availability>
+               <licence>This work is licensed under a Creative Commons Attribution 4.0 International
+                  License (CC BY 4.0). See <ref target="http://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</ref>. Some rights reserved. No
+                  part of this publication may be reproduced, stored in a retrieval system or
+                  transmitted in any form or by any means, electronic, mechanical or photocopying,
+                  recording, or otherwise without attribution.</licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p xml:lang="eng">Born digital.</p>
+         </sourceDesc>
+      </fileDesc>
+      <profileDesc>
+         <langUsage>
+            <language ident="eng">English</language>
+         </langUsage>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2015-08-10">created using 2 XSLTs then re-read and corrected by Florence Clavaud</change>
+         <change when ="2015-08-12">missing examples added by Ruth Kitchin Tillman for 22 elements</change>
+         <change when="1015-08-15">a few corrections (mainly spaces in text nodes and attribute values normalized, "Values:" and "Data type:" strings removed) by Florence Clavaud</change>
+      </revisionDesc>
+   </teiHeader>
+   <text xml:lang="eng">
+      <front>
+         <titlePage>
+            <docTitle>
+               <titlePart type="main">Encoded Archival Description <lb/>Tag Library</titlePart>
+               <titlePart type="additional">Version EAD3</titlePart>
+            </docTitle>
+            <byline>Prepared and maintained by the<lb/> Technical Subcommittee for Encoded Archival
+               Description<lb/>of the Society of American Archivists</byline>
+            <figure>
+               <graphic url="SAA.png"/>
+            </figure>
+         </titlePage>
+         <div xml:id="releaseNotes">
+            <head>Encoded Archival Description Tag Library, Version EAD3</head>
+            <p>This tag library represents version EAD3 of the Encoded Archival Description schemas, released in August 2015. It supersedes the Version 2002 tag library published in 2002.</p>
+            <p>The SAA Technical Subcommittee for Encoded Archival Description, in partnership with the SAA Schema Development Team, is responsible for updating and editing the EAD schemas and tag library.</p>
+            <p>The Network Development and MARC Standards Office of the Library of Congress serves
+               as the host for online EAD documentation, including storage and delivery of
+               electronic files and maintenance of the EAD web site, located at <ref target="http://www.loc.gov/ead/">http://www.loc.gov/ead/</ref>.</p>
+            <p>Available
+               from:<address>
+                  <addrLine>Society of American Archivists</addrLine>
+                  <addrLine>17 North State Street, Suite 1425</addrLine>
+                  <addrLine>Chicago, IL 60602-3315</addrLine>
+                  <addrLine>USA</addrLine>
+                  <addrLine>312-606-0722</addrLine>
+                  <addrLine>Fax: 312-606-0728</addrLine>
+                  <addrLine>info@archivists.org</addrLine>
+                  <addrLine>www.archivists.org</addrLine>
+               </address>
+            </p>
+            <p>© The Society of American Archivists, 2015.</p>
+            <figure>
+               <graphic url="CCommons.png"/>
+            </figure>
+            <p>This work is licensed under a Creative Commons Attribution 4.0 International License
+               (CC BY 4.0). See <ref target="http://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</ref>. Some rights reserved. No part
+               of this publication may be reproduced, stored in a retrieval system or transmitted in
+               any form or by any means, electronic, mechanical or photocopying, recording, or
+               otherwise without attribution.</p>
+            <p>ISBN 1-931666-89-X</p>
+         </div>
+         <div xml:id="preface">
+            <head>Preface</head>
+            <p>Encoded Archival Description (EAD) is the international metadata transmission standard for hierarchical descriptions of archival records. Developed by the EAD Working Group of the Society of American Archivists and first published in 1998, EAD is an Extensible Markup Language (XML) format used by archivists around the globe. A second version with greater international alignment, EAD 2002, was released as a DTD in 2002 and in 2007 as Relax NG and W3C schemas. The development of EAD made it possible to create electronic finding aids within a specifically archival data structure compliant with General International Standard Archival Description (ISAD(G)). This innovation was a crucial impetus behind the swift migration of archival description to the internet, the acceptance of national archival descriptive content standards like Describing Archives: A Content Standard (DACS), and the emergence of a professional consensus that archival description existed to be shared widely and shared well.</p>
+            <p>This new version of Encoded Archival Description – EAD3 – exists thanks to the efforts and support of many people, but it exists because of the many archivists and repositories around the world that saw the utility of EAD, used it in diverse and inspiring ways, and continue to recognize many ways in which it might work better.</p>
+            <p>In the years between the release of EAD 2002 and 2010, when the revision process that led to EAD3 began, the technological landscape surrounding archival description evolved enormously. Collection management systems, such as the Archivists' Toolkit, Archon, and ICA-AtoM, offered the robust advantages of modelling descriptive information in relational databases, but exposed the difficulty of adapting the EAD document model in data-centric applications. Linked Open Data emerged as a viable methodology for creating a semantically meaningful Web, for which EAD was poorly prepared. New and closely related metadata transmission standards were developed, most notably Encoded Archival Context – Corporate bodies, Persons, and Families (EAC-CPF), opening new frontiers in archival metadata. Finally, over a decade of working with EAD gave archivists a general sense that it was too complex, too forgiving, and too flexible for its own good.</p>
+            <p>In 2010, following an update to its by-laws concerning standards maintenance, the SAA Standards Committee charged a new Technical Subcommittee for Encoded Archival Description (TS-EAD) to oversee the maintenance of the standard. Recognizing that EAD needed an update, its charge instructed TS-EAD to complete a revision of the standard within five years.</p>
+            <p>TS-EAD completed the revision of EAD with the help of the SAA Schema Development Team and with many contributions, large and small, from the international EAD community. EAD3 is the result of four public comment periods, countless feedback, three working meetings, numerous conference calls, regular presentations to the EAD Roundtable, and lots of careful analysis, spirited discussion, and hard-won compromise. Notable milestones in the revision process include the initial comment period, which shaped our early agenda; a three-day TS-EAD working meeting at Yale University's Beinecke Rare Book and Manuscript Library, which established a clear direction; and the alpha, beta, and gamma schema releases, which gave the EAD community concrete examples to test and critique.</p>
+            <p>Early in the revision process TS-EAD published four points of emphasis to guide us as we weighed the benefits of changes to EAD.</p>
+            <list>
+               <item>Achieving greater conceptual and semantic consistency in the use of EAD.</item>
+               <item>Exploring mechanisms whereby EAD-encoded information might more seamlessly and effectively connect with, exchange, or incorporate data maintained according to other protocols.</item>
+               <item>Improving the functionality of EAD for representing descriptive information created in international and particularly in multilingual environments.</item>
+               <item>Being mindful that a new version will affect current users.</item>
+            </list>
+            <p>All of the changes made in EAD3 can be seen in the context of these four points. Throughout the revision process, the most difficult decisions concerned proposals that highlighted tensions between them, especially between making EAD more consistent and aligned to other standards and mitigating impact on current users.</p>
+            <p>TS-EAD's decision-making process focused on detailed analysis and consensus-building within the committee. As we received proposals from the community or fellow committee members, individuals or small groups did additional work to better understand the request, clarify the specific impact on the schema, and make recommendations to the committee. Many issues were revisited multiple times as we collectively came to understand better our goals and their impact. Although healthy differences of opinion persisted throughout the revision process, ultimately only one issue had to be decided by an executive decision by the co-chairs. In the alpha schema element and attribute names were converted to camel case, as is the convention in EAC-CPF. This met our goals of conceptual consistency and interoperability with EAC-CPF, but we received strong feedback from the community arguing against the change. Entrenched and opposing opinions – all with strong justifications from our points of emphasis – remained within TS-EAD; ultimately the co-chairs decided to honor precedent and sensitivity to the impact on users and opted to remove camel case.</p>
+            <p>Of the changes made in EAD3, the most extensive departure from EAD 2002 is the
+               replacement of <gi>eadheader</gi> with <gi>control</gi>. Borrowed from EAC-CPF with
+               some enhancements, <gi>control</gi> offers a better model for representing
+               information about finding aids, including its identifiers, status, languages,
+               conventions, maintenance history, and sources. One notable change to <gi>control</gi>
+               as modelled in EAC-CPF is the inclusion of <gi>filedesc</gi> from <gi>eadheader</gi>.
+               As an aggregation of descriptions of all the material in an archival collection,
+               finding aids have bibliographic attributes, such as a title or a publication
+               statement captured in <gi>filedesc</gi>, that are not necessary when documenting
+               authority records.</p>
+            <p>The elements available within <gi>did</gi> (Descriptive Identification) were
+               extensively updated in order to better support the exchange of key descriptive data
+               between EAD3 and other systems. Some <gi>did</gi> elements, including
+                  <gi>origination</gi>, <gi>repository</gi>, and <gi>langmaterial</gi>, were
+               modified to remove mixed content and other ambiguities. The existing
+                  <gi>unitdate</gi> and <gi>physdesc</gi> elements were felt to be too lax to
+               constrain and still provide a forward migration path, so new
+                  <gi>unitdatestructured</gi> and <gi>physdescstructured</gi> elements were added.
+               These "structured" elements provide nuanced data models for capturing temporal and
+               physical description, while the original elements remain in modified form as
+               unstructured alternatives and to allow for forward migration from EAD 2002. Whereas
+               these new elements provided additional structure, the <gi>daogrp</gi> element, which
+               allowed the creation of extended links to digital archival objects, was simplified to
+                  <gi>daoset</gi>, which binds two or more simple <gi>dao</gi> elements.</p>
+            <p>The access point elements available within <gi>controlaccess</gi>, e.g.
+                  <gi>persname</gi>, <gi>subject</gi>, <gi>genreform</gi>, etc., were modified in
+               several ways. Each must now contain one or more <gi>part</gi> elements so that
+               multi-part terms may be accurately represented in EAD, allowing, for example, the
+               separate capture of an individual's surname, forename, and life dates, etc. They also
+               now share a common set of attributes to improve interoperability with external
+               vocabularies: <att>identifier</att>, for the code or URI associated with a term,
+                  <att>source</att>, for identifying the originating vocabulary, and
+                  <att>rules</att>, for recording how terms are formulated. The <gi>geogname</gi>
+               element now has an optional child <gi>geographiccoordinates</gi> for encoding
+               longitude, latitude, and altitude information.</p>
+            <p>Support for multilingual description was addressed by adding <att>lang</att> and
+                  <att>script</att> attributes to all non-empty elements in EAD3, making it possible
+               to explicitly state what language or script is used therein. Additionally, some
+               elements were modified to allow them to repeat where previously they did not, thus
+               enabling the inclusion of the same data in multiple languages.</p>
+            <p>Early in the revision process there were multiple requests to simplify EAD, and one
+               suggested measure was reducing the number of elements. However, TS-EAD decided that
+               consistency and semantic clarity was a better measure of simplicity, not the number
+               of elements in the schema. The <gi>note</gi> element is a useful case study. In EAD
+               2002 <gi>note</gi> was available in 8 distinct contexts, each representing a subtly
+               different usage; in EAD3 the <gi>note</gi> element has been replaced with
+               context-specific elements, including <gi>didnote</gi>, <gi>controlnote</gi>, and
+                  <gi>footnote</gi>.</p>
+            <p>Many other changes can be categorized as supporting the drive for greater conceptual
+               and sematic consistency in EAD. Major descriptive elements that previously could be
+               contained in other descriptive elements were removed in those contexts. For example,
+                  <gi>arrangement</gi> is no longer a permitted child of <gi>scopecontent</gi>,
+                  <gi>unitdate</gi> is no longer a permitted child of <gi>unittitle</gi>, and
+                  <gi>dao</gi> is now only available within <gi>did</gi>. Block and formatting
+               elements like <gi>list</gi>, <gi>blockquote</gi>, <gi>quote</gi>, were modified or
+               created to more closely resemble their HTML counterparts. The <gi>chronlist</gi>
+               element was updated to incorporate <gi>geogname</gi> to convey the locations where
+               events occur, more closely aligning it with its namesake in EAC-CPF. Mixed content
+               models were streamlined to three progressively inclusive sets of elements allowed to
+               intermix with text. Attribute names were disambiguated throughout the schema:
+                  <att>role</att> was changed to <att>relator</att> on access point elements and
+                  <att>linkrole</att> on linking elements, <att>type</att> was renamed through the
+               schema to <att>localtype</att> where no values are supplied by the schema, and to
+               @elementnametype (e.g. <att>listtype</att> and <att>unitdatetype</att>) where
+               specified values are supplied. Linking elements – of which there were many in EAD
+               2002 – were consolidated to a handful and limited to simple links, eliminating overly
+               complicated extended links. The XLink model for linking attributes was preserved, but
+               the XLink namespace, which had been added to the schema versions of EAD 2002, was
+               removed due to the onerous and needless complexity that namespaces introduce when
+               processing XML. Elements that existed solely to support formatting and presentation
+               or were otherwise deemed out of scope for archival description were deprecated,
+               including <gi>frontmatter</gi>, <gi>descgrp</gi>, <gi>runner</gi>, <gi>imprint</gi>,
+               and <gi>bibseries</gi>. </p>
+            <p>The feature of EAD3 that caused the most heated discussion within TS-EAD was the
+               inclusion of the <gi>relations</gi> element. Introduced in EAC-CPF and added to EAD3
+               with some modifications, <gi>relations</gi> is available at any level of description
+               and contains one or more <gi>relation</gi> elements. A <gi>relation</gi> describes –
+               in a Linked Open Data-friendly way – the relationship between the records being
+               described and a corporate body, person or family; an archival or bibliographic
+               resource; a function; or another type of external entity. That relationship can be an
+               actionable link and may be qualified by supplying relevant dates or geographic names.
+               XML describing the related entity may be embedded within the <gi>objectxmlwrap</gi>
+               element.</p>
+            <p>TS-EAD could not reach a consensus regarding the inclusion of <gi>relations</gi>.
+               Some members felt strongly that including <gi>relations</gi> was essential in order
+               to support rich Linked Open Data applications, align with EAC-CPF, and acknowledge
+               draft guidelines on relationships in archival description published by the ICA
+               Committee on Best Practices and Standards. Others felt that it duplicated
+               functionality present in <gi>controlaccess</gi> and other existing elements, added
+               unnecessary complexity, and that incorporating robust support for Linked Open Data
+               was premature. We ultimately negotiated a compromise: <gi>relations</gi> would be
+               included in EAD3 as an "experimental" element. As an experimental element, it is not
+               guaranteed that <gi>relations</gi> will persist in the next version of EAD in its
+               current form. However, TS-EAD encourages its use so that the EAD community will learn
+               more about how the <gi>relations</gi> model works within archival description. Put
+               simply, a consensus will require more data and experience, and including
+                  <gi>relations</gi> provisionally makes that possible.</p>
+            <p>The revision of EAD 1.0 to EAD 2002 established a precedent that elements to be
+               removed from EAD would first be deprecated – suppressed but available if necessary –
+               before being removed from subsequent versions. All elements deprecated in EAD 2002
+               were removed from EAD3. TS-EAD endeavored to honor the commitment to deprecate
+               removed elements, however the extent of the changes in EAD3 made comprehensive
+               deprecation impossible. Elements to be removed entirely from the standard remain
+               available in undeprecated versions of EAD3. These include <gi>frontmatter</gi>,
+                  <gi>descgrp</gi>, <gi>imprint</gi>, <gi>bibseries</gi>, and <gi>runner</gi>, as
+               well as the <att>tpattern</att> attribute. Elements that were replaced by other
+               elements offering commensurate functionality, or whose availability within the
+               standard changed are in most cases not supported in undeprecated EAD3. Two exceptions
+               to that rule are the full EAD 2002 versions of <gi>physdesc</gi> and
+                  <gi>unitdate</gi> within <gi>unittitle</gi>, both of which are available in
+               undeprecated EAD3.</p>
+            <p>EAD3 replaces EAD 2002 as the current, official version of EAD. EAD 2002 was
+               available as a DTD, Relax NG schema, and W3C schema. Additionally, the DTD could be
+               edited to enable the inclusion of deprecated elements. EAD3 continues to be available
+               in DTD, Relax NG, and W3C versions. For repositories who choose to continue to use
+               deprecated elements, an undeprecated version of EAD3 is available in DTD, Relax NG,
+               and W3C varieties. Due to differences between DTDs and schemas, the
+                  <gi>objectxmlwrap</gi> element is not available in the DTD versions of EAD3. A
+               Schematron schema is also available to provide further validation functionality for
+               EAD instances, imposing data constraints that either cannot be expressed in DTD,
+               Relax NG, and W3C, or were intentionally removed from the schemas by TS-EAD due to
+               challenges of maintaining code lists outside of our control or to allow alternative
+               data sources or patterns.</p>
+            <p>All code related to EAD3, including the schemas and DTDs, Schematron schema, and migration style sheet, will be shared with a Creative Commons CC0 license, placing them in the public domain. This tag library is published with a Creative Commons CC BY license, allowing others to distribute, remix, tweak, and build upon it, even commercially, as long as they credit SAA for the original tag library.</p>
+            <p>EAD3 was possible because of the generous support of the Society of American Archivists, the Gladys Krieble Delmas Foundation, the National Endowment for the Humanities, the Nationaal Archief of the Netherlands, the Beinecke Rare Book and Manuscript Library, the Institute for Advanced Technology in the Humanities at the University of Virginia, and OCLC Research. Each member of TS-EAD* made invaluable contributions to EAD3, but two merit special mention: Terry Catapano, Schema Development Team chair, for leading the technical development of EAD3, and Kelcy Shepherd, for leading the revision of the Tag Library.</p>
+            <p>Mike Rush</p>
+            <p>Bill Stockting</p>
+            <p>TS-EAD Co-Chairs</p>
+            <p>*TS-EAD members during the revision process included Mike Rush, co-chair, Yale University; Bill Stockting, co-chair, British Library (UK); Kerstin Arnold, Bundesarchiv (Germany); Michael Fox, Minnesota Historical Society; Kris Kiesling, University of Minnesota; Angelika Menne-Haritz, Bundesarchiv (Germany); Kelcy Shepherd, University of Massachusetts and Amherst College; Claire Sibille, Direction Générale des Patrimoines (France); Henny van Schie, Nationaal Archief / Bibliotheek (Netherlands); and Brad Westbrook, University of California, San Diego, and ArchivesSpace. Notable ex-officio contributors included Jodi Allison-Bunnell, Orbis Cascade Alliance (EAD Roundtable); Anila Angjeli, Bibliothèque nationale de France (TS-EAC); Hillel Arnold, Rockefeller Archives Center (EAD Roundtable); Mark Custer, Yale University (EAD Roundtable); Merrilee Proffitt, OCLC Research; Ruth Kitchin Tillman, Cadence Group (EAD Roundtable); and Katherine Wisser, Simmons College (TS-EAC). Schema Development Team members included Terry Catapano, chair, Columbia University; Karin Bredenberg, Riksarkivet of Sweden; Florence Clavaud, National Archives of France; Michele Combs, Syracuse University; Mark Matienzo, Yale University and DPLA; Daniel Pitti, University of Virginia; and Salvatore Vassallo, Università degli Studi di Pavia (Italy).</p>
+         </div>
+         <div xml:id="conventions">
+            <head>Tag Library Conventions</head>
+            <p>The EAD Elements section of the Tag Library contains descriptions of 165 elements, arranged alphabetically by element name. It presents information for each element as shown in Figure 1.</p>
+            <!-- TODO  : add graphic element in figure element, with url attribute, to link to a PDF version of Figure 1 -->
+            <!-- <figure><graphic url=""/></figure>-->
+            <figure/>
+            <list type="gloss">
+               <label>Tag Name:</label>
+               <item>Short, mnemonic form of the element name that is used in the machine-readable
+                  encoded document. The tag name is the first word at the top of the page. Tag names
+                  appear between angle brackets, e.g., <gi>archdesc</gi>, except in the listings
+                  under "May occur within" and "May contain," and are always in lowercase.</item>
+               <label>Element Name:</label>
+               <item>Expanded version of the tag name that more fully describes the element's
+                  meaning. The full name of the element is usually a word or phrase that identifies
+                  the element's purpose. In the Tag Library, the element name follows the tag name
+                  on the page defining that element and appears with initial capital letters, e.g.,
+                     <gi>archdesc</gi> Archival Description.</item>
+               <label>Summary:</label>
+               <item>A brief statement that provides a concise definition of the element, suitable for quick reference.</item>
+               <label>May Contain:</label>
+               <item>Identifies what child nodes (text or elements) may occur within the element
+                  being defined. Elements are listed in alphabetical order by tag name. Elements may
+                  be empty (e.g., an element which allows no child text or element nodes), or they
+                  may contain text (listed as [text]), other elements, or a mixture of text and
+                  other elements.<lb/>Text content cannot include characters that would be
+                  interpreted by a parser as action codes. For example, a left angle bracket has to
+                  be represented as the character entity reference &amp;lt; so that it is not
+                  misinterpreted as the start of an element name. </item>
+               <!--<p></p>-->
+               <label>May Occur Within:</label>
+               <item>Identifies all of the parent elements within which the described element may appear, listed in alphabetical order by tag name. This information conveys information about where and how often an element is available throughout the schema. The definitions for parent elements may provide additional information about an element's usage.</item>
+               <label>Attributes:</label>
+               <item>Identifies all attributes that can be associated with an element. Attributes
+                  are represented in lowercase letters in XML coding. The Tag Library uses the
+                  convention of preceding an attribute name with an @ symbol (e.g.,
+                     <att>identifier</att>), following XPath syntax. See the EAD Attributes section
+                  of the tag library for definitions and additional information.</item>
+               <label>Description and Usage:</label>
+               <item>This section begins with one or more paragraphs that provide a more thorough
+                  description of the element than that found in the Summary, which may be followed
+                  by guidance on use. The terms "parent" and "child" are used to indicate
+                  hierarchical relationships between elements. Standard terminology is also used to
+                  suggest the kind of element being discussed. "Wrapper element" indicates an
+                  element that cannot contain text directly; a second, nested element must be opened
+                  first. Wrapper elements designate sets of elements that comprise a distinctive
+                  section of a finding aid, for example, the Descriptive Identification
+                  <gi>did</gi>. "Generic element" refers to elements common to many kinds of
+                  documents that contain information not specifically related to archival
+                  description, e.g., <gi>name</gi> and <gi>num</gi>. "Formatting element" indicates
+                  elements that can be used to invoke special text presentation, such as block
+                  quotes, chronologies, and emphasis. When the schema enforces a specific sequence
+                  of child elements, that sequence is indicated.<lb/>If useful, context-specific
+                  guidance for the usage of an element's attributes is given in an "Attribute usage"
+                  section. A "See also" section may be provided to indicate additional elements that
+                  are similar, easily confused, or otherwise related to the element being
+                  described.</item>
+               <label>Availability:</label>
+               <item>Indicates, within the context of its parent(s), whether the element is required or optional, and whether or not it is repeatable.</item>
+               <label>References:</label>
+               <item>Identifies corresponding elements in other standards, schemas, and markup languages: ISAD(G), MARC, MODS, and HTML. Full crosswalks for ISAD(G), MARC21, and MODS are found in Appendix A.</item>
+               <label>Examples:</label>
+               <item>Most element descriptions include a tagged example to indicate how attributes
+                  and elements can be used together. Many of the examples are taken from real
+                  finding aids; others have been specially constructed for the Tag Library. The
+                  examples illustrate any required sequences of elements, as in the case of children
+                  within <gi>control</gi>, or required attributes such as <att>level</att> in
+                     <gi>archdesc</gi>. In other cases, the examples simply show what is possible.
+                  Some examples have ellipses, either between or within elements, indicating that
+                  other elements or text have been omitted. Some elements have multiple examples—one
+                  may show very dense markup with numerous attributes while another may illustrate a
+                  minimalist approach to the markup. Either approach is valid in EAD, and it is up
+                  to the repository to determine the optimal level of markup based on their specific
+                  purposes, functional requirements, resources, or consortial guidelines.</item>
+            </list>
+         </div>
+      </front>
+      <body>
+         <div xml:id="EADAttributes">
+            <head>EAD Attributes</head>
+            <div>
+               <head>Introduction</head>
+               <p>Attributes are associated with most of the elements contained in EAD. Attributes
+                  reflect named properties of an element and may take on different values, depending
+                  on the context in which they occur. In order to set one or more attributes, an
+                  encoder should include the name of the attribute(s) within the same angle brackets
+                  as the start tag, together with the value(s) to which the attribute(s) is/are to
+                  be set. That is,<lb/>
+                  <code>&lt;[tag] [attribute]="[value]"&gt;</code>
+                  <lb/> or<lb/>
+                  <code>&lt;[tag] [attribute1]="[value1]" [attribute2]="[value2]"&gt;</code>
+               </p>
+               <p>For example: <lb/>
+                  <eg:egXML>
+                     <ead:unitdate unitdatetype="inclusive">1937-1992</ead:unitdate>
+                  </eg:egXML>
+                  <lb/> or<lb/>
+                  <eg:egXML>
+                     <ead:unitdate unitdatetype="inclusive" normal="1937/1992">1937-1992</ead:unitdate>
+                  </eg:egXML>
+               </p>
+               <p>Most attributes are optional, though some are required. The attribute description indicates whether an attribute is required. This information is also available in the Attributes section of each element description.</p>
+               <p>The value of attributes may be constrained by the schema using specific attribute
+                  type values. For example, <att>id</att> attribute is of type ID, which constrains
+                  its value to a string beginning with an alphabetic character. An <att>id</att>
+                  value must be unique within the EAD instance within which it occurs, that is, no
+                  other tag in the entire document can have the same <att>id</att> value. EAD
+                  attributes have the following data types<note>Capitalization of data types follows
+                     the documentation found in the W3C Recommendation <title>XML Schema Part 2: Datatypes Second Edition</title> (<ref target="http://www.w3.org/TR/xmlschema-2/">http://www.w3.org/TR/xmlschema-2/</ref>).</note>:</p>
+               <table>
+                  <row>
+                     <cell>anyURI:</cell>
+                     <cell>A Uniform Resource Identifier. This may be a Uniform Resource Locator (URL) or a Uniform Resource Name (URN). Both relative and absolute URIs are allowed.</cell>
+                  </row>
+                  <row>
+                     <cell>ENTITY:</cell>
+                     <cell>The name of a nonparsed entity that has been declared in the declaration
+                        subset of the document. For example, <att>entityref</att> must contain the
+                        name of an entity that has been declared in the declaration subset.
+                        Processing software can use the reference to the nonparsed entity to display
+                        the entity in the body of the text or in a new window.</cell>
+                  </row>
+                  <row>
+                     <cell>ID:</cell>
+                     <cell>Unique identifier. For example, most elements have an <att>id</att>, so
+                        that a unique code can be established for and used to refer to that specific
+                        element. The content of the <att>id</att> is of the type called "ID".
+                        Parsers verify that the value of attributes of type "ID" are unique. The
+                        values of <att>id</att> must begin with an alpha, not numeric, character,
+                        either upper or lowercase, and may contain a . (period), : (colon), -
+                        (hyphen), or _ (underscore), but not a blank space. See also attributes of
+                        type "IDREF."</cell>
+                  </row>
+                  <row>
+                     <cell>IDREF:</cell>
+                     <cell>ID reference value; must match an existing ID of another element in the
+                        document. For example, the <gi>ptr</gi> element has a <att>target</att>
+                        attribute that can only be an "IDREF," which means it has to reference a
+                        valid ID in another element.</cell>
+                  </row>
+                  <row>
+                     <cell>IDREFS:</cell>
+                     <cell>List of ID reference values.</cell>
+                  </row>
+                  <row>
+                     <cell>NMTOKEN:</cell>
+                     <cell>A name token, which can consist of any alpha or numeric character, as well as a . (period), : (colon), - (hyphen), or _ (underscore), but not a blank space. A number of attributes in EAD where a character string from a code list is to be used are of the type "NMTOKEN".</cell>
+                  </row>
+                  <row>
+                     <cell>string:</cell>
+                     <cell>The most general data type, a string can contain any sequence of characters allowed in XML. Certain characters may have to be represented with an entity reference, for example &amp;lt; for &lt;, and &amp;amp; for &amp;.</cell>
+                  </row>
+                  <row>
+                     <cell>token:</cell>
+                     <cell>A type of string that may not contain carriage return, line feed or tab characters, leading or trailing spaces, and any internal sequence of two or more spaces.</cell>
+                  </row>
+               </table>
+               <p>The attribute value definitions in the DTD versions of EAD3 differ slightly from those of the Relax NG and W3C Schema versions. The DTD has a limited set of attribute types so the anyURI, token, and string data types were converted to "CDATA" (i.e. Character Data).</p>
+               <p>When the EAD schema limits attribute values to a few choices, those values are
+                  declared in the schema in what is known as a "closed list." For example, the
+                  values of <att>audience</att> are limited to either "external" or "internal."
+                  Other attributes are associated with semi-closed lists. Such lists include those
+                  values believed to be the most useful in many contexts, but other values are
+                  allowed. For example, <gi>dsc</gi> defines several values for <att>dsctype</att>,
+                  including "otherdsctype" which may be used with <att>otherdsctype</att> to specify
+                  values that are not in the semi-closed list for <att>dsctype</att>. The
+                  definitions for some values in the closed and semi-closed lists appear below.</p>
+               <p>The following is a complete list of all the attributes that occur in EAD, and some discussion of how they may be used. Further, context-specific information about the use of certain attributes may be found in the "Attribute usage" section of the element descriptions.</p>
+            </div>
+            <div>
+               <xi:include parse="xml" href="eng/attr-abbr.xml"/>
+               <xi:include parse="xml" href="eng/attr-actuate.xml"/>
+               <xi:include parse="xml" href="eng/attr-align.xml"/>
+               <xi:include parse="xml" href="eng/attr-althead.xml"/>
+               <xi:include parse="xml" href="eng/attr-altrender.xml"/>
+               <xi:include parse="xml" href="eng/attr-approximate.xml"/>
+               <xi:include parse="xml" href="eng/attr-arcrole.xml"/>
+               <xi:include parse="xml" href="eng/attr-audience.xml"/>
+               <xi:include parse="xml" href="eng/attr-base.xml"/>
+               <xi:include parse="xml" href="eng/attr-calendar.xml"/>
+               <xi:include parse="xml" href="eng/attr-certainty.xml"/>
+               <xi:include parse="xml" href="eng/attr-char.xml"/>
+               <xi:include parse="xml" href="eng/attr-charoff.xml"/>
+               <xi:include parse="xml" href="eng/attr-colname.xml"/>
+               <xi:include parse="xml" href="eng/attr-colnum.xml"/>
+               <xi:include parse="xml" href="eng/attr-cols.xml"/>
+               <xi:include parse="xml" href="eng/attr-colsep.xml"/>
+               <xi:include parse="xml" href="eng/attr-colwidth.xml"/>
+               <xi:include parse="xml" href="eng/attr-containerid.xml"/>
+               <xi:include parse="xml" href="eng/attr-coordinatesystem.xml"/>
+               <xi:include parse="xml" href="eng/attr-countrycode.xml"/>
+               <xi:include parse="xml" href="eng/attr-countryencoding.xml"/>
+               <xi:include parse="xml" href="eng/attr-coverage.xml"/>
+               <xi:include parse="xml" href="eng/attr-daotype.xml"/>
+               <xi:include parse="xml" href="eng/attr-datechar.xml"/>
+               <xi:include parse="xml" href="eng/attr-dateencoding.xml"/>
+               <xi:include parse="xml" href="eng/attr-dsctype.xml"/>
+               <xi:include parse="xml" href="eng/attr-encodinganalog.xml"/>
+               <xi:include parse="xml" href="eng/attr-entityref.xml"/>
+               <xi:include parse="xml" href="eng/attr-era.xml"/>
+               <xi:include parse="xml" href="eng/attr-expan.xml"/>
+               <xi:include parse="xml" href="eng/attr-frame.xml"/>
+               <xi:include parse="xml" href="eng/attr-href.xml"/>
+               <xi:include parse="xml" href="eng/attr-id.xml"/>
+               <xi:include parse="xml" href="eng/attr-identifier.xml"/>
+               <xi:include parse="xml" href="eng/attr-instanceurl.xml"/>
+               <xi:include parse="xml" href="eng/attr-label.xml"/>
+               <xi:include parse="xml" href="eng/attr-lang.xml"/>
+               <xi:include parse="xml" href="eng/attr-langcode.xml"/>
+               <xi:include parse="xml" href="eng/attr-langencoding.xml"/>
+               <xi:include parse="xml" href="eng/attr-lastdatetimeverified.xml"/>
+               <xi:include parse="xml" href="eng/attr-level.xml"/>
+               <xi:include parse="xml" href="eng/attr-linkrole.xml"/>
+               <xi:include parse="xml" href="eng/attr-linktitle.xml"/>
+               <xi:include parse="xml" href="eng/attr-listtype.xml"/>
+               <xi:include parse="xml" href="eng/attr-localtype.xml"/>
+               <xi:include parse="xml" href="eng/attr-mark.xml"/>
+               <xi:include parse="xml" href="eng/attr-morerows.xml"/>
+               <xi:include parse="xml" href="eng/attr-nameend.xml"/>
+               <xi:include parse="xml" href="eng/attr-namest.xml"/>
+               <xi:include parse="xml" href="eng/attr-normal.xml"/>
+               <xi:include parse="xml" href="eng/attr-notafter.xml"/>
+               <xi:include parse="xml" href="eng/attr-notbefore.xml"/>
+               <xi:include parse="xml" href="eng/attr-numeration.xml"/>
+               <xi:include parse="xml" href="eng/attr-otherdaotype.xml"/>
+               <xi:include parse="xml" href="eng/attr-otherdsctype.xml"/>
+               <xi:include parse="xml" href="eng/attr-otherlevel.xml"/>
+               <xi:include parse="xml" href="eng/attr-otherphysdescstructuredtype.xml"/>
+               <xi:include parse="xml" href="eng/attr-otherrelationtype.xml"/>
+               <xi:include parse="xml" href="eng/attr-parallel.xml"/>
+               <xi:include parse="xml" href="eng/attr-parent.xml"/>
+               <xi:include parse="xml" href="eng/attr-pgwide.xml"/>
+               <xi:include parse="xml" href="eng/attr-physdescstructuredtype.xml"/>
+               <xi:include parse="xml" href="eng/attr-relatedencoding.xml"/>
+               <xi:include parse="xml" href="eng/attr-relationtype.xml"/>
+               <xi:include parse="xml" href="eng/attr-relator.xml"/>
+               <xi:include parse="xml" href="eng/attr-render.xml"/>
+               <xi:include parse="xml" href="eng/attr-repositorycode.xml"/>
+               <xi:include parse="xml" href="eng/attr-repositoryencoding.xml"/>
+               <xi:include parse="xml" href="eng/attr-rowsep.xml"/>
+               <xi:include parse="xml" href="eng/attr-rules.xml"/>
+               <xi:include parse="xml" href="eng/attr-script.xml"/>
+               <xi:include parse="xml" href="eng/attr-scriptcode.xml"/>
+               <xi:include parse="xml" href="eng/attr-scriptencoding.xml"/>
+               <xi:include parse="xml" href="eng/attr-show.xml"/>
+               <xi:include parse="xml" href="eng/attr-source.xml"/>
+               <xi:include parse="xml" href="eng/attr-standarddate.xml"/>
+               <xi:include parse="xml" href="eng/attr-standarddatetime.xml"/>
+               <xi:include parse="xml" href="eng/attr-target.xml"/>
+               <xi:include parse="xml" href="eng/attr-transliteration.xml"/>
+               <xi:include parse="xml" href="eng/attr-unit.xml"/>
+               <xi:include parse="xml" href="eng/attr-unitdatetype.xml"/>
+               <xi:include parse="xml" href="eng/attr-valign.xml"/>
+               <xi:include parse="xml" href="eng/attr-value.xml"/>
+               <xi:include parse="xml" href="eng/attr-xpointer.xml"/>
+            </div>
+         </div>
+         <div xml:id="EADElements">
+            <head>EAD Elements</head>
+            <xi:include parse="xml" href="eng/elem-abbr.xml"/>
+            <xi:include parse="xml" href="eng/elem-abstract.xml"/>
+            <xi:include parse="xml" href="eng/elem-accessrestrict.xml"/>
+            <xi:include parse="xml" href="eng/elem-accruals.xml"/>
+            <xi:include parse="xml" href="eng/elem-acqinfo.xml"/>
+            <xi:include parse="xml" href="eng/elem-address.xml"/>
+            <xi:include parse="xml" href="eng/elem-addressline.xml"/>
+            <xi:include parse="xml" href="eng/elem-agencycode.xml"/>
+            <xi:include parse="xml" href="eng/elem-agencyname.xml"/>
+            <xi:include parse="xml" href="eng/elem-agent.xml"/>
+            <xi:include parse="xml" href="eng/elem-agenttype.xml"/>
+            <xi:include parse="xml" href="eng/elem-altformavail.xml"/>
+            <xi:include parse="xml" href="eng/elem-appraisal.xml"/>
+            <xi:include parse="xml" href="eng/elem-archdesc.xml"/>
+            <xi:include parse="xml" href="eng/elem-archref.xml"/>
+            <xi:include parse="xml" href="eng/elem-arrangement.xml"/>
+            <xi:include parse="xml" href="eng/elem-author.xml"/>
+            <xi:include parse="xml" href="eng/elem-bibliography.xml"/>
+            <xi:include parse="xml" href="eng/elem-bibref.xml"/>
+            <xi:include parse="xml" href="eng/elem-bioghist.xml"/>
+            <xi:include parse="xml" href="eng/elem-blockquote.xml"/>
+            <xi:include parse="xml" href="eng/elem-c.xml"/>
+            <xi:include parse="xml" href="eng/elem-c01.xml"/>
+            <xi:include parse="xml" href="eng/elem-c02.xml"/>
+            <xi:include parse="xml" href="eng/elem-c03.xml"/>
+            <xi:include parse="xml" href="eng/elem-c04.xml"/>
+            <xi:include parse="xml" href="eng/elem-c05.xml"/>
+            <xi:include parse="xml" href="eng/elem-c06.xml"/>
+            <xi:include parse="xml" href="eng/elem-c07.xml"/>
+            <xi:include parse="xml" href="eng/elem-c08.xml"/>
+            <xi:include parse="xml" href="eng/elem-c09.xml"/>
+            <xi:include parse="xml" href="eng/elem-c10.xml"/>
+            <xi:include parse="xml" href="eng/elem-c11.xml"/>
+            <xi:include parse="xml" href="eng/elem-c12.xml"/>
+            <xi:include parse="xml" href="eng/elem-chronitem.xml"/>
+            <xi:include parse="xml" href="eng/elem-chronitemset.xml"/>
+            <xi:include parse="xml" href="eng/elem-chronlist.xml"/>
+            <xi:include parse="xml" href="eng/elem-citation.xml"/>
+            <xi:include parse="xml" href="eng/elem-colspec.xml"/>
+            <xi:include parse="xml" href="eng/elem-container.xml"/>
+            <xi:include parse="xml" href="eng/elem-control.xml"/>
+            <xi:include parse="xml" href="eng/elem-controlaccess.xml"/>
+            <xi:include parse="xml" href="eng/elem-controlnote.xml"/>
+            <xi:include parse="xml" href="eng/elem-conventiondeclaration.xml"/>
+            <xi:include parse="xml" href="eng/elem-corpname.xml"/>
+            <xi:include parse="xml" href="eng/elem-custodhist.xml"/>
+            <xi:include parse="xml" href="eng/elem-dao.xml"/>
+            <xi:include parse="xml" href="eng/elem-daoset.xml"/>
+            <xi:include parse="xml" href="eng/elem-date.xml"/>
+            <xi:include parse="xml" href="eng/elem-daterange.xml"/>
+            <xi:include parse="xml" href="eng/elem-dateset.xml"/>
+            <xi:include parse="xml" href="eng/elem-datesingle.xml"/>
+            <xi:include parse="xml" href="eng/elem-defitem.xml"/>
+            <xi:include parse="xml" href="eng/elem-descriptivenote.xml"/>
+            <xi:include parse="xml" href="eng/elem-did.xml"/>
+            <xi:include parse="xml" href="eng/elem-didnote.xml"/>
+            <xi:include parse="xml" href="eng/elem-dimensions.xml"/>
+            <xi:include parse="xml" href="eng/elem-dsc.xml"/>
+            <xi:include parse="xml" href="eng/elem-ead.xml"/>
+            <xi:include parse="xml" href="eng/elem-edition.xml"/>
+            <xi:include parse="xml" href="eng/elem-editionstmt.xml"/>
+            <xi:include parse="xml" href="eng/elem-emph.xml"/>
+            <xi:include parse="xml" href="eng/elem-entry.xml"/>
+            <xi:include parse="xml" href="eng/elem-event.xml"/>
+            <xi:include parse="xml" href="eng/elem-eventdatetime.xml"/>
+            <xi:include parse="xml" href="eng/elem-eventdescription.xml"/>
+            <xi:include parse="xml" href="eng/elem-eventtype.xml"/>
+            <xi:include parse="xml" href="eng/elem-expan.xml"/>
+            <xi:include parse="xml" href="eng/elem-famname.xml"/>
+            <xi:include parse="xml" href="eng/elem-filedesc.xml"/>
+            <xi:include parse="xml" href="eng/elem-fileplan.xml"/>
+            <xi:include parse="xml" href="eng/elem-footnote.xml"/>
+            <xi:include parse="xml" href="eng/elem-foreign.xml"/>
+            <xi:include parse="xml" href="eng/elem-fromdate.xml"/>
+            <xi:include parse="xml" href="eng/elem-function.xml"/>
+            <xi:include parse="xml" href="eng/elem-genreform.xml"/>
+            <xi:include parse="xml" href="eng/elem-geogname.xml"/>
+            <xi:include parse="xml" href="eng/elem-geographiccoordinates.xml"/>
+            <xi:include parse="xml" href="eng/elem-head.xml"/>
+            <xi:include parse="xml" href="eng/elem-head01.xml"/>
+            <xi:include parse="xml" href="eng/elem-head02.xml"/>
+            <xi:include parse="xml" href="eng/elem-head03.xml"/>
+            <xi:include parse="xml" href="eng/elem-index.xml"/>
+            <xi:include parse="xml" href="eng/elem-indexentry.xml"/>
+            <xi:include parse="xml" href="eng/elem-item.xml"/>
+            <xi:include parse="xml" href="eng/elem-label.xml"/>
+            <xi:include parse="xml" href="eng/elem-langmaterial.xml"/>
+            <xi:include parse="xml" href="eng/elem-language.xml"/>
+            <xi:include parse="xml" href="eng/elem-languagedeclaration.xml"/>
+            <xi:include parse="xml" href="eng/elem-languageset.xml"/>
+            <xi:include parse="xml" href="eng/elem-lb.xml"/>
+            <xi:include parse="xml" href="eng/elem-legalstatus.xml"/>
+            <xi:include parse="xml" href="eng/elem-list.xml"/>
+            <xi:include parse="xml" href="eng/elem-listhead.xml"/>
+            <xi:include parse="xml" href="eng/elem-localcontrol.xml"/>
+            <xi:include parse="xml" href="eng/elem-localtypedeclaration.xml"/>
+            <xi:include parse="xml" href="eng/elem-maintenanceagency.xml"/>
+            <xi:include parse="xml" href="eng/elem-maintenanceevent.xml"/>
+            <xi:include parse="xml" href="eng/elem-maintenancehistory.xml"/>
+            <xi:include parse="xml" href="eng/elem-maintenancestatus.xml"/>
+            <xi:include parse="xml" href="eng/elem-materialspec.xml"/>
+            <xi:include parse="xml" href="eng/elem-name.xml"/>
+            <xi:include parse="xml" href="eng/elem-namegrp.xml"/>
+            <xi:include parse="xml" href="eng/elem-notestmt.xml"/>
+            <xi:include parse="xml" href="eng/elem-num.xml"/>
+            <xi:include parse="xml" href="eng/elem-objectxmlwrap.xml"/>
+            <xi:include parse="xml" href="eng/elem-occupation.xml"/>
+            <xi:include parse="xml" href="eng/elem-odd.xml"/>
+            <xi:include parse="xml" href="eng/elem-originalsloc.xml"/>
+            <xi:include parse="xml" href="eng/elem-origination.xml"/>
+            <xi:include parse="xml" href="eng/elem-otheragencycode.xml"/>
+            <xi:include parse="xml" href="eng/elem-otherfindaid.xml"/>
+            <xi:include parse="xml" href="eng/elem-otherrecordid.xml"/>
+            <xi:include parse="xml" href="eng/elem-p.xml"/>
+            <xi:include parse="xml" href="eng/elem-part.xml"/>
+            <xi:include parse="xml" href="eng/elem-persname.xml"/>
+            <xi:include parse="xml" href="eng/elem-physdesc.xml"/>
+            <xi:include parse="xml" href="eng/elem-physdescset.xml"/>
+            <xi:include parse="xml" href="eng/elem-physdescstructured.xml"/>
+            <xi:include parse="xml" href="eng/elem-physfacet.xml"/>
+            <xi:include parse="xml" href="eng/elem-physloc.xml"/>
+            <xi:include parse="xml" href="eng/elem-phystech.xml"/>
+            <xi:include parse="xml" href="eng/elem-prefercite.xml"/>
+            <xi:include parse="xml" href="eng/elem-processinfo.xml"/>
+            <xi:include parse="xml" href="eng/elem-ptr.xml"/>
+            <xi:include parse="xml" href="eng/elem-ptrgrp.xml"/>
+            <xi:include parse="xml" href="eng/elem-publicationstatus.xml"/>
+            <xi:include parse="xml" href="eng/elem-publicationstmt.xml"/>
+            <xi:include parse="xml" href="eng/elem-publisher.xml"/>
+            <xi:include parse="xml" href="eng/elem-quantity.xml"/>
+            <xi:include parse="xml" href="eng/elem-quote.xml"/>
+            <xi:include parse="xml" href="eng/elem-recordid.xml"/>
+            <xi:include parse="xml" href="eng/elem-ref.xml"/>
+            <xi:include parse="xml" href="eng/elem-relatedmaterial.xml"/>
+            <xi:include parse="xml" href="eng/elem-relation.xml"/>
+            <xi:include parse="xml" href="eng/elem-relationentry.xml"/>
+            <xi:include parse="xml" href="eng/elem-relations.xml"/>
+            <xi:include parse="xml" href="eng/elem-repository.xml"/>
+            <xi:include parse="xml" href="eng/elem-representation.xml"/>
+            <xi:include parse="xml" href="eng/elem-row.xml"/>
+            <xi:include parse="xml" href="eng/elem-scopecontent.xml"/>
+            <xi:include parse="xml" href="eng/elem-script.xml"/>
+            <xi:include parse="xml" href="eng/elem-separatedmaterial.xml"/>
+            <xi:include parse="xml" href="eng/elem-seriesstmt.xml"/>
+            <xi:include parse="xml" href="eng/elem-source.xml"/>
+            <xi:include parse="xml" href="eng/elem-sourceentry.xml"/>
+            <xi:include parse="xml" href="eng/elem-sources.xml"/>
+            <xi:include parse="xml" href="eng/elem-sponsor.xml"/>
+            <xi:include parse="xml" href="eng/elem-subject.xml"/>
+            <xi:include parse="xml" href="eng/elem-subtitle.xml"/>
+            <xi:include parse="xml" href="eng/elem-table.xml"/>
+            <xi:include parse="xml" href="eng/elem-tbody.xml"/>
+            <xi:include parse="xml" href="eng/elem-term.xml"/>
+            <xi:include parse="xml" href="eng/elem-tgroup.xml"/>
+            <xi:include parse="xml" href="eng/elem-thead.xml"/>
+            <xi:include parse="xml" href="eng/elem-title.xml"/>
+            <xi:include parse="xml" href="eng/elem-titleproper.xml"/>
+            <xi:include parse="xml" href="eng/elem-titlestmt.xml"/>
+            <xi:include parse="xml" href="eng/elem-todate.xml"/>
+            <xi:include parse="xml" href="eng/elem-unitdate.xml"/>
+            <xi:include parse="xml" href="eng/elem-unitdatestructured.xml"/>
+            <xi:include parse="xml" href="eng/elem-unitid.xml"/>
+            <xi:include parse="xml" href="eng/elem-unittitle.xml"/>
+            <xi:include parse="xml" href="eng/elem-unittype.xml"/>
+            <xi:include parse="xml" href="eng/elem-userestrict.xml"/>
+         </div>
+      </body>
+      <back>
+         <div xml:id="appendices">
+            <div xml:id="appendixA">
+               <head>Appendix A : EAD Crosswalks</head>
+               <table>
+                  <head>ISAD(G) to EAD3</head>
+                  <row>
+                     <cell>ISAD(G)</cell>
+                     <cell>EAD</cell>
+                  </row>
+                  <row>
+                     <cell>3.1.1 Reference code(s)</cell>
+                     <cell>
+                        <gi>agencycode</gi> and <gi>recordid</gi> within <gi>control</gi>;
+                           <gi>unitid</gi> with <att>countrycode</att> and <att>repositorycode</att>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>3.1.2 Title</cell>
+                     <cell>
+                        <gi>unittitle</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>3.1.3 Dates</cell>
+                     <cell>
+                        <gi>unitdate</gi>, <gi>unitdatestructured</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>3.1.4 Level of description</cell>
+                     <cell>
+                        <gi>archdesc</gi> and <gi>c</gi>
+                        <att>level</att>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>3.1.5 Extent and medium of the unit</cell>
+                     <cell>
+                        <gi>physdesc</gi>, <gi>physdescstructured</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>3.2.1 Name of creator</cell>
+                     <cell>
+                        <gi>origination</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>3.2.2 Administrative/Biographical history</cell>
+                     <cell>
+                        <gi>bioghist</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>3.2.3 Archival history</cell>
+                     <cell>
+                        <gi>custodhist</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>3.2.4 Immediate source of acquisition</cell>
+                     <cell>
+                        <gi>acqinfo</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>3.3.1 Scope and content</cell>
+                     <cell>
+                        <gi>scopecontent</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>3.3.2 Appraisal, destruction and scheduling</cell>
+                     <cell>
+                        <gi>appraisal</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>3.3.3 Accruals</cell>
+                     <cell>
+                        <gi>accruals</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>3.3.4 System of arrangement</cell>
+                     <cell>
+                        <gi>arrangement</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>3.4.1 Conditions governing access</cell>
+                     <cell>
+                        <gi>accessrestrict</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>3.4.2 Conditions governing reproduction</cell>
+                     <cell>
+                        <gi>userestrict</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>3.4.3 Language/scripts of material</cell>
+                     <cell>
+                        <gi>langmaterial</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>3.4.4 Physical characteristics and technical requirements</cell>
+                     <cell>
+                        <gi>phystech</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>3.4.5 Finding aids</cell>
+                     <cell>
+                        <gi>otherfindaid</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>3.5.1 Existence and location of originals</cell>
+                     <cell>
+                        <gi>originalsloc</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>3.5.2 Existence and location of copies</cell>
+                     <cell>
+                        <gi>altformavail</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>3.5.3 Related units of description</cell>
+                     <cell>
+                        <gi>relatedmaterial</gi>, <gi>separatedmaterial</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>3.5.4 Publication note</cell>
+                     <cell>
+                        <gi>bibliography</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>3.6.1 Note</cell>
+                     <cell>
+                        <gi>didnote</gi>, <gi>odd</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>3.7.1 Archivist's note</cell>
+                     <cell>
+                        <gi>processinfo</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>3.7.2 Rules or conventions</cell>
+                     <cell>
+                        <gi>conventiondeclaration</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>3.7.3 Date(s) of descriptions</cell>
+                     <cell>
+                        <gi>maintenanceevent</gi>/<gi>eventdatetime</gi>
+                     </cell>
+                  </row>
+               </table>
+               <table>
+                  <head>MARC21 to EAD3</head>
+                  <row>
+                     <cell>MARC</cell>
+                     <cell>EAD</cell>
+                  </row>
+                  <row>
+                     <cell>041 Language</cell>
+                     <cell>
+                        <gi>langmaterial</gi>/<gi>language</gi>
+                        <att>langcode</att>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>100 Main entry--personal name</cell>
+                     <cell>
+                        <gi>origination</gi>
+                        <gi>persname</gi>, <gi>origination</gi>
+                        <gi>famname</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>110 Main entry--corporate name</cell>
+                     <cell>
+                        <gi>origination</gi>
+                        <gi>corpname</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>111 Main entry--meeting name</cell>
+                     <cell>
+                        <gi>origination</gi>
+                        <gi>corpname</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>130 Main entry--uniform title OR 240 Uniform title</cell>
+                     <cell>
+                        <gi>unittitle</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>245 Title statement</cell>
+                     <cell>
+                        <gi>unittitle</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>245$f Title statement/inclusive dates</cell>
+                     <cell>&lt;unitdate unitdatetype="inclusive"&gt;, &lt;unitdatestructured unitdatetype="inclusive"&gt;</cell>
+                  </row>
+                  <row>
+                     <cell>245$g Title statement/bulk dates</cell>
+                     <cell>&lt;unitdate unitdatetype="bulk"&gt;, &lt;unitdatestructured unitdatetype="bulk"&gt;</cell>
+                  </row>
+                  <row>
+                     <cell>254 Musical presentation statement</cell>
+                     <cell>
+                        <gi>materialspec</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>255 Cartographic mathematical data</cell>
+                     <cell>
+                        <gi>materialspec</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>255$c Cartographic mathematical data/statement of coordinates</cell>
+                     <cell>
+                        <gi>geographiccoordinates</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>256 Computer file characteristics</cell>
+                     <cell>
+                        <gi>physdescstructured</gi>
+                        <gi>quantity</gi> and
+                           <gi>physdescstructured</gi>
+                        <gi>unittype</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>260$c Date</cell>
+                     <cell>
+                        <gi>unitdate</gi>, <gi>unitdatestructured</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>300 Physical description</cell>
+                     <cell>
+                        <gi>physdesc</gi>, <gi>physdescstructured</gi> subelements
+                        <gi>quantity</gi>, <gi>unittype</gi>, <gi>dimensions</gi>,
+                           <gi>physfacet</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>340 Physical medium</cell>
+                     <cell>
+                        <gi>phystech</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>351 Organization and arrangement</cell>
+                     <cell>
+                        <gi>arrangement</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>351$c Hierarchical level</cell>
+                     <cell>
+                        <gi>archdesc</gi>
+                        <att>level</att>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>355 Security classification control</cell>
+                     <cell>
+                        <gi>accessrestrict</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>500 General note</cell>
+                     <cell>
+                        <gi>didnote</gi>, <gi>odd</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>506 Restrictions on access note</cell>
+                     <cell>
+                        <gi>accessrestrict</gi>, <gi>legalstatus</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>510 Citation/references</cell>
+                     <cell>
+                        <gi>bibliography</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>520 Summary, etc.</cell>
+                     <cell>
+                        <gi>abstract</gi>, <gi>scopecontent</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>524 Preferred citation of described materials</cell>
+                     <cell>
+                        <gi>prefercite</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>530 Additional physical form available</cell>
+                     <cell>
+                        <gi>altformavail</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>535 Location of Originals/Duplicates</cell>
+                     <cell>
+                        <gi>originalsloc</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>536 Funding information</cell>
+                     <cell>
+                        <gi>sponsor</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>538 System Details</cell>
+                     <cell>
+                        <gi>phystech</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>540 Terms governing use and reproduction</cell>
+                     <cell>
+                        <gi>userestrict</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>541 Immediate source of acquisition</cell>
+                     <cell>
+                        <gi>acqinfo</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>544 Location of other archival materials</cell>
+                     <cell>
+                        <gi>relatedmaterial</gi>, <gi>separatedmaterial</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>545 Biographical or historical data</cell>
+                     <cell>
+                        <gi>bioghist</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>546 Language</cell>
+                     <cell>
+                        <gi>langmaterial</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>555 Cumulative index/finding aids2 In a MARC21 record a note in the 55
+                        field would mention the existence of the EAD-encoded finding aid, but no
+                        specific EAD element maps to this field. The existence of other finding aids
+                        can be noted in <gi>otherfindaid</gi>.</cell>
+                     <cell/>
+                  </row>
+                  <row>
+                     <cell>561 Ownership and custodial history</cell>
+                     <cell>
+                        <gi>custodhist</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>581 Publications about described materials</cell>
+                     <cell>
+                        <gi>bibliography</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>583 Action</cell>
+                     <cell>
+                        <gi>appraisal</gi>, <gi>processinfo</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>584 Accumulation and frequency of use</cell>
+                     <cell>
+                        <gi>accruals</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>600 Subject--personal name</cell>
+                     <cell>&lt;controlaccess&gt;&lt;persname relator="subject"&gt;, &lt;controlaccess&gt;&lt;famname relator="subject"&gt;</cell>
+                  </row>
+                  <row>
+                     <cell>610 Subject--corporate name</cell>
+                     <cell>&lt;controlaccess&gt;&lt;corpname relator="subject"&gt;</cell>
+                  </row>
+                  <row>
+                     <cell>611 Subject--meeting</cell>
+                     <cell>&lt;controlaccess&gt;&lt;corpname relator="subject"&gt;</cell>
+                  </row>
+                  <row>
+                     <cell>630 Subject--uniform title</cell>
+                     <cell>&lt;controlaccess&gt;&lt;title relator="subject"&gt;</cell>
+                  </row>
+                  <row>
+                     <cell>650 Subject--topical</cell>
+                     <cell>
+                        <gi>controlaccess</gi>
+                        <gi>subject</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>651 Subject--geographic name</cell>
+                     <cell>&lt;controlaccess&gt;&lt;geogname relator="subject"&gt;</cell>
+                  </row>
+                  <row>
+                     <cell>655 Genre/form</cell>
+                     <cell>&lt;controlaccess&gt;&lt;genreform&gt;</cell>
+                  </row>
+                  <row>
+                     <cell>656 Occupation</cell>
+                     <cell>&lt;controlaccess&gt;&lt;occupation&gt;</cell>
+                  </row>
+                  <row>
+                     <cell>657 Function</cell>
+                     <cell>&lt;controlaccess&gt;&lt;function&gt;</cell>
+                  </row>
+                  <row>
+                     <cell>69x Local subject access</cell>
+                     <cell>&lt;controlaccess&gt;&lt;subject source="local"&gt;</cell>
+                  </row>
+                  <row>
+                     <cell>700 Added entry--personal name</cell>
+                     <cell>&lt;controlaccess&gt;&lt;persname&gt;,&lt;controlaccess&gt;&lt;famname&gt;</cell>
+                  </row>
+                  <row>
+                     <cell>710 Added entry--corporate name</cell>
+                     <cell>&lt;controlaccess&gt;&lt;corpname&gt;</cell>
+                  </row>
+                  <row>
+                     <cell>711 Added entry--meeting name</cell>
+                     <cell>&lt;controlaccess&gt;&lt;corpname&gt;</cell>
+                  </row>
+                  <row>
+                     <cell>720 Added entry--uncontrolled</cell>
+                     <cell>
+                        <gi>name</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>730 Added entry--uniform title</cell>
+                     <cell>&lt;controlaccess&gt;&lt;title&gt;</cell>
+                  </row>
+                  <row>
+                     <cell>740 Added entry--uncont./related anal. title</cell>
+                     <cell>
+                        <gi>title</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>752 Added entry--hierarchical place name</cell>
+                     <cell>
+                        <gi>geogname</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>852 Location</cell>
+                     <cell>
+                        <gi>repository</gi>, <gi>physloc</gi>
+                     </cell>
+                  </row>
+               </table>
+               <table>
+                  <head>MODS to EAD3</head>
+                  <row>
+                     <cell>MODS</cell>
+                     <cell>EAD</cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <gi>abstract</gi>
+                     </cell>
+                     <cell>
+                        <gi>abstract</gi>, <gi>scopecontent</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <gi>accessCondition</gi>
+                     </cell>
+                     <cell>
+                        <gi>accessrestrict</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <gi>genre</gi>
+                     </cell>
+                     <cell>&lt;controlaccess&gt;&lt;genreform&gt;</cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <gi>identifier</gi>
+                     </cell>
+                     <cell>
+                        <gi>unitid</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>&lt;language&gt;&lt;languageTerm&gt;</cell>
+                     <cell>&lt;langmaterial&gt;&lt;language&gt;, &lt;langmaterial&gt;&lt;languageset&gt;&lt;language&gt;</cell>
+                  </row>
+                  <row>
+                     <cell>&lt;location&gt;&lt;physicalLocation&gt;</cell>
+                     <cell>
+                        <gi>repository</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>&lt;location&gt;&lt;url&gt;</cell>
+                     <cell>
+                        <gi>dao</gi>, <gi>daoset</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <gi>name</gi>
+                     </cell>
+                     <cell>
+                        <gi>origination</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <gi>note</gi>
+                     </cell>
+                     <cell>
+                        <gi>didnote</gi>, <gi>odd</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>&lt;originInfo&gt;&lt;dateCreated&gt;</cell>
+                     <cell>
+                        <gi>unitdate</gi>, <gi>unitdatestructured</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>&lt;physicalDescription&gt;&lt;extent&gt;</cell>
+                     <cell>&lt;physdesc&gt;, &lt;physdescstructured&gt;&lt;quantity&gt; and &lt;physdescstructured&gt;&lt;unittype&gt;, &lt;physdescstructured&gt;&lt;dimensions&gt;</cell>
+                  </row>
+                  <row>
+                     <cell>&lt;recordInfo&gt;&lt;recordContentSource&gt;</cell>
+                     <cell>&lt;maintenanceagency&gt;&lt;agencyname&gt;, &lt;maintenanceagency&gt;&lt;agencycode&gt;, &lt;maintenanceagency&gt;&lt;otheragencycode&gt;</cell>
+                  </row>
+                  <row>
+                     <cell>&lt;recordInfo&gt;&lt;recordCreationDate&gt;</cell>
+                     <cell>&lt;maintenancehistory&gt;&lt;maintenanceevent&gt;&lt;eventdatetime&gt; (where &lt;eventtype&gt; @value='created')</cell>
+                  </row>
+                  <row>
+                     <cell>&lt;recordInfo&gt;&lt;recordChangeDate&gt;</cell>
+                     <cell>&lt;maintenancehistory&gt;&lt;maintenanceevent&gt;&lt;eventdatetime&gt;</cell>
+                  </row>
+                  <row>
+                     <cell>&lt;recordInfo&gt;&lt;recordIdentifier&gt;</cell>
+                     <cell>
+                        <gi>recordid</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>&lt;recordInfo&gt;&lt;recordOrigin&gt;</cell>
+                     <cell>&lt;maintenancehistory&gt;&lt;maintenanceevent&gt; (where eventtype/@value='created' or 'derived')</cell>
+                  </row>
+                  <row>
+                     <cell>&lt;recordInfo&gt;&lt;languageOfCataloging&gt;</cell>
+                     <cell>&lt;control&gt;&lt;languagedeclaration&gt;&lt;language&gt;</cell>
+                  </row>
+                  <row>
+                     <cell>&lt;recordInfo&gt;&lt;descriptionStandard&gt;</cell>
+                     <cell>
+                        <gi>conventiondeclaration</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>&lt;subject&gt;&lt;cartographics&gt;&lt;coordinates&gt;</cell>
+                     <cell>
+                        <gi>geographiccoordinates</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>&lt;subject&gt;&lt;cartographics&gt;&lt;projection&gt;</cell>
+                     <cell>
+                        <gi>materialspec</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>&lt;subject&gt;&lt;cartographics&gt;&lt;scale&gt;</cell>
+                     <cell>
+                        <gi>materialspec</gi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>&lt;subject&gt;&lt;genre&gt;</cell>
+                     <cell>&lt;controlaccess&gt;&lt;genreform&gt;</cell>
+                  </row>
+                  <row>
+                     <cell>&lt;subject&gt;&lt;geographic&gt;</cell>
+                     <cell>&lt;controlaccess&gt;&lt;geogname&gt;</cell>
+                  </row>
+                  <row>
+                     <cell>&lt;subject&gt;&lt;hierarchicalGeographic&gt;</cell>
+                     <cell>&lt;controlaccess&gt;&lt;geogname&gt;</cell>
+                  </row>
+                  <row>
+                     <cell>&lt;subject&gt;&lt;name&gt;</cell>
+                     <cell>&lt;controlaccess&gt;&lt;name&gt;</cell>
+                  </row>
+                  <row>
+                     <cell>&lt;subject&gt;&lt;occupation&gt;</cell>
+                     <cell>&lt;controlaccess&gt;&lt;occupation&gt;</cell>
+                  </row>
+                  <row>
+                     <cell>&lt;subject&gt;&lt;titleInfo&gt;</cell>
+                     <cell>&lt;controlaccess&gt;&lt;title&gt;</cell>
+                  </row>
+                  <row>
+                     <cell>&lt;subject&gt;&lt;topic&gt;</cell>
+                     <cell>&lt;controlaccess&gt;&lt;subject&gt;</cell>
+                  </row>
+                  <row>
+                     <cell>&lt;titleInfo&gt;&lt;title&gt;</cell>
+                     <cell>
+                        <gi>unittitle</gi>
+                     </cell>
+                  </row>
+               </table>
+            </div>
+            <div xml:id="appendixB">
+               <head>Appendix B : Deprecated and Obsolete Elements and Attributes</head>
+               <p>The revision of EAD 1.0 to EAD 2002 established a precedent that elements to be
+                  removed from EAD would first be deprecated – suppressed but available if necessary
+                  – before being removed from subsequent versions. All elements deprecated in EAD
+                  2002 were removed from EAD3. Elements present in the DTD version of EAD 2002 but
+                  removed from the schema versions of EAD 2002 (<gi>archdescgrp</gi>,
+                     <gi>dscgrp</gi>, and <gi>eadgrp</gi>eadgrp&gt;) were also removed from
+                  EAD3.</p>
+               <p>The Society of American Archivists' Technical Subcommittee on EAD (TS-EAD) endeavored to honor the commitment to deprecate removed elements.However, the extent of the changes in EAD3 made comprehensive deprecation impossible. Elements to be removed entirely from the standard remain available in undeprecated versions of EAD3. Elements that were replaced by other elements offering commensurate functionality, or whose availability within the standard changed are in most cases not supported in undeprecated EAD3.</p>
+               <p>The following attributes and elements are not available in the default versions of EAD3 (ead3.rng, ead3.xsd, and ead3.dtd), but are available in the undeprecated versions (ead3_undeprecated.rng, ead3_undeprecated.xsd, and ead3_undeprecated.dtd). Definitions for these attributes and elements follow below.</p>
+               <list>
+                  <head>Deprecated Attributes</head>
+                  <item>
+                     <att>placement</att>
+                  </item>
+                  <item>
+                     <att>tpattern</att>
+                  </item>
+               </list>
+               <list>
+                  <head>Deprecated Elements</head>
+                  <item>
+                     <gi>bibseries</gi>
+                  </item>
+                  <item>
+                     <gi>descgrp</gi>
+                  </item>
+                  <item>
+                     <gi>div</gi>
+                  </item>
+                  <item>
+                     <gi>extent</gi>
+                  </item>
+                  <item>
+                     <gi>frontmatter</gi>
+                  </item>
+                  <item>
+                     <gi>imprint</gi>
+                  </item>
+                  <item>
+                     <gi>runner</gi>
+                  </item>
+                  <item>
+                     <gi>titlepage</gi>
+                  </item>
+               </list>
+               <p>In addition to including the attributes and elements listed above, the
+                  undeprecated versions of EAD3 also include the full EAD 2002 content models for
+                  the <gi>physdesc</gi> and <gi>unittitle</gi> elements. The undeprecated
+                     <gi>physdesc</gi> includes <gi>extent</gi>, <gi>dimensions</gi>,
+                     <gi>physfacet</gi>, and the access point elements (e.g. <gi>genreform</gi>)
+                  whereas the default <gi>physdesc</gi> in EAD3 does not. The undeprecated
+                     <gi>unittitle</gi> includes <gi>bibseries</gi>,<gi>imprint</gi>,
+                     <gi>edition</gi>, and <gi>unitdate</gi>, whereas the default <gi>unittitle</gi>
+                  in EAD3 does not.</p>
+               <p>Style sheets for migrating EAD 2002 to EAD3 will include an option to preserve deprecated elements. However, when future versions of EAD are released, support for elements and attributes deprecated in EAD3 will be removed and their forward migration will not be supported.</p>
+               <p>The following obsolete attributes and elements were removed entirely in EAD3. Their semantics or functionality were replaced by new attributes or elements.</p>
+               <list>
+                  <head>Obsolete Attributes</head>
+                  <item>
+                     <att>authfilenumber</att>
+                  </item>
+                  <item>
+                     <att>continuation</att>
+                  </item>
+                  <item>
+                     <att>findaidstatus</att>
+                  </item>
+                  <item>
+                     <att>from</att> / <att>xlink:from</att>
+                  </item>
+                  <item>
+                     <att>linktype</att> / <att>xlink:type</att>
+                  </item>
+                  <item>
+                     <att>mainagencycode</att>
+                  </item>
+                  <item>
+                     <att>othertype</att>
+                  </item>
+                  <item>
+                     <att>publicid</att>
+                  </item>
+                  <item>
+                     <att>role</att> / <att>xlink:role</att>
+                  </item>
+                  <item>
+                     <att>to</att> / <att>xlink:to</att>
+                  </item>
+                  <item>
+                     <att>type</att>
+                  </item>
+                  <item>
+                     <att>urn</att>
+                  </item>
+                  <item>
+                     <att>url</att>
+                  </item>
+               </list>
+               <list>
+                  <head>Obsolete Elements</head>
+                  <item>
+                     <gi>arc</gi>
+                  </item>
+                  <item>
+                     <gi>change</gi>
+                  </item>
+                  <item>
+                     <gi>creation</gi>
+                  </item>
+                  <item>
+                     <gi>daodesc</gi>
+                  </item>
+                  <item>
+                     <gi>daogrp</gi>
+                  </item>
+                  <item>
+                     <gi>daoloc</gi>
+                  </item>
+                  <item>
+                     <gi>descrules</gi>
+                  </item>
+                  <item>
+                     <gi>eadheader</gi>
+                  </item>
+                  <item>
+                     <gi>eadid</gi>
+                  </item>
+                  <item>
+                     <gi>eventgrp</gi>
+                  </item>
+                  <item>
+                     <gi>extptr</gi>
+                  </item>
+                  <item>
+                     <gi>extptrloc</gi>
+                  </item>
+                  <item>
+                     <gi>extref</gi>
+                  </item>
+                  <item>
+                     <gi>extrefloc</gi>
+                  </item>
+                  <item>
+                     <gi>langusage</gi>
+                  </item>
+                  <item>
+                     <gi>linkgrp</gi>
+                  </item>
+                  <item>
+                     <gi>note</gi>
+                  </item>
+                  <item>
+                     <gi>ptrloc</gi>
+                  </item>
+                  <item>
+                     <gi>refloc</gi>
+                  </item>
+                  <item>
+                     <gi>resource</gi>
+                  </item>
+                  <item>
+                     <gi>revisiondesc</gi>
+                  </item>
+                  <item>
+                     <gi>subarea</gi>
+                  </item>
+               </list>
+               <div>
+                  <head>Deprecated Attributes</head>
+                  <div type="deprecatedAttributeDocumentation" xml:id="attr-placement">
+                     <head>
+                        <att>placement</att>
+                        <seg type="fullName">Placement</seg>
+                     </head>
+                     <div type="summary">
+                        <p>The location where the information in the <gi>runner</gi> element is
+                           displayed in print (foot or head) or as a digital watermark
+                           (background).</p>
+                     </div>
+                  </div>
+                  <div type="deprecatedAttributeDocumentation" xml:id="attr-tpattern">
+                     <head>
+                        <att>tpattern</att>
+                        <seg type="fullName">Table Pattern</seg>
+                     </head>
+                     <div type="summary">
+                        <p>A reference to a pattern that defines the specifications of particular
+                           HTML output tables. Available in <gi>c</gi>, <gi>c01</gi>-<gi>c12</gi>,
+                           and <gi>dsc</gi>.</p>
+                     </div>
+                     <div type="dataType">
+                        <p>NMTOKEN</p>
+                     </div>
+                  </div>
+               </div>
+               <div>
+                  <head>Deprecated Elements</head>
+                  <div type="deprecatedElementDocumentation" xml:id="elem-bibseries">
+                     <head>
+                        <gi>bibseries</gi>
+                        <seg type="fullName">Bibliographic Series</seg>
+                     </head>
+                     <div type="summary">
+                        <p>An element for identifying information about the published series in which a book finding aid, or other published work appeared. Refers to monographic series only.</p>
+                     </div>
+                     <div type="mayContain">
+                        <p>[text], emph, lb, num, ptr, ref, title</p>
+                     </div>
+                     <div type="mayOccurWithin">
+                        <p>bibref, titlepage, unittitle</p>
+                     </div>
+                     <div type="attributes">
+                        <table>
+                           <row>
+                              <cell>altrender</cell>
+                              <cell>Optional</cell>
+                           </row>
+                           <row>
+                              <cell>audience</cell>
+                              <cell>Optional (values limited to: external, internal)</cell>
+                           </row>
+                           <row>
+                              <cell>encodinganalog</cell>
+                              <cell>Optional</cell>
+                           </row>
+                           <row>
+                              <cell>id</cell>
+                              <cell>Optional</cell>
+                           </row>
+                           <row>
+                              <cell>lang</cell>
+                              <cell>Optional</cell>
+                           </row>
+                           <row>
+                              <cell>script</cell>
+                              <cell>Optional</cell>
+                           </row>
+                        </table>
+                     </div>
+                     <div type="descriptionAndUsage">
+                        <p>An element for encoding information about the published series in which a book, encoded finding aid, or other published work has appeared. Refers to monographic series only. Not to be used for archival series.</p>
+                     </div>
+                     <div type="availability">
+                        <p>Optional, repeatable</p>
+                     </div>
+                  </div>
+                  <div type="deprecatedElementDocumentation" xml:id="elem-descgrp">
+                     <head>
+                        <gi>descgrp</gi>
+                        <seg type="fullName">Description Group</seg>
+                     </head>
+                     <div type="summary">
+                        <p>An element for grouping together any number of elements that are
+                           following siblings of the <gi>did</gi> element. </p>
+                     </div>
+                     <div type="mayContain">
+                        <p>accessrestrict, accruals, acqinfo, altformavail, appraisal, arrangement, bibliography, bioghist, blockquote, chronlist, controlaccess, custodhist, descgrp, fileplan, head, index, legalstatus, list, odd, originalsloc, otherfindaid, p, phystech, prefercite, processinfo, relatedmaterial, relations, scopecontent, separatedmaterial, table, userestrict</p>
+                     </div>
+                     <div type="mayOccurWithin">
+                        <p>archdesc, c, c01, c02, c03, c04, c05, c06, c07, c08, c09, c10, c11, c12, descgrp</p>
+                     </div>
+                     <div type="attributes">
+                        <table>
+                           <row>
+                              <cell>altrender</cell>
+                              <cell>Optional</cell>
+                           </row>
+                           <row>
+                              <cell>audience</cell>
+                              <cell>Optional (values limited to: external, internal)</cell>
+                           </row>
+                           <row>
+                              <cell>encodinganalog</cell>
+                              <cell>Optional</cell>
+                           </row>
+                           <row>
+                              <cell>id</cell>
+                              <cell>Optional</cell>
+                           </row>
+                           <row>
+                              <cell>lang</cell>
+                              <cell>Optional</cell>
+                           </row>
+                           <row>
+                              <cell>localtype</cell>
+                              <cell>Optional</cell>
+                           </row>
+                           <row>
+                              <cell>script</cell>
+                              <cell>Optional</cell>
+                           </row>
+                        </table>
+                     </div>
+                     <div type="descriptionAndUsage">
+                        <p>An element for grouping together any number of elements that are
+                           following siblings of the <gi>did</gi> element except for the
+                              <gi>dsc</gi> element. <gi>descgrp</gi> might be used, for example, to
+                           cluster elements into groups that correspond to the areas specified by
+                           the General International Standard Archival Description (ISAD(G)).</p>
+                        <p>Attribute usage:</p>
+                        <list>
+                           <item>Use the <att>localtype</att> attribute to characterize the nature
+                              of the grouping.</item>
+                        </list>
+                     </div>
+                     <div type="availability">
+                        <p>Optional, repeatable</p>
+                     </div>
+                  </div>
+                  <div type="deprecatedElementDocumentation" xml:id="elem-div">
+                     <head>
+                        <gi>div</gi>
+                        <seg type="fullName">Text Division</seg>
+                     </head>
+                     <div type="summary">
+                        <p>A generic element that designates a major section of text within
+                              <gi>frontmatter</gi>.</p>
+                     </div>
+                     <div type="mayContain">
+                        <p>blockquote, chronlist, div, head, list, p, table</p>
+                     </div>
+                     <div type="mayOccurWithin">
+                        <p>div, frontmatter</p>
+                     </div>
+                     <div type="attributes">
+                        <table>
+                           <row>
+                              <cell>altrender</cell>
+                              <cell>Optional</cell>
+                           </row>
+                           <row>
+                              <cell>audience</cell>
+                              <cell>Optional (values limited to: external, internal)</cell>
+                           </row>
+                           <row>
+                              <cell>id</cell>
+                              <cell>Optional</cell>
+                           </row>
+                           <row>
+                              <cell>lang</cell>
+                              <cell>Optional</cell>
+                           </row>
+                           <row>
+                              <cell>script</cell>
+                              <cell>Optional</cell>
+                           </row>
+                        </table>
+                     </div>
+                     <div type="descriptionAndUsage">
+                        <p>A generic element that designates a major section of text within
+                              <gi>frontmatter</gi>. Examples of these text divisions include a title
+                           page, preface, acknowledgments, or instructions for using a finding aid.
+                           Use the <gi>head</gi> element to identify the div's purpose.</p>
+                     </div>
+                     <div type="availability">
+                        <p>Optional, repeatable</p>
+                     </div>
+                  </div>
+                  <div type="deprecatedElementDocumentation" xml:id="elem-extent">
+                     <head>
+                        <gi>extent</gi>
+                        <seg type="fullName">Extent</seg>
+                     </head>
+                     <div type="summary">
+                        <p>A child of <gi>physdesc</gi> used for information about the quantity of
+                           the materials being described or an expression of the physical space they
+                           occupy.</p>
+                     </div>
+                     <div type="mayContain">
+                        <p>[text], abbr, emph, expan, foreign, lb, ptr, ref</p>
+                     </div>
+                     <div type="mayOccurWithin">
+                        <p>physdesc</p>
+                     </div>
+                     <div type="attributes">
+                        <table>
+                           <row>
+                              <cell>altrender</cell>
+                              <cell>Optional</cell>
+                           </row>
+                           <row>
+                              <cell>audience</cell>
+                              <cell>Optional (values limited to: external, internal)</cell>
+                           </row>
+                           <row>
+                              <cell>encodinganalog</cell>
+                              <cell>Optional</cell>
+                           </row>
+                           <row>
+                              <cell>id</cell>
+                              <cell>Optional</cell>
+                           </row>
+                           <row>
+                              <cell>label</cell>
+                              <cell>Optional</cell>
+                           </row>
+                           <row>
+                              <cell>lang</cell>
+                              <cell>Optional</cell>
+                           </row>
+                           <row>
+                              <cell>localtype</cell>
+                              <cell>Optional</cell>
+                           </row>
+                           <row>
+                              <cell>script</cell>
+                              <cell>Optional</cell>
+                           </row>
+                           <row>
+                              <cell>unit</cell>
+                              <cell>Optional</cell>
+                           </row>
+                        </table>
+                     </div>
+                     <div type="descriptionAndUsage">
+                        <p>A <gi>physdesc</gi> subelement for information about the quantity of the
+                           materials being described or an expression of the physical space they
+                           occupy. Includes such traditional archival measurements as cubic and
+                           linear feet and meters; also includes counts of microfilm reels,
+                           photographs, or other special formats, the number of logical records in a
+                           database, or the volume of a data file in bytes. Repeat the element when
+                           more than one type or unit of extent is provided, such as, when both
+                           linear feet and quantity of containers are given.</p>
+                        <p>Attribute usage:</p>
+                        <list>
+                           <item>Use <att>unit</att> to indicate the measurement unit, e.g., "bytes"
+                              or "cubic meter."</item>
+                        </list>
+                        <p>See also:</p>
+                        <list>
+                           <item>Use the <gi>dimensions</gi> element when it is necessary to specify
+                              the size of the archival materials being described, for example,
+                              height and width.</item>
+                        </list>
+                     </div>
+                     <div type="availability">
+                        <p>Optional, repeatable</p>
+                     </div>
+                  </div>
+                  <div type="deprecatedElementDocumentation" xml:id="elem-frontmatter">
+                     <head>
+                        <gi>frontmatter</gi>
+                        <seg type="fullName">Front Matter</seg>
+                     </head>
+                     <div type="summary">
+                        <p>A wrapper element that bundles prefatory text found before the start of
+                              <gi>archdesc</gi>.</p>
+                     </div>
+                     <div type="mayContain">
+                        <p>div, titlepage</p>
+                     </div>
+                     <div type="mayOccurWithin">
+                        <p>ead</p>
+                     </div>
+                     <div type="attributes">
+                        <table>
+                           <row>
+                              <cell>altrender</cell>
+                              <cell>Optional</cell>
+                           </row>
+                           <row>
+                              <cell>audience</cell>
+                              <cell>Optional (values limited to: external, internal)</cell>
+                           </row>
+                           <row>
+                              <cell>id</cell>
+                              <cell>Optional</cell>
+                           </row>
+                           <row>
+                              <cell>lang</cell>
+                              <cell>Optional</cell>
+                           </row>
+                           <row>
+                              <cell>script</cell>
+                              <cell>Optional</cell>
+                           </row>
+                        </table>
+                     </div>
+                     <div type="descriptionAndUsage">
+                        <p>A wrapper element that bundles prefatory text found before the start of
+                              <gi>archdesc</gi>. It focuses on the creation, publication, or use of
+                           the finding aid rather than information about the materials being
+                           described. Examples include a title page, preface, dedication, and
+                           instructions for using a finding aid. The optional <gi>titlepage</gi>
+                           element within <gi>frontmatter</gi> can be used to repeat selected
+                           information from <gi>control</gi> to generate a title page that follows
+                           local preferences for sequencing information. The other
+                              <gi>frontmatter</gi> structures, such as a dedication, are encoded as
+                           Text Divisions <gi>div</gi>s, with a <gi>head</gi> element containing
+                           word(s) that identify the nature of the text.</p>
+                     </div>
+                     <div type="availability">
+                        <p>Optional, non repeatable</p>
+                     </div>
+                  </div>
+                  <div type="deprecatedElementDocumentation" xml:id="elem-imprint">
+                     <head>
+                        <gi>imprint</gi>
+                        <seg type="fullName">Imprint</seg>
+                     </head>
+                     <div type="summary">
+                        <p>An element for encoding information relating to the publication or
+                           distribution of a work cited in a <gi>bibref</gi> or
+                           <gi>unittitle</gi>.</p>
+                     </div>
+                     <div type="mayContain">
+                        <p>[text], date, emph, geogname, lb, ptr, publisher</p>
+                     </div>
+                     <div type="mayOccurWithin">
+                        <p>bibref, unittitle</p>
+                     </div>
+                     <div type="attributes">
+                        <table>
+                           <row>
+                              <cell>altrender</cell>
+                              <cell>Optional</cell>
+                           </row>
+                           <row>
+                              <cell>audience</cell>
+                              <cell>Optional (values limited to: external, internal)</cell>
+                           </row>
+                           <row>
+                              <cell>encodinganalog</cell>
+                              <cell>Optional</cell>
+                           </row>
+                           <row>
+                              <cell>id</cell>
+                              <cell>Optional</cell>
+                           </row>
+                           <row>
+                              <cell>lang</cell>
+                              <cell>Optional</cell>
+                           </row>
+                           <row>
+                              <cell>script</cell>
+                              <cell>Optional</cell>
+                           </row>
+                        </table>
+                     </div>
+                     <div type="descriptionAndUsage">
+                        <p>An element for encoding information relating to the publication or
+                           distribution of a work cited in a <gi>bibref</gi> or <gi>unittitle</gi>.
+                           In both elements the place of publication, name of the publisher, and
+                           date of publication can be encoded as either plain text or wrapped in the
+                              <gi>imprint</gi> subelements <gi>geogname</gi>, <gi>publisher</gi>,
+                           and <gi>date</gi>. It is seldom, if ever, appropriate to use
+                              <gi>imprint</gi> in a citation for an unpublished work cited in a
+                              <gi>bibref</gi>.</p>
+                     </div>
+                     <div type="availability">
+                        <p>Optional, repeatable</p>
+                     </div>
+                  </div>
+                  <div type="deprecatedElementDocumentation" xml:id="dElem-physdesc">
+                     <head>
+                        <gi>physdesc</gi>
+                        <seg type="fullName">Physical Description [Deprecated Data Model]</seg>
+                     </head>
+                     <div type="summary">
+                        <p>A child element of <gi>did</gi> that provides a statement about the
+                           physical characteristics of the material being described.</p>
+                     </div>
+                     <div type="mayContain">
+                        <p>[text], abbr, corpname, date, dimensions, emph, expan, extent, famname, footnote, foreign, function, genreform, geogname, lb, name, num, occupation, persname, physfacet, ptr, quote, ref, subject, title</p>
+                     </div>
+                     <div type="mayOccurWithin">
+                        <p>did</p>
+                     </div>
+                     <div type="attributes">
+                        <table>
+                           <row>
+                              <cell>altrender</cell>
+                              <cell>Optional</cell>
+                           </row>
+                           <row>
+                              <cell>audience</cell>
+                              <cell>Optional (values limited to: external, internal)</cell>
+                           </row>
+                           <row>
+                              <cell>encodinganalog</cell>
+                              <cell>Optional</cell>
+                           </row>
+                           <row>
+                              <cell>id</cell>
+                              <cell>Optional</cell>
+                           </row>
+                           <row>
+                              <cell>label</cell>
+                              <cell>Optional</cell>
+                           </row>
+                           <row>
+                              <cell>lang</cell>
+                              <cell>Optional</cell>
+                           </row>
+                           <row>
+                              <cell>localtype</cell>
+                              <cell>Optional</cell>
+                           </row>
+                           <row>
+                              <cell>script</cell>
+                              <cell>Optional</cell>
+                           </row>
+                        </table>
+                     </div>
+                     <div type="descriptionAndUsage">
+                        <p>
+                           <gi>physdesc</gi> is a wrapper element for bundling information about the
+                           appearance or construction of the described materials, such as their
+                           dimensions, a count of their quantity or statement about the space they
+                           occupy, and terms describing their genre, form, or function, as well as
+                           any other aspects of their appearance, such as color, substance, style,
+                           and technique or method of creation. The information may be presented as
+                           plain text, or it may be divided into the <gi>dimensions</gi>,
+                              <gi>extent</gi>, <gi>genreform</gi>, and <gi>physfacet</gi>
+                           subelements.</p>
+                     </div>
+                     <div type="availability">
+                        <p>Optional, repeatable</p>
+                     </div>
+                     <div type="references">
+                        <p>ISAD(G) 3.1.5</p>
+                        <p>MARC 300</p>
+                        <p>MODS <gi>physicalDescription</gi>
+                           <gi>extent</gi>
+                        </p>
+                     </div>
+                  </div>
+                  <div type="deprecatedElementDocumentation" xml:id="elem-runner">
+                     <head>
+                        <gi>runner</gi>
+                        <seg type="fullName">Runner</seg>
+                     </head>
+                     <div type="summary">
+                        <p>An optional formatting element that provides for a header, footer, or watermark to appear on every page of a printed finding aid or throughout an electronic version.</p>
+                     </div>
+                     <div type="mayContain">
+                        <p>[text], emph, lb, ptr</p>
+                     </div>
+                     <div type="mayOccurWithin">
+                        <p>archdesc</p>
+                     </div>
+                     <div type="attributes">
+                        <table>
+                           <row>
+                              <cell>altrender</cell>
+                              <cell>Optional</cell>
+                           </row>
+                           <row>
+                              <cell>audience</cell>
+                              <cell>Optional (values limited to: external, internal)</cell>
+                           </row>
+                           <row>
+                              <cell>id</cell>
+                              <cell>Optional</cell>
+                           </row>
+                           <row>
+                              <cell>lang</cell>
+                              <cell>Optional</cell>
+                           </row>
+                           <row>
+                              <cell>placement</cell>
+                              <cell>Optional (values limited to: header, footer, watermark)</cell>
+                           </row>
+                           <row>
+                              <cell>role</cell>
+                              <cell>Optional</cell>
+                           </row>
+                           <row>
+                              <cell>script</cell>
+                              <cell>Optional</cell>
+                           </row>
+                        </table>
+                     </div>
+                     <div type="descriptionAndUsage">
+                        <p>An optional formatting element that provides for a header, footer, or
+                           watermark to appear on every page of a printed finding aid or throughout
+                           an electronic version. If a transparent image is desired as background,
+                           use <gi>ptr</gi> instead. The <gi>runner</gi> is available within
+                              <gi>archdesc</gi> and must appear before the <gi>did</gi>.</p>
+                        <p>Attribute usage:</p>
+                        <list>
+                           <item>Use <att>placement</att> to specify whether the <gi>runner</gi>
+                              should appear as a header, footer, or watermark.</item>
+                        </list>
+                     </div>
+                     <div type="availability">
+                        <p>Optional, repeatable</p>
+                     </div>
+                  </div>
+                  <div type="deprecatedElementDocumentation" xml:id="elem-titlepage">
+                     <head>
+                        <gi>titlepage</gi>
+                        <seg type="fullName">Title Page</seg>
+                     </head>
+                     <div type="summary">
+                        <p>A wrapper element within <gi>frontmatter</gi> that groups bibliographic
+                           information about a finding aid, including its name, author, and other
+                           aspects of its creation and publication.</p>
+                     </div>
+                     <div type="mayContain">
+                        <p>author, bibseries, blockquote, chronlist, date, edition, list, num, p, publisher, sponsor, subtitle, table, titleproper</p>
+                     </div>
+                     <div type="mayOccurWithin">
+                        <p>frontmatter</p>
+                     </div>
+                     <div type="attributes">
+                        <table>
+                           <row>
+                              <cell>altrender</cell>
+                              <cell>Optional</cell>
+                           </row>
+                           <row>
+                              <cell>audience</cell>
+                              <cell>Optional (values limited to: external, internal)</cell>
+                           </row>
+                           <row>
+                              <cell>id</cell>
+                              <cell>Optional</cell>
+                           </row>
+                           <row>
+                              <cell>lang</cell>
+                              <cell>Optional</cell>
+                           </row>
+                           <row>
+                              <cell>script</cell>
+                              <cell>Optional</cell>
+                           </row>
+                        </table>
+                     </div>
+                     <div type="descriptionAndUsage">
+                        <p>A wrapper element within <gi>frontmatter</gi> that groups bibliographic
+                           information about a finding aid, including its name, author, and other
+                           aspects of its creation and publication. It contains much of the same
+                           information found in the <gi>filedesc</gi> portion of <gi>control</gi>,
+                           such as the <gi>titleproper</gi>, <gi>subtitle</gi>, <gi>author</gi>,
+                              <gi>sponsor</gi>, <gi>publisher</gi>, and <gi>date</gi> of the finding
+                           aid. Although it is possible to generate an electronic or printed title
+                           page directly from <gi>control</gi>, use of the <gi>titlepage</gi> may be
+                           more accommodating of local preferences, including displays of
+                           photographic illustrations, institutional logos, or other graphic
+                           images.</p>
+                     </div>
+                     <div type="availability">
+                        <p>Optional, non repeatable</p>
+                     </div>
+                  </div>
+                  <div type="deprecatedElementDocumentation" xml:id="dElem-unittitle">
+                     <head>
+                        <gi>unittitle</gi>
+                        <seg type="fullName">Title of the Unit [Deprecated Data Model]</seg>
+                     </head>
+                     <div type="summary">
+                        <p>A child element of <gi>did</gi> that specifies a title for the described
+                           materials.</p>
+                     </div>
+                     <div type="mayContain">
+                        <p>[text], abbr, bibseries, corpname, date, edition, emph, expan, famname, footnote, foreign, function, genreform, geogname, imprint, lb, name, num, occupation, persname, ptr, quote, ref, subject, title, unitdate</p>
+                     </div>
+                     <div type="mayOccurWithin">
+                        <p>did</p>
+                     </div>
+                     <div type="attributes">
+                        <table>
+                           <row>
+                              <cell>altrender</cell>
+                              <cell>Optional</cell>
+                           </row>
+                           <row>
+                              <cell>audience</cell>
+                              <cell>Optional (values limited to: external, internal)</cell>
+                           </row>
+                           <row>
+                              <cell>encodinganalog</cell>
+                              <cell>Optional</cell>
+                           </row>
+                           <row>
+                              <cell>id</cell>
+                              <cell>Optional</cell>
+                           </row>
+                           <row>
+                              <cell>label</cell>
+                              <cell>Optional</cell>
+                           </row>
+                           <row>
+                              <cell>lang</cell>
+                              <cell>Optional</cell>
+                           </row>
+                           <row>
+                              <cell>localtype</cell>
+                              <cell>Optional</cell>
+                           </row>
+                           <row>
+                              <cell>normal</cell>
+                              <cell>Optional</cell>
+                           </row>
+                           <row>
+                              <cell>script</cell>
+                              <cell>Optional</cell>
+                           </row>
+                        </table>
+                     </div>
+                     <div type="descriptionAndUsage">
+                        <p>A <gi>unittitle</gi> is for recording the title statement, either formal
+                           or supplied, of the described materials. The title statement may consist
+                           of a word or phrase. The <gi>unittitle</gi> is used at both the highest
+                           unit or <gi>archdesc</gi> level (e.g., collection, record group, or
+                           fonds) and at all the subordinate <gi>c</gi> levels (e.g., subseries,
+                           files, items, or other intervening stages within a hierarchical
+                           description).</p>
+                        <p>Attribute usage:</p>
+                        <list>
+                           <item>Use <att>encodinganalog</att> to indicate corresponding data
+                              elements in another data format, such as MARC. </item>
+                           <item>Use <att>localtype</att> if local use requires recording the type
+                              of <gi>unittitle</gi>.</item>
+                           <item>Use <att>normal</att> to allow for normalization of unit titles
+                              with initial articles.</item>
+                        </list>
+                        <p>See also:</p>
+                        <list>
+                           <item>Do not confuse <gi>unittitle</gi> with <gi>title</gi>, an element
+                              used to encode the formal names of works such as monographs, serials,
+                              paintings, etc.</item>
+                           <item>Also do not confuse with <gi>titleproper</gi>, used to designate
+                              the name of a finding aid encoded in EAD.</item>
+                        </list>
+                     </div>
+                     <div type="availability">
+                        <p>Optional, repeatable</p>
+                     </div>
+                     <div type="references">
+                        <p>ISAD(G) 3.1.2</p>
+                        <p>MARC 130, 240, 245</p>
+                        <p>MODS <gi>titleIfo</gi>
+                           <gi>title</gi>
+                        </p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </back>
+   </text>
+</TEI>

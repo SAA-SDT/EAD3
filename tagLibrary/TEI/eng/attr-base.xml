@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="attr-base"
+     type="attributeDocumentation">
+   <head>
+      <att>base</att>
+      <seg type="fullName">Base</seg>
+   </head>
+   <div type="summary">
+      <p>Used to specify a base URI that is different than the base URI of the EAD
+                        instance. This allows any relative URIs provided on attributes of a specific
+                        element or its descendants to be resolved using the URI provided in that
+                        element's <att>base</att>. Available on <gi>archdesc</gi>, <gi>c</gi>,
+                           <gi>c01</gi>, <gi>c02</gi>, <gi>c03</gi>, <gi>c04</gi>, <gi>c05</gi>,
+                           <gi>c06</gi>, <gi>c07</gi>, <gi>c08</gi>, <gi>c09</gi>, <gi>c10</gi>,
+                           <gi>c11</gi>, <gi>c12</gi>, <gi>control</gi>, <gi>daoset</gi>,
+                           <gi>ead</gi>, <gi>relations</gi>, <gi>sources</gi>.</p>
+   </div>
+   <div type="dataType">
+      <p>anyURI</p>
+   </div>
+</div>

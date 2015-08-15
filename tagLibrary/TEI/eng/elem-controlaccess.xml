@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-controlaccess"
+     type="elementDocumentation">
+   <head>
+      <gi>controlaccess</gi>
+      <seg type="fullName">Controlled Access Headings</seg>
+   </head>
+   <div type="summary">
+      <p>An element that binds together elements containing access headings for the described materials.</p>
+   </div>
+   <div type="mayContain">
+      <p>blockquote, chronlist, controlaccess, corpname, famname, function, genreform, geogname, head, list, name, occupation, p, persname, subject, table, title</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>archdesc, c, c01, c02, c03, c04, c05, c06, c07, c08, c09, c10, c11, c12, controlaccess</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>Use <gi>controlaccess</gi> to bundle in a single group access points — names,
+                     topics, places, functions, occupations, titles, and genre terms — that
+                     represent the contexts and contents of the materials described. Although
+                        <gi>controlaccess</gi> is often used within <gi>archdesc</gi> to provide
+                     significant access terms for the entirety of the materials described, it may be
+                     used at the component level to provide terms specific to a component if so
+                     desired.</p>
+      <p>
+         <gi>controlaccess</gi> helps to enable authority-controlled searching across
+                     finding aids, particularly when its children contain terms drawn from
+                     nationally or internationally controlled vocabularies such as the Library of
+                     Congress Subject Headings (LCSH) or the UK Archival Thesaurus (UKAT) for
+                     topics, the Virtual International Authority File (VIAF) for names, or GeoNames
+                     for places.</p>
+      <p>See also:</p>
+      <list>
+         <item>
+            <gi>relations</gi> contains one or more <gi>relation</gi> elements that
+                        identify an external entity or concept, and describe the nature of the
+                        relationship of the described materials to that entity or concept.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:controlaccess>
+            <ead:persname encodinganalog="600"
+                          relator="creator"
+                          rules="RDA"
+                          identifier="http://viaf.org/viaf/23746712">
+               <ead:part localtype="surname">Casey</ead:part>
+               <ead:part localtype="givenname">Silas</ead:part>
+               <ead:part localtype="dates">1807-1882</ead:part>
+            </ead:persname>
+            <ead:famname encodinganalog="600" identifier="http://lccn.loc.gov/sh85128074">
+               <ead:part>Stevens family</ead:part>
+            </ead:famname>
+            <ead:corpname encodinganalog="610"
+                          identifier="http://viaf.org/viaf/139169065"
+                          lang="eng">
+               <ead:part>Hudson's Bay Company</ead:part>
+            </ead:corpname>
+            <ead:corpname encodinganalog="610"
+                          identifier="http://viaf.org/viaf/139169065"
+                          lang="fre">
+               <ead:part>Compagnie de la Baie d'Hudsonâ€&#x8f;</ead:part>
+            </ead:corpname>
+                        [. . .]
+                        <ead:subject encodinganalog="650" rules="RDA" source="lcsh">
+               <ead:part>Railroads</ead:part>
+               <ead:part>Washington (State)</ead:part>
+               <ead:part>History</ead:part>
+            </ead:subject>
+                        [. . .]
+                        <ead:genreform encodinganalog="655" source="gmgpc">
+               <ead:part>Diaries</ead:part>
+            </ead:genreform>
+            <ead:geogname encodinganalog="651" identifier="http://viaf.org/viaf/155860715">
+               <ead:part>Washington (State)</ead:part>
+            </ead:geogname>
+            <ead:occupation encodinganalog="656" source="aat">
+               <ead:part>Politicians</ead:part>
+            </ead:occupation>
+            <ead:name encodinganalog="610" rules="RDA">
+               <ead:part>Winwood</ead:part>
+            </ead:name>
+            <ead:function encodinganalog="657" source="aat">
+               <ead:part>Legislating</ead:part>
+            </ead:function>
+         </ead:controlaccess>
+      </eg:egXML>
+   </div>
+</div>

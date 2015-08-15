@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-relations"
+     type="elementDocumentation">
+   <head>
+      <gi>relations</gi>
+      <seg type="fullName">Relations</seg>
+   </head>
+   <div type="summary">
+      <p>An element that groups one or more <gi>relation</gi> elements, which identify
+                     external entities and characterize the nature of their relationships to the
+                     materials being described.</p>
+   </div>
+   <div type="mayContain">
+      <p>relation</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>archdesc, c, c01, c02, c03, c04, c05, c06, c07, c08, c09, c10, c11, c12</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>base</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>A wrapper element that groups together one or more <gi>relation</gi> elements,
+                     each of which encodes a specific relationship.</p>
+      <p>The material described in an EAD instance may have relationships with other resources:</p>
+      <list>
+         <item>For archival collections, bibliographic resources, or artifacts, use
+                           <gi>relation</gi> with the <att>relationtype</att> set to
+                        "resourcerelation."</item>
+         <item>For corporate bodies, persons or families, use <gi>relation</gi> with the
+                           <att>relationtype</att> set to "cpfrelation."</item>
+         <item>For functions use, <gi>relation</gi> with the <att>relationtype</att> set
+                        to "functionrelation."</item>
+         <item>For relationships to other entities such as places, events and topics,
+                        use <gi>relation</gi> with the <att>relationtype</att> set to
+                        "otherrelationtype" and the type of related entity specified in the
+                           <att>otherrelationtype</att>.</item>
+      </list>
+      <p>See also:</p>
+      <list>
+         <item>
+            <gi>controlaccess</gi>, which binds together elements containing access
+                        headings from controlled vocabularies related to the described
+                        materials.</item>
+      </list>
+      <p>Element status:</p>
+      <list>
+         <item>In EAD3 <gi>relations</gi> is designated an "experimental" element. This
+                        status reflects a lack of consensus within the Technical Subcommittee for
+                        Encoded Archival Description (TS-EAD) regarding its inclusion in the schema
+                        due to concerns that it might duplicate functionality already present and a
+                        lack of clarity at the time of developing EAD3 as to how Linked Data will be
+                        integrated into archival description. </item>
+         <item>As an "experimental" element, it is not guaranteed that
+                           <gi>relations</gi> will persist in the next version of EAD in its current
+                        form. However, TS-EAD encourages its use so that the EAD community will
+                        learn more about how the <gi>relations</gi> model works within archival
+                        description, and anticipates providing a forward migration path.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Optional, not repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:archdesc>
+            <ead:did>
+               <ead:unittitle>Michael Butterworth Papers</ead:unittitle> [...] </ead:did>
+            <ead:relations>
+               <ead:relation relationtype="resourcerelation"
+                             href="http://resolver.bl.uk/ark:/81055/vdc_100000000035.0x000122"
+                             actuate="onrequest"
+                             show="new"
+                             arcrole="http://www.w3c.org/2000/01/rdf-schema#seeAlso"
+                             linkrole="http://purl.org/archival/vocab/arch#Collection">&gt;
+                                 <ead:relationentry>Add MS 88967: Michael Butterworth and J G Ballard: Correspondence, 1965-2011</ead:relationentry>
+               </ead:relation>
+            </ead:relations> [...] </ead:archdesc>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:c01 level="series">
+            <ead:did>
+               <ead:unittitle>Archives du Bretagne</ead:unittitle> [...] </ead:did>
+            <ead:relations>
+               <ead:relation relationtype="resourcerelation">
+                  <ead:relationentry>Archives du cabinet du préfet du Morbihan</ead:relationentry>
+                  <ead:geogname>
+                     <ead:part>Morbihan, département du (France)</ead:part>
+                  </ead:geogname>
+               </ead:relation>
+            </ead:relations>
+         </ead:c01>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:archdesc level="collection">
+            <ead:did>
+               <ead:unittitle>Johann Sebastian Bach Papers</ead:unittitle>
+            </ead:did>
+            <ead:relations>
+               <ead:relation relationtype="cpfrelation"
+                             arcrole="http://purl.org/dc/terms/subject"
+                             linkrole="http://xmlns.com/foaf/0.1/Person"
+                             href="http://socialarchive.iath.virginia.edu/ark:/99166/w6v988fv">
+                  <ead:relationentry>Carl Philipp Emanuel Bach</ead:relationentry>
+                  <ead:descriptivenote>
+                     <ead:p>Bach's son</ead:p>
+                  </ead:descriptivenote>
+               </ead:relation>
+               <ead:relation relationtype="cpfrelation"
+                             arcrole="http://purl.org/dc/terms/subject"
+                             linkrole="http://xmlns.com/foaf/0.1/Person"
+                             href="http://viaf.org/viaf/71579513">
+                  <ead:relationentry>Georg Philipp Telemann</ead:relationentry>
+                  <ead:descriptivenote>
+                     <ead:p>Bach's godfather</ead:p>
+                  </ead:descriptivenote>
+               </ead:relation>
+            </ead:relations>
+         </ead:archdesc>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:archdesc level="collection">
+            <ead:did>
+               <ead:unittitle>Henry VIII Papers</ead:unittitle> [...] </ead:did>
+            <ead:relations>
+               <ead:relation relationtype="cpfrelation"
+                             arcrole="http://purl.org/dc/terms/subject"
+                             linkrole="http://xmlns.com/foaf/0.1/Person"
+                             href="http://n2t.net/ark:/99166/w62r4rsz">
+                  <ead:relationentry>Katherine of Aragon</ead:relationentry>
+                  <ead:daterange>
+                     <ead:fromdate standarddate="1509-06-11">11 June 1509</ead:fromdate>
+                     <ead:todate standarddate="1533-05-23">23 May 1533</ead:todate>
+                  </ead:daterange>
+                  <ead:descriptivenote>
+                     <ead:p>Wife</ead:p>
+                  </ead:descriptivenote>
+               </ead:relation>
+            </ead:relations>
+         </ead:archdesc>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:c01 level="series">
+            <ead:did>
+               <ead:unittitle>Commissioned projects</ead:unittitle> [...] </ead:did>
+            <ead:relations>
+               <ead:relation relationtype="cpfrelation">
+                  <ead:relationentry>Wohnbedarf Furniture Company</ead:relationentry>
+                  <ead:geogname>
+                     <ead:part>Basel, Switzerland</ead:part>
+                  </ead:geogname>
+               </ead:relation>
+               <ead:relation relationtype="cpfrelation">
+                  <ead:relationentry>New York World's Fair</ead:relationentry>
+                  <ead:datesingle standarddate="1939">1939</ead:datesingle>
+                  <ead:geogname>
+                     <ead:part>New York, NY</ead:part>
+                  </ead:geogname>
+               </ead:relation>
+            </ead:relations>
+         </ead:c01>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:archdesc level="collection">
+            <ead:did>
+               <ead:unittitle>ExxonMobil Corporate Records</ead:unittitle> [...] </ead:did>
+            <ead:relations>
+               <ead:relation relationtype="resourcerelation"
+                             href="http://www.amazon.com/Private-Empire-ExxonMobil-American-Power/dp/0143123548">
+                  <ead:relationentry>Private Empire: ExxonMobil and American Power, by Steve Coll (Penguin Books : 2013)</ead:relationentry>
+               </ead:relation>
+               <ead:relation relationtype="resourcerelation"
+                             href="http://www.lib.utexas.edu/taro/utcah/00462/cah-00462.html">
+                  <ead:relationentry>ExxonMobil Historical Collection</ead:relationentry>
+                  <ead:descriptivenote>
+                     <ead:p>Dolph Briscoe Center for American History,The University of Texas at Austin; includes predecessor organizations</ead:p>
+                  </ead:descriptivenote>
+               </ead:relation>
+               <ead:relation relationtype="cpfrelation" href="http://lccn.loc.gov/n79053084">
+                  <ead:relationentry>Exxon</ead:relationentry>
+                  <ead:daterange>
+                     <ead:fromdate standarddate="1972">1972</ead:fromdate>
+                     <ead:todate standarddate="1999">1999</ead:todate>
+                  </ead:daterange>
+                  <ead:geogname>
+                     <ead:part>United States</ead:part>
+                  </ead:geogname>
+               </ead:relation>
+               <ead:relation relationtype="cpfrelation" href="http://lccn.loc.gov/n82045453">
+                  <ead:relationentry>Mobil</ead:relationentry>
+                  <ead:daterange>
+                     <ead:fromdate standarddate="1911">1911</ead:fromdate>
+                     <ead:todate standarddate="1999">1999</ead:todate>
+                  </ead:daterange>
+                  <ead:geogname>
+                     <ead:part>United States</ead:part>
+                  </ead:geogname>
+               </ead:relation>
+               <ead:relation relationtype="cpfrelation" href="http://lccn.loc.gov/n85037919">
+                  <ead:relationentry>Imperial Oil Limited</ead:relationentry>
+                  <ead:daterange>
+                     <ead:fromdate standarddate="2012">2012</ead:fromdate>
+                  </ead:daterange>
+                  <ead:geogname>
+                     <ead:part>Canada</ead:part>
+                  </ead:geogname>
+               </ead:relation>
+               <ead:relation relationtype="cpfrelation">
+                  <ead:relationentry>Rockefeller, John D.</ead:relationentry>
+                  <ead:descriptivenote>
+                     <ead:p>Founder</ead:p>
+                  </ead:descriptivenote>
+               </ead:relation>
+               <ead:relation relationtype="functionrelation" href="http://lccn.loc.gov/sh85063317">
+                  <ead:relationentry>Hydraulic fracturing</ead:relationentry>
+               </ead:relation>
+               <ead:relation relationtype="functionrelation">
+                  <ead:relationentry>Gasoline retail</ead:relationentry>
+                  <ead:daterange>
+                     <ead:fromdate standarddate="1999">1999</ead:fromdate>
+                     <ead:todate standarddate="2008">2008</ead:todate>
+                  </ead:daterange>
+                  <ead:descriptivenote>
+                     <ead:p>Transitioning out of retail business as of 2008; retail will be taken over by subsidiaries</ead:p>
+                  </ead:descriptivenote>
+               </ead:relation>
+               <ead:relation relationtype="functionrelation" href="http://lccn.loc.gov/sh85100427">
+                  <ead:relationentry>Petroleum engineering</ead:relationentry>
+                  <ead:descriptivenote>
+                     <ead:p>including production of plastics, lubricants, etc.</ead:p>
+                  </ead:descriptivenote>
+               </ead:relation>
+               <ead:relation relationtype="otherrelationtype" otherrelationtype="Creator">
+                  <ead:relationentry>Exxon Valdez oil spill</ead:relationentry>
+                  <ead:geogname>
+                     <ead:part>Bligh Reef, Prince William Sound, Alaska</ead:part>
+                     <ead:geographiccoordinates coordinatesystem="utm">6V 490800mE 6719917mN</ead:geographiccoordinates>
+                  </ead:geogname>
+               </ead:relation>
+            </ead:relations> [...] </ead:archdesc>
+      </eg:egXML>
+   </div>
+</div>

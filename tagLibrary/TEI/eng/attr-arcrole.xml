@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="attr-arcrole"
+     type="attributeDocumentation">
+   <head>
+      <att>arcrole</att>
+      <seg type="fullName">Arc Role</seg>
+   </head>
+   <div type="summary">
+      <p>A URI that describes the nature of the source of a link as relative to the target of the link.</p>
+   </div>
+   <div type="dataType">
+      <p>anyURI</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:relation relationtype="cpfrelation" arcrole="hasSubject">
+            <ead:relationentry>Carl Philipp Emanuel Bach</ead:relationentry>
+            <ead:descriptivenote>
+               <ead:p>Bach's son</ead:p>
+            </ead:descriptivenote>
+         </ead:relation>
+      </eg:egXML>
+   </div>
+</div>

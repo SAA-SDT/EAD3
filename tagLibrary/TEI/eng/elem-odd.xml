@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-odd"
+     type="elementDocumentation">
+   <head>
+      <gi>odd</gi>
+      <seg type="fullName">Other Descriptive Data</seg>
+   </head>
+   <div type="summary">
+      <p>For recording additional information about the described materials that is not
+                     easily incorporated into one of the other named elements within
+                        <gi>archdesc</gi> and <gi>c</gi>.</p>
+   </div>
+   <div type="mayContain">
+      <p>blockquote, chronlist, head, list, odd, p, table</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>archdesc, c, c01, c02, c03, c04, c05, c06, c07, c08, c09, c10, c11, c12, odd</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>
+         <gi>odd</gi> may be useful in converting legacy finding aids to the EAD format,
+                     by designating as "other" information that does not easily map to a more
+                     specific element. <gi>odd</gi> may be used when information about the described
+                     materials does not correspond to another element's definition, when the
+                     information is heterogeneous enough to make a single classification difficult,
+                     and when shifting the information to permit more specific content designation
+                     would be too costly or burdensome.</p>
+      <p>Use <gi>odd</gi> only after considering how the existence of unspecified
+                     content will affect search, retrieval, and display.</p>
+      <p>Attribute usage:</p>
+      <list>
+         <item>Use <att>localtype</att> to more specifically designate the type of
+                        information being provided.</item>
+      </list>
+      <p>References:</p>
+      <p>ISAD(G) 3.6.1</p>
+      <p>MARC 500</p>
+      <p>MODS <gi>note</gi>
+      </p>
+   </div>
+   <div type="references">
+      <p>ISAD(G) 3.6.1</p>
+      <p>MARC 500</p>
+      <p>MODS <gi>note</gi>
+      </p>
+      <p>Availability:</p>
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:odd>
+            <ead:head>Selected list of correspondents</ead:head>
+            <ead:p>All correspondence in the collection is arranged chronologically. Following is a list of notable correspondents, with dates.</ead:p>
+            <ead:list>
+               <ead:item>Adams, Samuel <ead:list>
+                     <ead:item>1870 Mar 3</ead:item>
+                     <ead:item>1871 Jan 15</ead:item>
+                  </ead:list>
+               </ead:item>
+               <ead:item>Barlow, Christine <ead:list>
+                     <ead:item>1872 Feb 15</ead:item>
+                     <ead:item>1872 Nov 24</ead:item>
+                  </ead:list>
+               </ead:item> [. . .] </ead:list>
+         </ead:odd>
+      </eg:egXML>
+   </div>
+</div>

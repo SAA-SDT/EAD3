@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-c"
+     type="elementDocumentation">
+   <head>
+      <gi>c</gi>
+      <seg type="fullName"/>
+   </head>
+   <div type="summary">
+      <p>An element that designates a subordinate part of the materials being described.</p>
+   </div>
+   <div type="mayContain">
+      <p>accessrestrict, accruals, acqinfo, altformavail, appraisal, arrangement, bibliography, bioghist, c, controlaccess, custodhist, did, fileplan, head, index, legalstatus, odd, originalsloc, otherfindaid, phystech, prefercite, processinfo, relatedmaterial, relations, scopecontent, separatedmaterial, thead, userestrict</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>base</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>level</cell>
+            <cell>Optional (values limited to: class, collection, file, fonds, item, otherlevel, recordgrp, series, subfonds, subgrp, subseries)</cell>
+         </row>
+         <row>
+            <cell>otherlevel</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>As a wrapper for a set of elements, <gi>c</gi> provides information about the
+                     content, context, and extent of a subordinate body of materials. It is always a
+                     child or descendant of <gi>dsc</gi> and often a child and/or parent of another
+                        <gi>c</gi>. Each <gi>c</gi> identifies a logical section, or level, of the
+                     described materials. The physical filing separations between components need
+                     not always coincide with the intellectual separations. For example, a
+                        <gi>c</gi> that designates dramatic works might end in the same box in which
+                     the next <gi>c</gi> begins with short stories. Also, not every <gi>c</gi>
+                     directly corresponds to a folder or other physical entity. Some <gi>c</gi>
+                     elements simply represent a logical point in a hierarchical description.</p>
+      <p>Components may be subdivided into smaller and smaller components and may
+                     eventually reach the level of a single item. For example, the components of a
+                     collection may be a series, components of series may be subseries, components
+                     of subseries may be files, and components of files may be items. A component
+                     may be either an unnumbered <gi>c</gi> or a numbered <gi>c01</gi>,
+                     <gi>c02</gi>, etc. Numbered and un-numbered components cannot be mixed in an
+                     EAD instance, and only up to twelve numbered <gi>c</gi>s,
+                        (<gi>c01</gi>-<gi>c12</gi>) may be used in an EAD instance. Numbering
+                     components may assist a finding aid encoder in accurately nesting
+                     components.</p>
+      <p>Attribute usage:</p>
+      <list>
+         <item>Use <att>base</att> to specify a base URI other than the URI of the EAD
+                        instance for the purpose of resolving any relative URIs contained within
+                           <gi>c</gi>.</item>
+         <item>Use <att>encodinganalog</att> to indicate corresponding data elements
+                        categories in another data format, such as MARC.</item>
+         <item>Use <att>level</att> to identify the logical type of the component, using
+                        one of these values: class, collection, file, fonds, item, otherlevel,
+                        recordgrp, series, subfonds, subgrp, subseries. Assigning <att>level</att>
+                        for the highest <gi>c</gi> is recommended; thereafter the attribute may be
+                        used when the repository deems it useful, or when encoding protocols dictate
+                        its use.</item>
+         <item>Use <att>otherlevel</att> to specify the level of a component for which
+                        the <att>level</att> has been set to "otherlevel."</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="references">
+      <p>ISAD(G) 3.1.4 is equivalent to <att>level</att>
+      </p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:dsc dsctype="combined">
+            <ead:c level="series">
+               <ead:did>
+                  <ead:unitid>Series 1</ead:unitid>
+                  <ead:unittitle>Correspondence</ead:unittitle>
+               </ead:did>
+               <ead:scopecontent>[...]</ead:scopecontent>
+               <ead:c level="subseries">
+                  <ead:did>
+                     <ead:unitid>Subseries 1.1</ead:unitid>
+                     <ead:unittitle>Outgoing Correspondence</ead:unittitle>
+                  </ead:did>
+                  <ead:c level="file">
+                     <ead:did>
+                        <ead:unittitle>Abbinger-Aldrich</ead:unittitle>
+                     </ead:did>
+                  </ead:c> [. . .] </ead:c>
+               <ead:c level="subseries">
+                  <ead:did>
+                     <ead:unitid>Subseries 1.2</ead:unitid>
+                     <ead:unittitle>Incoming Correspondence</ead:unittitle>
+                  </ead:did>
+                  <ead:c level="file">
+                     <ead:did>
+                        <ead:unittitle>Adams-Ayers</ead:unittitle>
+                     </ead:did>
+                  </ead:c> [. . .] </ead:c>
+            </ead:c>
+         </ead:dsc>
+      </eg:egXML>
+   </div>
+</div>

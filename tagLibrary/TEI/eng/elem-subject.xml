@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-subject"
+     type="elementDocumentation">
+   <head>
+      <gi>subject</gi>
+      <seg type="fullName">Subject</seg>
+   </head>
+   <div type="summary">
+      <p>An element for encoding topics represented in the materials being described.</p>
+   </div>
+   <div type="mayContain">
+      <p>part</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>abstract, archref, bibref, controlaccess, entry, event, indexentry, item, namegrp, p, physfacet, ref, unittitle</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>identifier</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>normal</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>relator</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>rules</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>source</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>Indicates a topic reflected in the described materials.</p>
+      <p>
+         <gi>subject</gi> must contain one or more <gi>part</gi> elements. A single
+                        <gi>part</gi> may be used for the entire string, or if more granularity is
+                     desired, multiple <gi>part</gi> elements may be used to capture each component
+                     of the subject term, e.g.,</p>
+      <p>Part 1: Boats</p>
+      <p>Part 2: California</p>
+      <p>Part 3: 20th Century</p>
+      <p>Use <gi>subject</gi> within <gi>controlaccess</gi> for encoding subjects as
+                     defined by controlled vocabularies or according to appropriate rules. You may
+                     also use <gi>subject</gi> for encoding subjects as they appear within text.</p>
+      <p>Attribute usage:</p>
+      <list>
+         <item>Use <att>encodinganalog</att> to indicate corresponding data elements in
+                        another data format, such as MARC.</item>
+         <item>Use <att>identifier</att> to provide a number, code, or string (e.g.,
+                        URI) that uniquely identifies the subject in a controlled vocabulary,
+                        taxonomy, ontology, or other knowledge organization system. Do not confuse
+                        with <att>id</att>, which provides a unique id for the element within the
+                        XML instance.</item>
+         <item>Use <att>localtype</att>, if local practice requires specification of the
+                        type of subject.</item>
+         <item>Use <att>normal</att> to identify a standardized form of the subject if
+                        not provided in the element itself.</item>
+         <item>Use <att>relator</att> to specify, either as a URI or a string, other
+                        relationship(s) the subject has to the described materials. The schema does
+                        not limit possible values of <att>relator</att>, but an institution could
+                        define and enforce values elsewhere if desired.</item>
+      </list>
+      <list>
+         <item>Use <att>rules</att> to specify the descriptive rules followed for
+                        forming the subject.</item>
+         <item>Use <att>source</att> to indicate the vocabulary from which the subject
+                        has been taken.</item>
+      </list>
+      <p>See also:</p>
+      <list>
+         <item>Personal, corporate, family and geographic names used as subjects are
+                        tagged as <gi>persname</gi>, <gi>corpname</gi>, <gi>famname</gi>, and
+                           <gi>geogname</gi> respectively. The term "subject" can be used as the
+                        value of <att>relator</att> when indicating a personal name, corporate name,
+                        family, or geographic name is a subject of the materials being
+                        described.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Within <gi>indexentry</gi>: Optional, not repeatable</p>
+      <p>Within all other elements: Optional, repeatable</p>
+   </div>
+   <div type="references">
+      <p>MARC 650, 69X</p>
+      <p>MODS <gi>topic</gi>
+      </p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:controlaccess>
+            <ead:subject encodinganalog="650" rules="RDA" source="lcsh">
+               <ead:part>Indians of North America</ead:part>
+               <ead:part>Idaho</ead:part>
+            </ead:subject>
+            <ead:subject encodinganalog="650" rules="RDA" source="lcsh">
+               <ead:part>Railroads</ead:part>
+               <ead:part>Washington (State)</ead:part>
+               <ead:part>History</ead:part>
+            </ead:subject>
+         </ead:controlaccess>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:controlaccess>
+            <ead:subject>
+               <ead:part>Alien and Sedition laws, 1798</ead:part>
+            </ead:subject>
+            <ead:subject>
+               <ead:part>American Confederate voluntary exiles</ead:part>
+            </ead:subject>
+            <ead:subject>
+               <ead:part>Kentucky and Virginia resolutions of 1798</ead:part>
+            </ead:subject>
+         </ead:controlaccess>
+      </eg:egXML>
+   </div>
+</div>

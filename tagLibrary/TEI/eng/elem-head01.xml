@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-head01"
+     type="elementDocumentation">
+   <head>
+      <gi>head01</gi>
+      <seg type="fullName">First Heading</seg>
+   </head>
+   <div type="summary">
+      <p>A formatting element for the first facet heading in a multifacet list.</p>
+   </div>
+   <div type="mayContain">
+      <p>[text], abbr, emph, expan, foreign, lb, ptr, ref</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>listhead</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>Use within <gi>listhead</gi> to designate the heading over the first facet in a
+                     multifacet list.</p>
+      <p>See also:</p>
+      <list>
+         <item>Do not confuse with the generic <gi>head</gi>, which designates a heading
+                        for an entire list or other section of text.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Optional, not repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:chronlist>
+            <ead:listhead>
+               <ead:head01>Date(s)</ead:head01>
+               <ead:head02>Location(s)</ead:head02>
+               <ead:head03>Event(s)</ead:head03>
+            </ead:listhead>
+            <ead:chronitem>
+               <ead:dateset>
+                  <ead:datesingle standarddate="1942-03">March 1942</ead:datesingle>
+                  <ead:daterange>
+                     <ead:fromdate standarddate="1942-05">May 1946</ead:fromdate>
+                     <ead:todate standarddate="1946-09">September 1946</ead:todate>
+                  </ead:daterange>
+               </ead:dateset>
+               <ead:chronitemset>
+                  <ead:geogname>
+                     <ead:part>Clear Spring</ead:part>
+                     <ead:part>Maryland</ead:part>
+                     <ead:geographiccoordinates coordinatesystem="UTM">18S 248556mE 4393694mN</ead:geographiccoordinates>
+                  </ead:geogname>
+                  <ead:event>Enlisted in Civilian Public Service as a conscientious objector.</ead:event>
+                  <ead:event>Served at CPS Camp No. 24, subunit 4 in Clear Spring, Maryland. Constructed fences to conserve soil, practiced specialized tilling, and dug water diversion ditches. Fought occasional forest fires.</ead:event>
+               </ead:chronitemset>
+            </ead:chronitem>
+         </ead:chronlist>
+      </eg:egXML>
+   </div>
+</div>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="attr-value"
+     type="attributeDocumentation">
+   <head>
+      <att>value</att>
+      <seg type="fullName">Value</seg>
+   </head>
+   <div type="summary">
+      <p>General attribute, required in a number of children of <gi>control</gi>,
+                        that provides controlled terminology related to the management of an EAD
+                        instance. The terms available for <att>value</att> are defined in closed
+                        lists that vary by element as follows:</p>
+   </div>
+   <div type="values">
+      <p>Values in <gi>eventtype</gi>: created, revised, deleted, cancelled, derived,
+                        updated, unknown</p>
+      <p>Values in <gi>agenttype</gi>: human, machine, unknown</p>
+      <p>Values in <gi>publicationstatus</gi>: inprocess, approved, published</p>
+      <p>Values in <gi>maintenancestatus</gi>: revised, deleted, new, deletedsplit,
+                        deletedmerged, deletedreplaced, cancelled, derived</p>
+   </div>
+</div>

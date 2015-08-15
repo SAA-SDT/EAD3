@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-p"
+     type="elementDocumentation">
+   <head>
+      <gi>p</gi>
+      <seg type="fullName">Paragraph</seg>
+   </head>
+   <div type="summary">
+      <p>A general purpose element used to encode blocks of text.</p>
+   </div>
+   <div type="mayContain">
+      <p>[text], abbr, corpname, date, emph, expan, famname, footnote, foreign, function, genreform, geogname, lb, list, name, num, occupation, persname, ptr, quote, ref, subject, title</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>accessrestrict, accruals, acqinfo, altformavail, appraisal, arrangement, bibliography, bioghist, blockquote, controlaccess, controlnote, custodhist, descriptivenote, dsc, editionstmt, fileplan, footnote, index, legalstatus, odd, originalsloc, otherfindaid, phystech, prefercite, processinfo, publicationstmt, relatedmaterial, scopecontent, separatedmaterial, seriesstmt, userestrict</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>Use <gi>p</gi> for bounding blocks of text. A paragraph may be a subdivision of
+                     a larger composition or it may exist alone. It is usually typographically
+                     distinguished: A line space is often left blank before it; the text begins on a
+                     new line; and the first letter of the first word may be indented, enlarged, or
+                     both.</p>
+   </div>
+   <div type="availability">
+      <p>Within <gi>descriptivenote</gi>: Required, repeatable</p>
+      <p>Within all other parents: Optional, repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:bioghist>
+            <ead:head>Biographical Sketch</ead:head>
+            <ead:p>John Ferguson Godfrey was born in Toronto on December 19, 1942. He received a B.A. (Hons.) from Trinity College, University of Toronto, in 1965, a M.Phil. degree from Balliol College, Oxford University, England, in 1967, and a D.Phil. degree from St. Anthony's College, Oxford University, in 1975. He holds the title of Doctor of Sacred letters (honoris causa), Trinity College (1987).</ead:p>
+            <ead:p>Mr. Godfrey taught in the Department of History of Dalhousie University, Halifax, first as Assistant Professor (1970-1975), and then as Associate Professor (1980-1987). At King's College University, Halifax he held the position of Assistant Professor (1975-1976), before becoming President and Vice-Chancellor (1977-1987).</ead:p>
+         </ead:bioghist>
+      </eg:egXML>
+   </div>
+</div>

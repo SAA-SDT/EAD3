@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="attr-show"
+     type="attributeDocumentation">
+   <head>
+      <att>show</att>
+      <seg type="fullName">Show</seg>
+   </head>
+   <div type="summary">
+      <p>A control that defines whether a remote resource that is the target of a
+                        link appears in a new window, replaces the local resource that initiated the
+                        link, appears at the point of the link (embed), initiates some other action,
+                        or causes no target resource to display. It is used in conjunction with
+                           <att>actuate</att> to determine link behavior.</p>
+   </div>
+   <div type="values">
+      <p>new, replace, embed, other, none</p>
+   </div>
+</div>

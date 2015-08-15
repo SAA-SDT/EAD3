@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="attr-repositoryencoding"
+     type="attributeDocumentation">
+   <head>
+      <att>repositoryencoding</att>
+      <seg type="fullName">Repository Encoding</seg>
+   </head>
+   <div type="summary">
+      <p>The authoritative source or rules for values supplied in <gi>agencycode</gi>
+                        and <att>repositorycode</att> in <gi>unitid</gi>. If the value
+                        "otherrepositoryencoding" is selected an alternate code list should be
+                        specified in <gi>conventiondeclaration</gi>. Available only in
+                           <gi>control</gi>.</p>
+   </div>
+   <div type="values">
+      <p>iso15511, otherrepositoryencoding</p>
+   </div>
+</div>

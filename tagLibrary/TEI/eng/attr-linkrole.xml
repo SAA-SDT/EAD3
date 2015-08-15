@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="attr-linkrole"
+     type="attributeDocumentation">
+   <head>
+      <att>linkrole</att>
+      <seg type="fullName">Link Role</seg>
+   </head>
+   <div type="summary">
+      <p>A URI that characterizes the nature of the remote resource to which a linking element refers.</p>
+   </div>
+   <div type="dataType">
+      <p>anyURI</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:representation href="http://drs.library.yale.edu:8083/fedora/get/beinecke:jonesss/PDF"
+                             linkrole="application/pdf">PDF version of finding aid</ead:representation>
+      </eg:egXML>
+   </div>
+</div>

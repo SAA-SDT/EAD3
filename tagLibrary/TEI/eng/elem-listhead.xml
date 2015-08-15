@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-listhead"
+     type="elementDocumentation">
+   <head>
+      <gi>listhead</gi>
+      <seg type="fullName">List Heading</seg>
+   </head>
+   <div type="summary">
+      <p>An element for grouping several headings for faceted lists.</p>
+   </div>
+   <div type="mayContain">
+      <p>head01, head02, head03</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>chronlist, index, list</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>A formatting element that groups headings for different facets in a definition
+                     list (&lt;list listtype="deflist"&gt;), <gi>chronlist</gi>, or <gi>index</gi>.
+                     The headings are called <gi>head01</gi>, <gi>head02</gi>, and <gi>head03</gi>
+                     and are available in that sequence, although each is optional.</p>
+      <p>See also:</p>
+      <list>
+         <item>Do not confuse with <gi>head</gi>, which designates a title or caption
+                        for a section of text where columnar headings are not needed.</item>
+         <item>Do not confuse with <gi>thead</gi>, which is used in
+                        <gi>table</gi>.</item>
+         <item>Do not use <gi>head03</gi> within a definition list (&lt;list
+                        listtype="deflist"&gt;). A definition list can only have two facets for the
+                           <gi>label</gi> and <gi>item</gi> elements within <gi>defitem</gi>.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Optional, not repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:chronlist>
+            <ead:head>Publications List</ead:head>
+            <ead:listhead>
+               <ead:head01>Publication Year</ead:head01>
+               <ead:head02>Book Title</ead:head02>
+            </ead:listhead>
+            <ead:chronitem>
+               <ead:datesingle>1882</ead:datesingle>
+               <ead:event>
+                  <ead:title>
+                     <ead:part>Across the Sea in a Sieve.</ead:part>
+                  </ead:title>
+                              London: Jos. Banks.</ead:event>
+            </ead:chronitem>
+            <ead:chronitem>
+               <ead:datesingle>1886</ead:datesingle>
+               <ead:event>
+                  <ead:title>
+                     <ead:part>My Life and Other Tragedies.</ead:part>
+                  </ead:title> London: Chatto and
+                              Windus.</ead:event>
+            </ead:chronitem>
+         </ead:chronlist>
+      </eg:egXML>
+   </div>
+</div>

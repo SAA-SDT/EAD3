@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-term"
+     type="elementDocumentation">
+   <head>
+      <gi>term</gi>
+      <seg type="fullName">Term</seg>
+   </head>
+   <div type="summary">
+      <p>A child element of <gi>localcontrol</gi> used to specify a descriptive term in
+                     accordance with local rules.</p>
+   </div>
+   <div type="mayContain">
+      <p>[text]</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>localcontrol</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>identifier</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lastdatetimeverified</cell>
+            <cell>Optional (must follow pattern based on ISO 8601)</cell>
+         </row>
+         <row>
+            <cell>rules</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>source</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>transliteration</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>Use <gi>term</gi> to record the value of the entry enabled by the
+                        <att>localtype</att> in <gi>localcontrol</gi>. For example, if the content
+                     of <att>localtype</att> is "levelofdetail," <gi>term</gi> might be
+                     "minimum."</p>
+      <p>Attribute usage:</p>
+      <list>
+         <item>Use <att>identifier</att> to provide a number, code, or string (e.g.,
+                        URI) that uniquely identifies the term in a controlled vocabulary, taxonomy,
+                        ontology, or other knowledge organization system. Do not confuse with
+                           <att>id</att>, which provides a unique id for the element within the XML
+                        instance.</item>
+         <item>Use <att>lastdatetimeverified</att> to specify when the term captured was
+                        last verified for accuracy.</item>
+         <item>Use <att>rules</att> to indicate any rules used in formulating the
+                        term.</item>
+         <item>Use <att>source</att> to indicate the vocabulary from which the term has
+                        been taken.</item>
+         <item>Use <att>transliteration</att> for indicating the conventions or rules
+                        that prescribe a method for converting one script to another.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Optional, not repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:localcontrol localtype="levelofdetail">
+            <ead:term>Minimum</ead:term>
+         </ead:localcontrol>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:localcontrol localtype="fileSize">
+            <ead:term>8 MB</ead:term>
+         </ead:localcontrol>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:localcontrol localtype="daoFlag">
+            <ead:term>true</ead:term>
+         </ead:localcontrol>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:localcontrol localtype="maxComponentID">
+            <ead:term>414</ead:term>
+         </ead:localcontrol>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:localcontrol localtype="processinglevel">
+            <ead:term>item</ead:term>
+         </ead:localcontrol>
+      </eg:egXML>
+   </div>
+</div>

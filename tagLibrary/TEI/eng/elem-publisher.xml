@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-publisher"
+     type="elementDocumentation">
+   <head>
+      <gi>publisher</gi>
+      <seg type="fullName">Publisher</seg>
+   </head>
+   <div type="summary">
+      <p>A child element of <gi>publicationstmt</gi> that identifies the institution or
+                     agency responsible for distribution of the EAD instance.</p>
+   </div>
+   <div type="mayContain">
+      <p>[text], abbr, emph, expan, foreign, lb, ptr, ref</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>publicationstmt</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>Use <gi>publisher</gi> to record the name of the agent responsible for issuing
+                     or distributing the EAD instance. Often this is the same corporate body
+                     identified in <gi>repository</gi> in <gi>did</gi>.</p>
+      <p>Attribute usage:</p>
+      <list>
+         <item>Use <att>localtype</att> if local practice requires recording the type of
+                        name.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Within <gi>publicationstmt</gi> one of <gi>address</gi>, <gi>date</gi>,
+                        <gi>num</gi>, <gi>p</gi>, or <gi>publisher</gi> is required, repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:publicationstmt>
+            <ead:publisher>Yale University Library</ead:publisher>
+            <ead:publisher>Beinecke Rare Book and Manuscript Library</ead:publisher>
+            <ead:publisher>General Collection of Modern Books and Manuscripts</ead:publisher>
+            <ead:address>
+               <ead:addressline>New Haven, Connecticut</ead:addressline>
+            </ead:address>
+            <ead:date localtype="original" normal="2006-10">October 2006</ead:date>
+            <ead:p>
+               <ead:ref actuate="onrequest"
+                        show="new"
+                        href="http://hdl.handle.net/10079/9p8czk9"> Copyright © <ead:date localtype="copyright" normal="1996/2007">1996-2007</ead:date> by
+                              the Yale University Library.</ead:ref>
+            </ead:p>
+         </ead:publicationstmt>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:publicationstmt>
+            <ead:publisher>British Library</ead:publisher>
+         </ead:publicationstmt>
+      </eg:egXML>
+   </div>
+</div>

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-unitdatestructured"
+     type="elementDocumentation">
+   <head>
+      <gi>unitdatestructured</gi>
+      <seg type="fullName">Structured Date of the Unit</seg>
+   </head>
+   <div type="summary">
+      <p>A child element of <gi>did</gi> that enables structured, machine-processable
+                     expressions of the dates of the materials being described.</p>
+   </div>
+   <div type="mayContain">
+      <p>daterange, dateset, datesingle</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>did</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>calendar</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>certainty</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>datechar</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>era</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>label</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>unitdatetype</cell>
+            <cell>Optional (values limited to: bulk, inclusive)</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>
+         <gi>unitdatestructured</gi> provides a machine-processable statement of the
+                     date or dates the materials described were created, issued, copyrighted,
+                     broadcast, etc. <gi>unitdatestructured</gi> must contain one of the following
+                     child elements: <gi>datesingle</gi>, <gi>daterange</gi>, or
+                     <gi>dateset</gi>.</p>
+      <p>
+         <gi>unitdatestructured</gi> may contain only one child, therefore
+                        <gi>dateset</gi> must be used in situations where complex date information
+                     needs to be conveyed and requires at least two child elements. A date set may
+                     combine two or more <gi>datesingle</gi> and <gi>daterange</gi> elements.</p>
+      <p>Attribute usage:</p>
+      <list>
+         <item>Use <att>unitdatetype</att> to indicate if <gi>unitdatestructured</gi>
+                        represents inclusive dates or bulk (predominant) dates.</item>
+      </list>
+      <list>
+         <item>Use <att>certainty</att> to indicate if the date has been supplied or
+                        estimated by the archivist.</item>
+      </list>
+      <list>
+         <item>Use <att>datechar</att> to characterize the nature of the dates, such as
+                        creation or accumulation.</item>
+      </list>
+      <list>
+         <item>Use <att>calendar</att> to specify the calendar from which the date
+                        stems.</item>
+      </list>
+      <list>
+         <item>Use <att>era</att> to indicate the era that contextualizes the
+                        date.</item>
+      </list>
+      <p>See also:</p>
+      <list>
+         <item>Do not confuse <gi>unitdatestructured</gi> with <gi>date</gi>, which is
+                        used to encode dates not related to the creation or accumulation of the
+                        records being described.</item>
+         <item>Use <gi>unitdate</gi> to provide an unstructured statement of the dates
+                        of the material being described.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="references">
+      <p>ISAD(G) 3.1.3</p>
+      <p>MARC 245 subfield f for inclusive dates, 245 subfield g for bulk dates, or 260 subfield c</p>
+      <p>MODS <gi>originInfo</gi>
+         <gi>dateCreated</gi>
+      </p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:did>
+            <ead:unittitle>Class Notes, Undergraduate</ead:unittitle>
+            <ead:unitdatestructured unitdatetype="inclusive">
+               <ead:daterange>
+                  <ead:fromdate notafter="1962">1962</ead:fromdate>
+                  <ead:todate notafter="1968">1968</ead:todate>
+               </ead:daterange>
+            </ead:unitdatestructured>
+            <ead:physdesc>12 notebooks</ead:physdesc>
+            <ead:container localtype="boxes">5-6</ead:container>
+            <ead:didnote>The notebooks contain months and days, not years. Estimated dates are based on the years Scully attended the University of Maryland.</ead:didnote>
+         </ead:did>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:unitdatestructured unitdatetype="inclusive" encodinganalog="245">
+            <ead:dateset>
+               <ead:datesingle standarddate="1963-01-22">1963 January 22</ead:datesingle>
+               <ead:daterange>
+                  <ead:fromdate standarddate="1971-06-01">1971 June 1</ead:fromdate>
+                  <ead:todate standarddate="1974-04-30">1974 April 30</ead:todate>
+               </ead:daterange>
+            </ead:dateset>
+         </ead:unitdatestructured>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:unitdatestructured certainty="circa" unitdatetype="inclusive">
+            <ead:daterange>
+               <ead:fromdate notbefore="1971" notafter="1975">around 1973</ead:fromdate>
+               <ead:todate standarddate="1992">1992</ead:todate>
+            </ead:daterange>
+         </ead:unitdatestructured>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:unitdatestructured>
+            <ead:daterange>
+               <ead:fromdate>1900</ead:fromdate>
+               <ead:todate>1910</ead:todate>
+            </ead:daterange>
+         </ead:unitdatestructured>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:unitdatestructured unitdatetype="inclusive">
+            <ead:datesingle standarddate="2015-06">2015 June</ead:datesingle>
+         </ead:unitdatestructured>
+      </eg:egXML>
+   </div>
+</div>

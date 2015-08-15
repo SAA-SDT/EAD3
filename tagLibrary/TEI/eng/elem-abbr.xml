@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-abbr"
+     type="elementDocumentation">
+   <head>
+      <gi>abbr</gi>
+      <seg type="fullName">Abbreviation</seg>
+   </head>
+   <div type="summary">
+      <p>An element for encoding the shortened form of a word or phrase.</p>
+   </div>
+   <div type="mayContain">
+      <p>[text]</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>abstract, addressline, archref, author, bibref, citation, container, conventiondeclaration, date, datesingle, didnote, dimensions, edition, emph, entry, event, fromdate, head, head01, head02, head03, item, label, localtypedeclaration, materialspec, num, p, part, physdesc, physfacet, physloc, publisher, quote, ref, sponsor, subtitle, titleproper, todate, unitdate, unitid, unittitle</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>expan</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>Used to record the abbreviated form of a word or phrase, for example, an acronym.</p>
+      <p>Use <gi>abbr</gi> within <gi>conventiondeclaration</gi> to identify the code
+                     for a thesaurus, controlled vocabulary, or another standard used in creating
+                     the EAD description. To improve interoperability, it is recommended that the
+                     value be selected from an authorized list of codes such as the MARC Description
+                     Convention Source Codes
+                     (http://www.loc.gov/standards/sourcelist/descriptive-conventions.html).</p>
+      <p>In other elements, use <gi>abbr</gi> with <att>expan</att> to encode
+                     abbreviations as they occur within the description, if you wish to use an
+                     abbreviation while also providing its fuller form.</p>
+      <p>Attribute usage:</p>
+      <list>
+         <item>Use <att>expan</att> to provide the full form of the abbreviation, which
+                        may be given for indexing or searching purposes.</item>
+      </list>
+      <p>See also:</p>
+      <list>
+         <item>The related element <gi>expan</gi> with <att>abbr</att>, which can be
+                        used to encode the full form of a name while providing the abbreviation in
+                        an attribute for indexing or searching purposes.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Within <gi>conventiondeclaration</gi>: Optional, not repeatable </p>
+      <p>Within other elements: Optional, repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:conventiondeclaration>
+            <ead:abbr>ISAD(G)</ead:abbr>
+            <ead:citation>ISAD(G): General International Standard Archival Description, second edition, Ottawa 2000</ead:citation>
+         </ead:conventiondeclaration>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:didnote>File also contains materials from the <ead:abbr expan="American Civil Liberties Union">ACLU</ead:abbr>
+         </ead:didnote>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:c02>
+            <ead:did>
+               <ead:unittitle>
+                  <ead:abbr expan="United Nations Educational, Scientific and Cultural Organization">UNESCO</ead:abbr>
+               </ead:unittitle> [. . .] </ead:did>
+         </ead:c02>
+      </eg:egXML>
+   </div>
+</div>

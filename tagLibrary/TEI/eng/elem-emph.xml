@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-emph"
+     type="elementDocumentation">
+   <head>
+      <gi>emph</gi>
+      <seg type="fullName">Emphasis</seg>
+   </head>
+   <div type="summary">
+      <p>A formatting element for marking words or phrases that are emphasized or specially formatted.</p>
+   </div>
+   <div type="mayContain">
+      <p>[text], abbr, emph, expan, foreign, lb, ptr, ref</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>abstract, addressline, archref, author, bibref, citation, container, date, datesingle, didnote, dimensions, edition, emph, entry, event, fromdate, head, head01, head02, head03, item, label, materialspec, num, p, part, physdesc, physfacet, physloc, publisher, quote, ref, sponsor, subtitle, titleproper, todate, unitdate, unitid, unittitle</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>render</cell>
+            <cell>Optional (values limited to: altrender, bold, bolddoublequote, bolditalic, boldsinglequote, boldsmcaps, boldunderline, doublequote, italic, nonproport, singlequote, smcaps, sub, super, underline)</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>A formatting element for marking words or phrases that are emphasized for
+                     linguistic effect or specially formatted. Use <att>render</att> to specify the
+                     kind of emphasis, e.g., bold or italic, or formatting, e.g. superscript or
+                     subscript.</p>
+      <p>When the content of an entire element should always be rendered in italics or
+                     some other display feature, use the style sheet functions instead of
+                        <gi>emph</gi>.</p>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:abstract label="Abstract">Papers document Donald C. Stone's work with
+                        Ornstein and Swencionis on the <ead:emph render="italic">est</ead:emph>
+                        Outcome Project, and the development of his doctoral research, including his
+                        various publications on the human potential movement, up to the completion
+                        of his doctoral dissertation. </ead:abstract>
+      </eg:egXML>
+   </div>
+</div>

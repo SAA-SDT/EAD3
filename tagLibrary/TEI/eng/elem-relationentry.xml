@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-relationentry"
+     type="elementDocumentation">
+   <head>
+      <gi>relationentry</gi>
+      <seg type="fullName">Relation Entry</seg>
+   </head>
+   <div type="summary">
+      <p>A child element of <gi>relation</gi> that identifies an entity related to the
+                     materials being described.</p>
+   </div>
+   <div type="mayContain">
+      <p>[text]</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>relation</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>transliteration</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>
+         <gi>relationentry</gi> identifies an entity that has a relationship to the
+                     materials being described. The entry may name a corporate body, person, family,
+                     resource, function, or other entity as defined by the <att>relationtype</att>
+                     of the parent <gi>relation</gi>.</p>
+      <p>
+         <gi>relationentry</gi> should only repeat when necessary to express the same
+                        <gi>relationentry</gi> in multiple languages or scripts.</p>
+      <p>Attribute usage:</p>
+      <list>
+         <item>Use <att>localtype</att> if local practice requires recording the type of
+                        relation entry.</item>
+         <item>Use <att>transliteration</att> to indicate the conventions or rules that
+                        prescribe a method for converting one script to another.</item>
+      </list>
+      <p>Element status:</p>
+      <list>
+         <item>In EAD3 <gi>relationentry</gi> is designated an "experimental" element.
+                        This status reflects a lack of consensus within the Technical Subcommittee
+                        for Encoded Archival Description (TS-EAD) regarding its inclusion in the
+                        schema due to concerns that it might duplicate functionality already present
+                        and a lack of clarity at the time of developing EAD3 as to how Linked Data
+                        will be integrated into archival description.</item>
+         <item>As an "experimental" element, it is not guaranteed that
+                           <gi>relationentry</gi> will persist in the next version of EAD in its
+                        current form. However, TS-EAD encourages its use so that the EAD community
+                        will learn more about how the <gi>relations</gi> model works within archival
+                        description, and anticipates providing a forward migration path.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="examples">
+      <p>See examples under <gi>relations</gi>.</p>
+   </div>
+</div>

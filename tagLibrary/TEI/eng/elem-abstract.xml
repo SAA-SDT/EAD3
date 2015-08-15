@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-abstract"
+     type="elementDocumentation">
+   <head>
+      <gi>abstract</gi>
+      <seg type="fullName">Abstract</seg>
+   </head>
+   <div type="summary">
+      <p>A child element of <gi>did</gi> that provides a brief characterization of the
+                     materials being described.</p>
+   </div>
+   <div type="mayContain">
+      <p>[text], abbr, corpname, date, emph, expan, famname, footnote, foreign, function, genreform, geogname, lb, name, num, occupation, persname, quote, ptr, ref, subject, title</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>did</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>label</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>An <gi>abstract</gi> is used primarily to encode biographical or historical
+                     information about the creator and an abridged statement about the scope,
+                     content, arrangement, or other descriptive details about the archival unit or
+                     one of its components.</p>
+      <p>Within archdesc/did, <gi>abstract</gi> is derived from the longer descriptions
+                     found in <gi>bioghist</gi> and <gi>scopecontent</gi>. Its purpose is to help
+                     readers identify quickly those materials they need to explore at greater
+                     length. Within the component (<gi>c</gi> or <gi>c01</gi>-&lt;c12) <gi>did</gi>,
+                        <gi>abstract</gi> may describe unique characteristics of an individual
+                     component. </p>
+      <p>Attribute usage:</p>
+      <list>
+         <item>Use of <att>localtype</att> and <att>encodinganalog</att> on
+                           <gi>abstract</gi> may assist in transforming information for such MARC21
+                        equivalents as summary note (520$a) or biographical or historical data
+                        (545$a).</item>
+         <item>Use <att>lang</att> when abstracts are provided in more than one
+                        language.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="references">
+      <p>MARC 520</p>
+      <p>MODS <gi>abstract</gi>
+      </p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:archdesc level="fonds">
+            <ead:did>
+               <ead:head>Descriptive Summary</ead:head>
+               <ead:unittitle label="Title">Richard Egan manuscript maps of Orange County</ead:unittitle>
+               <ead:unitdate unitdatetype="inclusive" normal="1878/1879">Circa 1878-1879</ead:unitdate>
+               <ead:unitid countrycode="US" repositorycode="cu-i" label="Collection number">MS-R72</ead:unitid>
+               <ead:origination label="Creator">
+                  <ead:persname rules="aacr2">
+                     <ead:part>Egan, Richard</ead:part>
+                     <ead:part>1842-1923</ead:part>
+                  </ead:persname>
+               </ead:origination>
+               <ead:repository label="Repository">
+                  <ead:corpname rules="aacr2">
+                     <ead:part>University of California, Irvine</ead:part>
+                     <ead:part>Library</ead:part>
+                     <ead:part>Special Collections and Archives</ead:part>
+                  </ead:corpname>
+               </ead:repository>
+               <ead:abstract label="Abstract">Four manuscript survey maps and one plat map depicting areas of Orange County and attributed to the noted surveyor and judge Richard Egan. One map is dated 1878 and 1879 by Egan. The other maps are undated and unsigned but it is likely that he drew them during these years. These maps primarily depict subdivisions of non-rancho tracts of land occupying what is now Orange County, with the addition of some topographical details.</ead:abstract>
+            </ead:did>
+         </ead:archdesc>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:c02 level="file">
+            <ead:did>
+               <ead:unittitle>Family</ead:unittitle>
+               <ead:abstract>parents, grandparents, cousin Anne</ead:abstract>
+               <ead:unitdate normal="1956/1973">1956-1973</ead:unitdate>
+               <ead:container label="Box">104</ead:container>
+               <ead:container label="Folder(s)">6578-6579</ead:container>
+            </ead:did>
+         </ead:c02>
+      </eg:egXML>
+   </div>
+</div>

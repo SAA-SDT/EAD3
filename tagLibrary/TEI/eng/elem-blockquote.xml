@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-blockquote"
+     type="elementDocumentation">
+   <head>
+      <gi>blockquote</gi>
+      <seg type="fullName">Block Quote</seg>
+   </head>
+   <div type="summary">
+      <p>A generic formatting element that designates an extended quotation.</p>
+   </div>
+   <div type="mayContain">
+      <p>chronlist, list, p, table</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>An extended quotation or other lengthy text to be set off from the main text by spacing or other typographic distinction, for example, by adding additional line spaces above and below the block quote and by indenting the left margin of the block quote.</p>
+      <p>
+         <gi>blockquote</gi> is equivalent to the element <gi>blockquote</gi> in
+                     HTML.</p>
+      <p>See also:</p>
+      <list>
+         <item>Use <gi>quote</gi> to identify inline quotes within a block of
+                        text.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:bioghist>
+            <ead:head>Administrative History</ead:head>
+            <ead:p>As the size of the Yale faculty increased, Brewster's new admissions policies caused the make up of the undergraduate body to shift. By the early 1960s, most undergraduates had prepared at private schools, and many were sons of Yale alumni. As with the faculty, Brewster felt that Yale was consistently overlooking some of the best intellectual student talent necessary to maintain the highest levels of academic excellence. In a 1965 speech to alumni, Brewster summarized his administration's revised recruitment policy by stating that Yale would only seek students</ead:p>
+            <ead:blockquote>
+               <ead:p>...whose capacity for intellectual achievement is outstanding and who also have the motivation to put their intellectual capacities to creatively influential use, in thought, in art, in science, or in the exercise of public or private or professional responsibility.</ead:p>
+            </ead:blockquote>
+         </ead:bioghist>
+      </eg:egXML>
+   </div>
+</div>

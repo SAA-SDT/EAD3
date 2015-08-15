@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-physdesc"
+     type="elementDocumentation">
+   <head>
+      <gi>physdesc</gi>
+      <seg type="fullName">Physical Description</seg>
+   </head>
+   <div type="summary">
+      <p>A child element of <gi>did</gi> that provides a simple, unstructured statement
+                     about the physical characteristics of the material being described.</p>
+   </div>
+   <div type="mayContain">
+      <p>[text], abbr, emph, expan, foreign, lb, ptr, ref</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>did</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>label</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>
+         <gi>physdesc</gi> is for describing, in an unstructured statement, the physical
+                     or logical extent, medium, appearance, or construction of the described
+                     materials, such as their dimensions, a count of their quantity, a statement
+                     about the space they occupy, and terms describing their genre, form, or
+                     function, as well as any other aspects of their appearance, such as color,
+                     substance, style, and technique or method of creation.</p>
+      <p>Those who wish to record formally structured elements of physical description
+                     in order to enable consistent machine processing and data exchange will want to
+                     use <gi>physdescstructured</gi> instead of <gi>physdesc</gi>.</p>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="references">
+      <p>ISAD(G) 3.1.5</p>
+      <p>MARC 300</p>
+      <p>MODS <gi>physicalDescription</gi>
+         <gi>extent</gi>
+      </p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:c01 level="series">
+            <ead:did>
+               <ead:unittitle>Seizure Records,</ead:unittitle>
+               <ead:unitdate>December 1908-January 1928.</ead:unitdate>
+               <ead:physdesc>4 volumes and 1 folder.</ead:physdesc>
+            </ead:did>
+         </ead:c01>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:c level="subseries">
+            <ead:did>
+               <ead:unittitle>Documentary Movies,</ead:unittitle>
+               <ead:unitdate unitdatetype="inclusive">1952-1964</ead:unitdate>
+               <ead:physdesc>2.5 linear ft.</ead:physdesc>
+            </ead:did>
+         </ead:c>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:did>
+            <ead:unittitle>Class Notes, Undergraduate</ead:unittitle>
+            <ead:unitdatestructured unitdatetype="inclusive">
+               <ead:daterange>
+                  <ead:fromdate notafter="1962">1962</ead:fromdate>
+                  <ead:todate notafter="1968">1968</ead:todate>
+               </ead:daterange>
+            </ead:unitdatestructured>
+            <ead:physdesc>12 notebooks</ead:physdesc>
+            <ead:container localtype="boxes">5-6</ead:container>
+            <ead:didnote>The notebooks contain months and days, not years. Estimated dates are based on the years Scully attended the University of Maryland.</ead:didnote>
+         </ead:did>
+      </eg:egXML>
+   </div>
+</div>

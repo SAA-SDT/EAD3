@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-c09"
+     type="elementDocumentation">
+   <head>
+      <gi>c09</gi>
+      <seg type="fullName"/>
+   </head>
+   <div type="summary">
+      <p>An element that designates a ninth-level subordinate part of the materials.</p>
+   </div>
+   <div type="mayContain">
+      <p>accessrestrict, accruals, acqinfo, altformavail, appraisal, arrangement, bibliography, bioghist, c10, controlaccess, custodhist, did, fileplan, head, index, legalstatus, odd, originalsloc, otherfindaid, phystech, prefercite, processinfo, relatedmaterial, relations, scopecontent, separatedmaterial, thead, userestrict</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>c08</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>base</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>level</cell>
+            <cell>Optional (values limited to: class, collection, file, fonds, item, otherlevel, recordgrp, series, subfonds, subgrp, subseries)</cell>
+         </row>
+         <row>
+            <cell>otherlevel</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>Components may be either unnumbered <gi>c</gi> or numbered <gi>c01</gi>,
+                        <gi>c02</gi>,… to <gi>c12</gi>. The numbering indicates hierarchy within the
+                     endcoded finding aid, not the order of the components, so <gi>c01</gi> in one
+                     part of a finding aid may designate a series, while in another part of the
+                     finding aid it may designate an item. Numbering components may also assist a
+                     finding aid encoder in accurately nesting components.</p>
+      <p>Attribute usage:</p>
+      <list>
+         <item>Use <att>base</att> to specify a base URI other than the URI of the EAD
+                        instance for the purpose of resolving any relative URIs contained within
+                           <gi>c09</gi>.</item>
+      </list>
+      <p>See also:</p>
+      <list>
+         <item>The element definition for <gi>c</gi>.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="references">
+      <p>ISAD(G) 3.1.4 is equivalent to <att>level</att>
+      </p>
+   </div>
+   <div type="examples">
+      <p>See examples under <gi>c01</gi> Component (First Level) and in fully encoded
+                     examples provided at http://www.loc.gov/ead/.</p>
+   </div>
+</div>

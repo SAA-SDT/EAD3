@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="attr-script"
+     type="attributeDocumentation">
+   <head>
+      <att>script</att>
+      <seg type="fullName">Script</seg>
+   </head>
+   <div type="summary">
+      <p>Indicates the writing script of the content of an element (e.g., Cyrillic,
+                        Katakana). Content should be taken from ISO 15924 Codes for the
+                        Representation of Names of Scripts, or another controlled list, as specified
+                        in the <att>scriptencoding</att> attribute in <gi>control</gi>. May be used
+                        consistently in a multi-lingual finding aid to specify which elements are
+                        written in which script. Available on all non-empty elements.</p>
+   </div>
+   <div type="dataType">
+      <p>NMTOKEN</p>
+   </div>
+</div>

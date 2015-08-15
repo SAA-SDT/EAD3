@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-phystech"
+     type="elementDocumentation">
+   <head>
+      <gi>phystech</gi>
+      <seg type="fullName">Physical Characteristics and Technical Requirements</seg>
+   </head>
+   <div type="summary">
+      <p>For describing the physical condition of the materials and/or technical requirements that affect their use.</p>
+   </div>
+   <div type="mayContain">
+      <p>blockquote, chronlist, head, list, p, phystech, table</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>archdesc, c, c01, c02, c03, c04, c05, c06, c07, c08, c09, c10, c11, c12, phystech</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>
+         <gi>phystech</gi> is used to capture any physical or technical characteristics
+                     that affect the storage or use of the materials described. This may include
+                     details of their physical composition, preservation requirements, or particular
+                     hardware or software needed to access the materials.</p>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="references">
+      <p>ISAD(G) 3.4.4</p>
+      <p>MARC 340, 538</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:c04 level="item">
+            <ead:did>[...]</ead:did>
+            <ead:phystech>
+               <ead:p>Some oxydization of the aluminum layer.</ead:p>
+            </ead:phystech>
+         </ead:c04>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:c02 level="subseries">
+            <ead:did>[...]</ead:did>
+            <ead:phystech>
+               <ead:head>System Requirements</ead:head>
+               <ead:p>48K RAM; Apple Disk II with controller; colour monitor</ead:p>
+            </ead:phystech>
+         </ead:c02>
+      </eg:egXML>
+   </div>
+</div>

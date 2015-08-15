@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-unitdate"
+     type="elementDocumentation">
+   <head>
+      <gi>unitdate</gi>
+      <seg type="fullName">Date of the Unit</seg>
+   </head>
+   <div type="summary">
+      <p>A child element of <gi>did</gi> that provides a simple statement of the date(s)
+                     covered by the described materials.</p>
+   </div>
+   <div type="mayContain">
+      <p>[text],abbr, emph, expan, foreign, lb, ptr, ref</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>did</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>calendar</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>certainty</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>datechar</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>era</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>label</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>normal</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>unitdatetype</cell>
+            <cell>Optional (values limited to: bulk, inclusive)</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>
+         <gi>unitdate</gi> is for indicating the date or dates the described materials
+                     were created, issued, copyrighted, broadcast, etc. <gi>unitdate</gi> may be in
+                     the form of text or numbers, and may consist of a single date, a date range, or
+                     a combination of single dates and date ranges.</p>
+      <p>Attribute usage:</p>
+      <list>
+         <item>Use <att>unitdatetype</att> to indicate if <gi>unitdate</gi> represents
+                        inclusive dates or bulk (predominant) dates.</item>
+      </list>
+      <list>
+         <item>Use @certainty to indicate if the date has been supplied or estimated by the archivist.</item>
+      </list>
+      <list>
+         <item>Use <att>datechar</att> to characterize the nature of the dates, such as
+                        creation or accumulation.</item>
+      </list>
+      <list>
+         <item>Use <att>calendar</att> to specify the calendar from which the date
+                        stems, for example "gregorian."</item>
+      </list>
+      <list>
+         <item>Use <att>era</att> to indicate the era that contextualizes the date, for
+                        example, "ce" (Common Era).</item>
+         <item>Use <att>normal</att> to express dates in a standardized pattern.</item>
+      </list>
+      <p>See also:</p>
+      <list>
+         <item>Use <gi>unitdatestructured</gi> to provide a more granular,
+                        machine-processable statement for the dates of the materials being
+                        described.</item>
+         <item>Do not confuse <gi>unitdate</gi> with <gi>date</gi>, which is used to
+                        encode dates not related to the creation or accumulation of the records
+                        being described.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="references">
+      <p>ISAD(G) 3.1.3</p>
+      <p>MARC 245 subfield f for inclusive dates, 245 subfield g for bulk dates, or 260 subfield c</p>
+      <p>MODS <gi>originInfo</gi>
+         <gi>dateCreated</gi>
+      </p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:archdesc level="collection">
+            <ead:did>
+               <ead:head>Collection Summary</ead:head>
+               <ead:origination label="Creator">
+                  <ead:corpname encodinganalog="110">
+                     <ead:part>National Association for the Advancement of Colored People</ead:part>
+                  </ead:corpname>
+               </ead:origination>
+               <ead:unittitle label="Title" encodinganalog="245">Visual Materials from the National Association for the Advancement of Colored People Records (Library of Congress)</ead:unittitle>
+               <ead:unitdate label="Dates" unitdatetype="inclusive" encodinganalog="260">ca. 1838-1969</ead:unitdate>
+               <ead:unitdate unitdatetype="bulk">bulk 1944-1955</ead:unitdate>
+            </ead:did>
+         </ead:archdesc>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:did>
+            <ead:unittitle encodinganalog="245$a">Philip M. Wagner papers</ead:unittitle>
+            <ead:unitdate unitdatetype="inclusive" encodinganalog="245$f">1839-1995</ead:unitdate>
+            <ead:unitdate unitdatetype="bulk" encodinganalog="245$g">bulk 1942-1989</ead:unitdate>
+            <ead:physdesc encodinganalog="300$a$f">8 boxes (9.35 linear feet)</ead:physdesc> [...] </ead:did>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:dsc type="analyticover">
+            <ead:c level="subseries">
+               <ead:did>
+                  <ead:unittitle>Documentary Movies</ead:unittitle>
+                  <ead:unitdate unitdatetype="inclusive" normal="1952/1964">1952-1964</ead:unitdate>
+                  <ead:abstract>Includes scores, arranged alphabetically by movie title, and some correspondence, arranged chronologically.</ead:abstract>
+               </ead:did>
+            </ead:c> [. . .] </ead:dsc>
+      </eg:egXML>
+   </div>
+</div>

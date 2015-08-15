@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-eventdatetime"
+     type="elementDocumentation">
+   <head>
+      <gi>eventdatetime</gi>
+      <seg type="fullName">Event Date and Time</seg>
+   </head>
+   <div type="summary">
+      <p>A required child element of <gi>maintenanceevent</gi> that records the date and
+                     time of a specific maintenance action for an EAD instance.</p>
+   </div>
+   <div type="mayContain">
+      <p>[text]</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>maintenanceevent</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>standarddatetime</cell>
+            <cell>Optional (must follow pattern based on ISO 8601)</cell>
+         </row>
+         <row>
+            <cell/>
+            <cell>Required, not repeatable</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>
+         <gi>eventdatetime</gi> is for recording the date and time that a maintenance
+                     event occurred. Examples of maintenance events include the creation, update,
+                     revision, or other modification to an EAD instance. If desired, the date and
+                     time may be captured in natural language in the element.</p>
+      <p>Attribute usage:</p>
+      <list>
+         <item>Use <att>standarddatetime</att> to provide a machine-processable
+                        expression of the date or date and time, formulated according to the ISO
+                        8601 standard.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Required, not repeatable</p>
+   </div>
+   <div type="references">
+      <p>ISAD(G) 3.7.3</p>
+      <p>MODS <gi>recordCreationDate</gi>, <gi>recordChangeDate</gi>
+      </p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:maintenancehistory>
+            <ead:maintenanceevent>
+               <ead:eventtype value="derived"/>
+               <ead:eventdatetime standarddatetime="2015-09-13T08:05:33-05:00">13 September 2015</ead:eventdatetime>
+               <ead:agenttype value="machine"/>
+               <ead:agent>EAD2002_to_EAD3.xsl</ead:agent>
+               <ead:eventdescription>Conversion from EAD 2002 finding aid using XSL transformation.</ead:eventdescription>
+            </ead:maintenanceevent>
+            <ead:maintenanceevent>
+               <ead:eventtype value="revised"/>
+               <ead:eventdatetime standarddatetime="2015-09-14T10:05:23-05:00">14 September 2014</ead:eventdatetime>
+               <ead:agenttype value="human"/>
+               <ead:agent>Lisa Bolkonskaya</ead:agent>
+               <ead:eventdescription>Conversion from EAD 2002 revised. Conventions and local control added..</ead:eventdescription>
+            </ead:maintenanceevent>
+            <ead:maintenanceevent>
+               <ead:eventtype value="revised"/>
+               <ead:eventdatetime standarddatetime="2015-09-16T14:23:42-05:00">16 September 2014</ead:eventdatetime>
+               <ead:agenttype value="human"/>
+               <ead:agent>Lisa Bolkonskaya</ead:agent>
+               <ead:eventdescription>Minor revisions. Added sources.</ead:eventdescription>
+            </ead:maintenanceevent>
+         </ead:maintenancehistory>
+      </eg:egXML>
+   </div>
+</div>

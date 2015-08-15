@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-dimensions"
+     type="elementDocumentation">
+   <head>
+      <gi>dimensions</gi>
+      <seg type="fullName">Dimensions</seg>
+   </head>
+   <div type="summary">
+      <p>A child element of <gi>physdescstructured</gi> that provides information about
+                     the size of the material being described.</p>
+   </div>
+   <div type="mayContain">
+      <p>[text], abbr, dimensions, emph, expan, foreign, lb, ptr, ref</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>dimensions, physdescstructured</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>unit</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>
+         <gi>dimensions</gi> may be used to specify the size, in two or three
+                     dimensions, of the units identified by <gi>unittype</gi> within
+                        <gi>physdescstructured</gi>. It usually includes numerical data. Express
+                     measurements in any convenient unit as indicated in the <att>unit</att>
+                     attribute. Multiple dimensions, for example, height-by-width, can be encoded in
+                     a single <gi>dimensions</gi> or in separate <gi>dimensions</gi> with
+                     distinctive <att>localtype</att> values.</p>
+      <p>Attribute usage:</p>
+      <list>
+         <item>If the kind of measurement is not clear in the text, <att>unit</att> may
+                        be used to specify this information, for example, "inches" or
+                        "centimeters."</item>
+         <item>If desired, <att>localtype</att> may be used to capture the kind of
+                        dimensions being measured, such as "height" or "circumference."</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:physdescstructured coverage="part" physdescstructuredtype="materialtype">
+            <ead:quantity>5</ead:quantity>
+            <ead:unittype>dageurreotypes</ead:unittype>
+            <ead:physfacet>hand-tinted</ead:physfacet>
+            <ead:dimensions>6.5 x 8.5 inches</ead:dimensions>
+         </ead:physdescstructured>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:physdescstructured coverage="whole" physdescstructuredtype="materialtype">
+            <ead:quantity>10</ead:quantity>
+            <ead:unittype>posters</ead:unittype>
+            <ead:dimensions>
+               <ead:dimentions unit="inches" localtype="height">23</ead:dimentions>
+               <ead:dimentions unit="inches" localtype="width">35</ead:dimentions>
+            </ead:dimensions>
+         </ead:physdescstructured>
+      </eg:egXML>
+   </div>
+</div>

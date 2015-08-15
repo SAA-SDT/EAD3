@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-publicationstatus"
+     type="elementDocumentation">
+   <head>
+      <gi>publicationstatus</gi>
+      <seg type="fullName">Publication Status</seg>
+   </head>
+   <div type="summary">
+      <p>An optional child element of <gi>control</gi> that records the current
+                     publishing status of the EAD instance.</p>
+   </div>
+   <div type="mayContain">
+      <p>[text]</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>control</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>value</cell>
+            <cell>Required (values limited to: inprocess, approved, published)</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>Use <gi>publicationstatus</gi> to indicate the current publication status of
+                     the EAD instance, whether in process or final. An optional element,
+                        <gi>publicationstatus</gi>, is only necessary if it supports local
+                     maintenance practice.</p>
+      <p>If present, the current publication status must always be reflected in the
+                     required <att>value</att> attribute. The element should only have a text value
+                     if it is necessary to provide a value for <gi>publicationstatus</gi> in a
+                     language other than English, otherwise it should remain empty.</p>
+      <p>Attribute usage:</p>
+      <list>
+         <item>Use <att>value</att>, which offers a controlled list of terms, to provide
+                        information about the current publication status of the EAD instance.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Optional, not repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:control> [. . .] <ead:maintenancestatus value="derived"/>
+            <ead:publicationstatus value="approved"/>
+            <ead:maintenanceagency>
+               <ead:otheragencycode localtype="archon">GB-58</ead:otheragencycode>
+               <ead:agencyname>British Library</ead:agencyname>
+            </ead:maintenanceagency> [. . .] </ead:control>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:control> [. . .] <ead:maintenancestatus value="revised"/>
+            <ead:publicationstatus value="published"/>
+            <ead:maintenanceagency>
+               <ead:agencycode>DNASA-G</ead:agencycode>
+               <ead:otheragencycode localtype="agency">GSFC</ead:otheragencycode>
+               <ead:agencyname>NASA Goddard Space Flight Center</ead:agencyname>
+            </ead:maintenanceagency> [. . .] </ead:control>
+      </eg:egXML>
+   </div>
+</div>

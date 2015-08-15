@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-notestmt"
+     type="elementDocumentation">
+   <head>
+      <gi>notestmt</gi>
+      <seg type="fullName">Note Statement</seg>
+   </head>
+   <div type="summary">
+      <p>An optional child element of <gi>filedesc</gi> that binds together one or more
+                        <gi>controlnote</gi> elements.</p>
+   </div>
+   <div type="mayContain">
+      <p>controlnote</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>filedesc</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>Use <gi>notestmt</gi> to record one or more general descriptive notes about the
+                     EAD instance, each note being encoded in a single <gi>controlnote</gi>.
+                        <gi>controlnote</gi> is similar to the "general note" in traditional
+                     bibliographic descriptions.</p>
+   </div>
+   <div type="availability">
+      <p>Optional, not repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:filedesc> [. . .] <ead:notestmt>
+               <ead:controlnote localtype="bpg">
+                  <ead:p>This encoded finding aid is compliant with the Yale EAD Best Practice Guidelines, Version 1.0.</ead:p>
+               </ead:controlnote>
+            </ead:notestmt>
+         </ead:filedesc>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:notestmt>
+            <ead:controlnote>
+               <ead:p>Contact information: <ead:ref show="new"
+                           actuate="onrequest"
+                           href="http://hdl.loc.gov/loc.mss/mss.contact">http://hdl.loc.gov/loc.mss/mss.contact</ead:ref>
+               </ead:p>
+            </ead:controlnote>
+            <ead:controlnote>
+               <ead:p>Catalog Record: <ead:ref href="http://lccn.loc.gov/mm82036905"
+                           actuate="onrequest"
+                           linktitle="MARC record for collection">http://lccn.loc.gov/mm82036905</ead:ref>
+               </ead:p>
+            </ead:controlnote>
+         </ead:notestmt>
+      </eg:egXML>
+   </div>
+</div>

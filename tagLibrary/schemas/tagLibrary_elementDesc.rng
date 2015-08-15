@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+    xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+    xmlns:xml="http://www.w3.org/XML/1998/namespace"
+    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
+    ns="http://www.tei-c.org/ns/1.0"
+    xmlns:eg="http://www.tei-c.org/ns/Examples">
+    <!-- RNG schema for encoding an EAD3 element or attribute documentation, the result being an XML/TEI file starting by element div-->
+    <!-- could be improved, event if it works as it is -->
+    <start>
+        <ref name="div"/>
+    </start>
+    <define name="div">
+        <element name="div">
+            <attribute name="type">
+                <choice>
+                    <value>elementDocumentation</value>
+                    <value>attributeDocumentation</value>
+                    <value>summary</value>
+                    <value>mayContain</value>
+                    <value>mayOccurWithin</value>
+                    <value>attributes</value>
+                     <value>descriptionAndUsage</value>
+                    <value>attributeUsage</value>
+                    <value>seeAlso</value>
+                   <value>availability</value>
+                    <value>references</value>
+                     <value>examples</value>
+                    <value>dataType</value>
+                  
+                    <value>values</value>
+                    
+                </choice>
+            </attribute>
+          
+            <optional>
+                <attribute name="xml:lang">
+                    <data type="language"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="xml:id">
+                   
+                 <data type="string"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="n">
+                    <data type="string"/>
+                </attribute>
+            </optional>
+            <optional>
+                <ref name="head"/>
+            </optional>
+            <choice>
+                <oneOrMore>
+                    <element name="p">
+                        <optional>
+                            <attribute name="xml:lang">
+                               
+                                <data type="language"/>
+                            </attribute>
+                        </optional>
+                        <zeroOrMore>
+                            <choice>
+                                <text/>
+                                <ref name="att"/>
+                                <ref name="list"/>
+                                <ref name="ref"/>
+                                <ref name="gi"/>
+                               
+                            </choice>
+                        </zeroOrMore>
+                    </element>
+                    <zeroOrMore><ref name="list"/></zeroOrMore>
+                   <zeroOrMore><ref name="div"/></zeroOrMore>
+                   
+                </oneOrMore>
+               
+                <oneOrMore>
+                    <element name="eg:egXML">
+                        
+                        <optional>
+                            <attribute name="xml:lang">
+                             
+                                <data type="language"/>
+                            </attribute>
+                        </optional>
+                        <oneOrMore><ref name="anyElement"/></oneOrMore>
+                    </element>
+                </oneOrMore>
+                <oneOrMore>
+                    <ref name="div"/>
+                </oneOrMore>
+                <oneOrMore>
+                    <ref name="list"/>
+                </oneOrMore>
+                <oneOrMore>
+                    <ref name="table"/>
+                </oneOrMore>
+            </choice>
+
+        </element>
+    </define>
+    <define name="head">
+        <element name="head">
+            <choice>
+                <text/>
+                <group>
+                    <choice> <ref name="gi"/>
+                        <ref name="att"/></choice>
+                    <ref name="seg"/>
+                </group>
+           
+            </choice>
+            
+        </element>
+    </define>
+   <define name="seg">
+       <element name="seg">
+       <attribute name="type">
+           <value>fullName</value>
+       </attribute>
+       <text/>
+       </element>
+   </define>
+    <define name="list">
+        <element name="list">
+            
+            <optional>
+                <attribute name="xml:lang">
+                 
+                    <data type="language"/>
+                </attribute>
+            </optional>
+            <optional>
+                <ref name="head"/>
+            </optional>
+            <oneOrMore>
+                
+                <element name="item">
+                    
+                    <zeroOrMore>
+                        <choice>
+                            <text/>
+                            <ref name="att"/>
+                            
+                            
+                            <ref name="gi"/>
+                            
+                        </choice>
+                    </zeroOrMore>
+                </element>
+            </oneOrMore>
+        </element>
+    </define>
+    <define name="table">
+        <element name="table">
+            <oneOrMore><ref name="row"></ref></oneOrMore>
+        </element>
+    </define>
+    <define name="row">
+        <element name="row">
+            <oneOrMore><ref name="cell"/></oneOrMore>
+        </element>
+    </define>
+    <define name="cell">
+        <element name="cell">
+            <text/>
+        </element>
+    </define>
+       
+    <define name="ref">
+        <element name="ref">
+            <attribute name="target">
+                <data type="anyURI"/>
+            </attribute>
+            <text/>
+        </element>
+    </define>
+    <define name="anyElement">
+        <element>
+            <anyName/>
+            <zeroOrMore>
+                <choice>
+                    <attribute>
+                        <anyName/>
+                    </attribute>
+                    <text/>
+                    <ref name="anyElement"/>
+                </choice>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="gi">
+        <element name="gi">
+            <text/>
+        </element>
+    </define>
+    <define name="att">
+        <element name="att">
+            <text/>
+        </element>
+    </define>
+</grammar>

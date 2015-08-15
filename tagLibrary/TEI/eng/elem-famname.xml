@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-famname"
+     type="elementDocumentation">
+   <head>
+      <gi>famname</gi>
+      <seg type="fullName">Family Name</seg>
+   </head>
+   <div type="summary">
+      <p>An element for identifying the name of a group of people with blood relations, or persons who form a household.</p>
+   </div>
+   <div type="mayContain">
+      <p>part</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>abstract, archref, bibref, controlaccess, entry, event, indexentry, item, namegrp, origination, p, physfacet, ref, repository, unittitle</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>identifier</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>normal</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>relator</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>rules</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>source</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>An element for identifying the name of a group of persons closely related by blood or persons who form a household, and are related to the materials being described. Includes single families and family groups, e.g., Patience Parker Family and Parker Family.</p>
+      <p>
+         <gi>famname</gi> must contain one or more <gi>part</gi> elements. A single
+                        <gi>part</gi> may be used for the entire string, or if more granularity is
+                     desired, multiple <gi>part</gi> elements may be used to capture each component
+                     of the family name, e.g.,</p>
+      <p>Part 1: Butts family</p>
+      <p>Part 2: 1810</p>
+      <p>Part 3: Long Beach, CA</p>
+      <p>Use <gi>famname</gi> within <gi>controlaccess</gi> for encoding family names as
+                     defined by controlled vocabularies or according to appropriate rules. You may
+                     also use <gi>famname</gi> for encoding family names as they appear within
+                     text.</p>
+      <p>Attribute usage:</p>
+      <list>
+         <item>Use <att>encodinganalog</att> to indicate corresponding data elements in
+                        another data format, such as MARC.</item>
+         <item>Use <att>identifier</att> to provide a number, code, or string (e.g.,
+                        URI) that uniquely identifies the family in a controlled vocabulary,
+                        taxonomy, ontology, or other knowledge organization system. Do not confuse
+                        with <att>id</att>, which provides a unique id for the element within the
+                        XML instance.</item>
+         <item>Use <att>localtype</att>, if local practice requires specification of the
+                        type of family name.</item>
+         <item>Use <att>normal</att> to identify a standardized form of the family name
+                        if not provided in the element itself.</item>
+         <item>Use <att>relator</att> to specify, either as a URI or a string, other
+                        relationship(s) the family name has to the described materials, for example,
+                        "compiler," "creator," "collector," or "subject." The schema does not limit
+                        possible values of <att>relator</att>, but an institution could define and
+                        enforce values elsewhere if desired.</item>
+      </list>
+      <list>
+         <item>Use <att>rules</att> to specify the descriptive rules followed for
+                        forming the family name.</item>
+      </list>
+      <list>
+         <item>Use <att>source</att> to indicate the vocabulary from which the family
+                        name has been taken.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Within <gi>indexentry</gi>: Optional, not repeatable</p>
+      <p>Within all other elements: Optional, repeatable</p>
+   </div>
+   <div type="references">
+      <p>MARC 600, 700</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:controlaccess>
+            <ead:famname>
+               <ead:part>Butts family</ead:part>
+               <ead:part>1810</ead:part>
+               <ead:part>Long Beach, CA</ead:part>
+            </ead:famname>
+            <ead:famname relator="collector">
+               <ead:part>Smith family</ead:part>
+            </ead:famname>
+            <ead:famname encodinganalog="600"
+                         relator="subject"
+                         source="lcnaf"
+                         identifier="http://lccn.loc.gov/sh88007170">
+               <ead:part>Kistler family</ead:part>
+            </ead:famname>
+            <ead:famname encodinganalog="600" identifier="http://lccn.loc.gov/sh85128074">
+               <ead:part>Stevens family</ead:part>
+            </ead:famname>
+         </ead:controlaccess>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:indexentry>
+            <ead:famname>
+               <ead:part>Hely-Hutchinson family</ead:part>
+            </ead:famname>
+            <ead:indexentry>
+               <ead:genreform>
+                  <ead:part>Pedigree, 20th cent.</ead:part>
+               </ead:genreform>
+               <ead:ref target="EngC5769-f74" show="replace" actuate="onrequest">MS. Eng. c. 5769, fol. 74</ead:ref>
+            </ead:indexentry>
+         </ead:indexentry>
+      </eg:egXML>
+   </div>
+</div>

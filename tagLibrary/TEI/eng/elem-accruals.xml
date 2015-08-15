@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-accruals"
+     type="elementDocumentation">
+   <head>
+      <gi>accruals</gi>
+      <seg type="fullName">Accruals</seg>
+   </head>
+   <div type="summary">
+      <p>An element for information about anticipated additions to the materials being described.</p>
+   </div>
+   <div type="mayContain">
+      <p>accruals, blockquote, chronlist, head, list, p, table</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>accruals, archdesc, c, c01, c02, c03, c04, c05, c06, c07, c08, c09, c10, c11, c12</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>Used to indicate anticipated additions to the material already held by the repository. May indicate quantity and frequency of the accruals. The element may also be used to indicate no additions are expected.</p>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="references">
+      <p>ISAD(G) 3.3.3</p>
+      <p>MARC 584</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:accruals>
+            <ead:p>No further materials are expected for this collection.</ead:p>
+         </ead:accruals>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:accruals>
+            <ead:p>Noncurrent additions to this Record Group are transferred from the Development Department annually at the end of the fiscal year in June.</ead:p>
+         </ead:accruals>
+      </eg:egXML>
+   </div>
+</div>

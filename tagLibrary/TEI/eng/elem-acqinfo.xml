@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-acqinfo"
+     type="elementDocumentation">
+   <head>
+      <gi>acqinfo</gi>
+      <seg type="fullName">Acquisition Information</seg>
+   </head>
+   <div type="summary">
+      <p>An element for encoding the immediate source of acquisition of the materials being described.</p>
+   </div>
+   <div type="mayContain">
+      <p>acqinfo, blockquote, chronlist, head, list, p, table</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>acqinfo, archdesc, c, c01, c02, c03, c04, c05, c06, c07, c08, c09, c10, c11, c12</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>Use <gi>acqinfo</gi> to identify the source of the materials being described
+                     and the circumstances under which they were received, including donations,
+                     transfers, purchases, and deposits.</p>
+      <p>See also:</p>
+      <list>
+         <item>Note that the accession number may be encoded in <gi>unitid</gi> within
+                           <gi>did</gi>.</item>
+         <item>
+            <gi>separatedmaterial</gi> should be used for indicating items acquired as
+                        part of a collection and then subsequently removed from the
+                        collection.</item>
+         <item>Do not confuse with <gi>custodhist</gi>, which should be used for
+                        information about the chain of ownership before the materials reached the
+                        repository. </item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="references">
+      <p>ISAD(G) 3.2.4</p>
+      <p>MARC 541</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:acqinfo>
+            <ead:chronlist>
+               <ead:chronitem>
+                  <ead:datesingle>1945</ead:datesingle>
+                  <ead:event>Transfer
+                                 from <ead:corpname>
+                        <ead:part>National Park Service</ead:part>
+                     </ead:corpname>, Accession number 45.22
+                              </ead:event>
+               </ead:chronitem>
+            </ead:chronlist>
+         </ead:acqinfo>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:acqinfo>
+            <ead:p>Source unknown. Originally deposited in University Library,
+                           transferred to Department of Palaeography, <ead:date normal="19580424">24 April 1958</ead:date>. </ead:p>
+         </ead:acqinfo>
+      </eg:egXML>
+   </div>
+</div>

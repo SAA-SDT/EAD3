@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-index"
+     type="elementDocumentation">
+   <head>
+      <gi>index</gi>
+      <seg type="fullName">Index</seg>
+   </head>
+   <div type="summary">
+      <p>A list of key terms and entities with reference pointers assembled to enhance navigation of and access to the materials being described.</p>
+   </div>
+   <div type="mayContain">
+      <p>blockquote, chronlist, head, index, indexentry, list, listhead, p, table</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>archdesc, c, c01, c02, c03, c04, c05, c06, c07, c08, c09, c10, c11, c12, index</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>
+         <gi>index</gi> can serve as a helpful alphabetical overview of subjects,
+                     correspondents, photographers, or other entities represented in the collection.
+                     It may provide hypertext links to the components referenced, or it may simply
+                     note the container numbers useful for locating the position in the finding aid
+                     where the indexed material appears.</p>
+      <p>The index may repeat terms and names found elsewhere in the finding aid or list
+                     names not previously identified. For example, an index of correspondents may
+                     list "Chilsolm, Shirley" with a reference pointing to a file with the general
+                     name "Correspondence, 1969-1975." Use <gi>indexentry</gi> to capture each item
+                     in the <gi>index</gi>.</p>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:index>
+            <ead:head>Photographer Index</ead:head>
+            <ead:p>Names of photographers and studios--and the cities and states in which they operated--are usually noted as they appear on the photographs (usually stamped or written on the versos). Corporate names appear in direct order; personal names in inverted order (i.e., filed by surname). Rectos and versos of photographs were microfilmed to capture information exactly as it appears on the photographs. To locate a specific photographer/studio, a user should consider all possible forms of entry (corporate and personal), browse the index under these forms, identify which LOT(s) contain photographs by that photographer/studio, then browse the relevant LOT on the microfilm to locate specific photographs that bear the markings of the specific photographer/studio.</ead:p>
+            <ead:indexentry>
+               <ead:name>
+                  <ead:part>12th Air Force Photo:</ead:part>
+               </ead:name>
+               <ead:ref target="LOT13105" actuate="onrequest" show="replace">LOT 13105</ead:ref>
+            </ead:indexentry>
+            <ead:indexentry>
+               <ead:name>
+                  <ead:part>15th Air Force Command:</ead:part>
+               </ead:name>
+               <ead:ref target="LOT13105" actuate="onrequest" show="replace">LOT 13105</ead:ref>
+            </ead:indexentry>
+            <ead:indexentry>
+               <ead:name>
+                  <ead:part>324th Service Corp.:</ead:part>
+               </ead:name>
+               <ead:ref target="LOT13105" actuate="onrequest" show="replace">LOT 13105</ead:ref>
+            </ead:indexentry>
+            <ead:indexentry>
+               <ead:name>
+                  <ead:part>A.L. Adams Photo Studio--Atlanta, Ga.:</ead:part>
+               </ead:name>
+               <ead:ref target="LOT13076" actuate="onrequest" show="replace">LOT 13076</ead:ref>
+            </ead:indexentry>
+                        [. . .]
+                     </ead:index>
+      </eg:egXML>
+   </div>
+</div>

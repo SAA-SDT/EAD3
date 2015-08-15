@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="attr-lastdatetimeverified"
+     type="attributeDocumentation">
+   <head>
+      <att>lastdatetimeverified</att>
+      <seg type="fullName">Last Date and Time Verified</seg>
+   </head>
+   <div type="summary">
+      <p>Last date or last date and time the linked resource was verified.
+                        Verification may include link resolution as well as verification of the
+                        version of the linked object. Available in <gi>citation</gi>,
+                           <gi>relation</gi>, <gi>source</gi>, and <gi>term</gi>.</p>
+   </div>
+   <div type="dataType">
+      <p>Constrained to the following patterns: YYYY-MM-DD, YYYY-MM, YYYY, or YYYY-MM-DDThh:mm:ss [with optional timezone offset from UTC in the form of [+|-][hh:mm], or "Z" to indicate the dateTime is UTC. No timezone implies the dateTime is UTC.]</p>
+   </div>
+</div>

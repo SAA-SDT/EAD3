@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-addressline"
+     type="elementDocumentation">
+   <head>
+      <gi>addressline</gi>
+      <seg type="fullName">Address Line</seg>
+   </head>
+   <div type="summary">
+      <p>A generic element for recording one line of an address, whether postal or other.</p>
+   </div>
+   <div type="mayContain">
+      <p>[text], abbr, emph, expan, foreign, lb, ptr, ref</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>address</p>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>
+         <gi>addressline</gi> may be repeated as many times as necessary to enter all
+                     parts of an address.</p>
+      <p>Attribute usage:</p>
+      <list>
+         <item>Use <att>localtype</att>, if local use requires specification of the type
+                        of information contained in the line.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Required, repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:publicationstmt>
+            <ead:publisher>Special Collections and Archives</ead:publisher>
+            <ead:address>
+               <ead:addressline>The UCI Libraries</ead:addressline>
+               <ead:addressline>P.O. Box 19557</ead:addressline>
+               <ead:addressline>University of California</ead:addressline>
+               <ead:addressline>Irvine, California 92623-9557</ead:addressline>
+               <ead:addressline>Phone: (949) 824-7227</ead:addressline>
+               <ead:addressline>Fax: (949) 824-2472</ead:addressline>
+               <ead:addressline>Email: spcoll@uci.edu</ead:addressline>
+               <ead:addressline>URL:http://www.lib.uci.edu/rrsc/speccoll.html</ead:addressline>
+            </ead:address>
+            <ead:date>&amp;copy; 2000</ead:date>
+            <ead:p>The Regents of the University of California. All rights reserved.</ead:p>
+         </ead:publicationstmt>
+      </eg:egXML>
+   </div>
+</div>

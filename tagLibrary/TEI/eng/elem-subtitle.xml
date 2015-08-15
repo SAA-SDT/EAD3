@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-subtitle"
+     type="elementDocumentation">
+   <head>
+      <gi>subtitle</gi>
+      <seg type="fullName">Subtitle</seg>
+   </head>
+   <div type="summary">
+      <p>A child element of <gi>titlestmt</gi> that captures a secondary or subsidiary
+                     portion of the title of the EAD instance.</p>
+   </div>
+   <div type="mayContain">
+      <p>[text], abbr, emph, expan, foreign, lb, ptr, ref</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>titlestmt</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>Use <gi>subtitle</gi> to record a portion of the title of an encoded finding
+                     aid that is subordinate to the main title recorded in <gi>titleproper</gi>.
+                        <gi>subtitle</gi> is available only within <gi>titlessmt</gi> and is
+                     intended to support additional title information.</p>
+      <p>See also:</p>
+      <list>
+         <item>Do not confuse with <gi>title</gi>. Subtitles of monographs, serials,
+                        paintings, and other such works mentioned in the finding aid are not
+                        separately encoded, but they may be listed as <gi>part</gi> within
+                           <gi>title</gi>.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:filedesc>
+            <ead:titlestmt>
+               <ead:titleproper>Tom Stoppard</ead:titleproper>
+               <ead:subtitle>An Inventory of His Papers at the Harry Ransom Humanities Research Center</ead:subtitle>
+               <ead:author>Finding aid written by Katherine Mosley</ead:author>
+            </ead:titlestmt>
+            <ead:publicationstmt>
+               <ead:publisher>The University of Texas at Austin, Harry Ransom Humanities Research Center</ead:publisher>
+               <ead:date>2000</ead:date>
+            </ead:publicationstmt>
+         </ead:filedesc>
+      </eg:egXML>
+   </div>
+</div>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-head"
+     type="elementDocumentation">
+   <head>
+      <gi>head</gi>
+      <seg type="fullName">Heading</seg>
+   </head>
+   <div type="summary">
+      <p>An element that encodes a title or caption for a section of text.</p>
+   </div>
+   <div type="mayContain">
+      <p>[text], abbr, emph, expan, foreign, lb, ptr, ref</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>accessrestrict, accruals, acqinfo, altformavail, appraisal, arrangement, bibliography, bioghist, c, c01, c02, c03, c04, c05, c06, c07, c08, c09, c10, c11, c12, chronlist, controlaccess, custodhist, did, dsc, fileplan, index, legalstatus, list, odd, originalsloc, otherfindaid, phystech, prefercite, processinfo, relatedmaterial, scopecontent, separatedmaterial, table, userestrict</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>althead</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>
+         <gi>head</gi> is used for supplying title-like statements to a section of text,
+                     such as a note, list, table, or series of paragraphs. When <gi>head</gi> is
+                     used, it must be the first child element, followed by one or more other
+                     elements.</p>
+      <p>See also:</p>
+      <list>
+         <item>Do not confuse with the children of <gi>listhead</gi> (<gi>head01</gi>,
+                           <gi>head02</gi>, and <gi>head03</gi>), which designate headings for
+                        facets in a multifacet list, or <gi>thead</gi>, which is used for column
+                        headings in a table.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Optional, not repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:chronlist>
+            <ead:head>Publications List</ead:head>
+            <ead:listhead>
+               <ead:head01>Publication Year</ead:head01>
+               <ead:head02>Book Title</ead:head02>
+            </ead:listhead>
+            <ead:chronitem>[...]</ead:chronitem>
+         </ead:chronlist>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:bioghist id="PRO123">
+            <ead:head>Administrative History</ead:head>
+            <ead:p>In October 1964, the incoming Labour government created new office of Secretary of State for Economic Affairs (combined with First Secretary of State) and set up the Department of Economic Affairs under the Ministers of the Crown Act 1964 to carry primary responsibility for long term economic planning.</ead:p>
+         </ead:bioghist>
+      </eg:egXML>
+   </div>
+</div>

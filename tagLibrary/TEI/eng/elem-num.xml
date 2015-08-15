@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-num"
+     type="elementDocumentation">
+   <head>
+      <gi>num</gi>
+      <seg type="fullName">Number</seg>
+   </head>
+   <div type="summary">
+      <p>A generic element for expressing numeric information.</p>
+   </div>
+   <div type="mayContain">
+      <p>[text], abbr, emph, expan, foreign, lb, ptr, ref</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>abstract, archref, bibref, entry, event, item, p, physfacet, publicationstmt, ref, seriesstmt, unittitle</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>A generic element for encoding numeric information in any form. <gi>num</gi>
+                     may be used when it is necessary to display a number in a special way, or to
+                     identify it with <att>localtype</att>. For example, an accession number in
+                        <gi>acqinfo</gi> might be designated as &lt;num localtype="accession"&gt;. A
+                     publication number might be designated as <gi>publicationstmt</gi> ...
+                        <gi>num</gi>no. 42&lt;/num&gt; ...</p>
+      <p>See also:</p>
+      <list>
+         <item>Do not confuse with <gi>container</gi>, <gi>unitid</gi>,
+                           <gi>recordid</gi>, or <gi>otherrecordid</gi> which may also contain
+                        numeric information.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:filedesc>
+            <ead:titlestmt>[...]</ead:titlestmt>
+            <ead:seriesstmt>
+               <ead:titleproper encodinganalog="440$a">Archival Inventories and Guides of the World;</ead:titleproper>
+               <ead:num encodinganalog="440$v">no. 148</ead:num>
+            </ead:seriesstmt>
+         </ead:filedesc>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:acqinfo>
+            <ead:p>The collection (Donor No. <ead:num localtype="donor">8338</ead:num>
+                           ) was donated by <ead:persname relator="donor">
+                  <ead:part>Vonda Thomas</ead:part>
+               </ead:persname> and <ead:persname relator="donor">
+                  <ead:part>Francine Farrow</ead:part>
+               </ead:persname> in March
+                           1995.</ead:p>
+         </ead:acqinfo>
+      </eg:egXML>
+   </div>
+</div>

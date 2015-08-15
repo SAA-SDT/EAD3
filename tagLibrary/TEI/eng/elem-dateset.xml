@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-dateset"
+     type="elementDocumentation">
+   <head>
+      <gi>dateset</gi>
+      <seg type="fullName">Date Set</seg>
+   </head>
+   <div type="summary">
+      <p>A wrapper element for encoding complex dates that cannot be adequately
+                     represented in one <gi>datesingle</gi> or <gi>daterange</gi>.</p>
+   </div>
+   <div type="mayContain">
+      <p>daterange, datesingle</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>chronitem, relation, unitdatestructured</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>
+         <gi>dateset</gi> binds together single dates and date ranges, multiple single
+                     dates, or multiple date ranges. <gi>dateset</gi> is used in situations where
+                     complex date information needs to be conveyed and requires at least two child
+                     elements. These can be a combination of <gi>datesingle</gi> and
+                        <gi>daterange</gi>.</p>
+   </div>
+   <div type="availability">
+      <p>Within <gi>chronitem</gi> and <gi>unitdatestructured</gi>: One of
+                        <gi>daterange</gi>, <gi>dateset</gi>, or <gi>datesingle</gi> is required,
+                     not repeatable</p>
+      <p>Within <gi>relation</gi>: Optional, not repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:unitdatestructured calendar="gregorian" era="ce">
+            <ead:dateset>
+               <ead:datesingle standarddate="1963-01-22">22 January 1963</ead:datesingle>
+               <ead:daterange>
+                  <ead:fromdate standarddate="1971-06-01">1 June 1971</ead:fromdate>
+                  <ead:todate standarddate="1974-04-30">30 April 1974</ead:todate>
+               </ead:daterange>
+            </ead:dateset>
+         </ead:unitdatestructured>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:unitdatestructured>
+            <ead:dateset>
+               <ead:daterange>
+                  <ead:fromdate>1900</ead:fromdate>
+                  <ead:todate>1910</ead:todate>
+               </ead:daterange>
+               <ead:datesingle>1921</ead:datesingle>
+            </ead:dateset>
+         </ead:unitdatestructured>
+      </eg:egXML>
+   </div>
+</div>

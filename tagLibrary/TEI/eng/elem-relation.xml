@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-relation"
+     type="elementDocumentation">
+   <head>
+      <gi>relation</gi>
+      <seg type="fullName">Relation</seg>
+   </head>
+   <div type="summary">
+      <p>A child element of <gi>relations</gi> for describing a relationship between the
+                     materials described in the EAD instance and a related entity.</p>
+   </div>
+   <div type="mayContain">
+      <p>daterange, dateset, datesingle, descriptivenote, objectxmlwrap, geogname, relationentry</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>relations</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>actuate</cell>
+            <cell>Optional (values limited to: none, onload, onrequest, other)</cell>
+         </row>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>arcrole</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>href</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lastdatetimeverified</cell>
+            <cell>Optional (must follow pattern based on ISO 8601)</cell>
+         </row>
+         <row>
+            <cell>linkrole</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>linktitle</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>otherrelationtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>relationtype</cell>
+            <cell>Required (values limited to: cpfrelation, functionrelation, resourcerelation, otherrelationtype)</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>show</cell>
+            <cell>Optional (values limited to: embed, new, none, other, replace)</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>
+         <gi>relation</gi> records descriptive information about a relationship between
+                     the materials being described and a related entity, such as: an archival,
+                     bibliographic, or other resource; a corporate body, person, or family; a
+                     function; or any other entity.</p>
+      <p>Use <gi>relationentry</gi> to provide a textual description of the related
+                     entity. Use <gi>objectxmlwrap</gi> to embed XML documenting the related entity
+                     from any namespace other than EAD3. Use <gi>date</gi>, <gi>daterange</gi>, or
+                        <gi>dateset</gi> for specifying the time period of the relationship and
+                        <gi>geogname</gi> for relevant location information.
+                        <gi>descriptivenote</gi> may be included for more detailed specifications or
+                     explanations of the relationship.</p>
+      <p>The prescribed order of all child elements (both required and optional) is:</p>
+      <list>
+         <item>
+            <gi>relationentry</gi>
+         </item>
+         <item>
+            <gi>objectxmlwrap</gi>
+         </item>
+         <item>
+            <gi>datesingle</gi>, <gi>daterange</gi>, and/or <gi>dateset</gi>
+         </item>
+         <item>
+            <gi>geogname</gi>
+         </item>
+         <item>
+            <gi>descriptivenote</gi>
+         </item>
+      </list>
+      <p>Attribute usage:</p>
+      <list>
+         <item>Use <att>relationtype</att> to specify the kind of relationship being
+                        encoded.</item>
+         <item>Use <att>otherrelationtype</att> to specify the alternate type of
+                        relationship, when <att>relationtype</att> is set to
+                        "otherrelationtype"</item>
+         <item>Use <att>arcrole</att> to supply a URI that describes the nature of the
+                        relationship between the materials being described and the related
+                        entity.</item>
+         <item>Use <att>linkrole</att> to supply a URI that describes the nature of the
+                        remote resource.</item>
+      </list>
+      <p>See also:</p>
+      <list>
+         <item>The children of <gi>controlaccess</gi>, which can be used to specify the
+                        individuals, organizations, families, topics, and functions related to the
+                        materials being described using controlled vocabularies.</item>
+      </list>
+      <p>Element status:</p>
+      <list>
+         <item>In EAD3 <gi>relation</gi> is designated an "experimental" element. This
+                        status reflects a lack of consensus within the Technical Subcommittee for
+                        Encoded Archival Description (TS-EAD) regarding its inclusion in the schema
+                        due to concerns that it might duplicate functionality already present and a
+                        lack of clarity at the time of developing EAD3 as to how Linked Data will be
+                        integrated into archival description.</item>
+         <item>As an "experimental" element, it is not guaranteed that
+                           <gi>relations</gi> will persist in the next version of EAD in its current
+                        form. However, TS-EAD encourages its use so that the EAD community will
+                        learn more about how the <gi>relations</gi> model works within archival
+                        description, and anticipates providing a forward migration path.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Required, repeatable</p>
+      <p>Experimental in EAD3</p>
+   </div>
+   <div type="examples">
+      <p>See examples under <gi>relations</gi>.</p>
+   </div>
+</div>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-ead"
+     type="elementDocumentation">
+   <head>
+      <gi>ead</gi>
+      <seg type="fullName">Encoded Archival Description</seg>
+   </head>
+   <div type="summary">
+      <p>The required root element of an EAD instance.</p>
+   </div>
+   <div type="mayContain">
+      <p>archdesc, control</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>ROOT</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>base</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>relatedencoding</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>
+         <gi>ead</gi> wraps all other elements in an Encoded Archival Description
+                     document or finding aid. Also referred to more specifically as an inventory or
+                     register, a finding aid establishes physical and intellectual control over many
+                     types of archival materials and helps researchers understand and access the
+                     materials being described. <gi>ead</gi> must contain <gi>control</gi> followed
+                     by <gi>archdesc</gi>.</p>
+      <p>Attribute usage:</p>
+      <list>
+         <item>The <att>audience</att> value may be set to "external" to display data in
+                        all descendant elements, unless the value is changed for a specific
+                        element.</item>
+         <item>Use <att>base</att> to specify a URI (other than the base URI of the EAD
+                        instance) to be used for resolving relative URIs within <gi>ead</gi> or
+                        descendant elements.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Required, not repeatable</p>
+   </div>
+   <div type="examples">
+      <p>The following elements constitute the minimum set of elements for an EAD instance (i.e., those required by the schema). Fully encoded examples are provided at http://www.loc.gov/ead/.</p>
+      <eg:egXML>
+         <ead:ead>
+            <ead:control>
+               <ead:recordid>[. . .]</ead:recordid>
+               <ead:filedesc>
+                  <ead:titlestmt>
+                     <ead:titleproper>[. . .]</ead:titleproper>
+                  </ead:titlestmt>
+               </ead:filedesc>
+               <ead:maintenancestatus value="[. . .]"/>
+               <ead:maintenanceagency>
+                  <ead:agencyname>[. . .]</ead:agencyname>
+               </ead:maintenanceagency>
+               <ead:maintenancehistory>
+                  <ead:maintenanceevent>
+                     <ead:eventtype value="[. . .]"/>
+                     <ead:eventdatetime standarddatetime="[. . .]"/>
+                     <ead:agenttype value="[. . .]"/>
+                     <ead:agent>[. . .]</ead:agent>
+                  </ead:maintenanceevent>
+               </ead:maintenancehistory>
+            </ead:control>
+            <ead:archdesc level="[. . .]">
+               <ead:did>[. . .]</ead:did>
+            </ead:archdesc>
+         </ead:ead>
+      </eg:egXML>
+   </div>
+</div>

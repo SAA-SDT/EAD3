@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-physdescstructured"
+     type="elementDocumentation">
+   <head>
+      <gi>physdescstructured</gi>
+      <seg type="fullName">Structured Physical Description</seg>
+   </head>
+   <div type="summary">
+      <p>An element that provides a method for expressing structured statements about the extent and physical characteristics of the materials being described.</p>
+   </div>
+   <div type="mayContain">
+      <p>descriptivenote, dimensions, physfacet, quantity, unittype</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>did, physdescset</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>coverage</cell>
+            <cell>Required (values limited to: part, whole)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>label</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>otherphysdescstructuredtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>physdescstructuredtype</cell>
+            <cell>Required (values limited to: carrier, materialtype, otherphysdescstructuredtype, spaceoccupied)</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>
+         <gi>physdescstructured</gi> creates structured statements describing the
+                     physical or logical extent or the medium of the materials being described. The
+                     use of <gi>physdescstructured</gi> allows for quantifying the extent of the
+                     whole or a part of the materials described in a form that will be machine
+                     processable and that will facilitate reporting, statistics, sorting, and
+                     importing and exporting data in a collection management system.</p>
+      <p>The prescribed order of all child elements (both required and optional) is:</p>
+      <list>
+         <item>
+            <gi>quantity</gi>
+         </item>
+         <item>
+            <gi>unittype</gi>
+         </item>
+         <item>
+            <gi>physfacet</gi> or <gi>dimensions</gi>
+         </item>
+         <item>
+            <gi>descriptivenote</gi>
+         </item>
+      </list>
+      <p>Attribute usage:</p>
+      <list>
+         <item>Use the required <att>physdescstructuredtype</att> to specify the nature
+                        of the statement about the materials being described.</item>
+      </list>
+      <list>
+         <item>Use the required <att>coverage</att> to record the scope of the unit
+                        being described.</item>
+      </list>
+      <p>See also:</p>
+      <list>
+         <item>Use <gi>physdesc</gi> to express physical description in a
+                        non-machine-processable form and in instances where data exchange is not a
+                        concern.</item>
+         <item>Use <gi>physdescset</gi> to bind two or more <gi>physdescstructured</gi>
+                        elements in order to convey parallel or coverage relationships between
+                        them.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="references">
+      <p>ISAD(G) 3.1.5</p>
+      <p>MARC 300</p>
+      <p>MODS <gi>physicalDescription</gi>
+         <gi>extent</gi>
+      </p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:physdescstructured coverage="whole" physdescstructuredtype="spaceoccupied">
+            <ead:quantity>12</ead:quantity>
+            <ead:unittype>linear feet</ead:unittype>
+         </ead:physdescstructured>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:physdescstructured coverage="whole" physdescstructuredtype="carrier">
+            <ead:quantity>24</ead:quantity>
+            <ead:unittype>boxes</ead:unittype>
+         </ead:physdescstructured>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:physdescstructured coverage="part" physdescstructuredtype="materialtype">
+            <ead:quantity>5</ead:quantity>
+            <ead:unittype>dageurreotypes</ead:unittype>
+            <ead:physfacet>hand-tinted</ead:physfacet>
+            <ead:dimensions>6.5 x 8.5 inches</ead:dimensions>
+         </ead:physdescstructured>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:physdescstructured coverage="part" physdescstructuredtype="materialtype">
+            <ead:quantity/>
+            <ead:unittype identifier="http://vocab.getty.edu/aat/300247651">Volvelles</ead:unittype>
+            <ead:dimensions>10 cm in diameter</ead:dimensions>
+         </ead:physdescstructured>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:physdescset parallel="true" coverage="part">
+            <ead:physdescstructured coverage="part" physdescstructuredtype="spaceoccupied">
+               <ead:quantity>6</ead:quantity>
+               <ead:unittype>terabytes</ead:unittype>
+            </ead:physdescstructured>
+            <ead:physdescstructured coverage="part" physdescstructuredtype="carrier">
+               <ead:quantity>12</ead:quantity>
+               <ead:unittype>hard drives</ead:unittype>
+            </ead:physdescstructured>
+            <ead:physdescstructured coverage="part" physdescstructuredtype="materialtype">
+               <ead:quantity>1800</ead:quantity>
+               <ead:unittype>electronic files</ead:unittype>
+            </ead:physdescstructured>
+         </ead:physdescset>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:physdescstructured coverage="whole"
+                                 physdescstructuredtype="otherphysdescstructuredtype"
+                                 otherphysdescstructuredtype="duration">
+            <ead:quantity>30</ead:quantity>
+            <ead:unittype>minutes</ead:unittype>
+         </ead:physdescstructured>
+      </eg:egXML>
+   </div>
+</div>

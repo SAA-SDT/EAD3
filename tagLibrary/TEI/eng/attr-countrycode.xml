@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="attr-countrycode"
+     type="attributeDocumentation">
+   <head>
+      <att>countrycode</att>
+      <seg type="fullName">Country Code</seg>
+   </head>
+   <div type="summary">
+      <p>A unique code for the country in which the materials being described are
+                        held. Content of the attribute should be a code taken from ISO 3166-1 Codes
+                        for the Representation of Names of Countries and their Subdivisions, column
+                        A2, or another controlled list, as specified in the
+                           <att>countryencoding</att> attribute in <gi>control</gi>. Available in
+                           <gi>maintenanceagency</gi> and <gi>unitid</gi>.</p>
+   </div>
+   <div type="dataType">
+      <p>NMTOKEN</p>
+   </div>
+</div>

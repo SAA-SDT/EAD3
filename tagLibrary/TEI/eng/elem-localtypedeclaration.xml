@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-localtypedeclaration"
+     type="elementDocumentation">
+   <head>
+      <gi>localtypedeclaration</gi>
+      <seg type="fullName">Local Type Declaration</seg>
+   </head>
+   <div type="summary">
+      <p>A child element of <gi>control</gi> used to declare any local conventions or
+                     controlled vocabularies used in <att>localtype</att> in the EAD instance.</p>
+   </div>
+   <div type="mayContain">
+      <p>abbr, citation, descriptivenote</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>control</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>
+         <gi>localtypedeclaration</gi> specifies the local conventions and controlled
+                     vocabularies used in localtype attributes in the EAD instance. The child
+                        <gi>citation</gi> must be used to cite the resource that lists the local
+                     rules or controlled terms. Any notes relating to how these rules or conventions
+                     have been used may be given in <gi>descriptivenote</gi>. The child
+                        <gi>abbr</gi> may be used to identify any abbreviation or code representing
+                     the local convention or controlled vocabulary.</p>
+      <p>It may not be necessary to include <gi>localtypedeclaration</gi> if
+                        <att>localtype</att> values are documented externally.</p>
+      <p>The prescribed order of all child elements (both required and optional) is:</p>
+      <list>
+         <item>
+            <gi>abbr</gi>
+         </item>
+         <item>
+            <gi>citation</gi>
+         </item>
+         <item>
+            <gi>descriptivenote</gi>
+         </item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:control> [. . .] <ead:conventiondeclaration>
+               <ead:abbr>ISAD(G)</ead:abbr>
+               <ead:citation>ISAD(G): General International Standard Archival Description, second edition, Ottawa 2000</ead:citation>
+            </ead:conventiondeclaration>
+            <ead:localtypedeclaration>
+               <ead:citation>IAMS Catloguing Guidelines Part 1: Describing Archives and Manuscripts</ead:citation>
+            </ead:localtypedeclaration>
+            <ead:localcontrol localtype="levelofdetail">
+               <ead:term>Minimum</ead:term>
+            </ead:localcontrol> [. . .] </ead:control>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:localtypedeclaration>
+            <ead:abbr>PM-AMC</ead:abbr>
+            <ead:citation>Processing manual for archival and manuscript collections</ead:citation>
+            <ead:descriptivenote>
+               <ead:p>This finding aid conforms to the standards of description outlined
+                              in the seventh section of the university's
+                                    <ead:title>
+                     <ead:part>Processing manual for archival and manuscript collections</ead:part>
+                  </ead:title>.</ead:p>
+            </ead:descriptivenote>
+         </ead:localtypedeclaration>
+      </eg:egXML>
+   </div>
+</div>

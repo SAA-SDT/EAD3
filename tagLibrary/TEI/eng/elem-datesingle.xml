@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-datesingle"
+     type="elementDocumentation">
+   <head>
+      <gi>datesingle</gi>
+      <seg type="fullName">Single Date</seg>
+   </head>
+   <div type="summary">
+      <p>An element for encoding an individual date related to the materials being described.</p>
+   </div>
+   <div type="mayContain">
+      <p>[text], abbr, emph, expan, foreign, lb, ptr, ref</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>chronitem, dateset, localcontrol, relation, unitdatestructured</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>notafter</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>notbefore</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>standarddate</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>
+         <gi>datesingle</gi> is an element for expressing a single date in the creation,
+                     contextual history, or local control of the described materials, or in their
+                     relationships to other entities such as persons, families, corporate bodies,
+                     resources, functions, events, places, and topics. <gi>datesingle</gi> may
+                     contain actual or approximate dates. The content of the element is intended to
+                     be a human-readable, natural language expression of the date. If, however,
+                     indexing or other machine processing of dates is desired,
+                        <att>standarddate</att> should be used to record the date in
+                     machine-processable form as well.</p>
+      <p>Attribute usage:</p>
+      <list>
+         <item>Use <att>localtype</att> to supply a more specific characterization of
+                        the date.</item>
+         <item>Use <att>notafter</att> and <att>notbefore</att> to capture the earliest
+                        and latest possible dates in machine-processable form in cases when the date
+                        is uncertain.</item>
+         <item>Use <att>standarddate</att> to provide a machine-processable form of the
+                        date. Note that this attribute is for a single date only, while the
+                           <att>normal</att> attribute available on <gi>unitdate</gi> can express a
+                        single date or date range. </item>
+      </list>
+      <p>See also:</p>
+      <list>
+         <item>If an event or relationship has a range of dates, use
+                        <gi>daterange</gi>.</item>
+         <item>Record a complex date (for example, one that includes single dates and
+                        date ranges) in <gi>dateset</gi>.</item>
+         <item>For the date and time of a maintenance event in the history of the EAD
+                        instance, use <gi>eventdatetime</gi>.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Within <gi>chronitem</gi> and <gi>unitdatestructured</gi>: One of
+                        <gi>daterange</gi>, <gi>dateset</gi>, or <gi>datesingle</gi> is required,
+                     not repeatable</p>
+      <p>Within <gi>dateset</gi>: One of <gi>daterange</gi> or <gi>datesingle</gi> is
+                     required, repeatable</p>
+      <p>Within <gi>localcontrol</gi> and <gi>relation</gi>: Optional, not
+                     repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:unitdatestructured calendar="gregorian" era="ce">
+            <ead:dateset>
+               <ead:datesingle standarddate="1963-01-22">22 January 1963</ead:datesingle>
+               <ead:daterange>
+                  <ead:fromdate standarddate="1971-06-01">1 June 1971</ead:fromdate>
+                  <ead:todate standarddate="1974-04-30">30 April 1974</ead:todate>
+               </ead:daterange>
+            </ead:dateset>
+         </ead:unitdatestructured>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:chronitem>
+            <ead:datesingle>1793 May 24</ead:datesingle>
+            <ead:geogname>
+               <ead:part>Deerfield, Mass</ead:part>
+            </ead:geogname>
+            <ead:event>Born</ead:event>
+         </ead:chronitem>
+      </eg:egXML>
+   </div>
+</div>

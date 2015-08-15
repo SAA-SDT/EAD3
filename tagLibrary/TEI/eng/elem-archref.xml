@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-archref"
+     type="elementDocumentation">
+   <head>
+      <gi>archref</gi>
+      <seg type="fullName">Archival Reference</seg>
+   </head>
+   <div type="summary">
+      <p>An element for citing other archival materials.</p>
+   </div>
+   <div type="mayContain">
+      <p>[text], abbr, corpname, date, emph, expan, famname, footnote, foreign, function, genreform, geogname, lb, name, num, occupation, persname, ptr, quote, ref, subject, title</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>bibliography, otherfindaid, relatedmaterial, separatedmaterial</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>
+         <gi>archref</gi> is used to cite separately described archival materials of
+                     potential interest to the researcher, such as a series described separately
+                     from its record group or a collection that is related topically or by
+                     provenance.</p>
+      <p>Use <gi>archref</gi> to cite archival materials in <gi>bibliography</gi>,
+                        <gi>otherfindaid</gi>, <gi>relatedmaterial</gi>, or
+                        <gi>separatedmaterial</gi>. Also, <gi>ref</gi> may be used within
+                        <gi>archref</gi> to link to another EAD instance.</p>
+      <p>See also:</p>
+      <list>
+         <item>Do not confuse with <gi>bibref</gi>, which is used to cite published
+                        works or other materials that are not archival in nature.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:relatedmaterial>
+            <ead:head>Related Collections</ead:head>
+            <ead:archref>
+               <ead:num localtype="collection">BANC PIC 19xx.055--ffALB</ead:num>,
+                           Photographs Taken During the U.S. Geological Surveys West of the 100th
+                           Meridian, 1871-1873, by Timothy H. O'Sullivan and William Bell </ead:archref>
+            <ead:archref>
+               <ead:num localtype="collection">BANC PIC 19xx.089--STER</ead:num>,
+                           Stereoviews of the U.S. Geographical Survey Expedition West of the 100th
+                           Meridian of 1871, by Timothy H. O'Sullivan </ead:archref>
+            <ead:archref>
+               <ead:num localtype="collection">BANC PIC 19xx.273--PIC</ead:num>,
+                           Geographical Surveys West of the 100th Meridian (U.S.). New Mexico
+                           Photographs from the 1873 Geographical Survey West of the 100th Meridian </ead:archref>
+            <ead:archref>
+               <ead:num localtype="collection">BANC PIC 1905.17116-.17119--STER</ead:num>, Western Survey Expeditions of 1871,
+                           1872, 1873, and 1874, by Timothy H. O'Sullivan and William Bell
+                        </ead:archref>
+         </ead:relatedmaterial>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:relatedmaterial>
+            <ead:archref>
+               <ead:ref actuate="onrequest" show="new" href="smith_m">Mary Smith Papers</ead:ref>
+            </ead:archref>
+            <ead:archref>
+               <ead:ref actuate="onrequest" show="new" href="smith_j">Jeremiah Smith Correspondence</ead:ref>
+            </ead:archref>
+         </ead:relatedmaterial>
+      </eg:egXML>
+   </div>
+</div>

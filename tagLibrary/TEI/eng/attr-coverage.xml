@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="attr-coverage"
+     type="attributeDocumentation">
+   <head>
+      <att>coverage</att>
+      <seg type="fullName">Coverage</seg>
+   </head>
+   <div type="summary">
+      <p>Specifies whether a statement of physical description or digital archival
+                        object(s) relates to the entire unit being described or only a part thereof.
+                        Required in <gi>daoset</gi> and <gi>physdescstructured</gi>, optional in
+                           <gi>dao</gi>.</p>
+   </div>
+   <div type="values">
+      <p>part, whole</p>
+   </div>
+</div>

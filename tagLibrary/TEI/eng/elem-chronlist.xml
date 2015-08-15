@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-chronlist"
+     type="elementDocumentation">
+   <head>
+      <gi>chronlist</gi>
+      <seg type="fullName">Chronology List</seg>
+   </head>
+   <div type="summary">
+      <p>An element for designating the temporal sequence of significant events associated with the entity or material described.</p>
+   </div>
+   <div type="mayContain">
+      <p>chronitem, head, listhead</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>accessrestrict, accruals, acqinfo, altformavail, appraisal, arrangement, bibliography, bioghist, blockquote, controlaccess, controlnote, custodhist, dsc, fileplan, footnote, index, legalstatus, odd, originalsloc, otherfindaid, phystech, prefercite, processinfo, relatedmaterial, scopecontent, separatedmaterial, userestrict</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>
+         <gi>chronlist</gi> provides a structured display for a chronological sequence
+                     of events. Each <gi>chronlist</gi> contains one or more <gi>chronitem</gi>
+                     elements that pair one or more dates with one or more events and zero or more
+                     geographic names.</p>
+      <p>
+         <gi>chronlist</gi> most often appears in finding aids as part of
+                        <gi>bioghist</gi>, but <gi>chronlist</gi> is also available for use in other
+                     elements that might need to present dates and events in a multicolumn list.</p>
+      <p>Attribute usage:</p>
+      <list>
+         <item>Use <att>localtype</att>, if local use requires specification of the type
+                        of chronology list.</item>
+      </list>
+      <p>See also:</p>
+      <list>
+         <item>Do not confuse with <gi>list</gi>, which is used for formatting a
+                        non-chronological series of <gi>item</gi> or <gi>defitem</gi>
+                        elements.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:chronlist>
+            <ead:listhead>
+               <ead:head01>Date(s)</ead:head01>
+               <ead:head02>Location(s)</ead:head02>
+               <ead:head03>Event(s)</ead:head03>
+            </ead:listhead>
+            <ead:chronitem>
+               <ead:dateset>
+                  <ead:datesingle standarddate="1942-03">March 1942</ead:datesingle>
+                  <ead:daterange>
+                     <ead:fromdate standarddate="1942-05">May 1946</ead:fromdate>
+                     <ead:todate standarddate="1946-09">September 1946</ead:todate>
+                  </ead:daterange>
+               </ead:dateset>
+               <ead:chronitemset>
+                  <ead:geogname>
+                     <ead:part>Clear Spring</ead:part>
+                     <ead:part>Maryland</ead:part>
+                     <ead:geographiccoordinates coordinatesystem="UTM">18S 248556mE 4393694mN</ead:geographiccoordinates>
+                  </ead:geogname>
+                  <ead:event>Enlisted in Civilian Public Service as a conscientious objector.</ead:event>
+                  <ead:event>Served at CPS Camp No. 24, subunit 4 in Clear Spring, Maryland. Constructed fences to conserve soil, practiced specialized tilling, and dug water diversion ditches. Fought occasional forest fires.</ead:event>
+               </ead:chronitemset>
+            </ead:chronitem>
+         </ead:chronlist>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:chronlist>
+            <ead:chronitem>
+               <ead:datesingle standarddate="1927">1927</ead:datesingle>
+               <ead:geogname>
+                  <ead:part>Berlin, Germany</ead:part>
+                  <ead:geographiccoordinates coordinatesystem="mgrs">33UUU9029819737</ead:geographiccoordinates>
+               </ead:geogname>
+               <ead:event>Designs and builds Piscator Apartment</ead:event>
+            </ead:chronitem>
+            <ead:chronitem>
+               <ead:datesingle standarddate="1932">1932</ead:datesingle>
+               <ead:geogname>
+                  <ead:part>Basel, Switzerland</ead:part>
+                  <ead:geographiccoordinates coordinatesystem="mgrs">32TLT9469569092</ead:geographiccoordinates>
+               </ead:geogname>
+               <ead:event>Designs and builds Wohnbedarf Furnniture Stores</ead:event>
+            </ead:chronitem>
+         </ead:chronlist>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:chronlist>
+            <ead:chronitem>
+               <ead:daterange>
+                  <ead:fromdate standarddate="2010">2010</ead:fromdate>
+                  <ead:todate standarddate="2015">2015</ead:todate>
+               </ead:daterange>
+               <ead:event>EAD revision</ead:event>
+            </ead:chronitem>
+            <ead:chronitem>
+               <ead:datesingle standarddate="2014-08-13">2014 August 13</ead:datesingle>
+               <ead:chronitemset>
+                  <ead:geogname>
+                     <ead:part>Washington, D.C.</ead:part>
+                  </ead:geogname>
+                  <ead:event>TS-EAD Meeting</ead:event>
+                  <ead:event>EAD Roundtable Meeting</ead:event>
+               </ead:chronitemset>
+            </ead:chronitem>
+            <ead:chronitem>
+               <ead:datesingle standarddate="2014-10-23">2014 October 23</ead:datesingle>
+               <ead:event>SAA Webinar, "EAD3: What's new?"</ead:event>
+            </ead:chronitem>
+         </ead:chronlist>
+      </eg:egXML>
+   </div>
+</div>

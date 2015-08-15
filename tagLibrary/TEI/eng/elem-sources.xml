@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-sources"
+     type="elementDocumentation">
+   <head>
+      <gi>sources</gi>
+      <seg type="fullName">Sources</seg>
+   </head>
+   <div type="summary">
+      <p>An optional child element of <gi>control</gi> that groups one or more
+                        <gi>source</gi>s of evidence used in describing the archival material.</p>
+   </div>
+   <div type="mayContain">
+      <p>source</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>control</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>base</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>Use <gi>sources</gi> to bind together one or more <gi>source</gi> elements.</p>
+      <p>Attribute usage:</p>
+      <list>
+         <item>Use <att>base</att> to specify a URI (other than the base URI of the EAD
+                        instance) to be used for resolving relative URIs within <gi>sources</gi> or
+                        descendant elements.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Optional, not repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:control> [. . .] <ead:sources>
+               <ead:source>
+                  <ead:sourceentry>HMC, Principal Family and Estate Collections: Family Names L-W, 1999</ead:sourceentry>
+               </ead:source>
+               <ead:source>
+                  <ead:sourceentry>HMC, Complete Peerage, 1936</ead:sourceentry>
+               </ead:source>
+            </ead:sources>
+         </ead:control>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:sources>
+            <ead:source lastdatetimeverified="2015-07-03T14:36:00-05:00"
+                        href="https://archive.org/details/dictionaryofamer00drakrich"
+                        actuate="onrequest"
+                        linktitle="Dictionary of American biography">
+               <ead:sourceentry>Dictionary of American biography: including men of the time ... and a supplement</ead:sourceentry>
+               <ead:objectxmlwrap>
+                  <oai_dc:dc>
+                     <dc:title>Dictionary of American biography, including men of the time; containing nearly ten thousand notices of persons of both sexes, of native and foreign birth, who have been remarkable, or prominently connected with the arts, sciences, literature, politics, or history of the American continent. Giving also the pronunciation of many of the foreign and peculiar American names, a key to the assumed names of writers, and a supplement</dc:title>
+                     <dc:creator>Drake, Francis S. (Francis Samuel), 1828-1885</dc:creator>
+                     <dc:date>1872</dc:date>
+                     <dc:identifier>E176 .D725 1872</dc:identifier>
+                     <dc:identifier>https://archive.org/details/dictionaryofamer00drakrich</dc:identifier>
+                  </oai_dc:dc>
+               </ead:objectxmlwrap>
+               <ead:descriptivenote>
+                  <ead:p>Basic biographical information about <ead:persname source="lcnaf" normal="Freeman, Nathaniel, 1741-1827">
+                        <ead:part>Nathaniel Freeman</ead:part>
+                     </ead:persname> was
+                                 taken from <ead:title>
+                        <ead:part>Dictionary of American biography: including men of the time ... and a supplement</ead:part>
+                     </ead:title>, page 340.</ead:p>
+               </ead:descriptivenote>
+            </ead:source>
+         </ead:sources>
+      </eg:egXML>
+   </div>
+</div>

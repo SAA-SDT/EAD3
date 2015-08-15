@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-bioghist"
+     type="elementDocumentation">
+   <head>
+      <gi>bioghist</gi>
+      <seg type="fullName">Biography or History</seg>
+   </head>
+   <div type="summary">
+      <p>For recording biographical or historical information about the creator(s) of the materials being described.</p>
+   </div>
+   <div type="mayContain">
+      <p>bioghist, blockquote, chronlist, head, list, p, table</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>archdesc, bioghist, c, c01, c02, c03, c04, c05, c06, c07, c08, c09, c10, c11, c12</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>A concise essay or chronology that places the archival materials in context by
+                     providing information about their creator(s). Includes significant information
+                     about the life of an individual or family, or the administrative history of a
+                     corporate body. Use a series of <gi>p</gi> elements to capture a narrative
+                     history, and/or <gi>chronlist</gi> to match dates and date ranges with
+                     associated events (and, optionally, places).</p>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="references">
+      <p>ISAD(G) 3.2.1</p>
+      <p>MARC 545</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:bioghist>
+            <ead:head>Administrative History</ead:head>
+            <ead:p id="PRO123">In October 1964 the incoming Labour government created new office of Secretary of State for Economic Affairs (combined with First Secretary of State) and set up the Department of Economic Affairs under the Ministers of the Crown Act 1964 to carry primary responsibility for long term economic planning.</ead:p>
+            <ead:p>Under the Act the posts of Economic Secretary to the Treasury and Secretary of State for Industry, Trade and Regional Development were abolished.</ead:p>
+            <ead:p>George Brown was appointed as First Secretary of State and Secretary of State for Economic Affairs, and as chairman of the National Economic Development Council (NEDC).</ead:p>
+            <ead:p>Composition of DEA: most of Treasury's National Economy Group (excluding the short term forecasting team); economic planning staff from the National Economic Development Office (NEDO); the regional policy divisions from the Board of Trade; a team of industrial experts.</ead:p>
+            <ead:p>DEA charged with duty of formulating, with both sides of industry, a National Plan (published in September 1965), co-ordinating the work of other departments in implementing policies of economic growth, particularly in the fields of industry, the regions, and prices and incomes.</ead:p> . . . </ead:bioghist>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:bioghist>
+            <ead:head>Chronology</ead:head>
+            <ead:chronlist>
+               <ead:chronitem>
+                  <ead:datesingle standarddate="1840-10-12">12 Oct 1840</ead:datesingle>
+                  <ead:event>Born Helena Opid in Krakow, Poland.</ead:event>
+               </ead:chronitem>
+               <ead:chronitem>
+                  <ead:datesingle standarddate="1861">1861</ead:datesingle>
+                  <ead:event>Made stage debut as Helena Modrzejewska in charity fair
+                                 production of <ead:emph render="italic">The White Camellia</ead:emph>, in Bochnia, Poland.</ead:event>
+               </ead:chronitem> [. . .] <ead:chronitem>
+                  <ead:datesingle standarddate="1909-04-09">1909</ead:datesingle>
+                  <ead:event>Died April 8th at her home on Bay Island. Funeral services held at St. Vibiana's Cathedral in Los Angeles, and Modjeska was later buried in her native Krakow.</ead:event>
+               </ead:chronitem>
+            </ead:chronlist>
+         </ead:bioghist>
+      </eg:egXML>
+   </div>
+</div>

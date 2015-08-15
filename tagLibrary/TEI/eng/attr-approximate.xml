@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="attr-approximate"
+     type="attributeDocumentation">
+   <head>
+      <att>approximate</att>
+      <seg type="fullName">Approximate</seg>
+   </head>
+   <div type="summary">
+      <p>Indicates that the value provided is not exact. Available in
+                           <gi>quantity</gi>.</p>
+   </div>
+   <div type="values">
+      <p>false, true</p>
+   </div>
+</div>

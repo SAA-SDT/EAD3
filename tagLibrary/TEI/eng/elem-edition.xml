@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-edition"
+     type="elementDocumentation">
+   <head>
+      <gi>edition</gi>
+      <seg type="fullName">Edition</seg>
+   </head>
+   <div type="summary">
+      <p>A child element of <gi>editionstmt</gi> for recording the version of an EAD
+                     instance.</p>
+   </div>
+   <div type="mayContain">
+      <p>[text], abbr, emph, expan, foreign, lb, ptr, ref</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>editionstmt</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>Use <gi>edition</gi> to indicate the version of an EAD instance. Generally, a
+                     new edition of a finding aid represents substantial additions or changes and
+                     should supersede previous online versions.</p>
+      <p>See also:</p>
+      <list>
+         <item>Use <gi>maintenanceevent</gi> to record the date when changes have been
+                        introduced to the EAD instance, the type of changes, and the person or
+                        organization responsible. The child <gi>eventdescription</gi> optionally
+                        allows you to provide details about the changes.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Within <gi>editionstmt</gi>, one of <gi>edition</gi> or <gi>p</gi> is required,
+                     repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:editionstmt>
+            <ead:edition>2nd ed.</ead:edition>
+            <ead:p>This edition reflects substantial additions to the collection in 1994.</ead:p>
+         </ead:editionstmt>
+      </eg:egXML>
+   </div>
+</div>

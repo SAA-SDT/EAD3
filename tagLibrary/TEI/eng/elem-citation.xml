@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-citation"
+     type="elementDocumentation">
+   <head>
+      <gi>citation</gi>
+      <seg type="fullName">Citation</seg>
+   </head>
+   <div type="summary">
+      <p>A required child element of <gi>conventiondeclaration</gi> and
+                        <gi>localtypedeclaration</gi> for identifying any rules and conventions
+                     applied in the compilation of the description.</p>
+   </div>
+   <div type="mayContain">
+      <p>[text], abbr, emph, expan, foreign, lb, ptr, ref</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>conventiondeclaration, localtypedeclaration</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>actuate</cell>
+            <cell>Optional (values limited to: none, onload, onrequest, other)</cell>
+         </row>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell/>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>href</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lastdatetimeverified</cell>
+            <cell>Optional (must follow pattern based on ISO 8601)</cell>
+         </row>
+         <row>
+            <cell>linkrole</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>linktitle</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>show</cell>
+            <cell>Optional (values limited to: embed, new, none, other, replace)</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>Use <gi>citation</gi> to identify any rules and conventions used in creating
+                     the description. Examples include content standards, controlled vocabularies,
+                     and thesauri.</p>
+      <p>Use <gi>citation</gi> to cite an external resource in human and/or
+                     machine-processable form. Provide the formal title or name of the resource,
+                     using <gi>emph</gi> to specify any formatting (such as italic or bold, etc.)
+                     deemed useful.</p>
+      <p>Attribute usage:</p>
+      <list>
+         <item>Use <att>href</att> to link to the cited resource.</item>
+      </list>
+      <p>See also:</p>
+      <list>
+         <item>Use <gi>source</gi> to cite a source of evidence used in describing the
+                        archival materials.</item>
+         <item>Use <gi>bibliography</gi> to provide one or more citations for a
+                        published work based on, about, or related to the materials being
+                        described.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Required, not repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:conventiondeclaration>
+            <ead:abbr>ISAD(G)</ead:abbr>
+            <ead:citation>ISAD(G): General International Standard Archival Description, second edition, Ottawa 2000</ead:citation>
+         </ead:conventiondeclaration>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:conventiondeclaration>
+            <ead:abbr>NCARules</ead:abbr>
+            <ead:citation>National Council on Archives, Rules for the Construction of Personal, Place and Corporate Names, 1997</ead:citation>
+         </ead:conventiondeclaration>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:localtypedeclaration>
+            <ead:citation>IAMS Catloguing Guidelines Part 1: Describing Archives and Manuscripts</ead:citation>
+         </ead:localtypedeclaration>
+      </eg:egXML>
+   </div>
+</div>

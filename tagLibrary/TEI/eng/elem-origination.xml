@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-origination"
+     type="elementDocumentation">
+   <head>
+      <gi>origination</gi>
+      <seg type="fullName">Origination</seg>
+   </head>
+   <div type="summary">
+      <p>A child element of <gi>did</gi> that names the creator or collector of the
+                     described materials.</p>
+   </div>
+   <div type="mayContain">
+      <p>corpname, famname, name, persname</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>did</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>label</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>
+         <gi>orgination</gi> records the name of an individual, organization, or family
+                     responsible for the creation, accumulation, or assembly of the described
+                     materials prior to their accessioning by an archival repository.
+                        <gi>origination</gi> may be used to indicate such agents as correspondents,
+                     records creators, collectors, or dealers.</p>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="references">
+      <p>ISAD(G) 3.2.1</p>
+      <p>MARC 100, 110, 111</p>
+      <p>MODS <gi>name</gi>
+      </p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:archdesc level="collection">
+            <ead:did>
+               <ead:origination label="Creator">
+                  <ead:corpname encodinganalog="110" source="lcnaf">
+                     <ead:part>National Association for the Advancement of Colored People</ead:part>
+                  </ead:corpname>
+               </ead:origination> [. . .] </ead:did> [. . .] </ead:archdesc>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:did>
+            <ead:head>Descriptive Summary</ead:head>
+            <ead:unittitle label="Title">Donald C. Stone, Jr. Papers,</ead:unittitle>
+            <ead:unitdate unitdatetype="inclusive">1971-1983</ead:unitdate>
+            <ead:unitid countrycode="US" repositorycode="cbgtu" label="Accession number">GTU 2001-8-03</ead:unitid>
+            <ead:origination label="Creator">
+               <ead:persname source="lcnaf">
+                  <ead:part>Stone, Donald C., Jr.</ead:part>
+               </ead:persname>
+            </ead:origination>
+            <ead:physdesc label="Extent">4 boxes, (4 linear ft.)</ead:physdesc>
+            <ead:repository label="Repository">The Graduate Theological Union</ead:repository>
+         </ead:did>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:origination label="Creator">
+            <ead:persname>
+               <ead:part>Skinner</ead:part>
+               <ead:part>B. F.</ead:part>
+               <ead:part>Burrhus Frederic</ead:part>
+               <ead:part>1904-1990</ead:part>
+            </ead:persname>
+         </ead:origination>
+      </eg:egXML>
+   </div>
+</div>

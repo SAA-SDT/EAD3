@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-lb"
+     type="elementDocumentation">
+   <head>
+      <gi>lb</gi>
+      <seg type="fullName">Line Break</seg>
+   </head>
+   <div type="summary">
+      <p>A formatting element that forces the following text to start on a new line.</p>
+   </div>
+   <div type="mayContain">
+      <p>[empty]</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>abstract, addressline, archref, author, bibref, citation, container, date, datesingle, didnote, dimensions, edition, emph, entry, event, fromdate, head, head01, head02, head03, item, label, materialspec, num, p, part, physdesc, physfacet, physloc, publisher, quote, ref, sponsor, subtitle, titleproper, todate, unitdate, unitid, unittitle</p>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>An empty formatting element that allows the author of an EAD instance to explicitly indicate the point in the text where a new line should occur rather than relying on a rendering application. Use only when a line break is needed within an element. Use a style sheet to specify line breaks between elements.</p>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="references">
+      <p>Equivalent to &lt;br/&gt; in HTML.</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:publisher> San Joaquin County Historical Society and Museum<ead:lb/> Lodi, California<ead:lb/>
+            <ead:ptr actuate="onload" show="embed" entityref="sjmlogo"/>
+         </ead:publisher>
+      </eg:egXML>
+   </div>
+</div>

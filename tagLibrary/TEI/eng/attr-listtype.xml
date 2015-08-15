@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="attr-listtype"
+     type="attributeDocumentation">
+   <head>
+      <att>listtype</att>
+      <seg type="fullName">List Type</seg>
+   </head>
+   <div type="summary">
+      <p>Specifies the type of list: a definition list pairs a <gi>label</gi> with a
+                        corresponding <gi>item</gi> containing text that describes the term; an
+                        ordered list is a numbered or lettered list; an unordered list is one in
+                        which sequence is not critical (e.g., a bulleted list). Available only on
+                           <gi>list</gi>.</p>
+   </div>
+   <div type="values">
+      <p>deflist, ordered, unordered</p>
+   </div>
+</div>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-part"
+     type="elementDocumentation">
+   <head>
+      <gi>part</gi>
+      <seg type="fullName">Part</seg>
+   </head>
+   <div type="summary">
+      <p>A required and repeatable child of controlled access elements used to encode one or more parts of an access term.</p>
+   </div>
+   <div type="mayContain">
+      <p>[text], <gi>abbr</gi>, <gi>emph</gi>, <gi>expan</gi>, <gi>foreign</gi>,
+                     &lt;lb/&gt;, &lt;ptr/&gt;, <gi>ref</gi>
+      </p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>corpname, famname, function, genreform, geogname, name, occupation, persname, subject, title</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>identifier</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>rules</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>source</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>Identifies a term contained in an access point element. Access point elements
+                     may contain a single <gi>part</gi> for an entire string, or multiple
+                        <gi>part</gi> elements when more granularity is desired in delineating and
+                     identifying the components of a multi-term string. For post-coordinated access
+                     points combining terms from multiple vocabularies, the <att>identifier</att>,
+                        <att>rules</att>, and <att>source</att> attributes may be used to associate
+                     individual parts to their respective vocabularies.</p>
+      <p>Attribute usage:</p>
+      <list>
+         <item>Use <att>encodinganalog</att> to indicate corresponding data elements in
+                        another data format, such as MARC. </item>
+         <item>Use <att>identifier</att> to provide a number, code, or string (e.g.,
+                        URI) that uniquely identifies the part in a controlled vocabulary, taxonomy,
+                        ontology, or other knowledge organization system, if different from the
+                           <att>identifier</att> for the parent element. Do not confuse with
+                           <att>id</att>, which provides a unique id for the element within the XML
+                        instance.</item>
+         <item>Use <att>localtype</att>, if local practice requires specification of the
+                        type of part.</item>
+      </list>
+      <list>
+         <item>Use <att>rules</att> to specify the descriptive rules followed for
+                        forming the term encoded in the part if different from the <att>rules</att>
+                        for the parent access point element.</item>
+         <item>Use <att>source</att> to indicate the vocabulary from which the term
+                        encoded in the part if different from the <att>source</att> of the parent
+                        access point element.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Required, repeatable.</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:persname encodinganalog="600"
+                       relator="creator"
+                       rules="RDA"
+                       source="http://viaf.org/viaf/23746712">
+            <ead:part localtype="surname">Casey</ead:part>
+            <ead:part localtype="givenname">Silas</ead:part>
+            <ead:part localtype="dates">1807-1882</ead:part>
+         </ead:persname>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:subject encodinganalog="650" rules="RDA" source="lcsh">
+            <ead:part encodinganalog="a">Railroads</ead:part>
+            <ead:part encodinganalog="z">Washington (State)</ead:part>
+            <ead:part encodinganalog="x">History</ead:part>
+         </ead:subject>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:subject encodinganalog="650" source="lcsh">
+            <ead:part>Dance schools-- Massachusetts--Boston--Archival resources.</ead:part>
+         </ead:subject>
+      </eg:egXML>
+   </div>
+</div>

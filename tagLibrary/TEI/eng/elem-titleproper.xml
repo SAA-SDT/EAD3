@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-titleproper"
+     type="elementDocumentation">
+   <head>
+      <gi>titleproper</gi>
+      <seg type="fullName">Title Proper of the Finding Aid</seg>
+   </head>
+   <div type="summary">
+      <p>A child element of <gi>titlestmt</gi> and <gi>seriesstmt</gi> that indicates
+                     the title of a finding aid or finding aid series.</p>
+   </div>
+   <div type="mayContain">
+      <p>[text] abbr, emph, expan, foreign, lb, ptr, ref</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>seriesstmt, titlestmt</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>render</cell>
+            <cell>Optional (values limited to: altrender, bold, bolddoublequote, bolditalic, boldsinglequote, boldsmcaps, boldunderline, doublequote, italic, nonproport, singlequote, smcaps, sub, super, underline)</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>Use <gi>titleproper</gi> to record the title of a finding aid or finding aid
+                     series.</p>
+      <p>Attribute usage:</p>
+      <list>
+         <item>Use <att>localtype</att> if local practice requires recording the type of
+                        title.</item>
+         <item>Use <att>render</att> to specify formatting of <gi>titleproper</gi> for
+                        display and print purposes.</item>
+      </list>
+      <p>See also:</p>
+      <list>
+         <item>Do not confuse with <gi>title</gi>, which is used to encode the formal
+                        names of works such as monographs, serials, paintings, etc., mentioned in
+                        the finding aid.</item>
+         <item>Do not confuse with <gi>unittitle</gi>, which identifies the name of the
+                        described materials.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Within <gi>seriesstmt</gi>: Required, not repeatable</p>
+      <p>Within <gi>titlestmt</gi>: Required, repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:titlestmt>
+            <ead:titleproper>The Edgar Holden Papers, 1978-1993</ead:titleproper>
+            <ead:subtitle>A Guide to the Holden Papers at the University of Ishtaba</ead:subtitle>
+            <ead:author>Finding aid prepared by Avery Thimble</ead:author>
+            <ead:sponsor>Processing sponsored by grant funding from the National Historical Publications and Records Commission, grant number 94-0123</ead:sponsor>
+         </ead:titlestmt>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:titlestmt>
+            <ead:titleproper>Catalogue of the Papers of James Graham Ballard</ead:titleproper>
+         </ead:titlestmt>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:titlestmt>
+            <ead:titleproper localtype="formal">Guide to the Abraham Hayward Collection</ead:titleproper>
+            <ead:titleproper localtype="filing"
+                             render="altrender"
+                             altrender="nodisplay"
+                             audience="internal">Hayward (Abraham) Collection</ead:titleproper>
+            <ead:author>by Michael Rush</ead:author>
+         </ead:titlestmt>
+      </eg:egXML>
+   </div>
+</div>

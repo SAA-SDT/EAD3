@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-name"
+     type="elementDocumentation">
+   <head>
+      <gi>name</gi>
+      <seg type="fullName">Generic Name</seg>
+   </head>
+   <div type="summary">
+      <p>An element for encoding generic names.</p>
+   </div>
+   <div type="mayContain">
+      <p>part</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>abstract, archref, bibref, controlaccess, entry, event, indexentry, item, namegrp, origination, p, physfacet, ref, repository, unittitle</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>identifier</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>normal</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>relator</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>rules</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>source</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>The proper noun or noun phrase designation for an entity that is difficult to
+                     tag more specifically as <gi>corpname</gi>, <gi>famname</gi>,
+                     <gi>geogname</gi>, or <gi>persname</gi>. <gi>name</gi> may be used in place of
+                     the more specific access elements when it is not known what kind of name is
+                     being described or when a higher degree of precision is unnecessary. For
+                     example, <gi>name</gi> might be used in an <gi>indexentry</gi> when it is not
+                     clear if the name "Bachrach" refers to a person or a photographic
+                     corporation.</p>
+      <p>
+         <gi>name</gi> must contain one or more <gi>part</gi> elements. A single
+                        <gi>part</gi> may be used for the entire string, or if more granularity is
+                     desired, multiple <gi>part</gi> elements may be used to capture each component
+                     of the name.</p>
+      <p>Attribute usage:</p>
+      <list>
+         <item>Use <att>encodinganalog</att> to indicate corresponding data elements in
+                        another data format, such as MARC.</item>
+         <item>Use <att>identifier</att> to provide a number, code, or string (e.g.,
+                        URI) that uniquely identifies the name in a controlled vocabulary, taxonomy,
+                        ontology, or other knowledge organization system. Do not confuse with
+                           <att>id</att>, which provides a unique id for the element within the XML
+                        instance.</item>
+         <item>Use <att>localtype</att>, if local practice requires specification of the
+                        type of name.</item>
+         <item>Use <att>normal</att> to identify a standardized form of the name if not
+                        provided in the element itself.</item>
+         <item>Use <att>relator</att> to specify, either as a URI or a string, other
+                        relationship(s) the name has to the described materials, for example
+                        "subject" or "photographer." The schema does not limit possible values of
+                           <att>relator</att>, but an institution could define and enforce values
+                        elsewhere if desired.</item>
+      </list>
+      <list>
+         <item>Use <att>rules</att> to specify the descriptive rules followed for
+                        forming the name.</item>
+         <item>Use <att>source</att> to indicate the vocabulary from which the name has
+                        been taken.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Within <gi>indexentry</gi>: Optional, not repeatable</p>
+      <p>Within all other elements: Optional, repeatable</p>
+   </div>
+   <div type="references">
+      <p>MARC 720</p>
+      <p>MODS <gi>name</gi>
+      </p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:controlaccess>
+            <ead:name encodinganalog="610" rules="RDA">
+               <ead:part>Winwood</ead:part>
+            </ead:name>
+         </ead:controlaccess>
+      </eg:egXML>
+   </div>
+</div>

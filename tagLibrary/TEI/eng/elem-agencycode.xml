@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-agencycode"
+     type="elementDocumentation">
+   <head>
+      <gi>agencycode</gi>
+      <seg type="fullName">Agency Code</seg>
+   </head>
+   <div type="summary">
+      <p>A child element of <gi>maintenanceagency</gi> that provides a code for the
+                     institution or service responsible for the creation, maintenance, and/or
+                     dissemination of the EAD instance.</p>
+   </div>
+   <div type="mayContain">
+      <p>[text]</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>maintenanceagency</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>Use <gi>agencycode</gi> to record a code indicating the institution or service
+                     responsible for the creation, maintenance and/or dissemination of the EAD
+                     instance. Use of <gi>agencycode</gi> is recommended, as the combination of
+                        <gi>agencycode</gi> and the required <gi>recordid</gi> provide a globally
+                     unique identifier for the instance.</p>
+      <p>It is recommended that the code follow the format of the International Standard
+                     Identifier for Libraries and Related Organizations (ISIL: ISO 15511): a prefix,
+                     a dash, and an identifier. The code is alphanumeric (characters A-Z, 0-9,
+                     solidus, hyphen-minus, and colon) with a maximum of 16 characters. If
+                     appropriate to local or national convention, insert avalid ISIL for an
+                     institution, whether provided by a national authority (usually the national
+                     library) or a service (such as OCLC). If this is not the case then local
+                     institution codes may be given with the ISO 3166-1 alpha-2 country code as the
+                     prefix to ensure international uniqueness in <gi>agencycode</gi>.</p>
+      <p>See also:</p>
+      <list>
+         <item>Use <gi>agencyname</gi> to record the name of the agency.</item>
+         <item>Use <gi>otheragencycode</gi> to record any alternative codes representing
+                        the agency.</item>
+         <item>
+            <gi>recordid</gi>, which together with <gi>agencycode</gi> provides a
+                        globally unique identifier for the EAD instance.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Optional, not repeatable</p>
+   </div>
+   <div type="references">
+      <p>ISAD(G) 3.1.1</p>
+      <p>MODS <gi>recordContentSource</gi>
+      </p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:maintenanceagency>
+            <ead:agencycode>AU-ANL:PEAU</ead:agencycode>
+            <ead:agencyname>National Library of Australia</ead:agencyname>
+         </ead:maintenanceagency>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:maintenanceagency>
+            <ead:agencycode>DNASA-G</ead:agencycode>
+            <ead:otheragencycode localtype="agency">GSFC</ead:otheragencycode>
+            <ead:agencyname>NASA Goddard Space Flight Center</ead:agencyname>
+         </ead:maintenanceagency>
+      </eg:egXML>
+   </div>
+</div>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-maintenanceagency"
+     type="elementDocumentation">
+   <head>
+      <gi>maintenanceagency</gi>
+      <seg type="fullName">Maintenance Agency</seg>
+   </head>
+   <div type="summary">
+      <p>A required child element of <gi>control</gi> that identifies the information or
+                     service responsible for the EAD instance.</p>
+   </div>
+   <div type="mayContain">
+      <p>agencycode, agencyname, descriptivenote, otheragencycode</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>control</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>countrycode</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>Information about the institution or service responsible for the creation, maintenance, and/or dissemination of the EAD instance.</p>
+      <p>
+         <gi>maintenanceagency</gi> must include a child <gi>agencyname</gi> to provide
+                     the name of the institution or service. It is recommended to include the
+                     optional <gi>agencycode</gi> and/or <gi>otheragencycode</gi> children to
+                     unambiguously identify the institution or service. Any general information
+                     about the institution in relation to the EAD instance may be given in
+                        <gi>descriptivenote</gi>.</p>
+      <p>The prescribed order of all child elements (both required and optional) is:</p>
+      <list>
+         <item>
+            <gi>agencycode</gi>
+         </item>
+         <item>
+            <gi>otheragencycode</gi>
+         </item>
+         <item>
+            <gi>agencyname</gi>
+         </item>
+         <item>
+            <gi>descriptivenote</gi>
+         </item>
+      </list>
+      <p>Attribute usage:</p>
+      <list>
+         <item>Use <att>countrycode</att> to indicate a unique code for the country of
+                        the maintenance agency.</item>
+      </list>
+      <p>See also:</p>
+      <list>
+         <item>Use <gi>repository</gi> to identify the institution or agency responsible
+                        for providing intellectual access to the materials being described, which
+                        may be the same as the maintenance agency.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Required, not repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:control> [. . .] <ead:maintenancestatus value="derived"/>
+            <ead:maintenanceagency>
+               <ead:otheragencycode localtype="archon">GB-58</ead:otheragencycode>
+               <ead:agencyname>British Library</ead:agencyname>
+            </ead:maintenanceagency>
+            <ead:languagedeclaration>
+               <ead:language langcode="eng">English</ead:language>
+               <ead:script scriptcode="Latn">Latin</ead:script>
+            </ead:languagedeclaration> [. . .] </ead:control>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:control> [. . .] <ead:maintenancestatus value="revised"/>
+            <ead:publicationstatus value="published"/>
+            <ead:maintenanceagency>
+               <ead:agencycode>DNASA-G</ead:agencycode>
+               <ead:otheragencycode localtype="agency">GSFC</ead:otheragencycode>
+               <ead:agencyname>NASA Goddard Space Flight Center</ead:agencyname>
+            </ead:maintenanceagency> [. . .] </ead:control>
+      </eg:egXML>
+   </div>
+</div>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="attr-identifier"
+     type="attributeDocumentation">
+   <head>
+      <att>identifier</att>
+      <seg type="fullName">Identifier</seg>
+   </head>
+   <div type="summary">
+      <p>On <gi>unitid</gi>, this is a machine-processable unique identifier for the
+                        descriptive component in which the element appears. On access terms and
+                        other elements whose content is drawn from an authority file,
+                           <att>identifier</att> is a number, code, or string (e.g. URI) that
+                        uniquely identifies the term being used in a controlled vocabulary,
+                        taxonomy, ontology, or other knowledge organization system (e.g., the
+                        Library of Congress Name Authority File identifier). In the latter case,
+                           <att>source</att> may be used to identify the authority file. Available
+                        in <gi>corpname</gi>, <gi>famname</gi>, <gi>function</gi>,
+                           <gi>genreform</gi>, <gi>geogname</gi>, <gi>name</gi>,
+                        <gi>occupation</gi>, <gi>part</gi>, <gi>persname</gi>, <gi>physfacet</gi>,
+                           <gi>subject</gi>, <gi>term</gi>, <gi>title</gi>, <gi>unitid</gi>,
+                           <gi>unittype</gi>. Do not confuse with <att>id</att>, which provides a
+                        unique ID for the element within the XML instance.</p>
+   </div>
+   <div type="dataType">
+      <p>token</p>
+   </div>
+</div>

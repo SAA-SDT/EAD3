@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-event"
+     type="elementDocumentation">
+   <head>
+      <gi>event</gi>
+      <seg type="fullName">Event</seg>
+   </head>
+   <div type="summary">
+      <p>An element describing a happening or occurrence recorded within a chronology list.</p>
+   </div>
+   <div type="mayContain">
+      <p>[text], abbr, corpname, date, emph, expan, famname, footnote, foreign, function, genreform, geogname, lb, list, name, num, occupation, persname, ptr, quote, ref, subject, title</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>chronitem, chronitemset</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>Use <gi>event</gi> within <gi>chronitem</gi> to pair a description of the event
+                     with one or more dates and an optional place. If one or more events occurred
+                     related to the date(s) in question or if more than one place is associated with
+                     the event, use <gi>chronitemset</gi> to bundle multiple <gi>event</gi> – or
+                        <gi>geogname</gi> – elements.</p>
+   </div>
+   <div type="availability">
+      <p>Within <gi>chronitem</gi>: Optional, not repeatable</p>
+      <p>Within <gi>chronitemset</gi>: Required, repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:chronlist>
+            <ead:chronitem>
+               <ead:datesingle>2015</ead:datesingle>
+               <ead:chronitemset>
+                  <ead:geogname>
+                     <ead:part>Woodbury, Minnesota</ead:part>
+                  </ead:geogname>
+                  <ead:geogname>
+                     <ead:part>Roseville, Minnesota</ead:part>
+                  </ead:geogname>
+                  <ead:event>Opens additional stores</ead:event>
+               </ead:chronitemset>
+            </ead:chronitem>
+            <ead:chronitem>
+               <ead:datesingle>1948</ead:datesingle>
+               <ead:chronitemset>
+                  <ead:geogname>
+                     <ead:part>Minneapolis, Minnesota</ead:part>
+                  </ead:geogname>
+                  <ead:event>Graduates from the University of Minnesota</ead:event>
+                  <ead:event>Begins work as a receptionist for the Humphrey for Senator Committee</ead:event>
+               </ead:chronitemset>
+            </ead:chronitem>
+            <ead:chronitem>
+               <ead:datesingle>March 1957</ead:datesingle>
+               <ead:chronitemset>
+                  <ead:geogname>
+                     <ead:part encodinganalog="651" localtype="a">Biwabik, Minnesota</ead:part>
+                  </ead:geogname>
+                  <ead:event>Dies</ead:event>
+               </ead:chronitemset>
+               <ead:chronitemset>
+                  <ead:geogname>
+                     <ead:part encodinganalog="651" localtype="a">Minneapolis, Minnesota</ead:part>
+                  </ead:geogname>
+                  <ead:event>Buried in Lakewood Cemetery</ead:event>
+               </ead:chronitemset>
+            </ead:chronitem>
+         </ead:chronlist>
+      </eg:egXML>
+   </div>
+</div>

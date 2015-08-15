@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-daterange"
+     type="elementDocumentation">
+   <head>
+      <gi>daterange</gi>
+      <seg type="fullName">Date Range</seg>
+   </head>
+   <div type="summary">
+      <p>A wrapper element for binding together <gi>fromdate</gi> and <gi>todate</gi> in
+                     order to represent a range of dates.</p>
+   </div>
+   <div type="mayContain">
+      <p>fromdate, todate</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>chronitem, dateset, localcontrol, relation, unitdatestructured</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>Use <gi>daterange</gi> to express a range of dates in the creation, contextual
+                     history, or local control of the described materials, or their relationships to
+                     other entities such as persons, families, corporate bodies, resources,
+                     functions, events, places, and topics. <gi>daterange</gi> contains
+                        <gi>fromdate</gi> and/or <gi>todate</gi>, and therefore may express a range
+                     of dates as a starting point with no end point, a start and end point, or an
+                     end point with no starting point. The content of the children of
+                        <gi>daterange</gi> is intended to be a human-readable, natural language
+                     expression of the date. If, however, indexing or other machine processing of
+                     dates is desired, <att>standarddate</att> should be used on the children of
+                        <gi>daterange</gi> to record the date in machine-processable form as
+                     well.</p>
+      <p>Attribute usage:</p>
+      <list>
+         <item>Use <att>localtype</att> to supply a more specific characterization of
+                        the date range.</item>
+      </list>
+      <p>See also:</p>
+      <list>
+         <item>If an event or relationship has a single date, use
+                        <gi>datesingle</gi>.</item>
+         <item>Record a complex date (for example, one that includes single dates and
+                        date ranges) in <gi>dateset</gi>.</item>
+         <item>For the date and time of a maintenance event in the history of the EAD
+                        instance, use <gi>eventdatetime</gi>.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Within <gi>chronitem</gi> and <gi>unitdatestructured</gi>: One of
+                        <gi>daterange</gi>, <gi>dateset</gi>, or <gi>datesingle</gi> is required,
+                     not repeatable</p>
+      <p>Within <gi>dateset</gi>: One of <gi>daterange</gi> or <gi>datesingle</gi> is
+                     required, repeatable</p>
+      <p>Within <gi>localcontrol</gi> and <gi>relation</gi>: Optional, not
+                     repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:unitdatestructured calendar="gregorian" era="ce">
+            <ead:dateset>
+               <ead:datesingle standarddate="1963-01-22">22 January 1963</ead:datesingle>
+               <ead:daterange>
+                  <ead:fromdate standarddate="1971-06-01">1 June 1971</ead:fromdate>
+                  <ead:todate standarddate="1974-04-30">30 April 1974</ead:todate>
+               </ead:daterange>
+            </ead:dateset>
+         </ead:unitdatestructured>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:chronitem>
+            <ead:daterange>
+               <ead:fromdate>1819</ead:fromdate>
+               <ead:todate>1820</ead:todate>
+            </ead:daterange>
+            <ead:event>Studies theology at Yale College</ead:event>
+         </ead:chronitem>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:unitdatestructured unitdatetype="inclusive">
+            <ead:daterange>
+               <ead:fromdate notafter="1962">1962</ead:fromdate>
+               <ead:todate notafter="1968">1968</ead:todate>
+            </ead:daterange>
+         </ead:unitdatestructured>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:unitdatestructured certainty="circa" unitdatetype="inclusive">
+            <ead:daterange>
+               <ead:fromdate notbefore="1971" notafter="1975">around 1973</ead:fromdate>
+               <ead:todate standarddate="1992">1992</ead:todate>
+            </ead:daterange>
+         </ead:unitdatestructured>
+      </eg:egXML>
+   </div>
+</div>

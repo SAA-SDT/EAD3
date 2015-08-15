@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-repository"
+     type="elementDocumentation">
+   <head>
+      <gi>repository</gi>
+      <seg type="fullName">Repository</seg>
+   </head>
+   <div type="summary">
+      <p>A child element of <gi>did</gi> that names the institution, person, or family
+                     responsible for providing intellectual access to the materials being
+                     described.</p>
+   </div>
+   <div type="mayContain">
+      <p>address, corpname, famname, name, persname</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>did</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>label</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>
+         <gi>repository</gi> records the name of the institution or agency, family, or
+                     individual responsible for providing intellectual access to the materials being
+                     described. <gi>corpname</gi>, <gi>famname</gi>, <gi>name</gi>, or
+                        <gi>persname</gi> must be used within <gi>repository</gi> to encode the
+                     proper name. This may be followed by an optional <gi>address</gi> to provide
+                     contact information for the repository.</p>
+      <p>Although the repository providing intellectual access usually also has physical custody over the materials, this is not always the case. For example, an archives may assume responsibility for long-term intellectual access to electronic records, but the actual electronic data files or systems may continue to reside in the office where they were created and maintained, or they may be held for long-term storage by a unit such as a data library that is able to provide the appropriate technical facilities for storage and remounting.</p>
+      <p>When it is clear that the physical custodian does not provide intellectual
+                     access, use <gi>physloc</gi> to identify the custodian and <gi>repository</gi>
+                     to designate the intellectual caretaker. When a distinction cannot be made,
+                     assume that the custodian of the physical objects also provides intellectual
+                     access to them and should be recognized as the <gi>repository</gi>.</p>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="references">
+      <p>MARC 852</p>
+      <p>MODS <gi>location</gi>
+         <gi>physicalLocation</gi>
+      </p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:archdesc localtype="inventory" level="subgrp">
+            <ead:did>
+               <ead:head>Overview of the Records</ead:head>
+               <ead:repository label="Repository:">
+                  <ead:corpname>
+                     <ead:part>Minnesota Historical Society</ead:part>
+                  </ead:corpname>
+               </ead:repository>
+               <ead:origination label="Creator:">
+                  <ead:corpname>
+                     <ead:part>Minnesota. Game and Fish Department</ead:part>
+                  </ead:corpname>
+               </ead:origination>
+               <ead:unittitle label="Title:">Game laws violation records,</ead:unittitle>
+               <ead:unitdate label="Dates:">1908-1928</ead:unitdate>
+               <ead:abstract label="Abstract:">Records of prosecutions for and seizures of property resulting from violation of the state's hunting and fishing laws.</ead:abstract>
+               <ead:physdesc label="Quantity:">2.25 cu. ft. (7 v. and 1 folder in 3 boxes)</ead:physdesc>
+               <ead:physloc label="Location:">See Detailed Description section for box location</ead:physloc>
+            </ead:did>
+         </ead:archdesc>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:archdesc level="fonds">
+            <ead:did>
+               <ead:unitid>EW</ead:unitid>
+               <ead:unittitle>Records of the Department of Economic Affairs</ead:unittitle>
+               <ead:origination>
+                  <ead:corpname>
+                     <ead:part>Department of Economic Affairs</ead:part>
+                  </ead:corpname>
+               </ead:origination>
+               <ead:unitdate>1945-1979</ead:unitdate>
+               <ead:physdesc>28 series</ead:physdesc>
+               <ead:repository>
+                  <ead:corpname>
+                     <ead:part>The National Archives</ead:part>
+                  </ead:corpname>
+               </ead:repository>
+            </ead:did>
+         </ead:archdesc>
+      </eg:egXML>
+   </div>
+</div>

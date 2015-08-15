@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-representation"
+     type="elementDocumentation">
+   <head>
+      <gi>representation</gi>
+      <seg type="fullName">Representation</seg>
+   </head>
+   <div type="summary">
+      <p>A child element of <gi>control</gi> for recording a link to a transformed and
+                     deliverable version of the EAD instance.</p>
+   </div>
+   <div type="mayContain">
+      <p>[text]</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>control</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>actuate</cell>
+            <cell>Optional (values limited to: none, onload, onrequest, other)</cell>
+         </row>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>arcrole</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>href</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>linkrole</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>linktitle</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>localtype</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>show</cell>
+            <cell>Optional (values limited to: embed, new, none, other, replace)</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>Use <gi>representation</gi> to record a link to a transformed and deliverable
+                     version of an EAD instance, for example an HTML or PDF version. If desired, the
+                     localtype attribute can be used to differentiate multiple
+                        <gi>representation</gi> elements.</p>
+      <p>See also:</p>
+      <list>
+         <item>Do not confuse with the <att>instanceurl</att> on <gi>recordid</gi>, used
+                        to record the URL of the XML version of the EAD.</item>
+         <item>Use <gi>otherrecordid</gi> to provide any local identifier for the EAD
+                        instance that does not link to a deliverable version.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:control>
+            <ead:recordid instanceurl="http://drs.library.yale.edu:8083/fedora/get/beinecke:jonesss/EAD">beinecke.jonesss</ead:recordid>
+            <ead:representation href="http://hdl.handle.net/10079/fa/beinecke.jonesss"
+                                linkrole="text/html">HTML version of finding aid</ead:representation>
+            <ead:representation href="http://drs.library.yale.edu:8083/fedora/get/beinecke:jonesss/PDF"
+                                linkrole="application/pdf">PDF version of finding aid</ead:representation> [. . .] </ead:control>
+      </eg:egXML>
+   </div>
+</div>

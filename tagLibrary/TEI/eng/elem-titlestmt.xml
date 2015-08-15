@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-titlestmt"
+     type="elementDocumentation">
+   <head>
+      <gi>titlestmt</gi>
+      <seg type="fullName">Title Statement</seg>
+   </head>
+   <div type="summary">
+      <p>A required child element of <gi>filedesc</gi> that binds together information
+                     about the name of an encoded finding aid and those responsible for its
+                     content.</p>
+   </div>
+   <div type="mayContain">
+      <p>author, sponsor, subtitle, titleproper</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>filedesc</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>Use <gi>titlestmt</gi> to bind together elements containing bibliographic
+                     information about a finding aid, including its title and the names and roles of
+                     those responsible for the finding aid's intellectual content. The prescribed
+                     order of all child elements (both required and optional) is:</p>
+      <list>
+         <item>
+            <gi>titleproper</gi>
+         </item>
+         <item>
+            <gi>subtitle</gi>
+         </item>
+         <item>
+            <gi>author</gi>
+         </item>
+         <item>
+            <gi>sponsor</gi>
+         </item>
+      </list>
+      <p>See also:</p>
+      <list>
+         <item>Do not confuse with <gi>title</gi>, which is used to encode the formal
+                        names of works such as monographs, serials, paintings, etc., mentioned in
+                        the finding aid.</item>
+         <item>Do not confuse with <gi>unittitle</gi>, which identifies the name of the
+                        described materials.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Required, not repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:titlestmt>
+            <ead:titleproper>The Edgar Holden Papers, 1978-1993</ead:titleproper>
+            <ead:subtitle>A Guide to the Holden Papers at the University of Ishtaba</ead:subtitle>
+            <ead:author>Finding aid prepared by Avery Thimble</ead:author>
+            <ead:sponsor>Processing sponsored by grant funding from the National Historical Publications and Records Commission, grant number 94-0123</ead:sponsor>
+         </ead:titlestmt>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:titlestmt>
+            <ead:titleproper>Catalogue of the Papers of James Graham Ballard</ead:titleproper>
+         </ead:titlestmt>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:titlestmt>
+            <ead:titleproper localtype="formal">Guide to the Abraham Hayward Collection</ead:titleproper>
+            <ead:titleproper localtype="filing"
+                             render="altrender"
+                             altrender="nodisplay"
+                             audience="internal">Hayward (Abraham) Collection</ead:titleproper>
+            <ead:author>by Michael Rush</ead:author>
+         </ead:titlestmt>
+      </eg:egXML>
+   </div>
+</div>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-tbody"
+     type="elementDocumentation">
+   <head>
+      <gi>tbody</gi>
+      <seg type="fullName">Table Body</seg>
+   </head>
+   <div type="summary">
+      <p>A child element of <gi>tgroup</gi> that binds together one or more rows forming
+                     the main body of a table.</p>
+   </div>
+   <div type="mayContain">
+      <p>row</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>tgroup</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>valign</cell>
+            <cell>Optional (values limited to: bottom, middle, top)</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>A formatting element that contains one or more <gi>row</gi> elements, which in
+                     turn contain <gi>entry</gi> elements in <gi>table</gi>. <gi>tbody</gi>
+                     identifies the body of the information in <gi>table</gi>, as distinct from the
+                     column headings (<gi>thead</gi>).</p>
+      <p>See also:</p>
+      <list>
+         <item>Related elements <gi>entry</gi>, <gi>row</gi>, <gi>table</gi>,
+                           <gi>tgroup</gi>, and <gi>thead</gi>.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Required, not repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:table frame="none">
+            <ead:tgroup cols="3">
+               <ead:colspec colnum="1" colname="1" align="left" colwidth="50pt"/>
+               <ead:colspec colnum="2" colname="2" align="left" colwidth="50pt"/>
+               <ead:colspec colnum="3" colname="3" align="left" colwidth="50pt"/>
+               <ead:thead>
+                  <ead:row>
+                     <ead:entry colname="1">Major Family Members</ead:entry>
+                     <ead:entry colname="2">Spouses</ead:entry>
+                     <ead:entry colname="3">Children</ead:entry>
+                  </ead:row>
+               </ead:thead>
+               <ead:tbody>
+                  <ead:row>
+                     <ead:entry colname="1">John Albemarle (1760-1806)</ead:entry>
+                     <ead:entry colname="2">Mary Frances Delaney (1769-1835)</ead:entry>
+                     <ead:entry colname="3">John Delaney Albemarle (1787-1848)</ead:entry>
+                  </ead:row> [. . .] </ead:tbody>
+            </ead:tgroup>
+         </ead:table>
+      </eg:egXML>
+   </div>
+</div>

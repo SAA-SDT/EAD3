@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="attr-normal"
+     type="attributeDocumentation">
+   <head>
+      <att>normal</att>
+      <seg type="fullName">Normal</seg>
+   </head>
+   <div type="summary">
+      <p>A standardized form of the content of an element that is in uncontrolled or
+                        natural language. A standardized form, usually from a controlled vocabulary
+                        list, of the content of the following elements can be provided to facilitate
+                        retrieval: <gi>corpname</gi>, <gi>famname</gi>, <gi>function</gi>,
+                           <gi>genreform</gi>, <gi>geogname</gi>, <gi>name</gi>,
+                        <gi>occupation</gi>, <gi>persname</gi>, <gi>subject</gi>, and
+                        <gi>title</gi>.In <gi>unittitle</gi>, <att>normal</att> may be used to
+                        provide a sorting form of a unit title with initial articles.</p>
+   </div>
+   <div type="summary">
+      <p>In <gi>date</gi> and <gi>unitdate</gi>, it is recommended that
+                           <att>normal</att> follows ISO 8601 Representation of Dates and Times or
+                        other standard date format. An alternate date normalization pattern may be
+                        specified by selecting "otherdateencoding" as the value for
+                           <att>dateencoding</att> in <gi>control</gi> and specifying the alternate
+                        date encoding pattern in <gi>conventiondeclaration</gi>.</p>
+   </div>
+   <div type="dataType">
+      <p>token</p>
+   </div>
+</div>

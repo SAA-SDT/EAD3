@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="attr-audience"
+     type="attributeDocumentation">
+   <head>
+      <att>audience</att>
+      <seg type="fullName">Audience</seg>
+   </head>
+   <div type="summary">
+      <p>An attribute that helps control whether the information contained in the
+                        element should be available to all viewers or only to repository staff.
+                        Available for all elements except <gi>lb</gi> and <gi>colspec</gi>. The
+                        attribute can be set to "external" in <gi>archdesc</gi> to allow access to
+                        all the information about the materials being described in the finding aid,
+                        but specific elements within <gi>archdesc</gi> can be set to "internal" to
+                        reserve that information for repository access only. This feature is
+                        intended to assist application software in restricting access to particular
+                        information by explicitly identifying data that is potentially sensitive or
+                        may otherwise have a limited audience. Special software capability may be
+                        needed, however, to prevent the display or export of an element marked
+                        "internal" when a whole finding aid is displayed in a networked
+                        environment.</p>
+   </div>
+   <div type="values">
+      <p>external, internal</p>
+   </div>
+</div>

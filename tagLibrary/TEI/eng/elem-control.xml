@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-control"
+     type="elementDocumentation">
+   <head>
+      <gi>control</gi>
+      <seg type="fullName">Control</seg>
+   </head>
+   <div type="summary">
+      <p>A required child element of <gi>ead</gi> for recording bibliographic and
+                     administrative information about an EAD instance.</p>
+   </div>
+   <div type="mayContain">
+      <p>conventiondeclaration, filedesc, languagedeclaration, localcontrol, localtypedeclaration, maintenanceagency, maintenancehistory, maintenancestatus, otherrecordid, publicationstatus, recordid, representation, sources</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>ead</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>base</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>countryencoding</cell>
+            <cell>Optional (values limited to: iso3166-1, othercountryencoding)</cell>
+         </row>
+         <row>
+            <cell>dateencoding</cell>
+            <cell>Optional (values limited to: iso8601, otherdateencoding)</cell>
+         </row>
+         <row>
+            <cell>encodinganalog</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>langencoding</cell>
+            <cell>Optional (values limited to: iso639-1, iso639-2b, iso639-3, otherlangencoding)</cell>
+         </row>
+         <row>
+            <cell>relatedencoding</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>repositoryencoding</cell>
+            <cell>Optional (values limited to: iso15511, otherrepositoryencoding)</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>scriptencoding</cell>
+            <cell>Optional (values limited to: iso15924, otherscriptencoding)</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>Use <gi>control</gi> to record any bibliographic information about an EAD
+                     instance and administrative information necessary to manage it.
+                        <gi>control</gi> can include information about the identity, creation,
+                     maintenance, and status of the instance as well as about the languages, rules,
+                     and authorities used in the composition of the description.</p>
+      <p>
+         <gi>control</gi> must contain the following information about the EAD
+                     instance:</p>
+      <list>
+         <item>A unique identifier within <gi>recordid</gi>. (Other associated
+                        identifiers may be given in <gi>otherrecordid</gi>.)</item>
+         <item>Bibliographic information in <gi>filedesc</gi>, with at least a
+                           <gi>titleproper</gi> within <gi>titlestmt</gi>.</item>
+         <item>A description of the agency responsible for creation and maintenance in
+                           <gi>maintenanceagency</gi>.</item>
+         <item>Statements about current version status in
+                        <gi>maintenancestatus</gi>.</item>
+         <item>Information related to creation, maintenance, and disposition in
+                           <gi>maintenancehistory</gi>.</item>
+      </list>
+      <p>Additional, optional child elements include three elements to declare
+                     languages, rules, and conventions used in the EAD instance.
+                        <gi>languagedeclaration</gi> may be used to provide information on the
+                     language(s) and script(s) used in the description.
+                        <gi>conventiondeclaration</gi> provides information on the standards,
+                     authorities, or controlled vocabularies used in the instance.
+                        <gi>localtypedeclaration</gi> declares the local conventions and controlled
+                     vocabularies used in <att>localtype</att>. </p>
+      <p>The prescribed order of all child elements (both required and optional) is:</p>
+      <list>
+         <item>
+            <gi>recordid</gi>
+         </item>
+         <item>
+            <gi>otherrecordid</gi>
+         </item>
+         <item>
+            <gi>representation</gi>
+         </item>
+         <item>
+            <gi>filedesc</gi>
+         </item>
+         <item>
+            <gi>maintenancestatus</gi>
+         </item>
+         <item>
+            <gi>publicationstatus</gi>
+         </item>
+         <item>
+            <gi>maintenanceagency</gi>
+         </item>
+         <item>
+            <gi>languagedeclaration</gi>
+         </item>
+         <item>
+            <gi>conventiondeclaration</gi>
+         </item>
+         <item>
+            <gi>localtypedeclaration</gi>
+         </item>
+         <item>
+            <gi>localcontrol</gi>
+         </item>
+         <item>
+            <gi>maintenancehistory</gi>
+         </item>
+         <item>
+            <gi>sources</gi>
+         </item>
+      </list>
+      <p>Many of these elements are repeatable, allowing the recording of multiple languages and conventions, for example.</p>
+      <p>Attribute usage:</p>
+      <list>
+         <item>Use <att>base</att> to specify a URI (other than the base URI of the EAD
+                        instance) to be used for resolving relative URIs within <gi>control</gi> or
+                        descendant elements.</item>
+         <item>Use <att>countryencoding</att> to identify the authoritative source for
+                        values supplied in <att>countrycode</att>. This attribute may be set to
+                        "iso3166-1" or "othercountryencoding." If the value "othercountryencoding"
+                        is selected, further information regarding the country codes used in the
+                        instance should be supplied in <gi>conventiondeclaration</gi>.</item>
+         <item>Use <att>dateencoding</att> to identify the rules for values provided in
+                           <att>normal</att>, <att>standarddate</att>, <att>notbefore</att>, and
+                           <att>notafter</att> in date elements. This attribute may be set to
+                        "iso8601" or "otherdateencoding." If the value "otherdateencoding" is
+                        selected, further information regarding the rules for normalized date values
+                        used in the instance should be supplied in
+                        <gi>conventiondeclaration</gi>.</item>
+         <item>Use <att>langencoding</att> to identify the authoritative source for
+                        values supplied in <att>lang</att> and <att>langcode</att>. This attribute
+                        may be set to "iso639-1," "iso639-2b," "iso639-3," or "otherlangencoding."
+                        Previous versions of EAD prescribed the use of ISO 639-2b, so "iso639-2b"
+                        may be the most commonly used value. If the value "otherlangencoding" is
+                        selected, further information regarding the language codes used in the
+                        instance should be supplied in <gi>conventiondeclaration</gi>.</item>
+      </list>
+      <list>
+         <item>Use <att>relatedencoding</att> to identify the descriptive encoding
+                        system to which <att>encodinganalog</att> of descendant elements are
+                        mapped.</item>
+      </list>
+      <list>
+         <item/>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Required, not repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:control>
+            <ead:recordid>AddMS88938</ead:recordid>
+            <ead:filedesc>
+               <ead:titlestmt>
+                  <ead:titleproper>Catalogue of the Papers of James Graham Ballard</ead:titleproper>
+               </ead:titlestmt>
+               <ead:publicationstmt>
+                  <ead:publisher>British Library</ead:publisher>
+               </ead:publicationstmt>
+            </ead:filedesc>
+            <ead:maintenancestatus value="derived"/>
+            <ead:publicationstatus value="approved"/>
+            <ead:maintenanceagency>
+               <ead:otheragencycode localtype="archon">GB-58</ead:otheragencycode>
+               <ead:agencyname>British Library</ead:agencyname>
+            </ead:maintenanceagency>
+            <ead:languagedeclaration>
+               <ead:language langcode="eng">English</ead:language>
+               <ead:script scriptcode="Latn">Latin</ead:script>
+            </ead:languagedeclaration>
+            <ead:conventiondeclaration>
+               <ead:abbr>ISAD(G)</ead:abbr>
+               <ead:citation>ISAD(G): General International Standard Archival Description, second edition, Ottawa 2000</ead:citation>
+            </ead:conventiondeclaration>
+            <ead:conventiondeclaration>
+               <ead:abbr>NCARules</ead:abbr>
+               <ead:citation>National Council on Archives, Rules for the Construction of Personal, Place and Corporate Names, 1997</ead:citation>
+            </ead:conventiondeclaration>
+            <ead:localtypedeclaration>
+               <ead:citation>IAMS Catloguing Guidelines Part 1: Describing Archives and Manuscripts</ead:citation>
+            </ead:localtypedeclaration>
+            <ead:localcontrol localtype="levelofdetail">
+               <ead:term>Minimum</ead:term>
+            </ead:localcontrol>
+            <ead:maintenancehistory>
+               <ead:maintenanceevent>
+                  <ead:eventtype value="derived"/>
+                  <ead:eventdatetime standarddatetime="2013-04-20T16:19:24Z"/>
+                  <ead:agenttype value="machine">machine</ead:agenttype>
+                  <ead:agent>IAMS</ead:agent>
+               </ead:maintenanceevent>
+            </ead:maintenancehistory>
+         </ead:control>
+      </eg:egXML>
+   </div>
+</div>

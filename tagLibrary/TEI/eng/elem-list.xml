@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schemas/tagLibrary_elementDesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:ead="http://ead3.archivists.org/schema/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="eng"
+     xml:id="elem-list"
+     type="elementDocumentation">
+   <head>
+      <gi>list</gi>
+      <seg type="fullName">List</seg>
+   </head>
+   <div type="summary">
+      <p>A wrapper element for formatting a series of <gi>item</gi> or <gi>defitem</gi>
+                     elements that are often presented in a vertical sequence.</p>
+   </div>
+   <div type="mayContain">
+      <p>defitem, head, item, listhead</p>
+   </div>
+   <div type="mayOccurWithin">
+      <p>accessrestrict, accruals, acqinfo, altformavail, appraisal, arrangement, bibliography, bioghist, blockquote, controlaccess, controlnote, custodhist, dsc, entry, event, fileplan, footnote, index, item, legalstatus, odd, originalsloc, otherfindaid, p, phystech, prefercite, processinfo, relatedmaterial, scopecontent, separatedmaterial, userestrict</p>
+   </div>
+   <div type="attributes">
+      <table>
+         <row>
+            <cell>altrender</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>audience</cell>
+            <cell>Optional (values limited to: external, internal)</cell>
+         </row>
+         <row>
+            <cell>id</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>lang</cell>
+            <cell>Optional</cell>
+         </row>
+         <row>
+            <cell>listtype</cell>
+            <cell>Optional (values limited to: deflist, ordered, unordered)</cell>
+         </row>
+         <row>
+            <cell>mark</cell>
+            <cell>Optional (values limited to: circle, disc, inherit, none, square)</cell>
+         </row>
+         <row>
+            <cell>numeration</cell>
+            <cell>Optional (values limited to: armenian, decimal, decimal-leading-zero, georgian, inherit, lower-alpha, lower-greek, lower-latin, lower-roman, upper-alpha, upper-latin, upper-roman)</cell>
+         </row>
+         <row>
+            <cell>script</cell>
+            <cell>Optional</cell>
+         </row>
+      </table>
+   </div>
+   <div type="descriptionAndUsage">
+      <p>A formatting element that contains a series of words or numerals (called
+                        <gi>item</gi>s) separated from one another and arranged in a linear, often
+                     vertical sequence.</p>
+      <p>Attribute usage:</p>
+      <list>
+         <item>Use <att>listtype</att> to identify and format the list as a particular
+                        type. The choices are: "deflist," "ordered," and "unordered."</item>
+      </list>
+      <p>See also:</p>
+      <list>
+         <item>Do not confuse with <gi>chronlist</gi>, which is used to designate the
+                        temporal sequence of significant events associated with the entity or
+                        material described.</item>
+      </list>
+   </div>
+   <div type="availability">
+      <p>Optional, repeatable</p>
+   </div>
+   <div type="examples">
+      <eg:egXML>
+         <ead:list listtype="unordered" mark="circle">
+            <ead:head>List of ministers of May Memorial Unitarian Universalist Church</ead:head>
+            <ead:item>John Storer, Minister 1839-1844</ead:item>
+            <ead:item>Samuel Joseph May, Minister 1845-1868</ead:item>
+            <ead:item>Samuel R. Calthrop, Minister 1868-1911</ead:item>
+            <ead:item>John H. Applebee, Minister 1911-1929</ead:item>
+            <ead:item>Waldemar W. Argow, Minister 1930-1941</ead:item>
+            <ead:item>Robert E. Romig, Minister 1941-1946</ead:item>
+            <ead:item>Glenn O. Canfield, Minister 1946-1952</ead:item>
+            <ead:item>John Fuller, Minister, 1961-1973</ead:item>
+         </ead:list>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:list listtype="deflist">
+            <ead:defitem>
+               <ead:label>ALS</ead:label>
+               <ead:item>Autograph Letter Signed</ead:item>
+            </ead:defitem>
+            <ead:defitem>
+               <ead:label>TLS</ead:label>
+               <ead:item>Typewritten Letter Signed</ead:item>
+            </ead:defitem>
+         </ead:list>
+      </eg:egXML>
+      <eg:egXML>
+         <ead:processinfo>
+            <ead:p>The following items were removed during processing due to
+                           irrecoverable mold damage. Photographs were taken and placed in the
+                           collection for reference purposes. <ead:list listtype="ordered" numeration="lower-alpha">
+                  <ead:item>Correspondence from Feb 1987 (6 items)</ead:item>
+                  <ead:item>Three photographs of unidentified cats</ead:item>
+                  <ead:item>One silk scarf</ead:item>
+               </ead:list>
+            </ead:p>
+         </ead:processinfo>
+      </eg:egXML>
+   </div>
+</div>
