@@ -1,10 +1,9 @@
 
-### EAD3
+## EAD3
+### Encoded Archival Description (EAD), Version 3
 ======================
-Encoded Archival Description
-Version: EAD3
-Release: 1.0
-Date: 2015-08
+* Release: 1.0
+* Date: 2015-08
 
 Hosted by the Library of Congress at http://www.loc.gov/ead/.
 
