@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="file:/home/thc4/Github/EAD-Revision/ead3.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="file:../ead3.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="ead3.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <ead xmlns="http://ead3.archivists.org/schema/">
     <control langencoding="iso639-3" repositoryencoding="iso15511" dateencoding="iso8601" countryencoding="iso3166-1" scriptencoding="iso15924">
@@ -11,7 +11,7 @@
         </filedesc>
         <maintenancestatus value="new"/>
         <maintenanceagency>
-            <agencycode>AU=ANA-12345678910aaa</agencycode>
+            <agencycode>AU-ANA-12345678910aaa</agencycode>
             <agencyname>Blak</agencyname>
         </maintenanceagency>
         <maintenancehistory>
@@ -25,8 +25,8 @@
     </control>
     <archdesc level="collection">
         <did>
-            <unitdate normal="1999">****This is an incorrectly formatted date</unitdate>
-            <unitdate normal="1999/2005">****1999-2005</unitdate>
+            <unitdate normal="199911">****This is an incorrectly formatted date</unitdate>
+            <unitdate normal="1999/200511111">****1999-2005</unitdate>
             <unitdatestructured>
                 <datesingle notbefore="1999-01-01" notafter="20051231">1999-2005</datesingle>
             </unitdatestructured>
@@ -38,7 +38,7 @@
         </did>
         <dsc><c level="otherlevel">
             <did>
-                <unitid  repositorycode="us-ixxx1234567891010" countrycode="US">ID1</unitid>
+                <unitid  repositorycode="us-1" countrycode="US">ID1</unitid>
                 <unitid repositorycode="1234-00psoos" countrycode="US">ID2</unitid>
             </did>
         </c></dsc>
