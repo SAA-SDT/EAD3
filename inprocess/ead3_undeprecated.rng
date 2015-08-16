@@ -3526,6 +3526,7 @@
             <optional>
                 <ref name="a.localtype"/>
             </optional>
+
             <optional>
                 <attribute name="unit">
                     <data type="token"/>
@@ -3549,4 +3550,5 @@
             </choice>
         </zeroOrMore>
     </rng:define>
+
 </grammar>

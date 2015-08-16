@@ -246,6 +246,7 @@
       <xs:attribute name="encodinganalog" type="xs:token"/>
     </xs:complexType>
   </xs:element>
+
   <xs:element name="bibref">
     <xs:complexType>
       <xs:complexContent>
@@ -262,6 +263,7 @@
       <xs:any namespace="##local" processContents="lax"/>
     </xs:choice>
   </xs:complexType>
+
   <!-- ELEMENTS -->
   <!-- control -->
   <xs:element name="control">
@@ -3036,11 +3038,14 @@
           <xs:attribute name="label" type="xs:string"/>
           <xs:attribute name="encodinganalog" type="xs:token"/>
           <xs:attribute name="localtype" type="xs:token"/>
+
           <xs:attribute name="unit" type="xs:token"/>
+
         </xs:extension>
       </xs:complexContent>
     </xs:complexType>
   </xs:element>
+
   <xs:complexType name="m.mixed.basic.plus.access.ref" mixed="true">
     <xs:choice minOccurs="0" maxOccurs="unbounded">
       <xs:group ref="u:m.mixed.basic.elements"/>
@@ -3053,4 +3058,5 @@
       <xs:element ref="u:imprint"/>
     </xs:choice>
   </xs:complexType>
+
 </xs:schema>
