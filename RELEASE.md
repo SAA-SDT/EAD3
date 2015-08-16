@@ -16,14 +16,14 @@ TS-EAD members during the revision process included:
 * Kris Kiesling, University of Minnesota
 * Angelika Menne-Haritz, Bundesarchiv (Germany)
 * Kelcy Shepherd, University of Massachusetts and Amherst College
-* Claire Sibille, Direction G√©n√©rale des Patrimonies (France)
+* Claire Sibille, Direction GÈnÈrale des Patrimonies (France)
 * Henny van Schie, Nationaal Archief / Bibliotheek (Netherlands)
 * Brad Westbrook, University of California, San Diego, and ArchivesSpace.
 
 Notable ex-officio contributors included
 
 * Jodi Allison-Bunnell, Orbis Cascade Alliance (EAD Roundtable)
-* Anila Angjeli, Biblioth√®que nationale de France (TS-EAC)
+* Anila Angjeli, BibliothËque nationale de France (TS-EAC)
 * Hillel Arnold, Rockefeller Archives Center (EAD Roundtable)
 * Mark Custer, Yale University (EAD Roundtable)
 * Merrilee Proffitt, OCLC Research
@@ -38,7 +38,7 @@ Schema Development Team members included
 * Michele Combs, Syracuse University
 * Mark Matienzo, Yale University and DPLA
 * Daniel Pitti, University of Virginia
-* Salvatore Vassallo, Universit√† degli Studi di Pavia (Italy).
+* Salvatore Vassallo, Universit‡ degli Studi di Pavia (Italy).
  
 Adopted by SAA Council, July 2015.
 
