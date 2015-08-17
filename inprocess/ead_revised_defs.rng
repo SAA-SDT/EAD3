@@ -8,7 +8,9 @@
       <optional>
         <ref name="a.relatedencoding"/>
       </optional>
-      <optional><ref name="a.base"/></optional>
+      <optional>
+        <ref name="a.base"/>
+      </optional>
       <ref name="e.control"/>
       <ref name="e.archdesc"/>
     </element>
@@ -23,7 +25,9 @@
       <optional>
         <ref name="a.relatedencoding"/>
       </optional>
-      <optional><ref name="a.base"/></optional>
+      <optional>
+        <ref name="a.base"/>
+      </optional>
       <optional>
         <attribute name="langencoding">
           <choice>
@@ -395,7 +399,9 @@
           <optional>
             <ref name="a.localtype"/>
           </optional>
-          <optional><ref name="a.base"/></optional>
+          <optional>
+            <ref name="a.base"/>
+          </optional>
           <oneOrMore>
             <element name="source">
               <ref name="am.common"/>
@@ -592,7 +598,9 @@
       </optional>
       <ref name="am.desc.base"/>
       <ref name="a.level"/>
-      <optional><ref name="a.base"/></optional>
+      <optional>
+        <ref name="a.base"/>
+      </optional>
       <ref name="e.did"/>
       <zeroOrMore>
         <choice>
@@ -675,9 +683,7 @@
         <ref name="a.link.xpointer"/>
       </optional>
       <optional>
-        <attribute name="entityref">
-          <data type="ENTITY"/>
-        </attribute>
+        <ref name="a.entityref"/>
       </optional>
       <attribute name="daotype">
         <choice>
@@ -688,7 +694,9 @@
         </choice>
       </attribute>
       <optional>
-        <attribute name="otherdaotype"/>
+        <attribute name="otherdaotype">
+          <data type="token"/>
+        </attribute>
       </optional>
       <optional>
         <ref name="a.coverage"/>
@@ -710,8 +718,12 @@
       <optional>
         <ref name="a.label"/>
       </optional>
-      <optional><ref name="a.coverage"/></optional>
-      <optional><ref name="a.base"/></optional>
+      <optional>
+        <ref name="a.coverage"/>
+      </optional>
+      <optional>
+        <ref name="a.base"/>
+      </optional>
       <ref name="e.dao"/>
       <oneOrMore>
         <ref name="e.dao"/>
@@ -782,7 +794,7 @@
       </optional>
       <optional>
         <attribute name="parallel">
-          <ref name="av.yesorno"/>
+          <ref name="av.boolean"/>
         </attribute>
       </optional>
       <optional>
@@ -790,8 +802,8 @@
       </optional>
       <ref name="e.physdescstructured"/>
       <oneOrMore>
-          <ref name="e.physdescstructured"/>
-       </oneOrMore>      
+        <ref name="e.physdescstructured"/>
+      </oneOrMore>
     </element>
   </define>
   <define name="e.physdesc">
@@ -867,7 +879,9 @@
         </choice>
       </attribute>
       <optional>
-        <attribute name="otherphysdescstructuredtype"/>
+        <attribute name="otherphysdescstructuredtype">
+          <data type="token"/>
+        </attribute>
       </optional>
       <ref name="a.coverage"/>
       <element name="quantity">
@@ -877,7 +891,7 @@
         </optional>
         <optional>
           <attribute name="approximate">
-            <ref name="av.yesorno"/>
+            <ref name="av.boolean"/>
           </attribute>
         </optional>
         <text/>
@@ -1829,6 +1843,14 @@
             <value>disc</value>
             <value>circle</value>
             <value>square</value>
+            <value>none</value>
+            <value>inherit</value>
+          </choice>
+        </attribute>
+      </optional>
+      <optional>
+        <attribute name="numeration">
+          <choice>
             <value>decimal</value>
             <value>decimal-leading-zero</value>
             <value>lower-roman</value>
@@ -1840,19 +1862,7 @@
             <value>georgian</value>
             <value>lower-alpha</value>
             <value>upper-alpha</value>
-            <value>none</value>
             <value>inherit</value>
-          </choice>
-        </attribute>
-      </optional>
-      <optional>
-        <attribute name="numeration">
-          <choice>
-            <value>arabic</value>
-            <value>upperalpha</value>
-            <value>loweralpha</value>
-            <value>upperroman</value>
-            <value>lowerroman</value>
           </choice>
         </attribute>
       </optional>
@@ -1934,7 +1944,7 @@
       </optional>
       <optional>
         <attribute name="pgwide">
-          <ref name="av.zeroorone"/>
+          <ref name="av.boolean"/>
         </attribute>
       </optional>
       <optional>
@@ -2373,6 +2383,9 @@
     <element name="ptr">
       <ref name="am.common.empty"/>
       <ref name="am.internal.ptr"/>
+      <optional>
+        <ref name="a.entityref"/>
+      </optional>
       <empty/>
     </element>
   </define>
@@ -2380,6 +2393,9 @@
     <element name="ref">
       <ref name="am.common"/>
       <ref name="am.internal.ptr"/>
+      <optional>
+        <ref name="a.entityref"/>
+      </optional>
       <zeroOrMore>
         <choice>
           <text/>
@@ -2413,7 +2429,7 @@
       </optional>
       <optional>
         <attribute name="otherdsctype">
-          <data type="NMTOKEN"/>
+          <data type="token"/>
         </attribute>
       </optional>
       <optional>
@@ -2625,7 +2641,7 @@
           </attribute>
           <optional>
             <attribute name="otherrelationtype">
-              <data type="string"/>
+              <data type="token"/>
             </attribute>
           </optional>
           <optional>
@@ -2681,7 +2697,15 @@
         </except>
       </anyName>
       <zeroOrMore>
-        <ref name="e.anyname"/>
+        <attribute>
+          <anyName/>
+        </attribute>
+      </zeroOrMore>
+      <zeroOrMore>
+        <choice>
+          <text/>
+          <ref name="e.anyname"/>
+        </choice>
       </zeroOrMore>
     </element>
   </define>
@@ -2742,47 +2766,17 @@
   <define name="m.datesingle">
     <optional>
       <attribute name="standarddate">
-        <choice>
-          <data type="date">
-            <param name="maxInclusive">2099-12-31</param>
-          </data>
-          <data type="gYear">
-            <param name="maxInclusive">2099</param>
-          </data>
-          <data type="gYearMonth">
-            <param name="maxInclusive">2099-12</param>
-          </data>
-        </choice>
+          <data type="token"/>
       </attribute>
     </optional>
     <optional>
       <attribute name="notbefore">
-        <choice>
-          <data type="date">
-            <param name="maxInclusive">2099-12-31</param>
-          </data>
-          <data type="gYear">
-            <param name="maxInclusive">2099</param>
-          </data>
-          <data type="gYearMonth">
-            <param name="maxInclusive">2099-12</param>
-          </data>
-        </choice>
+        <data type="token"/> 
       </attribute>
     </optional>
     <optional>
       <attribute name="notafter">
-        <choice>
-          <data type="date">
-            <param name="maxInclusive">2099-12-31</param>
-          </data>
-          <data type="gYear">
-            <param name="maxInclusive">2099</param>
-          </data>
-          <data type="gYearMonth">
-            <param name="maxInclusive">2099-12</param>
-          </data>
-        </choice>
+        <data type="token"/>
       </attribute>
     </optional>
     <ref name="m.mixed.basic"/>
@@ -2854,7 +2848,7 @@
       <ref name="e.ref"/>
     </choice>
   </define>
- <define name="m.mixed.basic">
+  <define name="m.mixed.basic">
     <zeroOrMore>
       <choice>
         <text/>
@@ -2862,14 +2856,14 @@
       </choice>
     </zeroOrMore>
   </define>
-   <define name="m.mixed.basic.plus.elements">
-      <choice>
-        <ref name="m.mixed.basic.elements"/>
-        <ref name="e.date"/>
-        <ref name="e.footnote"/>
-        <ref name="e.num"/>
-        <ref name="e.quote"/>
-      </choice>    
+  <define name="m.mixed.basic.plus.elements">
+    <choice>
+      <ref name="m.mixed.basic.elements"/>
+      <ref name="e.date"/>
+      <ref name="e.footnote"/>
+      <ref name="e.num"/>
+      <ref name="e.quote"/>
+    </choice>
   </define>
   <define name="m.mixed.basic.plus.access">
     <zeroOrMore>
@@ -2901,7 +2895,9 @@
         <data type="IDREF"/>
       </attribute>
     </optional>
-    <optional><ref name="a.link.xpointer"/></optional>
+    <optional>
+      <ref name="a.link.xpointer"/>
+    </optional>
     <ref name="am.simplelink"/>
   </define>
   <define name="am.simplelink">
@@ -2960,7 +2956,7 @@
   <define name="am.desc.base">
     <optional>
       <attribute name="otherlevel">
-        <data type="NMTOKEN"/>
+        <data type="token"/>
       </attribute>
     </optional>
     <optional>
@@ -2969,7 +2965,9 @@
   </define>
   <define name="am.desc.c">
     <ref name="am.common"/>
-    <optional><ref name="a.base"/></optional>
+    <optional>
+      <ref name="a.base"/>
+    </optional>
     <optional>
       <ref name="a.level"/>
     </optional>
@@ -2992,7 +2990,9 @@
         <data type="NMTOKEN"/>
       </attribute>
     </optional>
-    <optional><ref name="a.identifier"/></optional>
+    <optional>
+      <ref name="a.identifier"/>
+    </optional>
   </define>
   <!-- ATTRIBUTE DEFINITIONS -->
   <!-- xlink-modelled attributes -->
@@ -3061,6 +3061,11 @@
   <define name="a.link.xpointer">
     <attribute name="xpointer">
       <data type="token"/>
+    </attribute>
+  </define>
+  <define name="a.entityref">
+    <attribute name="entityref">
+      <data type="ENTITY"/>
     </attribute>
   </define>
   <!-- display attributes -->
@@ -3227,12 +3232,12 @@
   </define>
   <define name="a.colsep">
     <attribute name="colsep">
-      <ref name="av.zeroorone"/>
+      <ref name="av.boolean"/>
     </attribute>
   </define>
   <define name="a.rowsep">
     <attribute name="rowsep">
-      <ref name="av.zeroorone"/>
+      <ref name="av.boolean"/>
     </attribute>
   </define>
   <!-- other attributes -->
@@ -3256,17 +3261,13 @@
       <data type="NMTOKEN"/>
     </attribute>
   </define>
+
   <!-- ATTRIBUTE VALUE LISTS -->
-  <define name="av.yesorno">
+  <define name="av.boolean">
     <choice>
-      <value>yes</value>
-      <value>no</value>
+      <value>true</value>
+      <value>false</value>
     </choice>
   </define>
-  <define name="av.zeroorone">
-    <choice>
-      <value>0</value>
-      <value>1</value>
-    </choice>
-  </define>
+
 </grammar>

@@ -1,0 +1,295 @@
+<?xml version="1.0"?>
+<?xml-model href="ead_revised.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-stylesheet type="text/xsl" href="styles/ymcaweb.xsl"?>
+<ead xmlns="http://ead3.archivists.org/schema/" audience="external"> 
+  <control>
+	 <recordid>yusa0009x2x16</recordid>
+	 <filedesc> 
+		<titlestmt> 
+		  <titleproper encodinganalog="Title">YMCA INTERNATIONAL WORK IN CUBA:
+			 </titleproper> 
+		  <subtitle>An Inventory of Its Records</subtitle> 
+		  <author encodinganalog="Contributor">Finding aid prepared by Lara
+			 Friedman-Shedlov</author> 
+		</titlestmt>
+	 	<publicationstmt><p>University of Minnesota Libraries</p></publicationstmt>
+	 </filedesc>
+  	<maintenancestatus value="derived"/> 
+	<maintenanceagency> 
+		<agencycode>UMN</agencycode>
+		<agencyname>University of Minnesota Libraries</agencyname>
+	</maintenanceagency> 
+	<languagedeclaration>
+  		<language langcode="eng"/>
+  		<script scriptcode="Latn"/>
+  	</languagedeclaration>
+  	<conventiondeclaration>
+  		<citation>DACS</citation>
+  	</conventiondeclaration>
+  	<maintenancehistory>
+  		<maintenanceevent>
+  			<eventtype value="created"/>
+  			<eventdatetime>September 17, 2013</eventdatetime>
+  			<agenttype value="human"/>
+  			<agent>Lara Friedman-Shedlov</agent>
+  		</maintenanceevent>
+  	</maintenancehistory>
+  </control> 
+  <archdesc level="collection" relatedencoding="MARC21"> 
+	 <did id="a1"> 
+		<head>OVERVIEW OF THE COLLECTION</head> 
+		<repository label="Repository:" encodinganalog="852$a">
+			<corpname source="LCNAF">
+				<part localtype="a">University of Minnesota. </part>
+				<part localtype="b">Kautz Family YMCA Archives. [ymca]</part>
+			</corpname>
+		</repository> 
+		<origination label="Creator:"> 
+		  <corpname encodinganalog="110" source="lcnaf" rules="aacr2">
+		  	<part localtype="a">National
+			 Board of the Young Men's Christian Associations.</part>
+		  	<part localtype="b">International Division.</part>
+			 </corpname> 
+		</origination> 
+		<unittitle label="Title:" encodinganalog="245$a">Records of YMCA International Work in Cuba </unittitle> 
+	 	<unitdatestructured label="Date:" encodinganalog="245$f" unitdatetype="inclusive">
+			<daterange>
+				<fromdate>1904</fromdate>
+				<todate>1979</todate>
+			</daterange>
+		</unitdatestructured> 
+	 	<unittitle label="Title:" encodinganalog="245$a">Records of YMCA International Work in Cuba </unittitle> 
+	 	<unitdatestructured label="Date:" encodinganalog="245$f" unitdatetype="bulk">
+	 		<daterange>
+	 			<fromdate>1904</fromdate>
+	 			<todate>1941</todate>
+	 		</daterange>
+	 	</unitdatestructured> 
+		<unitid label="Collection Number:" encodinganalog="099" countrycode="US"
+		repositorycode="MnU">Y.USA.9-2-16</unitid> 
+		<abstract label="Abstract:">Correspondence, reports, and printed
+		  material, primarily concerning the YMCA in Havana, Cuba, mostly concerning the
+		  finances and the 1941 closure of the YMCA, building projects, and World
+		  Service.</abstract> 
+	 	<physdescset>
+	 		<physdescstructured label="Quantity: " physdescstructuredtype="carrier" coverage="whole"
+	 			encodinganalog="300">
+	 			<quantity>6</quantity>
+	 			<unittype>boxes</unittype>
+	 		</physdescstructured>
+	 		<physdescstructured label="Quantity: " physdescstructuredtype="spaceoccupied"
+	 			coverage="whole" encodinganalog="300">
+	 			<quantity>1.9</quantity>
+	 			<unittype>cubic feet</unittype>
+	 		</physdescstructured>
+	 	</physdescset>
+		<physloc label="Location:">See Detailed Description section for box
+		  listing.</physloc> <langmaterial><language>English</language></langmaterial> 
+	 </did> 
+	 <bioghist encodinganalog="545"> 
+		<head altrender="history" id="a2h">HISTORY OF YMCA INTERNATIONAL WORK IN
+		  CUBA</head> 
+		<p> In 1904, Joseph E. Hubbard was sent to Cuba to assist in establishing
+		  a YMCA. The Cuban Y was founded on May 12, 1905 in Havana. This Association
+		  served both Americans and Cubans. A building was rented, a gymnasium was
+		  opened, Bible classes were held, a boys' camp was facilitated, and Cubans were
+		  added to the board of directors. </p> 
+		<p>Havana had difficulties raising money early on. In 1911, an effort was
+		  made, encouraged by a conditional offer of $75,000 from the YMCA International
+		  Committee, to obtain 150,000 in Havana for a new building. The Catholic bishop
+		  publicly attacked the project as Protestant, Spanish clubs were opposed,
+		  American business men were lukewarm and the campaign fell far from the goal.
+		  Hubbard was not discouraged and remained in Havana. In 1915 a building was
+		  erected with mostly money from the International Committee. </p> 
+		<p>In 1921, Everett James Simonds replaced Hubbard. For a time the Havana
+		  Association continued to grow through the financial support of the Cubans.
+		  Simonds left in 1926. Cuban Luis Machado was president, but in general, able
+		  Cuban leadership was lacking, especially for the secretarial posts. Simonds was
+		  replaced by Herbert Watson Chaffee. Unfortunately, arguments about finances and
+		  revisions of the constitution arose between the Cubans and the North Americans.
+		  The building was in horrible shape and debts were accumulated. The depression
+		  struck and with it fell the economy. And for all of the above reasons the
+		  effort in Havana came to an unfortunate end. In 1941 the building was sold.
+		  </p>
+		<p>The following is a list of individuals who served as YMCA secretaries
+		  in Cuba, along with their dates of service:</p> 
+		<table> 
+		  <tgroup cols="2"> 
+			 <tbody> 
+				<row> 
+				  <entry>Chaffee, Herbert Watson (1927-1932)</entry> 
+				  <entry>MacLeod, John J. (1906-1908)</entry> 
+				</row> 
+				<row> 
+				  <entry>Davis, Charles (1923-1925)</entry> 
+				  <entry>Mann, Frank H. (1905)</entry> 
+				</row> 
+				<row> 
+				  <entry>Garniss, George Winslow (1909-1919)</entry> 
+				  <entry>Nuttle, Charles Howard (1909-1913)</entry> 
+				</row> 
+				<row> 
+				  <entry>Ghiselin, Samuel Brown (1909)</entry> 
+				  <entry>Simonds, Everett James (1918-1925)</entry> 
+				</row> 
+				<row> 
+				  <entry>Hatch, Arthur L. (1919-1920)</entry> 
+				  <entry>Thayer, Clarence Putnam (1920-1922)</entry> 
+				</row> 
+				<row> 
+				  <entry>Hubbard, Joseph Edward (1904-1919)</entry> 
+				  <entry>Ward, Earle A. (1921-1925)</entry> 
+				</row> 
+			 </tbody> 
+		  </tgroup> 
+		</table> 
+		<p>Historical information largely adapted and quoted from
+		  <emph render="italic">World Service: A History of the Foreign Work and World
+		  Service of the Young Men's Christian Associations of the United States and
+		  Canada</emph>, (New York: Association Press, 1957) by Kenneth Scott Latourette,
+		  and from the collection. </p> 
+	 </bioghist> 
+	 <scopecontent encodinganalog="520"> 
+		<head id="a3">SCOPE AND CONTENTS OF THE COLLECTION</head> 
+		<p>Includes correspondence, reports, and printed material, primarily
+		  concerning the YMCA in Havana, Cuba. A significant portion of the records
+		  consist of correspondence and documents concerning the finances and the 1941
+		  closure of the YMCA, building projects, and world service. There are also small
+		  portions of records concerning assistance to Cuban refugees during the 1960s,
+		  and the 11th World Festival of Youth and Students held in Havana in 1978, to
+		  which the YMCA's World Alliance sent a delegate. </p> 
+	 </scopecontent> 
+		 <userestrict encodinganalog="540"> 
+		<head>Use of Materials:</head> 
+		<p>This collection is protected by the Copyright Law of the United States
+		  (Title 17, U.S. Code). It is the user's responsibility to verify copyright,
+		  ownership, and to obtain all the necessary permissions prior to the
+		  reproduction, publication, or other use of any portion of these materials.</p> 
+	 </userestrict> 
+	 <prefercite> 
+		<head>Preferred Citation:</head> 
+		<p><emph render="italic">[Indicate the cited item and/or series
+		  here]</emph>. Records of YMCA International Work in Cuba. Kautz Family YMCA
+		  Archives. University of Minnesota. </p> 
+		<p><emph render="italic">See the Chicago Manual of Style for additional
+		  examples.</emph></p> 
+	 </prefercite> 
+	 <processinfo> 
+		<head>Processing Information:</head> 
+		<p>Processed as part of Fast Processing Project II, August 2009, as
+		  collection FP031. Material has been minimally processed. Descriptions of box
+		  contents are very general.</p> 
+		<p>Catalog Record ID number: 6258641</p> 
+	 </processinfo>
+	 <dsc> 
+		<head id="a9">DETAILED DESCRIPTION OF THE COLLECTION</head> 
+		<p>The following section contains a detailed list of the materials in the
+		  collection. To request materials, please note the corresponding box number.</p>
+		
+		<c01> 
+		  <did> 
+			 <container localtype="box"> 1 </container> 
+			 <unittitle> Havana correspondence and reports, building information,
+				World Festival of Youth and Students, </unittitle> 
+			 <unitdate> 1933-1941, 1958, 1978-1979. </unitdate> 
+		  </did> 
+		</c01> 
+		<c01> 
+		  <did> 
+			 <container localtype="box"> 2 </container> 
+			 <unittitle> Havana correspondence and reports, building information,
+				bylaws, </unittitle> 
+			 <unitdate> 1912-1932. </unitdate> 
+		  </did> 
+		</c01> 
+		<c01> 
+		  <did> 
+			 <container localtype="box"> 3 </container> 
+			 <unittitle> World Service correspondence, </unittitle> 
+			 <unitdate> 1904-1927. </unitdate> 
+		  </did> 
+		</c01> 
+		<c01> 
+		  <did> 
+			 <container localtype="box"> 4 </container> 
+			 <unittitle> World Service correspondence, </unittitle> 
+			 <unitdate> 1928-1940. </unitdate> 
+		  </did> 
+		</c01> 
+		<c01> 
+		  <did> 
+			 <container localtype="box"> 5 </container> 
+			 <unittitle> Newspaper articles, pamphlets, Boletin de YMCA, Cubans in
+				Exile, </unittitle> 
+			 <unitdate> 1906-1928, 1960's. </unitdate> 
+		  </did> 
+		</c01> 
+		<c01> 
+		  <did> 
+			 <container localtype="box"> 6 </container> 
+			 <unittitle> Legal papers and power of attorney, reports, financial
+				statements, articles of the constitution, organization of corporation,
+				correspondence, </unittitle> 
+			 <unitdate> 1914-1932. </unitdate> 
+		  </did> 
+		</c01> 
+	 </dsc> 
+	 <relatedmaterial> 
+		<head id="a5">RELATED MATERIALS</head> 
+		<p>Biographical information on many of the secretaries involved in work
+		  in Cuba (see list of individuals in the historical note) is available in the
+		  YMCA Biographical Files, separately cataloged in the Kautz Family YMCA
+		  Archives.</p> 
+	 </relatedmaterial> 
+	 <controlaccess> 
+		<head id="a7">INDEX TERMS</head> 
+		<p>This collection is indexed under the following headings in the catalog
+		  of the University of Minnesota Libraries. Researchers desiring materials about
+		  related topics, persons or places should search the catalog using these
+		  headings.</p> 
+		  <subject encodinganalog="650" source="lcsh" rules="aacr2">
+		  	<part localtype="a">Refugees</part>
+			 <part localtype="z">Cuba.</part>
+		  </subject> 
+		  <subject encodinganalog="611" source="lcsh" rules="aacr2">
+		  	<part localtype="a">World
+			 Festival of Youth and Students for Peace and Friendship</part>
+		  	<part localtype="n">(11th : </part>
+		  	<part localtype="d">1978 : </part>
+		  	<part localtype="c">Havana, Cuba)</part>
+		  </subject> 
+		  <subject encodinganalog="650" source="lcsh" rules="aacr2">
+		  	<part localtype="a">Young Men's Christian associations</part>
+		  	<part localtype="x">Administration.</part>
+		  </subject> 
+		  <subject encodinganalog="650" source="lcsh" rules="aacr2">
+		  	<part localtype="a">Young Men's Christian Associations</part>
+		  	<part localtype="x">Buildings.</part>
+		  </subject> 
+		  <subject encodinganalog="650" source="lcsh" rules="aacr2">
+				<part localtype="a">Young Men's Christian Associations</part>
+				<part localtype="z">Cuba</part>
+				<part localtype="z">Havana.</part>
+		 </subject> 
+		
+		  <geogname encodinganalog="651" source="lcsh" rules="aacr2">
+		  	<part localtype="a">Havana (Cuba).</part>
+		  </geogname> 
+		<controlaccess>
+		  <head>Organizations:</head> 
+		  <corpname encodinganalog="610" source="lcnaf" rules="aacr2">
+		  	<part localtype="a">International Committee of YMCAs.</part>
+		  	<part localtype="b">World Service. </part>
+		  </corpname> 
+		  <corpname encodinganalog="610" source="lcnaf" rules="aacr2">
+		  	<part localtype="a">National Board of the Young Men's Christian Associations.</part>
+		  	<part localtype="b">International Division. </part>
+		  </corpname> 
+		  <corpname encodinganalog="610" source="lcnaf" rules="aacr2">
+		  	<part localtype="a">Young Men's Christian Associations of North America.</part>
+		  	<part localtype="b">International Committee.</part>
+		  </corpname> 
+		</controlaccess>
+	 </controlaccess> 
+  </archdesc> 
+</ead>

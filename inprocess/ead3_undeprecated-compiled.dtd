@@ -1,24 +1,158 @@
 <?xml encoding="UTF-8"?>
 
-<!-- include "ead_revised_defs.rng" -->
-
 <!ENTITY % am.common.empty "
   id ID #IMPLIED
   altrender CDATA #IMPLIED
   audience (external|internal) #IMPLIED">
+
+<!-- other linking-related attributes -->
+
+<!ENTITY % a.base "
+  base CDATA #REQUIRED">
+
+<!ENTITY % a.relatedencoding "
+  relatedencoding CDATA #REQUIRED">
 
 <!ENTITY % am.common "
   %am.common.empty;
   lang NMTOKEN #IMPLIED
   script NMTOKEN #IMPLIED">
 
-<!-- ELEMENTS -->
+<!-- include "ead_revised_defs.rng" -->
 
-<!ELEMENT ead (control,archdesc)>
+<!ELEMENT ead (control,frontmatter?,archdesc)>
 <!ATTLIST ead
   %am.common;
-  relatedencoding CDATA #IMPLIED
-  base CDATA #IMPLIED>
+  %a.relatedencoding;
+  %a.base;>
+
+<!ENTITY % a.level "
+  level (class|collection|file|fonds|item|otherlevel|recordgrp|series
+         |subfonds|subgrp|subseries) #REQUIRED">
+
+<!ENTITY % am.desc.base "
+  otherlevel NMTOKEN #IMPLIED
+  encodinganalog CDATA #IMPLIED">
+
+<!ENTITY % a.localtype "
+  localtype CDATA #REQUIRED">
+
+<!ENTITY % m.desc.base.descgrp "accessrestrict|accruals|acqinfo
+                                |altformavail|appraisal|arrangement
+                                |bibliography|bioghist|controlaccess
+                                |custodhist|descgrp|fileplan|index
+                                |legalstatus|odd|originalsloc
+                                |otherfindaid|phystech|prefercite
+                                |processinfo|relatedmaterial|relations
+                                |scopecontent|separatedmaterial
+                                |userestrict">
+
+<!-- ARCHDESC -->
+
+<!ELEMENT archdesc (runner*,did,(%m.desc.base.descgrp;|dsc)*)>
+<!ATTLIST archdesc
+  %am.common;
+  %a.localtype;
+  %a.relatedencoding;
+  %am.desc.base;
+  %a.level;
+  %a.base;>
+
+<!ENTITY % am.desc.c "
+  %am.common;
+  base CDATA #IMPLIED
+  level (class|collection|file|fonds|item|otherlevel|recordgrp|series
+         |subfonds|subgrp|subseries) #IMPLIED
+  %am.desc.base;">
+
+<!ENTITY % m.c.base.descgrp "head?,did,(%m.desc.base.descgrp;)*">
+
+<!-- Components -->
+
+<!ELEMENT c ((%m.c.base.descgrp;),(thead?,c+)*)>
+<!ATTLIST c
+  %am.desc.c;>
+
+<!ELEMENT c01 ((%m.c.base.descgrp;),(thead?,c02+)*)>
+<!ATTLIST c01
+  %am.desc.c;>
+
+<!ELEMENT c02 ((%m.c.base.descgrp;),(thead?,c03+)*)>
+<!ATTLIST c02
+  %am.desc.c;>
+
+<!ELEMENT c03 ((%m.c.base.descgrp;),(thead?,c04+)*)>
+<!ATTLIST c03
+  %am.desc.c;>
+
+<!ELEMENT c04 ((%m.c.base.descgrp;),(thead?,c05+)*)>
+<!ATTLIST c04
+  %am.desc.c;>
+
+<!ELEMENT c05 ((%m.c.base.descgrp;),(thead?,c06+)*)>
+<!ATTLIST c05
+  %am.desc.c;>
+
+<!ELEMENT c06 ((%m.c.base.descgrp;),(thead?,c07+)*)>
+<!ATTLIST c06
+  %am.desc.c;>
+
+<!ELEMENT c07 ((%m.c.base.descgrp;),(thead?,c08+)*)>
+<!ATTLIST c07
+  %am.desc.c;>
+
+<!ELEMENT c08 ((%m.c.base.descgrp;),(thead?,c09*)*)>
+<!ATTLIST c08
+  %am.desc.c;>
+
+<!ELEMENT c09 ((%m.c.base.descgrp;),(thead?,c10+)*)>
+<!ATTLIST c09
+  %am.desc.c;>
+
+<!ELEMENT c10 ((%m.c.base.descgrp;),(thead?,c11+)*)>
+<!ATTLIST c10
+  %am.desc.c;>
+
+<!ELEMENT c11 ((%m.c.base.descgrp;),(thead?,c12+)*)>
+<!ATTLIST c11
+  %am.desc.c;>
+
+<!ELEMENT c12 (%m.c.base.descgrp;)>
+<!ATTLIST c12
+  %am.desc.c;>
+
+<!ENTITY % m.access "persname|corpname|famname|geogname|name|occupation
+                     |subject|genreform|function|title">
+
+<!-- MIXED CONTENT MODELS -->
+
+<!ENTITY % m.mixed.basic.elements "abbr|emph|expan|foreign|lb|ptr|ref">
+
+<!-- unittitle -->
+
+<!ELEMENT unittitle (#PCDATA|%m.mixed.basic.elements;|%m.access;|date
+                     |footnote|num|quote|imprint|bibseries|edition
+                     |unitdate)*>
+<!ATTLIST unittitle
+  %am.common;
+  label CDATA #IMPLIED
+  encodinganalog CDATA #IMPLIED
+  localtype CDATA #IMPLIED
+  normal CDATA #IMPLIED>
+
+<!ELEMENT physdesc (#PCDATA|%m.mixed.basic.elements;|%m.access;|date
+                    |footnote|num|quote|extent|physfacet|dimensions)*>
+<!ATTLIST physdesc
+  %am.common;
+  localtype CDATA #IMPLIED
+  label CDATA #IMPLIED
+  encodinganalog CDATA #IMPLIED>
+
+<!ENTITY % m.mixed.basic "(#PCDATA|%m.mixed.basic.elements;)*">
+
+<!ELEMENT extent %m.mixed.basic;>
+
+<!-- ELEMENTS -->
 
 <!-- control -->
 
@@ -204,12 +338,6 @@
   encodinganalog CDATA #IMPLIED
   transliteration NMTOKEN #IMPLIED>
 
-<!-- MIXED CONTENT MODELS -->
-
-<!ENTITY % m.mixed.basic.elements "abbr|emph|expan|foreign|lb|ptr|ref">
-
-<!ENTITY % m.mixed.basic "(#PCDATA|%m.mixed.basic.elements;)*">
-
 <!ELEMENT titleproper %m.mixed.basic;>
 <!ATTLIST titleproper
   %am.common;
@@ -298,37 +426,12 @@
   %am.simplelink;
   lastdatetimeverified CDATA #IMPLIED>
 
-<!ENTITY % a.level "
-  level (class|collection|file|fonds|item|otherlevel|recordgrp|series
-         |subfonds|subgrp|subseries) #REQUIRED">
-
-<!ENTITY % am.desc.base "
-  otherlevel CDATA #IMPLIED
-  encodinganalog CDATA #IMPLIED">
-
-<!ENTITY % m.desc.base "accessrestrict|accruals|acqinfo|altformavail
-                        |appraisal|arrangement|bibliography|bioghist
-                        |controlaccess|custodhist|fileplan|index
-                        |legalstatus|odd|originalsloc|otherfindaid
-                        |phystech|prefercite|processinfo|relatedmaterial
-                        |relations|scopecontent|separatedmaterial
-                        |userestrict">
-
-<!-- ARCHDESC -->
-
-<!ELEMENT archdesc (did,(%m.desc.base;|dsc)*)>
-<!ATTLIST archdesc
-  %am.common;
-  localtype CDATA #IMPLIED
-  relatedencoding CDATA #IMPLIED
-  %am.desc.base;
-  %a.level;
-  base CDATA #IMPLIED>
-
 <!ENTITY % m.did "abstract|container|dao|daoset|didnote|langmaterial
-                  |materialspec|origination|physdescset|physdesc
+                  |materialspec|origination|parallelphysdescset|physdesc
                   |physdescstructured|physloc|repository|unitdate
                   |unitdatestructured|unitid|unittitle">
+
+<!-- ARCHDESC -->
 
 <!-- did -->
 
@@ -336,9 +439,6 @@
 <!ATTLIST did
   %am.common;
   encodinganalog CDATA #IMPLIED>
-
-<!ENTITY % m.access "persname|corpname|famname|geogname|name|occupation
-                     |subject|genreform|function|title">
 
 <!ENTITY % m.mixed.basic.plus.access "(#PCDATA|%m.mixed.basic.elements;
                                        |%m.access;|date|footnote|num
@@ -403,22 +503,9 @@
   encodinganalog CDATA #IMPLIED
   localtype CDATA #IMPLIED>
 
-<!-- ATTRIBUTE VALUE LISTS -->
-
-<!ENTITY % av.boolean "true|false">
-
-<!ELEMENT physdescset (physdescstructured,physdescstructured+)>
-<!ATTLIST physdescset
+<!ELEMENT parallelphysdescset (physdescstructured,physdescstructured+)>
+<!ATTLIST parallelphysdescset
   %am.common;
-  label CDATA #IMPLIED
-  encodinganalog CDATA #IMPLIED
-  parallel (%av.boolean;) #IMPLIED
-  coverage (whole|part) #IMPLIED>
-
-<!ELEMENT physdesc %m.mixed.basic;>
-<!ATTLIST physdesc
-  %am.common;
-  localtype CDATA #IMPLIED
   label CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED>
 
@@ -453,11 +540,15 @@
   otherphysdescstructuredtype CDATA #IMPLIED
   %a.coverage;>
 
+<!-- ATTRIBUTE VALUE LISTS -->
+
+<!ENTITY % av.yesorno "yes|no">
+
 <!ELEMENT quantity (#PCDATA)>
 <!ATTLIST quantity
   %am.common;
   encodinganalog CDATA #IMPLIED
-  approximate (%av.boolean;) #IMPLIED>
+  approximate (%av.yesorno;) #IMPLIED>
 
 <!ELEMENT unittype (#PCDATA)>
 <!ATTLIST unittype
@@ -508,14 +599,6 @@
   encodinganalog CDATA #IMPLIED
   %am.dates.era;
   %am.dates.calendar;>
-
-<!ELEMENT unittitle %m.mixed.basic.plus.access;>
-<!ATTLIST unittitle
-  %am.common;
-  label CDATA #IMPLIED
-  encodinganalog CDATA #IMPLIED
-  localtype CDATA #IMPLIED
-  normal CDATA #IMPLIED>
 
 <!ELEMENT unitid %m.mixed.basic;>
 <!ATTLIST unitid
@@ -838,10 +921,11 @@
 <!ATTLIST list
   %am.common;
   listtype (deflist|unordered|ordered) #IMPLIED
-  mark (disc|circle|square|none|inherit) #IMPLIED
-  numeration (decimal|decimal-leading-zero|lower-roman|upper-roman
-              |lower-greek|lower-latin|upper-latin|armenian|georgian
-              |lower-alpha|upper-alpha|inherit) #IMPLIED>
+  mark (disc|circle|square|decimal|decimal-leading-zero|lower-roman
+        |upper-roman|lower-greek|lower-latin|upper-latin|armenian
+        |georgian|lower-alpha|upper-alpha|none|inherit) #IMPLIED
+  numeration (arabic|upperalpha|loweralpha|upperroman
+              |lowerroman) #IMPLIED>
 
 <!ELEMENT defitem (label,item)>
 <!ATTLIST defitem
@@ -871,22 +955,24 @@
 <!ATTLIST head03
   %am.common;>
 
+<!ENTITY % av.zeroorone "0|1">
+
 <!-- table -->
 
 <!ELEMENT table (head?,tgroup+)>
 <!ATTLIST table
   %am.common;
   frame (top|bottom|topbot|all|sides|none) #IMPLIED
-  colsep (%av.boolean;) #IMPLIED
-  rowsep (%av.boolean;) #IMPLIED
-  pgwide (%av.boolean;) #IMPLIED>
+  colsep (%av.zeroorone;) #IMPLIED
+  rowsep (%av.zeroorone;) #IMPLIED
+  pgwide (%av.zeroorone;) #IMPLIED>
 
 <!ELEMENT tgroup (colspec*,thead?,tbody)>
 <!ATTLIST tgroup
   %am.common;
   cols NMTOKEN #REQUIRED
-  colsep (%av.boolean;) #IMPLIED
-  rowsep (%av.boolean;) #IMPLIED
+  colsep (%av.zeroorone;) #IMPLIED
+  rowsep (%av.zeroorone;) #IMPLIED
   align (left|right|center|justify|char) #IMPLIED>
 
 <!ELEMENT colspec EMPTY>
@@ -894,8 +980,8 @@
   colnum NMTOKEN #IMPLIED
   colname NMTOKEN #IMPLIED
   colwidth CDATA #IMPLIED
-  colsep (%av.boolean;) #IMPLIED
-  rowsep (%av.boolean;) #IMPLIED
+  colsep (%av.zeroorone;) #IMPLIED
+  rowsep (%av.zeroorone;) #IMPLIED
   align (left|right|center|justify|char) #IMPLIED
   char CDATA #IMPLIED
   charoff NMTOKEN #IMPLIED>
@@ -908,7 +994,7 @@
 <!ELEMENT row (entry)+>
 <!ATTLIST row
   %am.common;
-  rowsep (%av.boolean;) #IMPLIED
+  rowsep (%av.zeroorone;) #IMPLIED
   valign (top|middle|bottom) #IMPLIED>
 
 <!ELEMENT entry %m.para.content;>
@@ -918,8 +1004,8 @@
   namest NMTOKEN #IMPLIED
   nameend NMTOKEN #IMPLIED
   morerows NMTOKEN #IMPLIED
-  colsep (%av.boolean;) #IMPLIED
-  rowsep (%av.boolean;) #IMPLIED
+  colsep (%av.zeroorone;) #IMPLIED
+  rowsep (%av.zeroorone;) #IMPLIED
   align (left|right|center|justify|char) #IMPLIED
   char CDATA #IMPLIED
   charoff NMTOKEN #IMPLIED
@@ -1102,15 +1188,13 @@
 <!ELEMENT ptr EMPTY>
 <!ATTLIST ptr
   %am.common.empty;
-  %am.internal.ptr;
-  entityref ENTITY #IMPLIED>
+  %am.internal.ptr;>
 
 <!ELEMENT ref (#PCDATA|abbr|expan|emph|lb|ptr|quote|num|footnote|date
                |%m.access;)*>
 <!ATTLIST ref
   %am.common;
-  %am.internal.ptr;
-  entityref ENTITY #IMPLIED>
+  %am.internal.ptr;>
 
 <!ENTITY % m.cOrC01 "c+|c01+">
 
@@ -1120,69 +1204,8 @@
 <!ATTLIST dsc
   %am.common;
   dsctype (analyticover|combined|in-depth|otherdsctype) #IMPLIED
-  otherdsctype CDATA #IMPLIED
+  otherdsctype NMTOKEN #IMPLIED
   encodinganalog CDATA #IMPLIED>
-
-<!ENTITY % am.desc.c "
-  %am.common;
-  base CDATA #IMPLIED
-  level (class|collection|file|fonds|item|otherlevel|recordgrp|series
-         |subfonds|subgrp|subseries) #IMPLIED
-  %am.desc.base;">
-
-<!ENTITY % m.c.base "head?,did,(%m.desc.base;)*">
-
-<!ELEMENT c ((%m.c.base;),(thead?,c+)*)>
-<!ATTLIST c
-  %am.desc.c;>
-
-<!ELEMENT c01 ((%m.c.base;),(thead?,c02+)*)>
-<!ATTLIST c01
-  %am.desc.c;>
-
-<!ELEMENT c02 ((%m.c.base;),(thead?,c03+)*)>
-<!ATTLIST c02
-  %am.desc.c;>
-
-<!ELEMENT c03 ((%m.c.base;),(thead?,c04+)*)>
-<!ATTLIST c03
-  %am.desc.c;>
-
-<!ELEMENT c04 ((%m.c.base;),(thead?,c05+)*)>
-<!ATTLIST c04
-  %am.desc.c;>
-
-<!ELEMENT c05 ((%m.c.base;),(thead?,c06+)*)>
-<!ATTLIST c05
-  %am.desc.c;>
-
-<!ELEMENT c06 ((%m.c.base;),(thead?,c07+)*)>
-<!ATTLIST c06
-  %am.desc.c;>
-
-<!ELEMENT c07 ((%m.c.base;),(thead?,c08+)*)>
-<!ATTLIST c07
-  %am.desc.c;>
-
-<!ELEMENT c08 ((%m.c.base;),(thead?,c09*)*)>
-<!ATTLIST c08
-  %am.desc.c;>
-
-<!ELEMENT c09 ((%m.c.base;),(thead?,c10+)*)>
-<!ATTLIST c09
-  %am.desc.c;>
-
-<!ELEMENT c10 ((%m.c.base;),(thead?,c11+)*)>
-<!ATTLIST c10
-  %am.desc.c;>
-
-<!ELEMENT c11 ((%m.c.base;),(thead?,c12+)*)>
-<!ATTLIST c11
-  %am.desc.c;>
-
-<!ELEMENT c12 (%m.c.base;)>
-<!ATTLIST c12
-  %am.desc.c;>
 
 <!-- RELATIONS -->
 
@@ -1211,6 +1234,14 @@
   localtype CDATA #IMPLIED
   transliteration NMTOKEN #IMPLIED>
 
+<!ENTITY % m.desc.base "accessrestrict|accruals|acqinfo|altformavail
+                        |appraisal|arrangement|bibliography|bioghist
+                        |controlaccess|custodhist|fileplan|index
+                        |legalstatus|odd|originalsloc|otherfindaid
+                        |phystech|prefercite|processinfo|relatedmaterial
+                        |relations|scopecontent|separatedmaterial
+                        |userestrict">
+
 <!-- ATTRIBUTE DEFINITIONS -->
 
 <!-- xlink-modelled attributes -->
@@ -1233,11 +1264,6 @@
 <!ENTITY % a.link.title "
   linktitle CDATA #REQUIRED">
 
-<!-- other linking-related attributes -->
-
-<!ENTITY % a.base "
-  base CDATA #REQUIRED">
-
 <!ENTITY % a.identifier "
   identifier CDATA #REQUIRED">
 
@@ -1249,9 +1275,6 @@
 
 <!ENTITY % a.link.xpointer "
   xpointer CDATA #REQUIRED">
-
-<!ENTITY % a.entityref "
-  entityref ENTITY #REQUIRED">
 
 <!-- display attributes -->
 
@@ -1286,12 +1309,6 @@
 <!ENTITY % a.encodinganalog "
   encodinganalog CDATA #REQUIRED">
 
-<!ENTITY % a.localtype "
-  localtype CDATA #REQUIRED">
-
-<!ENTITY % a.relatedencoding "
-  relatedencoding CDATA #REQUIRED">
-
 <!-- table attributes -->
 
 <!ENTITY % a.char "
@@ -1304,10 +1321,47 @@
   colname NMTOKEN #REQUIRED">
 
 <!ENTITY % a.colsep "
-  colsep (%av.boolean;) #REQUIRED">
+  colsep (%av.zeroorone;) #REQUIRED">
 
 <!ENTITY % a.rowsep "
-  rowsep (%av.boolean;) #REQUIRED">
+  rowsep (%av.zeroorone;) #REQUIRED">
 
 <!ENTITY % a.transliteration "
   transliteration NMTOKEN #REQUIRED">
+
+<!-- DEFINES FOR FRONTMATTER -->
+
+<!ELEMENT bibseries (#PCDATA|emph|lb|ptr|ref|title|num)*>
+<!ATTLIST bibseries
+  %am.common;
+  encodinganalog CDATA #IMPLIED>
+
+<!ELEMENT div (head?,(%m.blocks;)*,div*)>
+<!ATTLIST div
+  %am.common;>
+
+<!ELEMENT runner (#PCDATA|emph|lb|ptr)*>
+<!ATTLIST runner
+  %am.common;
+  placement (header|footer|watermark) #IMPLIED
+  role CDATA #IMPLIED>
+
+<!ELEMENT descgrp (head?,((%m.blocks;),(%m.desc.base.descgrp;))+)>
+<!ATTLIST descgrp
+  %am.common;
+  localtype CDATA #IMPLIED
+  encodinganalog CDATA #IMPLIED>
+
+<!ELEMENT imprint (#PCDATA|publisher|geogname|date|emph|lb|ptr)*>
+<!ATTLIST imprint
+  %am.common;
+  encodinganalog CDATA #IMPLIED>
+
+<!ELEMENT frontmatter (titlepage?,div*)>
+<!ATTLIST frontmatter
+  %am.common;>
+
+<!ELEMENT titlepage (%m.blocks;|author|date|edition|num|publisher
+                     |bibseries|sponsor|titleproper|subtitle)+>
+<!ATTLIST titlepage
+  %am.common;>

@@ -1,0 +1,1283 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet type="text/xsl" href="styles/ymcaweb.xsl"?>
+<ead xmlns="http://ead3.archivists.org/schema/" audience="external"> 
+	<control>
+		<recordid>yusa0008</recordid>
+		<filedesc> 
+			<titlestmt> 
+				<titleproper encodinganalog="Title">EMMA YOUNG DICKSON:</titleproper> 
+				<subtitle>An Inventory of Her Papers</subtitle> 
+				<author encodinganalog="Contributor">Finding aid prepared by Lara
+					Friedman-Shedlov</author> 
+			</titlestmt>
+			<publicationstmt><p>University of Minnesota Libraries</p></publicationstmt>
+		</filedesc>
+		<maintenancestatus value="derived"/> 
+		<maintenanceagency> 
+			<agencycode>UMN</agencycode>
+			<agencyname>University of Minnesota Libraries</agencyname>
+		</maintenanceagency> 
+		<languagedeclaration>
+			<language langcode="eng"/>
+			<script scriptcode="Latn"/>
+		</languagedeclaration>
+		<conventiondeclaration>
+			<citation>DACS</citation>
+		</conventiondeclaration>
+		<maintenancehistory>
+			<maintenanceevent>
+				<eventtype value="created"/>
+				<eventdatetime>2004</eventdatetime>
+				<agenttype value="human"/>
+				<agent>Lara Friedman-Shedlov</agent>
+			</maintenanceevent>
+		</maintenancehistory>
+	</control> 		  
+  <archdesc localtype="inventory" level="collection" relatedencoding="MARC"> 
+	 <did id="a1"> 
+		<head>OVERVIEW OF THE COLLECTION</head> 
+	 	<repository label="Repository:" encodinganalog="852$a">
+	 		<corpname source="LCNAF">
+	 			<part localtype="a">University of Minnesota. </part>
+	 			<part localtype="b">Kautz Family YMCA Archives. [ymca]</part>
+	 		</corpname>
+	 	</repository> 
+		<origination label="Creator:"> 
+				<persname encodinganalog="100" source="lcnaf" rules="aacr2">
+					<part localtype="a">Dickson, Emma Young, </part>
+					<part localtype="d">1891-1984.</part>
+				</persname> 
+		</origination> 
+		<unittitle label="Title:" encodinganalog="245$a">Emma Young Dickson papers.</unittitle> 
+		<unitdate label="Date:" encodinganalog="245$f" unitdatetype="inclusive"
+		 normal="1917/1955">1917-1955, </unitdate> 
+		<unitdate normal="1998">1998 </unitdate> 
+		<unitdate unitdatetype="bulk" normal="1918/1919">(bulk 1918-1919).</unitdate> 
+		<unitid label="Collection Number:" encodinganalog="099" countrycode="us"
+		 repositorycode="MnU">Y.USA.8</unitid> 
+		<abstract label="Abstract:">Correspondence, diaries and other papers of
+		  Emma Young Dickson, documenting her service with the YMCA in France during
+		  World War I.</abstract> 
+		<physdesc label="Quantity:" encodinganalog="300">2.4 cu. ft. (6
+		  boxes).</physdesc> 
+		<physloc label="Location:">See Detailed Description section for box
+		  listing.</physloc> <langmaterial><language>English</language></langmaterial> 
+	 </did> 
+	 <bioghist encodinganalog="545"> 
+		<head altrender="biography" id="a2b">BIOGRAPHY OF EMMA YOUNG
+		  DICKSON</head> 
+		<p>Emma Young Dickson was born August 31, 1891 in Pittsburgh,
+		  Pennsylvania. She was second of six children of William Brown Dickson and Mary
+		  Bruce Dickson. Dickson grew up and attended school in Montclair, New Jersey,
+		  where her family moved in 1901. Although born to a family of wealth and
+		  privilege, her father being a high-ranking businessman in the United States
+		  steel industry, she did not grow up ignorant of the social ills of the time.
+		  Her father resigned from his position as first vice president of U.S. Steel
+		  because of his disagreement with the inhumane labor practices prevalent
+		  throughout the steel industry during that period, and fought throughout his
+		  career for the abolishment of the twelve-hour, seven day work week. </p> 
+		<p>When the United States entered in World War I in 1918, Emma knew she
+		  wanted to be part of the war effort, not by rolling bandages and knitting socks
+		  and scarves, but by going to France to help out in whatever way she could. She
+		  applied to the YMCA for an assignment as a canteen worker and after being
+		  turned down once was finally accepted. She sailed for France on April 3, 1918
+		  and served with a unit attached to the Seventh Infantry of the Third Division.
+		  The work primarily involved supporting the soldiers by serving hot coffee and
+		  chocolate to the men in the trenches, visiting and writing letters for the
+		  wounded, and organizing recreational activities. </p> 
+		<p>After returning home in March of 1919, Dickson married James Graham
+		  Carswell. The couple settled in Montclair and had three children.. Graham died
+		  suddenly of a heart attack in 1945, after which Emma took secretarial jobs for
+		  the Red Cross and the Montclair Art Museum, and as a companion to an elderly
+		  woman. In 1957 she moved to Charlottesville, Virginia, where her youngest son
+		  had been living with his family. She died on August 7, 1984, after a two-year
+		  struggle with cancer. </p> 
+		<p>Biographical information was summarized from "A YMCA Canteen Worker in
+		  the Great War: The Diaries and Letters of Emma Young Dickson," compiled and
+		  edited by Cornelia Carswell Serota.</p> 
+	 </bioghist> 
+	 <scopecontent encodinganalog="520"> 
+		<head id="a3">SCOPE AND CONTENTS OF THE COLLECTION</head> 
+		<p>The bulk of the collection consists of diaries, correspondence,
+		  photographs, memorabilia, and other papers of Emma Young Dickson, dating from
+		  the period she served with the American Expeditionary Forces as a YMCA canteen
+		  worker in France. The diaries are organized like a scrapbook with letters,
+		  telegrams, and memorabilia pasted alongside the daily entries. They describe
+		  the voyage to France and her YMCA work in Chateauvillain, Autreville,
+		  Valdelancourt, Coulommiers, including service during the fighting at Belleau
+		  Wood and Chateau Thierry; the Aisne-Marne, Saint-Mihiel offensive,
+		  Meuse-Argonne offensive; and with the Army of Occupation in Andernach, Germany.
+		  A series of correspondence includes letters addressed to Dickson, as well as
+		  originals and copies of some letters written by Dickson to her family. A few
+		  items of post-war correspondence are also included, primarily from William H.
+		  Danforth, the YMCA divisional secretary who supervised Dickson's work in France
+		  and who later became chairman of the board of the Ralston Purina Company.
+		  Miscellaneous additional papers include identifications papers, a passport
+		  application, news clippings, pamphlets, and other print material. Several books
+		  of travel reminiscences and motivational essays by William H. Danforth along
+		  with a book of letters, sermons, and services written by Methodist minister
+		  David S. Lamb for young men and women serving as soldiers and nurses during
+		  World War II, are also in the collection.</p> 
+		<p>Also included in the collection is a bound transcript of the diaries,
+		  compiled and edited by her daughter, Cornelia Carswell Serota, along with
+		  useful annotations, biographical information, and background information on the
+		  YMCA women's work in France, the canteen program in particular. The volume,
+		  entitled "A YMCA Canteen Worker in The Great War: The Diaries and Letters of
+		  Emma Young Dickson," also includes extracts from notes written by William H.
+		  Danforth and her co-worker, Helen Bagoe. </p> 
+	 </scopecontent>  
+	 <userestrict encodinganalog="540"> 
+		<head>Use of Materials:</head> 
+		<p>This collection is protected by the Copyright Law of the United States
+		  (Title 17, U.S. Code). It is the user's responsibility to verify copyright,
+		  ownership, and to obtain all the necessary permissions prior to the
+		  reproduction, publication, or other use of any portion of these materials.</p> 
+	 </userestrict> 
+	 <prefercite> 
+		<head>Preferred Citation:</head> 
+		<p><emph render="italic">[Indicate the cited item and/or series
+		  here]</emph>. Emma Young Dickson Papers. Kautz Family YMCA Archives. University
+		  of Minnesota. </p> 
+		<p><emph render="italic">See the Chicago Manual of Style for additional
+		  examples.</emph></p> 
+	 </prefercite> 
+	 <processinfo> 
+		<head>Processing Information:</head> 
+		<p>Processed by: Jessica Dagen; Lara Friedman~Shedlov, February 2004.
+		  Portions of the collection were scanned and made available online in 2013. </p>
+		
+		<p>Catalog Record ID number: 4333708</p> 
+	 </processinfo> 
+	 <dsc dsctype="combined"> 
+		<head id="a9">DETAILED DESCRIPTION OF THE COLLECTION</head> 
+		<p>The following section contains a detailed list of the materials in the
+		  collection. To request materials, please note the corresponding box number.</p>
+		
+		<c01 level="file"> 
+		  <did> 
+			 <container localtype="box">1</container> 
+			 <unittitle>Diary, </unittitle> 
+			 <unitdate unitdatetype="inclusive">February 1918, April - August 1918.
+				</unitdate> 
+			 <physdesc>16 folders. </physdesc> 
+		  </did> 
+		  <scopecontent> 
+			 <p>Includes Dickson's United States passport.</p> 
+		  </scopecontent> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 1, </unittitle> 
+				<unitdate unitdatetype="inclusive">February 1918 - April 1918. </unitdate> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150877 "> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 2, </unittitle> 
+				<unitdate unitdatetype="inclusive">12 April 1918 - 23 April 1918.
+				  </unitdate> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150878 "> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 3, </unittitle> 
+				<unitdate unitdatetype="inclusive">21 April 1918 - 5 May 1918. </unitdate> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150879 "> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 4, </unittitle> 
+				<unitdate unitdatetype="inclusive">5 May 1918 - 21 May 1918. </unitdate> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150880 "> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 5, </unittitle> 
+				<unitdate unitdatetype="inclusive">21 May 1918 - 2 June 1918. </unitdate> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150881 "> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 6, </unittitle> 
+				<unitdate unitdatetype="inclusive">3 June 1918 - 7 June 1918. </unitdate> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150882 "> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 7, </unittitle> 
+				<unitdate unitdatetype="inclusive">8 June 1918 - 16 June 1918. </unitdate> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150883 "> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 8, </unittitle> 
+				<unitdate unitdatetype="inclusive">17 June 1918 - 19 June 1918. </unitdate>
+				
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150884 "> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 9, </unittitle> 
+				<unitdate unitdatetype="inclusive">20 June 1918 -27 June 1918. </unitdate> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150885 "> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 10, </unittitle> 
+				<unitdate unitdatetype="inclusive">28 June 1918 - 16 July 1918. </unitdate>
+				
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150886 "> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 11, </unittitle> 
+				<unitdate unitdatetype="inclusive">17 July 1918 - 18 July 1918. </unitdate>
+				
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150887 "> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 12, </unittitle> 
+				<unitdate unitdatetype="inclusive">17 July 1918 - 19 July 1918. </unitdate>
+				
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150888 "> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 13, </unittitle> 
+				<unitdate unitdatetype="inclusive">20 July 1918. </unitdate> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150889 "> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 14, </unittitle> 
+				<unitdate unitdatetype="inclusive">21 July 1918 - 26 July 1918. </unitdate>
+				
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150890 "> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 15, </unittitle> 
+				<unitdate unitdatetype="inclusive">27 July 1918 - 2 August 1918.
+				  </unitdate> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150891 "> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 16, </unittitle> 
+				<unitdate unitdatetype="inclusive">2 August 1918 - 4 August 1918.
+				  </unitdate> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150892 "> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		</c01> 
+		<c01 level="file"> 
+		  <did> 
+			 <container localtype="box">2</container> 
+			 <unittitle>Diary, </unittitle> 
+			 <unitdate unitdatetype="inclusive">August - December 1918. </unitdate> 
+			 <physdesc>15 folders. </physdesc> 
+		  </did> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 1, </unittitle> 
+				<unitdate unitdatetype="inclusive">5 August 1918 - 15 August 1918.
+				  </unitdate> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150893 "> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 2, </unittitle> 
+				<unitdate unitdatetype="inclusive">15 August 1918 - 31 August 1918.
+				  </unitdate> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150894 "> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 3, </unittitle> 
+				<unitdate unitdatetype="inclusive">31 August 1918 - 4 September 1918.
+				  </unitdate> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150895 "> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 4, </unittitle> 
+				<unitdate unitdatetype="inclusive">6 September 1918 - 11 September 1918.
+				  </unitdate> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150896 "> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 5, </unittitle> 
+				<unitdate unitdatetype="inclusive">12 September 1918 - 19 September 1918.
+				  </unitdate> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150897 "> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 6, </unittitle> 
+				<unitdate unitdatetype="inclusive">18 September 1918 - 21 September 1918.
+				  </unitdate> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150898 "> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 7, </unittitle> 
+				<unitdate unitdatetype="inclusive">22 September 1918 - 29 September May
+				  1918. </unitdate> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150899 "> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 8, </unittitle> 
+				<unitdate unitdatetype="inclusive">30 September 1918 - 19 October 1918.
+				  </unitdate> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150900 "> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 9, </unittitle> 
+				<unitdate unitdatetype="inclusive">19 October 1918 - 29 October 1918.
+				  </unitdate> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150901 "> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 10, </unittitle> 
+				<unitdate unitdatetype="inclusive">30 October 1918 - 15 November 1918.
+				  </unitdate> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150902 "> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 11, </unittitle> 
+				<unitdate unitdatetype="inclusive">16 November 1918 - 26 November ber 1918.
+				  </unitdate> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150903 "> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 12, </unittitle> 
+				<unitdate unitdatetype="inclusive">27 November 1918 - 3 December 1918.
+				  </unitdate> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150904 "> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 13, </unittitle> 
+				<unitdate unitdatetype="inclusive">4 December 1918 - 10 December 1918.
+				  </unitdate> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150905 "> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 14, </unittitle> 
+				<unitdate unitdatetype="inclusive">11 December 1918 - 12 December 1918.
+				  </unitdate> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150906 "> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 15, </unittitle> 
+				<unitdate unitdatetype="inclusive">13 December 1918 - 20 December 1918.
+				  </unitdate> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150907 "> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		</c01> 
+		<c01 level="file"> 
+		  <did> 
+			 <container localtype="box">3</container> 
+			 <unittitle>Diary, </unittitle> 
+			 <unitdate unitdatetype="inclusive">December 1918 - March 1919. </unitdate> 
+			 <physdesc>10 folders. </physdesc> 
+		  </did> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 1, </unittitle> 
+				<unitdate unitdatetype="inclusive">21 December 1918 - 25 December 1918.
+				  </unitdate> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150908 "> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 2, </unittitle> 
+				<unitdate unitdatetype="inclusive">26 December 1918 - 9 January 1919.
+				  </unitdate> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150909 "> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 3, </unittitle> 
+				<unitdate unitdatetype="inclusive">10 January 1919 - 18 January 1919.
+				  </unitdate> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150910 "> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 4, </unittitle> 
+				<unitdate unitdatetype="inclusive">19 January 1919 - 31 January 1919.
+				  </unitdate> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150911 "> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 5, </unittitle> 
+				<unitdate unitdatetype="inclusive">1 February 1919 - 11 February 1919.
+				  </unitdate> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150912 "> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 6, </unittitle> 
+				<unitdate unitdatetype="inclusive">12 February 1919 - 25 February 1919.
+				  </unitdate> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150913 "> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 7, </unittitle> 
+				<unitdate unitdatetype="inclusive">26 February 1919 - 11 March 1919.
+				  </unitdate> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150914 "> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 8, </unittitle> 
+				<unitdate unitdatetype="inclusive">12 March 1919 - 22 March 1919.
+				  </unitdate> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150915 "> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 9, </unittitle> 
+				<unitdate unitdatetype="inclusive">23 March 1919. </unitdate> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150916 "> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 10, </unittitle> 
+				<unitdate unitdatetype="inclusive"> March 1919. </unitdate> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150917 "> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		</c01> 
+		<c01 level="file"> 
+		  <did> 
+			 <container localtype="box">3</container> 
+			 <unittitle>Miscellaneous loose items from diary, </unittitle> 
+			 <unitdate unitdatetype="inclusive">1917-1919. </unitdate> 
+			 <physdesc>3 folders. </physdesc> 
+		  </did> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 11. </unittitle> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150918 "> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 12. </unittitle> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150919 "> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 13. </unittitle> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150920 "> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		</c01> 
+		<c01 level="subseries"> 
+		  <did> 
+			 <unittitle>War-Time Correspondence:</unittitle> 
+		  </did> 
+		  <c02 level="file"> 
+			 <did> 
+				<container localtype="box">4</container> 
+				<unittitle>Letters to Emma Dickson, </unittitle> 
+				<unitdate unitdatetype="inclusive">August 1917 - December 1919. </unitdate>
+				
+				<physdesc>8 folders. </physdesc> 
+			 </did> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>Folder 1, </unittitle> 
+				  <unitdate unitdatetype="inclusive">8 August 1917- 9 April 1918.
+					 </unitdate> 
+				  <dao daotype="derived" show="replace" actuate="onrequest"
+					href="http://purl.umn.edu/150921"> 
+					 <descriptivenote> 
+						<p>View folder contents</p> 
+					 </descriptivenote> 
+				  </dao> 
+				</did> 
+			 </c03> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>Folder 2, </unittitle> 
+				  <unitdate unitdatetype="inclusive">21 April 1918- 28 May 1918.
+					 </unitdate> 
+				  <dao daotype="derived" show="replace" actuate="onrequest"
+					href="http://purl.umn.edu/150922"> 
+					 <descriptivenote> 
+						<p>View folder contents</p> 
+					 </descriptivenote> 
+				  </dao> 
+				</did> 
+			 </c03> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>Folder 3, </unittitle> 
+				  <unitdate unitdatetype="inclusive">29 May 1918- 6 July 1918. </unitdate> 
+				  <dao daotype="derived" show="replace" actuate="onrequest"
+					href="http://purl.umn.edu/150923"> 
+					 <descriptivenote> 
+						<p>View folder contents</p> 
+					 </descriptivenote> 
+				  </dao> 
+				</did> 
+			 </c03> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>Folder 4, </unittitle> 
+				  <unitdate unitdatetype="inclusive">26 July 1918- 27 August 1918.
+					 </unitdate> 
+				  <dao daotype="derived" show="replace" actuate="onrequest"
+					href="http://purl.umn.edu/150924"> 
+					 <descriptivenote> 
+						<p>View folder contents</p> 
+					 </descriptivenote> 
+				  </dao> 
+				</did> 
+			 </c03> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>Folder 5, </unittitle> 
+				  <unitdate unitdatetype="inclusive">28 February 1919 - 2 May 1919.
+					 </unitdate> 
+				  <dao daotype="derived" show="replace" actuate="onrequest"
+					href="http://purl.umn.edu/150925"> 
+					 <descriptivenote> 
+						<p>View folder contents</p> 
+					 </descriptivenote> 
+				  </dao> 
+				</did> 
+			 </c03> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>Folder 6, </unittitle> 
+				  <unitdate unitdatetype="inclusive">16 May 1919 - 9 November 1919.
+					 </unitdate> 
+				  <dao daotype="derived" show="replace" actuate="onrequest"
+					href="http://purl.umn.edu/150926"> 
+					 <descriptivenote> 
+						<p>View folder contents</p> 
+					 </descriptivenote> 
+				  </dao> 
+				</did> 
+			 </c03> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>Folder 7, </unittitle> 
+				  <unitdate unitdatetype="inclusive">1 December 1919 - 19 December 1919.
+					 </unitdate> 
+				  <dao daotype="derived" show="replace" actuate="onrequest"
+					href="http://purl.umn.edu/150927"> 
+					 <descriptivenote> 
+						<p>View folder contents</p> 
+					 </descriptivenote> 
+				  </dao> 
+				</did> 
+			 </c03> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>Folder 11, </unittitle> 
+				  <unitdate unitdatetype="inclusive">22 September 1918 - February 1919.
+					 </unitdate> 
+				  <dao daotype="derived" show="replace" actuate="onrequest"
+					href="http://purl.umn.edu/150931"> 
+					 <descriptivenote> 
+						<p>View folder contents</p> 
+					 </descriptivenote> 
+				  </dao> 
+				</did> 
+			 </c03> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<container localtype="box">4</container> 
+				<unittitle>Letters from Emma Dickson to home, </unittitle> 
+				<unitdate unitdatetype="inclusive">April 1918 - February 1919.</unitdate> 
+				<physdesc>3 folders. </physdesc> 
+			 </did> 
+			 <scopecontent> 
+				<p>Includes originals as well as copies of Emma's letters which her
+				  father had made to distribute to distribute to other friends and family
+				  members.</p> 
+			 </scopecontent> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>Folder 8, </unittitle> 
+				  <unitdate unitdatetype="inclusive">18 April 1918- 19 May 1918.
+					 </unitdate> 
+				  <dao daotype="derived" show="replace" actuate="onrequest"
+				  href="http://purl.umn.edu/150928"> 
+					 <descriptivenote> 
+						<p>View folder contents</p> 
+					 </descriptivenote> 
+				  </dao> 
+				</did> 
+			 </c03> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>Folder 9, </unittitle> 
+				  <unitdate unitdatetype="inclusive">31 May 1918- 31 August 1918.
+					 </unitdate> 
+				  <dao daotype="derived" show="replace" actuate="onrequest"
+				  href="http://purl.umn.edu/150929"> 
+					 <descriptivenote> 
+						<p>View folder contents</p> 
+					 </descriptivenote> 
+				  </dao> 
+				</did> 
+			 </c03> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>Folder 10, </unittitle> 
+				  <unitdate unitdatetype="inclusive">4 September 1918- 24 February 1919.
+					 </unitdate> 
+				  <dao daotype="derived" show="replace" actuate="onrequest"
+				  href="http://purl.umn.edu/150930"> 
+					 <descriptivenote> 
+						<p>View folder contents</p> 
+					 </descriptivenote> 
+				  </dao> 
+				</did> 
+			 </c03> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>Typescript copies of letters written by Emma (Folder
+					 12), </unittitle> 
+				  <unitdate unitdatetype="inclusive">April 1918 - February 1919.
+					 </unitdate> 
+				  <dao daotype="derived" show="replace" actuate="onrequest"
+				  href="http://purl.umn.edu/150932"> 
+					 <descriptivenote> 
+						<p>View folder contents</p> 
+					 </descriptivenote> 
+				  </dao> 
+				</did> 
+			 </c03> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<container localtype="box">4</container> 
+				<unittitle>Letters from William B. Dickson (Emma's father) to Emma
+				  Dickson, </unittitle> 
+				<unitdate unitdatetype="inclusive">April 1918 - January 1919. </unitdate> 
+				<physdesc>2 folders. </physdesc> 
+			 </did> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>Folder 13, </unittitle> 
+				  <unitdate unitdatetype="inclusive">22 April 1918 - 2 July 1918.
+					 </unitdate> 
+				  <dao daotype="derived" show="replace" actuate="onrequest"
+					href="http://purl.umn.edu/150933"> 
+					 <descriptivenote> 
+						<p>View folder contents</p> 
+					 </descriptivenote> 
+				  </dao> 
+				</did> 
+			 </c03> 
+			 <c03 level="file"> 
+				<did> 
+				  <unittitle>Folder 14, </unittitle> 
+				  <unitdate unitdatetype="inclusive">25 July 1918 - 14 Junuary 1919.
+					 </unitdate> 
+				  <dao daotype="derived" show="replace" actuate="onrequest"
+					href="http://purl.umn.edu/150934"> 
+					 <descriptivenote> 
+						<p>View folder contents</p> 
+					 </descriptivenote> 
+				  </dao> 
+				</did> 
+			 </c03> 
+		  </c02> 
+		</c01> 
+		<c01 level="file"> 
+		  <did> 
+			 <container localtype="box">4</container> 
+			 <unittitle>Post-war correspondence, </unittitle> 
+			 <unitdate unitdatetype="inclusive">1930-1952. </unitdate> 
+			 <dao daotype="derived" show="replace" actuate="onrequest"
+			  href="http://purl.umn.edu/150935"> 
+				<descriptivenote> 
+				  <p>View folder contents</p> 
+				</descriptivenote> 
+			 </dao> 
+		  </did> 
+		</c01> 
+		<c01 level="file"> 
+		  <did> 
+			 <container localtype="box">5</container> 
+			 <unittitle>Picture postcards, </unittitle> 
+			 <unitdate unitdatetype="inclusive">undated. </unitdate> 
+			 <physdesc>3 folders. </physdesc> 
+		  </did> 
+		  <scopecontent> 
+			 <p>Postcards (most with no messages) depicting various places and
+				scenes in Europe that Dickson collected during her service with the YMCA. </p> 
+		  </scopecontent> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 1. </unittitle> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150936"> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 2. </unittitle> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150937"> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 3. </unittitle> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150938"> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		</c01> 
+		<c01 level="file"> 
+		  <did> 
+			 <container localtype="box">5</container> 
+			 <unittitle>Photographs, </unittitle> 
+			 <unitdate unitdatetype="inclusive">undated and 1918. </unitdate> 
+			 <physdesc>9 items. </physdesc> 
+			 <dao daotype="derived" show="replace" actuate="onrequest"
+			  href="http://purl.umn.edu/150939"> 
+				<descriptivenote> 
+				  <p>View folder contents</p> 
+				</descriptivenote> 
+			 </dao> 
+		  </did> 
+		  <scopecontent> 
+			 <p>Includes images of Emma Dickson, soldiers, and co-workers in
+				Europe during World War I.</p> 
+		  </scopecontent> 
+		</c01> 
+		<c01 level="file"> 
+		  <did> 
+			 <container localtype="box">5</container> 
+			 <unittitle>News clippings and articles, </unittitle> 
+			 <unitdate unitdatetype="inclusive">1918-1921. </unitdate> 
+			 <dao daotype="derived" show="replace" actuate="onrequest"
+			  href="http://purl.umn.edu/150940"> 
+				<descriptivenote> 
+				  <p>View folder contents</p> 
+				</descriptivenote> 
+			 </dao> 
+		  </did> 
+		  <scopecontent> 
+			 <p>Clippings collected by Dickson from European and military
+				newspapers. One clipping includes a poem, "To the 'Y' Girl," written by John S.
+				Madden about Dickson.</p> 
+		  </scopecontent> 
+		</c01> 
+		<c01 level="file"> 
+		  <did> 
+			 <container localtype="box">4</container> 
+			 <unittitle>Passport application, identification papers, and other
+				memorabilia,</unittitle> 
+			 <unitdate unitdatetype="inclusive">1918-1919, 1921, 1939, 1955. </unitdate> 
+			 <physdesc>2 folders.</physdesc> 
+		  </did> 
+		  <scopecontent> 
+			 <p>Includes samples of French ration cards, a cabin passenger list
+				for the "Espagne" (the ship on which Dickson travelled to France in April
+				1918), a German two-Mark note, and material about her friend and former fellow
+				YMCA worker, William H. Danforth.</p> 
+		  </scopecontent> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 6. </unittitle> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150941"> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Folder 7. </unittitle> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150942"> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		</c01> 
+		<c01 level="file"> 
+		  <did> 
+			 <container localtype="box">6</container> 
+			 <unittitle>Books, </unittitle> 
+			 <unitdate unitdatetype="inclusive">undated and 1927-1928, 1944. </unitdate> 
+			 <physdesc>6 volumes. </physdesc> 
+		  </did> 
+		  <scopecontent> 
+			 <p>Includes five titles by William H. Danforth: <emph
+				render="italic">Russia Under the Hammer and Sickle; </emph><emph
+				render="italic">Random Ramblings in India; </emph><emph render="italic">Growth;
+				</emph><emph render="italic">Action; </emph>and <emph render="italic">Power.
+				</emph>Also includes a volume by David S. Lamb: <emph render="italic">Till We
+				Meet Again, </emph> as well as some loose items removed from the Danforth
+				books.</p> 
+		  </scopecontent> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle><emph render="italic">Russia Under the Hammer and
+				  Sickle. </emph></unittitle> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150944"> 
+				  <descriptivenote> 
+					 <p>View volume </p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle><emph render="italic">Random Ramblings in India.
+				  </emph></unittitle> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150945"> 
+				  <descriptivenote> 
+					 <p>View volume </p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle><emph render="italic">Growth: President Danforth's
+				  Monday Morning Messages. </emph></unittitle> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				href="http://purl.umn.edu/150946"> 
+				  <descriptivenote> 
+					 <p>View volume</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle><emph render="italic">Action: President Danforth's
+				  Monday Morning Messages. </emph></unittitle> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				 href="http://purl.umn.edu/150947"> 
+				  <descriptivenote> 
+					 <p>View volume </p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle><emph render="italic">Power: President Danforth's Monday
+				  Morning Messages. </emph></unittitle> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				href="http://purl.umn.edu/150948"> 
+				  <descriptivenote> 
+					 <p>View volume </p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle>Loose items removed from William H. Danforth books.
+				  </unittitle> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				href="http://purl.umn.edu/150950"> 
+				  <descriptivenote> 
+					 <p>View folder contents</p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		  <c02 level="file"> 
+			 <did> 
+				<unittitle><emph render="italic">Till We Meet Again.
+				  </emph></unittitle> 
+				<dao daotype="derived" show="replace" actuate="onrequest"
+				href="http://purl.umn.edu/150949"> 
+				  <descriptivenote> 
+					 <p>View volume </p> 
+				  </descriptivenote> 
+				</dao> 
+			 </did> 
+		  </c02> 
+		</c01> 
+		<c01 level="file"> 
+		  <did> 
+			 <container localtype="box">6</container> 
+			 <unittitle> "A YMCA Canteen Worker in 'The Great War': The Diaries
+				and Letters of Emma Young Dickson," compiled and edited by Cornelia Carswell
+				Serota, </unittitle> 
+			 <unitdate unitdatetype="inclusive">1998. </unitdate> 
+			 <physdesc>1 volume. </physdesc> 
+			 <dao daotype="derived" show="replace" actuate="onrequest"
+			 href="http://purl.umn.edu/150943"> 
+				<descriptivenote> 
+				  <p>View folder contents</p> 
+				</descriptivenote> 
+			 </dao> 
+		  </did> 
+		  <scopecontent> 
+			 <p>Transcription of the war-time diaries and letters of Emma Young
+				Dickson, along with biographical and other background information and
+				annotations compiled by her daughter.</p> 
+		  </scopecontent> 
+		</c01> 
+	 </dsc> 
+	 <relatedmaterial> 
+		<head id="a5">RELATED MATERIALS</head> 
+		<p>Additional material about YMCA work during the first World War is
+		  available in the Armed Services World War I-related records, which are
+		  separately cataloged in the Kautz Family YMCA Archives collections.</p> 
+	 </relatedmaterial> 
+	 <controlaccess> 
+		<head id="a7">INDEX TERMS</head> 
+		<p>This collection is indexed under the following headings in the catalog
+		  of the University of Minnesota Libraries. Researchers desiring materials about
+		  related topics, persons or places should search the catalog using these
+		  headings.</p> 
+		<controlaccess> 
+		  <head>Topics:</head> 
+			<subject encodinganalog="650"><part localtype="a">World War, 1914-1918</part><part localtype="x">Campaigns.</part>
+			 </subject> 
+			<subject encodinganalog="650"><part localtype="a">World War, 1914-1918</part><part localtype="z">France.
+			 </part></subject> 
+			<subject encodinganalog="650"><part localtype="a">World War, 1914-1918</part><part localtype="x">Personal
+			 narratives.</part></subject> 
+			<subject encodinganalog="650"><part localtype="a">World War, 1914-191</part><part localtype="x">War work</part><part localtype="x">Young
+			 Men's Christian associations.</part> </subject> 
+			<subject encodinganalog="650"><part localtype="a">World War, 1914-1918</part><part localtype="x">Women.</part></subject> 
+			<subject encodinganalog="650"><part localtype="a">Young Men's Christian associations.</part>
+			 </subject> 
+		</controlaccess> 
+		<controlaccess> 
+		  <head>Places:</head> 
+			<geogname encodinganalog="651"><part localtype="a">France</part><part localtype="x">Description and travel.
+			 </part></geogname> 
+			<geogname encodinganalog="651"><part localtype="a">Germany</part><part localtype="x">Description and travel.
+			 </part></geogname> 
+			<geogname encodinganalog="651"><part localtype="a">India</part><part localtype="x">Description and travel.
+			 </part></geogname> 
+			<geogname encodinganalog="651"><part localtype="a">Russia</part><part localtype="x">Description and
+			 travel.</part></geogname> 
+		</controlaccess> 
+		<controlaccess> 
+		  <head>Persons:</head> 
+			<persname encodinganalog="700"><part localtype="a">Danforth, William H.</part><part localtype="q">(William Henry),
+			</part><part localtype="d">1870-1955.</part></persname> 
+			<persname encodinganalog="700"><part localtype="a">Dickson, Emma Young,</part><part localtype="d">
+			 1891-1984.</part></persname> 
+			<persname encodinganalog="700"><part localtype="a">Dickson, William Brown,</part><part localtype="d">
+			 1865-1942.</part></persname> 
+			<persname><part localtype="a">Serota, Cornelia Carswell.</part></persname> 
+		</controlaccess> 
+		<controlaccess> 
+		  <head>Organizations:</head> 
+			<corpname encodinganalog="710"><part localtype="a">Ralston Purina Company.</part> </corpname> 
+			<corpname encodinganalog="710"><part localtype="a">United States.</part><part localtype="b"> Army.</part><part localtype="b"> American
+			 Expeditionary Forces. </part></corpname> 
+			<corpname encodinganalog="710"><part localtype="a">United States.</part><part localtype="b"> Army.</part><part localtype="b"> Infantry Regiment,
+			 7th.</part></corpname> 
+		</controlaccess> 
+		<controlaccess encodinganalog="655"> 
+		  <head>Types of Documents:</head> 
+			<genreform><part localtype="a">Photographs.</part></genreform> 
+			<genreform><part localtype="a">Postcards.</part></genreform> 
+		</controlaccess> 
+	 </controlaccess> 
+  </archdesc> 
+</ead>

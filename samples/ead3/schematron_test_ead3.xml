@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schematron/ead3.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<ead xmlns="http://ead3.archivists.org/schema/">
+    <control langencoding="iso639-2b">
+        <recordid></recordid>
+        <filedesc>
+            <titlestmt>
+                <titleproper></titleproper>
+            </titlestmt>
+        </filedesc>
+        <maintenancestatus value="new"></maintenancestatus>
+        <maintenanceagency>
+            <agencycode>nlmannkshysnhedjdusbs</agencycode>
+            <agencyname></agencyname>
+        </maintenanceagency>
+        <maintenancehistory>
+            <maintenanceevent>
+                <eventtype value="created"></eventtype>
+                <eventdatetime></eventdatetime>
+                <agenttype value="human"></agenttype>
+                <agent></agent>
+            </maintenanceevent>
+        </maintenancehistory>
+    </control>
+    <archdesc level="collection">
+        <did lang="sslslsssslkksdpow1kiojnfckvnopwhviowhivhwehf2h3yu97349uropjhp1jpou907u249019l" script="latn">
+            <unitdatestructured era="bsnsbs">
+            <datesingle standarddate="10000121ssssssssssssssssssssssssss"></datesingle>
+        </unitdatestructured>
+            <unitdatestructured era="bce">
+                <daterange>
+                    <fromdate notbefore="1920-01-01" notafter="19291231">1920s</fromdate>
+                    <todate notbefore="19500101" notafter="1959-12-311111">195s</todate>
+                </daterange>
+            </unitdatestructured>
+        <unitdate normal="1209-09-23" lang="eng" script="Latn"></unitdate></did>
+    </archdesc>
+</ead>

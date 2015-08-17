@@ -1,8 +1,6 @@
 <!-- include "ead_revised_defs.rng" -->
 
-<!-- ELEMENTS -->
-
-<!ELEMENT ead (control,archdesc)>
+<!ELEMENT ead (control,frontmatter?,archdesc)>
 <!ATTLIST ead
 
   id ID #IMPLIED
@@ -12,6 +10,415 @@
   script NMTOKEN #IMPLIED
   relatedencoding CDATA #IMPLIED
   base CDATA #IMPLIED>
+
+<!-- ARCHDESC -->
+
+<!ELEMENT archdesc (runner*,did,(accessrestrict|accruals|acqinfo
+                                |altformavail|appraisal|arrangement
+                                |bibliography|bioghist|controlaccess
+                                |custodhist|descgrp|fileplan|index
+                                |legalstatus|odd|originalsloc
+                                |otherfindaid|phystech|prefercite
+                                |processinfo|relatedmaterial|relations
+                                |scopecontent|separatedmaterial
+                                |userestrict|dsc)*)>
+<!ATTLIST archdesc
+
+  id ID #IMPLIED
+  altrender CDATA #IMPLIED
+  audience (external|internal) #IMPLIED
+  lang NMTOKEN #IMPLIED
+  script NMTOKEN #IMPLIED
+  localtype CDATA #IMPLIED
+  relatedencoding CDATA #IMPLIED
+
+  otherlevel CDATA #IMPLIED
+  encodinganalog CDATA #IMPLIED
+
+  level (class|collection|file|fonds|item|otherlevel|recordgrp|series
+         |subfonds|subgrp|subseries) #REQUIRED
+  base CDATA #IMPLIED>
+
+<!-- ELEMENT MODELS -->
+
+<!-- dsc -->
+
+<!ELEMENT dsc (head?,(chronlist|list|table|blockquote|p)*,thead?,(c+|c01+)?)>
+<!ATTLIST dsc
+
+  id ID #IMPLIED
+  altrender CDATA #IMPLIED
+  audience (external|internal) #IMPLIED
+  lang NMTOKEN #IMPLIED
+  script NMTOKEN #IMPLIED
+  tpattern NMTOKEN #IMPLIED
+  dsctype (analyticover|combined|in-depth|otherdsctype) #IMPLIED
+  otherdsctype CDATA #IMPLIED
+  encodinganalog CDATA #IMPLIED>
+
+<!-- Components -->
+
+<!ELEMENT c ((head?,did,(accessrestrict|accruals|acqinfo
+                                |altformavail|appraisal|arrangement
+                                |bibliography|bioghist|controlaccess
+                                |custodhist|descgrp|fileplan|index
+                                |legalstatus|odd|originalsloc
+                                |otherfindaid|phystech|prefercite
+                                |processinfo|relatedmaterial|relations
+                                |scopecontent|separatedmaterial
+                                |userestrict)*),(thead?,c+)*)>
+<!ATTLIST c
+
+  id ID #IMPLIED
+  altrender CDATA #IMPLIED
+  audience (external|internal) #IMPLIED
+  lang NMTOKEN #IMPLIED
+  script NMTOKEN #IMPLIED
+  base CDATA #IMPLIED
+  level (class|collection|file|fonds|item|otherlevel|recordgrp|series
+         |subfonds|subgrp|subseries) #IMPLIED
+
+  otherlevel CDATA #IMPLIED
+  encodinganalog CDATA #IMPLIED
+  tpattern NMTOKEN #IMPLIED>
+
+<!ELEMENT c01 ((head?,did,(accessrestrict|accruals|acqinfo
+                                |altformavail|appraisal|arrangement
+                                |bibliography|bioghist|controlaccess
+                                |custodhist|descgrp|fileplan|index
+                                |legalstatus|odd|originalsloc
+                                |otherfindaid|phystech|prefercite
+                                |processinfo|relatedmaterial|relations
+                                |scopecontent|separatedmaterial
+                                |userestrict)*),(thead?,c02+)*)>
+<!ATTLIST c01
+
+  id ID #IMPLIED
+  altrender CDATA #IMPLIED
+  audience (external|internal) #IMPLIED
+  lang NMTOKEN #IMPLIED
+  script NMTOKEN #IMPLIED
+  base CDATA #IMPLIED
+  level (class|collection|file|fonds|item|otherlevel|recordgrp|series
+         |subfonds|subgrp|subseries) #IMPLIED
+
+  otherlevel CDATA #IMPLIED
+  encodinganalog CDATA #IMPLIED
+  tpattern NMTOKEN #IMPLIED>
+
+<!ELEMENT c02 ((head?,did,(accessrestrict|accruals|acqinfo
+                                |altformavail|appraisal|arrangement
+                                |bibliography|bioghist|controlaccess
+                                |custodhist|descgrp|fileplan|index
+                                |legalstatus|odd|originalsloc
+                                |otherfindaid|phystech|prefercite
+                                |processinfo|relatedmaterial|relations
+                                |scopecontent|separatedmaterial
+                                |userestrict)*),(thead?,c03+)*)>
+<!ATTLIST c02
+
+  id ID #IMPLIED
+  altrender CDATA #IMPLIED
+  audience (external|internal) #IMPLIED
+  lang NMTOKEN #IMPLIED
+  script NMTOKEN #IMPLIED
+  base CDATA #IMPLIED
+  level (class|collection|file|fonds|item|otherlevel|recordgrp|series
+         |subfonds|subgrp|subseries) #IMPLIED
+
+  otherlevel CDATA #IMPLIED
+  encodinganalog CDATA #IMPLIED
+  tpattern NMTOKEN #IMPLIED>
+
+<!ELEMENT c03 ((head?,did,(accessrestrict|accruals|acqinfo
+                                |altformavail|appraisal|arrangement
+                                |bibliography|bioghist|controlaccess
+                                |custodhist|descgrp|fileplan|index
+                                |legalstatus|odd|originalsloc
+                                |otherfindaid|phystech|prefercite
+                                |processinfo|relatedmaterial|relations
+                                |scopecontent|separatedmaterial
+                                |userestrict)*),(thead?,c04+)*)>
+<!ATTLIST c03
+
+  id ID #IMPLIED
+  altrender CDATA #IMPLIED
+  audience (external|internal) #IMPLIED
+  lang NMTOKEN #IMPLIED
+  script NMTOKEN #IMPLIED
+  base CDATA #IMPLIED
+  level (class|collection|file|fonds|item|otherlevel|recordgrp|series
+         |subfonds|subgrp|subseries) #IMPLIED
+
+  otherlevel CDATA #IMPLIED
+  encodinganalog CDATA #IMPLIED
+  tpattern NMTOKEN #IMPLIED>
+
+<!ELEMENT c04 ((head?,did,(accessrestrict|accruals|acqinfo
+                                |altformavail|appraisal|arrangement
+                                |bibliography|bioghist|controlaccess
+                                |custodhist|descgrp|fileplan|index
+                                |legalstatus|odd|originalsloc
+                                |otherfindaid|phystech|prefercite
+                                |processinfo|relatedmaterial|relations
+                                |scopecontent|separatedmaterial
+                                |userestrict)*),(thead?,c05+)*)>
+<!ATTLIST c04
+
+  id ID #IMPLIED
+  altrender CDATA #IMPLIED
+  audience (external|internal) #IMPLIED
+  lang NMTOKEN #IMPLIED
+  script NMTOKEN #IMPLIED
+  base CDATA #IMPLIED
+  level (class|collection|file|fonds|item|otherlevel|recordgrp|series
+         |subfonds|subgrp|subseries) #IMPLIED
+
+  otherlevel CDATA #IMPLIED
+  encodinganalog CDATA #IMPLIED
+  tpattern NMTOKEN #IMPLIED>
+
+<!ELEMENT c05 ((head?,did,(accessrestrict|accruals|acqinfo
+                                |altformavail|appraisal|arrangement
+                                |bibliography|bioghist|controlaccess
+                                |custodhist|descgrp|fileplan|index
+                                |legalstatus|odd|originalsloc
+                                |otherfindaid|phystech|prefercite
+                                |processinfo|relatedmaterial|relations
+                                |scopecontent|separatedmaterial
+                                |userestrict)*),(thead?,c06+)*)>
+<!ATTLIST c05
+
+  id ID #IMPLIED
+  altrender CDATA #IMPLIED
+  audience (external|internal) #IMPLIED
+  lang NMTOKEN #IMPLIED
+  script NMTOKEN #IMPLIED
+  base CDATA #IMPLIED
+  level (class|collection|file|fonds|item|otherlevel|recordgrp|series
+         |subfonds|subgrp|subseries) #IMPLIED
+
+  otherlevel CDATA #IMPLIED
+  encodinganalog CDATA #IMPLIED
+  tpattern NMTOKEN #IMPLIED>
+
+<!ELEMENT c06 ((head?,did,(accessrestrict|accruals|acqinfo
+                                |altformavail|appraisal|arrangement
+                                |bibliography|bioghist|controlaccess
+                                |custodhist|descgrp|fileplan|index
+                                |legalstatus|odd|originalsloc
+                                |otherfindaid|phystech|prefercite
+                                |processinfo|relatedmaterial|relations
+                                |scopecontent|separatedmaterial
+                                |userestrict)*),(thead?,c07+)*)>
+<!ATTLIST c06
+
+  id ID #IMPLIED
+  altrender CDATA #IMPLIED
+  audience (external|internal) #IMPLIED
+  lang NMTOKEN #IMPLIED
+  script NMTOKEN #IMPLIED
+  base CDATA #IMPLIED
+  level (class|collection|file|fonds|item|otherlevel|recordgrp|series
+         |subfonds|subgrp|subseries) #IMPLIED
+
+  otherlevel CDATA #IMPLIED
+  encodinganalog CDATA #IMPLIED
+  tpattern NMTOKEN #IMPLIED>
+
+<!ELEMENT c07 ((head?,did,(accessrestrict|accruals|acqinfo
+                                |altformavail|appraisal|arrangement
+                                |bibliography|bioghist|controlaccess
+                                |custodhist|descgrp|fileplan|index
+                                |legalstatus|odd|originalsloc
+                                |otherfindaid|phystech|prefercite
+                                |processinfo|relatedmaterial|relations
+                                |scopecontent|separatedmaterial
+                                |userestrict)*),(thead?,c08+)*)>
+<!ATTLIST c07
+
+  id ID #IMPLIED
+  altrender CDATA #IMPLIED
+  audience (external|internal) #IMPLIED
+  lang NMTOKEN #IMPLIED
+  script NMTOKEN #IMPLIED
+  base CDATA #IMPLIED
+  level (class|collection|file|fonds|item|otherlevel|recordgrp|series
+         |subfonds|subgrp|subseries) #IMPLIED
+
+  otherlevel CDATA #IMPLIED
+  encodinganalog CDATA #IMPLIED
+  tpattern NMTOKEN #IMPLIED>
+
+<!ELEMENT c08 ((head?,did,(accessrestrict|accruals|acqinfo
+                                |altformavail|appraisal|arrangement
+                                |bibliography|bioghist|controlaccess
+                                |custodhist|descgrp|fileplan|index
+                                |legalstatus|odd|originalsloc
+                                |otherfindaid|phystech|prefercite
+                                |processinfo|relatedmaterial|relations
+                                |scopecontent|separatedmaterial
+                                |userestrict)*),(thead?,c09*)*)>
+<!ATTLIST c08
+
+  id ID #IMPLIED
+  altrender CDATA #IMPLIED
+  audience (external|internal) #IMPLIED
+  lang NMTOKEN #IMPLIED
+  script NMTOKEN #IMPLIED
+  base CDATA #IMPLIED
+  level (class|collection|file|fonds|item|otherlevel|recordgrp|series
+         |subfonds|subgrp|subseries) #IMPLIED
+
+  otherlevel CDATA #IMPLIED
+  encodinganalog CDATA #IMPLIED
+  tpattern NMTOKEN #IMPLIED>
+
+<!ELEMENT c09 ((head?,did,(accessrestrict|accruals|acqinfo
+                                |altformavail|appraisal|arrangement
+                                |bibliography|bioghist|controlaccess
+                                |custodhist|descgrp|fileplan|index
+                                |legalstatus|odd|originalsloc
+                                |otherfindaid|phystech|prefercite
+                                |processinfo|relatedmaterial|relations
+                                |scopecontent|separatedmaterial
+                                |userestrict)*),(thead?,c10+)*)>
+<!ATTLIST c09
+
+  id ID #IMPLIED
+  altrender CDATA #IMPLIED
+  audience (external|internal) #IMPLIED
+  lang NMTOKEN #IMPLIED
+  script NMTOKEN #IMPLIED
+  base CDATA #IMPLIED
+  level (class|collection|file|fonds|item|otherlevel|recordgrp|series
+         |subfonds|subgrp|subseries) #IMPLIED
+
+  otherlevel CDATA #IMPLIED
+  encodinganalog CDATA #IMPLIED
+  tpattern NMTOKEN #IMPLIED>
+
+<!ELEMENT c10 ((head?,did,(accessrestrict|accruals|acqinfo
+                                |altformavail|appraisal|arrangement
+                                |bibliography|bioghist|controlaccess
+                                |custodhist|descgrp|fileplan|index
+                                |legalstatus|odd|originalsloc
+                                |otherfindaid|phystech|prefercite
+                                |processinfo|relatedmaterial|relations
+                                |scopecontent|separatedmaterial
+                                |userestrict)*),(thead?,c11+)*)>
+<!ATTLIST c10
+
+  id ID #IMPLIED
+  altrender CDATA #IMPLIED
+  audience (external|internal) #IMPLIED
+  lang NMTOKEN #IMPLIED
+  script NMTOKEN #IMPLIED
+  base CDATA #IMPLIED
+  level (class|collection|file|fonds|item|otherlevel|recordgrp|series
+         |subfonds|subgrp|subseries) #IMPLIED
+
+  otherlevel CDATA #IMPLIED
+  encodinganalog CDATA #IMPLIED
+  tpattern NMTOKEN #IMPLIED>
+
+<!ELEMENT c11 ((head?,did,(accessrestrict|accruals|acqinfo
+                                |altformavail|appraisal|arrangement
+                                |bibliography|bioghist|controlaccess
+                                |custodhist|descgrp|fileplan|index
+                                |legalstatus|odd|originalsloc
+                                |otherfindaid|phystech|prefercite
+                                |processinfo|relatedmaterial|relations
+                                |scopecontent|separatedmaterial
+                                |userestrict)*),(thead?,c12+)*)>
+<!ATTLIST c11
+
+  id ID #IMPLIED
+  altrender CDATA #IMPLIED
+  audience (external|internal) #IMPLIED
+  lang NMTOKEN #IMPLIED
+  script NMTOKEN #IMPLIED
+  base CDATA #IMPLIED
+  level (class|collection|file|fonds|item|otherlevel|recordgrp|series
+         |subfonds|subgrp|subseries) #IMPLIED
+
+  otherlevel CDATA #IMPLIED
+  encodinganalog CDATA #IMPLIED
+  tpattern NMTOKEN #IMPLIED>
+
+<!ELEMENT c12 (head?,did,(accessrestrict|accruals|acqinfo
+                                |altformavail|appraisal|arrangement
+                                |bibliography|bioghist|controlaccess
+                                |custodhist|descgrp|fileplan|index
+                                |legalstatus|odd|originalsloc
+                                |otherfindaid|phystech|prefercite
+                                |processinfo|relatedmaterial|relations
+                                |scopecontent|separatedmaterial
+                                |userestrict)*)>
+<!ATTLIST c12
+
+  id ID #IMPLIED
+  altrender CDATA #IMPLIED
+  audience (external|internal) #IMPLIED
+  lang NMTOKEN #IMPLIED
+  script NMTOKEN #IMPLIED
+  base CDATA #IMPLIED
+  level (class|collection|file|fonds|item|otherlevel|recordgrp|series
+         |subfonds|subgrp|subseries) #IMPLIED
+
+  otherlevel CDATA #IMPLIED
+  encodinganalog CDATA #IMPLIED
+  tpattern NMTOKEN #IMPLIED>
+
+<!-- MIXED CONTENT MODELS -->
+
+<!-- unittitle -->
+
+<!ELEMENT unittitle (#PCDATA|abbr|emph|expan|foreign|lb|ptr|ref|persname|corpname|famname|geogname|name|occupation
+                     |subject|genreform|function|title|date
+                     |footnote|num|quote|imprint|bibseries|edition
+                     |unitdate)*>
+<!ATTLIST unittitle
+
+  id ID #IMPLIED
+  altrender CDATA #IMPLIED
+  audience (external|internal) #IMPLIED
+  lang NMTOKEN #IMPLIED
+  script NMTOKEN #IMPLIED
+  label CDATA #IMPLIED
+  encodinganalog CDATA #IMPLIED
+  localtype CDATA #IMPLIED
+  normal CDATA #IMPLIED>
+
+<!ELEMENT physdesc (#PCDATA|abbr|emph|expan|foreign|lb|ptr|ref|persname|corpname|famname|geogname|name|occupation
+                     |subject|genreform|function|title|date
+                    |footnote|num|quote|extent|physfacet|dimensions)*>
+<!ATTLIST physdesc
+
+  id ID #IMPLIED
+  altrender CDATA #IMPLIED
+  audience (external|internal) #IMPLIED
+  lang NMTOKEN #IMPLIED
+  script NMTOKEN #IMPLIED
+  localtype CDATA #IMPLIED
+  label CDATA #IMPLIED
+  encodinganalog CDATA #IMPLIED>
+
+<!ELEMENT bibref (#PCDATA
+                                           |abbr|emph|expan|foreign|lb|ptr|ref
+                                           |persname|corpname|famname|geogname|name|occupation
+                     |subject|genreform|function|title|date|footnote|num
+                                           |quote|bibseries|imprint)*>
+<!ATTLIST bibref
+
+  id ID #IMPLIED
+  altrender CDATA #IMPLIED
+  audience (external|internal) #IMPLIED
+  lang NMTOKEN #IMPLIED
+  script NMTOKEN #IMPLIED
+  encodinganalog CDATA #IMPLIED>
+
+<!-- ELEMENTS -->
 
 <!-- control -->
 
@@ -334,8 +741,6 @@
   encodinganalog CDATA #IMPLIED
   transliteration NMTOKEN #IMPLIED>
 
-<!-- MIXED CONTENT MODELS -->
-
 <!ELEMENT titleproper (#PCDATA|abbr|emph|expan|foreign|lb|ptr|ref)*>
 <!ATTLIST titleproper
 
@@ -404,8 +809,6 @@
   script NMTOKEN #IMPLIED
   localtype CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED>
-
-<!-- ELEMENT MODELS -->
 
 <!ELEMENT controlnote (chronlist|list|table|blockquote|p)+>
 <!ATTLIST controlnote
@@ -483,30 +886,6 @@
   lastdatetimeverified CDATA #IMPLIED>
 
 <!-- ARCHDESC -->
-
-<!ELEMENT archdesc (did,(accessrestrict|accruals|acqinfo|altformavail
-                        |appraisal|arrangement|bibliography|bioghist
-                        |controlaccess|custodhist|fileplan|index
-                        |legalstatus|odd|originalsloc|otherfindaid
-                        |phystech|prefercite|processinfo|relatedmaterial
-                        |relations|scopecontent|separatedmaterial
-                        |userestrict|dsc)*)>
-<!ATTLIST archdesc
-
-  id ID #IMPLIED
-  altrender CDATA #IMPLIED
-  audience (external|internal) #IMPLIED
-  lang NMTOKEN #IMPLIED
-  script NMTOKEN #IMPLIED
-  localtype CDATA #IMPLIED
-  relatedencoding CDATA #IMPLIED
-
-  otherlevel CDATA #IMPLIED
-  encodinganalog CDATA #IMPLIED
-
-  level (class|collection|file|fonds|item|otherlevel|recordgrp|series
-         |subfonds|subgrp|subseries) #REQUIRED
-  base CDATA #IMPLIED>
 
 <!-- did -->
 
@@ -641,18 +1020,6 @@
   parallel (true|false) #IMPLIED
   coverage (whole|part) #IMPLIED>
 
-<!ELEMENT physdesc (#PCDATA|abbr|emph|expan|foreign|lb|ptr|ref)*>
-<!ATTLIST physdesc
-
-  id ID #IMPLIED
-  altrender CDATA #IMPLIED
-  audience (external|internal) #IMPLIED
-  lang NMTOKEN #IMPLIED
-  script NMTOKEN #IMPLIED
-  localtype CDATA #IMPLIED
-  label CDATA #IMPLIED
-  encodinganalog CDATA #IMPLIED>
-
 <!ELEMENT physloc (#PCDATA|abbr|emph|expan|foreign|lb|ptr|ref)*>
 <!ATTLIST physloc
 
@@ -775,22 +1142,6 @@
   era NMTOKEN #IMPLIED
 
   calendar NMTOKEN #IMPLIED>
-
-<!ELEMENT unittitle (#PCDATA|abbr|emph|expan|foreign|lb|ptr|ref
-                                       |persname|corpname|famname|geogname|name|occupation
-                     |subject|genreform|function|title|date|footnote|num
-                                       |quote)*>
-<!ATTLIST unittitle
-
-  id ID #IMPLIED
-  altrender CDATA #IMPLIED
-  audience (external|internal) #IMPLIED
-  lang NMTOKEN #IMPLIED
-  script NMTOKEN #IMPLIED
-  label CDATA #IMPLIED
-  encodinganalog CDATA #IMPLIED
-  localtype CDATA #IMPLIED
-  normal CDATA #IMPLIED>
 
 <!ELEMENT unitid (#PCDATA|abbr|emph|expan|foreign|lb|ptr|ref)*>
 <!ATTLIST unitid
@@ -1649,19 +2000,6 @@
   script NMTOKEN #IMPLIED
   encodinganalog CDATA #IMPLIED>
 
-<!ELEMENT bibref (#PCDATA|abbr|emph|expan|foreign|lb|ptr|ref
-                                       |persname|corpname|famname|geogname|name|occupation
-                     |subject|genreform|function|title|date|footnote|num
-                                       |quote)*>
-<!ATTLIST bibref
-
-  id ID #IMPLIED
-  altrender CDATA #IMPLIED
-  audience (external|internal) #IMPLIED
-  lang NMTOKEN #IMPLIED
-  script NMTOKEN #IMPLIED
-  encodinganalog CDATA #IMPLIED>
-
 <!ELEMENT descriptivenote (p)+>
 <!ATTLIST descriptivenote
 
@@ -1886,291 +2224,6 @@
 
 <!-- DSC -->
 
-<!ELEMENT dsc (head?,(chronlist|list|table|blockquote|p)*,thead?,(c+|c01+)?)>
-<!ATTLIST dsc
-
-  id ID #IMPLIED
-  altrender CDATA #IMPLIED
-  audience (external|internal) #IMPLIED
-  lang NMTOKEN #IMPLIED
-  script NMTOKEN #IMPLIED
-  dsctype (analyticover|combined|in-depth|otherdsctype) #IMPLIED
-  otherdsctype CDATA #IMPLIED
-  encodinganalog CDATA #IMPLIED>
-
-<!ELEMENT c ((head?,did,(accessrestrict|accruals|acqinfo|altformavail
-                        |appraisal|arrangement|bibliography|bioghist
-                        |controlaccess|custodhist|fileplan|index
-                        |legalstatus|odd|originalsloc|otherfindaid
-                        |phystech|prefercite|processinfo|relatedmaterial
-                        |relations|scopecontent|separatedmaterial
-                        |userestrict)*),(thead?,c+)*)>
-<!ATTLIST c
-
-  id ID #IMPLIED
-  altrender CDATA #IMPLIED
-  audience (external|internal) #IMPLIED
-  lang NMTOKEN #IMPLIED
-  script NMTOKEN #IMPLIED
-  base CDATA #IMPLIED
-  level (class|collection|file|fonds|item|otherlevel|recordgrp|series
-         |subfonds|subgrp|subseries) #IMPLIED
-
-  otherlevel CDATA #IMPLIED
-  encodinganalog CDATA #IMPLIED>
-
-<!ELEMENT c01 ((head?,did,(accessrestrict|accruals|acqinfo|altformavail
-                        |appraisal|arrangement|bibliography|bioghist
-                        |controlaccess|custodhist|fileplan|index
-                        |legalstatus|odd|originalsloc|otherfindaid
-                        |phystech|prefercite|processinfo|relatedmaterial
-                        |relations|scopecontent|separatedmaterial
-                        |userestrict)*),(thead?,c02+)*)>
-<!ATTLIST c01
-
-  id ID #IMPLIED
-  altrender CDATA #IMPLIED
-  audience (external|internal) #IMPLIED
-  lang NMTOKEN #IMPLIED
-  script NMTOKEN #IMPLIED
-  base CDATA #IMPLIED
-  level (class|collection|file|fonds|item|otherlevel|recordgrp|series
-         |subfonds|subgrp|subseries) #IMPLIED
-
-  otherlevel CDATA #IMPLIED
-  encodinganalog CDATA #IMPLIED>
-
-<!ELEMENT c02 ((head?,did,(accessrestrict|accruals|acqinfo|altformavail
-                        |appraisal|arrangement|bibliography|bioghist
-                        |controlaccess|custodhist|fileplan|index
-                        |legalstatus|odd|originalsloc|otherfindaid
-                        |phystech|prefercite|processinfo|relatedmaterial
-                        |relations|scopecontent|separatedmaterial
-                        |userestrict)*),(thead?,c03+)*)>
-<!ATTLIST c02
-
-  id ID #IMPLIED
-  altrender CDATA #IMPLIED
-  audience (external|internal) #IMPLIED
-  lang NMTOKEN #IMPLIED
-  script NMTOKEN #IMPLIED
-  base CDATA #IMPLIED
-  level (class|collection|file|fonds|item|otherlevel|recordgrp|series
-         |subfonds|subgrp|subseries) #IMPLIED
-
-  otherlevel CDATA #IMPLIED
-  encodinganalog CDATA #IMPLIED>
-
-<!ELEMENT c03 ((head?,did,(accessrestrict|accruals|acqinfo|altformavail
-                        |appraisal|arrangement|bibliography|bioghist
-                        |controlaccess|custodhist|fileplan|index
-                        |legalstatus|odd|originalsloc|otherfindaid
-                        |phystech|prefercite|processinfo|relatedmaterial
-                        |relations|scopecontent|separatedmaterial
-                        |userestrict)*),(thead?,c04+)*)>
-<!ATTLIST c03
-
-  id ID #IMPLIED
-  altrender CDATA #IMPLIED
-  audience (external|internal) #IMPLIED
-  lang NMTOKEN #IMPLIED
-  script NMTOKEN #IMPLIED
-  base CDATA #IMPLIED
-  level (class|collection|file|fonds|item|otherlevel|recordgrp|series
-         |subfonds|subgrp|subseries) #IMPLIED
-
-  otherlevel CDATA #IMPLIED
-  encodinganalog CDATA #IMPLIED>
-
-<!ELEMENT c04 ((head?,did,(accessrestrict|accruals|acqinfo|altformavail
-                        |appraisal|arrangement|bibliography|bioghist
-                        |controlaccess|custodhist|fileplan|index
-                        |legalstatus|odd|originalsloc|otherfindaid
-                        |phystech|prefercite|processinfo|relatedmaterial
-                        |relations|scopecontent|separatedmaterial
-                        |userestrict)*),(thead?,c05+)*)>
-<!ATTLIST c04
-
-  id ID #IMPLIED
-  altrender CDATA #IMPLIED
-  audience (external|internal) #IMPLIED
-  lang NMTOKEN #IMPLIED
-  script NMTOKEN #IMPLIED
-  base CDATA #IMPLIED
-  level (class|collection|file|fonds|item|otherlevel|recordgrp|series
-         |subfonds|subgrp|subseries) #IMPLIED
-
-  otherlevel CDATA #IMPLIED
-  encodinganalog CDATA #IMPLIED>
-
-<!ELEMENT c05 ((head?,did,(accessrestrict|accruals|acqinfo|altformavail
-                        |appraisal|arrangement|bibliography|bioghist
-                        |controlaccess|custodhist|fileplan|index
-                        |legalstatus|odd|originalsloc|otherfindaid
-                        |phystech|prefercite|processinfo|relatedmaterial
-                        |relations|scopecontent|separatedmaterial
-                        |userestrict)*),(thead?,c06+)*)>
-<!ATTLIST c05
-
-  id ID #IMPLIED
-  altrender CDATA #IMPLIED
-  audience (external|internal) #IMPLIED
-  lang NMTOKEN #IMPLIED
-  script NMTOKEN #IMPLIED
-  base CDATA #IMPLIED
-  level (class|collection|file|fonds|item|otherlevel|recordgrp|series
-         |subfonds|subgrp|subseries) #IMPLIED
-
-  otherlevel CDATA #IMPLIED
-  encodinganalog CDATA #IMPLIED>
-
-<!ELEMENT c06 ((head?,did,(accessrestrict|accruals|acqinfo|altformavail
-                        |appraisal|arrangement|bibliography|bioghist
-                        |controlaccess|custodhist|fileplan|index
-                        |legalstatus|odd|originalsloc|otherfindaid
-                        |phystech|prefercite|processinfo|relatedmaterial
-                        |relations|scopecontent|separatedmaterial
-                        |userestrict)*),(thead?,c07+)*)>
-<!ATTLIST c06
-
-  id ID #IMPLIED
-  altrender CDATA #IMPLIED
-  audience (external|internal) #IMPLIED
-  lang NMTOKEN #IMPLIED
-  script NMTOKEN #IMPLIED
-  base CDATA #IMPLIED
-  level (class|collection|file|fonds|item|otherlevel|recordgrp|series
-         |subfonds|subgrp|subseries) #IMPLIED
-
-  otherlevel CDATA #IMPLIED
-  encodinganalog CDATA #IMPLIED>
-
-<!ELEMENT c07 ((head?,did,(accessrestrict|accruals|acqinfo|altformavail
-                        |appraisal|arrangement|bibliography|bioghist
-                        |controlaccess|custodhist|fileplan|index
-                        |legalstatus|odd|originalsloc|otherfindaid
-                        |phystech|prefercite|processinfo|relatedmaterial
-                        |relations|scopecontent|separatedmaterial
-                        |userestrict)*),(thead?,c08+)*)>
-<!ATTLIST c07
-
-  id ID #IMPLIED
-  altrender CDATA #IMPLIED
-  audience (external|internal) #IMPLIED
-  lang NMTOKEN #IMPLIED
-  script NMTOKEN #IMPLIED
-  base CDATA #IMPLIED
-  level (class|collection|file|fonds|item|otherlevel|recordgrp|series
-         |subfonds|subgrp|subseries) #IMPLIED
-
-  otherlevel CDATA #IMPLIED
-  encodinganalog CDATA #IMPLIED>
-
-<!ELEMENT c08 ((head?,did,(accessrestrict|accruals|acqinfo|altformavail
-                        |appraisal|arrangement|bibliography|bioghist
-                        |controlaccess|custodhist|fileplan|index
-                        |legalstatus|odd|originalsloc|otherfindaid
-                        |phystech|prefercite|processinfo|relatedmaterial
-                        |relations|scopecontent|separatedmaterial
-                        |userestrict)*),(thead?,c09*)*)>
-<!ATTLIST c08
-
-  id ID #IMPLIED
-  altrender CDATA #IMPLIED
-  audience (external|internal) #IMPLIED
-  lang NMTOKEN #IMPLIED
-  script NMTOKEN #IMPLIED
-  base CDATA #IMPLIED
-  level (class|collection|file|fonds|item|otherlevel|recordgrp|series
-         |subfonds|subgrp|subseries) #IMPLIED
-
-  otherlevel CDATA #IMPLIED
-  encodinganalog CDATA #IMPLIED>
-
-<!ELEMENT c09 ((head?,did,(accessrestrict|accruals|acqinfo|altformavail
-                        |appraisal|arrangement|bibliography|bioghist
-                        |controlaccess|custodhist|fileplan|index
-                        |legalstatus|odd|originalsloc|otherfindaid
-                        |phystech|prefercite|processinfo|relatedmaterial
-                        |relations|scopecontent|separatedmaterial
-                        |userestrict)*),(thead?,c10+)*)>
-<!ATTLIST c09
-
-  id ID #IMPLIED
-  altrender CDATA #IMPLIED
-  audience (external|internal) #IMPLIED
-  lang NMTOKEN #IMPLIED
-  script NMTOKEN #IMPLIED
-  base CDATA #IMPLIED
-  level (class|collection|file|fonds|item|otherlevel|recordgrp|series
-         |subfonds|subgrp|subseries) #IMPLIED
-
-  otherlevel CDATA #IMPLIED
-  encodinganalog CDATA #IMPLIED>
-
-<!ELEMENT c10 ((head?,did,(accessrestrict|accruals|acqinfo|altformavail
-                        |appraisal|arrangement|bibliography|bioghist
-                        |controlaccess|custodhist|fileplan|index
-                        |legalstatus|odd|originalsloc|otherfindaid
-                        |phystech|prefercite|processinfo|relatedmaterial
-                        |relations|scopecontent|separatedmaterial
-                        |userestrict)*),(thead?,c11+)*)>
-<!ATTLIST c10
-
-  id ID #IMPLIED
-  altrender CDATA #IMPLIED
-  audience (external|internal) #IMPLIED
-  lang NMTOKEN #IMPLIED
-  script NMTOKEN #IMPLIED
-  base CDATA #IMPLIED
-  level (class|collection|file|fonds|item|otherlevel|recordgrp|series
-         |subfonds|subgrp|subseries) #IMPLIED
-
-  otherlevel CDATA #IMPLIED
-  encodinganalog CDATA #IMPLIED>
-
-<!ELEMENT c11 ((head?,did,(accessrestrict|accruals|acqinfo|altformavail
-                        |appraisal|arrangement|bibliography|bioghist
-                        |controlaccess|custodhist|fileplan|index
-                        |legalstatus|odd|originalsloc|otherfindaid
-                        |phystech|prefercite|processinfo|relatedmaterial
-                        |relations|scopecontent|separatedmaterial
-                        |userestrict)*),(thead?,c12+)*)>
-<!ATTLIST c11
-
-  id ID #IMPLIED
-  altrender CDATA #IMPLIED
-  audience (external|internal) #IMPLIED
-  lang NMTOKEN #IMPLIED
-  script NMTOKEN #IMPLIED
-  base CDATA #IMPLIED
-  level (class|collection|file|fonds|item|otherlevel|recordgrp|series
-         |subfonds|subgrp|subseries) #IMPLIED
-
-  otherlevel CDATA #IMPLIED
-  encodinganalog CDATA #IMPLIED>
-
-<!ELEMENT c12 (head?,did,(accessrestrict|accruals|acqinfo|altformavail
-                        |appraisal|arrangement|bibliography|bioghist
-                        |controlaccess|custodhist|fileplan|index
-                        |legalstatus|odd|originalsloc|otherfindaid
-                        |phystech|prefercite|processinfo|relatedmaterial
-                        |relations|scopecontent|separatedmaterial
-                        |userestrict)*)>
-<!ATTLIST c12
-
-  id ID #IMPLIED
-  altrender CDATA #IMPLIED
-  audience (external|internal) #IMPLIED
-  lang NMTOKEN #IMPLIED
-  script NMTOKEN #IMPLIED
-  base CDATA #IMPLIED
-  level (class|collection|file|fonds|item|otherlevel|recordgrp|series
-         |subfonds|subgrp|subseries) #IMPLIED
-
-  otherlevel CDATA #IMPLIED
-  encodinganalog CDATA #IMPLIED>
-
 <!-- RELATIONS -->
 
 <!ELEMENT relations (relation)+>
@@ -2231,3 +2284,95 @@
 
 <!-- table attributes -->
 
+<!-- DEFINES FOR FRONTMATTER -->
+
+<!ELEMENT bibseries (#PCDATA|emph|lb|ptr|ref|title|num)*>
+<!ATTLIST bibseries
+
+  id ID #IMPLIED
+  altrender CDATA #IMPLIED
+  audience (external|internal) #IMPLIED
+  lang NMTOKEN #IMPLIED
+  script NMTOKEN #IMPLIED
+  encodinganalog CDATA #IMPLIED>
+
+<!ELEMENT div (head?,(chronlist|list|table|blockquote|p)*,div*)>
+<!ATTLIST div
+
+  id ID #IMPLIED
+  altrender CDATA #IMPLIED
+  audience (external|internal) #IMPLIED
+  lang NMTOKEN #IMPLIED
+  script NMTOKEN #IMPLIED>
+
+<!ELEMENT runner (#PCDATA|emph|lb|ptr)*>
+<!ATTLIST runner
+
+  id ID #IMPLIED
+  altrender CDATA #IMPLIED
+  audience (external|internal) #IMPLIED
+  lang NMTOKEN #IMPLIED
+  script NMTOKEN #IMPLIED
+  placement (header|footer|watermark) #IMPLIED
+  role CDATA #IMPLIED>
+
+<!ELEMENT descgrp (head?,((chronlist|list|table|blockquote|p),(accessrestrict|accruals|acqinfo
+                                |altformavail|appraisal|arrangement
+                                |bibliography|bioghist|controlaccess
+                                |custodhist|descgrp|fileplan|index
+                                |legalstatus|odd|originalsloc
+                                |otherfindaid|phystech|prefercite
+                                |processinfo|relatedmaterial|relations
+                                |scopecontent|separatedmaterial
+                                |userestrict))+)>
+<!ATTLIST descgrp
+
+  id ID #IMPLIED
+  altrender CDATA #IMPLIED
+  audience (external|internal) #IMPLIED
+  lang NMTOKEN #IMPLIED
+  script NMTOKEN #IMPLIED
+  localtype CDATA #IMPLIED
+  encodinganalog CDATA #IMPLIED>
+
+<!ELEMENT imprint (#PCDATA|publisher|geogname|date|emph|lb|ptr)*>
+<!ATTLIST imprint
+
+  id ID #IMPLIED
+  altrender CDATA #IMPLIED
+  audience (external|internal) #IMPLIED
+  lang NMTOKEN #IMPLIED
+  script NMTOKEN #IMPLIED
+  encodinganalog CDATA #IMPLIED>
+
+<!ELEMENT frontmatter (titlepage?,div*)>
+<!ATTLIST frontmatter
+
+  id ID #IMPLIED
+  altrender CDATA #IMPLIED
+  audience (external|internal) #IMPLIED
+  lang NMTOKEN #IMPLIED
+  script NMTOKEN #IMPLIED>
+
+<!ELEMENT titlepage (chronlist|list|table|blockquote|p|author|date|edition|num|publisher
+                     |bibseries|sponsor|titleproper|subtitle)+>
+<!ATTLIST titlepage
+
+  id ID #IMPLIED
+  altrender CDATA #IMPLIED
+  audience (external|internal) #IMPLIED
+  lang NMTOKEN #IMPLIED
+  script NMTOKEN #IMPLIED>
+
+<!ELEMENT extent (#PCDATA|abbr|emph|expan|foreign|lb|ptr|ref)*>
+<!ATTLIST extent
+
+  id ID #IMPLIED
+  altrender CDATA #IMPLIED
+  audience (external|internal) #IMPLIED
+  lang NMTOKEN #IMPLIED
+  script NMTOKEN #IMPLIED
+  label CDATA #IMPLIED
+  encodinganalog CDATA #IMPLIED
+  localtype CDATA #IMPLIED
+  unit CDATA #IMPLIED>
