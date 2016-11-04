@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ead xmlns="http://ead3.archivists.org/schema/undeprecated/">
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ead xmlns="http://ead3.archivists.org/schema/">
 	<control>
 		<recordid>us-cchs-102</recordid>
 		<filedesc>
