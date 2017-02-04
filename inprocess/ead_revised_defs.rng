@@ -1742,7 +1742,7 @@
         <ref name="a.localtype"/>
       </optional>
       <ref name="am.access.no.normal"/>
-      <ref name="m.mixed.basic"/>
+      <ref name="m.mixed.basic.date"/>
     </element>
   </define>
   <!-- BLOCKS -->
@@ -2853,6 +2853,26 @@
       <choice>
         <text/>
         <ref name="m.mixed.basic.elements"/>
+      </choice>
+    </zeroOrMore>
+  </define>
+  <define name="m.mixed.basic.date.elements">
+    <choice>
+      <ref name="e.abbr"/>
+      <ref name="e.date"/>
+      <ref name="e.emph"/>
+      <ref name="e.expan"/>
+      <ref name="e.foreign"/>
+      <ref name="e.lb"/>
+      <ref name="e.ptr"/>
+      <ref name="e.ref"/>
+    </choice>
+  </define>
+  <define name="m.mixed.basic.date">
+    <zeroOrMore>
+      <choice>
+        <text/>
+        <ref name="m.mixed.basic.date.elements"/>
       </choice>
     </zeroOrMore>
   </define>
