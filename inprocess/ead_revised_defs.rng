@@ -253,6 +253,24 @@
         </element>
       </zeroOrMore>
       <zeroOrMore>
+        <element name="rightsdeclaration">
+          <ref name="am.common"/>
+          <optional>
+            <ref name="a.encodinganalog"/>
+          </optional>
+          <optional>
+            <ref name="a.localtype"/>
+          </optional>
+          <optional>
+            <ref name="e.abbr"/>
+          </optional>
+          <ref name="e.citation"/>
+          <optional>
+            <ref name="e.descriptivenote"/>
+          </optional>
+        </element>
+      </zeroOrMore>
+      <zeroOrMore>
         <element name="localtypedeclaration">
           <ref name="am.common"/>
           <optional>
