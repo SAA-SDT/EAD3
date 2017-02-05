@@ -35,7 +35,7 @@
 	Notes:
 	-EAD3 is available as DTD, Relax NG Schema, and W3C Schema. 
 	-The EAD3 DTD does not support the <objectxmlwrap> element.
-	-In the EAD3 DTD, attributes iwth anyURI, token, and string 
+	-In the EAD3 DTD, attributes with anyURI, token, and string 
 	data types are converted to CDATA.
 	-Deprecated EAD 2002 elements are available in the undprecated 
 	versions of EAD3. 
