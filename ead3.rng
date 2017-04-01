@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?><grammar xmlns="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" ns="http://ead3.archivists.org/schema/">
+<?xml version="1.0" encoding="UTF-8"?><grammar xmlns="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" ns="http://ead3.archivists.org/schema/">
   <rng:div xmlns:rng="http://relaxng.org/ns/structure/1.0">
 <!--include "ead_revised_defs.rng"-->
 <rng:div datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
@@ -2692,7 +2692,7 @@
   </rng:define>
   <rng:define name="e.anyname">
     <element>
- <!--     <anyName>
+      <anyName>
         <except>
           <nsName ns="http://ead3.archivists.org/schema/"/>
         </except>
@@ -2708,20 +2708,6 @@
           <ref name="e.anyname"/>
         </choice>
       </zeroOrMore>
-      -->
-          <anyName/>
-      <!-- cpf.rng's m.anything -->
-      <zeroOrMore>
-        <attribute a:id="a.anyName">
-          <anyName/>
-        </attribute>
-      </zeroOrMore>
-      <zeroOrMore>
-        <choice>
-          <ref name="e.anyname"/>
-          <text/>
-        </choice>
-      </zeroOrMore>      
     </element>
   </rng:define>
   <!-- ELEMENT MODELS -->
@@ -2903,7 +2889,6 @@
       </choice>
     </zeroOrMore>
   </rng:define>
-  
   <!-- ATTRIBUTE MODELS -->
   <rng:define name="am.internal.ptr">
     <optional>

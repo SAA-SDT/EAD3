@@ -136,6 +136,7 @@ relationentry
 relations
 repository
 representation
+rightsdeclaration
 row
 scopecontent
 script
