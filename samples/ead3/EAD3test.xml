@@ -1,11 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../ead-3-10.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <ead xmlns="http://ead3.archivists.org/schema/">
+	<!-- how best to test issue 499? -->
 	<control>
 		<recordid>us-cchs-102</recordid>
 		<filedesc>
 			<titlestmt>
-				<titleproper>Willam Fonds Provenance </titleproper>
-				<subtitle>An Inventory of His Papers at the Cupcake Corners Historical Society</subtitle>
+				<titleproper>Willam Fonds Provenance</titleproper>
+				<subtitle>An Inventory of His Papers at the Cupcake Corners Historical
+					Society</subtitle>
 				<author>Finding aid created by Nancy Sahli.</author>
 			</titlestmt>
 			<publicationstmt>
@@ -20,9 +23,14 @@
 			<language langcode="eng"/>
 			<script scriptcode="Latn"/>
 		</languagedeclaration>
-		<conventiondeclaration>
+		<!-- issue 507 -->
+		<conventiondeclaration localtype="localconventionsresidehere">
 			<citation>DACS</citation>
 		</conventiondeclaration>
+		<!-- issue 506 -->
+		<rightsdeclaration>
+			<citation href="https://creativecommons.org/publicdomain/zero/1.0/"/>
+		</rightsdeclaration>
 		<maintenancehistory>
 			<maintenanceevent>
 				<eventtype value="created"/>
@@ -44,10 +52,14 @@
 			<origination label="Creator:" encodinganalog="100">
 				<persname rules="AACR" encodinganalog="100">
 					<part localtype="a">Provenance, William Fonds</part>
-					<part localtype="d">1897-1956</part>
+					<part localtype="d">
+						<!-- issue 505 -->
+						<date normal="1897/1956"/>
+					</part>
 				</persname>
 			</origination>
-			<unittitle label="Title:" encodinganalog="245">Papers of William Fonds Provenance</unittitle>
+			<unittitle label="Title:" encodinganalog="245">Papers of William Fonds
+				Provenance</unittitle>
 			<unitdatestructured label="Dates:" unitdatetype="inclusive" encodinganalog="245">
 				<daterange>
 					<fromdate>1917</fromdate>
@@ -60,8 +72,8 @@
 			<!-- <physdesc label="Quantity:">1.2 cubic ft. (3 boxes) </physdesc>-->
 
 			<physdescset>
-				<physdescstructured label="Quantity: " physdescstructuredtype="carrier" coverage="whole"
-					encodinganalog="300">
+				<physdescstructured label="Quantity: " physdescstructuredtype="carrier"
+					coverage="whole" encodinganalog="300">
 					<quantity>3</quantity>
 					<unittype>boxes</unittype>
 				</physdescstructured>
@@ -79,9 +91,10 @@
 
 			<unitid label="Collection Number:">Mss 2 A</unitid>
 
-			<abstract label="Abstract:">Correspondence, diaries,and writings of an archival theorist and
-				author documenting his experiences in World War I, his literary endeavors, and his ideas on
-				modern archival theory, especially regarding the centrality of the fonds.</abstract>
+			<abstract label="Abstract:">Correspondence, diaries,and writings of an archival theorist
+				and author documenting his experiences in World War I, his literary endeavors, and
+				his ideas on modern archival theory, especially regarding the centrality of the
+				fonds.</abstract>
 			<didnote label="Note:">Information about the collection.</didnote>
 			<langmaterial label="Language:">
 				<language langcode="eng">English</language>
@@ -89,29 +102,30 @@
 					<p>Materials in this collection are written in English.</p>
 				</descriptivenote>
 			</langmaterial>
-			<physloc label="Location:">This collection is on off-site storage. 24 hours notice is required
-				for its retrieval.</physloc>
+			<physloc label="Location:">This collection is on off-site storage. 24 hours notice is
+				required for its retrieval.</physloc>
 		</did>
 
 		<bioghist encodinganalog="545">
 			<head>Biography of William Provenance</head>
-			<p>Archivist and author William Fonds Provenance was born at Last Chance, Nevada to Fred and
-				Mary Jones Provenance on January 4, 1897. Little is know of his early life prior to serving
-				in World War I as an ambulance driver. After graduating from Freen College in 1924 with a
-				degree in cryptogamic biology, he first followed a career in commercial horticulture and
-				later worked as an itinerant archivist. Provenance also had a lifelong interest in creative
-				writing, producing both novels and poetry. He died at Frostbite Falls, Minnesota on March
-				15, 1956.</p>
+			<p>Archivist and author William Fonds Provenance was born at Last Chance, Nevada to Fred
+				and Mary Jones Provenance on January 4, 1897. Little is know of his early life prior
+				to serving in World War I as an ambulance driver. After graduating from Freen
+				College in 1924 with a degree in cryptogamic biology, he first followed a career in
+				commercial horticulture and later worked as an itinerant archivist. Provenance also
+				had a lifelong interest in creative writing, producing both novels and poetry. He
+				died at Frostbite Falls, Minnesota on March 15, 1956.</p>
 		</bioghist>
 		<scopecontent encodinganalog="520">
 			<head>Scope and Contents of the Papers</head>
 			<p>The collection consists of diaries, correspondence, manuscripts, and miscellaneous
-				materials documenting the literary and archival career of William Fonds Provenance.</p>
-			<p>The bulk of the collection consists of correspondence, principally with his mother, other
-				archivists and writers. His diaries describe his experiences as an ambulance driver in
-				France during World Was I in vivid detail. Major correspondents represented in the
-				collection include Ernest Hemingway, Ernst Posner, and Provenance's long-time companion Ima
-				Gusdorf. </p>
+				materials documenting the literary and archival career of William Fonds
+				Provenance.</p>
+			<p>The bulk of the collection consists of correspondence, principally with his mother,
+				other archivists and writers. His diaries describe his experiences as an ambulance
+				driver in France during World Was I in vivid detail. Major correspondents
+				represented in the collection include Ernest Hemingway, Ernst Posner, and
+				Provenance's long-time companion Ima Gusdorf. </p>
 		</scopecontent>
 		<arrangement encodinganalog="351">
 			<head>Arrangement of the Papers</head>
@@ -129,8 +143,8 @@
 		<controlaccess>
 			<head>Index Terms</head>
 			<p>This collection is indexed under the following headings in the catalog of the Cupcake
-				Corners Historical Society. Researchers desiring materials about related topics, persons, or
-				places should search the catalog using these headings.</p>
+				Corners Historical Society. Researchers desiring materials about related topics,
+				persons, or places should search the catalog using these headings.</p>
 			<controlaccess>
 				<head>Persons</head>
 				<persname source="AACR" encodinganalog="700">
@@ -196,20 +210,20 @@
 		<relatedmaterial encodinganalog="544">
 			<head>Related Records</head>
 			<p>The papers of Ima Gusdorf are located in the Freen University archives.</p>
-			<p>The Historical Society has several other collections that include materials on archival
-				theory.</p>
+			<p>The Historical Society has several other collections that include materials on
+				archival theory.</p>
 		</relatedmaterial>
 
 		<accessrestrict encodinganalog="506">
 			<head>Restrictions on Access</head>
-			<p>Access to the correspondence between Provenance and Ernest Hemingway is restricted until
-				2025.</p>
+			<p>Access to the correspondence between Provenance and Ernest Hemingway is restricted
+				until 2025.</p>
 		</accessrestrict>
 
 		<userestrict>
-			<head>Rstrictions on Use</head>
-			<p>Reproduction of any of the content of the collection beyond fair use requires the written
-				permisssion of the Director of the Cucake Corners Historical Society.</p>
+			<head>Restrictions on Use</head>
+			<p>Reproduction of any of the content of the collection beyond fair use requires the
+				written permisssion of the Director of the Cucake Corners Historical Society.</p>
 		</userestrict>
 
 		<acqinfo encodinganalog="541">
@@ -250,8 +264,14 @@
 		</legalstatus>
 		<odd>
 			<head>Other Information</head>
-			<p>There is no further information about Provenance's teenage years which probably were as odd
-				as you might imagine.</p>
+			<p>There is no further information about Provenance's teenage years which probably were
+				as odd as you might imagine.</p>
+			<p>This second paragraph is here to test the addition of a new feature, which is
+				now allowed within the 
+				<!-- issue 485-->
+				<quote render="singlequote">quote unquote</quote>
+				quote element.
+			</p>
 		</odd>
 		<originalsloc>
 			<head>Location of Originals</head>
@@ -279,7 +299,8 @@
 
 		<dsc>
 			<head>Detailed Description of the Collection</head>
-			<p>The following section contains a detailed listing of the materials in the collection.</p>
+			<p>The following section contains a detailed listing of the materials in the
+				collection.</p>
 
 			<c01 level="series" id="series1">
 				<did>
@@ -294,8 +315,8 @@
 				</did>
 				<scopecontent>
 					<p>Incoming letters and copies of outgoing correspondence with family, business
-						associates, and prominent archivists and writers. Letters are arranged alphabetically by
-						the writer's or recipient's name.</p>
+						associates, and prominent archivists and writers. Letters are arranged
+						alphabetically by the writer's or recipient's name.</p>
 				</scopecontent>
 				<c02>
 					<did>
@@ -348,10 +369,11 @@
 					<physdesc>32 v. (4 folders)</physdesc>
 				</did>
 				<scopecontent>
-					<p>Daily accounts of Provenance's experiences during his military service in France during
-						World War I, primarily documenting the daily activities of camp life, weather, battles,
-						and operations of the army medical service. Also contains detailed and graphic accounts
-						of his own work as an ambulance driver.</p>
+					<p>Daily accounts of Provenance's experiences during his military service in
+						France during World War I, primarily documenting the daily activities of
+						camp life, weather, battles, and operations of the army medical service.
+						Also contains detailed and graphic accounts of his own work as an ambulance
+						driver.</p>
 				</scopecontent>
 				<c02>
 					<did>
@@ -369,12 +391,12 @@
 							<p>Some of the materials are highly fragile.</p>
 						</phystech>
 						<scopecontent>
-							<p>Extensive information on the winter weather in France and the shortage of good wine
-								and cigarettes. </p>
+							<p>Extensive information on the winter weather in France and the
+								shortage of good wine and cigarettes. </p>
 						</scopecontent>
 						<userestrict>
-							<p>Much of this material is very fragile. Researchers must use the microfilm
-								copies.</p>
+							<p>Much of this material is very fragile. Researchers must use the
+								microfilm copies.</p>
 						</userestrict>
 					</c03>
 
@@ -388,10 +410,11 @@
 						<c04>
 							<did>
 								<unittitle>More varied stuff</unittitle>
-							<unitdatestructured>
-								<datesingle>June 30</datesingle>
-							</unitdatestructured>
-								<abstract>Discussion of whether or not April showers bring May flowers.</abstract>
+								<unitdatestructured>
+									<datesingle>June 30</datesingle>
+								</unitdatestructured>
+								<abstract>Discussion of whether or not April showers bring May
+									flowers.</abstract>
 							</did>
 						</c04>
 					</c03>
@@ -409,8 +432,8 @@
 							<unitdate>January</unitdate>
 						</did>
 						<scopecontent>
-							<p>This file considers a wide range of topics including herbacious borders and German
-								wines.</p>
+							<p>This file considers a wide range of topics including herbacious
+								borders and German wines.</p>
 						</scopecontent>
 					</c03>
 					<c03>
