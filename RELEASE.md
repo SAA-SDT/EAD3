@@ -1,8 +1,8 @@
 
 ## EAD3
 ### Encoded Archival Description (EAD), Version 3
-* Release: 1.0
-* Date: 2015-08
+* Release: 1.10 (release candidate)
+* Date: 2017-05
 
 Hosted by the Library of Congress at http://www.loc.gov/ead/.
 
@@ -63,4 +63,11 @@ EAD3 was possible because of the generous support of the Society of American Arc
 * In the EAD3 DTD, attributes with anyURI, token, and string data types are converted to CDATA.
 * Deprecated EAD 2002 elements are available in the undprecated versions of EAD3. 
 * A Schematron schema (ead3.sch) is available to validate external code lists not maintained within EAD, standard attribute value patterns, attribute or element co-ocurrence not enforcable in the schema,and some encoding practices recommended for future migration.
+
+### New in EAD3 1.10:
+* The @localtype attribute has been added to the conventiondeclaration element. (See issue [#507](https://github.com/SAA-SDT/EAD3/issues/507))
+* A new element, rightsdeclaration, has been added as an optional, repeatable child of the control section. It's purpose is to provide a standard location to declare rights associated with the the description present in a finding aid. (See issue [#506](https://github.com/SAA-SDT/EAD3/issues/506))
+* The date element has been added as an optional child of the part element (see issue #[505](https://github.com/SAA-SDT/EAD3/issues/505))
+* A bug fix had been added to allow xmllint and lxml to validate xsd files that include objectxmlwrap. (See issue #[499](https://github.com/SAA-SDT/EAD3/issues/499))
+* The @render attribute has been added as an option to the quote element. (See issue #[485](https://github.com/SAA-SDT/EAD3/issues/485))
 

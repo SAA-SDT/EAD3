@@ -187,8 +187,9 @@
 <!ELEMENT control (recordid,otherrecordid*,representation*,filedesc,
                    maintenancestatus,publicationstatus?,
                    maintenanceagency,languagedeclaration*,
-                   conventiondeclaration*,localtypedeclaration*,
-                   localcontrol*,maintenancehistory,sources?)>
+                   conventiondeclaration*,rightsdeclaration*,
+                   localtypedeclaration*,localcontrol*,
+                   maintenancehistory,sources?)>
 <!ATTLIST control
   %am.common;
   encodinganalog CDATA #IMPLIED
@@ -254,7 +255,14 @@
 <!ELEMENT conventiondeclaration (abbr?,citation,descriptivenote?)>
 <!ATTLIST conventiondeclaration
   %am.common;
-  encodinganalog CDATA #IMPLIED>
+  encodinganalog CDATA #IMPLIED
+  localtype CDATA #IMPLIED>
+
+<!ELEMENT rightsdeclaration (abbr?,citation,descriptivenote?)>
+<!ATTLIST rightsdeclaration
+  %am.common;
+  encodinganalog CDATA #IMPLIED
+  localtype CDATA #IMPLIED>
 
 <!ELEMENT localtypedeclaration (abbr?,citation,descriptivenote?)>
 <!ATTLIST localtypedeclaration
@@ -889,7 +897,13 @@
           |boldsmcaps|boldunderline|doublequote|italic|nonproport
           |singlequote|smcaps|sub|super|underline) #IMPLIED>
 
-<!ELEMENT part %m.mixed.basic;>
+<!ENTITY % m.mixed.basic.date.elements "abbr|date|emph|expan|foreign|lb
+                                        |ptr|ref">
+
+<!ENTITY % m.mixed.basic.date "(#PCDATA
+                                |%m.mixed.basic.date.elements;)*">
+
+<!ELEMENT part %m.mixed.basic.date;>
 <!ATTLIST part
   %am.common;
   encodinganalog CDATA #IMPLIED
@@ -1192,7 +1206,10 @@
 <!ELEMENT quote %m.mixed.basic;>
 <!ATTLIST quote
   %am.common;
-  localtype CDATA #IMPLIED>
+  localtype CDATA #IMPLIED
+  render (altrender|bold|bolddoublequote|bolditalic|boldsinglequote
+          |boldsmcaps|boldunderline|doublequote|italic|nonproport
+          |singlequote|smcaps|sub|super|underline) #IMPLIED>
 
 <!-- ATTRIBUTE MODELS -->
 

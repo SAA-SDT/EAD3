@@ -246,7 +246,6 @@
       <xs:attribute name="encodinganalog" type="xs:token"/>
     </xs:complexType>
   </xs:element>
-
   <xs:element name="bibref">
     <xs:complexType>
       <xs:complexContent>
@@ -263,7 +262,6 @@
       <xs:any namespace="##local" processContents="lax"/>
     </xs:choice>
   </xs:complexType>
-
   <!-- ELEMENTS -->
   <!-- control -->
   <xs:element name="control">
@@ -278,6 +276,7 @@
         <xs:element ref="u:maintenanceagency"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="u:languagedeclaration"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="u:conventiondeclaration"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="u:rightsdeclaration"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="u:localtypedeclaration"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="u:localcontrol"/>
         <xs:element ref="u:maintenancehistory"/>
@@ -476,6 +475,19 @@
       </xs:sequence>
       <xs:attributeGroup ref="u:am.common"/>
       <xs:attribute name="encodinganalog" type="xs:token"/>
+      <xs:attribute name="localtype" type="xs:token"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="rightsdeclaration">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="u:abbr"/>
+        <xs:element ref="u:citation"/>
+        <xs:element minOccurs="0" ref="u:descriptivenote"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="u:am.common"/>
+      <xs:attribute name="encodinganalog" type="xs:token"/>
+      <xs:attribute name="localtype" type="xs:token"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="localtypedeclaration">
@@ -1663,7 +1675,7 @@
   <xs:element name="part">
     <xs:complexType>
       <xs:complexContent>
-        <xs:extension base="u:m.mixed.basic">
+        <xs:extension base="u:m.mixed.basic.date">
           <xs:attributeGroup ref="u:am.common"/>
           <xs:attribute name="encodinganalog" type="xs:token"/>
           <xs:attribute name="localtype" type="xs:token"/>
@@ -2313,6 +2325,27 @@
         <xs:extension base="u:m.mixed.basic">
           <xs:attributeGroup ref="u:am.common"/>
           <xs:attribute name="localtype" type="xs:token"/>
+          <xs:attribute name="render">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="altrender"/>
+                <xs:enumeration value="bold"/>
+                <xs:enumeration value="bolddoublequote"/>
+                <xs:enumeration value="bolditalic"/>
+                <xs:enumeration value="boldsinglequote"/>
+                <xs:enumeration value="boldsmcaps"/>
+                <xs:enumeration value="boldunderline"/>
+                <xs:enumeration value="doublequote"/>
+                <xs:enumeration value="italic"/>
+                <xs:enumeration value="nonproport"/>
+                <xs:enumeration value="singlequote"/>
+                <xs:enumeration value="smcaps"/>
+                <xs:enumeration value="sub"/>
+                <xs:enumeration value="super"/>
+                <xs:enumeration value="underline"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
         </xs:extension>
       </xs:complexContent>
     </xs:complexType>
@@ -2546,6 +2579,21 @@
   </xs:group>
   <xs:complexType name="m.mixed.basic" mixed="true">
     <xs:group minOccurs="0" maxOccurs="unbounded" ref="u:m.mixed.basic.elements"/>
+  </xs:complexType>
+  <xs:group name="m.mixed.basic.date.elements">
+    <xs:choice>
+      <xs:element ref="u:abbr"/>
+      <xs:element ref="u:date"/>
+      <xs:element ref="u:emph"/>
+      <xs:element ref="u:expan"/>
+      <xs:element ref="u:foreign"/>
+      <xs:element ref="u:lb"/>
+      <xs:element ref="u:ptr"/>
+      <xs:element ref="u:ref"/>
+    </xs:choice>
+  </xs:group>
+  <xs:complexType name="m.mixed.basic.date" mixed="true">
+    <xs:group minOccurs="0" maxOccurs="unbounded" ref="u:m.mixed.basic.date.elements"/>
   </xs:complexType>
   <xs:group name="m.mixed.basic.plus.elements">
     <xs:choice>
@@ -3038,14 +3086,11 @@
           <xs:attribute name="label" type="xs:string"/>
           <xs:attribute name="encodinganalog" type="xs:token"/>
           <xs:attribute name="localtype" type="xs:token"/>
-
           <xs:attribute name="unit" type="xs:token"/>
-
         </xs:extension>
       </xs:complexContent>
     </xs:complexType>
   </xs:element>
-
   <xs:complexType name="m.mixed.basic.plus.access.ref" mixed="true">
     <xs:choice minOccurs="0" maxOccurs="unbounded">
       <xs:group ref="u:m.mixed.basic.elements"/>
@@ -3058,5 +3103,4 @@
       <xs:element ref="u:imprint"/>
     </xs:choice>
   </xs:complexType>
-
 </xs:schema>

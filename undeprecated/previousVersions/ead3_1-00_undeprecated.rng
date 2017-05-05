@@ -1,9 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?><grammar xmlns="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
-    <rng:div xmlns:rng="http://relaxng.org/ns/structure/1.0">
+<?xml version="1.0" encoding="UTF-8"?><grammar xmlns="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" ns="http://ead3.archivists.org/schema/undeprecated/">
+<rng:div xmlns:rng="http://relaxng.org/ns/structure/1.0">
 <!--include "ead_revised_defs.rng"-->
 
-        
-        
 
         <rng:define name="e.ead">
             <element name="ead">
@@ -332,6 +330,26 @@
                 <ref name="m.mixed.basic.plus.access.ref"/>
             </element>
         </rng:define>
+        <rng:define name="e.anyname">
+            <element>
+                <anyName>
+                    <except>
+                        <nsName ns="http://ead3.archivists.org/schema/undeprecated/"/>
+                    </except>
+                </anyName>
+                <zeroOrMore>
+                    <attribute>
+                        <anyName/>
+                    </attribute>
+                </zeroOrMore>
+                <zeroOrMore>
+                    <choice>
+                        <text/>
+                        <ref name="e.anyname"/>
+                    </choice>
+                </zeroOrMore>
+            </element>
+        </rng:define>
     <rng:div datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
   <!-- ELEMENTS -->
   
@@ -564,27 +582,6 @@
             <ref name="a.encodinganalog"/>
           </optional>
           <optional>
-            <ref name="a.localtype"/>
-          </optional>
-          <optional>
-            <ref name="e.abbr"/>
-          </optional>
-          <ref name="e.citation"/>
-          <optional>
-            <ref name="e.descriptivenote"/>
-          </optional>
-        </element>
-      </zeroOrMore>
-      <zeroOrMore>
-        <element name="rightsdeclaration">
-          <ref name="am.common"/>
-          <optional>
-            <ref name="a.encodinganalog"/>
-          </optional>
-          <optional>
-            <ref name="a.localtype"/>
-          </optional>
-          <optional>
             <ref name="e.abbr"/>
           </optional>
           <ref name="e.citation"/>
@@ -766,7 +763,7 @@
                 </element>
               </zeroOrMore>
               <optional>
-                <empty/>
+                <ref name="e.objectxmlwrap"/>
               </optional>
               <optional>
                 <ref name="e.descriptivenote"/>
@@ -2028,7 +2025,7 @@
         <ref name="a.localtype"/>
       </optional>
       <ref name="am.access.no.normal"/>
-      <ref name="m.mixed.basic.date"/>
+      <ref name="m.mixed.basic"/>
     </element>
   </rng:define>
   <!-- BLOCKS -->
@@ -2654,9 +2651,6 @@
       <optional>
         <ref name="a.localtype"/>
       </optional>
-      <optional>
-        <ref name="a.render"/>
-      </optional>
       <ref name="m.mixed.basic"/>
     </element>
   </rng:define>
@@ -2761,7 +2755,7 @@
             </element>
           </zeroOrMore>
           <optional>
-            <empty/>
+            <ref name="e.objectxmlwrap"/>
           </optional>
           <optional>
             <choice>
@@ -2780,7 +2774,12 @@
       </oneOrMore>
     </element>
   </rng:define>
-  
+  <rng:define name="e.objectxmlwrap">
+    <element name="objectxmlwrap">
+      <ref name="am.common"/>
+      <ref name="e.anyname"/>
+    </element>
+  </rng:define>
   
   <!-- ELEMENT MODELS -->
   <rng:define name="m.blocks">
@@ -2917,26 +2916,6 @@
       <choice>
         <text/>
         <ref name="m.mixed.basic.elements"/>
-      </choice>
-    </zeroOrMore>
-  </rng:define>
-  <rng:define name="m.mixed.basic.date.elements">
-    <choice>
-      <ref name="e.abbr"/>
-      <ref name="e.date"/>
-      <ref name="e.emph"/>
-      <ref name="e.expan"/>
-      <ref name="e.foreign"/>
-      <ref name="e.lb"/>
-      <ref name="e.ptr"/>
-      <ref name="e.ref"/>
-    </choice>
-  </rng:define>
-  <rng:define name="m.mixed.basic.date">
-    <zeroOrMore>
-      <choice>
-        <text/>
-        <ref name="m.mixed.basic.date.elements"/>
       </choice>
     </zeroOrMore>
   </rng:define>
@@ -3460,8 +3439,10 @@
                 <ref name="e.head"/>
             </optional>
             <oneOrMore>
-                <ref name="m.blocks"/>
-                <ref name="m.desc.base.descgrp"/>
+                <choice>
+                    <ref name="m.blocks"/>
+                    <ref name="m.desc.base.descgrp"/>
+                </choice>
             </oneOrMore>
         </element>
     </rng:define>
@@ -3569,4 +3550,5 @@
             </choice>
         </zeroOrMore>
     </rng:define>
+
 </grammar>
