@@ -2335,15 +2335,12 @@
   placement (header|footer|watermark) #IMPLIED
   role CDATA #IMPLIED>
 
-<!ELEMENT descgrp (head?,((chronlist|list|table|blockquote|p),(accessrestrict|accruals|acqinfo
-                                |altformavail|appraisal|arrangement
-                                |bibliography|bioghist|controlaccess
-                                |custodhist|descgrp|fileplan|index
-                                |legalstatus|odd|originalsloc
-                                |otherfindaid|phystech|prefercite
-                                |processinfo|relatedmaterial|relations
-                                |scopecontent|separatedmaterial
-                                |userestrict))+)>
+<!ELEMENT descgrp (head?,(chronlist|list|table|blockquote|p|accessrestrict|accruals|acqinfo
+                     |altformavail|appraisal|arrangement|bibliography|bioghist|controlaccess 
+                     |custodhist|descgrp|fileplan|index|legalstatus|odd|originalsloc 
+                     |otherfindaid|phystech|prefercite|processinfo|relatedmaterial|relations 
+                     |scopecontent|separatedmaterial|userestrict)+)>
+
 <!ATTLIST descgrp
 
   id ID #IMPLIED
