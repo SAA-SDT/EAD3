@@ -36,7 +36,7 @@
             <xsl:apply-templates select='@*[not(name(.) = "ref")] | *'/>
         </xsl:element>
     </xsl:template>
-    <xsl:template match="xs:extension">
+<!--    <xsl:template match="xs:extension">
         <xsl:element name="xs:extension">
             <xsl:apply-templates/>
         </xsl:element>
@@ -46,7 +46,7 @@
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
-
+-->
     <xsl:template match="@*[starts-with(., 'schema')]">
         <xsl:attribute name="{name()}">
             <xsl:value-of select="substring-after(., ':')"/>
