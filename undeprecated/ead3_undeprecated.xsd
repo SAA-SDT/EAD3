@@ -161,7 +161,6 @@
         <xs:element name="physfacet" type="physfacet"/>
         <xs:element name="dimensions" type="dimensions"/>
       </xs:choice><xs:attributeGroup ref="am.common"/><xs:attribute name="localtype" type="xs:token"/><xs:attribute name="label" type="xs:string"/><xs:attribute name="encodinganalog" type="xs:token"/></xs:complexType>
-
   <xs:complexType name="bibref"><xs:complexContent>
         <xs:extension base="m.mixed.basic.plus.access.ref">
           <xs:attributeGroup ref="am.common"/>
@@ -174,7 +173,6 @@
       <xs:any namespace="##local" processContents="lax"/>
     </xs:choice>
   </xs:complexType>
-
   <!-- ELEMENTS -->
   <!-- control -->
   <xs:complexType name="control"><xs:sequence>
@@ -1986,7 +1984,7 @@
           <xs:attribute name="label" type="xs:string"/>
           <xs:attribute name="encodinganalog" type="xs:token"/>
           <xs:attribute name="localtype" type="xs:token"/>
-         <xs:attribute name="unit" type="xs:token"/>
+          <xs:attribute name="unit" type="xs:token"/>
         </xs:extension>
       </xs:complexContent></xs:complexType>
   <xs:complexType name="m.mixed.basic.plus.access.ref" mixed="true">
@@ -2001,5 +1999,4 @@
       <xs:element name="imprint" type="imprint"/>
     </xs:choice>
   </xs:complexType>
-
 </xs:schema>
