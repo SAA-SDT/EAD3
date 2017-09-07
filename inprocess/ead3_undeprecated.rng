@@ -1,9 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?><grammar xmlns="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+<?xml version="1.0" encoding="UTF-8"?><grammar xmlns="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" ns="http://ead3.archivists.org/schema/undeprecated/">
     <rng:div xmlns:rng="http://relaxng.org/ns/structure/1.0">
 <!--include "ead_revised_defs.rng"-->
 
-        
-        
 
         <rng:define name="e.ead">
             <element name="ead">
@@ -330,6 +328,26 @@
                     <ref name="a.encodinganalog"/>
                 </optional>
                 <ref name="m.mixed.basic.plus.access.ref"/>
+            </element>
+        </rng:define>
+        <rng:define name="e.anyname">
+            <element>
+                <anyName>
+                    <except>
+                        <nsName ns="http://ead3.archivists.org/schema/undeprecated/"/>
+                    </except>
+                </anyName>
+                <zeroOrMore>
+                    <attribute>
+                        <anyName/>
+                    </attribute>
+                </zeroOrMore>
+                <zeroOrMore>
+                    <choice>
+                        <text/>
+                        <ref name="e.anyname"/>
+                    </choice>
+                </zeroOrMore>
             </element>
         </rng:define>
     <rng:div datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
@@ -745,7 +763,7 @@
                 </element>
               </zeroOrMore>
               <optional>
-                <empty/>
+                <ref name="e.objectxmlwrap"/>
               </optional>
               <optional>
                 <ref name="e.descriptivenote"/>
@@ -2737,7 +2755,7 @@
             </element>
           </zeroOrMore>
           <optional>
-            <empty/>
+            <ref name="e.objectxmlwrap"/>
           </optional>
           <optional>
             <choice>
@@ -2756,7 +2774,12 @@
       </oneOrMore>
     </element>
   </rng:define>
-  
+  <rng:define name="e.objectxmlwrap">
+    <element name="objectxmlwrap">
+      <ref name="am.common"/>
+      <ref name="e.anyname"/>
+    </element>
+  </rng:define>
   
   <!-- ELEMENT MODELS -->
   <rng:define name="m.blocks">
@@ -3416,8 +3439,10 @@
                 <ref name="e.head"/>
             </optional>
             <oneOrMore>
-                <ref name="m.blocks"/>
-                <ref name="m.desc.base.descgrp"/>
+                <choice>
+                    <ref name="m.blocks"/>
+                    <ref name="m.desc.base.descgrp"/>
+                </choice>
             </oneOrMore>
         </element>
     </rng:define>
@@ -3501,7 +3526,6 @@
             <optional>
                 <ref name="a.localtype"/>
             </optional>
-
             <optional>
                 <attribute name="unit">
                     <data type="token"/>

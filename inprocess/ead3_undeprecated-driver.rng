@@ -332,6 +332,12 @@
                 <ref name="m.mixed.basic.plus.access.ref"/>
             </element>
         </define>
+        <define name="e.objectxmlwrap">
+            <element name="objectxmlwrap">
+                <ref name="am.common"/>
+                <ref name="e.anyname"/>
+            </element>
+        </define>
         <define name="e.anyname">
             <element>
                 <anyName>
@@ -352,6 +358,7 @@
                 </zeroOrMore>
             </element>
         </define>
+        
     </include>
     <start>
         <ref name="e.ead"/>

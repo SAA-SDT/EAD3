@@ -256,6 +256,15 @@
       </xs:complexContent>
     </xs:complexType>
   </xs:element>
+  <xs:element name="objectxmlwrap">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="u:e.anyname">
+          <xs:attributeGroup ref="u:am.common"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
   <xs:complexType name="e.anyname">
     <xs:choice>
       <xs:any namespace="##other" processContents="lax"/>
@@ -2415,15 +2424,6 @@
       <xs:attribute name="encodinganalog" type="xs:token"/>
       <xs:attribute name="localtype" type="xs:token"/>
       <xs:attribute name="transliteration" type="xs:NMTOKEN"/>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="objectxmlwrap">
-    <xs:complexType>
-      <xs:complexContent>
-        <xs:extension base="u:e.anyname">
-          <xs:attributeGroup ref="u:am.common"/>
-        </xs:extension>
-      </xs:complexContent>
     </xs:complexType>
   </xs:element>
   <!-- ELEMENT MODELS -->
