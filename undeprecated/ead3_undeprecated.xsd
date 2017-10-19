@@ -167,11 +167,15 @@
           <xs:attribute name="encodinganalog" type="xs:token"/>
         </xs:extension>
       </xs:complexContent></xs:complexType>
+  <xs:complexType name="objectxmlwrap"><xs:complexContent>
+        <xs:extension base="e.anyname">
+          <xs:attributeGroup ref="am.common"/>
+        </xs:extension>
+      </xs:complexContent></xs:complexType>
   <xs:complexType name="e.anyname">
-    <xs:choice>
-      <xs:any namespace="##other" processContents="lax"/>
-      <xs:any namespace="##local" processContents="lax"/>
-    </xs:choice>
+    <xs:sequence>
+      <xs:any processContents="lax"/>
+    </xs:sequence>
   </xs:complexType>
   <!-- ELEMENTS -->
   <!-- control -->
@@ -1412,11 +1416,6 @@
         </xs:simpleType>
       </xs:attribute><xs:attributeGroup ref="am.simplelink"/></xs:complexType>
   <xs:complexType name="relationentry" mixed="true"><xs:attributeGroup ref="am.common"/><xs:attribute name="encodinganalog" type="xs:token"/><xs:attribute name="localtype" type="xs:token"/><xs:attribute name="transliteration" type="xs:NMTOKEN"/></xs:complexType>
-  <xs:complexType name="objectxmlwrap"><xs:complexContent>
-        <xs:extension base="e.anyname">
-          <xs:attributeGroup ref="am.common"/>
-        </xs:extension>
-      </xs:complexContent></xs:complexType>
   <!-- ELEMENT MODELS -->
   <xs:group name="m.blocks">
     <xs:choice>
