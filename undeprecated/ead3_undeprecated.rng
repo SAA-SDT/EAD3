@@ -330,6 +330,12 @@
                 <ref name="m.mixed.basic.plus.access.ref"/>
             </element>
         </rng:define>
+        <rng:define name="e.objectxmlwrap">
+            <element name="objectxmlwrap">
+                <ref name="am.common"/>
+                <ref name="e.anyname"/>
+            </element>
+        </rng:define>
         <rng:define name="e.anyname">
             <element>
                 <anyName>
@@ -350,6 +356,7 @@
                 </zeroOrMore>
             </element>
         </rng:define>
+        
     <rng:div datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
   <!-- ELEMENTS -->
   
@@ -580,6 +587,27 @@
           <ref name="am.common"/>
           <optional>
             <ref name="a.encodinganalog"/>
+          </optional>
+          <optional>
+            <ref name="a.localtype"/>
+          </optional>
+          <optional>
+            <ref name="e.abbr"/>
+          </optional>
+          <ref name="e.citation"/>
+          <optional>
+            <ref name="e.descriptivenote"/>
+          </optional>
+        </element>
+      </zeroOrMore>
+      <zeroOrMore>
+        <element name="rightsdeclaration">
+          <ref name="am.common"/>
+          <optional>
+            <ref name="a.encodinganalog"/>
+          </optional>
+          <optional>
+            <ref name="a.localtype"/>
           </optional>
           <optional>
             <ref name="e.abbr"/>
@@ -2025,7 +2053,7 @@
         <ref name="a.localtype"/>
       </optional>
       <ref name="am.access.no.normal"/>
-      <ref name="m.mixed.basic"/>
+      <ref name="m.mixed.basic.date"/>
     </element>
   </rng:define>
   <!-- BLOCKS -->
@@ -2651,6 +2679,9 @@
       <optional>
         <ref name="a.localtype"/>
       </optional>
+      <optional>
+        <ref name="a.render"/>
+      </optional>
       <ref name="m.mixed.basic"/>
     </element>
   </rng:define>
@@ -2774,12 +2805,7 @@
       </oneOrMore>
     </element>
   </rng:define>
-  <rng:define name="e.objectxmlwrap">
-    <element name="objectxmlwrap">
-      <ref name="am.common"/>
-      <ref name="e.anyname"/>
-    </element>
-  </rng:define>
+  
   
   <!-- ELEMENT MODELS -->
   <rng:define name="m.blocks">
@@ -2916,6 +2942,26 @@
       <choice>
         <text/>
         <ref name="m.mixed.basic.elements"/>
+      </choice>
+    </zeroOrMore>
+  </rng:define>
+  <rng:define name="m.mixed.basic.date.elements">
+    <choice>
+      <ref name="e.abbr"/>
+      <ref name="e.date"/>
+      <ref name="e.emph"/>
+      <ref name="e.expan"/>
+      <ref name="e.foreign"/>
+      <ref name="e.lb"/>
+      <ref name="e.ptr"/>
+      <ref name="e.ref"/>
+    </choice>
+  </rng:define>
+  <rng:define name="m.mixed.basic.date">
+    <zeroOrMore>
+      <choice>
+        <text/>
+        <ref name="m.mixed.basic.date.elements"/>
       </choice>
     </zeroOrMore>
   </rng:define>
@@ -3440,8 +3486,36 @@
             </optional>
             <oneOrMore>
                 <choice>
-                    <ref name="m.blocks"/>
-                    <ref name="m.desc.base.descgrp"/>
+                    <ref name="e.p"/>
+                    <ref name="e.blockquote"/>
+                    <ref name="e.chronlist"/>
+                    <ref name="e.list"/>
+                    <ref name="e.table"/>
+                    <ref name="e.accessrestrict"/>
+                    <ref name="e.accruals"/>
+                    <ref name="e.acqinfo"/>
+                    <ref name="e.altformavail"/>
+                    <ref name="e.appraisal"/>
+                    <ref name="e.arrangement"/>
+                    <ref name="e.bibliography"/>
+                    <ref name="e.bioghist"/>
+                    <ref name="e.controlaccess"/>
+                    <ref name="e.custodhist"/>
+                    <ref name="e.descgrp"/>
+                    <ref name="e.fileplan"/>
+                    <ref name="e.index"/>
+                    <ref name="e.legalstatus"/>
+                    <ref name="e.odd"/>
+                    <ref name="e.originalsloc"/>
+                    <ref name="e.otherfindaid"/>
+                    <ref name="e.phystech"/>
+                    <ref name="e.prefercite"/>
+                    <ref name="e.processinfo"/>
+                    <ref name="e.relatedmaterial"/>
+                    <ref name="e.relations"/>
+                    <ref name="e.scopecontent"/>
+                    <ref name="e.separatedmaterial"/>
+                    <ref name="e.userestrict"/>
                 </choice>
             </oneOrMore>
         </element>

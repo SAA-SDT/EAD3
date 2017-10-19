@@ -426,8 +426,9 @@
 <!ELEMENT control (recordid,otherrecordid*,representation*,filedesc,
                    maintenancestatus,publicationstatus?,
                    maintenanceagency,languagedeclaration*,
-                   conventiondeclaration*,localtypedeclaration*,
-                   localcontrol*,maintenancehistory,sources?)>
+                   conventiondeclaration*,rightsdeclaration*,
+                   localtypedeclaration*,localcontrol*,
+                   maintenancehistory,sources?)>
 <!ATTLIST control
 
   id ID #IMPLIED
@@ -536,7 +537,19 @@
   audience (external|internal) #IMPLIED
   lang NMTOKEN #IMPLIED
   script NMTOKEN #IMPLIED
-  encodinganalog CDATA #IMPLIED>
+  encodinganalog CDATA #IMPLIED
+  localtype CDATA #IMPLIED>
+
+<!ELEMENT rightsdeclaration (abbr?,citation,descriptivenote?)>
+<!ATTLIST rightsdeclaration
+
+  id ID #IMPLIED
+  altrender CDATA #IMPLIED
+  audience (external|internal) #IMPLIED
+  lang NMTOKEN #IMPLIED
+  script NMTOKEN #IMPLIED
+  encodinganalog CDATA #IMPLIED
+  localtype CDATA #IMPLIED>
 
 <!ELEMENT localtypedeclaration (abbr?,citation,descriptivenote?)>
 <!ATTLIST localtypedeclaration
@@ -1637,7 +1650,9 @@
           |boldsmcaps|boldunderline|doublequote|italic|nonproport
           |singlequote|smcaps|sub|super|underline) #IMPLIED>
 
-<!ELEMENT part (#PCDATA|abbr|emph|expan|foreign|lb|ptr|ref)*>
+<!ELEMENT part (#PCDATA
+                                |abbr|date|emph|expan|foreign|lb
+                                        |ptr|ref)*>
 <!ATTLIST part
 
   id ID #IMPLIED
@@ -2179,7 +2194,10 @@
   audience (external|internal) #IMPLIED
   lang NMTOKEN #IMPLIED
   script NMTOKEN #IMPLIED
-  localtype CDATA #IMPLIED>
+  localtype CDATA #IMPLIED
+  render (altrender|bold|bolddoublequote|bolditalic|boldsinglequote
+          |boldsmcaps|boldunderline|doublequote|italic|nonproport
+          |singlequote|smcaps|sub|super|underline) #IMPLIED>
 
 <!-- ATTRIBUTE MODELS -->
 

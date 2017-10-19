@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../undeprecated/ead3_undeprecated.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<ead xmlns="http://ead3.archivists.org/schema/undeprecated/">
+<ead xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://ead3.archivists.org/schema/undeprecated/ ../../undeprecated/ead3_undeprecated.xsd"
+ xmlns="http://ead3.archivists.org/schema/undeprecated/">
 	<!-- how best to test issue 499? -->
 	<control>
 		<recordid>us-cchs-102</recordid>
@@ -40,6 +41,9 @@
 			</maintenanceevent>
 		</maintenancehistory>
 	</control>
+	<frontmatter>
+		<div></div>
+	</frontmatter>
 	<archdesc level="collection">
 		<did>
 			<head>Collection Summary</head>
