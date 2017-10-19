@@ -2,8 +2,8 @@
     <!-- 
     Encoded Archival Description
 	Version: EAD3
-	Release: 1.10 (test)
-	Date: 2017-04-01
+	Release: 1.1
+	Date: 2017-10
 
 	Hosted by the Library of Congress at http://www.loc.gov/ead/.
 		
@@ -722,7 +722,7 @@
       </optional>
       <optional>
         <attribute name="containerid">
-          <data type="NMTOKEN"/>
+          <data type="string"/>
         </attribute>
       </optional>
       <ref name="m.mixed.basic"/>

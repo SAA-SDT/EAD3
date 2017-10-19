@@ -1,10 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://ead3.archivists.org/schema/" elementFormDefault="qualified" targetNamespace="http://ead3.archivists.org/schema/">
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://ead3.archivists.org/schema/" elementFormDefault="qualified" targetNamespace="http://ead3.archivists.org/schema/">
   <!--
     Encoded Archival Description
         Version: EAD3
-        Release: 1.10 (test)
-        Date: 2017-04-01
+        Release: 1.1
+        Date: 2017-10
     
         Hosted by the Library of Congress at http://www.loc.gov/ead/.
     
@@ -448,7 +447,7 @@
           <xs:attribute name="localtype" type="xs:token"/>
           <xs:attribute name="encodinganalog" type="xs:token"/>
           <xs:attribute name="parent" type="xs:IDREFS"/>
-          <xs:attribute name="containerid" type="xs:NMTOKEN"/>
+          <xs:attribute name="containerid" type="xs:string"/>
         </xs:extension>
       </xs:complexContent></xs:complexType>
   <xs:complexType name="dao"><xs:sequence>
@@ -1470,10 +1469,9 @@
         </xs:extension>
       </xs:complexContent></xs:complexType>
   <xs:complexType name="e.anyname">
-    <xs:choice>
-      <xs:any namespace="##other" processContents="lax"/>
-      <xs:any namespace="##local" processContents="lax"/>
-    </xs:choice>
+    <xs:sequence>
+      <xs:any processContents="lax"/>
+    </xs:sequence>
   </xs:complexType>
   <!-- ELEMENT MODELS -->
   <xs:group name="m.blocks">
