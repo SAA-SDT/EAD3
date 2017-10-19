@@ -426,9 +426,8 @@
 <!ELEMENT control (recordid,otherrecordid*,representation*,filedesc,
                    maintenancestatus,publicationstatus?,
                    maintenanceagency,languagedeclaration*,
-                   conventiondeclaration*,rightsdeclaration*,
-                   localtypedeclaration*,localcontrol*,
-                   maintenancehistory,sources?)>
+                   conventiondeclaration*,localtypedeclaration*,
+                   localcontrol*,maintenancehistory,sources?)>
 <!ATTLIST control
 
   id ID #IMPLIED
@@ -537,19 +536,7 @@
   audience (external|internal) #IMPLIED
   lang NMTOKEN #IMPLIED
   script NMTOKEN #IMPLIED
-  encodinganalog CDATA #IMPLIED
-  localtype CDATA #IMPLIED>
-
-<!ELEMENT rightsdeclaration (abbr?,citation,descriptivenote?)>
-<!ATTLIST rightsdeclaration
-
-  id ID #IMPLIED
-  altrender CDATA #IMPLIED
-  audience (external|internal) #IMPLIED
-  lang NMTOKEN #IMPLIED
-  script NMTOKEN #IMPLIED
-  encodinganalog CDATA #IMPLIED
-  localtype CDATA #IMPLIED>
+  encodinganalog CDATA #IMPLIED>
 
 <!ELEMENT localtypedeclaration (abbr?,citation,descriptivenote?)>
 <!ATTLIST localtypedeclaration
@@ -943,7 +930,7 @@
   localtype CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED
   parent IDREFS #IMPLIED
-  containerid NMTOKEN #IMPLIED>
+  containerid CDATA #IMPLIED>
 
 <!ELEMENT dao (descriptivenote)?>
 <!ATTLIST dao
@@ -1650,9 +1637,7 @@
           |boldsmcaps|boldunderline|doublequote|italic|nonproport
           |singlequote|smcaps|sub|super|underline) #IMPLIED>
 
-<!ELEMENT part (#PCDATA
-                                |abbr|date|emph|expan|foreign|lb
-                                        |ptr|ref)*>
+<!ELEMENT part (#PCDATA|abbr|emph|expan|foreign|lb|ptr|ref)*>
 <!ATTLIST part
 
   id ID #IMPLIED
@@ -2194,10 +2179,7 @@
   audience (external|internal) #IMPLIED
   lang NMTOKEN #IMPLIED
   script NMTOKEN #IMPLIED
-  localtype CDATA #IMPLIED
-  render (altrender|bold|bolddoublequote|bolditalic|boldsinglequote
-          |boldsmcaps|boldunderline|doublequote|italic|nonproport
-          |singlequote|smcaps|sub|super|underline) #IMPLIED>
+  localtype CDATA #IMPLIED>
 
 <!-- ATTRIBUTE MODELS -->
 
@@ -2335,12 +2317,15 @@
   placement (header|footer|watermark) #IMPLIED
   role CDATA #IMPLIED>
 
-<!ELEMENT descgrp (head?,(chronlist|list|table|blockquote|p|accessrestrict|accruals|acqinfo
-                     |altformavail|appraisal|arrangement|bibliography|bioghist|controlaccess 
-                     |custodhist|descgrp|fileplan|index|legalstatus|odd|originalsloc 
-                     |otherfindaid|phystech|prefercite|processinfo|relatedmaterial|relations 
-                     |scopecontent|separatedmaterial|userestrict)+)>
-
+<!ELEMENT descgrp (head?,((chronlist|list|table|blockquote|p),(accessrestrict|accruals|acqinfo
+                                |altformavail|appraisal|arrangement
+                                |bibliography|bioghist|controlaccess
+                                |custodhist|descgrp|fileplan|index
+                                |legalstatus|odd|originalsloc
+                                |otherfindaid|phystech|prefercite
+                                |processinfo|relatedmaterial|relations
+                                |scopecontent|separatedmaterial
+                                |userestrict))+)>
 <!ATTLIST descgrp
 
   id ID #IMPLIED

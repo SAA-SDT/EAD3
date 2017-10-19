@@ -366,7 +366,7 @@
   localtype CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED
   parent IDREFS #IMPLIED
-  containerid NMTOKEN #IMPLIED>
+  containerid CDATA #IMPLIED>
 
 <!ELEMENT dao (descriptivenote)?>
 <!ATTLIST dao

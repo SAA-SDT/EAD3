@@ -2,9 +2,9 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://ead3.archivists.org/schema/" xmlns:schema="http://ead3.archivists.org/schema/">
   <!--
     Encoded Archival Description
-        Version: EAD3.1
-        Release: 1.0
-        Date: 2017-04-01
+        Version: EAD3
+        Release: 1.1
+        Date: 2017-10
     
         Hosted by the Library of Congress at http://www.loc.gov/ead/.
     
@@ -714,7 +714,7 @@
           <xs:attribute name="localtype" type="xs:token"/>
           <xs:attribute name="encodinganalog" type="xs:token"/>
           <xs:attribute name="parent" type="xs:IDREFS"/>
-          <xs:attribute name="containerid" type="xs:NMTOKEN"/>
+          <xs:attribute name="containerid" type="xs:string"/>
         </xs:extension>
       </xs:complexContent>
     </xs:complexType>

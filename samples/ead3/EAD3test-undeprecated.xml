@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../ead3.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<ead xmlns="http://ead3.archivists.org/schema/">
+<?xml-model href="../../undeprecated/ead3_undeprecated.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<ead xmlns="http://ead3.archivists.org/schema/undeprecated/">
 	<!-- how best to test issue 499? -->
 	<control>
 		<recordid>us-cchs-102</recordid>

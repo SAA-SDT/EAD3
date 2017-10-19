@@ -885,7 +885,7 @@
       </optional>
       <optional>
         <attribute name="containerid">
-          <data type="NMTOKEN"/>
+          <data type="string"/>
         </attribute>
       </optional>
       <ref name="m.mixed.basic"/>
