@@ -1470,10 +1470,9 @@
         </xs:extension>
       </xs:complexContent></xs:complexType>
   <xs:complexType name="e.anyname">
-    <xs:choice>
-      <xs:any namespace="##other" processContents="lax"/>
-      <xs:any namespace="##local" processContents="lax"/>
-    </xs:choice>
+    <xs:sequence>
+      <xs:any processContents="lax"/>
+    </xs:sequence>
   </xs:complexType>
   <!-- ELEMENT MODELS -->
   <xs:group name="m.blocks">
