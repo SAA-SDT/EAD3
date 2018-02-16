@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ead xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ead3.archivists.org/schema/" xmlns:marc="http://www.loc.gov/MARC21/slim"
+    relatedencoding="marc21" audience="external">
+    <control altrender="" audience="external" base="#mss" countryencoding="iso3166-1" dateencoding="iso8601" encodinganalog="leader" id="someID"
+        lang="eng" langencoding="iso639-1" repositoryencoding="iso15511" script="lat" scriptencoding="iso15924">
+        <recordid id="C1571" encodinganalog="852" audience="external" altrender="MSS Collection 1571"
+            instanceurl="http://arks.princeton.edu/ark:/some-ark">C1571</recordid>
+        <otherrecordid localtype="depositNo">D15-2017</otherrecordid>
+        <representation href="http://arks.princeton.edu/ark:/88435/fx719q53d" linktitle="HTML Multi-Page View" localtype="html-multi"/>
+        <representation href="https://findingaids.princeton.edu/collections/C1571?view=onepage" linktitle="HTML Single Page View"
+            localtype="html-single"/>
+        <representation href="https://findingaids.princeton.edu/collections/C1571.pdf" linktitle="PDF Single Page View" localtype="pdf"/>
+        <filedesc>
+            <titlestmt>
+                <titleproper>Clarence Brown Papers, 1907-2005: Test EAD</titleproper>
+                <author>Charlton, Faith</author>
+            </titlestmt>
+            <editionstmt>
+                <edition localtype="3"/>
+            </editionstmt>
+            <publicationstmt id="rbscAddress">
+                <publisher localtype="https://viaf.org/viaf/168350386">Princeton University Library. Department of Rare Books and Special
+                    Collections.</publisher>
+                <address>
+                    <addressline>Manuscripts Division</addressline>
+                    <addressline>One Washington Road</addressline>
+                    <addressline>Princeton, New Jersey 08544 USA</addressline>
+                    <addressline>Phone: (609) 258-3184</addressline>
+                    <addressline>Fax: (609) 258-2324</addressline>
+                    <addressline>rbsc@princeton.edu</addressline>
+                    <addressline>http://www.princeton.edu/~rbsc</addressline>
+                </address>
+                <date normal="2017/2017"/>
+            </publicationstmt>
+            <notestmt>
+                <controlnote>
+                    <p>What a glorious mess.</p>
+                </controlnote>
+            </notestmt>
+        </filedesc>
+        <maintenancestatus value="revised"/>
+        <publicationstatus value="inprocess"/>
+        <maintenanceagency>
+            <agencycode>P-NJ</agencycode>
+            <agencyname>Princeton University Library</agencyname>
+        </maintenanceagency>
+        <!-- test issue #502 -->
+        <languagedeclaration>
+            <language langcode="eng"/>
+            <script scriptcode="lat"/>
+        </languagedeclaration>
+        <!-- test issue #507 -->
+        <conventiondeclaration>
+            <!--localtype="contentstandard"-->
+            <abbr>DACS</abbr>
+            <citation href="http://www2.archivists.org/standards/DACS">Describing Archives: A Content Standard</citation>
+        </conventiondeclaration>
+        <!-- test issue #506 -->
+        <!--        <rightsdeclaration >localtype="license"
+            <abbr>CC0</abbr>
+            <citation href="https://creativecommons.org/publicdomain/zero/1.0/"> CC0 1.0 Universal (CC0 1.0) </citation>
+        </rightsdeclaration>-->
+        <localtypedeclaration>
+            <citation href="https://findingaids.princeton.edu/topics">RBSC Local Subject Terms</citation>
+        </localtypedeclaration>
+        <localcontrol localtype="levelOfDescription">
+            <term>file</term>
+        </localcontrol>
+        <maintenancehistory>
+            <maintenanceevent>
+                <eventtype value="revised">Monkeying with EAD3 conversion.</eventtype>
+                <eventdatetime standarddatetime="2018-02-02"/>
+                <agenttype value="human"/>
+                <agent>Regine</agent>
+            </maintenanceevent>
+            <maintenanceevent>
+                <eventtype value="revised">Run through PULFA 2.0 normalization routines.</eventtype>
+                <eventdatetime standarddatetime="2017-09-20"/>
+                <agenttype value="machine"/>
+                <!-- If agent is required, it should probably not be allowed to be NULL. This was raised in issue #140. I think it's worth revisiting making agent/eventdatetime optional or requiring either content or an @.-->
+                <agent/>
+            </maintenanceevent>
+            <maintenanceevent>
+                <eventtype value="revised">Run through PULFA 2.0 normalization routines.</eventtype>
+                <eventdatetime standarddatetime="2017-09-26"/>
+                <agenttype value="machine"/>
+                <agent/>
+            </maintenanceevent>
+            <maintenanceevent>
+                <eventtype value="created">This finding aid was produced using the Archivists' Toolkit.</eventtype>
+                <eventdatetime standarddatetime="2017-09-20"/>
+                <agenttype value="human"/>
+                <agent>Faith Charlton</agent>
+            </maintenanceevent>
+        </maintenancehistory>
+        <sources>
+            <!-- testing issue #499 -->
+            <source>
+                <objectxmlwrap>
+                    <marc:record>
+                        <marc:b100>Mandelʹshtam, Osip, and Clarence Brown. </marc:b100>
+                        <marc:b245>The Prose of Osip Mandelstam: The Noise of Time, Theodosia, the Egyptian Stamp. </marc:b245>
+                        <marc:b300>Princeton, N.J: Princeton University Press, 1965.</marc:b300>
+                    </marc:record>
+                </objectxmlwrap>
+            </source>
+            <source>
+                <objectxmlwrap>
+                    <dc:record xmlns:dc="http://purl.org/DC/elements/1.0/">
+                        <dc:creator>Mandelʹshtam, Osip, and Clarence Brown. </dc:creator>
+                        <dc:title>The Prose of Osip Mandelstam: The Noise of Time, Theodosia, the Egyptian Stamp. </dc:title>
+                        <dc:publisher>Princeton, N.J: Princeton University Press</dc:publisher>
+                        <dc:date>1965</dc:date>
+                    </dc:record>
+                </objectxmlwrap>
+            </source>
+            <source>
+                <objectxmlwrap>
+                    <dc:creator xmlns:dc="http://purl.org/DC/elements/1.0/">Mandelʹshtam, Osip, and Clarence Brown. </dc:creator>
+                </objectxmlwrap>
+            </source>
+        </sources>
+    </control>
+    <archdesc level="collection" localtype="findingaid" relatedencoding="marc21">
+        <did>
+            <unitid countrycode="US" repositorycode="US-NjP" localtype="collection">C1571</unitid>
+            <repository id="mss">
+                <corpname source="viaf" identifier="http://viaf.org/viaf/268919187" relator="repository" encodinganalog="marc21">
+                    <part identifier="https://viaf.org/viaf/168350386">Princeton University. Library. Dept. of Rare Books and Special
+                        Collections</part>
+                </corpname>
+                <address>
+                    <addressline>Manuscripts Division</addressline>
+                    <addressline>One Washington Road</addressline>
+                    <addressline>Princeton, New Jersey 08544 USA</addressline>
+                </address>
+            </repository>
+            <unittitle>Clarence Brown Papers</unittitle>
+            <unitdate normal="1907/2005" unitdatetype="inclusive">1907-2005</unitdate>
+            <unitdatestructured unitdatetype="inclusive">
+                <daterange>
+                    <fromdate standarddate="1907">1907</fromdate>
+                    <todate standarddate="2005">2005</todate>
+                </daterange>
+            </unitdatestructured>
+            <physdescstructured coverage="whole" physdescstructuredtype="spaceoccupied">
+                <quantity>2</quantity>
+                <unittype>linear feet</unittype>
+            </physdescstructured>
+            <physdescset parallel="true" coverage="whole">
+                <physdescstructured coverage="part" physdescstructuredtype="otherphysdescstructuredtype" otherphysdescstructuredtype="containertype">
+                    <quantity>3</quantity>
+                    <unittype>boxes</unittype>
+                    <dimensions unit="cm">12x40</dimensions>
+                    <descriptivenote>
+                        <p>Regular Hollingers</p>
+                    </descriptivenote>
+                </physdescstructured>
+                <physdescstructured coverage="part" physdescstructuredtype="otherphysdescstructuredtype" otherphysdescstructuredtype="containertype">
+                    <quantity>2</quantity>
+                    <unittype>boxes</unittype>
+                    <!-- break down into sides? -->
+                    <dimensions unit="cm">12x23.5</dimensions>
+                    <descriptivenote>
+                        <p>wonky size boxes</p>
+                    </descriptivenote>
+                </physdescstructured>
+            </physdescset>
+            <langmaterial>
+                <languageset>
+                    <language langcode="eng"/>
+                    <script scriptcode="lat"/>
+                </languageset>
+                <languageset>
+                    <language langcode="rus"/>
+                    <script scriptcode="cyr"/>
+                </languageset>
+            </langmaterial>
+            <origination>
+                <!-- test issue #505 -->
+                <persname source="viaf" relator="creator" identifier="http://viaf.org/viaf/46888277">
+                    <part localtype="last">Brown</part>
+                    <part localtype="first">Clarence</part>
+                    <part localtype="existDates">
+                        <!--                        <date normal="1929/2015">1929-2015</date>-->
+                    </part>
+                </persname>
+            </origination>
+            <abstract>Consists of correspondence, travel diaries, photographs, and coursework of former Princeton University comparative literature
+                professor Clarence Brown (1929-2015) relating primarily to his scholarship on Russian writers Osip Emilyevich Mandelstam (1891-1938)
+                and Nadezhda Mandelstam (1899-1980). Correspondence with writer and illustrator Guy Davenport as well as with poet W. S. Merwin,
+                Princeton Class of 1948, is also included.</abstract>
+            <physloc localtype="code">mss</physloc>
+            <dao daotype="borndigital" linktitle="Princeton University Manuscripts Division" href="bioghist-images/shieldlogo.jpg"/>
+        </did>
+        <bibliography localtype="workscited">
+            <!-- This is expected behavior. However, should mixed content really be allowed here?-->
+            <head>Works Cited</head>
+            <bibref>
+                <persname>
+                    <part>Mandelʹshtam, Osip, and Clarence Brown. </part>
+                </persname>
+                 . <title>
+                    <part>The Prose of Osip Mandelstam: The Noise of Time, Theodosia, the Egyptian Stamp. </part>
+                </title>. </bibref>
+        </bibliography>
+        <bioghist>
+            <p>A scholar of modern Russian literature and translation, Clarence Brown (1929-2015) was a professor of comparative literature at
+                Princeton University. He started at Princeton as an instructor in 1959 and became a professor in 1969, retiring in 1999. Brown first
+                taught courses on Russian language and literature in the Department of Romance Languages and then in the Program in Slavic Languages
+                and Literatures, which became a formal department in 1967. In 1971, he joined the Department of Comparative Literature.</p>
+            <p>Brown was most known for his scholarship on the Russian poet Osip Mandelstam (1891-1938), which was facilitated by the relationship he
+                formed with Mandelstam’s widow and fellow writer, Nadezhda Mandelstam (1899-1980), who was invested in preserving her husband's work.
+                    <emph render="italic">The Prose of Osip Mandelstam</emph> (1965) was nominated for a National Book Award. Brown’s 1973 book <emph
+                    render="italic">Mandelstam</emph> earned him the Christian Gauss Award in Literary Criticism. Mandelstam’s papers, entrusted by
+                Nadezhda to Brown in 1976, were donated to the Princeton University Library.</p>
+            <p>Brown earned his bachelor’s degree in classics at Duke University in 1950. After graduation, he was drafted and served four years in
+                the Army Security Agency, including a year of intensive training in Russian at the Army Language School in Monterey, California, after
+                which he was sent to Berlin as a German translator. He earned a master’s degree in linguistics in 1955 from the University of
+                Michigan-Ann Arbor and his Ph.D. in Russian Literature from Harvard University in 1962.</p>
+            <p>A lifelong cartoonist, Brown’s work appeared in several publications, including Saturday Review, where he was cartoon editor from 1977
+                to 1984.</p>
+        </bioghist>
+        <scopecontent>
+            <p>This collection consists primarily of correspondence along with some travel diaries, photographs, and coursework of comparative
+                literature professor Clarence Brown (1929-2015). Much of the content, with the exception of correspondence with Guy Davenport, relates
+                to the principal subject of Brown's scholarship, Russian poet Osip Emilyevich Mandelstam (1891-1938), as well as Mandelstam's wife,
+                Nadezhda Mandelstam (1899-1980). This includes documentation about Brown's collaborative publication, <emph render="italic">Osip
+                    Mandelstam: Selected Poems</emph> (1974); Nadezhda Mandelstam's memoir <emph render="italic">Hope Against Hope</emph> (1970); and
+                Osip Mandelstam's personal papers, which Nadezhda donated to Princeton University Library in 1976; among other topics. Correspondents
+                who are well represented include writer and illustrator, Guy Davenport (1927-2005); poet W. S. Merwin (1927-), Princeton Class of
+                1948, with whom Brown collaborated on <emph render="italic">Osip Mandelstam: Selected Poems</emph>; and Nadezhda Mandelstam.</p>
+        </scopecontent>
+        <accessrestrict localtype="open">
+            <p>Open for research. Student coursework is restricted until 2044 or 75 years from the date of creation (1969) (housed in box
+                B-001080).</p>
+        </accessrestrict>
+        <userestrict>
+            <p>Single photocopies may be made for research purposes. No further photoduplication of copies of material in the collection can be made
+                when Princeton University Library does not own the original. Permission to publish material from the collection must be requested from
+                the Associate University Librarian for Rare Books and Special Collections. The library has no information on the status of literary
+                rights in the collection and researchers are responsible for determining any questions of copyright.</p>
+        </userestrict>
+        <acqinfo>
+            <p>Gift of Jacqueline Brown, <date normal="2017/2017" localtype="acquisition">2017</date>. (AM 2018-3)</p>
+        </acqinfo>
+        <appraisal>
+            <p>No materials were separated during 2017 processing.</p>
+        </appraisal>
+        <relatedmaterial>
+            <archref>
+                <ref href="http://arks.princeton.edu/ark:/88435/736664523">Osip Mandelstam Papers (C0539)</ref>
+            </archref>
+        </relatedmaterial>
+        <processinfo id="processing-3">
+            <p>This collection was processed by
+                <persname relator="arranger">
+                    <part>Charlton</part>
+                    <part>Faith</part>
+                </persname>
+                 in <date normal="2017-09" localtype="processed">September 2017</date> with assistance from
+                <persname relator="arranger">
+                    <part>John</part>
+                    <part>English</part>
+                    <part>'19</part>
+                </persname>
+                 . Finding aid written by
+                <persname relator="author">
+                    <part>Charlton</part>
+                    <part>Faith </part>
+                </persname>
+                 in <date normal="2017-09" localtype="authored">September 2017</date>.</p>
+        </processinfo>
+        <processinfo id="conservation-3">
+            <p>Some photographic negatives were treated during 2017 processing.</p>
+        </processinfo>
+        <controlaccess>
+            <persname identifier="http://viaf.org/viaf/49220707" source="viaf">
+                <part>Akhmatova, Anna Andreevna, 1889-1966</part>
+            </persname>
+            <persname identifier="http://viaf.org/viaf/14318" source="viaf">
+                <part>Mandelʹshtam, Nadezhda, 1899-1980</part>
+            </persname>
+            <persname identifier="http://viaf.org/viaf/102337271" source="viaf">
+                <part>Mandelʹshtam, Osip, 1891-1938</part>
+            </persname>
+            <persname identifier="http://viaf.org/viaf/36933869" source="viaf">
+                <part>Davenport, Guy</part>
+            </persname>
+            <persname identifier="http://viaf.org/viaf/110923132" source="viaf">
+                <part>Merwin, W.S. (William Stanley), 1927-</part>
+            </persname>
+            <corpname identifier="http://viaf.org/viaf/150545369" source="viaf">
+                <part>Princeton University. Department of Slavic Languages and Literatures</part>
+            </corpname>
+            <subject source="lcsh">
+                <part>Literature and state -- Soviet Union -- 20th century -- Sources.</part>
+            </subject>
+            <subject source="lcsh">
+                <part>Princeton University -- Faculty -- 20th century -- Sources.</part>
+            </subject>
+            <subject identifier="http://id.loc.gov/authorities/subjects/sh85116010" source="lcsh">
+                <part>Russian poetry -- 20th century -- Sources.</part>
+            </subject>
+            <subject identifier="http://id.loc.gov/authorities/subjects/sh85116015" source="lcsh">
+                <part>Russian prose literature -- 20th century -- Sources.</part>
+            </subject>
+            <subject source="lcsh">
+                <part>Translators in literature -- Sources.</part>
+            </subject>
+            <subject source="lcsh">
+                <part>Russian literature -- Translations into English -- Sources.</part>
+            </subject>
+            <geogname source="lcsh">
+                <part>Soviet Union -- Intellectual life -- 1917-1970 -- Sources.</part>
+            </geogname>
+            <geogname source="lcsh">
+                <part>Soviet Union--Description and travel.</part>
+            </geogname>
+            <genreform source="aat">
+                <part>Correspondence -- 20th century.</part>
+            </genreform>
+            <genreform source="aat">
+                <part>Manuscripts.</part>
+            </genreform>
+            <occupation source="lcsh">
+                <part>Poets, Russian -- 20th century.</part>
+            </occupation>
+            <subject identifier="t20" encodinganalog="690" source="local" rules="local">
+                <part>Cold War</part>
+            </subject>
+            <subject identifier="t39" encodinganalog="690" source="local" rules="local">
+                <part>Literature</part>
+            </subject>
+            <subject source="local" encodinganalog="690" identifier="t48" rules="local">
+                <part>Princeton University</part>
+            </subject>
+            <subject identifier="t52" encodinganalog="690" source="local" rules="local">
+                <part>Russia</part>
+            </subject>
+        </controlaccess>
+        <relations>
+            <!-- should arcrole be mandatory? -->
+            <relation relationtype="resourcerelation" href="http://arks.princeton.edu/ark:/88435/736664523">
+                <relationentry>Osip Mandelstam Papers (C0539)</relationentry>
+            </relation>
+            <relation relationtype="cpfrelation" href="https://viaf.org/viaf/102337271">
+                <relationentry>Osip Mandelstam</relationentry>
+            </relation>
+            <relation relationtype="resourcerelation" arcrole="translatorOf" href="http://www.worldcat.org/oclc/321291">
+                <objectxmlwrap>
+                    <marc:record>
+                        <marc:b100>Mandelʹshtam, Osip, and Clarence Brown. </marc:b100>
+                        <marc:b245>The Prose of Osip Mandelstam: The Noise of Time, Theodosia, the Egyptian Stamp. </marc:b245>
+                        <marc:b300>Princeton, N.J: Princeton University Press, 1965.</marc:b300>
+                    </marc:record>
+                </objectxmlwrap>
+            </relation>
+        </relations>
+        <dsc dsctype="combined">
+            <c level="file" id="C1571_c1">
+                <did>
+                    <unittitle>Correspondence</unittitle>
+                    <unitdate normal="1945-01-01/2005-12-31">1945-2005</unitdate>
+                    <physdescstructured coverage="whole" physdescstructuredtype="otherphysdescstructuredtype" otherphysdescstructuredtype="container">
+                        <quantity>3</quantity>
+                        <unittype>boxes</unittype>
+                        <descriptivenote>
+                            <p>One partial.</p>
+                        </descriptivenote>
+                    </physdescstructured>
+                </did>
+                <scopecontent>
+                    <p>Most of the correspondence is with Brown's close friend, Guy Davenport. Correspondence with W. S. Merwin is primarily about
+                        their collaborative translation work: <emph render="italic">Osip Mandelstam: Selected Poems</emph> (1974) and includes
+                        translations of Osip Mandelstam's poetry. Letters with Nadezhda Mandelstam relate to her memoir, <emph render="italic">Hope
+                            Against Hope</emph>.</p>
+                    <p>Other correspondents include former Princeton professor of Slavic languages and literatures, Charles Townsend, Boris Filippov,
+                        and Vladimir Nabokov, among others.</p>
+                </scopecontent>
+                <arrangement>
+                    <p>The organization of the correspondence that existed at the time of acquisition was maintained.</p>
+                </arrangement>
+                <c level="file" id="C1571_c2">
+                    <did>
+                        <unittitle>Guy Davenport</unittitle>
+                        <unitdatestructured unitdatetype="inclusive">
+                            <daterange>
+                                <fromdate standarddate="1945">1945</fromdate>
+                                <todate standarddate="2005">2005</todate>
+                            </daterange>
+                        </unitdatestructured>
+                        <physdescstructured coverage="whole" physdescstructuredtype="otherphysdescstructuredtype"
+                            otherphysdescstructuredtype="container">
+                            <quantity>2</quantity>
+                            <unittype>boxes</unittype>
+                            <descriptivenote>
+                                <p>One partial.</p>
+                            </descriptivenote>
+                        </physdescstructured>
+                    </did>
+                    <scopecontent>
+                        <p>Includes mostly incoming letters, though some are from Brown, of a largely personal nature. Many letters are addressed to
+                            Clarence and Jacqueline Brown or to the entire family, particularly those dating from the 1960s. Letters include
+                            discussion of each others' literary interests, publications, projects, the work of other academics, and their respective
+                            teaching positions, among other topics.</p>
+                        <p>Also included is a folder of poems by Davenport dedicated to Brown.</p>
+                    </scopecontent>
+                    <c level="file" id="C1571_c3">
+                        <did>
+                            <unittitle>Guy Davenport</unittitle>
+                            <!-- test issue #512 -->
+                            <container parent="C1571_i1" localtype="folder" containerid="C1571_i1-f1Å">1</container>
+                            <unitdate unitdatetype="inclusive" normal="1945/1950">1945-1950</unitdate>
+                            <physdescstructured coverage="whole" physdescstructuredtype="otherphysdescstructuredtype"
+                                otherphysdescstructuredtype="container">
+                                <quantity>1</quantity>
+                                <unittype>folder</unittype>
+                            </physdescstructured>
+                        </did>
+                        <scopecontent>
+                            <p>Includes some discussion of Davenport's studies at Duke and Oxford.</p>
+                        </scopecontent>
+                    </c>
+                    <c level="file" id="C1571_c4">
+                        <did>
+                            <unittitle>Guy Davenport</unittitle>
+                            <container parent="C1571_i1" localtype="folder" containerid="C1571_i1-f2">2</container>
+                            <unitdate unitdatetype="inclusive" normal="1949/1959">1949-1959</unitdate>
+                            <physdescstructured coverage="whole" physdescstructuredtype="otherphysdescstructuredtype"
+                                otherphysdescstructuredtype="container">
+                                <quantity>1</quantity>
+                                <unittype>folder</unittype>
+                            </physdescstructured>
+                        </did>
+                        <scopecontent>
+                            <p>Includes Davenport's letter of recommendation for Brown for the Rhodes Scholarship (1949) as well as correspondence
+                                from when Davenport was stationed at Fort Bragg, North Carolina. Some letters discuss of Davenport's studies at
+                                Harvard and work at Washington University.</p>
+                        </scopecontent>
+                    </c>
+                    <c level="file" id="C1571_c5">
+                        <did>
+                            <unittitle>Guy Davenport</unittitle>
+                            <container parent="C1571_i1" localtype="folder" containerid="C1571_i1-f3">3</container>
+                            <unitdate unitdatetype="inclusive" normal="1959/1969">1959-1969</unitdate>
+                            <physdescstructured coverage="whole" physdescstructuredtype="otherphysdescstructuredtype"
+                                otherphysdescstructuredtype="container">
+                                <quantity>1</quantity>
+                                <unittype>folder</unittype>
+                            </physdescstructured>
+                        </did>
+                    </c>
+                    <c level="file" id="C1571_c6">
+                        <did>
+                            <unittitle>Guy Davenport</unittitle>
+                            <container parent="C1571_i1" localtype="folder" containerid="C1571_i1-f4">4</container>
+                            <unitdate unitdatetype="inclusive" normal="1966/1979">1966-1979</unitdate>
+                            <physdescstructured coverage="whole" physdescstructuredtype="otherphysdescstructuredtype"
+                                otherphysdescstructuredtype="container">
+                                <quantity>1</quantity>
+                                <unittype>folder</unittype>
+                            </physdescstructured>
+                        </did>
+                    </c>
+                    <c level="file" id="C1571_c7">
+                        <did>
+                            <unittitle>Guy Davenport</unittitle>
+                            <container parent="C1571_i1" localtype="folder" containerid="C1571_i1-f5">5</container>
+                            <unitdate unitdatetype="inclusive" normal="1980/1989">1980-1989</unitdate>
+                            <physdescstructured coverage="whole" physdescstructuredtype="otherphysdescstructuredtype"
+                                otherphysdescstructuredtype="container">
+                                <quantity>1</quantity>
+                                <unittype>folder</unittype>
+                            </physdescstructured>
+                        </did>
+                    </c>
+                    <c level="file" id="C1571_c8">
+                        <did>
+                            <unittitle>Guy Davenport</unittitle>
+                            <container parent="C1571_i1" localtype="folder" containerid="C1571_i1-f6">6</container>
+                            <unitdate unitdatetype="inclusive" normal="1990/1994">1990-1994</unitdate>
+                            <physdescstructured coverage="whole" physdescstructuredtype="otherphysdescstructuredtype"
+                                otherphysdescstructuredtype="container">
+                                <quantity>1</quantity>
+                                <unittype>folder</unittype>
+                            </physdescstructured>
+                        </did>
+                    </c>
+                    <c level="file" id="C1571_c9">
+                        <did>
+                            <unittitle>Guy Davenport</unittitle>
+                            <container parent="C1571_i1" localtype="folder" containerid="C1571_i1-f7">7</container>
+                            <unitdate unitdatetype="inclusive" normal="1995/1999">1995-1999</unitdate>
+                            <physdescstructured coverage="whole" physdescstructuredtype="otherphysdescstructuredtype"
+                                otherphysdescstructuredtype="container">
+                                <quantity>1</quantity>
+                                <unittype>folder</unittype>
+                            </physdescstructured>
+                        </did>
+                    </c>
+                    <!--FWIW this would benefit from objectxmlwrap -->
+                    <c level="file" id="C1571_c10">
+                        <did>
+                            <unitid localtype="shelfmark">2.4.5.34 (M)</unitid>
+                            <unittitle>Le sens du monde</unittitle>
+                            <unitdate normal="1993/1993">1993</unitdate>
+                            <container parent="C1571_i1" localtype="folder" containerid="C1571_i1-f8">8</container>
+                            <physdescstructured coverage="whole" physdescstructuredtype="otherphysdescstructuredtype"
+                                otherphysdescstructuredtype="container">
+                                <quantity>1</quantity>
+                                <unittype>folder</unittype>
+                            </physdescstructured>
+                        </did>
+                        <odd>
+                            <p altrender="260_3">Paris: Galil&#xE9;e</p>
+                        </odd>
+                        <scopecontent>
+                            <p>Passages with heavy annotations present.</p>
+                            <p>Inscribed copy.</p>
+                            <p>Includes manuscript material.</p>
+                            <p>Dealer note: D&#xE9;dicace : "pour Jacques et pour Marguerite, affectueusement J-Luc" Trouv&#xE9; sur le rayon entre
+                                les docs 2.4.5.34 (M) et 2.4.35 (M) : Billet de Rodolphe Burger, accompagnant une version tapuscrite de "La voix de
+                                Jean-Luc" qu'il a fait parvenir &#xE0; JD. Texte et billet d&#xE9;pos&#xE9;s ensemble avec la correspondance le
+                                13-04-201.</p>
+                            <p>Check-in observation: Bookmarks on pages 100-101, 102-103, 114-115, 118-119, 142-143, 150-151, 154-155, 168-169,
+                                222-223. Dog-eared pages 178, 225, 237.</p>
+                        </scopecontent>
+                        <controlaccess>
+                            <subject source="lcsh">
+                                <part>Finalism (Philosophy)</part>
+                            </subject>
+                            <subject source="lcsh">
+                                <part>Teleology</part>
+                            </subject>
+                            <genreform source="rbprov">
+                                <part>Annotations (Provenance)</part>
+                            </genreform>
+                            <genreform source="rbprov">
+                                <part>Inscriptions (Provenance)</part>
+                            </genreform>
+                            <genreform source="rbprov">
+                                <part>Insertions (Provenance)</part>
+                            </genreform>
+                        </controlaccess>
+                    </c>
+                    <c level="file" id="C1571_c11">
+                        <did>
+                            <unitid localtype="shelfmark">2.4.5.34 (M)</unitid>
+                            <unittitle>
+                                <title>
+                                    <part>Le sens du monde</part>
+                                </title>
+                                <persname identifier="https://viaf.org/viaf/103617048" relator="cre">
+                                    <part>Jean-Luc Nancy</part>
+                                </persname>
+                                <subject source="lcsh">
+                                    <part>Finalism (Philosophy)</part>
+                                </subject>
+                                <subject source="lcsh">
+                                    <part>Teleology</part>
+                                </subject>
+                            </unittitle>
+                            <container parent="C1571_i1" localtype="folder" containerid="C1571_i1-f8">8</container>
+                            <physdesc>1 thing </physdesc>
+                        </did>
+                        <scopecontent>
+                            <p>Passages with heavy annotations present.</p>
+                            <p>Inscribed copy.</p>
+                            <p>Includes manuscript material.</p>
+                            <p>Dealer note: D&#xE9;dicace : "pour Jacques et pour Marguerite, affectueusement J-Luc" Trouv&#xE9; sur le rayon entre
+                                les docs 2.4.5.34 (M) et 2.4.35 (M) : Billet de Rodolphe Burger, accompagnant une version tapuscrite de "La voix de
+                                Jean-Luc" qu'il a fait parvenir &#xE0; JD. Texte et billet d&#xE9;pos&#xE9;s ensemble avec la correspondance le
+                                13-04-201.</p>
+                            <p>Check-in observation: Bookmarks on pages 100-101, 102-103, 114-115, 118-119, 142-143, 150-151, 154-155, 168-169,
+                                222-223. Dog-eared pages 178, 225, 237.</p>
+                        </scopecontent>
+                        <controlaccess>
+                            <genreform source="rbprov">
+                                <part>Annotations (Provenance)</part>
+                            </genreform>
+                            <genreform source="rbprov">
+                                <part>Inscriptions (Provenance)</part>
+                            </genreform>
+                            <genreform source="rbprov">
+                                <part>Insertions (Provenance)</part>
+                            </genreform>
+                        </controlaccess>
+                    </c>
+                </c>
+            </c>
+        </dsc>
+        <dsc dsctype="otherdsctype" otherdsctype="physicalholdings">
+            <c id="C1571_i1" level="otherlevel" otherlevel="physicalitem">
+                <did>
+                    <container localtype="box">B-001076</container>
+                    <unitid localtype="barcode">32101080849969</unitid>
+                    <physloc localtype="code">mss</physloc>
+                </did>
+            </c>
+        </dsc>
+    </archdesc>
+</ead>
