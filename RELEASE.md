@@ -1,4 +1,3 @@
-
 ## EAD3
 ### Encoded Archival Description (EAD), Version 3
 * Release: 1.1.0
