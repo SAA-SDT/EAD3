@@ -1,76 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://ead3.archivists.org/schema/undeprecated/" elementFormDefault="qualified" targetNamespace="http://ead3.archivists.org/schema/undeprecated/">
-  <!--
-    Encoded Archival Description
-        Version: EAD3
-        Release: 1.1.0
-        Date: 2018-04-04
-
-        Hosted by the Library of Congress at http://www.loc.gov/ead/.
-
-        Developed by the Society of American Archivists'
-        Technical Subcommittee for Encoded Archival Description (TS-EAD)
-        and Schema Development Team, 2010-2015.
-
-        Adopted by SAA Council, July 2015.
-
-        Lead schema developer: Terry Catapano
-
-        EAD3 was possible because of the generous support of the
-        Society of American Archivists, the Gladys Krieble Delmas Foundation,
-        the National Endowment for the Humanities, the Nationaal Archief of the
-        Netherlands, the Beinecke Rare Book and Manuscript Library,
-        the Institute for Advanced Technology in the Humanities at the
-        University of Virginia, and OCLC Research.
-
-        EAD3 Deliverables
-
-        ead3.dtd	ead3_undeprecated.dtd
-        ead3.rng	ead3_undeprecated.rng
-        ead3.xsd	ead3_undeprecated.xsd
-        ead3.sch
-
-        Notes:
-        -EAD3 is available as DTD, Relax NG Schema, and W3C Schema.
-        -The EAD3 DTD does not support the <objectxmlwrap> element.
-        -In the EAD3 DTD, attributes with anyURI, token, and string
-        data types are converted to CDATA.
-        -Deprecated EAD 2002 elements are available in the undeprecated
-        versions of EAD3.
-        -A Schematron schema (ead3.sch) is available to validate external code lists
-        not maintained within EAD, standard attribute value patterns,
-        attribute or element co-occurrence not enforceable in the schema,
-        and some encoding practices recommended for future migration.
-
-        ***************************************************
-        Changes in version 1.1.0:
-
-        1. The @render attribute can now be used with the quote element.
-           See https://github.com/SAA-SDT/EAD3/issues/485
-
-        2. The objectxmlwrap element can now be validated properly in the XSD schemas.
-           See https://github.com/SAA-SDT/EAD3/issues/499
-           (bug fix)
-
-        3. Manually fixed a bug that was causing the descgrp element not to validate correctly in the undeprecated DTD.
-           See https://github.com/SAA-SDT/EAD3/issues/503
-           (bug fix)
-
-        4. The date element is now a valid child of the part element.
-           See https://github.com/SAA-SDT/EAD3/issues/505
-
-        5. rightsdeclaration, a new element, has been added to the control section.
-           See https://github.com/SAA-SDT/EAD3/issues/506
-           (new element)
-
-        6. The @localtype attribute can now be used with the conventiondeclaration element.
-           See https://github.com/SAA-SDT/EAD3/issues/507
-
-        7. The datatype associated with the @containerid attribute has been relaxed to xsd:string (in EAD3 version 1.0, the datatype for this attribute was restricted to xsd:NMTOKEN).
-           See https://github.com/SAA-SDT/EAD3/issues/512
-
-        *****************************************************
-  -->
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://ead3.archivists.org/schema/undeprecated/" elementFormDefault="qualified" targetNamespace="http://ead3.archivists.org/schema/undeprecated/">
   <!-- include "ead_revised_defs.rng" -->
   <xs:element name="ead">
     <xs:complexType>
@@ -233,22 +161,20 @@
         <xs:element name="physfacet" type="physfacet"/>
         <xs:element name="dimensions" type="dimensions"/>
       </xs:choice><xs:attributeGroup ref="am.common"/><xs:attribute name="localtype" type="xs:token"/><xs:attribute name="label" type="xs:string"/><xs:attribute name="encodinganalog" type="xs:token"/></xs:complexType>
+
   <xs:complexType name="bibref"><xs:complexContent>
         <xs:extension base="m.mixed.basic.plus.access.ref">
           <xs:attributeGroup ref="am.common"/>
           <xs:attribute name="encodinganalog" type="xs:token"/>
         </xs:extension>
       </xs:complexContent></xs:complexType>
-  <xs:complexType name="objectxmlwrap"><xs:complexContent>
-        <xs:extension base="e.anyname">
-          <xs:attributeGroup ref="am.common"/>
-        </xs:extension>
-      </xs:complexContent></xs:complexType>
   <xs:complexType name="e.anyname">
-    <xs:sequence>
-      <xs:any processContents="lax"/>
-    </xs:sequence>
+    <xs:choice>
+      <xs:any namespace="##other" processContents="lax"/>
+      <xs:any namespace="##local" processContents="lax"/>
+    </xs:choice>
   </xs:complexType>
+
   <!-- ELEMENTS -->
   <!-- control -->
   <xs:complexType name="control"><xs:sequence>
@@ -261,7 +187,6 @@
         <xs:element name="maintenanceagency" type="maintenanceagency"/>
         <xs:element name="languagedeclaration" type="languagedeclaration" minOccurs="0" maxOccurs="unbounded"/>
         <xs:element name="conventiondeclaration" type="conventiondeclaration" minOccurs="0" maxOccurs="unbounded"/>
-        <xs:element name="rightsdeclaration" type="rightsdeclaration" minOccurs="0" maxOccurs="unbounded"/>
         <xs:element name="localtypedeclaration" type="localtypedeclaration" minOccurs="0" maxOccurs="unbounded"/>
         <xs:element name="localcontrol" type="localcontrol" minOccurs="0" maxOccurs="unbounded"/>
         <xs:element name="maintenancehistory" type="maintenancehistory"/>
@@ -371,12 +296,7 @@
         <xs:element name="abbr" type="abbr" minOccurs="0"/>
         <xs:element name="citation" type="citation"/>
         <xs:element name="descriptivenote" type="descriptivenote" minOccurs="0"/>
-      </xs:sequence><xs:attributeGroup ref="am.common"/><xs:attribute name="encodinganalog" type="xs:token"/><xs:attribute name="localtype" type="xs:token"/></xs:complexType>
-  <xs:complexType name="rightsdeclaration"><xs:sequence>
-        <xs:element name="abbr" type="abbr" minOccurs="0"/>
-        <xs:element name="citation" type="citation"/>
-        <xs:element name="descriptivenote" type="descriptivenote" minOccurs="0"/>
-      </xs:sequence><xs:attributeGroup ref="am.common"/><xs:attribute name="encodinganalog" type="xs:token"/><xs:attribute name="localtype" type="xs:token"/></xs:complexType>
+      </xs:sequence><xs:attributeGroup ref="am.common"/><xs:attribute name="encodinganalog" type="xs:token"/></xs:complexType>
   <xs:complexType name="localtypedeclaration"><xs:sequence>
         <xs:element name="abbr" type="abbr" minOccurs="0"/>
         <xs:element name="citation" type="citation"/>
@@ -636,7 +556,7 @@
           <xs:attribute name="localtype" type="xs:token"/>
           <xs:attribute name="encodinganalog" type="xs:token"/>
           <xs:attribute name="parent" type="xs:IDREFS"/>
-          <xs:attribute name="containerid" type="xs:string"/>
+          <xs:attribute name="containerid" type="xs:NMTOKEN"/>
         </xs:extension>
       </xs:complexContent></xs:complexType>
   <xs:complexType name="dao"><xs:sequence>
@@ -1019,7 +939,7 @@
         </xs:simpleType>
       </xs:attribute></xs:complexType>
   <xs:complexType name="part"><xs:complexContent>
-        <xs:extension base="m.mixed.basic.date">
+        <xs:extension base="m.mixed.basic">
           <xs:attributeGroup ref="am.common"/>
           <xs:attribute name="encodinganalog" type="xs:token"/>
           <xs:attribute name="localtype" type="xs:token"/>
@@ -1428,27 +1348,6 @@
         <xs:extension base="m.mixed.basic">
           <xs:attributeGroup ref="am.common"/>
           <xs:attribute name="localtype" type="xs:token"/>
-          <xs:attribute name="render">
-            <xs:simpleType>
-              <xs:restriction base="xs:token">
-                <xs:enumeration value="altrender"/>
-                <xs:enumeration value="bold"/>
-                <xs:enumeration value="bolddoublequote"/>
-                <xs:enumeration value="bolditalic"/>
-                <xs:enumeration value="boldsinglequote"/>
-                <xs:enumeration value="boldsmcaps"/>
-                <xs:enumeration value="boldunderline"/>
-                <xs:enumeration value="doublequote"/>
-                <xs:enumeration value="italic"/>
-                <xs:enumeration value="nonproport"/>
-                <xs:enumeration value="singlequote"/>
-                <xs:enumeration value="smcaps"/>
-                <xs:enumeration value="sub"/>
-                <xs:enumeration value="super"/>
-                <xs:enumeration value="underline"/>
-              </xs:restriction>
-            </xs:simpleType>
-          </xs:attribute>
         </xs:extension>
       </xs:complexContent></xs:complexType>
   <xs:complexType name="ptr"><xs:attributeGroup ref="am.common.empty"/><xs:attributeGroup ref="am.internal.ptr"/><xs:attribute name="entityref" type="xs:ENTITY"/></xs:complexType>
@@ -1515,6 +1414,11 @@
         </xs:simpleType>
       </xs:attribute><xs:attributeGroup ref="am.simplelink"/></xs:complexType>
   <xs:complexType name="relationentry" mixed="true"><xs:attributeGroup ref="am.common"/><xs:attribute name="encodinganalog" type="xs:token"/><xs:attribute name="localtype" type="xs:token"/><xs:attribute name="transliteration" type="xs:NMTOKEN"/></xs:complexType>
+  <xs:complexType name="objectxmlwrap"><xs:complexContent>
+        <xs:extension base="e.anyname">
+          <xs:attributeGroup ref="am.common"/>
+        </xs:extension>
+      </xs:complexContent></xs:complexType>
   <!-- ELEMENT MODELS -->
   <xs:group name="m.blocks">
     <xs:choice>
@@ -1633,21 +1537,6 @@
   </xs:group>
   <xs:complexType name="m.mixed.basic" mixed="true">
     <xs:group minOccurs="0" maxOccurs="unbounded" ref="m.mixed.basic.elements"/>
-  </xs:complexType>
-  <xs:group name="m.mixed.basic.date.elements">
-    <xs:choice>
-      <xs:element name="abbr" type="abbr"/>
-      <xs:element name="date" type="date"/>
-      <xs:element name="emph" type="emph"/>
-      <xs:element name="expan" type="expan"/>
-      <xs:element name="foreign" type="foreign"/>
-      <xs:element name="lb" type="lb"/>
-      <xs:element name="ptr" type="ptr"/>
-      <xs:element name="ref" type="ref"/>
-    </xs:choice>
-  </xs:group>
-  <xs:complexType name="m.mixed.basic.date" mixed="true">
-    <xs:group minOccurs="0" maxOccurs="unbounded" ref="m.mixed.basic.date.elements"/>
   </xs:complexType>
   <xs:group name="m.mixed.basic.plus.elements">
     <xs:choice>
@@ -2054,36 +1943,8 @@
   <xs:complexType name="descgrp"><xs:sequence>
         <xs:element name="head" type="head" minOccurs="0"/>
         <xs:choice maxOccurs="unbounded">
-          <xs:element name="p" type="p"/>
-          <xs:element name="blockquote" type="blockquote"/>
-          <xs:element name="chronlist" type="chronlist"/>
-          <xs:element name="list" type="list"/>
-          <xs:element name="table" type="table"/>
-          <xs:element name="accessrestrict" type="accessrestrict"/>
-          <xs:element name="accruals" type="accruals"/>
-          <xs:element name="acqinfo" type="acqinfo"/>
-          <xs:element name="altformavail" type="altformavail"/>
-          <xs:element name="appraisal" type="appraisal"/>
-          <xs:element name="arrangement" type="arrangement"/>
-          <xs:element name="bibliography" type="bibliography"/>
-          <xs:element name="bioghist" type="bioghist"/>
-          <xs:element name="controlaccess" type="controlaccess"/>
-          <xs:element name="custodhist" type="custodhist"/>
-          <xs:element name="descgrp" type="descgrp"/>
-          <xs:element name="fileplan" type="fileplan"/>
-          <xs:element name="index" type="index"/>
-          <xs:element name="legalstatus" type="legalstatus"/>
-          <xs:element name="odd" type="odd"/>
-          <xs:element name="originalsloc" type="originalsloc"/>
-          <xs:element name="otherfindaid" type="otherfindaid"/>
-          <xs:element name="phystech" type="phystech"/>
-          <xs:element name="prefercite" type="prefercite"/>
-          <xs:element name="processinfo" type="processinfo"/>
-          <xs:element name="relatedmaterial" type="relatedmaterial"/>
-          <xs:element name="relations" type="relations"/>
-          <xs:element name="scopecontent" type="scopecontent"/>
-          <xs:element name="separatedmaterial" type="separatedmaterial"/>
-          <xs:element name="userestrict" type="userestrict"/>
+          <xs:group ref="m.blocks"/>
+          <xs:group ref="m.desc.base.descgrp"/>
         </xs:choice>
       </xs:sequence><xs:attributeGroup ref="am.common"/><xs:attribute name="localtype" type="xs:token"/><xs:attribute name="encodinganalog" type="xs:token"/></xs:complexType>
   <xs:complexType name="m.c.base.descgrp">
@@ -2125,7 +1986,7 @@
           <xs:attribute name="label" type="xs:string"/>
           <xs:attribute name="encodinganalog" type="xs:token"/>
           <xs:attribute name="localtype" type="xs:token"/>
-          <xs:attribute name="unit" type="xs:token"/>
+         <xs:attribute name="unit" type="xs:token"/>
         </xs:extension>
       </xs:complexContent></xs:complexType>
   <xs:complexType name="m.mixed.basic.plus.access.ref" mixed="true">
@@ -2140,4 +2001,5 @@
       <xs:element name="imprint" type="imprint"/>
     </xs:choice>
   </xs:complexType>
+
 </xs:schema>

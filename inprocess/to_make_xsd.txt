@@ -3,8 +3,8 @@ TO GENERATE XSD FROM RNG SCHEMA
 
 1. Use trang to convert ead3.rng to ead3_step1.xsd use options:
 * disable-abstract-elements
-* any-process-context: lax
-* any-attribute-process-context: lax
+* any-process-contents: lax
+* any-attribute-process-contents: lax
 
 2. transform ead3_step1.xsd using deglobalize.xsl outputting ../ead3.xsd
 

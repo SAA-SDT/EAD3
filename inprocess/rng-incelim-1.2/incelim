@@ -12,17 +12,17 @@ usage:
 where
 	-nnn is number of strip/clean passes (default is -1)
 	-processor is XSLT processor to use, default is -saxon,
-	 other options are xt, jd.xslt, xalan, 4xslt, xsltproc 
+	 other options are xt, jd.xslt, xalan, 4xslt, xsltproc
 
 output for
 	schema.rng
 is in
 	schema-compiled.rng
-	
+
 Environment variable INCELIM should point to the directory
 containing XSLT scripts, default is /usr/local/lib/incelim.
 
-Temporary files are created in a directory pointed to 
+Temporary files are created in a directory pointed to
 by environment variable TMPDIR, /tmp by default.
 USAGE
 exit 1
@@ -69,7 +69,7 @@ xslt() {
   res=$3
   case $proc in
     xt) java com.jclark.xsl.sax.Driver $xml $xsl $res ;;
-    saxon) java -jar ~/Dropbox/xml/tools/saxon/saxon9.jar -o $res $xml $xsl ;;
+    saxon) java -jar ~/Documents/SaxonHE9-7-0-15J/saxon9he.jar -s:$xml -xsl:$xsl -o:$res ;;
     jd.xslt) java jd.xml.xslt.Stylesheet -out $res $xml $xsl ;;
     xalan) java org.apache.xalan.xslt.Process -IN $xml -XSL $xsl -OUT $res ;;
     4xslt) 4xslt -o $res $xml $xsl ;;

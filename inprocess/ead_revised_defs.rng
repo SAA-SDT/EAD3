@@ -244,6 +244,27 @@
             <ref name="a.encodinganalog"/>
           </optional>
           <optional>
+            <ref name="a.localtype"/>
+          </optional>
+          <optional>
+            <ref name="e.abbr"/>
+          </optional>
+          <ref name="e.citation"/>
+          <optional>
+            <ref name="e.descriptivenote"/>
+          </optional>
+        </element>
+      </zeroOrMore>
+      <zeroOrMore>
+        <element name="rightsdeclaration">
+          <ref name="am.common"/>
+          <optional>
+            <ref name="a.encodinganalog"/>
+          </optional>
+          <optional>
+            <ref name="a.localtype"/>
+          </optional>
+          <optional>
             <ref name="e.abbr"/>
           </optional>
           <ref name="e.citation"/>
@@ -657,7 +678,7 @@
       </optional>
       <optional>
         <attribute name="containerid">
-          <data type="NMTOKEN"/>
+          <data type="string"/>
         </attribute>
       </optional>
       <ref name="m.mixed.basic"/>
@@ -1742,7 +1763,7 @@
         <ref name="a.localtype"/>
       </optional>
       <ref name="am.access.no.normal"/>
-      <ref name="m.mixed.basic"/>
+      <ref name="m.mixed.basic.date"/>
     </element>
   </define>
   <!-- BLOCKS -->
@@ -2376,6 +2397,9 @@
       <optional>
         <ref name="a.localtype"/>
       </optional>
+      <optional>
+        <ref name="a.render"/>
+      </optional>
       <ref name="m.mixed.basic"/>
     </element>
   </define>
@@ -2853,6 +2877,26 @@
       <choice>
         <text/>
         <ref name="m.mixed.basic.elements"/>
+      </choice>
+    </zeroOrMore>
+  </define>
+  <define name="m.mixed.basic.date.elements">
+    <choice>
+      <ref name="e.abbr"/>
+      <ref name="e.date"/>
+      <ref name="e.emph"/>
+      <ref name="e.expan"/>
+      <ref name="e.foreign"/>
+      <ref name="e.lb"/>
+      <ref name="e.ptr"/>
+      <ref name="e.ref"/>
+    </choice>
+  </define>
+  <define name="m.mixed.basic.date">
+    <zeroOrMore>
+      <choice>
+        <text/>
+        <ref name="m.mixed.basic.date.elements"/>
       </choice>
     </zeroOrMore>
   </define>

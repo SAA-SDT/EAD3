@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?><grammar xmlns="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" ns="http://ead3.archivists.org/schema/undeprecated/">
-    <rng:div xmlns:rng="http://relaxng.org/ns/structure/1.0">
+<rng:div xmlns:rng="http://relaxng.org/ns/structure/1.0">
 <!--include "ead_revised_defs.rng"-->
 
 
         <rng:define name="e.ead">
             <element name="ead">
                 <ref name="am.common"/>
-                <ref name="a.relatedencoding"/>
-                <ref name="a.base"/>
+                <optional>
+                    <ref name="a.relatedencoding"/>
+                </optional>
+                <optional>
+                    <ref name="a.base"/>
+                </optional>
                 <ref name="e.control"/>
                 <!-- OPTIONAL FRONTMATTER -->
-                <optional><ref name="e.frontmatter"/></optional>
+                <optional>
+                    <ref name="e.frontmatter"/>
+                </optional>
                 <ref name="e.archdesc"/>
             </element>
         </rng:define>
@@ -20,11 +26,17 @@
         <rng:define name="e.archdesc">
             <element name="archdesc">
                 <ref name="am.common"/>
-                <ref name="a.localtype"/>
-                <ref name="a.relatedencoding"/>
+                <optional>
+                    <ref name="a.localtype"/>
+                </optional>
+                <optional>
+                    <ref name="a.relatedencoding"/>
+                </optional>
                 <ref name="am.desc.base"/>
                 <ref name="a.level"/>
-                <ref name="a.base"/>
+                <optional>
+                    <ref name="a.base"/>
+                </optional>
                 <zeroOrMore>
                     <ref name="e.runner"/>
                 </zeroOrMore>
@@ -37,6 +49,52 @@
                 </zeroOrMore>
             </element>
         </rng:define>
+
+        <!-- dsc -->
+
+        <rng:define name="e.dsc">
+            <element name="dsc">
+                <ref name="am.common"/>
+                <optional>
+                    <attribute name="tpattern">
+                        <data type="NMTOKEN"/>
+                    </attribute>
+                </optional>
+                <optional>
+                    <attribute name="dsctype">
+                        <choice>
+                            <value>analyticover</value>
+                            <value>combined</value>
+                            <value>in-depth</value>
+                            <value>otherdsctype</value>
+                        </choice>
+                    </attribute>
+                </optional>
+                <optional>
+                    <attribute name="otherdsctype">
+                        <data type="token"/>
+                    </attribute>
+                </optional>
+                <optional>
+                    <ref name="a.encodinganalog"/>
+                </optional>
+                <group>
+                    <optional>
+                        <ref name="e.head"/>
+                    </optional>
+                    <zeroOrMore>
+                        <ref name="m.blocks"/>
+                    </zeroOrMore>
+                </group>
+                <optional>
+                    <ref name="e.thead"/>
+                </optional>
+                <optional>
+                    <ref name="m.cOrC01"/>
+                </optional>
+            </element>
+        </rng:define>
+
         <!-- Components -->
         <rng:define name="e.c">
             <element name="c">
@@ -255,9 +313,7 @@
                         <ref name="e.footnote"/>
                         <ref name="e.num"/>
                         <ref name="e.quote"/>
-                        <element name="extent">
-                            <ref name="m.mixed.basic"/>
-                        </element>
+                        <ref name="e.extent"/>
                         <ref name="e.physfacet"/>
                         <ref name="e.dimensions"/>
                     </choice>
@@ -265,7 +321,35 @@
 
             </element>
         </rng:define>
-
+        <rng:define name="e.bibref">
+            <element name="bibref">
+                <ref name="am.common"/>
+                <optional>
+                    <ref name="a.encodinganalog"/>
+                </optional>
+                <ref name="m.mixed.basic.plus.access.ref"/>
+            </element>
+        </rng:define>
+        <rng:define name="e.anyname">
+            <element>
+                <anyName>
+                    <except>
+                        <nsName ns="http://ead3.archivists.org/schema/undeprecated/"/>
+                    </except>
+                </anyName>
+                <zeroOrMore>
+                    <attribute>
+                        <anyName/>
+                    </attribute>
+                </zeroOrMore>
+                <zeroOrMore>
+                    <choice>
+                        <text/>
+                        <ref name="e.anyname"/>
+                    </choice>
+                </zeroOrMore>
+            </element>
+        </rng:define>
     <rng:div datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
   <!-- ELEMENTS -->
   
@@ -279,7 +363,9 @@
       <optional>
         <ref name="a.relatedencoding"/>
       </optional>
-      <optional><ref name="a.base"/></optional>
+      <optional>
+        <ref name="a.base"/>
+      </optional>
       <optional>
         <attribute name="langencoding">
           <choice>
@@ -651,7 +737,9 @@
           <optional>
             <ref name="a.localtype"/>
           </optional>
-          <optional><ref name="a.base"/></optional>
+          <optional>
+            <ref name="a.base"/>
+          </optional>
           <oneOrMore>
             <element name="source">
               <ref name="am.common"/>
@@ -885,7 +973,7 @@
       </optional>
       <optional>
         <attribute name="containerid">
-          <data type="string"/>
+          <data type="NMTOKEN"/>
         </attribute>
       </optional>
       <ref name="m.mixed.basic"/>
@@ -911,9 +999,7 @@
         <ref name="a.link.xpointer"/>
       </optional>
       <optional>
-        <attribute name="entityref">
-          <data type="ENTITY"/>
-        </attribute>
+        <ref name="a.entityref"/>
       </optional>
       <attribute name="daotype">
         <choice>
@@ -924,7 +1010,9 @@
         </choice>
       </attribute>
       <optional>
-        <attribute name="otherdaotype"/>
+        <attribute name="otherdaotype">
+          <data type="token"/>
+        </attribute>
       </optional>
       <optional>
         <ref name="a.coverage"/>
@@ -946,8 +1034,12 @@
       <optional>
         <ref name="a.label"/>
       </optional>
-      <optional><ref name="a.coverage"/></optional>
-      <optional><ref name="a.base"/></optional>
+      <optional>
+        <ref name="a.coverage"/>
+      </optional>
+      <optional>
+        <ref name="a.base"/>
+      </optional>
       <ref name="e.dao"/>
       <oneOrMore>
         <ref name="e.dao"/>
@@ -1007,14 +1099,22 @@
       <ref name="m.mixed.basic"/>
     </element>
   </rng:define>
-  <rng:define name="e.parallelphysdescset">
-    <element name="parallelphysdescset">
+  <rng:define name="e.physdescset">
+    <element name="physdescset">
       <ref name="am.common"/>
       <optional>
         <ref name="a.label"/>
       </optional>
       <optional>
         <ref name="a.encodinganalog"/>
+      </optional>
+      <optional>
+        <attribute name="parallel">
+          <ref name="av.boolean"/>
+        </attribute>
+      </optional>
+      <optional>
+        <ref name="a.coverage"/>
       </optional>
       <ref name="e.physdescstructured"/>
       <oneOrMore>
@@ -1081,7 +1181,9 @@
         </choice>
       </attribute>
       <optional>
-        <attribute name="otherphysdescstructuredtype"/>
+        <attribute name="otherphysdescstructuredtype">
+          <data type="token"/>
+        </attribute>
       </optional>
       <ref name="a.coverage"/>
       <element name="quantity">
@@ -1091,7 +1193,7 @@
         </optional>
         <optional>
           <attribute name="approximate">
-            <ref name="av.yesorno"/>
+            <ref name="av.boolean"/>
           </attribute>
         </optional>
         <text/>
@@ -2024,6 +2126,14 @@
             <value>disc</value>
             <value>circle</value>
             <value>square</value>
+            <value>none</value>
+            <value>inherit</value>
+          </choice>
+        </attribute>
+      </optional>
+      <optional>
+        <attribute name="numeration">
+          <choice>
             <value>decimal</value>
             <value>decimal-leading-zero</value>
             <value>lower-roman</value>
@@ -2035,19 +2145,7 @@
             <value>georgian</value>
             <value>lower-alpha</value>
             <value>upper-alpha</value>
-            <value>none</value>
             <value>inherit</value>
-          </choice>
-        </attribute>
-      </optional>
-      <optional>
-        <attribute name="numeration">
-          <choice>
-            <value>arabic</value>
-            <value>upperalpha</value>
-            <value>loweralpha</value>
-            <value>upperroman</value>
-            <value>lowerroman</value>
           </choice>
         </attribute>
       </optional>
@@ -2129,7 +2227,7 @@
       </optional>
       <optional>
         <attribute name="pgwide">
-          <ref name="av.zeroorone"/>
+          <ref name="av.boolean"/>
         </attribute>
       </optional>
       <optional>
@@ -2377,15 +2475,7 @@
       <ref name="m.mixed.basic.plus.access"/>
     </element>
   </rng:define>
-  <rng:define name="e.bibref">
-    <element name="bibref">
-      <ref name="am.common"/>
-      <optional>
-        <ref name="a.encodinganalog"/>
-      </optional>
-      <ref name="m.mixed.basic.plus.access"/>
-    </element>
-  </rng:define>
+  
   <rng:define name="e.descriptivenote">
     <element name="descriptivenote">
       <ref name="am.common"/>
@@ -2568,6 +2658,9 @@
     <element name="ptr">
       <ref name="am.common.empty"/>
       <ref name="am.internal.ptr"/>
+      <optional>
+        <ref name="a.entityref"/>
+      </optional>
       <empty/>
     </element>
   </rng:define>
@@ -2575,6 +2668,9 @@
     <element name="ref">
       <ref name="am.common"/>
       <ref name="am.internal.ptr"/>
+      <optional>
+        <ref name="a.entityref"/>
+      </optional>
       <zeroOrMore>
         <choice>
           <text/>
@@ -2593,46 +2689,7 @@
     </element>
   </rng:define>
   <!-- DSC -->
-  <rng:define name="e.dsc">
-    <element name="dsc">
-      <ref name="am.common"/>
-      <optional>
-        <attribute name="dsctype">
-          <choice>
-            <value>analyticover</value>
-            <value>combined</value>
-            <value>in-depth</value>
-            <value>otherdsctype</value>
-          </choice>
-        </attribute>
-      </optional>
-      <optional>
-        <attribute name="otherdsctype">
-          <data type="NMTOKEN"/>
-        </attribute>
-      </optional>
-      <optional>
-        <ref name="a.encodinganalog"/>
-      </optional>
-      <optional>
-        <ref name="a.tpattern"/>
-      </optional>
-      <group>
-        <optional>
-          <ref name="e.head"/>
-        </optional>
-        <zeroOrMore>
-          <ref name="m.blocks"/>
-        </zeroOrMore>
-      </group>
-      <optional>
-        <ref name="e.thead"/>
-      </optional>
-      <optional>
-        <ref name="m.cOrC01"/>
-      </optional>
-    </element>
-  </rng:define>
+  
   
   
   
@@ -2675,7 +2732,7 @@
           </attribute>
           <optional>
             <attribute name="otherrelationtype">
-              <data type="string"/>
+              <data type="token"/>
             </attribute>
           </optional>
           <optional>
@@ -2723,18 +2780,7 @@
       <ref name="e.anyname"/>
     </element>
   </rng:define>
-  <rng:define name="e.anyname">
-    <element>
-      <anyName>
-        <except>
-          <nsName ns="http://ead3.archivists.org/schema/"/>
-        </except>
-      </anyName>
-      <zeroOrMore>
-        <ref name="e.anyname"/>
-      </zeroOrMore>
-    </element>
-  </rng:define>
+  
   <!-- ELEMENT MODELS -->
   <rng:define name="m.blocks">
     <choice>
@@ -2783,47 +2829,17 @@
   <rng:define name="m.datesingle">
     <optional>
       <attribute name="standarddate">
-        <choice>
-          <data type="date">
-            <param name="maxInclusive">2099-12-31</param>
-          </data>
-          <data type="gYear">
-            <param name="maxInclusive">2099</param>
-          </data>
-          <data type="gYearMonth">
-            <param name="maxInclusive">2099-12</param>
-          </data>
-        </choice>
+          <data type="token"/>
       </attribute>
     </optional>
     <optional>
       <attribute name="notbefore">
-        <choice>
-          <data type="date">
-            <param name="maxInclusive">2099-12-31</param>
-          </data>
-          <data type="gYear">
-            <param name="maxInclusive">2099</param>
-          </data>
-          <data type="gYearMonth">
-            <param name="maxInclusive">2099-12</param>
-          </data>
-        </choice>
+        <data type="token"/> 
       </attribute>
     </optional>
     <optional>
       <attribute name="notafter">
-        <choice>
-          <data type="date">
-            <param name="maxInclusive">2099-12-31</param>
-          </data>
-          <data type="gYear">
-            <param name="maxInclusive">2099</param>
-          </data>
-          <data type="gYearMonth">
-            <param name="maxInclusive">2099-12</param>
-          </data>
-        </choice>
+        <data type="token"/>
       </attribute>
     </optional>
     <ref name="m.mixed.basic"/>
@@ -2866,7 +2882,7 @@
       <ref name="e.langmaterial"/>
       <ref name="e.materialspec"/>
       <ref name="e.origination"/>
-      <ref name="e.parallelphysdescset"/>
+      <ref name="e.physdescset"/>
       <ref name="e.physdesc"/>
       <ref name="e.physdescstructured"/>
       <ref name="e.physloc"/>
@@ -2895,7 +2911,7 @@
       <ref name="e.ref"/>
     </choice>
   </rng:define>
- <rng:define name="m.mixed.basic">
+  <rng:define name="m.mixed.basic">
     <zeroOrMore>
       <choice>
         <text/>
@@ -2903,14 +2919,14 @@
       </choice>
     </zeroOrMore>
   </rng:define>
-   <rng:define name="m.mixed.basic.plus.elements">
-      <choice>
-        <ref name="m.mixed.basic.elements"/>
-        <ref name="e.date"/>
-        <ref name="e.footnote"/>
-        <ref name="e.num"/>
-        <ref name="e.quote"/>
-      </choice>
+  <rng:define name="m.mixed.basic.plus.elements">
+    <choice>
+      <ref name="m.mixed.basic.elements"/>
+      <ref name="e.date"/>
+      <ref name="e.footnote"/>
+      <ref name="e.num"/>
+      <ref name="e.quote"/>
+    </choice>
   </rng:define>
   <rng:define name="m.mixed.basic.plus.access">
     <zeroOrMore>
@@ -2942,7 +2958,9 @@
         <data type="IDREF"/>
       </attribute>
     </optional>
-    <optional><ref name="a.link.xpointer"/></optional>
+    <optional>
+      <ref name="a.link.xpointer"/>
+    </optional>
     <ref name="am.simplelink"/>
   </rng:define>
   <rng:define name="am.simplelink">
@@ -3001,7 +3019,7 @@
   <rng:define name="am.desc.base">
     <optional>
       <attribute name="otherlevel">
-        <data type="NMTOKEN"/>
+        <data type="token"/>
       </attribute>
     </optional>
     <optional>
@@ -3010,12 +3028,11 @@
   </rng:define>
   <rng:define name="am.desc.c">
     <ref name="am.common"/>
-    <optional><ref name="a.base"/></optional>
     <optional>
-      <ref name="a.level"/>
+      <ref name="a.base"/>
     </optional>
     <optional>
-      <ref name="a.tpattern"/>
+      <ref name="a.level"/>
     </optional>
     <ref name="am.desc.base"/>
   </rng:define>
@@ -3036,7 +3053,9 @@
         <data type="NMTOKEN"/>
       </attribute>
     </optional>
-    <optional><ref name="a.identifier"/></optional>
+    <optional>
+      <ref name="a.identifier"/>
+    </optional>
   </rng:define>
   <!-- ATTRIBUTE DEFINITIONS -->
   <!-- xlink-modelled attributes -->
@@ -3105,6 +3124,11 @@
   <rng:define name="a.link.xpointer">
     <attribute name="xpointer">
       <data type="token"/>
+    </attribute>
+  </rng:define>
+  <rng:define name="a.entityref">
+    <attribute name="entityref">
+      <data type="ENTITY"/>
     </attribute>
   </rng:define>
   <!-- display attributes -->
@@ -3271,19 +3295,14 @@
   </rng:define>
   <rng:define name="a.colsep">
     <attribute name="colsep">
-      <ref name="av.zeroorone"/>
+      <ref name="av.boolean"/>
     </attribute>
   </rng:define>
   <rng:define name="a.rowsep">
     <attribute name="rowsep">
-      <ref name="av.zeroorone"/>
+      <ref name="av.boolean"/>
     </attribute>
   </rng:define>
-      <rng:define name="a.tpattern">
-        <rng:attribute name="tpattern">
-          <rng:data type="NMTOKEN"/>
-        </rng:attribute>
-      </rng:define>
   <!-- other attributes -->
   <rng:define name="a.coverage">
     <attribute name="coverage">
@@ -3305,19 +3324,15 @@
       <data type="NMTOKEN"/>
     </attribute>
   </rng:define>
+
   <!-- ATTRIBUTE VALUE LISTS -->
-  <rng:define name="av.yesorno">
+  <rng:define name="av.boolean">
     <choice>
-      <value>yes</value>
-      <value>no</value>
+      <value>true</value>
+      <value>false</value>
     </choice>
   </rng:define>
-  <rng:define name="av.zeroorone">
-    <choice>
-      <value>0</value>
-      <value>1</value>
-    </choice>
-  </rng:define>
+
 </rng:div></rng:div>
     <start>
         <ref name="e.ead"/>
@@ -3424,13 +3439,20 @@
                 <ref name="e.head"/>
             </optional>
             <oneOrMore>
-                <ref name="m.blocks"/>
-                <ref name="m.desc.base.descgrp"/>
+                <choice>
+                    <ref name="m.blocks"/>
+                    <ref name="m.desc.base.descgrp"/>
+                </choice>
             </oneOrMore>
         </element>
     </rng:define>
     <rng:define xmlns:rng="http://relaxng.org/ns/structure/1.0" name="m.c.base.descgrp">
         <ref name="am.desc.c"/>
+        <optional>
+            <attribute name="tpattern">
+                <data type="NMTOKEN"/>
+            </attribute>
+        </optional>
         <optional>
             <ref name="e.head"/>
         </optional>
@@ -3457,21 +3479,21 @@
                 </choice>
             </zeroOrMore>
         </element>
-      
+
 
     </rng:define>
     <rng:define xmlns:rng="http://relaxng.org/ns/structure/1.0" name="e.frontmatter">
 
-            <element name="frontmatter">
-                <ref name="am.common"/>
-                <optional>
-                    <ref name="e.titlepage"/>
-                    
-                </optional>
-                <zeroOrMore>
-                    <ref name="e.div"/>
-                </zeroOrMore>
-            </element>
+        <element name="frontmatter">
+            <ref name="am.common"/>
+            <optional>
+                <ref name="e.titlepage"/>
+
+            </optional>
+            <zeroOrMore>
+                <ref name="e.div"/>
+            </zeroOrMore>
+        </element>
     </rng:define>
     <rng:define xmlns:rng="http://relaxng.org/ns/structure/1.0" name="e.titlepage">
         <element name="titlepage">
@@ -3492,4 +3514,41 @@
             </oneOrMore>
         </element>
     </rng:define>
+    <rng:define xmlns:rng="http://relaxng.org/ns/structure/1.0" name="e.extent">
+        <element name="extent">
+            <ref name="am.common"/>
+            <optional>
+                <ref name="a.label"/>
+            </optional>
+            <optional>
+                <ref name="a.encodinganalog"/>
+            </optional>
+            <optional>
+                <ref name="a.localtype"/>
+            </optional>
+
+            <optional>
+                <attribute name="unit">
+                    <data type="token"/>
+                </attribute>
+            </optional>
+            <ref name="m.mixed.basic"/>
+        </element>
+    </rng:define>
+    <rng:define xmlns:rng="http://relaxng.org/ns/structure/1.0" name="m.mixed.basic.plus.access.ref">
+        <zeroOrMore>
+            <choice>
+                <text/>
+                <ref name="m.mixed.basic.elements"/>
+                <ref name="m.access"/>
+                <ref name="e.date"/>
+                <ref name="e.footnote"/>
+                <ref name="e.num"/>
+                <ref name="e.quote"/>
+                <ref name="e.bibseries"/>
+                <ref name="e.imprint"/>
+            </choice>
+        </zeroOrMore>
+    </rng:define>
+
 </grammar>
