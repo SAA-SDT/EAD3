@@ -62,8 +62,8 @@ EAD3 was possible because of the generous support of the Society of American Arc
 * EAD3 is available as Relax NG Schema, DTD, and W3C Schema.
 * The EAD3 DTD does not support the <objectxmlwrap> element.
 * In the EAD3 DTD, attributes with anyURI, token, and string data types are converted to CDATA.
-* Deprecated EAD 2002 elements are available in the undprecated versions of EAD3.
-* A Schematron schema (ead3.sch) is available to validate external code lists not maintained within EAD, standard attribute value patterns, attribute or element co-ocurrence not enforcable in the schema,and some encoding practices recommended for future migration.
+* Deprecated EAD 2002 elements are available in the undeprecated versions of EAD3.
+* A Schematron schema (ead3.sch) is available to validate external code lists not maintained within EAD, standard attribute value patterns, attribute or element co-occurrence not enforceable in the schema,and some encoding practices recommended for future migration.
 
 ### New in EAD3 1.1.0:
 1. The @render attribute can now be used with the quote element. (See issue #[485](https://github.com/SAA-SDT/EAD3/issues/485))
