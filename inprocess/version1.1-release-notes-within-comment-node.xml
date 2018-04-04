@@ -22,7 +22,7 @@ Changes in version 1.1:
    See https://github.com/SAA-SDT/EAD3/issues/506
    (new element)
 
-6. The @localtype attribute can now be used wiht the conventiondeclaration element.
+6. The @localtype attribute can now be used with the conventiondeclaration element.
    See https://github.com/SAA-SDT/EAD3/issues/507
    
 7. The datatype associated with the @containerid attribute has been relaxed to xsd:string (in EAD3 version 1.0, the datatype for this attribute was restricted to xsd:NMTOKEN).
