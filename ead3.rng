@@ -2497,8 +2497,9 @@
         <choice>
           <text/>
           <ref name="e.abbr"/>
-          <ref name="e.expan"/>
           <ref name="e.emph"/>
+          <ref name="e.expan"/>
+          <ref name="e.foreign"/>
           <ref name="e.lb"/>
           <ref name="e.ptr"/>
           <ref name="e.quote"/>
