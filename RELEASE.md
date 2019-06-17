@@ -60,7 +60,7 @@ EAD3 was possible because of the generous support of the Society of American Arc
 
 ### Notes:
 * EAD3 is available as Relax NG Schema, DTD, and W3C Schema.
-* The EAD3 DTD does not support the <objectxmlwrap> element.
+* The EAD3 DTD does not support the `<objectxmlwrap>` element.
 * In the EAD3 DTD, attributes with anyURI, token, and string data types are converted to CDATA.
 * Deprecated EAD 2002 elements are available in the undeprecated versions of EAD3.
 * A Schematron schema (ead3.sch) is available to validate external code lists not maintained within EAD, standard attribute value patterns, attribute or element co-occurrence not enforceable in the schema,and some encoding practices recommended for future migration.
@@ -72,4 +72,4 @@ EAD3 was possible because of the generous support of the Society of American Arc
 4. The date element is now a valid child of the part element. (See issue #[505](https://github.com/SAA-SDT/EAD3/issues/505))
 5. rightsdeclaration, a new element, has been added to the control section. (See issue #[506](https://github.com/SAA-SDT/EAD3/issues/506)) (new element)
 6. The @localtype attribute can now be used with the conventiondeclaration element. (See issue #[507](https://github.com/SAA-SDT/EAD3/issues/507))  
-7. The datatype associated with the @containerid attribute has been relaxed to xsd:string (in EAD3 version 1.0, the datatype for this attribute was restricted to xsd:NMTOKEN). (See issue #[512](https://github.com/SAA-SDT/EAD3/issues/512)
+7. The datatype associated with the @containerid attribute has been relaxed to xsd:string (in EAD3 version 1.0, the datatype for this attribute was restricted to xsd:NMTOKEN). (See issue #[512](https://github.com/SAA-SDT/EAD3/issues/512))
