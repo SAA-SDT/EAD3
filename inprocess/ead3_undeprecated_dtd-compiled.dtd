@@ -1224,8 +1224,8 @@
   %am.internal.ptr;
   entityref ENTITY #IMPLIED>
 
-<!ELEMENT ref (#PCDATA|abbr|expan|emph|lb|ptr|quote|num|footnote|date
-               |%m.access;)*>
+<!ELEMENT ref (#PCDATA|abbr|expan|emph|foreign|lb|ptr|quote|num|footnote
+               |date|%m.access;)*>
 <!ATTLIST ref
   %am.common;
   %am.internal.ptr;

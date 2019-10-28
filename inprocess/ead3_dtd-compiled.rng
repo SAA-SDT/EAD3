@@ -2430,6 +2430,7 @@
           <ref name="e.abbr"/>
           <ref name="e.expan"/>
           <ref name="e.emph"/>
+          <ref name="e.foreign"/>
           <ref name="e.lb"/>
           <ref name="e.ptr"/>
           <ref name="e.quote"/>
@@ -2775,7 +2776,7 @@
     </optional>
     <optional>
       <attribute name="notbefore">
-        <data type="token"/> 
+        <data type="token"/>
       </attribute>
     </optional>
     <optional>
