@@ -1,7 +1,7 @@
 ## EAD3
 ### Encoded Archival Description (EAD), Version 3
-* Release: 1.1.0
-* Date: 2018-04-04
+* Release: 1.1.1
+* Date: 2019-10-28
 
 Hosted by the Library of Congress at http://www.loc.gov/ead/.
 
@@ -39,12 +39,12 @@ Schema Development Team members included
 
 Lead schema developer: Terry Catapano
 
-Members of the TS-EAS Schema Subteam during the release of EAD3 1.1.0:
+Members of the TS-EAS Schema Subteam during the release of EAD3 1.1.1:
+* Kersin Arnold, Archives Portal Europe
 * Karin Bredenberg, Riksarkivet of Sweden
-* Terry Catapano, Columbia University and University of California, Berkeley
 * Mark Custer, chair, Yale University
-* Regine Heberlein, Princeton University
-* Mike Rush, Yale University
+* Alexander Duryee, New York Public Library
+* Jessica Purkis, Archives of American Art
 
 EAD3 was possible because of the generous support of the Society of American Archivists, the Gladys Krieble Delmas Foundation, the National Endowment for the Humanities, the Nationaal Archief of the Netherlands, the Beinecke Rare Book and Manuscript Library, the Institute for Advanced Technology in the Humanities at the University of Virginia, and OCLC Research.
 
@@ -64,6 +64,11 @@ EAD3 was possible because of the generous support of the Society of American Arc
 * In the EAD3 DTD, attributes with anyURI, token, and string data types are converted to CDATA.
 * Deprecated EAD 2002 elements are available in the undeprecated versions of EAD3.
 * A Schematron schema (ead3.sch) is available to validate external code lists not maintained within EAD, standard attribute value patterns, attribute or element co-occurrence not enforceable in the schema,and some encoding practices recommended for future migration.
+
+### New in EAD3 1.1.1:
+1. The foreign element is now available as a child of the ref element. (See issue #[522](https://github.com/SAA-SDT/EAD3/issues/522))
+
+2. Fixed a bug in the XSD schemas that resulted in empty-only c12 elements being valid. (See issue #[523](https://github.com/SAA-SDT/EAD3/issues/523))
 
 ### New in EAD3 1.1.0:
 1. The @render attribute can now be used with the quote element. (See issue #[485](https://github.com/SAA-SDT/EAD3/issues/485))
