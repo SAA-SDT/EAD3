@@ -47,7 +47,7 @@
                 <xsl:attribute name="mixed">true</xsl:attribute>
             </xsl:if>
             <!-- new, to fix the issue of the c12 bug -->
-            <xsl:apply-templates select="@type[starts-with(., 'schema:')]" mode="convert-type-to-extension-element"/>
+            <xsl:apply-templates select="@type[matches(., '^schema:|^u')]" mode="convert-type-to-extension-element"/>
             <xsl:apply-templates select="xs:complexType/*"/>
         </xs:complexType>
     </xsl:template>
