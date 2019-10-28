@@ -2207,6 +2207,7 @@
         <xs:element ref="schema:abbr"/>
         <xs:element ref="schema:expan"/>
         <xs:element ref="schema:emph"/>
+        <xs:element ref="schema:foreign"/>
         <xs:element ref="schema:lb"/>
         <xs:element ref="schema:ptr"/>
         <xs:element ref="schema:quote"/>

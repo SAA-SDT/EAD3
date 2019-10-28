@@ -83,7 +83,9 @@
     
     <!-- new, to fix the issue of the c12 bug -->
     <xsl:template match="@type" mode="convert-type-to-extension-element">
-        <xs:extension base="{substring-after(., ':')}" />
+        <xs:complexContent>
+            <xs:extension base="{substring-after(., ':')}" />          
+        </xs:complexContent>
     </xsl:template>
     
 </xsl:stylesheet>
