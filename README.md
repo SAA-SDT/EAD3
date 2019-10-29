@@ -11,4 +11,4 @@ EAD3
 
 ### Rolling revision cycle
 * TS-EAS intends to establish a rolling revision cycle for minor revisions of all standards under its purview. The current version of this can be viewed here: https://github.com/SAA-SDT/TS-EAS-subteam-notes/blob/master/rolling-revision-cycle.md
-
+* In this context, EAD team of TS-EAS will follow this process for engaging with new submissions to GitHub: https://github.com/SAA-SDT/TS-EAS-subteam-notes/blob/master/ead-subteam/working-documents/ReviewOfNewGitHubIssues.md
