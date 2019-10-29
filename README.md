@@ -9,3 +9,6 @@ EAD3
 * `ead3.xsd`: W3C XML Schema for EAD3, derived from `ead3.rng` and post-processed by inprocess/deglobalize.xsl
 * `schematron/ead.sch`: Schematron schema for ancillary validation of codelist values, date patterns, and co-occurrence constraints
 
+### Rolling revision cycle
+* TS-EAS intends to establish a rolling revision cycle for minor revisions of all standards under its purview. The current version of this can be viewed here: https://github.com/SAA-SDT/TS-EAS-subteam-notes/blob/master/rolling-revision-cycle.md
+
