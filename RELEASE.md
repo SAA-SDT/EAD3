@@ -1,7 +1,7 @@
 ## EAD3
 ### Encoded Archival Description (EAD), Version 3
 * Release: 1.1.1
-* Date: 2019-10-28
+* Date: 2019-11-21
 
 Hosted by the Library of Congress at http://www.loc.gov/ead/.
 
