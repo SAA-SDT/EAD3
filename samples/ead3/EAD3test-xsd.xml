@@ -137,7 +137,8 @@
 					<ref target="series1">Correspondence, 1919-1955.</ref>
 				</item>
 				<item>
-					<ref target="series2">Diaries, 1917-1918</ref>
+					<!-- issue 522: adding foregin to ref -->
+					<ref target="series2"><foreign lang="de">Tagebücher</foreign>, 1917-1918</ref>
 				</item>
 			</list>
 		</arrangement>
