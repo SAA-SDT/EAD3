@@ -316,7 +316,7 @@
 					<relation relationtype="otherrelationtype">
 						<relationentry>other namespace test</relationentry>
 						<objectxmlwrap>
-							<mets xmlns="http//:whatever">
+							<mets xmlns="http://whatever">
 								<and>
 									<mods/>
 								</and>
