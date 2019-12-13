@@ -40,7 +40,7 @@ Schema Development Team members included
 Lead schema developer: Terry Catapano
 
 Members of the TS-EAS Schema Subteam during the release of EAD3 1.1.1:
-* Kersin Arnold, Archives Portal Europe
+* Kerstin Arnold, Archives Portal Europe
 * Karin Bredenberg, Riksarkivet of Sweden
 * Mark Custer, chair, Yale University
 * Alexander Duryee, New York Public Library
@@ -67,7 +67,6 @@ EAD3 was possible because of the generous support of the Society of American Arc
 
 ### New in EAD3 1.1.1:
 1. The foreign element is now available as a child of the ref element. (See issue #[522](https://github.com/SAA-SDT/EAD3/issues/522))
-
 2. Fixed a bug in the XSD schemas that resulted in empty-only c12 elements being valid. (See issue #[523](https://github.com/SAA-SDT/EAD3/issues/523))
 
 ### New in EAD3 1.1.0:
