@@ -1,7 +1,7 @@
 ## EAD3
 ### Encoded Archival Description (EAD), Version 3
 * Release: 1.1.1
-* Date: 2019-11-21
+* Date: 2019-12-16
 
 Hosted by the Library of Congress at http://www.loc.gov/ead/.
 
@@ -40,7 +40,7 @@ Schema Development Team members included
 Lead schema developer: Terry Catapano
 
 Members of the TS-EAS Schema Subteam during the release of EAD3 1.1.1:
-* Kersin Arnold, Archives Portal Europe
+* Kerstin Arnold, Archives Portal Europe
 * Karin Bredenberg, Riksarkivet of Sweden
 * Mark Custer, chair, Yale University
 * Alexander Duryee, New York Public Library
